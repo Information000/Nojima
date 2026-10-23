@@ -673,6 +673,8 @@ function sha256(str) {
 // 売場（棚）をタップしたときの遷移先：その棚のエリアのページ
 function isExt(u) { return /^https?:/i.test(u || '') && u.indexOf(location.origin + '/') !== 0 && u.indexOf('https://information000.github.io/Nojima/') !== 0; }
 function siteUrl(u) { return !u || isExt(u) || u.startsWith('#') ? u : u + (u.includes('?') ? '&' : '?') + 'lang=' + lang; }
+// 端末に保存済みの仮URL（netlify）や旧ファイル名は、その棚のエリアURLに直す
+function fixUrl(u, area) { if (!u) return u; if (/netlify\.app/i.test(u) || /^(?:\.\/)?(area-[\w-]+|index)\.html/i.test(u)) return AREA_LINKS[area] || ''; return u; }
 const AREA_LINKS = {'home': 'https://information000.github.io/Nojima/kaden/', 'av': 'https://information000.github.io/Nojima/season-av/', 'info': 'https://information000.github.io/Nojima/info/', 'comm': 'https://information000.github.io/Nojima/tsushin/'};
 function defaultAreas() {
   return [
@@ -794,7 +796,7 @@ function validateStore(o) {
     items: d.items.filter(i => i && isFinite(+i.x) && isFinite(+i.y) && +i.w > 0 && +i.h > 0).map(i => ({
       id: String(i.id || uid()), type: TYPES.includes(i.type) ? i.type : 'shelf', x: +i.x, y: +i.y, w: +i.w, h: +i.h,
       label: lab(i.label), area: String(i.area || ''), vertical: ['a', 'h', 'v'].includes(i.vertical) ? i.vertical : 'a',
-      url: /^(https?:|#|\.?\/|[\w-]+\.html)/i.test(i.url || '') ? String(i.url) : '', kw: String(i.kw || ''), note: lab(i.note || '')
+      url: fixUrl(/^(https?:|#|\.?\/|[\w-]+\.html)/i.test(i.url || '') ? String(i.url) : '', i.area), kw: String(i.kw || ''), note: lab(i.note || '')
     }))
   };
   if (out.canvas.outline && out.canvas.outline.length < 3) out.canvas.outline = null;

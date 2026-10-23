@@ -626,9 +626,11 @@ const mapLabels = () => sdata && Array.isArray(sdata.items) ? [...new Set(sdata.
 const ITEMS_KEY = 'fg-area-' + storeId + '-' + DEPT, FAV_KEY = 'fg-fav-' + storeId;
 const BADGES = ['', 'rec', 'new', 'sale', 'season'];
 const BLBL = { rec: 'rec', new: 'newI', sale: 'sale', season: 'season' };
+// 端末に保存済みの古い遷移先（product-○○.html）も公開URLに直す
+function fixUrl(u) { u = String(u || ''); const m = u.match(/^(?:\.\/)?product-([a-z]+)\.html/i); return m ? 'https://information000.github.io/Nojima/' + m[1].toLowerCase() + '/' : u; }
 function normItem(i) {
   const lab = v => typeof v === 'string' ? { ja: v, en: '', zh: '' } : { ja: (v && v.ja) || '', en: (v && v.en) || '', zh: (v && v.zh) || '' };
-  return { id: String(i.id || uid()), icon: String(i.icon || '📦'), name: lab(i.name), desc: lab(i.desc || ''), map: String(i.map || ''), url: String(i.url || ''), badge: BADGES.includes(i.badge) ? i.badge : '', note: lab(i.note || ''), hidden: !!i.hidden, kw: String(i.kw || '') };
+  return { id: String(i.id || uid()), icon: String(i.icon || '📦'), name: lab(i.name), desc: lab(i.desc || ''), map: String(i.map || ''), url: fixUrl(i.url), badge: BADGES.includes(i.badge) ? i.badge : '', note: lab(i.note || ''), hidden: !!i.hidden, kw: String(i.kw || '') };
 }
 let items = (LS.get(ITEMS_KEY, null) || CONFIG.items).map(normItem);
 const saveItems = () => { if (!LS.set(ITEMS_KEY, items)) toast('保存できませんでした（ブラウザの容量）', { icon: '⚠️' }); };

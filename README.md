@@ -1,5 +1,11 @@
 # ノジマ イオンモール成田店 フロアマップ・商品相談
 
+## 🌐 公開中のサイト
+**https://information000.github.io/Nojima/** （ホーム）
+
+- エリア：[家電](https://information000.github.io/Nojima/kaden/) ／ [季節・AV](https://information000.github.io/Nojima/season-av/) ／ [情報](https://information000.github.io/Nojima/info/) ／ [通信](https://information000.github.io/Nojima/tsushin/)
+- 商品：[冷蔵庫](https://information000.github.io/Nojima/fridge/) ／ [洗濯機](https://information000.github.io/Nojima/washer/) ／ [炊飯器](https://information000.github.io/Nojima/rice/) ／ [電子レンジ](https://information000.github.io/Nojima/microwave/) ／ [オーブン](https://information000.github.io/Nojima/oven/) ／ [ドライヤー](https://information000.github.io/Nojima/dryer/) ／ [ヘアアイロン](https://information000.github.io/Nojima/iron/) ／ [シェーバー](https://information000.github.io/Nojima/shaver/) ／ [電動歯ブラシ](https://information000.github.io/Nojima/toothbrush/) ／ [エアコン](https://information000.github.io/Nojima/aircon/) ／ [テレビ](https://information000.github.io/Nojima/tv/) ／ [パソコン](https://information000.github.io/Nojima/pc/) ／ [プリンター](https://information000.github.io/Nojima/printer/)
+
 GitHub Pages でそのまま公開できる静的サイトです（ビルド不要）。
 
 ページごとに別のURLで公開しています（例：`https://information000.github.io/Nojima/fridge/`）。
