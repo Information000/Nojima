@@ -674,7 +674,10 @@ function sha256(str) {
 function isExt(u) { return /^https?:/i.test(u || '') && u.indexOf(location.origin + '/') !== 0 && u.indexOf('https://information000.github.io/Nojima/') !== 0; }
 function siteUrl(u) { return !u || isExt(u) || u.startsWith('#') ? u : u + (u.includes('?') ? '&' : '?') + 'lang=' + lang; }
 // 端末に保存済みの仮URL（netlify）や旧ファイル名は、その棚のエリアURLに直す
-function fixUrl(u, area) { if (!u) return u; if (/netlify\.app/i.test(u) || /^(?:\.\/)?(area-[\w-]+|index)\.html/i.test(u)) return AREA_LINKS[area] || ''; return u; }
+function fixUrl(u, area, label) { if (!u) return u; const old = /netlify\.app/i.test(u) || /^(?:\.\/)?(area-[\w-]+|index)\.html/i.test(u) || u.indexOf('https://information000.github.io/Nojima/') === 0; if (!old) return u; return HAS_PAGE.includes(label) ? (SHELF_LINKS[area] || '') : ''; }
+// 相談ページがある売り場だけ「紹介ページあり」にする（ほかは準備中）
+const HAS_PAGE = ["冷蔵庫コーナー", "洗濯機コーナー", "オーブン・グリル", "電子レンジ", "炊飯器", "電動歯ブラシ", "シェーバー", "ヘアアイロン", "ドライヤー", "エアコンコーナー", "TV", "プリンター", "PC付属品"];
+const SHELF_LINKS = {'home': 'https://information000.github.io/Nojima/kaden/', 'av': 'https://information000.github.io/Nojima/season-av/', 'info': 'https://information000.github.io/Nojima/info/'};   // 通信エリアは相談ページが無いので準備中
 const AREA_LINKS = {'home': 'https://information000.github.io/Nojima/kaden/', 'av': 'https://information000.github.io/Nojima/season-av/', 'info': 'https://information000.github.io/Nojima/info/', 'comm': 'https://information000.github.io/Nojima/tsushin/'};
 function defaultAreas() {
   return [
@@ -771,7 +774,7 @@ function defaultStore() {
     store: { brand: { ja: 'ノジマ', en: 'Nojima', zh: 'Nojima' }, name: { ja: 'イオンモール成田店', en: 'AEON MALL Narita', zh: '永旺梦乐城成田店' }, sub: 'NOJIMA × AEON MALL NARITA' },
     canvas: { w: 1260, h: 870, outline: [[15, 15], [1245, 15], [1245, 480], [840, 855], [15, 855]], bg: null, bgOpacity: .45, bgShow: true, bgInView: false },
     areas: defaultAreas(),
-    items: R.map((r, i) => ({ id: 'i' + i, type: TY[r[0]], x: r[1], y: r[2], w: r[3], h: r[4], label: { ja: r[5], en: r[6], zh: r[7] }, area: r[8], vertical: r[9], url: r[10] ? (AREA_LINKS[r[8]] || '') : '', kw: r[11] || '', note: r[12] || { ja: '', en: '', zh: '' } }))
+    items: R.map((r, i) => ({ id: 'i' + i, type: TY[r[0]], x: r[1], y: r[2], w: r[3], h: r[4], label: { ja: r[5], en: r[6], zh: r[7] }, area: r[8], vertical: r[9], url: r[10] && HAS_PAGE.includes(r[5]) ? (SHELF_LINKS[r[8]] || '') : '', kw: r[11] || '', note: r[12] || { ja: '', en: '', zh: '' } }))
   };
 }
 function blankStore(name) {
@@ -796,7 +799,7 @@ function validateStore(o) {
     items: d.items.filter(i => i && isFinite(+i.x) && isFinite(+i.y) && +i.w > 0 && +i.h > 0).map(i => ({
       id: String(i.id || uid()), type: TYPES.includes(i.type) ? i.type : 'shelf', x: +i.x, y: +i.y, w: +i.w, h: +i.h,
       label: lab(i.label), area: String(i.area || ''), vertical: ['a', 'h', 'v'].includes(i.vertical) ? i.vertical : 'a',
-      url: fixUrl(/^(https?:|#|\.?\/|[\w-]+\.html)/i.test(i.url || '') ? String(i.url) : '', i.area), kw: String(i.kw || ''), note: lab(i.note || '')
+      url: fixUrl(/^(https?:|#|\.?\/|[\w-]+\.html)/i.test(i.url || '') ? String(i.url) : '', i.area, (i.label && i.label.ja) || (typeof i.label === 'string' ? i.label : '')), kw: String(i.kw || ''), note: lab(i.note || '')
     }))
   };
   if (out.canvas.outline && out.canvas.outline.length < 3) out.canvas.outline = null;
