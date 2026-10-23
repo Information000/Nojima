@@ -17402,16 +17402,15 @@ html #splash .stage {
 </script><script id="area-links-js">
 /* =========================================================
    エリアページへのリンク設定
-   いまは4エリアとも「仮リンク」に飛びます。
-   本番では右側のコメントのファイル名に書き換えてください。
+   各エリアをタップすると、それぞれのエリアページ（別URL）に移動します。
    ========================================================= */
 (function () {
   "use strict";
   window.AREA_LINKS = {
-    home: "https://2026-1017-1310-nojima-narita.netlify.app/", // 家電エリア      → 本番: "area-kaden.html"
-    av:   "https://2026-1017-1310-nojima-narita.netlify.app/", // 季節・AVエリア  → 本番: "area-season-av.html"
-    info: "https://2026-1017-1310-nojima-narita.netlify.app/", // 情報エリア      → 本番: "area-info.html"
-    comm: "https://2026-1017-1310-nojima-narita.netlify.app/"  // 通信エリア      → 本番: "area-tsushin.html"
+    home: "area-kaden.html",      // 家電エリア
+    av:   "area-season-av.html",  // 季節・AVエリア
+    info: "area-info.html",       // 情報エリア
+    comm: "area-tsushin.html"     // 通信エリア
   };
   // 相談アプリ → どのエリアページにあるか
   var APP_AREA = {"fridge": "home", "washer": "home", "rice": "home", "microwave": "home", "oven": "home", "dryer": "home", "iron": "home", "shaver": "home", "toothbrush": "home", "aircon": "av", "tv": "av", "pc": "info", "printer": "info"};
