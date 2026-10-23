@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
 <title>パソコンの相談 | イオンモール成田店</title>
@@ -133,7 +132,7 @@ html[data-device=tablet] .fr-wrap {
      ・1商品 = items の中の { } ひとつ。型番・価格・スペック・大きさ・リンクなど
      ・status: "active"=販売中 / "ended"=販売終了（相談に出なくなる）
      ・links: type は "official"(メーカー公式HP) / "manual"(取扱説明書) / "ref"(参考リンク)
-     ・ふだんは相談画面の上のバーにある「🔐 在庫管理」から編集できます（暗証番号は adminPin）
+     ・ふだんはPC相談の上のバーにある「🔐 在庫管理」から編集できます（暗証番号は adminPin）
      ====================================================================== -->
 <script type="application/json" id="inventory-data">
 {
@@ -1940,7 +1939,7 @@ html[data-device=tablet] .fr-wrap {
 <!-- ▲▲▲ 在庫データここまで ▲▲▲ -->
 <!-- ======================================================================
      ▼▼▼ ヒアリング設定（店舗ごとのアレンジ）▼▼▼
-     ・ふだんは相談画面の「🔐 在庫管理」→「💬 ヒアリング」タブで編集できます
+     ・ふだんは「🔐 在庫管理」→「💬 ヒアリング」タブで編集できます
      ・questions：質問ごとの 非表示(hidden)・文言(t / h)・選択肢(opts / order)
      ・custom：店舗オリジナルの質問（スタッフ確認シートに表示）
      ====================================================================== -->
@@ -1958,11 +1957,11 @@ html[data-device=tablet] .fr-wrap {
   <div class="pg-ico" aria-hidden="true">💻</div>
   <h1 class="pg-ttl">パソコン</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="info/">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="https://information000.github.io/Nojima/info/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
+<div id="modal"><a id="modal-link-btn" href="#"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -2003,7 +2002,7 @@ var currentLang = "ja";
   "use strict";
   var APP = "pc";                 // このページの相談アプリ
   var ROOT_ID = "pc-app";            // アプリの表示エリア
-  var AREA_URL = "info/";       // 閉じたときに戻るエリアページ
+  var AREA_URL = "https://information000.github.io/Nojima/info/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -3165,7 +3164,7 @@ body.motion-off .fr-root *:after {
 })();
 </script>
 <!-- =====================================================================
-     在庫管理モジュール（スタッフ用） ※相談画面の上のバーの「🔐 在庫管理」から開く（暗証番号が必要）
+     在庫管理モジュール（スタッフ用） ※PC相談の上のバーの「🔐 在庫管理」から開く（暗証番号が必要）
      ・在庫データは上の「在庫データ」欄（id="inventory-data"）にあります
      ・この端末で編集した内容はブラウザ内に保存され、閉じると相談に反映されます
      ・メニュー「HTMLを書き出す」で在庫入りの新しい product-pc.html を保存 → サイトに上げ直すと全端末に反映
@@ -3562,21 +3561,7 @@ window.NJ_INV = (function () {
     if (desk) t.push("desktop");
     return t.filter(function (x, i) { return t.indexOf(x) === i; });
   }
-  var SC = BASE.schema || {};
   function products() {
-    if (BASE.category !== "pc") return all().filter(function (p) { return p.status !== "ended" && p.model && +p.price > 0; }).map(function (p) {
-      // 相談アプリ側の項目名に合わせる（例：エアコンは price→setPrice、model→inModel）
-      p.price = +p.price;
-      (SC.fields || []).forEach(function (fd) { if (fd.t === "number" && p[fd.k] !== "" && p[fd.k] != null) p[fd.k] = +p[fd.k]; });
-      var mp = SC.map || {};
-      Object.keys(mp).forEach(function (k) { p[mp[k]] = p[k]; });
-      var g = {}; (SC.grades || []).forEach(function (x) { g[x[0]] = "◯"; });
-      p.grades = Object.assign(g, p.grades || {});
-      p.desc = p.desc && p.desc.ja ? p.desc : { ja: p.note && p.note.indexOf("【要確認】") !== 0 ? p.note : (p.name || ""), en: "", zh: "" };
-      p.tags = p.tags || [];
-      p.groupId = p.groupId || (BASE.groups[0] && BASE.groups[0].id);
-      return p;
-    });
     return all().filter(function (p) { return p.status !== "ended" && p.model && +p.price > 0; }).map(function (p) {
       p.price = +p.price; p.ram = +p.ram || 0; p.ssd = +p.ssd || 0; p.screen = +p.screen || 0; p.weight = +p.weight || 0;
       p.maker = canonMaker(p.maker);
@@ -3612,41 +3597,7 @@ window.NJ_INV = (function () {
   };
   window.__njLinksAuto = orig;
 
-  // ---- 結果カードへリンクを差し込む（njLinks を呼ばないアプリ用）
-  function autoLinks(p) {
-    var m = encodeURIComponent(p.model || p.name || ""), mk = encodeURIComponent((p.maker || "") + " ");
-    return [{ type: "official", url: "https://www.google.com/search?q=" + mk + m }, { type: "manual", url: "https://www.google.com/search?q=" + mk + m + "+%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8" }];
-  }
-  function injectLinks(rootId, sel) {
-    var root = null, busy = false;   // 相談画面はあとから作られることがあるので毎回さがす
-    // おすすめカード（.fr-rec / .sv-rec）ごとに、カード内の商品名・型番から商品を特定してリンクを付ける
-    function run() {
-      root = document.getElementById(rootId); if (busy || !root) return; busy = true;
-      try {
-        var cards = root.querySelectorAll(sel || ".fr-rec,.sv-rec");
-        if (cards.length) {
-          var ps = products();
-          Array.prototype.forEach.call(cards, function (c) {
-            if (c.querySelector(".nj-lk")) return;
-            var nm = c.querySelector("[class$='-name']"), t = (nm && nm.textContent) || c.textContent || "", hit = null;
-            var best = 0;   // いちばん長く一致した商品を採用（型番の前方一致の取り違え防止）
-            function scan(txt) { ps.forEach(function (p) { [p.model, p.name].forEach(function (k) { k = String(k || ""); if (k.length >= 4 && k.length > best && txt.indexOf(k) >= 0) { hit = p; best = k.length; } }); }); }
-            scan(t); if (!hit && nm) scan(c.textContent || "");
-            if (!hit) return;
-            var html = window.njLinks(Object.assign({}, hit, { links: (hit.links && hit.links.length) ? hit.links : autoLinks(hit) }));
-            if (html) c.insertAdjacentHTML("beforeend", html);
-          });
-        }
-      } catch (e) { console.warn("nj links", e); }
-      busy = false;
-    }
-    var tm; new MutationObserver(function (ms) {
-      for (var i = 0; i < ms.length; i++) { var t = ms[i].target; if (t.closest && t.closest(".nj-lk")) continue; if (!tm) tm = setTimeout(function () { tm = 0; run(); setTimeout(run, 700); setTimeout(run, 1600); }, 150); return; }
-    }).observe(document.body, { childList: true, subtree: true });
-    run();
-  }
-
-  return { injectLinks: injectLinks, AUTO_TAGS: AUTO_TAGS, autoTags: autoTags, canonMaker: canonMaker, BASE: BASE, LKEY: LKEY, all: all, products: products, local: local, saveLocal: saveLocal, gradeAuto: gradeAuto, clone: clone, esc: esc, safeUrl: safeUrl };
+  return { AUTO_TAGS: AUTO_TAGS, autoTags: autoTags, canonMaker: canonMaker, BASE: BASE, LKEY: LKEY, all: all, products: products, local: local, saveLocal: saveLocal, gradeAuto: gradeAuto, clone: clone, esc: esc, safeUrl: safeUrl };
 })();
 </script>
 <script id="hearing-js">
@@ -3659,162 +3610,13 @@ window.NJ_HEAR = (function () {
   var el = document.getElementById("hearing-data");
   var BASE = { storeName: "", version: "", questions: {}, custom: [] };
   try { if (el) BASE = Object.assign(BASE, JSON.parse(el.textContent)); } catch (e) {}
-  var LKEY = "nj-hearing-" + (BASE.category || "pc") + "-v1";
+  var LKEY = "nj-hearing-pc-v1";
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
   function local() { try { return JSON.parse(localStorage.getItem(LKEY) || "null"); } catch (e) { return null; } }
   function cfg() { var l = local(); var c = l || clone(BASE); c.questions = c.questions || {}; c.custom = c.custom || []; return c; }
   function save(c) { try { localStorage.setItem(LKEY, JSON.stringify(c)); return true; } catch (e) { return false; } }
   function reset() { try { localStorage.removeItem(LKEY); } catch (e) {} }
-  // ---------------------------------------------------------------------
-  // 汎用フック：相談アプリの質問配列に、店舗ごとの設定（非表示・文言・選択肢・オリジナル質問）を反映
-  //   schema "std" … { id, st, t, h, o:[[ラベル, 値], ...] }（t/h/o は配列 or 関数）
-  //   schema "tb"  … { id, title:{ja,en,zh}, options:[{ text:{ja,en,zh}, val }] }（配列ごとに1段階）
-  // ---------------------------------------------------------------------
-  function key(v) { return typeof v === "string" ? v : JSON.stringify(v); }
-  function arr3(x) {
-    if (Array.isArray(x)) return [x[0] || "", x[1] || x[0] || "", x[2] || x[0] || ""];
-    if (x && typeof x === "object") return [x.ja || "", x.en || x.ja || "", x.zh || x.ja || ""];
-    return [String(x == null ? "" : x), "", ""];
-  }
-  function ov3(o) { return o && o.ja ? [o.ja, o.en || o.ja, o.zh || o.ja] : null; }
-  function like(sample, a3) {   // 元の形（配列 or {ja,en,zh}）に合わせる
-    return Array.isArray(sample) || sample == null ? a3 : { ja: a3[0], en: a3[1], zh: a3[2] };
-  }
-  function call(f) { try { return typeof f === "function" ? f() : f; } catch (e) { return null; } }
-  var DEFS = [], STG = [], LOCK = [], CUSTOM = [];
-  function hook(arrs, opt) {
-    opt = opt || {};
-    var c = cfg(), schema = opt.schema || "std", lock = opt.lock || [];
-    LOCK = lock.slice();
-    if (schema === "std" && arrs[0] && arrs[0][0] && LOCK.indexOf(arrs[0][0].id) < 0) LOCK.push(arrs[0][0].id);   // 最初の質問は流れの起点
-    // 質問の順番を id の一覧（例：{1:[...],2:[...]}）で持つアプリ用
-    var flow = opt.flow || null, fkeys = flow ? Object.keys(flow).map(Number).sort(function (a, b) { return a - b; }) : [];
-    function stageOf(id) { for (var i = 0; i < fkeys.length; i++) if (flow[fkeys[i]].indexOf(id) >= 0) return fkeys[i]; return null; }
-    if (flow && fkeys.length && flow[fkeys[0]][0] && LOCK.indexOf(flow[fkeys[0]][0]) < 0) LOCK.push(flow[fkeys[0]][0]);
-    lock = LOCK;
-    arrs.forEach(function (arr, ai) {
-      if (!Array.isArray(arr)) return;
-      var drop = [];
-      arr.forEach(function (q, qi) {
-        if (!q || !q.id) return;
-        var st = flow ? stageOf(q.id) : schema === "tb" ? ai : q.st, qc = c.questions[q.id] || {};
-        if (flow && st === null) return;   // 流れで使っていない質問は対象外
-        // --- 編集画面用に、元の内容を控える
-        if (!DEFS.some(function (d) { return d.id === q.id; })) {
-          var t = schema === "tb" ? q.title : call(q.t), h = schema === "tb" ? (opt.hints ? opt.hints[q.id] : q.hint) : call(q.h);
-          var oo = schema === "tb" ? (q.options || []).map(function (o) { return { v: key(o.val), l: arr3(o.text) }; })
-            : (call(q.o) || []).map(function (o) { return { v: key(o[1]), l: arr3(o[0]) }; });
-          DEFS.push({ id: q.id, st: st, cond: !!q.show, t: arr3(t), h: h ? arr3(h) : ["", "", ""], o: typeof q.o === "function" && q.id !== "size" ? oo : oo, dyn: typeof q.o === "function" });
-        }
-        // --- 非表示
-        if (qc.hidden && lock.indexOf(q.id) < 0 && !(schema === "std" && qi === 0 && ai === 0)) {
-          if (flow) fkeys.forEach(function (k) { var j = flow[k].indexOf(q.id); j >= 0 && flow[k].splice(j, 1); });
-          else drop.push(q);
-          return;
-        }
-        // --- 文言
-        var nt = ov3(qc.t), nh = ov3(qc.h);
-        if (schema === "tb") {
-          nt && (q.title = { ja: nt[0], en: nt[1], zh: nt[2] });
-          nh && opt.hints && (opt.hints[q.id] = nh);
-        } else {
-          if (nt) { var t0 = call(q.t); q.t = typeof q.t === "function" ? function () { return like(t0, nt); } : like(q.t, nt); if (q.tn) q.tn = like(q.tn, nt); }
-          if (nh) { var h0 = call(q.h); q.h = typeof q.h === "function" ? function () { return like(h0, nh); } : like(q.h, nh); if (q.hn) q.hn = like(q.hn, nh); }
-        }
-        // --- 選択肢（非表示・言い回し・並び順）
-        var ocfg = qc.opts || {}, order = qc.order || [];
-        if (!Object.keys(ocfg).length && !order.length) return;
-        function tr(list, isTb) {
-          if (!Array.isArray(list)) return list;
-          var a = list.filter(function (o) { var k = key(isTb ? o.val : o[1]); return !(ocfg[k] && ocfg[k].hidden); }).map(function (o) {
-            var k = key(isTb ? o.val : o[1]), lb = ocfg[k] && ov3(ocfg[k].label);
-            if (!lb) return o;
-            if (isTb) { var n = Object.assign({}, o); n.text = { ja: lb[0], en: lb[1], zh: lb[2] }; return n; }
-            return [like(o[0], lb), o[1]];
-          });
-          if (a.length < 1) a = list;
-          if (order.length) a.sort(function (x, y) { return (order.indexOf(key(isTb ? x.val : x[1])) + 1 || 999) - (order.indexOf(key(isTb ? y.val : y[1])) + 1 || 999); });
-          return a;
-        }
-        if (schema === "tb") q.options = tr(q.options, true);
-        else if (typeof q.o === "function") { var f = q.o; q.o = function () { return tr(f.apply(this, arguments), false); }; }
-        else q.o = tr(q.o, false);
-      });
-      drop.forEach(function (q) { var i = arr.indexOf(q); i >= 0 && arr.splice(i, 1); });
-    });
-    // --- 店舗オリジナルの質問
-    (c.custom || []).forEach(function (x) {
-      if (!x || x.hidden || !x.t || !x.t.ja) return;
-      var os = (x.o || []).filter(function (o) { return o && o.label && o.label.ja; });
-      if (os.length < 2) return;
-      var id = "x_" + x.id, st = +x.st || 0;
-      CUSTOM.push({ id: id, t: ov3(x.t), o: os.map(function (o) { return ov3(o.label); }) });
-      if (schema === "tb") {
-        var target = flow ? arrs[0] : (arrs[st] || arrs[arrs.length - 1]);
-        if (opt.hints) opt.hints[id] = ov3(x.h) || ["", "", ""];
-        if (flow) { var fk = fkeys.indexOf(st) >= 0 ? st : fkeys[fkeys.length - 1]; var fl = flow[fk], at = fk === fkeys[fkeys.length - 1] ? fl.length : fl.length; fl.splice(at, 0, id); }
-        target.push({ id: id, custom: true, title: { ja: x.t.ja, en: x.t.en || x.t.ja, zh: x.t.zh || x.t.ja }, options: os.map(function (o, i) { return { text: { ja: o.label.ja, en: o.label.en || o.label.ja, zh: o.label.zh || o.label.ja }, val: id + "_" + i }; }) });
-      } else {
-        var samp = (arrs[0] || [])[0] || {}, tS = call(samp.t), oS = (call(samp.o) || [[[]]])[0][0];
-        // 同じステップを持つ流れすべてに入れる（例：ドライヤーとヘアアイロンの両方の流れ）
-        var targets = arrs.filter(function (a) { return Array.isArray(a) && a.some(function (q) { return q.st === st; }); });
-        if (!targets.length) targets = [arrs[0]];
-        targets.forEach(function (tg) {
-          var base = {};   // 元の質問にある配列項目（例：効く評価軸 k）は空で用意して、表示処理が止まらないようにする
-          Object.keys(samp).forEach(function (pk) { if (Array.isArray(samp[pk]) && ["t", "h", "o", "tn", "hn"].indexOf(pk) < 0) base[pk] = []; });
-          tg.push(Object.assign(base, opt.customExtra || {}, {
-            id: id, custom: true, st: st, t: like(tS, ov3(x.t)), h: like(tS, ov3(x.h) || ["", "", ""]),
-            o: os.map(function (o, i) { return [like(oS, ov3(o.label)), id + "_" + i]; })
-          }));
-        });
-      }
-    });
-    var sts = []; DEFS.forEach(function (d) { sts.indexOf(d.st) < 0 && sts.push(d.st); });
-    sts.sort(function (a, b) { return a - b; });
-    STG = sts.map(function (s, i) {
-      var first = DEFS.filter(function (d) { return d.st === s; })[0];
-      return [s, "ステップ" + (i + 1) + (first ? "（" + first.t[0].replace(/[？?].*$/, "").slice(0, 18) + "…）" : "")];
-    });
-    if (opt.stageNames) STG = STG.map(function (x) { return [x[0], opt.stageNames[x[0]] || x[1]]; });
-    window.NJ_HEAR_DEFS = { defs: function () { return DEFS; }, stages: STG, locked: LOCK, custom: opt.noCustom ? false : true };
-    if (opt.root) watchSheet(opt.root);
-  }
-  // ---- スタッフ確認シート：店舗名と、店舗オリジナル質問の答えを書き足す
-  function watchSheet(rootId) {
-    var root = document.getElementById(rootId); if (!root) return;
-    var ans = {};
-    root.addEventListener("click", function (e) {
-      var b = e.target.closest && e.target.closest("button,[data-a],[data-v],[data-i]"); if (!b) return;
-      var box = b.closest('[class$="-q"],.fr-q,.sv-q,.tb-q') || root, h = box.querySelector("h2,h3");
-      var title = h ? h.textContent.trim() : "";
-      CUSTOM.forEach(function (c) {
-        if (c.t.indexOf(title) < 0) return;
-        var txt = b.textContent.trim();
-        c.o.forEach(function (o) { o.some(function (l) { return l && txt.indexOf(l) >= 0; }) && (ans[c.id] = { t: c.t, o: o }); });
-      });
-    }, true);
-    function li() { try { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; } catch (e) { return 0; } }
-    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
-    new MutationObserver(function () {
-      var ss = root.querySelector(".fr-ss,.sv-ss,[class$='-ss']");
-      if (!ss || ss.getAttribute("data-nj")) return;
-      ss.setAttribute("data-nj", "1");
-      var c = cfg();
-      if (c.storeName && ss.textContent.indexOf(c.storeName) < 0) {
-        var hd = ss.firstElementChild, tag = document.createElement("b");
-        tag.style.cssText = "font-size:.86rem;color:#111827;margin-left:auto"; tag.textContent = c.storeName;
-        hd && hd.style && (hd.style.display = "flex", hd.style.alignItems = "center", hd.style.gap = "8px"); hd ? hd.appendChild(tag) : ss.insertBefore(tag, ss.firstChild);
-      }
-      var tb = ss.querySelector("table");
-      Object.keys(ans).forEach(function (id) {
-        var a = ans[id]; if (ss.textContent.indexOf(a.t[li()] || a.t[0]) >= 0) return;
-        var row = "<tr><td>" + esc((a.t[li()] || a.t[0]).replace(/[？?]$/, "")) + "</td><td>" + esc(a.o[li()] || a.o[0]) + "</td></tr>";
-        if (tb) (tb.tBodies[0] || tb).insertAdjacentHTML("beforeend", row);
-        else ss.insertAdjacentHTML("beforeend", '<table style="width:100%">' + row + "</table>");
-      });
-    }).observe(root, { childList: true, subtree: true });
-  }
-  return { BASE: BASE, LKEY: LKEY, cfg: cfg, save: save, reset: reset, isLocal: function () { return !!local(); }, clone: clone, hook: hook };
+  return { BASE: BASE, LKEY: LKEY, cfg: cfg, save: save, reset: reset, isLocal: function () { return !!local(); }, clone: clone };
 })();
 </script>
 <script id="inventory-admin-js">
@@ -3839,19 +3641,6 @@ window.NJ_HEAR = (function () {
   var COLORS = ["#2563eb", "#7c3aed", "#db2777", "#f59e0b", "#10b981", "#0ea5e9", "#64748b", "#ef4444"];
   var BUCKETS = [[0, 80000, "〜8万"], [80000, 120000, "8〜12万"], [120000, 160000, "12〜16万"], [160000, 200000, "16〜20万"], [200000, 1e12, "20万〜"]];
   var SS = { unlocked: "nj-inv-unlocked", toast: "nj-inv-toast", dash: "nj-inv-dash" };
-  // ---- 商品カテゴリごとの設定（在庫データの schema から）
-  var SC = B.schema || {};
-  var IS_PC = B.category === "pc";
-  if (SC.grades) GRADE_KEYS = SC.grades;
-  if (SC.buckets) BUCKETS = SC.buckets;
-  var ICON = SC.icon || "📦";
-  var FIELDS = SC.fields || [];
-  var LISTF = SC.listFields || [];
-  (SC.makers || []).forEach(function (m) {
-    if (!MAKERS.some(function (x) { return x[0] === m[0]; })) MAKERS.push([m[0], new RegExp(m[1] || m[0].replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i")]);
-  });
-  if (!IS_PC && SC.makers) MAKERS = MAKERS.filter(function (m) { return SC.makers.some(function (x) { return x[0] === m[0]; }); });
-  function fmtF(fd, v) { return v == null || v === "" ? "" : (fd.pre || "") + v + (fd.unit || ""); }
 
   var root, toasts, filt = { q: "", st: "active" }, dirty = false, openRow = null, mode = "inv";
   var $ = function (s, r) { return (r || root).querySelector(s); };
@@ -4034,16 +3823,16 @@ window.NJ_HEAR = (function () {
     g.addEventListener("click", open);
     document.body.appendChild(g);
     // 入口②：PC相談の上のバーに「在庫管理」ボタンを常に表示
-    var app = document.getElementById(SC.root || "pc-app");
+    var app = document.getElementById("pc-app");
     if (app) {
       var put = function () {
-        var top = app.querySelector(".fr-top,.sv-top");
+        var top = app.querySelector(".fr-top");
         if (top && !top.querySelector(".iv-entry")) {
           var b = document.createElement("button");
           b.type = "button"; b.className = "iv-entry"; b.title = "在庫管理（スタッフ用・暗証番号が必要）";
           b.innerHTML = '<span class="lk">🔐</span><span class="tx">在庫管理</span>';
           b.addEventListener("click", function (e) { e.stopPropagation(); open(); });
-          var pill = top.querySelector(".fr-pill,.sv-pill");
+          var pill = top.querySelector(".fr-pill");
           pill ? top.insertBefore(b, pill.nextSibling) : top.appendChild(b);
         }
         document.body.classList.toggle("iv-app-on", app.classList.contains("on"));
@@ -4099,7 +3888,7 @@ window.NJ_HEAR = (function () {
       + '<button class="iv-ibtn" data-a="menu" aria-label="メニュー" title="書き出し・読み込みなど">⋯</button>'
       + '<button class="iv-ibtn" data-a="close" aria-label="閉じる" title="閉じる">✕</button></div>'
       + '<div class="iv-tabs"><span class="iv-tabpill"></span><button class="iv-tab' + (mode === "inv" ? " on" : "") + '" data-a="tab" data-v="inv">📦 在庫</button><button class="iv-tab' + (mode === "hear" ? " on" : "") + '" data-a="tab" data-v="hear">💬 ヒアリング</button></div>'
-      + '<div class="iv-search"><span class="ico">🔍</span><input id="iv-q" type="search" placeholder="型番・商品名・メーカーで検索" value="' + esc(filt.q) + '" aria-label="在庫を検索"></div>'
+      + '<div class="iv-search"><span class="ico">🔍</span><input id="iv-q" type="search" placeholder="型番・商品名・メーカー・CPUで検索" value="' + esc(filt.q) + '" aria-label="在庫を検索"></div>'
       + '<div class="iv-chips" id="iv-chips"><span class="iv-pill"></span>'
       + [["active", "販売中"], ["ended", "販売終了"], ["local", "この端末で編集"], ["all", "すべて"]].map(function (c) {
         return '<button class="iv-chip' + (filt.st === c[0] ? " on" : "") + '" data-a="chip" data-v="' + c[0] + '">' + c[1] + "<b data-n=\"" + c[0] + "\">0</b></button>";
@@ -4121,8 +3910,8 @@ window.NJ_HEAR = (function () {
     q.addEventListener("input", function () { clearTimeout(tm); tm = setTimeout(function () { filt.q = q.value; renderList(false); }, 120); });
     attachAC(q, function (s) {
       s = s.toLowerCase();
-      return INV.all().filter(function (p) { return [p.model, p.name, p.maker, p.jan].concat(LISTF.map(function (k) { return p[k]; })).join(" ").toLowerCase().indexOf(s) >= 0; }).map(function (p) {
-        return { label: dispName(p), sub: p.model + " ・ " + yen(p.price), value: p.model, id: p.id, icon: p.status === "ended" ? "⏸" : ICON };
+      return INV.all().filter(function (p) { return [p.model, p.name, p.maker, p.cpu, p.jan].join(" ").toLowerCase().indexOf(s) >= 0; }).map(function (p) {
+        return { label: dispName(p), sub: p.model + " ・ " + yen(p.price), value: p.model, id: p.id, icon: p.status === "ended" ? "⏸" : "💻" };
       });
     }, function (it) { openEdit(byId(it.id)); });
     if (withSkeleton && !reduce) {
@@ -4196,7 +3985,7 @@ window.NJ_HEAR = (function () {
       if (filt.st === "active" && p.status === "ended") return false;
       if (filt.st === "ended" && p.status !== "ended") return false;
       if (filt.st === "local" && !p._local) return false;
-      return !q || [p.model, p.name, p.maker, p.jan, p.note].concat(LISTF.map(function (k) { return p[k]; })).join(" ").toLowerCase().indexOf(q) >= 0;
+      return !q || [p.model, p.name, p.maker, p.cpu, p.jan, p.note].join(" ").toLowerCase().indexOf(q) >= 0;
     }).sort(function (a, b) { return String(b.updated || "").localeCompare(String(a.updated || "")) || (a.price - b.price); });
     var list = $("#iv-list");
     list.innerHTML = rows.length ? rows.map(function (p, i) { return row(p, anim ? Math.min(i, 14) : 0, anim); }).join("")
@@ -4205,11 +3994,11 @@ window.NJ_HEAR = (function () {
     openRow = null;
   }
   function row(p, i, anim) {
-    var th = p.photo ? '<img class="th" src="' + esc(p.photo) + '" alt="">' : '<div class="th">' + ICON + "</div>";
+    var th = p.photo ? '<img class="th" src="' + esc(p.photo) + '" alt="">' : '<div class="th">💻</div>';
     var tg = '<span class="tg mdl">' + esc(p.model) + "</span>" + (p.status === "ended" ? '<span class="tg end">販売終了</span>' : "")
       + (p._new ? '<span class="tg new">新規</span>' : p._local ? '<span class="tg loc">端末で編集</span>' : "")
       + '<span class="tg">' + esc(short(gname(p.groupId))) + "</span>"
-      + LISTF.map(function (k) { var fd = FIELDS.filter(function (x) { return x.k === k; })[0] || { k: k }, v = fmtF(fd, p[k]); return v ? '<span class="tg">' + esc(v) + "</span>" : ""; }).join("")
+      + (p.cpu ? '<span class="tg">' + esc(p.cpu) + "</span>" : "") + (p.ram ? '<span class="tg">' + esc(p.ram) + "GB</span>" : "")
       + '<span class="tg">🔗 ' + (p.links || []).length + "</span>";
     var ended = p.status === "ended";
     return '<div class="sw' + (ended ? " ended" : "") + '" data-id="' + esc(p.id) + '" style="--i:' + i + (anim ? "" : ";animation:none") + '">'
@@ -4437,11 +4226,9 @@ window.NJ_HEAR = (function () {
 
   // ---------------------------------------------------------------- 編集シート
   function blank() {
-    var b = { id: "u" + Date.now().toString(36), status: "active", maker: "", model: "", name: "", groupId: "",
-      price: "", size: { w: null, d: null, h: null }, specs: {}, jan: "",
+    return { id: "u" + Date.now().toString(36), status: "active", maker: "", model: "", name: "", groupId: "",
+      price: "", cpu: "", ram: "", ssd: "", screen: "", weight: "", office: "なし", size: { w: null, d: null, h: null }, specs: {}, jan: "",
       tags: [], grades: {}, desc: { ja: "", en: "", zh: "" }, links: [], note: "", updated: today(), photo: null };
-    FIELDS.forEach(function (fd) { b[fd.k] = fd.def != null ? fd.def : ""; });
-    return b;
   }
   function f(label, key, val, type, wide) {
     return '<div class="iv-f' + (wide ? " wide" : "") + '"><label>' + label + '</label><input data-k="' + key + '" type="' + (type || "text") + '"'
@@ -4502,10 +4289,9 @@ window.NJ_HEAR = (function () {
       + f("価格（税込・円） ※必須", "price", p.price, "number") + f("JANコード", "jan", p.jan) + f("更新日", "updated", p.updated, "date") + "</div>";
     // スペック
     h += '<div class="iv-sec">スペック・大きさ</div><div class="iv-grid">'
-      + FIELDS.map(function (fd) {
-        if (fd.t === "seg") return '<div class="iv-f"><label>' + esc(fd.l) + "</label>" + seg(fd.k, p[fd.k] != null && p[fd.k] !== "" ? String(p[fd.k]) : fd.o[0][0], fd.o) + "</div>";
-        return f(fd.l, fd.k, p[fd.k], fd.t === "number" ? "number" : "text");
-      }).join("")
+      + f("CPU", "cpu", p.cpu) + f("メモリ（GB）", "ram", p.ram, "number") + f("SSD（GB）", "ssd", p.ssd, "number")
+      + f("画面（インチ）", "screen", p.screen, "number") + f("重さ（kg）", "weight", p.weight, "number")
+      + '<div class="iv-f"><label>Office</label>' + seg("office", p.office || "なし", [["なし", "なし"], ["搭載", "搭載"]]) + "</div>"
       + f("幅 W（mm）", "size.w", p.size && p.size.w, "number") + f("奥行 D（mm）", "size.d", p.size && p.size.d, "number") + f("高さ H（mm）", "size.h", p.size && p.size.h, "number")
       + "</div></div>";
     h += '<div class="iv-note" style="font-weight:800;margin-top:12px">その他のスペック</div><div id="iv-specs">' + Object.keys(p.specs || {}).map(function (k) { return kv(k, p.specs[k]); }).join("") + "</div>"
@@ -4515,15 +4301,14 @@ window.NJ_HEAR = (function () {
       + '<button class="iv-b" data-e="link-add">＋ リンクを追加</button> <button class="iv-b warn" data-e="link-auto">🌐 型番からメーカーHP・取説を探す</button>'
       + '<div class="iv-note">メーカーと型番から公式サイト・取扱説明書のリンク（または公式サイト内の検索）を作ります。↗ で開き、正しいページが見つかったらそのURLに貼り替えると、お客様にも直接そのページが表示されます。</div>';
     // 見せ方
-    var autoT = IS_PC ? INV.autoTags(p) : [], AUTO = IS_PC ? INV.AUTO_TAGS.filter(function (x) { return x !== "ai"; }) : [];
-    var TAGO = B.tagOptions || {};
-    h += '<div class="iv-sec">相談での見せ方</div>' + (Object.keys(TAGO).length ? '<div class="iv-chk">' : "<div>") + Object.keys(TAGO).map(function (t) {
-      if (AUTO.indexOf(t) >= 0) return '<label class="auto" title="メーカー・スペックから自動で決まります"><input type="checkbox" disabled' + (autoT.indexOf(t) >= 0 ? " checked" : "") + ">" + esc(TAGO[t]) + "<i>自動</i></label>";
-      return '<label><input type="checkbox" data-tag="' + t + '"' + ((p.tags || []).indexOf(t) >= 0 || (t === "ai" && autoT.indexOf("ai") >= 0) ? " checked" : "") + ">" + esc(TAGO[t]) + "</label>";
-    }).join("") + "</div>" + (IS_PC ? '<div class="iv-note">「自動」のタグ（国内メーカー・VAIO・大画面・軽量・デスクトップ）は、メーカーと画面サイズ・重さから自動で付きます。AI PCは Core Ultra / Ryzen AI などのCPUなら自動で付きます。</div>' : "") + '<div class="iv-note" style="font-weight:800;margin-top:12px">' + (IS_PC ? "評価（空欄はスペックから自動）" : "評価（◎◯△・空欄は◯として扱います）") + '</div><div class="iv-grid">'
+    var autoT = INV.autoTags(p), AUTO = INV.AUTO_TAGS.filter(function (x) { return x !== "ai"; });
+    h += '<div class="iv-sec">相談での見せ方</div><div class="iv-chk">' + Object.keys(B.tagOptions).map(function (t) {
+      if (AUTO.indexOf(t) >= 0) return '<label class="auto" title="メーカー・スペックから自動で決まります"><input type="checkbox" disabled' + (autoT.indexOf(t) >= 0 ? " checked" : "") + ">" + esc(B.tagOptions[t]) + "<i>自動</i></label>";
+      return '<label><input type="checkbox" data-tag="' + t + '"' + ((p.tags || []).indexOf(t) >= 0 || (t === "ai" && autoT.indexOf("ai") >= 0) ? " checked" : "") + ">" + esc(B.tagOptions[t]) + "</label>";
+    }).join("") + '</div><div class="iv-note">「自動」のタグ（国内メーカー・VAIO・大画面・軽量・デスクトップ）は、メーカーと画面サイズ・重さから自動で付きます。AI PCは Core Ultra / Ryzen AI などのCPUなら自動で付きます。</div><div class="iv-note" style="font-weight:800;margin-top:12px">評価（空欄はスペックから自動）</div><div class="iv-grid">'
       + GRADE_KEYS.map(function (g) {
         var v = (p.grades || {})[g[0]] || "";
-        return '<div class="iv-f"><label>' + g[1] + "</label>" + seg("g." + g[0], v, [["", IS_PC ? "自動" : "―"]].concat((SC.gradeVals || ["◎", "◯", "△"]).map(function (x) { return [x, x]; }))) + "</div>";
+        return '<div class="iv-f"><label>' + g[1] + "</label>" + seg("g." + g[0], v, [["", "自動"], ["◎", "◎"], ["◯", "◯"], ["△", "△"]]) + "</div>";
       }).join("") + "</div>"
       + '<div class="iv-grid" style="margin-top:10px">' + f("ひとこと説明（日本語）", "desc.ja", p.desc && p.desc.ja, "text", 1)
       + f("ひとこと説明（English・空欄なら日本語）", "desc.en", p.desc && p.desc.en, "text", 1) + f("ひとこと説明（中文・空欄なら日本語）", "desc.zh", p.desc && p.desc.zh, "text", 1)
@@ -4534,7 +4319,7 @@ window.NJ_HEAR = (function () {
       + (isNew ? "" : (p.status === "ended" ? '<button class="iv-b warn" data-e="revive">▶ 販売中に戻す</button>' : '<button class="iv-b warn" data-e="end">⏸ 販売終了</button>') + '<button class="iv-b dng" data-e="del">🗑</button>');
     // オートコンプリート
     attachAC($('[data-k="maker"]', s.body), srcList(function () { return MAKERS.map(function (m) { return m[0]; }).concat(uniq("maker")).filter(function (v, i, a) { return a.indexOf(v) === i; }); }), null, { showEmpty: true });
-    FIELDS.forEach(function (fd) { if (fd.t !== "number" && fd.t !== "seg") { var el = $('[data-k="' + fd.k + '"]', s.body); el && attachAC(el, srcList(function () { return uniq(fd.k); })); } });
+    attachAC($('[data-k="cpu"]', s.body), srcList(function () { return uniq("cpu"); }));
     attachAC($('[data-k="name"]', s.body), srcList(function () { return uniq("name"); }));
     attachAC($('[data-k="model"]', s.body), function (q) {
       q = q.toLowerCase();
@@ -4697,7 +4482,8 @@ window.NJ_HEAR = (function () {
     }
     function set(k, v) { if (v != null && v !== "" && (p[k] == null || p[k] === "" || fromOcr)) { p[k] = v; got.push(k); } }
     set("model", o.model); set("price", o.price); set("maker", o.maker); set("jan", o.jan);
-    if (IS_PC) { set("cpu", o.cpu); set("ram", o.ram); set("ssd", o.ssd); set("screen", o.screen); set("weight", o.weight); o.office && set("office", o.office); }
+    set("cpu", o.cpu); set("ram", o.ram); set("ssd", o.ssd); set("screen", o.screen); set("weight", o.weight);
+    o.office && set("office", o.office);
     if (o.size) { p.size = o.size; got.push("size.w", "size.d", "size.h"); }
     if (!p.name && p.model) { p.name = p.model; got.push("name"); }
     var linked = false;
@@ -4741,7 +4527,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
+      download(location.pathname.split("/").pop() || "index.html", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -4767,9 +4553,7 @@ window.NJ_HEAR = (function () {
   var H = window.NJ_HEAR;
   var STAGES = [[0, "はじめに"], [1, "使う場所の条件（持ち歩き・サイズ・重さなど）"], [2, "使い方・暮らし方"], [3, "最後（譲れない1点・ご予算）"]];
   var LOCKED = { sit: "最初の質問（新しく決める／買い替え／2台目）は、このあとの質問の流れを決めるため非表示にできません。" };
-  function isLock(id) { var D = window.NJ_HEAR_DEFS; return D && D.locked ? D.locked.indexOf(id) >= 0 : id === "sit"; }
-  function defs() { try { var D = window.NJ_HEAR_DEFS || window.PC_HEAR; return D ? D.defs() : []; } catch (e) { return []; } }
-  function stages() { try { return (window.NJ_HEAR_DEFS && window.NJ_HEAR_DEFS.stages) || STAGES; } catch (e) { return STAGES; } }
+  function defs() { try { return window.PC_HEAR ? window.PC_HEAR.defs() : []; } catch (e) { return []; } }
   function j3(a) { return Array.isArray(a) ? a[0] : (a && a.ja) || ""; }
   function hcommit(mut, msg) {
     var before = JSON.stringify(H.cfg()), c = H.cfg();
@@ -4789,19 +4573,19 @@ window.NJ_HEAR = (function () {
       + '<button class="iv-b pri" data-a="hv-store">保存</button></div>'
       + '<div class="iv-note" style="margin:4px 2px 14px">質問の表示・非表示、質問文や選択肢の言い回し、並び順を店舗に合わせて変えられます。店舗オリジナルの質問も追加できます（答えはスタッフ確認シートに表示され、おすすめの順位には影響しません）。'
       + (H.isLocal() ? ' <b style="color:#b45309">この端末で編集中</b>' : "") + "</div>";
-    stages().forEach(function (sg) {
+    STAGES.forEach(function (sg) {
       var qs = D.filter(function (d) { return d.st === sg[0]; });
       var cs = (c.custom || []).map(function (x, k) { return { x: x, k: k }; }).filter(function (o) { return (+o.x.st || 0) === sg[0]; });
       h += '<div class="iv-sec-h"><span>' + esc(sg[1]) + "</span><span>" + (qs.length + cs.length) + "問</span></div><div class=\"hv-list\">";
       qs.forEach(function (d) {
-        var q = c.questions[d.id] || {}, off = q.hidden && !isLock(d.id);
+        var q = c.questions[d.id] || {}, off = q.hidden && d.id !== "sit";
         var nOpt = d.o.length, nOn = d.o.filter(function (o) { return !(q.opts && q.opts[o.v] && q.opts[o.v].hidden); }).length;
         var edited = (q.t && q.t.ja) || (q.h && q.h.ja) || (q.order && q.order.length) || Object.keys(q.opts || {}).some(function (k) { return q.opts[k].label && q.opts[k].label.ja; });
         var dyn = !d.o.length;
         h += '<div class="hq-row' + (off ? " off" : "") + '" data-hq="' + esc(d.id) + '" style="--i:' + Math.min(i++, 14) + '"><div class="hq-tx"><div class="nm">' + esc((q.t && q.t.ja) || j3(d.t) || "使い方に合わせた追加の質問") + '</div><div class="mt">'
           + (d.cond ? '<span class="tg">条件付きで表示</span>' : "") + (dyn ? '<span class="tg">内容は「使い方」の回答で変わります</span>' : '<span class="tg">選択肢 ' + nOn + "/" + nOpt + "</span>")
-          + (edited ? '<span class="tg loc">文言を変更</span>' : "") + (isLock(d.id) ? '<span class="tg">必須</span>' : "") + "</div></div>"
-          + '<label class="tgl" title="表示／非表示"><input type="checkbox" data-hq-on="' + esc(d.id) + '"' + (off ? "" : " checked") + (isLock(d.id) ? " disabled" : "") + '><span></span></label></div>';
+          + (edited ? '<span class="tg loc">文言を変更</span>' : "") + (d.id === "sit" ? '<span class="tg">必須</span>' : "") + "</div></div>"
+          + '<label class="tgl" title="表示／非表示"><input type="checkbox" data-hq-on="' + esc(d.id) + '"' + (off ? "" : " checked") + (d.id === "sit" ? " disabled" : "") + '><span></span></label></div>';
       });
       cs.forEach(function (o) {
         var x = o.x;
@@ -4840,7 +4624,7 @@ window.NJ_HEAR = (function () {
     }
     var s = sheet({
       tall: true, title: kt("質問を編集"),
-      body: (isLock(id) ? '<div class="iv-note" style="background:#fef3c7;padding:10px;border-radius:12px;color:#92400e">' + (LOCKED[id] || "この質問は、このあとの質問の流れやおすすめの計算に必要なため非表示にできません（文言・選択肢の言い回しは変えられます）。") + "</div>" : "")
+      body: (LOCKED[id] ? '<div class="iv-note" style="background:#fef3c7;padding:10px;border-radius:12px;color:#92400e">' + LOCKED[id] + "</div>" : "")
         + '<div class="iv-sec">質問文</div><div class="iv-grid">' + langRows("t", q.t, d.t) + "</div>"
         + '<div class="iv-sec">補足（💡のヒント）</div><div class="iv-grid">' + langRows("h", q.h, d.h) + "</div>"
         + '<div class="iv-sec">選択肢（スイッチで表示／非表示、↑↓で並び替え）</div><div id="hv-opts">' + order.map(optRow).join("") + "</div>"
@@ -4888,7 +4672,7 @@ window.NJ_HEAR = (function () {
       return '<div class="hv-opt" data-n="' + n + '"><div class="hv-opt-h"><b>選択肢 ' + (n + 1) + '</b><span class="sp"></span><button class="iv-x" data-e="odel" aria-label="削除">×</button></div><div class="iv-grid">' + langRows("o_" + n, o.label, ["", "", ""]) + "</div></div>";
     }
     function draw(api) {
-      api.body.innerHTML = '<div class="iv-sec">どこで聞く？</div><div class="iv-f"><select id="hv-st">' + stages().map(function (sg) { return '<option value="' + sg[0] + '"' + (sg[0] === (+x.st || 0) ? " selected" : "") + ">" + esc(sg[1]) + "</option>"; }).join("") + "</select></div>"
+      api.body.innerHTML = '<div class="iv-sec">どこで聞く？</div><div class="iv-f"><select id="hv-st">' + STAGES.map(function (sg) { return '<option value="' + sg[0] + '"' + (sg[0] === (+x.st || 0) ? " selected" : "") + ">" + esc(sg[1]) + "</option>"; }).join("") + "</select></div>"
         + '<div class="iv-sec">質問文</div><div class="iv-grid">' + langRows("t", x.t, ["例：下取りを希望されますか？", "", ""]) + "</div>"
         + '<div class="iv-sec">補足（💡のヒント・任意）</div><div class="iv-grid">' + langRows("h", x.h, ["例：古いPCの下取りで値引きできる場合があります", "", ""]) + "</div>"
         + '<div class="iv-sec">選択肢</div><div id="hv-copts">' + (x.o || []).map(oRow).join("") + '</div><button class="iv-b" data-e="oadd">＋ 選択肢を追加</button>'

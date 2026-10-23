@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
 <title>エアコンの相談 | イオンモール成田店</title>
@@ -1294,11 +1293,11 @@ html[data-device=tablet] .fr-wrap {
   <div class="pg-ico" aria-hidden="true">📺</div>
   <h1 class="pg-ttl">エアコン</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="season-av/">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="https://information000.github.io/Nojima/season-av/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
+<div id="modal"><a id="modal-link-btn" href="#"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -1339,7 +1338,7 @@ var currentLang = "ja";
   "use strict";
   var APP = "aircon";                 // このページの相談アプリ
   var ROOT_ID = "ac-app";            // アプリの表示エリア
-  var AREA_URL = "season-av/";       // 閉じたときに戻るエリアページ
+  var AREA_URL = "https://information000.github.io/Nojima/season-av/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -2948,41 +2947,7 @@ window.NJ_INV = (function () {
   };
   window.__njLinksAuto = orig;
 
-  // ---- 結果カードへリンクを差し込む（njLinks を呼ばないアプリ用）
-  function autoLinks(p) {
-    var m = encodeURIComponent(p.model || p.name || ""), mk = encodeURIComponent((p.maker || "") + " ");
-    return [{ type: "official", url: "https://www.google.com/search?q=" + mk + m }, { type: "manual", url: "https://www.google.com/search?q=" + mk + m + "+%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8" }];
-  }
-  function injectLinks(rootId, sel) {
-    var root = null, busy = false;   // 相談画面はあとから作られることがあるので毎回さがす
-    // おすすめカード（.fr-rec / .sv-rec）ごとに、カード内の商品名・型番から商品を特定してリンクを付ける
-    function run() {
-      root = document.getElementById(rootId); if (busy || !root) return; busy = true;
-      try {
-        var cards = root.querySelectorAll(sel || ".fr-rec,.sv-rec");
-        if (cards.length) {
-          var ps = products();
-          Array.prototype.forEach.call(cards, function (c) {
-            if (c.querySelector(".nj-lk")) return;
-            var nm = c.querySelector("[class$='-name']"), t = (nm && nm.textContent) || c.textContent || "", hit = null;
-            var best = 0;   // いちばん長く一致した商品を採用（型番の前方一致の取り違え防止）
-            function scan(txt) { ps.forEach(function (p) { [p.model, p.name].forEach(function (k) { k = String(k || ""); if (k.length >= 4 && k.length > best && txt.indexOf(k) >= 0) { hit = p; best = k.length; } }); }); }
-            scan(t); if (!hit && nm) scan(c.textContent || "");
-            if (!hit) return;
-            var html = window.njLinks(Object.assign({}, hit, { links: (hit.links && hit.links.length) ? hit.links : autoLinks(hit) }));
-            if (html) c.insertAdjacentHTML("beforeend", html);
-          });
-        }
-      } catch (e) { console.warn("nj links", e); }
-      busy = false;
-    }
-    var tm; new MutationObserver(function (ms) {
-      for (var i = 0; i < ms.length; i++) { var t = ms[i].target; if (t.closest && t.closest(".nj-lk")) continue; if (!tm) tm = setTimeout(function () { tm = 0; run(); setTimeout(run, 700); setTimeout(run, 1600); }, 150); return; }
-    }).observe(document.body, { childList: true, subtree: true });
-    run();
-  }
-
-  return { injectLinks: injectLinks, AUTO_TAGS: AUTO_TAGS, autoTags: autoTags, canonMaker: canonMaker, BASE: BASE, LKEY: LKEY, all: all, products: products, local: local, saveLocal: saveLocal, gradeAuto: gradeAuto, clone: clone, esc: esc, safeUrl: safeUrl };
+  return { AUTO_TAGS: AUTO_TAGS, autoTags: autoTags, canonMaker: canonMaker, BASE: BASE, LKEY: LKEY, all: all, products: products, local: local, saveLocal: saveLocal, gradeAuto: gradeAuto, clone: clone, esc: esc, safeUrl: safeUrl };
 })();
 </script>
 <script id="hearing-js">
@@ -3001,156 +2966,7 @@ window.NJ_HEAR = (function () {
   function cfg() { var l = local(); var c = l || clone(BASE); c.questions = c.questions || {}; c.custom = c.custom || []; return c; }
   function save(c) { try { localStorage.setItem(LKEY, JSON.stringify(c)); return true; } catch (e) { return false; } }
   function reset() { try { localStorage.removeItem(LKEY); } catch (e) {} }
-  // ---------------------------------------------------------------------
-  // 汎用フック：相談アプリの質問配列に、店舗ごとの設定（非表示・文言・選択肢・オリジナル質問）を反映
-  //   schema "std" … { id, st, t, h, o:[[ラベル, 値], ...] }（t/h/o は配列 or 関数）
-  //   schema "tb"  … { id, title:{ja,en,zh}, options:[{ text:{ja,en,zh}, val }] }（配列ごとに1段階）
-  // ---------------------------------------------------------------------
-  function key(v) { return typeof v === "string" ? v : JSON.stringify(v); }
-  function arr3(x) {
-    if (Array.isArray(x)) return [x[0] || "", x[1] || x[0] || "", x[2] || x[0] || ""];
-    if (x && typeof x === "object") return [x.ja || "", x.en || x.ja || "", x.zh || x.ja || ""];
-    return [String(x == null ? "" : x), "", ""];
-  }
-  function ov3(o) { return o && o.ja ? [o.ja, o.en || o.ja, o.zh || o.ja] : null; }
-  function like(sample, a3) {   // 元の形（配列 or {ja,en,zh}）に合わせる
-    return Array.isArray(sample) || sample == null ? a3 : { ja: a3[0], en: a3[1], zh: a3[2] };
-  }
-  function call(f) { try { return typeof f === "function" ? f() : f; } catch (e) { return null; } }
-  var DEFS = [], STG = [], LOCK = [], CUSTOM = [];
-  function hook(arrs, opt) {
-    opt = opt || {};
-    var c = cfg(), schema = opt.schema || "std", lock = opt.lock || [];
-    LOCK = lock.slice();
-    if (schema === "std" && arrs[0] && arrs[0][0] && LOCK.indexOf(arrs[0][0].id) < 0) LOCK.push(arrs[0][0].id);   // 最初の質問は流れの起点
-    // 質問の順番を id の一覧（例：{1:[...],2:[...]}）で持つアプリ用
-    var flow = opt.flow || null, fkeys = flow ? Object.keys(flow).map(Number).sort(function (a, b) { return a - b; }) : [];
-    function stageOf(id) { for (var i = 0; i < fkeys.length; i++) if (flow[fkeys[i]].indexOf(id) >= 0) return fkeys[i]; return null; }
-    if (flow && fkeys.length && flow[fkeys[0]][0] && LOCK.indexOf(flow[fkeys[0]][0]) < 0) LOCK.push(flow[fkeys[0]][0]);
-    lock = LOCK;
-    arrs.forEach(function (arr, ai) {
-      if (!Array.isArray(arr)) return;
-      var drop = [];
-      arr.forEach(function (q, qi) {
-        if (!q || !q.id) return;
-        var st = flow ? stageOf(q.id) : schema === "tb" ? ai : q.st, qc = c.questions[q.id] || {};
-        if (flow && st === null) return;   // 流れで使っていない質問は対象外
-        // --- 編集画面用に、元の内容を控える
-        if (!DEFS.some(function (d) { return d.id === q.id; })) {
-          var t = schema === "tb" ? q.title : call(q.t), h = schema === "tb" ? (opt.hints ? opt.hints[q.id] : q.hint) : call(q.h);
-          var oo = schema === "tb" ? (q.options || []).map(function (o) { return { v: key(o.val), l: arr3(o.text) }; })
-            : (call(q.o) || []).map(function (o) { return { v: key(o[1]), l: arr3(o[0]) }; });
-          DEFS.push({ id: q.id, st: st, cond: !!q.show, t: arr3(t), h: h ? arr3(h) : ["", "", ""], o: typeof q.o === "function" && q.id !== "size" ? oo : oo, dyn: typeof q.o === "function" });
-        }
-        // --- 非表示
-        if (qc.hidden && lock.indexOf(q.id) < 0 && !(schema === "std" && qi === 0 && ai === 0)) {
-          if (flow) fkeys.forEach(function (k) { var j = flow[k].indexOf(q.id); j >= 0 && flow[k].splice(j, 1); });
-          else drop.push(q);
-          return;
-        }
-        // --- 文言
-        var nt = ov3(qc.t), nh = ov3(qc.h);
-        if (schema === "tb") {
-          nt && (q.title = { ja: nt[0], en: nt[1], zh: nt[2] });
-          nh && opt.hints && (opt.hints[q.id] = nh);
-        } else {
-          if (nt) { var t0 = call(q.t); q.t = typeof q.t === "function" ? function () { return like(t0, nt); } : like(q.t, nt); if (q.tn) q.tn = like(q.tn, nt); }
-          if (nh) { var h0 = call(q.h); q.h = typeof q.h === "function" ? function () { return like(h0, nh); } : like(q.h, nh); if (q.hn) q.hn = like(q.hn, nh); }
-        }
-        // --- 選択肢（非表示・言い回し・並び順）
-        var ocfg = qc.opts || {}, order = qc.order || [];
-        if (!Object.keys(ocfg).length && !order.length) return;
-        function tr(list, isTb) {
-          if (!Array.isArray(list)) return list;
-          var a = list.filter(function (o) { var k = key(isTb ? o.val : o[1]); return !(ocfg[k] && ocfg[k].hidden); }).map(function (o) {
-            var k = key(isTb ? o.val : o[1]), lb = ocfg[k] && ov3(ocfg[k].label);
-            if (!lb) return o;
-            if (isTb) { var n = Object.assign({}, o); n.text = { ja: lb[0], en: lb[1], zh: lb[2] }; return n; }
-            return [like(o[0], lb), o[1]];
-          });
-          if (a.length < 1) a = list;
-          if (order.length) a.sort(function (x, y) { return (order.indexOf(key(isTb ? x.val : x[1])) + 1 || 999) - (order.indexOf(key(isTb ? y.val : y[1])) + 1 || 999); });
-          return a;
-        }
-        if (schema === "tb") q.options = tr(q.options, true);
-        else if (typeof q.o === "function") { var f = q.o; q.o = function () { return tr(f.apply(this, arguments), false); }; }
-        else q.o = tr(q.o, false);
-      });
-      drop.forEach(function (q) { var i = arr.indexOf(q); i >= 0 && arr.splice(i, 1); });
-    });
-    // --- 店舗オリジナルの質問
-    (c.custom || []).forEach(function (x) {
-      if (!x || x.hidden || !x.t || !x.t.ja) return;
-      var os = (x.o || []).filter(function (o) { return o && o.label && o.label.ja; });
-      if (os.length < 2) return;
-      var id = "x_" + x.id, st = +x.st || 0;
-      CUSTOM.push({ id: id, t: ov3(x.t), o: os.map(function (o) { return ov3(o.label); }) });
-      if (schema === "tb") {
-        var target = flow ? arrs[0] : (arrs[st] || arrs[arrs.length - 1]);
-        if (opt.hints) opt.hints[id] = ov3(x.h) || ["", "", ""];
-        if (flow) { var fk = fkeys.indexOf(st) >= 0 ? st : fkeys[fkeys.length - 1]; var fl = flow[fk], at = fk === fkeys[fkeys.length - 1] ? fl.length : fl.length; fl.splice(at, 0, id); }
-        target.push({ id: id, custom: true, title: { ja: x.t.ja, en: x.t.en || x.t.ja, zh: x.t.zh || x.t.ja }, options: os.map(function (o, i) { return { text: { ja: o.label.ja, en: o.label.en || o.label.ja, zh: o.label.zh || o.label.ja }, val: id + "_" + i }; }) });
-      } else {
-        var samp = (arrs[0] || [])[0] || {}, tS = call(samp.t), oS = (call(samp.o) || [[[]]])[0][0];
-        // 同じステップを持つ流れすべてに入れる（例：ドライヤーとヘアアイロンの両方の流れ）
-        var targets = arrs.filter(function (a) { return Array.isArray(a) && a.some(function (q) { return q.st === st; }); });
-        if (!targets.length) targets = [arrs[0]];
-        targets.forEach(function (tg) {
-          var base = {};   // 元の質問にある配列項目（例：効く評価軸 k）は空で用意して、表示処理が止まらないようにする
-          Object.keys(samp).forEach(function (pk) { if (Array.isArray(samp[pk]) && ["t", "h", "o", "tn", "hn"].indexOf(pk) < 0) base[pk] = []; });
-          tg.push(Object.assign(base, opt.customExtra || {}, {
-            id: id, custom: true, st: st, t: like(tS, ov3(x.t)), h: like(tS, ov3(x.h) || ["", "", ""]),
-            o: os.map(function (o, i) { return [like(oS, ov3(o.label)), id + "_" + i]; })
-          }));
-        });
-      }
-    });
-    var sts = []; DEFS.forEach(function (d) { sts.indexOf(d.st) < 0 && sts.push(d.st); });
-    sts.sort(function (a, b) { return a - b; });
-    STG = sts.map(function (s, i) {
-      var first = DEFS.filter(function (d) { return d.st === s; })[0];
-      return [s, "ステップ" + (i + 1) + (first ? "（" + first.t[0].replace(/[？?].*$/, "").slice(0, 18) + "…）" : "")];
-    });
-    if (opt.stageNames) STG = STG.map(function (x) { return [x[0], opt.stageNames[x[0]] || x[1]]; });
-    window.NJ_HEAR_DEFS = { defs: function () { return DEFS; }, stages: STG, locked: LOCK, custom: opt.noCustom ? false : true };
-    if (opt.root) watchSheet(opt.root);
-  }
-  // ---- スタッフ確認シート：店舗名と、店舗オリジナル質問の答えを書き足す
-  function watchSheet(rootId) {
-    var root = document.getElementById(rootId); if (!root) return;
-    var ans = {};
-    root.addEventListener("click", function (e) {
-      var b = e.target.closest && e.target.closest("button,[data-a],[data-v],[data-i]"); if (!b) return;
-      var box = b.closest('[class$="-q"],.fr-q,.sv-q,.tb-q') || root, h = box.querySelector("h2,h3");
-      var title = h ? h.textContent.trim() : "";
-      CUSTOM.forEach(function (c) {
-        if (c.t.indexOf(title) < 0) return;
-        var txt = b.textContent.trim();
-        c.o.forEach(function (o) { o.some(function (l) { return l && txt.indexOf(l) >= 0; }) && (ans[c.id] = { t: c.t, o: o }); });
-      });
-    }, true);
-    function li() { try { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; } catch (e) { return 0; } }
-    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
-    new MutationObserver(function () {
-      var ss = root.querySelector(".fr-ss,.sv-ss,[class$='-ss']");
-      if (!ss || ss.getAttribute("data-nj")) return;
-      ss.setAttribute("data-nj", "1");
-      var c = cfg();
-      if (c.storeName && ss.textContent.indexOf(c.storeName) < 0) {
-        var hd = ss.firstElementChild, tag = document.createElement("b");
-        tag.style.cssText = "font-size:.86rem;color:#111827;margin-left:auto"; tag.textContent = c.storeName;
-        hd && hd.style && (hd.style.display = "flex", hd.style.alignItems = "center", hd.style.gap = "8px"); hd ? hd.appendChild(tag) : ss.insertBefore(tag, ss.firstChild);
-      }
-      var tb = ss.querySelector("table");
-      Object.keys(ans).forEach(function (id) {
-        var a = ans[id]; if (ss.textContent.indexOf(a.t[li()] || a.t[0]) >= 0) return;
-        var row = "<tr><td>" + esc((a.t[li()] || a.t[0]).replace(/[？?]$/, "")) + "</td><td>" + esc(a.o[li()] || a.o[0]) + "</td></tr>";
-        if (tb) (tb.tBodies[0] || tb).insertAdjacentHTML("beforeend", row);
-        else ss.insertAdjacentHTML("beforeend", '<table style="width:100%">' + row + "</table>");
-      });
-    }).observe(root, { childList: true, subtree: true });
-  }
-  return { BASE: BASE, LKEY: LKEY, cfg: cfg, save: save, reset: reset, isLocal: function () { return !!local(); }, clone: clone, hook: hook };
+  return { BASE: BASE, LKEY: LKEY, cfg: cfg, save: save, reset: reset, isLocal: function () { return !!local(); }, clone: clone };
 })();
 </script>
 <script id="inventory-admin-js">
@@ -4077,7 +3893,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
+      download(location.pathname.split("/").pop() || "index.html", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -4103,7 +3919,6 @@ window.NJ_HEAR = (function () {
   var H = window.NJ_HEAR;
   var STAGES = [[0, "はじめに"], [1, "使う場所の条件（持ち歩き・サイズ・重さなど）"], [2, "使い方・暮らし方"], [3, "最後（譲れない1点・ご予算）"]];
   var LOCKED = { sit: "最初の質問（新しく決める／買い替え／2台目）は、このあとの質問の流れを決めるため非表示にできません。" };
-  function isLock(id) { var D = window.NJ_HEAR_DEFS; return D && D.locked ? D.locked.indexOf(id) >= 0 : id === "sit"; }
   function defs() { try { var D = window.NJ_HEAR_DEFS || window.PC_HEAR; return D ? D.defs() : []; } catch (e) { return []; } }
   function stages() { try { return (window.NJ_HEAR_DEFS && window.NJ_HEAR_DEFS.stages) || STAGES; } catch (e) { return STAGES; } }
   function j3(a) { return Array.isArray(a) ? a[0] : (a && a.ja) || ""; }
@@ -4130,14 +3945,14 @@ window.NJ_HEAR = (function () {
       var cs = (c.custom || []).map(function (x, k) { return { x: x, k: k }; }).filter(function (o) { return (+o.x.st || 0) === sg[0]; });
       h += '<div class="iv-sec-h"><span>' + esc(sg[1]) + "</span><span>" + (qs.length + cs.length) + "問</span></div><div class=\"hv-list\">";
       qs.forEach(function (d) {
-        var q = c.questions[d.id] || {}, off = q.hidden && !isLock(d.id);
+        var q = c.questions[d.id] || {}, off = q.hidden && d.id !== "sit";
         var nOpt = d.o.length, nOn = d.o.filter(function (o) { return !(q.opts && q.opts[o.v] && q.opts[o.v].hidden); }).length;
         var edited = (q.t && q.t.ja) || (q.h && q.h.ja) || (q.order && q.order.length) || Object.keys(q.opts || {}).some(function (k) { return q.opts[k].label && q.opts[k].label.ja; });
         var dyn = !d.o.length;
         h += '<div class="hq-row' + (off ? " off" : "") + '" data-hq="' + esc(d.id) + '" style="--i:' + Math.min(i++, 14) + '"><div class="hq-tx"><div class="nm">' + esc((q.t && q.t.ja) || j3(d.t) || "使い方に合わせた追加の質問") + '</div><div class="mt">'
           + (d.cond ? '<span class="tg">条件付きで表示</span>' : "") + (dyn ? '<span class="tg">内容は「使い方」の回答で変わります</span>' : '<span class="tg">選択肢 ' + nOn + "/" + nOpt + "</span>")
-          + (edited ? '<span class="tg loc">文言を変更</span>' : "") + (isLock(d.id) ? '<span class="tg">必須</span>' : "") + "</div></div>"
-          + '<label class="tgl" title="表示／非表示"><input type="checkbox" data-hq-on="' + esc(d.id) + '"' + (off ? "" : " checked") + (isLock(d.id) ? " disabled" : "") + '><span></span></label></div>';
+          + (edited ? '<span class="tg loc">文言を変更</span>' : "") + (d.id === "sit" ? '<span class="tg">必須</span>' : "") + "</div></div>"
+          + '<label class="tgl" title="表示／非表示"><input type="checkbox" data-hq-on="' + esc(d.id) + '"' + (off ? "" : " checked") + (d.id === "sit" ? " disabled" : "") + '><span></span></label></div>';
       });
       cs.forEach(function (o) {
         var x = o.x;
@@ -4176,7 +3991,7 @@ window.NJ_HEAR = (function () {
     }
     var s = sheet({
       tall: true, title: kt("質問を編集"),
-      body: (isLock(id) ? '<div class="iv-note" style="background:#fef3c7;padding:10px;border-radius:12px;color:#92400e">' + (LOCKED[id] || "この質問は、このあとの質問の流れやおすすめの計算に必要なため非表示にできません（文言・選択肢の言い回しは変えられます）。") + "</div>" : "")
+      body: (LOCKED[id] ? '<div class="iv-note" style="background:#fef3c7;padding:10px;border-radius:12px;color:#92400e">' + LOCKED[id] + "</div>" : "")
         + '<div class="iv-sec">質問文</div><div class="iv-grid">' + langRows("t", q.t, d.t) + "</div>"
         + '<div class="iv-sec">補足（💡のヒント）</div><div class="iv-grid">' + langRows("h", q.h, d.h) + "</div>"
         + '<div class="iv-sec">選択肢（スイッチで表示／非表示、↑↓で並び替え）</div><div id="hv-opts">' + order.map(optRow).join("") + "</div>"
