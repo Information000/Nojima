@@ -420,7 +420,7 @@ const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const motion = !RM && LS.get('fg-motion', true) !== false;
 document.body.classList.toggle('no-motion', !motion);
 const HOME = 'https://information000.github.io/Nojima/';
-const AREA_PAGES = { home: 'area-kaden.html', av: 'area-season-av.html', info: 'area-info.html', comm: 'area-tsushin.html' };
+const AREA_PAGES = { home: 'https://information000.github.io/Nojima/kaden/', av: 'https://information000.github.io/Nojima/season-av/', info: 'https://information000.github.io/Nojima/info/', comm: 'https://information000.github.io/Nojima/tsushin/' };
 const AREA_DEF = {
   home: { icon: '🏠', color: '#ea580c', name: { ja: '家電エリア', en: 'Home Appliances', zh: '家电区域' } },
   av: { icon: '📺', color: '#059669', name: { ja: '季節・AVエリア', en: 'Seasonal & AV', zh: '季节与影音区域' } },
