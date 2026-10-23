@@ -4046,7 +4046,7 @@ window.NJ_HEAR = (function () {
     _ = () => a(
       l.mode === "dryer" ? ["ドライヤー", "Hair Dryer", "吹风机"] : ["ヘアアイロン", "Hair Iron", "卷直发器"]
     ),
-    w = e => "¥" + e.toLocaleString("ja-JP"),
+    w = e => { const t = Math.round(e), r = Math.pow(10, Math.max(0, String(t).length - 2)), n = (Math.round(t / r) * r).toLocaleString("ja-JP"); return ["約" + n + "円", "approx. ¥" + n, "约" + n + "日元"][{ ja: 0, en: 1, zh: 2 }[(typeof currentLang < "u" && currentLang || "ja")] || 0]; },
     D = { "◎": 5, "◯": 3.5, "△": 2 },
     T = (e, t, s) => Math.max(t, Math.min(s, e)),
     Q = (window.NJ_INV ? window.NJ_INV.products() : []),

@@ -4950,7 +4950,7 @@ body.motion-off #sv-app * {
       return typeof e == "string" ? e : e && (e[x()] || e.ja) || "";
     },
     S = function (e) {
-      return "¥" + e.toLocaleString("ja-JP");
+      const t = Math.round(e), r = Math.pow(10, Math.max(0, String(t).length - 2)), n = (Math.round(t / r) * r).toLocaleString("ja-JP"); return ["約" + n + "円", "approx. ¥" + n, "约" + n + "日元"][{ ja: 0, en: 1, zh: 2 }[x()] || 0];
     },
     b = document.getElementById("sv-app"),
     L = { ja: 0, en: 1, zh: 2 },
