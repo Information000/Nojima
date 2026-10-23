@@ -1,6 +1,44 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<script id="nj-store-js">
+/* =====================================================================
+   店舗の切り替え（ホームのスタート画面で選んだ店舗ごとに内容を分ける）
+   ・この端末で選んだ店舗：localStorage の fg-registry-v1（current）
+   ・成田店（narita）… このHTMLに入っている内容がそのまま公開データ
+   ・ほかの店舗 … GitHub の stores/<店舗ID>/ に置いたデータだけがその店舗に反映
+   ===================================================================== */
+window.NJ_STORE = (function () {
+  "use strict";
+  var DEF = "narita", REL = "../";
+  function get(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, typeof v === "string" ? v : JSON.stringify(v)); return true; } catch (e) { return false; } }
+  function nm(o) { return o ? (typeof o === "string" ? o : o.ja || o.en || "") : ""; }
+  var reg = get("fg-registry-v1"), id = (reg && reg.current) || DEF, sd = get("fg-store-" + id);
+  var b = sd && sd.store ? nm(sd.store.brand) : "", n = sd && sd.store ? nm(sd.store.name) : "";
+  var name = n ? (b && n.indexOf(b) !== 0 ? b + " " + n : n) : (id === DEF ? "ノジマ イオンモール成田店" : id);
+  var isDef = id === DEF;
+  function key(k) { return isDef ? k : k.replace(/-v1$/, "") + "-" + id + "-v1"; }   // 店舗ごとの保存場所
+  function site() { return new URL(REL, location.href).href; }
+  function pubKey(f) { return "nj-pub-" + id + "-" + f; }
+  function pub(f) { return isDef ? null : get(pubKey(f)); }
+  // GitHub の stores/<店舗ID>/<ファイル> を確認し、新しければ保存して1回だけ読み込み直す
+  function sync(f, apply) {
+    if (isDef || !window.fetch) return;
+    var g = "nj-reloaded-" + id + "-" + f;
+    fetch(site() + "stores/" + encodeURIComponent(id) + "/" + f + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : null; }).then(function (t) {
+      if (!t) return;
+      if (localStorage.getItem(pubKey(f)) === t) { try { sessionStorage.removeItem(g); } catch (e) {} return; }
+      var d; try { d = JSON.parse(t); } catch (e) { return; }
+      set(pubKey(f), t); if (apply) try { apply(d); } catch (e) {}
+      try { if (sessionStorage.getItem(g)) return; sessionStorage.setItem(g, "1"); } catch (e) {}
+      location.reload();
+    }).catch(function () {});
+  }
+  return { id: id, name: name, isDefault: isDef, DEF: DEF, key: key, pub: pub, sync: sync, site: site, get: get, set: set };
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1440">
@@ -529,6 +567,12 @@ function normItem(i) {
   const lab = v => typeof v === 'string' ? { ja: v, en: '', zh: '' } : { ja: (v && v.ja) || '', en: (v && v.en) || '', zh: (v && v.zh) || '' };
   return { id: String(i.id || uid()), icon: String(i.icon || '📦'), name: lab(i.name), desc: lab(i.desc || ''), map: String(i.map || ''), url: fixUrl(i.url), badge: BADGES.includes(i.badge) ? i.badge : '', note: lab(i.note || ''), hidden: !!i.hidden, kw: String(i.kw || '') };
 }
+// 成田店以外：GitHub の stores/<店舗ID>/area-<エリア>.json に置いた内容をこの店舗の公開データとして使う
+const PUB_AREA = window.NJ_STORE && NJ_STORE.pub('area-' + DEPT + '.json');
+if (PUB_AREA && Array.isArray(PUB_AREA.items) && localStorage.getItem('nj-pubapplied-' + ITEMS_KEY) !== String(PUB_AREA.version || PUB_AREA.items.length)) {
+  LS.set(ITEMS_KEY, PUB_AREA.items); localStorage.setItem('nj-pubapplied-' + ITEMS_KEY, String(PUB_AREA.version || PUB_AREA.items.length));
+}
+window.NJ_STORE && NJ_STORE.sync('area-' + DEPT + '.json');
 let items = (LS.get(ITEMS_KEY, null) || CONFIG.items).map(normItem);
 const saveItems = () => { if (!LS.set(ITEMS_KEY, items)) toast('保存できませんでした（ブラウザの容量）', { icon: '⚠️' }); };
 let edit = false, filter = '';
@@ -818,7 +862,7 @@ function renderEbar() {
   s.innerHTML = `<div class="ebar"><b>✏️ 編集モード ・ ${items.length}件</b><button class="eb pri" type="button" id="e-add">＋ 追加</button><button class="eb" type="button" id="e-exp">⤒ 書き出し</button><button class="eb" type="button" id="e-imp">⤓ 読み込み</button><button class="eb" type="button" id="e-reset">↺ 初期に戻す</button><button class="eb x" type="button" id="e-done">✓ 完了</button></div>`;
   $('#e-add').onclick = () => openForm(null);
   $('#e-done').onclick = () => setEdit(false);
-  $('#e-exp').onclick = () => { const b = new Blob([JSON.stringify({ dept: DEPT, store: storeId, items }, null, 1)], { type: 'application/json' }), u = URL.createObjectURL(b), a = document.createElement('a'); a.href = u; a.download = `${DEPT}-items.json`; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(u); a.remove(); }, 500); toast('JSONファイルを書き出しました', { icon: '⤒' }); };
+  $('#e-exp').onclick = () => { const b = new Blob([JSON.stringify({ dept: DEPT, store: storeId, version: new Date().toISOString(), items }, null, 1)], { type: 'application/json' }), u = URL.createObjectURL(b), a = document.createElement('a'); a.href = u; a.download = `${DEPT}-items.json`; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(u); a.remove(); }, 500); toast('JSONファイルを書き出しました', { icon: '⤒' }); };
   $('#e-imp').onclick = () => { const f = $('#file'); f.value = ''; f.click(); };
   $('#e-reset').onclick = () => { const before = items; items = CONFIG.items.map(normItem); saveItems(); renderAll(); toast('初期の商品一覧に戻しました', { icon: '↺', action: { label: '元に戻す', fn: () => { items = before; saveItems(); renderAll(); } } }); };
 }

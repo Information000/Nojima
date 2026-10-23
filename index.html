@@ -1,6 +1,44 @@
 <!doctype html>
 <html lang="ja">
 <head>
+<script id="nj-store-js">
+/* =====================================================================
+   店舗の切り替え（ホームのスタート画面で選んだ店舗ごとに内容を分ける）
+   ・この端末で選んだ店舗：localStorage の fg-registry-v1（current）
+   ・成田店（narita）… このHTMLに入っている内容がそのまま公開データ
+   ・ほかの店舗 … GitHub の stores/<店舗ID>/ に置いたデータだけがその店舗に反映
+   ===================================================================== */
+window.NJ_STORE = (function () {
+  "use strict";
+  var DEF = "narita", REL = "./";
+  function get(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, typeof v === "string" ? v : JSON.stringify(v)); return true; } catch (e) { return false; } }
+  function nm(o) { return o ? (typeof o === "string" ? o : o.ja || o.en || "") : ""; }
+  var reg = get("fg-registry-v1"), id = (reg && reg.current) || DEF, sd = get("fg-store-" + id);
+  var b = sd && sd.store ? nm(sd.store.brand) : "", n = sd && sd.store ? nm(sd.store.name) : "";
+  var name = n ? (b && n.indexOf(b) !== 0 ? b + " " + n : n) : (id === DEF ? "ノジマ イオンモール成田店" : id);
+  var isDef = id === DEF;
+  function key(k) { return isDef ? k : k.replace(/-v1$/, "") + "-" + id + "-v1"; }   // 店舗ごとの保存場所
+  function site() { return new URL(REL, location.href).href; }
+  function pubKey(f) { return "nj-pub-" + id + "-" + f; }
+  function pub(f) { return isDef ? null : get(pubKey(f)); }
+  // GitHub の stores/<店舗ID>/<ファイル> を確認し、新しければ保存して1回だけ読み込み直す
+  function sync(f, apply) {
+    if (isDef || !window.fetch) return;
+    var g = "nj-reloaded-" + id + "-" + f;
+    fetch(site() + "stores/" + encodeURIComponent(id) + "/" + f + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : null; }).then(function (t) {
+      if (!t) return;
+      if (localStorage.getItem(pubKey(f)) === t) { try { sessionStorage.removeItem(g); } catch (e) {} return; }
+      var d; try { d = JSON.parse(t); } catch (e) { return; }
+      set(pubKey(f), t); if (apply) try { apply(d); } catch (e) {}
+      try { if (sessionStorage.getItem(g)) return; sessionStorage.setItem(g, "1"); } catch (e) {}
+      location.reload();
+    }).catch(function () {});
+  }
+  return { id: id, name: name, isDefault: isDef, DEF: DEF, key: key, pub: pub, sync: sync, site: site, get: get, set: set };
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1440">
@@ -440,6 +478,20 @@ details.pn>div{padding:12px 14px}
  .tb-btn.hide-s{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important}}
+
+/* スタート画面：店舗の選択 */
+.sp-shop{display:inline-flex;align-items:center;gap:12px;margin-top:clamp(12px,2.5vh,22px);padding:9px 14px 9px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-align:left;opacity:0;animation:spIn .8s cubic-bezier(.2,.8,.2,1) 1.2s forwards;transition:background .2s,transform .2s}
+.sp-shop:active{transform:scale(.96)}.sp-shop:hover{background:rgba(255,255,255,.22)}
+.sp-shop .ic{font-size:22px}.sp-shop .tx{display:flex;flex-direction:column;line-height:1.25}.sp-shop small{font-size:11px;opacity:.75;font-weight:700}.sp-shop b{font-size:15px}
+.sp-shop .ch{margin-left:6px;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.18)}
+@keyframes spIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.shp-sec{font-size:12px;font-weight:900;color:var(--sub);margin:14px 2px 8px}
+.shp-list{display:grid;gap:8px}
+.shp-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 14px;border-radius:14px;background:#f8fafc;border:1px solid #eef1f6;font-weight:800;font-size:15px}
+.shp-row.on{background:#eff6ff;border-color:#bfdbfe}.shp-row .s-main{flex:1}.shp-row small{display:block;font-size:11px;color:var(--sub);font-weight:700}
+.shp-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.shp-tabs button{padding:11px;border-radius:12px;border:1.5px solid #dbe1ea;background:#fff;font-weight:800;font-size:14px}
+.shp-tabs button.on{background:var(--brand);border-color:var(--brand);color:#fff}
 </style>
 </head>
 <body data-lang="ja">
@@ -454,6 +506,7 @@ details.pn>div{padding:12px 14px}
     <div class="sp-store" id="sp-store"></div>
     <div class="sp-verb" id="sp-verb" aria-hidden="true"></div>
     <p class="sp-tag" data-t="tagline"></p>
+    <button class="sp-shop" id="sp-shop" type="button"><span class="ic">🏬</span><span class="tx"><small>あなたのノジマの店舗は？</small><b id="sp-shop-n"></b></span><span class="ch">変更 ›</span></button>
     <div class="sp-langs" id="sp-langs">
       <button type="button" data-l="ja" lang="ja"><b>日本語</b><small>Japanese</small></button>
       <button type="button" data-l="en" lang="en"><b>English</b><small>英語</small></button>
@@ -822,6 +875,13 @@ function saveReg() { LS.set(REG_KEY, reg); }
 if (!reg || !Array.isArray(reg.list) || !reg.list.length) {
   const d = defaultStore(); saveStore(d, true); reg = { current: d.id, list: [d.id] }; saveReg();
 }
+{ // 成田店以外：GitHub の stores/<店舗ID>/store.json をこの店舗の公開データとして使う
+  const P = window.NJ_STORE && NJ_STORE.pub('store.json');
+  if (P && P.items && localStorage.getItem('nj-pubapplied-store-' + reg.current) !== String(P.savedAt || P.version || P.items.length)) {
+    try { const v = validateStore(P); v.id = reg.current; saveStore(v, true); localStorage.setItem('nj-pubapplied-store-' + reg.current, String(P.savedAt || P.version || P.items.length)); } catch (e) {}
+  }
+  window.NJ_STORE && NJ_STORE.sync('store.json');
+}
 let store = loadStore(reg.current) || (() => { const d = defaultStore(); saveStore(d, true); if (!reg.list.includes(d.id)) reg.list.unshift(d.id); reg.current = d.id; saveReg(); return d; })();
 
 const favKey = () => 'fg-fav-' + store.id, recKey = () => 'fg-recent-' + store.id;
@@ -1154,6 +1214,7 @@ const SP = { el: $('#splash'), vt: 0, vi: 0, clk: 0, shown: true };
 function splashBuild() {
   $('#sp-sub').textContent = store.store.sub || 'FLOOR GUIDE';
   $('#sp-store').innerHTML = kineticChars(fullName());
+  $('#sp-shop-n').textContent = fullName();
   const W = store.canvas.w, H = store.canvas.h, sm = $('#sp-map');
   sm.setAttribute('viewBox', `${-W * .05} ${-H * .05} ${W * 1.1} ${H * 1.1}`);
   const ol = (store.canvas.outline && store.canvas.outline.length > 2 ? store.canvas.outline : [[0, 0], [W, 0], [W, H], [0, H]]).map(q => q.join(',')).join(' ');
@@ -1187,6 +1248,7 @@ function splashHide() {
   appEnter();
 }
 SP.el.addEventListener('click', e => {
+  if (e.target.closest('#sp-shop')) { e.stopPropagation(); openShopPicker(); return; }
   const b = e.target.closest('[data-l]');
   if (b) { e.stopPropagation(); b.style.transform = 'scale(1.08)'; setLang(b.dataset.l, true); setTimeout(splashHide, 180); return; }
   splashHide();
@@ -1871,11 +1933,61 @@ function switchStore(id, quiet) {
   return true;
 }
 function addStore(d, open) {
-  d.id = newStoreId(); if (!saveStore(d)) return; reg.list.push(d.id); saveReg(); switchStore(d.id, true);
+  { const n = d.store && d.store.name && d.store.name.ja, sid = n ? stableStoreId('store', String(n).replace(/^ノジマ\s*/, '')) : ''; d.id = sid && !reg.list.includes(sid) ? sid : newStoreId(); }
+  if (!saveStore(d)) return; reg.list.push(d.id); saveReg(); switchStore(d.id, true);
   toast(`「${fullName(d)}」を作成しました`, { icon: '🏬' });
   if (open) { if (ED.open) { edAfter(true); edPZ.fit(false); } else openEditor(); }
 }
 function openStores() { staffGate(openStoresInner); }
+/* ---------- スタート画面の店舗選択 ----------
+   ・この端末の店舗から選ぶ／ノジマの店舗を検索して作る／手入力で新しい店舗・個人名で作る
+   ・切り替えも作成も、毎回スタッフ用パスワード（staff2026）が必要
+   ・店舗ID は名前から決まるので、別の端末で同じ名前を選ぶと同じ公開データ（GitHub の stores/<店舗ID>/）を使う */
+function stableStoreId(kind, name) { return kind === 'me' ? 'me-' + sha256('me:' + name).slice(0, 10) : (name === 'イオンモール成田店' ? 'narita' : 's-' + sha256('store:' + name).slice(0, 10)); }
+function staffGateAlways(fn) { staffUntil = 0; staffGate(fn); }
+function openShopPicker() {
+  const cur = store.id;
+  const list = storeList();
+  const body = Sheet.show(`<div class="sh-h sh-drag"><div><h2>${kineticChars('あなたのノジマの店舗は？')}</h2><p style="font-size:13px;color:var(--sub);margin-top:4px">店舗ごとに、マップ・商品・ヒアリングの内容を分けて保存します。切り替え・作成にはスタッフ用パスワードが必要です。</p></div><button class="sh-x" type="button" data-close>✕</button></div>
+    <div class="shp-sec">この端末の店舗</div>
+    <div class="shp-list">${list.map(x => { const d = validateStore(x.d); return `<button class="shp-row rp${x.id === cur ? ' on' : ''}" type="button" data-id="${esc(x.id)}"><span>${x.id.startsWith('me-') ? '👤' : '🏬'}</span><span class="s-main">${esc(fullName(d))}<small>${x.id === cur ? 'いま使っている店舗' : 'タップで切り替え（パスワード）'}</small></span><span class="arr">${x.id === cur ? '✓' : '›'}</span></button>`; }).join('')}</div>
+    <div class="shp-sec">新しく作る</div>
+    <div class="shp-tabs" id="shp-tabs"><button type="button" class="on" data-k="store">🏬 店舗</button><button type="button" data-k="me">👤 個人（名前）</button></div>
+    <label class="fld"><span id="shp-lbl">ノジマの店舗名（候補から選ぶか手入力）</span><div class="spk"><input class="inp" id="shp-name" autocomplete="off" placeholder="例：ららぽーと沼津店"></div></label>
+    <p class="pn-tip" id="shp-tip" style="margin:-4px 0 12px">今の店舗（${esc(fullName())}）の内容をひな形にして作ります。あとから自由に変えられます。</p>
+    <button class="btn pri wide rp" type="button" id="shp-go">作成して切り替える</button>`);
+  let kind = 'store';
+  const inp = $('#shp-name', body);
+  try { storePicker(inp, n => { inp.value = n; }); } catch (e) {}
+  $('#shp-tabs', body).onclick = e => {
+    const b = e.target.closest('[data-k]'); if (!b) return; kind = b.dataset.k;
+    $$('#shp-tabs button', body).forEach(x => x.classList.toggle('on', x === b));
+    $('#shp-lbl', body).textContent = kind === 'me' ? 'あなたの名前（個人用にカスタマイズ）' : 'ノジマの店舗名（候補から選ぶか手入力）';
+    inp.placeholder = kind === 'me' ? '例：山田' : '例：ららぽーと沼津店';
+    const dd = $('.spk-dd', body); if (dd) dd.style.display = kind === 'me' ? 'none' : '';
+  };
+  $$('.shp-row', body).forEach(b => b.onclick = () => {
+    const id = b.dataset.id; if (id === cur) { Sheet.hide(); return; }
+    staffGateAlways(() => { if (switchStore(id)) { splashBuild(); toast('各ページもこの店舗の内容になります', { icon: '🏬' }); } });
+  });
+  $('#shp-go', body).onclick = () => {
+    let name = inp.value.trim().replace(/^ノジマ\s*/, '');
+    if (!name) { toast(kind === 'me' ? '名前を入力してください' : '店舗名を入力してください', { icon: '✍️' }); inp.focus(); return; }
+    const id = stableStoreId(kind, name);
+    staffGateAlways(() => {
+      if (reg.list.includes(id) && loadStore(id)) { switchStore(id); splashBuild(); return; }
+      const d = validateStore(JSON.parse(JSON.stringify(store)));
+      d.store.brand = { ja: 'ノジマ', en: 'Nojima', zh: 'Nojima' };
+      d.store.name = kind === 'me' ? { ja: name + 'さん用', en: name, zh: name } : { ja: name, en: '', zh: '' };
+      d.store.sub = kind === 'me' ? 'NOJIMA × ' + name.toUpperCase() : 'NOJIMA FLOOR GUIDE';
+      d.id = id;
+      if (!saveStore(d)) return;
+      if (!reg.list.includes(id)) reg.list.push(id);
+      saveReg(); switchStore(id, true); splashBuild();
+      toast(`「${fullName(d)}」を作成して切り替えました`, { icon: kind === 'me' ? '👤' : '🏬', dur: 4000 });
+    });
+  };
+}
 function openStoresInner() {
   const body = Sheet.show(`<div class="sh-h sh-drag"><div><h2>${kineticChars('店舗の管理')}</h2><p style="font-size:13px;color:var(--sub);margin-top:4px">タップで切り替え ・ 左にスワイプで削除 ・ 右にスワイプで複製</p></div><button class="sh-x" type="button" data-close>✕</button></div>
     <div id="st-list"></div>

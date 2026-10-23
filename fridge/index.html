@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script id="nj-store-js">
+/* =====================================================================
+   店舗の切り替え（ホームのスタート画面で選んだ店舗ごとに内容を分ける）
+   ・この端末で選んだ店舗：localStorage の fg-registry-v1（current）
+   ・成田店（narita）… このHTMLに入っている内容がそのまま公開データ
+   ・ほかの店舗 … GitHub の stores/<店舗ID>/ に置いたデータだけがその店舗に反映
+   ===================================================================== */
+window.NJ_STORE = (function () {
+  "use strict";
+  var DEF = "narita", REL = "../";
+  function get(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, typeof v === "string" ? v : JSON.stringify(v)); return true; } catch (e) { return false; } }
+  function nm(o) { return o ? (typeof o === "string" ? o : o.ja || o.en || "") : ""; }
+  var reg = get("fg-registry-v1"), id = (reg && reg.current) || DEF, sd = get("fg-store-" + id);
+  var b = sd && sd.store ? nm(sd.store.brand) : "", n = sd && sd.store ? nm(sd.store.name) : "";
+  var name = n ? (b && n.indexOf(b) !== 0 ? b + " " + n : n) : (id === DEF ? "ノジマ イオンモール成田店" : id);
+  var isDef = id === DEF;
+  function key(k) { return isDef ? k : k.replace(/-v1$/, "") + "-" + id + "-v1"; }   // 店舗ごとの保存場所
+  function site() { return new URL(REL, location.href).href; }
+  function pubKey(f) { return "nj-pub-" + id + "-" + f; }
+  function pub(f) { return isDef ? null : get(pubKey(f)); }
+  // GitHub の stores/<店舗ID>/<ファイル> を確認し、新しければ保存して1回だけ読み込み直す
+  function sync(f, apply) {
+    if (isDef || !window.fetch) return;
+    var g = "nj-reloaded-" + id + "-" + f;
+    fetch(site() + "stores/" + encodeURIComponent(id) + "/" + f + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : null; }).then(function (t) {
+      if (!t) return;
+      if (localStorage.getItem(pubKey(f)) === t) { try { sessionStorage.removeItem(g); } catch (e) {} return; }
+      var d; try { d = JSON.parse(t); } catch (e) { return; }
+      set(pubKey(f), t); if (apply) try { apply(d); } catch (e) {}
+      try { if (sessionStorage.getItem(g)) return; sessionStorage.setItem(g, "1"); } catch (e) {}
+      location.reload();
+    }).catch(function () {});
+  }
+  return { id: id, name: name, isDefault: isDef, DEF: DEF, key: key, pub: pub, sync: sync, site: site, get: get, set: set };
+})();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
 <title>冷蔵庫の相談 | イオンモール成田店</title>
@@ -3366,7 +3404,13 @@ window.NJ_INV = (function () {
   "use strict";
   var el = document.getElementById("inventory-data");
   var BASE = JSON.parse(el.textContent);
-  var LKEY = "nj-inventory-" + BASE.category + "-v1";   // この端末での編集内容
+  var ST = window.NJ_STORE, HD = document.getElementById("hearing-data"), PAGE = BASE.category;
+  try { PAGE = JSON.parse(HD.textContent).category || PAGE; } catch (e) {}
+  // 成田店以外：GitHub の stores/<店舗ID>/<ページ>.json に置いた在庫を、その店舗の公開データとして使う
+  var PUB = ST && ST.pub(PAGE + ".json");
+  if (PUB && PUB.inventory && Array.isArray(PUB.inventory.items)) BASE = PUB.inventory;
+  var LKEY = ST ? ST.key("nj-inventory-" + BASE.category + "-v1") : "nj-inventory-" + BASE.category + "-v1";   // この端末での編集（店舗ごと）
+  ST && ST.sync(PAGE + ".json");   // この端末での編集内容
 
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
   function local() {
@@ -3525,7 +3569,10 @@ window.NJ_HEAR = (function () {
   var el = document.getElementById("hearing-data");
   var BASE = { storeName: "", version: "", questions: {}, custom: [] };
   try { if (el) BASE = Object.assign(BASE, JSON.parse(el.textContent)); } catch (e) {}
-  var LKEY = "nj-hearing-" + (BASE.category || "pc") + "-v1";
+  var STH = window.NJ_STORE, PH = STH && STH.pub((BASE.category || "pc") + ".json");
+  if (PH && PH.hearing) BASE = Object.assign(BASE, PH.hearing);
+  if (STH && !STH.isDefault && !BASE.storeName) BASE.storeName = STH.name;   // 店舗名（スタッフ確認シート用）
+  var LKEY = STH ? STH.key("nj-hearing-" + (BASE.category || "pc") + "-v1") : "nj-hearing-" + (BASE.category || "pc") + "-v1";
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
   function local() { try { return JSON.parse(localStorage.getItem(LKEY) || "null"); } catch (e) { return null; } }
   function cfg() { var l = local(); var c = l || clone(BASE); c.questions = c.questions || {}; c.custom = c.custom || []; return c; }
@@ -3961,7 +4008,7 @@ window.NJ_HEAR = (function () {
   // ---------------------------------------------------------------- 画面の骨組み
   function shell(withSkeleton) {
     root.innerHTML = '<div class="iv-top"><div class="iv-top-row">'
-      + '<div class="iv-ttl">' + kt("在庫管理", "grad-text") + "<small>" + kt(B.label + " ・ 公開データ " + B.version) + "</small></div><span class=\"iv-sp\"></span>"
+      + '<div class="iv-ttl">' + kt("在庫管理", "grad-text") + "<small>" + kt((window.NJ_STORE ? "🏬 " + NJ_STORE.name + " ・ " : "") + B.label + " ・ 公開データ " + B.version) + "</small></div><span class=\"iv-sp\"></span>"
       + '<button class="iv-ibtn" data-a="menu" aria-label="メニュー" title="書き出し・読み込みなど">⋯</button>'
       + '<button class="iv-ibtn" data-a="close" aria-label="閉じる" title="閉じる">✕</button></div>'
       + '<div class="iv-tabs"><span class="iv-tabpill"></span><button class="iv-tab' + (mode === "inv" ? " on" : "") + '" data-a="tab" data-v="inv">📦 在庫</button><button class="iv-tab' + (mode === "hear" ? " on" : "") + '" data-a="tab" data-v="hear">💬 ヒアリング</button></div>'
@@ -4278,7 +4325,9 @@ window.NJ_HEAR = (function () {
     sheet({
       title: kt("メニュー"), foot: false,
       body: '<div class="iv-menu">'
-        + '<button style="--i:0" data-m="export-html"><span class="e">⬇️</span><span>HTMLを書き出す<small>在庫とヒアリング設定入りの product-pc.html を保存 → サイトに上げ直すと全端末に反映</small></span></button>'
+        + (window.NJ_STORE && !NJ_STORE.isDefault
+          ? '<button style="--i:0" data-m="export-html"><span class="e">⬇️</span><span>この店舗の公開用データを書き出す<small>「' + NJ_STORE.name + '」だけに反映されます（GitHub の stores/' + NJ_STORE.id + '/ に置く）</small></span></button>'
+          : '<button style="--i:0" data-m="export-html"><span class="e">⬇️</span><span>HTMLを書き出す<small>在庫とヒアリング設定入りの product-pc.html を保存 → サイトに上げ直すと全端末に反映</small></span></button>')
         + '<button style="--i:1" data-m="export-json"><span class="e">🧾</span><span>在庫データ（JSON）を保存<small>バックアップや、他の端末への受け渡しに</small></span></button>'
         + '<label style="--i:2"><span class="e">⬆️</span><span>在庫データ（JSON）を読み込む<small>保存したJSONの内容にそろえます</small></span><input type="file" accept=".json,application/json" hidden data-m-file></label>'
         + '<button style="--i:3" data-m="refresh"><span class="e">↻</span><span>最新の状態にする<small>スマホでは一覧を下に引っぱっても更新できます</small></span></button>'
@@ -4288,7 +4337,7 @@ window.NJ_HEAR = (function () {
         var b = e.target.closest("[data-m]"); if (!b || b.hasAttribute("data-m-file")) return;
         var m = b.getAttribute("data-m"); if (b.tagName === "LABEL") return;
         api.close(true);
-        if (m === "export-html") exportHtml();
+        if (m === "export-html") { if (window.NJ_STORE && !NJ_STORE.isDefault) exportStore(); else exportHtml(); }
         if (m === "export-json") { download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json"); toast("在庫データを保存しました", { type: "ok" }); }
         if (m === "refresh") refresh();
         if (m === "reset") confirmSheet("編集をすべて取り消しますか？", "この端末で行った " + n + " 件の編集を捨てて、公開中の在庫データに戻します。", "取り消す", true).then(function (ok) {
@@ -4596,6 +4645,15 @@ window.NJ_HEAR = (function () {
     a.href = URL.createObjectURL(new Blob([text], { type: type }));
     a.download = name; document.body.appendChild(a); a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  // 成田店以外：この店舗だけの公開用データ（在庫＋ヒアリング設定）を JSON で書き出す
+  function exportStore() {
+    var S = window.NJ_STORE, hd = document.getElementById("hearing-data"), page = B.category;
+    try { page = JSON.parse(hd.textContent).category || page; } catch (e) {}
+    var hc = H.cfg(); hc.version = today();
+    var out = { store: S.id, storeName: S.name, page: page, version: today(), inventory: merged(), hearing: hc };
+    download(page + ".json", JSON.stringify(out, null, 2), "application/json");
+    toast("「" + page + ".json」を書き出しました。GitHub の stores/" + S.id + "/ に置くと、" + S.name + " だけに反映されます", { type: "ok", ms: 8000 });
   }
   function exportHtml() {
     var json = JSON.stringify(merged(), null, 2).replace(/<\//g, "<\\/");
