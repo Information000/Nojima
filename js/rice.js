@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>電子レンジの相談 | イオンモール成田店</title>
+<title>炊飯器の相談 | イオンモール成田店</title>
 <style id="product-shell-css">
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
@@ -126,9 +127,9 @@ html[data-device=tablet] .fr-wrap {
 }
 </style>
 </head>
-<body data-lang="ja" data-dept="home" data-product="microwave">
+<body data-lang="ja" data-dept="home" data-product="rice">
 <!-- ======================================================================
-     ▼▼▼ 在庫データ（電子レンジ・オーブン）▼▼▼
+     ▼▼▼ 在庫データ（炊飯器）▼▼▼
      ・1商品 = items の中の { } ひとつ。型番・価格・スペック・大きさ・リンクなど
      ・status: "active"=販売中 / "ended"=販売終了（相談に出なくなる）
      ・links: type は "official"(メーカー公式HP) / "manual"(取扱説明書) / "ref"(参考リンク)
@@ -136,85 +137,92 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="inventory-data">
 {
-  "category": "microwave",
-  "label": "電子レンジ・オーブン",
+  "category": "rice",
+  "label": "炊飯器",
   "version": "2026-10-23",
   "adminPin": "staff2026",
   "groups": [
     {
-      "id": "ultra_budget",
-      "name": "低価格・シンプル単機能（～1万円台前半）"
+      "id": "budget_micro",
+      "name": "シンプルなマイコン炊飯器"
     },
     {
-      "id": "flat_bed_standard",
-      "name": "1万円台・お手入れ簡単フラットレンジ（17～18L）"
+      "id": "standard_ih",
+      "name": "スタンダードIH炊飯器"
     },
     {
-      "id": "sensor_smart_warm",
-      "name": "自動あたため・高出力センサーレンジ（20～23L）"
+      "id": "pressure_ih_middle",
+      "name": "圧力IH炊飯器"
     },
     {
-      "id": "premium_high_power",
-      "name": "大容量＆高精細センサー・プレミアム単機能（23～26L）"
+      "id": "steam_cut_clean",
+      "name": "蒸気カット炊飯器（日立）"
+    },
+    {
+      "id": "premium_flagship",
+      "name": "最高峰フラッグシップ"
     }
   ],
   "tagOptions": {},
   "schema": {
-    "root": "mw-app",
-    "icon": "🍱",
+    "root": "rc-app",
+    "icon": "🍚",
     "map": {},
     "fields": [
       {
         "k": "cap",
-        "l": "庫内容量（L）",
+        "l": "炊飯容量（合）",
         "t": "number"
       },
       {
-        "k": "table",
-        "l": "庫内（ターンテーブル / フラット）"
+        "k": "heat",
+        "l": "加熱方式"
       },
       {
-        "k": "door",
-        "l": "ドアの開き方"
+        "k": "pot",
+        "l": "内釜"
       },
       {
-        "k": "power",
-        "l": "出力"
+        "k": "press",
+        "l": "圧力"
       },
       {
-        "k": "sensor",
-        "l": "センサー"
+        "k": "taste",
+        "l": "炊き上がり"
       },
       {
-        "k": "autoMenu",
-        "l": "自動メニュー数",
-        "t": "number"
+        "k": "keep",
+        "l": "保温"
+      },
+      {
+        "k": "steam",
+        "l": "蒸気"
       }
     ],
     "listFields": [
       "cap",
-      "table"
+      "heat"
     ],
     "grades": [
       [
         "cap",
-        "庫内の広さ"
+        "容量"
       ],
       [
-        "table",
-        "フラット庫内"
+        "method",
+        "炊き方"
       ],
       [
-        "sensor",
-        "あたため精度"
+        "taste",
+        "おいしさ"
       ],
       [
-        "power",
-        "出力"
+        "keep",
+        "保温"
       ],
       [
-        "auto",
-        "自動メニュー"
+        "pot",
+        "内釜"
       ]
     ],
     "gradeVals": [
@@ -225,65 +233,74 @@ html[data-device=tablet] .fr-wrap {
     ],
     "makers": [
       [
-        "ELSONIC"
-      ],
-      [
-        "Haier"
+        "HITACHI"
       ],
       [
         "IRIS OHYAMA"
       ],
       [
+        "MITSUBISHI"
+      ],
+      [
         "Panasonic"
+      ],
+      [
+        "TIGER"
       ],
       [
         "TOSHIBA"
       ],
       [
-        "YAMAZEN"
+        "ZOJIRUSHI"
       ],
       [
-        "e angle"
+        "ノジマオリジナル"
       ]
     ],
     "buckets": [
       [
         0,
-        9000,
-        "〜9千"
+        10000,
+        "〜1万"
       ],
       [
-        9000,
-        15000,
-        "9千〜1.5万"
+        10000,
+        20000,
+        "1万〜2万"
       ],
       [
-        15000,
-        25000,
-        "1.5万〜2.5万"
+        20000,
+        35000,
+        "2万〜3.5万"
       ],
       [
-        25000,
+        35000,
+        85000,
+        "3.5万〜8.5万"
+      ],
+      [
+        85000,
         1000000000000,
-        "2.5万〜"
+        "8.5万〜"
       ]
     ]
   },
   "items": [
     {
-      "id": "m1",
+      "id": "r1",
       "status": "active",
-      "maker": "e angle",
-      "name": "ECGFMW603",
-      "model": "ECGFMW603",
-      "price": 6028,
-      "groupId": "ultra_budget",
-      "cap": 17,
-      "table": "ターンテーブル",
-      "door": "横開き",
-      "power": "500W/650W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
+      "maker": "ノジマオリジナル",
+      "name": "RCZ021BK (2合)",
+      "model": "RCZ021BK",
+      "price": 3608,
+      "groupId": "budget_micro",
+      "cap": 2,
+      "heat": "マイコン",
+      "pot": "黒厚釜",
+      "press": "なし",
+      "taste": "ふつう",
+      "keep": "12時間",
+      "steam": "標準",
       "size": {
         "w": null,
         "d": null,
@@ -294,15 +311,15 @@ html[data-device=tablet] .fr-wrap {
       "tags": [],
       "grades": {
         "cap": "△",
-        "table": "△",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
+        "method": "△",
+        "taste": "◯",
+        "keep": "△",
+        "pot": "△"
       },
       "desc": {
-        "ja": "今回の最安クラス。余計なボタンがなく、ダイヤルを回すだけで温められる超シンプル機",
-        "en": "Lowest price class! Turn the dial for simple everyday heating without complicated menus",
-        "zh": "本次全场超低价款！无繁琐按钮，旋钮一拧即开，简单纯粹"
+        "ja": "3,000円台の驚異的低価格！1回1〜2杯だけ手軽に炊きたい単身・一人暮らしの最安選択",
+        "en": "Shockingly low 3k JPY price tag! Ultra-compact 2-cup solo rice cooker for minimalists",
+        "zh": "3千多日元惊人超低价！单次仅煮1-2碗饭的极简独居极简之选"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -311,31 +328,403 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20ECGFMW603",
+          "url": "https://www.google.com/search?q=site%3Anojima.co.jp%20RCZ021BK",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20ECGFMW603%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Anojima.co.jp%20RCZ021BK%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "m2",
+      "id": "r2",
+      "status": "active",
+      "maker": "TIGER",
+      "name": "JBH-G102-W (5.5合)",
+      "model": "JBH-G102-W",
+      "price": 8778,
+      "groupId": "budget_micro",
+      "cap": 5.5,
+      "heat": "マイコン",
+      "pot": "黒遠赤厚釜(1.7mm)",
+      "press": "なし",
+      "taste": "ふつう",
+      "keep": "12時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "△",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "5.5合炊きで1万円を切る高コスパマイコン。ふっくら炊ける黒遠赤厚釜搭載",
+        "en": "Full 5.5-cup capacity under 10k JPY with far-infrared coated thick inner pot",
+        "zh": "5.5合大容量不到1万日元，搭载黑远红外厚釜，满足全家温饱"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JBH-G102-W",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JBH-G102-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "status": "active",
+      "maker": "TIGER",
+      "name": "JBS-G055-KM (3合)",
+      "model": "JBS-G055-KM",
+      "price": 10978,
+      "groupId": "budget_micro",
+      "cap": 3,
+      "heat": "マイコン",
+      "pot": "遠赤黒特厚釜(3mm)",
+      "press": "なし",
+      "taste": "ふつう/パン焼き",
+      "keep": "12時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◯",
+        "method": "△",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "厚さ3mmの遠赤黒特厚釜を採用。マイコンでも火がしっかり通る人気3合機",
+        "en": "Features a generous 3mm thick inner pot delivering better heat retention than standard micro-cookers",
+        "zh": "3mm超厚远红外特厚内胆，导热蓄热远胜普通小电饭煲，热销3合"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JBS-G055-KM",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JBS-G055-KM%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "status": "active",
+      "maker": "ZOJIRUSHI",
+      "name": "NL-BF05-WZ (3合)",
+      "model": "NL-BF05-WZ",
+      "price": 11330,
+      "groupId": "budget_micro",
+      "cap": 3,
+      "heat": "マイコン",
+      "pot": "黒厚釜(2.5mm)",
+      "press": "なし",
+      "taste": "ふつう",
+      "keep": "12時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◯",
+        "method": "△",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "象印の定番3合マイコン。「豪熱沸とう」でふきこぼれを気にせず高火力で炊き上げ",
+        "en": "Zojirushi 3-cup classic with continuous high-heat boiling to maximize starch conversion",
+        "zh": "象印经典3合微电脑，豪热沸腾大火持续翻滚，煮出甘甜米香"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NL-BF05-WZ",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NL-BF05-WZ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "status": "active",
+      "maker": "TOSHIBA",
+      "name": "RC-10HW-W (5.5合)",
+      "model": "RC-10HW-W",
+      "price": 14080,
+      "groupId": "standard_ih",
+      "cap": 5.5,
+      "heat": "IH",
+      "pot": "銅コート釜",
+      "press": "なし",
+      "taste": "粒立ち/ふつう",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◯",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "1.4万円で買える5.5合IH！内釜全体がしっかり発熱し、芯までムラなく炊飯",
+        "en": "Unbeatable 14k JPY 5.5-cup IH cooker; induction coils warm the entire pot uniformly",
+        "zh": "仅1.4万日元的5.5合IH电饭煲！全胆电磁加热，彻底告别夹生冷硬"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20RC-10HW-W",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20RC-10HW-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "status": "active",
+      "maker": "TIGER",
+      "name": "JPW-G10W-HDZ (5.5合)",
+      "model": "JPW-G10W-HDZ",
+      "price": 21780,
+      "groupId": "standard_ih",
+      "cap": 5.5,
+      "heat": "IH",
+      "pot": "遠赤3層土鍋コート釜",
+      "press": "なし",
+      "taste": "ふっくら",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◯",
+        "taste": "◎",
+        "keep": "◯",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "土鍋コーティングを施した遠赤3層釜。高火力でご飯の甘みを引き出すタイガーIH定番",
+        "en": "3-layer far-infrared pot with clay coating brings out natural sweetness with high heat",
+        "zh": "远红外3层土锅涂层内胆，大火力激发出大米自身回甘，虎牌IH主力"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JPW-G10W-HDZ",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JPW-G10W-HDZ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r7",
+      "status": "active",
+      "maker": "MITSUBISHI",
+      "name": "NJ-VG10J-B (5.5合)",
+      "model": "NJ-VG10J-B",
+      "price": 36080,
+      "groupId": "standard_ih",
+      "cap": 5.5,
+      "heat": "IH",
+      "pot": "備長炭 炭炊釜(2mm)",
+      "press": "なし",
+      "taste": "しゃっきり・粒立ち",
+      "keep": "24時間(たべごろ)",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◯",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "「備長炭 炭炊釜」×連続沸騰。圧力をかけず一粒一粒が立ったしゃっきり食感に炊き上げ",
+        "en": "Bincho-charcoal pot with continuous boiling for firm, separated, non-sticky rice grains",
+        "zh": "备长炭炭炊釜配连续大沸腾，不施压自然炊煮，米粒颗颗分明不黏糊"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Amitsubishielectric.co.jp%20NJ-VG10J-B",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Amitsubishielectric.co.jp%20NJ-VG10J-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r8",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "SR-N210E (5.5合)",
+      "model": "SR-N210E",
+      "price": 21780,
+      "groupId": "standard_ih",
+      "cap": 5.5,
+      "heat": "IH",
+      "pot": "備長炭釜",
+      "press": "なし",
+      "taste": "ふっくら",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◯",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "パナソニックの安心IH。大火力包み加熱でふっくらおいしく、お手入れ部品もシンプル",
+        "en": "Panasonic solid IH with surround heating and easy-to-clean minimal parts",
+        "zh": "松下立体环绕包围加热，饭粒饱满甘甜，可拆卸清洗部件极简"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20SR-N210E",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20SR-N210E%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r9",
       "status": "active",
       "maker": "IRIS OHYAMA",
-      "name": "IMBT178W",
-      "model": "IMBT178W",
-      "price": 8668,
-      "groupId": "ultra_budget",
-      "cap": 17,
-      "table": "ターンテーブル",
-      "door": "横開き",
-      "power": "500W/700W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
+      "name": "RC-PGA50-B (5.5合)",
+      "model": "RC-PGA50-B",
+      "price": 21780,
+      "groupId": "pressure_ih_middle",
+      "cap": 5.5,
+      "heat": "圧力IH",
+      "pot": "極厚火釜(3mm)",
+      "press": "あり",
+      "taste": "もっちり/銘柄炊き分け",
+      "keep": "24時間",
+      "steam": "標準",
       "size": {
         "w": null,
         "d": null,
@@ -345,16 +734,16 @@ html[data-device=tablet] .fr-wrap {
       "jan": "",
       "tags": [],
       "grades": {
-        "cap": "△",
-        "table": "△",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◯",
+        "pot": "◯"
       },
       "desc": {
-        "ja": "1万円以下の大人気モデル。3段階出力切り替えで冷凍食品やお弁当をしっかり温め",
-        "en": "Under 10k JPY bestseller. 3 power levels for frozen dinners and bentos",
-        "zh": "1万日元内高销量入门款，3档火力切换，兼顾日常便当与解冻"
+        "ja": "2万円台前半で圧力IHを実現！50銘柄炊き分けと大火力で、価格を超えたもっちり甘いご飯",
+        "en": "Pressure IH around 21k JPY! 50-rice-variety profiling for tender and sweet rice",
+        "zh": "2万日元出头享受压力IH！搭载50种米种精煮程序，弹牙回甜超高性价比"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -363,135 +752,456 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Airisohyama.co.jp%20IMBT178W",
+          "url": "https://www.google.com/search?q=site%3Airisohyama.co.jp%20RC-PGA50-B",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Airisohyama.co.jp%20IMBT178W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Airisohyama.co.jp%20RC-PGA50-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "m3",
-      "status": "active",
-      "maker": "ELSONIC",
-      "name": "ECGMW17150",
-      "model": "ECGMW17150",
-      "price": 8778,
-      "groupId": "ultra_budget",
-      "cap": 17,
-      "table": "ターンテーブル",
-      "door": "横開き",
-      "power": "500W/650W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "△",
-        "table": "△",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
-      },
-      "desc": {
-        "ja": "ノジマPB（ELSONIC）。一人暮らしの初期費用を極力抑えたい方に親切設計",
-        "en": "Nojima private brand ELSONIC; designed for budget-conscious singles",
-        "zh": "Nojima自有品牌ELSONIC，专为控制初期生活开支独居人士设计"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Anojima.co.jp%20ECGMW17150",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Anojima.co.jp%20ECGMW17150%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m4",
-      "status": "active",
-      "maker": "e angle",
-      "name": "EGFMW600",
-      "model": "EGFMW600",
-      "price": 10780,
-      "groupId": "ultra_budget",
-      "cap": 17,
-      "table": "ターンテーブル",
-      "door": "横開き",
-      "power": "500W/650W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "△",
-        "table": "△",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
-      },
-      "desc": {
-        "ja": "1万円前後のシンプル単機能。使い勝手と耐久性のバランスが良いモデル",
-        "en": "Solid ~10k JPY solo microwave balancing usability and basic durability",
-        "zh": "万元档位扎实可靠款，结实耐用，适合基础热饭"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20EGFMW600",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20EGFMW600%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m5",
+      "id": "r10",
       "status": "active",
       "maker": "TOSHIBA",
-      "name": "ER-M5B-W",
-      "model": "ER-M5B-W",
-      "price": 13010,
-      "groupId": "flat_bed_standard",
-      "cap": 17,
-      "table": "フラット庫内",
-      "door": "縦開き",
-      "power": "650W相当",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
+      "name": "RC-10HGX-K (5.5合)",
+      "model": "RC-10HGX-K",
+      "price": 30580,
+      "groupId": "pressure_ih_middle",
+      "cap": 5.5,
+      "heat": "真空圧力IH",
+      "pot": "鍛造かまど銅釜",
+      "press": "あり",
+      "taste": "ふっくら・芯まで吸水",
+      "keep": "40時間(真空)",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "内釜を真空にして芯まで吸水させる「真空αテクノロジー」＆炎匠炊き。40時間美白保温対応",
+        "en": "Vacuum Absorption tech draws moisture into the grain core; up to 40-hr vacuum keep-warm",
+        "zh": "真空抽气迫使水分子瞬间深透米芯，配合压力火候，长达40小时绝不干黄"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20RC-10HGX-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20RC-10HGX-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "status": "active",
+      "maker": "TIGER",
+      "name": "JPV-M100-KG (5.5合)",
+      "model": "JPV-M100-KG",
+      "price": 38280,
+      "groupId": "pressure_ih_middle",
+      "cap": 5.5,
+      "heat": "圧力IH",
+      "pot": "遠赤9層土鍋かまどコート釜",
+      "press": "あり",
+      "taste": "もっちり・弾力",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◯",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "土鍋コーティング遠赤9層釜。「旨み粒立ち炊飯」で弾力ともちもち感を両立した大本命",
+        "en": "9-layer far-infrared pot with multi-stage pressure, creating bouncy and elastic texture",
+        "zh": "远红外9层土锅涂层内胆，多段变压迫出弹润黏度，便当冷饭绝配"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JPV-M100-KG",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JPV-M100-KG%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "status": "active",
+      "maker": "ZOJIRUSHI",
+      "name": "NW-QC10-BA (5.5合)",
+      "model": "NW-QC10-BA",
+      "price": 34800,
+      "groupId": "pressure_ih_middle",
+      "cap": 5.5,
+      "heat": "圧力IH",
+      "pot": "黒まる厚釜",
+      "press": "あり",
+      "taste": "しゃっきり〜もちもち3通り",
+      "keep": "30時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "象印の圧力IH大人気モデル。「炊き分け圧力」で食感を好みに調整、うるつや30時間保温",
+        "en": "Zojirushi's staple pressure IH with 3 texture settings and 30-hr moist keep-warm",
+        "zh": "象印当家主力，3档压力自由调节米饭软硬度，30小时温润锁水保温"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NW-QC10-BA",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NW-QC10-BA%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r13",
+      "status": "active",
+      "maker": "HITACHI",
+      "name": "RZ-V100KM-W (5.5合)",
+      "model": "RZ-V100KM-W",
+      "price": 43780,
+      "groupId": "steam_cut_clean",
+      "cap": 5.5,
+      "heat": "圧力＆スチームIH",
+      "pot": "大火力 沸騰鉄釜",
+      "press": "あり",
+      "taste": "外硬内軟・ひと粒炊き",
+      "keep": "40時間(スチーム)",
+      "steam": "蒸気カット(ほぼゼロ)",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "京都「八代目儀兵衛」の技を再現。炊飯中の蒸気がほぼ出ない「蒸気カット」で棚置き安心",
+        "en": "Recreates Kyoto master rice techniques; virtually zero steam discharge during cooking",
+        "zh": "还原京都老字号“八代目仪兵卫”外韧内软技艺，近乎零蒸汽外溢可安全入柜"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Akadenfan.hitachi.co.jp%20RZ-V100KM-W",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Akadenfan.hitachi.co.jp%20RZ-V100KM-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r14",
+      "status": "active",
+      "maker": "HITACHI",
+      "name": "RZ-Y100HJ-C (5.5合)",
+      "model": "RZ-Y100HJ-C",
+      "price": 30580,
+      "groupId": "steam_cut_clean",
+      "cap": 5.5,
+      "heat": "圧力IH",
+      "pot": "黒厚鉄釜",
+      "press": "あり",
+      "taste": "ふっくら",
+      "keep": "24時間",
+      "steam": "蒸気セーブ",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◯",
+        "keep": "◯",
+        "pot": "◯"
+      },
+      "desc": {
+        "ja": "3万円前後で最高1.3気圧の高圧炊飯＆蒸気セーブ。熱に弱い家具周りにも置きやすい",
+        "en": "Affordable 1.3-atm pressure with steam-reduction feature; furniture-friendly",
+        "zh": "3万日元档搭载1.3倍大气压高压烹饪与减蒸汽模式，保护厨房橱柜"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Akadenfan.hitachi.co.jp%20RZ-Y100HJ-C",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Akadenfan.hitachi.co.jp%20RZ-Y100HJ-C%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r15",
+      "status": "active",
+      "maker": "TIGER",
+      "name": "JRX-S100-KS (5.5合)",
+      "model": "JRX-S100-KS",
+      "price": 169400,
+      "groupId": "premium_flagship",
+      "cap": 5.5,
+      "heat": "土鍋圧力IH",
+      "pot": "本土鍋(萬古焼・約300℃)",
+      "press": "あり",
+      "taste": "本物の土鍋ごはん・強烈な甘み",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◯",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "本物の萬古焼「本土鍋」を内釜に採用！約300℃の大火力と泡立ちで米の甘みを極限まで抽出",
+        "en": "Genuine Banko-ware clay pot inner bowl! ~300℃ intense heat delivers restaurant-grade rice",
+        "zh": "真正日本万古烧原矿土锅内胆！300℃极热烈火与丰富气泡，封神级米饭甘甜"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JRX-S100-KS",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atiger-corporation.com%20JRX-S100-KS%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r16",
+      "status": "active",
+      "maker": "ZOJIRUSHI",
+      "name": "NX-AB10-BZ (5.5合)",
+      "model": "NX-AB10-BZ",
+      "price": 165000,
+      "groupId": "premium_flagship",
+      "cap": 5.5,
+      "heat": "圧力IH(炎舞炊き)",
+      "pot": "豪炎かまど釜",
+      "press": "あり",
+      "taste": "かまどの激しい対流・もちもち",
+      "keep": "40時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "象印最高峰「炎舞炊き」。独立制御底IHヒーターが激しい対流を起こし、米の芯からふっくら大粒に炊飯",
+        "en": "Zojirushi's top flagship with multi-coil rotational boiling for perfectly fluffy grains",
+        "zh": "象印天花板“炎舞炊”！底部多组电磁线圈交替对流翻滚，颗颗大粒晶莹"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NX-AB10-BZ",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NX-AB10-BZ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r17",
+      "status": "active",
+      "maker": "MITSUBISHI",
+      "name": "NJ-BW10J-B (5.5合)",
+      "model": "NJ-BW10J-B",
+      "price": 131780,
+      "groupId": "premium_flagship",
+      "cap": 5.5,
+      "heat": "IH(本炭釜)",
+      "pot": "本炭釜 紬(純度99.9%炭)",
+      "press": "なし",
+      "taste": "極上の粒立ち・しゃっきり弾力",
+      "keep": "24時間",
+      "steam": "標準",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "cap": "◎",
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
+      },
+      "desc": {
+        "ja": "純度99.9%の炭素の塊を手作業で削り出した内釜。圧力をかけず圧倒的火力で粒立ちを際立たせる",
+        "en": "Hand-carved 99.9% pure carbon pot; non-pressure natural boiling creates perfect grain texture",
+        "zh": "99.9%高纯度实心木炭手工旋削内胆，非压力极热沸腾，颗粒挺拔口感一绝"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Amitsubishielectric.co.jp%20NJ-BW10J-B",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Amitsubishielectric.co.jp%20NJ-BW10J-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "r18",
+      "status": "active",
+      "maker": "ZOJIRUSHI",
+      "name": "NW-UU07-BZ (4合)",
+      "model": "NW-UU07-BZ",
+      "price": 85800,
+      "groupId": "premium_flagship",
+      "cap": 4,
+      "heat": "圧力IH(炎舞炊き)",
+      "pot": "豪炎かまど釜",
+      "press": "あり",
+      "taste": "料亭風・少量でも極上",
+      "keep": "30時間",
+      "steam": "標準",
       "size": {
         "w": null,
         "d": null,
@@ -502,15 +1212,15 @@ html[data-device=tablet] .fr-wrap {
       "tags": [],
       "grades": {
         "cap": "◯",
-        "table": "◎",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
+        "method": "◎",
+        "taste": "◎",
+        "keep": "◎",
+        "pot": "◎"
       },
       "desc": {
-        "ja": "東芝ブランド×フラット庫内×縦開きで1.3万円。文字が光って見やすく、庫内もサッと拭ける",
-        "en": "Toshiba flat-bed with vertical drop-down door around 13k JPY. Backlit easy-read timer",
-        "zh": "东芝大厂1.3万日元档平板下翻门！发光大旋钮，平板底面一抹即净"
+        "ja": "「少人数だがご飯の味には絶対妥協したくない」方に向けた4合プレミアム炎舞炊き",
+        "en": "4-cup compact premium Flame Dance cooker for small families demanding supreme taste",
+        "zh": "专为1-3人打造的高端4合炎舞炊，小分量也能烹出顶级名厨饭香"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -519,429 +1229,13 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-M5B-W",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NW-UU07-BZ",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-M5B-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m6",
-      "status": "active",
-      "maker": "e angle",
-      "name": "ETDRF18-W",
-      "model": "ETDRF18-W",
-      "price": 14080,
-      "groupId": "flat_bed_standard",
-      "cap": 18,
-      "table": "フラット庫内",
-      "door": "横開き",
-      "power": "500W/650W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◯",
-        "table": "◎",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
-      },
-      "desc": {
-        "ja": "18Lワイドフラット。大きめの長方形コンビニ弁当も回転で引っかかる心配なし",
-        "en": "18L wide flat-bed. Large convenience store bento boxes slide in effortlessly",
-        "zh": "18L宽幅平板内胆，大号长方形便利店便当放入绝无转盘卡顿之忧"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20ETDRF18-W",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20ETDRF18-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m7",
-      "status": "active",
-      "maker": "Haier",
-      "name": "JMFH18NJ-K",
-      "model": "JMFH18NJ-K",
-      "price": 14960,
-      "groupId": "flat_bed_standard",
-      "cap": 18,
-      "table": "フラット庫内",
-      "door": "縦開き",
-      "power": "500W/650W",
-      "sensor": "なし(タイマー)",
-      "autoMenu": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◯",
-        "table": "◎",
-        "sensor": "✕",
-        "power": "◯",
-        "auto": "✕"
-      },
-      "desc": {
-        "ja": "18Lフラットタイプ。ブラック系のシックなデザインでキッチン家電に馴染む1万円台定番",
-        "en": "18L flat-bed in stylish black styling. Fits modern minimalist kitchens",
-        "zh": "18L黑色质感下翻门平板微波炉，摆在厨架上美观耐脏好打理"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ahaier.co.jp%20JMFH18NJ-K",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ahaier.co.jp%20JMFH18NJ-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m8",
-      "status": "active",
-      "maker": "YAMAZEN",
-      "name": "YRV-F230-B",
-      "model": "YRV-F230-B",
-      "price": 17380,
-      "groupId": "flat_bed_standard",
-      "cap": 23,
-      "table": "フラット庫内",
-      "door": "縦開き",
-      "power": "650W相当",
-      "sensor": "湿度センサー",
-      "autoMenu": 13,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◎",
-        "table": "◎",
-        "sensor": "◯",
-        "power": "◯",
-        "auto": "◯"
-      },
-      "desc": {
-        "ja": "1万円台で驚きの23L広々庫内！ピザやお皿もそのまま入る高コスパ大容量フラット",
-        "en": "Huge 23L flat cavity under 20k JPY! Fits full pizzas and dinner plates easily",
-        "zh": "1万多日元即可拥有23L大容积！整张披萨大盘菜轻松容纳，性价比巨肺"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ayamazen.co.jp%20YRV-F230-B",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ayamazen.co.jp%20YRV-F230-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m9",
-      "status": "active",
-      "maker": "TOSHIBA",
-      "name": "ER-S6B-W",
-      "model": "ER-S6B-W",
-      "price": 20680,
-      "groupId": "sensor_smart_warm",
-      "cap": 17,
-      "table": "フラット庫内",
-      "door": "縦開き",
-      "power": "900W(インバーター)",
-      "sensor": "絶対湿度センサー",
-      "autoMenu": 4,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◯",
-        "table": "◎",
-        "sensor": "◎",
-        "power": "◎",
-        "auto": "◎"
-      },
-      "desc": {
-        "ja": "絶対湿度センサー搭載！「ごはん・おかず」ボタンひとつで食品の蒸気を検知して適温自動温め",
-        "en": "Absolute humidity sensor detects food steam for one-touch automatic reheating",
-        "zh": "搭载绝对湿度传感器！一键感知饭菜蒸汽热度，自动判断加热适温"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-S6B-W",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-S6B-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m10",
-      "status": "active",
-      "maker": "Panasonic",
-      "name": "NE-FL1C-W",
-      "model": "NE-FL1C-W",
-      "price": 20680,
-      "groupId": "sensor_smart_warm",
-      "cap": 22,
-      "table": "フラット庫内",
-      "door": "横開き",
-      "power": "900W(インバーター)",
-      "sensor": "蒸気センサー",
-      "autoMenu": 2,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◎",
-        "table": "◎",
-        "sensor": "◎",
-        "power": "◎",
-        "auto": "◎"
-      },
-      "desc": {
-        "ja": "パナソニックのインバーター900W＆蒸気センサー。温めムラを抑えて素早くスピーディーに仕上げ",
-        "en": "Panasonic 900W inverter with steam sensor, reducing cold spots efficiently",
-        "zh": "松下900W变频极速强火，蒸汽感应防止局部冰凉，温热均匀速度快"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FL1C-W",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FL1C-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m11",
-      "status": "active",
-      "maker": "Panasonic",
-      "name": "NE-FL1E-W",
-      "model": "NE-FL1E-W",
-      "price": 23980,
-      "groupId": "sensor_smart_warm",
-      "cap": 22,
-      "table": "フラット庫内",
-      "door": "横開き",
-      "power": "900W(インバーター)",
-      "sensor": "蒸気センサー",
-      "autoMenu": 2,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◎",
-        "table": "◎",
-        "sensor": "◎",
-        "power": "◎",
-        "auto": "◎"
-      },
-      "desc": {
-        "ja": "毎日の使いやすさを極めたFL1最新世代。ワイドな22Lフラットで大きなお皿も余裕の配置",
-        "en": "Latest FL1 series with wide 22L flat table. The staple reliable family solo microwave",
-        "zh": "松下FL1系列新一代，宽达22L开阔平板，盘碗拿取极为顺手安心"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FL1E-W",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FL1E-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m12",
-      "status": "active",
-      "maker": "TOSHIBA",
-      "name": "ER-S10A-K",
-      "model": "ER-S10A-K",
-      "price": 32780,
-      "groupId": "premium_high_power",
-      "cap": 23,
-      "table": "フラット庫内",
-      "door": "縦開き",
-      "power": "1000W(インバーター)",
-      "sensor": "8つ目赤外線センサー",
-      "autoMenu": 8,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◎",
-        "table": "◎",
-        "sensor": "◎",
-        "power": "◎",
-        "auto": "◎"
-      },
-      "desc": {
-        "ja": "東芝最高峰単機能！高精度「赤外線センサー」と1000Wインバーターで食品表面温度を直接測定温め",
-        "en": "Toshiba flagship solo: 8-point infrared thermal sensor reads food temp directly with 1000W",
-        "zh": "东芝单功能巅峰！8点红外温度传感器直接扫描食物表面温度，1000W变频控温"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-S10A-K",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atoshiba-lifestyle.com%20ER-S10A-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "m13",
-      "status": "active",
-      "maker": "Panasonic",
-      "name": "NE-FB2D-W",
-      "model": "NE-FB2D-W",
-      "price": 44550,
-      "groupId": "premium_high_power",
-      "cap": 26,
-      "table": "ワイド＆フラット",
-      "door": "縦開き",
-      "power": "1000W(インバーター)",
-      "sensor": "高精細・64眼スピードセンサー",
-      "autoMenu": 47,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "cap": "◎",
-        "table": "◎",
-        "sensor": "◎",
-        "power": "◎",
-        "auto": "◎"
-      },
-      "desc": {
-        "ja": "26L大容量＆64眼スピードセンサー！温めるだけだが性能は最上位オーブンレンジ級という究極の贅沢機",
-        "en": "Massive 26L with 64-point thermal speed sensor! Top-tier oven-grade sensor in a solo microwave",
-        "zh": "26L大容积配合64点瞬态热敏矩阵！单功能微波炉里无可挑剔的顶级性能天花板"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FB2D-W",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20NE-FB2D-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Azojirushi.co.jp%20NW-UU07-BZ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
@@ -958,7 +1252,7 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="hearing-data">
 {
-  "category": "microwave",
+  "category": "rice",
   "storeName": "",
   "version": "2026-10-23",
   "questions": {},
@@ -969,13 +1263,13 @@ html[data-device=tablet] .fr-wrap {
 <!-- アプリを閉じた直後・読み込み中に一瞬見える画面 -->
 <div class="pg-card">
   <div class="pg-ico" aria-hidden="true">🏠</div>
-  <h1 class="pg-ttl">電子レンジ</h1>
+  <h1 class="pg-ttl">炊飯器</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="area-kaden.html">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="kaden/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="#"></a></div>
+<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -1014,9 +1308,9 @@ html[data-device=tablet] .fr-wrap {
 var currentLang = "ja";
 (function () {
   "use strict";
-  var APP = "microwave";                 // このページの相談アプリ
-  var ROOT_ID = "mw-app";            // アプリの表示エリア
-  var AREA_URL = "area-kaden.html";       // 閉じたときに戻るエリアページ
+  var APP = "rice";                 // このページの相談アプリ
+  var ROOT_ID = "rc-app";            // アプリの表示エリア
+  var AREA_URL = "kaden/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -3754,7 +4048,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "product-pc.html", out, "text/html");
+      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -4014,73 +4308,73 @@ window.NJ_HEAR = (function () {
 })();
 </script>
 
-<!-- ===== 相談アプリ: microwave ===== -->
+<!-- ===== 相談アプリ: rice ===== -->
 <style>
-.mw-svg {
+.rc-svg {
   width: 96px;
-  height: 66px;
+  height: 70px;
   display: block;
   margin: 0 auto 2px;
   overflow: visible;
 }
-.mw-spin {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: mws 3.4s linear infinite;
+.rc-mini .rc-svg {
+  width: 46px;
+  height: 34px;
+  margin: 0 auto;
+}
+.rc-steam {
+  stroke-dasharray: 5 7;
+  animation: rcs 1.4s linear infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes mws {
+@keyframes rcs {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.rc-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rcr 3s linear infinite;
+  animation-delay: var(--dl,0s);
+}
+@keyframes rcr {
   to {
     transform: rotate(360deg);
   }
 }
-.mw-slide {
-  animation: mwl 2.6s ease-in-out infinite;
-  animation-delay: var(--dl,0s);
-}
-@keyframes mwl {
-  50% {
-    transform: translate(7px);
-  }
-}
-.mw-pulse {
+.rc-pulse {
   transform-box: fill-box;
   transform-origin: center;
-  animation: mwp 1.8s ease-out infinite;
+  animation: rcp 1.9s ease-out infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes mwp {
+@keyframes rcp {
   0% {
     transform: scale(.4);
     opacity: .9;
   }
   to {
-    transform: scale(1.5);
+    transform: scale(1.6);
     opacity: 0;
   }
 }
-.mw-glow {
-  animation: mwg 1.6s ease-in-out infinite;
+.rc-glow {
+  animation: rcg 1.7s ease-in-out infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes mwg {
+@keyframes rcg {
   50% {
-    opacity: .35;
+    opacity: .25;
   }
 }
-.mw-bob {
-  font-size: 2.3rem;
-  text-align: center;
-  line-height: 1.2;
-  animation: mwb 2.4s ease-in-out infinite;
-  animation-delay: var(--dl,0s);
+body.motion-off .rc-steam,
+body.motion-off .rc-spin,
+body.motion-off .rc-pulse,
+body.motion-off .rc-glow {
+  animation: none!important;
 }
-@keyframes mwb {
-  50% {
-    transform: translateY(-6px) rotate(-4deg);
-  }
-}
-.mw-sel {
+.rc-sel {
   border: 1px solid #cbd5e1;
   border-radius: 99px;
   padding: 6px 8px;
@@ -4089,32 +4383,28 @@ window.NJ_HEAR = (function () {
   background: #fff;
   color: #334155;
 }
-.mw-tabs {
-  display: flex;
-  gap: 6px;
-  background: #e2e8f0;
-  border-radius: 99px;
-  padding: 4px;
-  margin-bottom: 14px;
+.rc-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+  line-height: 1.55;
 }
-.mw-tabs button {
-  flex: 1;
-  border: 0;
-  border-radius: 99px;
-  padding: 9px 4px;
-  font-size: .88rem;
-  font-weight: 800;
-  color: #475569;
-  background: transparent;
-  cursor: pointer;
-  transition: .25s;
+.rc-tbl td,
+.rc-tbl th {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 6px 5px;
+  vertical-align: top;
+  text-align: left;
 }
-.mw-tabs button.on {
-  background: #fff;
+.rc-tbl th {
   color: #1d4ed8;
-  box-shadow: 0 3px 10px #2563eb38;
 }
-.mw-flow {
+.rc-tbl td:first-child {
+  color: #1d4ed8;
+  font-weight: 800;
+  width: 5.6em;
+}
+.rc-flow {
   display: flex;
   gap: 6px;
   margin: 0 0 14px;
@@ -4122,7 +4412,7 @@ window.NJ_HEAR = (function () {
   font-weight: 800;
   color: #475569;
 }
-.mw-flow span {
+.rc-flow span {
   flex: 1;
   text-align: center;
   background: #fff;
@@ -4130,524 +4420,490 @@ window.NJ_HEAR = (function () {
   border-radius: 10px;
   padding: 7px 2px;
 }
-.mw-flow span b {
+.rc-flow span b {
   display: block;
   color: #1d4ed8;
   font-size: .78rem;
 }
-.mw-tbl {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .8rem;
-  line-height: 1.55;
-}
-.mw-tbl td,
-.mw-tbl th {
-  border-bottom: 1px solid #f1f5f9;
-  padding: 6px 5px;
-  vertical-align: top;
-  text-align: left;
-}
-.mw-tbl th {
-  color: #1d4ed8;
-  font-size: .8rem;
-}
-.mw-tbl td:first-child {
-  color: #64748b;
-  font-weight: 800;
-  width: 4.6em;
-}
-.mw-chip {
-  cursor: pointer;
-  border: 1.5px solid #cbd5e1;
-  background: #fff;
-  border-radius: 99px;
-  padding: 7px 12px;
-  font-size: .86rem;
-  font-weight: 700;
-  margin: 0 6px 6px 0;
-  color: #334155;
-}
-.mw-chip.on {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: #fff;
-}
-</style><div id="mw-app" class="fr-root" role="dialog" aria-label="Microwave / Oven / Grill"></div>
+</style><div id="rc-app" class="fr-root" role="dialog" aria-label="Rice cooker"></div>
 <script>
 (function () {
   "use strict";
-  const w = document.getElementById("mw-app"),
-    oe = ["ja", "en", "zh"],
-    T = () => currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0,
-    o = e => e[T()],
-    z = e => e[oe[T()]],
+  const k = document.getElementById("rc-app"),
+    fe = ["ja", "en", "zh"],
+    I = () => currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0,
+    b = e => e[I()],
+    o = b,
+    P = e => e[fe[I()]],
+    g = function (e) {
+      let t = b(e);
+      for (let a = 1; a < arguments.length; a++)
+        t = t.split("{" + (a - 1) + "}").join(arguments[a]);
+      return t;
+    },
+    H = e => e.maker === "ノジマオリジナル" ? ["ノジマオリジナル", "Nojima Original", "Nojima 原创"][I()] : e.maker,
     y = e => {
       const t = Math.round(e),
         a = Math.pow(10, Math.max(0, String(t).length - 2)),
         s = (Math.round(t / a) * a).toLocaleString("ja-JP");
-      return o(["約" + s + "円", "approx. ¥" + s, "约" + s + "日元"]);
+      return b(["約" + s + "円", "approx. ¥" + s, "约" + s + "日元"]);
     },
-    R = { "◎": 5, "◯": 3.5, "△": 2, "✕": 1 },
-    G = (e, t, a) => Math.max(t, Math.min(a, e)),
-    P = (window.NJ_INV ? window.NJ_INV.products() : []),
-    W = [
+    G = { "◎": 5, "◯": 3.5, "△": 2, "✕": 1 },
+    A = (e, t, a) => Math.max(t, Math.min(a, e)),
+    B = (window.NJ_INV ? window.NJ_INV.products() : []),
+    ue = [
       {
-        id: "ultra_budget",
         name: {
-          ja: "低価格・シンプル単機能（～1万円台前半）",
-          en: "Ultra-Budget Simple Microwaves (<15k JPY)",
-          zh: "超值简单单功能型（1万日元出头）"
+          ja: "米びつ用 桐製防虫・調湿シート / 米唐番",
+          en: "Rice Storage Insect Repellent & Humidity Sheet",
+          zh: "米桶专用防虫调湿炭包 / 驱虫贴"
         },
+        price: "¥880",
         desc: {
-          ja: "とにかく安さ重視。お弁当や冷凍食品、飲み物のあたためができれば十分な方向け。",
-          en: "Lowest purchase cost for heating lunch boxes, frozen meals, and milk.",
-          zh: "价格最亲民。满足热盒饭、速冻食品与牛奶的基本加热需求。"
-        },
-        class: "budget",
-        minPrice: 6e3,
-        maxPrice: 13e3
+          ja: "お米の酸化やコクゾウムシなどの害虫を防ぎ、お米本来の風味を長期間キープ",
+          en: "Keeps unpolished & white rice fresh and safe from pantry pests",
+          zh: "纯天然植物驱虫成分，隔绝潮气与米虫，长久锁住生米天然清香"
+        }
       },
       {
-        id: "flat_bed_standard",
         name: {
-          ja: "1万円台・お手入れ簡単フラットレンジ（17～18L）",
-          en: "10k-20k JPY Flat-Bed Microwaves (17-18L)",
-          zh: "1～2万日元 平板易清洁单功能（17～18L）"
+          ja: "極薄・立つプレミアムしゃもじ (フッ素非粘着)",
+          en: "Non-Stick Self-Standing Rice Scoop",
+          zh: "极薄边缘立式不粘饭勺"
         },
-        desc: {
-          ja: "ターンテーブルがなく拭き掃除が楽々。大きめのお弁当も引っかからずスムーズに入る一人暮らし〜2人の本命。",
-          en: "Flat-bed without turntable; wipes clean easily and fits larger rectangular bento.",
-          zh: "无旋转托盘，平整底板一擦即净，大方盒便当放入不卡顿。"
-        },
-        class: "flat",
-        minPrice: 12e3,
-        maxPrice: 2e4
-      },
-      {
-        id: "sensor_smart_warm",
-        name: {
-          ja: "自動あたため・高出力センサーレンジ（20～23L）",
-          en: "Auto-Reheat & Sensor Microwaves (20-23L)",
-          zh: "红外智能感应·一键适温（20～23L）"
-        },
-        desc: {
-          ja: "絶対湿度センサーや赤外線センサーを搭載。時間を設定しなくてもワンタッチで食品の中心まで適温に温め。",
-          en: "Infrared / humidity sensors measure temperature to reheat properly without timers.",
-          zh: "搭载湿度或红外温度传感器，无需每次手动调时间，一键适温不爆汁。"
-        },
-        class: "sensor",
-        minPrice: 18e3,
-        maxPrice: 35e3
-      },
-      {
-        id: "premium_high_power",
-        name: {
-          ja: "大容量＆高精細センサー・プレミアム単機能（23～26L）",
-          en: "Large & High-End Flagship Solo (23-26L)",
-          zh: "大容量高端单功能旗舰（23～26L）"
-        },
-        desc: {
-          ja: "1000W高出力インバーターや64眼スピードセンサー、大容量ワイド庫内。温め性能に妥協したくないプロ志向。",
-          en: "1000W inverter with 64-point thermal sensor. Uncompromised heating speed and capacity.",
-          zh: "1000W高频变频大功率搭配64点矩阵感温，大盘菜均匀通透热透。"
-        },
-        class: "premium",
-        minPrice: 3e4,
-        maxPrice: 5e4
-      }
-    ],
-    ne = [
-      {
-        name: { ja: "電子レンジ用 汚れ防止シリコンマット", en: "Silicone Splatter Mat", zh: "微波炉专用防油污耐热硅胶垫" },
         price: "¥1,280",
         desc: {
-          ja: "吹きこぼれや油ハネから庫内底面を守る。汚れたら取り出して丸洗いOK",
-          en: "Protects flat base from boil-overs; removable and dishwasher-safe",
-          zh: "铺在平板底部防止汤汁溢出与油溅，弄脏后直接水洗，保持内胆如新"
+          ja: "ご飯の粒を潰さずサクッと切るようにほぐせる。自立して衛生的",
+          en: "Ultra-thin tip fluffs freshly cooked rice without mashing grains",
+          zh: "极薄匙刃轻松切拌蓬松米饭不压烂米粒，随手直立放置干净卫生"
         }
       },
       {
         name: {
-          ja: "耐熱ガラス製 保存＆温めボウルセット (計量目盛り付き)",
-          en: "Heat-Resistant Glass Bowl Set",
-          zh: "耐热高硼硅玻璃带盖微波碗套装"
+          ja: "冷凍ご飯専用 保存容器 (2重構造・すのこ付き 4個組)",
+          en: "Frozen Rice Storage Containers (4-Pack)",
+          zh: "冷冻米饭专用双层沥水保鲜盒 (4只装)"
         },
-        price: "¥2,480",
+        price: "¥1,980",
         desc: {
-          ja: "ラップ不要でそのまま温め可能。冷蔵保存から電子レンジまで一連で使える定番",
-          en: "Microwave and dishwasher safe glass bowls; eliminates plastic wrap waste",
-          zh: "免撕保鲜膜，自带透气微波盖，冷藏储鲜后直接进微波炉加热"
-        }
-      },
-      {
-        name: {
-          ja: "伸縮式 電子レンジ上ラック (キッチン収納)",
-          en: "Expandable Microwave Top Rack",
-          zh: "微波炉上方可伸缩金属收纳置物架"
-        },
-        price: "¥3,980",
-        desc: {
-          ja: "電子レンジの上のデッドスペースを有効活用。トースターやラップ類をスッキリ整理",
-          en: "Utilizes dead space above microwave; holds toasters and spices neatly",
-          zh: "充分利用微波炉顶部空间，稳固收纳烤面包机、保鲜膜与调料罐"
+          ja: "余分な水分が下に落ちて電子レンジ温め後もベチャつかず、炊きたてのふっくら感が復活",
+          en: "Internal steam tray prevents sogginess during microwave defrosting",
+          zh: "底部蒸气沥水隔板设计，微波解冻后底部不湿烂，如同刚出锅般松软"
         }
       }
     ],
-    ie = {
-      ターンテーブル: ["ターンテーブル", "Turntable", "旋转托盘"],
-      フラット庫内: ["フラット庫内", "Flat-bed", "平板内胆"],
-      "ワイド＆フラット": ["ワイド＆フラット", "Wide & flat", "宽幅平板"]
+    U = {
+      マイコン: ["マイコン", "Microcomputer", "微电脑"],
+      IH: ["IH", "IH", "IH电磁"],
+      圧力IH: ["圧力IH", "Pressure IH", "压力IH"],
+      真空圧力IH: ["真空圧力IH", "Vacuum pressure IH", "真空压力IH"],
+      "圧力＆スチームIH": ["圧力＆スチームIH", "Pressure & steam IH", "压力＆蒸汽IH"],
+      土鍋圧力IH: ["土鍋圧力IH", "Clay-pot pressure IH", "土锅压力IH"],
+      "圧力IH(炎舞炊き)": ["圧力IH（炎舞炊き）", "Pressure IH (Flame Dance)", "压力IH（炎舞炊）"],
+      "IH(本炭釜)": ["IH（本炭釜）", "IH (pure carbon pot)", "IH（本炭釜）"]
     },
-    re = { 横開き: ["横開き", "Side-opening", "侧开门"], 縦開き: ["縦開き", "Drop-down", "下翻门"] },
-    le = {
-      "なし(タイマー)": ["なし（タイマー）", "None (timer)", "无（定时）"],
-      湿度センサー: ["湿度センサー", "Humidity sensor", "湿度传感器"],
-      絶対湿度センサー: ["絶対湿度センサー", "Absolute-humidity sensor", "绝对湿度传感器"],
-      蒸気センサー: ["蒸気センサー", "Steam sensor", "蒸汽传感器"],
-      "8つ目赤外線センサー": ["8つ目赤外線センサー", "8-point infrared sensor", "8点红外传感器"],
-      "高精細・64眼スピードセンサー": ["高精細・64眼スピードセンサー", "64-point speed sensor", "高精细64点速感传感器"]
+    me = {
+      標準: ["標準", "Standard", "标准"],
+      "蒸気カット(ほぼゼロ)": ["蒸気カット（ほぼゼロ）", "Steam-cut (near zero)", "防蒸汽（几乎为零）"],
+      蒸気セーブ: ["蒸気セーブ", "Steam-save (reduced)", "减蒸汽"]
     },
-    ce = e => T() === 0
-      ? e
-      : T() === 1
-        ? e.replace("相当", " (equiv.)").replace("(インバーター)", " (inverter)")
-        : e.replace("相当", "相当").replace("(インバーター)", "（变频）");
-  P.forEach(e => {
-    e.W = Math.max.apply(0, (e.power.match(/\d+(?=W)/g) || [0]).map(Number));
+    be = {
+      r1: ["Black thick pot", "黑色厚釜"],
+      r2: ["Black far-infrared thick pot (1.7mm)", "黑远红外厚釜（1.7mm）"],
+      r3: ["Far-infrared extra-thick pot (3mm)", "远红外特厚釜（3mm）"],
+      r4: ["Black thick pot (2.5mm)", "黑色厚釜（2.5mm）"],
+      r5: ["Copper-coated pot", "铜涂层内胆"],
+      r6: ["3-layer far-infrared clay-coated pot", "远红外3层土锅涂层釜"],
+      r7: ["Bincho-charcoal pot (2mm)", "备长炭炭炊釜（2mm）"],
+      r8: ["Bincho-charcoal pot", "备长炭釜"],
+      r9: ["Extra-thick pot (3mm)", "极厚火釜（3mm）"],
+      r10: ["Forged copper kamado pot", "锻造铜灶釜"],
+      r11: ["9-layer clay-coated kamado pot", "远红外9层土锅灶釜"],
+      r12: ["Black round thick pot", "黑圆厚釜"],
+      r13: ["High-power boiling iron pot", "大火力沸腾铁釜"],
+      r14: ["Black thick iron pot", "黑厚铁釜"],
+      r15: ["Genuine Banko-ware clay pot (~300℃)", "万古烧真土锅（约300℃）"],
+      r16: ["Gouen kamado pot", "豪炎灶釜"],
+      r17: ['Pure carbon pot "Tsumugi" (99.9%)', "本炭釜“紬”（纯度99.9%）"],
+      r18: ["Gouen kamado pot", "豪炎灶釜"]
+    },
+    ge = {
+      r1: ["Standard", "普通"],
+      r2: ["Standard", "普通"],
+      r3: ["Standard / bakes bread", "普通／可烤面包"],
+      r4: ["Standard", "普通"],
+      r5: ["Distinct grains / standard", "颗粒分明／普通"],
+      r6: ["Fluffy", "松软"],
+      r7: ["Crisp, distinct grains", "爽口、颗粒分明"],
+      r8: ["Fluffy", "松软"],
+      r9: ["Chewy / 50 rice varieties", "软糯／50种米种"],
+      r10: ["Fluffy, water to the core", "松软、吸水至米芯"],
+      r11: ["Chewy and springy", "软糯弹润"],
+      r12: ["Crisp to chewy, 3 modes", "爽口到软糯3档"],
+      r13: ["Firm outside, soft inside", "外韧内软"],
+      r14: ["Fluffy", "松软"],
+      r15: ["Genuine clay-pot rice, strong sweetness", "真土锅饭、浓郁甘甜"],
+      r16: ["Vigorous convection, chewy", "激烈对流、软糯"],
+      r17: ["Superb distinct grains, springy", "极致颗粒感、有弹性"],
+      r18: ["Restaurant-style, great in small batches", "料亭风味、少量也极致"]
+    },
+    ye = {
+      r1: "std",
+      r2: "std",
+      r3: "std",
+      r4: "std",
+      r5: "firm",
+      r6: "soft",
+      r7: "firm",
+      r8: "soft",
+      r9: "chewy",
+      r10: "soft",
+      r11: "chewy",
+      r12: "var",
+      r13: "firm",
+      r14: "soft",
+      r15: "sweet",
+      r16: "chewy",
+      r17: "firm",
+      r18: "sweet"
+    },
+    ke = e => I() === 0 ? e.pot : be[e.id][I() - 1],
+    we = e => I() === 0 ? e.taste : ge[e.id][I() - 1],
+    ae = e => {
+      const t = parseInt(e.keep);
+      return I() === 0
+        ? e.keep
+        : t
+          + (I() === 1 ? " h" : "小时")
+          + (
+            /真空/.test(e.keep)
+              ? I() === 1 ? " (vacuum)" : "（真空）"
+              : /スチーム/.test(e.keep) ? I() === 1 ? " (steam)" : "（蒸汽）" : ""
+          );
+    },
+    O = e => e.cap + (I() === 1 ? " cups (gō)" : "合");
+  B.forEach(e => {
+    e.hrs = parseInt(e.keep), e.tx = ye[e.id], e.name = e.model;
   });
-  const S = {
-    ultra_budget: {
-      who: [
-        "とにかく初期費用を抑えたい方／お弁当・飲み物を温めるだけの方",
-        "Anyone who wants the lowest upfront cost and only reheats bento and drinks",
-        "只想压低初期花费、仅热便当饮品的人"
-      ],
-      pro: [
-        "6,000円台から。ダイヤルを回すだけで迷わない",
-        "From about 6,000 yen. Just turn the dial",
-        "6000日元起，旋钮一拧就能用"
-      ],
-      con: [
-        "ターンテーブルで17L。大きなお弁当は回転で当たることも。センサー・自動なし",
-        "Turntable, 17L. Large bento may catch while rotating. No sensor or auto mode",
-        "旋转托盘17L，大便当可能被卡。无传感器与自动功能"
-      ]
+  const se = {
+    r1: {
+      ja: "最小2合炊き。たまに1〜2杯だけ炊く、炊飯器をあまり使わない一人暮らしの方向け",
+      en: "Compact 2-cup cooker for solo living when you only cook rice occasionally",
+      zh: "最小2合。适合很少煮饭、偶尔只煮1～2碗的独居者"
     },
-    flat_bed_standard: {
-      who: [
-        "お手入れを楽にしたい／大きめのお弁当をよく温める方",
-        "People who want easy cleaning or often heat large bento boxes",
-        "想要好打理、常热大号便当的人"
-      ],
-      pro: [
-        "フラット庫内で拭き掃除がラク。皿が引っかからない。1万円台",
-        "Flat-bed wipes clean fast and nothing catches. Around 10-15k yen",
-        "平板内胆一擦即净，餐盒不卡。1万多日元"
-      ],
-      con: [
-        "多くはタイマー式で自動あたためなし（山善 YRV-F230 のみ湿度センサー）",
-        "Mostly timer-based without auto reheat (only Yamazen YRV-F230 has a humidity sensor)",
-        "多为定时式，无自动加热（仅山善YRV-F230带湿度传感器）"
-      ]
+    r2: {
+      ja: "5.5合炊きの大容量マイコン。ふっくら炊ける黒遠赤厚釜を搭載",
+      en: "Large 5.5-cup microcomputer cooker with a far-infrared thick pot",
+      zh: "5.5合大容量微电脑，搭载黑远红外厚釜"
     },
-    sensor_smart_warm: {
-      who: [
-        "毎日使う／時間を合わせずワンタッチで温めたい方",
-        "Daily users who want one-touch reheating without setting a time",
-        "每天使用、想一键加热免调时间的人"
-      ],
-      pro: [
-        "900Wインバーター＋センサーでムラと温めすぎを抑える",
-        "900W inverter plus sensor reduces cold spots and overheating",
-        "900W变频+传感器，减少冷热不均与过热"
-      ],
-      con: [
-        "2万円台。17〜22Lで、最上位ほどの大容量ではない",
-        "Around 20-24k yen. 17-22L, not as roomy as the flagships",
-        "2万多日元。17～22L，容量不及旗舰"
-      ]
+    r5: {
+      ja: "5.5合のIH。内釜全体がしっかり発熱し、芯までムラなく炊飯。IH入門に",
+      en: "5.5-cup IH cooker that heats the whole pot evenly; a good entry to IH",
+      zh: "5.5合IH，内胆整体发热、受热均匀，是IH入门之选"
     },
-    premium_high_power: {
-      who: [
-        "温め性能に妥協したくない／大皿・ファミリーで使う方",
-        "Those who refuse to compromise on performance, or heat platters for a family",
-        "不愿在性能上妥协、或家庭热大盘菜的人"
-      ],
-      pro: [
-        "1000W＋高精度センサー。23〜26Lの大容量で最もムラが少ない",
-        "1000W plus high-precision sensors. 23-26L for the most even heating",
-        "1000W+高精度传感器，23～26L大容量，加热最均匀"
-      ],
-      con: [
-        "3.3万〜4.5万円と高価。置き場所の幅・奥行きも要確認",
-        "33-45k yen. Check the width and depth of your space",
-        "3.3万～4.5万日元，较贵，需确认摆放空间"
-      ]
+    r9: {
+      ja: "圧力IHの入門機。50銘柄炊き分けと大火力で、もっちり甘いご飯",
+      en: "Entry pressure IH with 50-variety rice profiling for tender, sweet rice",
+      zh: "压力IH入门机型，50种米种炊煮程序，软糯回甜"
+    },
+    r14: {
+      ja: "最高1.3気圧の高圧炊飯＆蒸気セーブ。熱に弱い家具周りにも置きやすい",
+      en: "Up to 1.3-atm pressure cooking with steam-save; easier to place near furniture",
+      zh: "最高1.3个大气压烹饪与减蒸汽模式，摆放在家具附近更放心"
     }
-  },
-    A = [
-      {
-        id: "o_mw",
-        e: "♨️",
-        n: ["電子レンジ（単機能）", "Microwave (solo)", "微波炉（单功能）"],
-        sub: ["温め・解凍だけ", "Reheat & defrost", "只加热·解冻"],
-        who: ["お弁当・飲み物・冷凍食品を温める方", "Reheating bento, drinks and frozen food", "加热便当、饮品、速冻食品"],
-        pro: ["安い・コンパクト・操作が簡単", "Affordable, compact, simple", "便宜、小巧、易操作"],
-        con: ["焼く・グリルはできません", "Cannot bake or grill", "不能烘烤或烧烤"]
-      },
-      {
-        id: "o_range",
-        e: "🍞",
-        n: ["オーブンレンジ", "Oven range", "微波烤箱一体机"],
-        sub: ["温め＋焼く", "Reheat + bake", "加热＋烘烤"],
+  };
+  B.forEach(e => {
+    se[e.id] && (e.desc = se[e.id]);
+  });
+  const E = [
+    {
+      id: "budget_micro",
+      name: { ja: "シンプルなマイコン炊飯器", en: "Simple microcomputer cookers", zh: "简易微电脑电饭煲" },
+      desc: {
+        ja: "ご飯をあまり炊かない方・少量派向けの基本モデル。",
+        en: "Basic models for people who rarely cook rice or cook small amounts.",
+        zh: "面向很少煮饭、煮得少的人的基础款。"
+      }
+    },
+    {
+      id: "standard_ih",
+      name: { ja: "スタンダードIH炊飯器", en: "Standard IH cookers", zh: "标准电磁IH电饭煲" },
+      desc: {
+        ja: "内釜全体を包み込む高火力でふっくら。毎日炊くならここからが目安。",
+        en: "High power heats the whole pot for fluffy rice; the usual starting point for daily cooking.",
+        zh: "高火力包裹整个内胆，饭粒松软；每天煮饭建议从这一档开始。"
+      }
+    },
+    {
+      id: "pressure_ih_middle",
+      name: { ja: "圧力IH炊飯器", en: "Pressure IH cookers", zh: "压力IH电饭煲" },
+      desc: {
+        ja: "圧力で甘みともちもち感を引き出す。冷凍ご飯・お弁当にも強い。",
+        en: "Pressure brings out sweetness and chew; strong for frozen rice and bento.",
+        zh: "加压激发甘甜与软糯，冷冻米饭与便当也很出色。"
+      }
+    },
+    {
+      id: "steam_cut_clean",
+      name: { ja: "蒸気カット炊飯器（日立）", en: "Steam-cut cookers (Hitachi)", zh: "防蒸汽电饭煲（日立）" },
+      desc: {
+        ja: "炊飯中の蒸気がほとんど出ない／減らせるので、棚や食器棚に置きやすい。",
+        en: "Little or reduced steam while cooking, so it suits shelves and cabinets.",
+        zh: "煮饭时几乎不排或减少蒸汽，适合放在置物架或橱柜。"
+      }
+    },
+    {
+      id: "premium_flagship",
+      name: { ja: "最高峰フラッグシップ", en: "Top flagship cookers", zh: "顶级旗舰电饭煲" },
+      desc: {
+        ja: "本土鍋・炭釜・炎舞炊きなど、釜と加熱の仕組みが別格。",
+        en: "Genuine clay pot, carbon pot or Flame Dance: the pot and heating are in a class of their own.",
+        zh: "真土锅、炭釜、炎舞炊等，内胆与加热方式别具一格。"
+      }
+    }
+  ],
+    X = {
+      budget_micro: {
         who: [
-          "パン・お菓子・グラタンなど焼き料理もしたい方",
-          "Those who also bake bread, sweets and gratin",
-          "也想烤面包、点心、焗菜的人"
+          "ご飯をあまり炊かない方／パックご飯が中心の一人暮らしの方",
+          "People who rarely cook rice, or solo dwellers who mostly use packaged rice",
+          "很少煮饭、以即食米饭为主的独居者"
         ],
         pro: [
-          "1台で温め・オーブン調理・自動メニュー",
-          "Reheat, bake and use auto menus in one unit",
-          "一台完成加热、烤箱烹饪与自动菜单"
+          "操作が簡単で場所を取らない。最小2合〜5.5合まで選べる",
+          "Simple to use and compact; from 2 up to 5.5 gō",
+          "操作简单、省空间，容量从2合到5.5合可选"
         ],
         con: [
-          "本体が大きく高価。お手入れ箇所が増えます",
-          "Larger and pricier, with more parts to clean",
-          "体积大、价格高，清洁部位更多"
+          "ヒーター加熱のため、炊きムラや甘みはIHに劣る。保温は12時間まで。毎日炊くと物足りなくなりがち",
+          "Heater-based, so evenness and sweetness trail IH; keep-warm up to 12 h. Can feel limited if you cook daily",
+          "加热方式较基础，均匀度与甘甜不及IH；保温最长12小时。每天使用容易觉得不够"
         ]
       },
-      {
-        id: "o_steam",
-        e: "🥘",
-        n: ["スチームオーブンレンジ", "Steam oven range", "蒸汽烤箱微波炉"],
-        sub: ["蒸気で調理", "Cooks with steam", "用蒸汽烹饪"],
+      standard_ih: {
         who: [
-          "ヘルシー調理・蒸し料理・ふっくら温めを重視する方",
-          "Healthy cooking, steaming and moist reheating",
-          "重视健康烹饪、蒸菜与松软加热"
+          "毎日炊く方で、味と使いやすさのバランスを取りたい方",
+          "Daily cooks who want a balance of taste and ease",
+          "每天煮饭、想兼顾口味与易用性的人"
         ],
         pro: [
-          "油を減らせて、パンや料理がふっくら仕上がる",
-          "Less oil and fluffier results for bread and dishes",
-          "可少油，面包与菜肴更松软"
+          "内釜全体を加熱するIHで、芯までムラなく炊ける",
+          "IH heats the whole pot, cooking evenly to the core",
+          "IH加热整个内胆，受热均匀、米芯也熟透"
         ],
-        con: ["給水タンクの手入れが必要。価格は高め", "Needs water-tank care and costs more", "需要保养水箱，价格偏高"]
-      },
-      {
-        id: "o_grill",
-        e: "🐟",
-        n: ["オーブントースター・グリル", "Toaster oven / grill", "烤面包机·烧烤炉"],
-        sub: ["焼く専用", "Dedicated to toasting & grilling", "专用烘烤"],
-        who: ["トースト・焼き魚・焼き物を手軽に作りたい方", "Toast, grilled fish and quick roasting", "想轻松做吐司、烤鱼、烧烤的人"],
-        pro: ["立ち上がりが速く、焼き色をしっかりつけられる", "Heats fast and browns well", "升温快，上色好"],
         con: [
-          "電子レンジの代わりにはなりません（温めは別に必要）",
-          "Does not replace a microwave for reheating",
-          "不能替代微波炉（加热仍需另备）"
+          "圧力はかからないため、もっちり感は圧力IHに一歩譲る",
+          "No pressure, so less chewy than pressure IH",
+          "不加压，软糯度略逊于压力IH"
+        ]
+      },
+      pressure_ih_middle: {
+        who: [
+          "冷凍ご飯・お弁当が多い／もっちり甘いご飯が好きな方",
+          "Those who freeze rice, pack bento, or like sweet, chewy rice",
+          "常冷冻米饭、带便当或喜欢软糯甘甜口感的人"
+        ],
+        pro: [
+          "圧力で甘みともちもち感がアップ。冷めても固くなりにくい",
+          "Pressure boosts sweetness and chew and keeps rice soft when cold",
+          "压力提升甘甜与软糯，冷了也不易变硬"
+        ],
+        con: [
+          "メーカーごとに食感の方向性（もっちり／しゃっきり）が分かれる",
+          "Texture direction (chewy vs. firm) differs by maker",
+          "各品牌口感方向（软糯／爽口）不同"
+        ]
+      },
+      steam_cut_clean: {
+        who: [
+          "スライド棚・食器棚に置く／蒸気で家具を傷めたくない方",
+          "Those who place it on a sliding shelf or in a cabinet",
+          "放在拉出式置物架或橱柜、不想让蒸汽损伤家具的人"
+        ],
+        pro: [
+          "炊飯中の蒸気をほぼ出さない（RZ-V100KM）／減らす（RZ-Y100HJ）",
+          "Almost no steam while cooking (RZ-V100KM) or reduced steam (RZ-Y100HJ)",
+          "煮饭时几乎不排蒸汽（RZ-V100KM）或减少蒸汽（RZ-Y100HJ）"
+        ],
+        con: [
+          "日立は「外は適度な弾力、中は軟らかい」しゃっきり系。もっちり派には方向が違う",
+          "Hitachi leans firm and springy rather than very sticky",
+          "日立偏爽口有弹性，不是黏糯路线"
+        ]
+      },
+      premium_flagship: {
+        who: [
+          "お米の味に妥協したくない／毎日のご飯をごちそうにしたい方",
+          "Rice lovers who want everyday rice to be a treat",
+          "不愿在米饭口味上妥协、想让每天的饭成为享受的人"
+        ],
+        pro: [
+          "本土鍋・炎舞炊き・本炭釜など、釜と加熱の仕組みが別格",
+          "Genuine clay pot, Flame Dance and pure-carbon pots are in a class of their own",
+          "真土锅、炎舞炊、本炭釜等，内胆与加热方式别具一格"
+        ],
+        con: [
+          "サイズや重さがあるので、置き場所とお手入れを事前に確認したい",
+          "Larger and heavier, so check placement and care first",
+          "体积和重量较大，需先确认摆放位置与保养"
         ]
       }
-    ],
-    k = {
-      tab2: ["オーブン・グリル系", "Oven & grill", "烤箱·烧烤类"],
-      app: ["ノジマ式 電子レンジ・オーブン相談", "Nojima Microwave & Oven Guide", "Nojima 微波炉·烤箱选购咨询"],
-      back: ["← 一覧へ", "← List", "← 返回列表"],
-      pill: ["該当", "Match", "符合"],
-      unit: ["機種", " models", "款"],
-      s0: ["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体"],
-      h0: [
-        "「温める」道具は、大きく<em>4タイプ</em>あります",
-        "Cooking appliances fall into <em>4 types</em>",
-        "加热烹饪家电大致分为<em>4种类型</em>"
-      ],
-      p0: [
-        "タップで違いが見られます。まず自分が使いたいのはどれかを確認してから、診断に進みます。",
-        "Tap a card to see how they differ. Check which one you need, then start the guide.",
-        "点击卡片查看差异。先确认自己需要哪一种，再开始诊断。"
-      ],
-      flow: [
-        ["前半", "Part 1", "前半"],
-        ["絶対条件", "Must-haves", "必要条件"],
-        ["後半", "Part 2", "后半"],
-        ["こだわり", "Priorities", "偏好"],
-        ["最終", "Final", "最终"],
-        ["譲れない1点", "Top priority", "最重要1点"],
-        ["提案", "Picks", "推荐"],
-        ["3機種", "3 models", "3款"]
-      ],
-      tag: [
-        ["向く方", "Best for", "适合"],
-        ["強み", "Strengths", "优点"],
-        ["注意", "Caution", "注意"],
-        ["目安", "Range", "价格"]
-      ],
-      inStock: ["この診断で在庫比較できます（13機種）", "Fully compared in this guide (13 models)", "本诊断可比较库存（13款）"],
-      ovNote: [
-        "オーブン・グリル系の在庫データはこの診断にはまだ入っていません。違いの確認と、スタッフへの条件共有ができます。",
-        "Stock data for oven and grill types is not in this guide yet. You can compare the types and "
-          + "share your needs with staff.",
-        "本诊断暂未收录烤箱·烧烤类库存数据，可对比类型并向店员传达需求。"
-      ],
-      go: ["電子レンジを診断する", "Start the microwave guide", "开始微波炉诊断"],
-      goOv: ["オーブン・グリルを検討中の方へ", "Considering an oven or grill?", "正在考虑烤箱·烧烤炉？"],
-      sub4: ["電子レンジ（単機能）は、在庫で4グループ", "Solo microwaves: 4 groups in stock", "单功能微波炉：库存分为4组"],
-      ovTitle: ["オーブン・グリル系のタイプ比較", "Oven and grill types compared", "烤箱·烧烤类型对比"],
-      ovP: [
-        "気になるタイプをタップして選ぶと、スタッフ確認シートに反映されます。",
-        "Tap the types you are interested in; they will appear on the staff sheet.",
-        "点选感兴趣的类型，将显示在店员确认单上。"
-      ],
-      ovCheck: ["店頭で確認したいこと", "Ask staff about", "建议向店员确认"],
-      ovList: [
-        [
-          "庫内容量（L）と本体の外寸が置き場所に入るか",
-          "Capacity (L) and whether the outer size fits your space",
-          "容量（L）及外形尺寸能否放入摆放位置"
-        ],
-        [
-          "焼き料理で使う最高温度・段数・自動メニュー",
-          "Maximum temperature, rack levels and auto menus for baking",
-          "烘烤用的最高温度、层数与自动菜单"
-        ],
-        [
-          "スチーム機は給水タンクと庫内のお手入れ方法",
-          "For steam models: the water tank and cleaning routine",
-          "蒸汽机型的水箱与内胆清洁方式"
-        ]
-      ],
-      ovTo: ["この条件でスタッフに相談", "Share this with staff", "向店员咨询"],
-      st: [
-        ["前半｜絶対条件（これは外せない）", "Part 1 | Must-haves", "前半｜必要条件（不可妥协）"],
-        ["後半｜使い方のこだわり", "Part 2 | How you use it", "后半｜使用习惯与偏好"],
-        ["最終｜譲れない1点", "Final | Your top priority", "最终｜最不能让步的1点"]
-      ],
-      back1: ["← ひとつ戻る", "← Back", "← 返回上一步"],
-      r1t: ["前半の結果", "Part 1 result", "前半结果"],
-      r1h: [
-        "絶対条件で、<em>%n機種</em>に絞り込みました",
-        "Your must-haves narrowed it to <em>%n models</em>",
-        "按必要条件筛选后剩下<em>%n款</em>"
-      ],
-      r1b: ["グループ別に残った機種数", "Models left per group", "各组剩余款数"],
-      r1w: ["外れた理由", "Why models dropped out", "被排除的原因"],
-      r1none: ["対象外なし", "Nothing excluded", "无被排除"],
-      r1d: ["グループごとの違い（残っているもの）", "How the remaining groups differ", "剩余各组的区别"],
-      r1warn: [
-        "⚠️ 条件にぴったり合う機種が3つに満たないため、条件外の機種で補っています（理由を明記します）。予算や容量の条件をやり直すと増えます。",
-        "⚠️ Fewer than 3 models fully match, so the list is topped up with near matches (reasons are "
-          + "marked). Relaxing budget or size may help.",
-        "⚠️ 完全符合的不足3款，已用接近的机型补足（会标明原因）。放宽预算或容量可增加选择。"
-      ],
-      r1caut: [
-        "残った機種のうち %n 機種に注意点（減点）があります。最終画面に明記します。",
-        "%n of the remaining models carry a caution. It is shown on the final screen.",
-        "剩余机型中有%n款存在注意点（已扣分），将在最终画面标明。"
-      ],
-      nxt2: ["後半ヒアリングへ（重みづけ）", "Continue to Part 2 (weighting)", "进入后半（权重设定）"],
-      r2t: ["後半の結果", "Part 2 result", "后半结果"],
-      r2h: ["お客様の<em>重みづけ</em>が決まりました", "Your <em>weighting</em> is set", "您的<em>权重</em>已确定"],
-      r2p: [
-        "回答から5つの評価軸の重要度を自動で決めました。このあと最後の1点で、さらに優先軸を決めます。",
-        "Your answers set the importance of 5 axes. One last question will choose your top axis.",
-        "根据回答自动设定了5个评价维度的重要度。最后一问将确定最优先维度。"
-      ],
-      r2w: ["あなたの重みづけ", "Your weighting", "您的权重"],
-      r2g: ["グループ × 評価軸（平均点・5点満点）", "Group × axis (average, out of 5)", "分组 × 维度（平均分，满分5）"],
-      r2f: ["グループごとの特徴", "What each group offers", "各组特点"],
-      r2a: ["評価軸の見方", "How to read the axes", "评价维度说明"],
-      nxt3: ["最後の1点を決める", "Choose your top priority", "确定最重要的1点"],
-      ft: ["最終結果", "Final result", "最终结果"],
-      fh: ["あなたへのおすすめ<em>3機種</em>", "Your <em>3 recommended models</em>", "为您推荐的<em>3款</em>"],
-      fp: [
-        "「譲れないポイント」を切り替えると、3機種のどれが最も強いかが変わります。",
-        "Switch the top priority to see which of the 3 is strongest on it.",
-        "切换“最不能让步的点”，可看到3款中哪一款最强。"
-      ],
-      ifTop: ["「%a」を譲れないなら →", "If %a matters most →", "若最看重“%a”→"],
-      ifMore: [
-        "さらに「%a」に特化するなら <b>%p</b>（%y）も候補です。",
-        "For even more %a, <b>%p</b> (%y) is also an option.",
-        "若想在“%a”上更进一步，<b>%p</b>（%y）也是选择。"
-      ],
-      ifOnly: [
-        "この3機種の中ではここが最も強い項目です。",
-        "This is the strongest option of the 3 on that point.",
-        "在这3款中，这款在该项最强。"
-      ],
-      rk: ["第%n位", "No. %n", "第%n名"],
-      best: ["%aが3機種で最強", "Best of 3 on %a", "%a为3款中最强"],
-      ngp: ["条件外：", "Outside your limits: ", "超出条件："],
-      cmp: ["3機種の比較表", "Side-by-side comparison", "3款对比表"],
-      acc: ["あわせて検討したい用品", "Handy extras", "建议一并考虑的用品"],
-      staff: ["📸 スタッフに見せる（最終商談シート）", "📸 Show staff (final sheet)", "📸 出示给店员（最终洽谈单）"],
-      again: ["もう一度診断する", "Start over", "重新诊断"],
-      sh: ["スタッフ確認用シート", "Staff sheet", "店员确认单"],
-      shn: [
-        "※この画面をスクリーンショットしてスタッフにお見せください",
-        "※Take a screenshot of this screen and show it to staff",
-        "※请截图此画面并出示给店员"
-      ],
-      shm: ["条件メモ", "Needs memo", "需求备忘"],
-      shf: ["最終商談カード", "Final card", "最终洽谈卡"],
-      shov: ["気になるオーブン・グリル系", "Oven / grill types of interest", "感兴趣的烤箱·烧烤类"],
-      none: ["未選択", "None selected", "未选择"],
-      fit: ["適合度", "Fit", "适合度"],
-      spec: [
-        ["価格", "Price", "价格"],
-        ["メーカー", "Maker", "品牌"],
-        ["庫内容量", "Capacity", "容量"],
-        ["庫内構造", "Cavity", "内胆"],
-        ["扉", "Door", "门"],
-        ["出力", "Power", "功率"],
-        ["センサー", "Sensor", "传感器"],
-        ["自動メニュー", "Auto menus", "自动菜单"]
-      ],
-      ch: {
-        bud: ["予算超過", "Over budget", "超预算"],
-        sz: ["容量不足", "Too small", "容量不足"],
-        fl: ["ターンテーブル", "Turntable", "旋转托盘"]
-      },
-      ns: ["機種が対象外", " models out", "款被排除"]
     },
-    x = [
+    ve = [
       [
-        "heat",
-        ["あたため精度", "Heating precision", "加热精度"],
-        "🔥",
+        ["マイコン式", "Microcomputer", "微电脑式"],
         [
-          "センサー・出力・自動あたための総合力。ムラや温めすぎを減らします",
-          "Sensor, power and auto reheat combined; fewer cold spots and overheating",
-          "传感器、功率与自动加热的综合能力，减少冷热不均与过热"
+          "ヒーターで釜を温める基本方式。炊きムラが出やすいぶん、ご飯をあまり炊かない方向け",
+          "Basic heater type; less even, so it suits people who rarely cook rice",
+          "基础加热方式，易受热不均，适合很少煮饭的人"
         ]
       ],
       [
-        "size",
-        ["庫内の広さ", "Cavity size", "内胆容量"],
+        ["IH式", "IH (induction)", "IH电磁式"],
+        [
+          "釜そのものを発熱させ、高火力でムラを抑える。毎日使うならここから",
+          "Heats the pot itself with high power; the starting point for daily use",
+          "让内胆自身发热，高火力减少不均；每天使用建议从此开始"
+        ]
+      ],
+      [
+        ["圧力IH式", "Pressure IH", "压力IH式"],
+        [
+          "圧力で高温にし、甘み・もちもち感・保存後の食感を高める",
+          "Pressure raises the temperature for sweetness, chew and better texture after storage",
+          "加压升温，提升甘甜、软糯与存放后的口感"
+        ]
+      ],
+      [
+        ["土鍋・炭釜", "Clay / carbon pot", "土锅·炭釜"],
+        ["釜の素材自体が主役。味は最上位", "The pot material is the star; top taste", "内胆材质是主角，口味顶级"]
+      ]
+    ],
+    Z = {
+      ZOJIRUSHI: {
+        n: ["象印", "Zojirushi", "象印"],
+        tag: ["もっちり・甘み系", "Chewy & sweet", "软糯甘甜型"],
+        t: [
+          "「炎舞炊き」「豪炎かまど釜」など、炊き上がりの甘みともちもち感を追求。うるつや保温も得意で、圧力IHから最上位まで幅広い",
+          "Pursues sweetness and chew with “Flame Dance” and Gouen kamado pots; good moist keep-warm; "
+            + "from pressure IH to top models",
+          "以“炎舞炊”“豪炎灶釜”追求甘甜与软糯，温润保温也很擅长；从压力IH到顶级机型都有"
+        ]
+      },
+      TIGER: {
+        n: ["タイガー", "Tiger", "虎牌"],
+        tag: ["もっちり・弾力系／品ぞろえ最多", "Chewy & bouncy / widest range", "软糯弹润型／品类最全"],
+        t: [
+          "土鍋コーティングの遠赤釜が持ち味。もっちり弾力のある炊き上がりで、マイコンから本土鍋まで在庫の幅が最も広い",
+          "Known for clay-coated far-infrared pots and a bouncy, chewy finish; the widest range in "
+            + "stock, from microcomputer to genuine clay pot",
+          "以土锅涂层远红外内胆见长，口感软糯弹润；店内品类最广，从微电脑到真土锅"
+        ]
+      },
+      MITSUBISHI: {
+        n: ["三菱電機", "Mitsubishi Electric", "三菱电机"],
+        tag: ["しゃっきり・粒立ち系", "Firm & distinct grains", "爽口颗粒分明型"],
+        t: [
+          "炭を使った釜（炭炊釜・本炭釜）と連続沸騰が特徴。圧力をかけず、一粒ずつ立った食感に",
+          "Carbon pots and continuous boiling, without pressure, for firm, separated grains",
+          "以炭釜与连续沸腾为特色，不加压，米粒颗颗分明"
+        ]
+      },
+      Panasonic: {
+        n: ["パナソニック", "Panasonic", "松下"],
+        tag: ["ふっくら・安心系", "Fluffy & dependable", "松软稳妥型"],
+        t: [
+          "大火力のIHでふっくら炊き上げる定番。お手入れ部品がシンプルで、普段使いしやすい",
+          "Reliable IH with fluffy results and simple parts that are easy to clean",
+          "大火力IH煮出松软米饭，部件简单易清洁，日常好用"
+        ]
+      },
+      TOSHIBA: {
+        n: ["東芝", "Toshiba", "东芝"],
+        tag: ["粒立ち〜ふっくら／真空吸水", "Distinct to fluffy / vacuum soaking", "颗粒分明～松软／真空吸水"],
+        t: [
+          "銅コート釜や「真空αテクノロジー」で芯まで吸水。最長40時間の真空保温も",
+          "Copper-coated and vacuum-soak pots reach the grain core; vacuum keep-warm up to 40 h",
+          "铜涂层内胆与真空吸水技术直达米芯；真空保温最长40小时"
+        ]
+      },
+      HITACHI: {
+        n: ["日立", "Hitachi", "日立"],
+        tag: ["外硬内軟・蒸気カット", "Firm outside, soft inside / steam-cut", "外韧内软·防蒸汽"],
+        t: [
+          "蒸気をほぼ出さない／減らす機能が最大の特徴で、棚・食器棚に置きたい方向け。食感は外に適度な弾力のあるしゃっきり系",
+          "Its steam-cut and steam-save features suit shelves and cabinets; texture is firm and springy",
+          "最大特点是几乎不排／减少蒸汽，适合放在橱柜；口感偏爽口有弹性"
+        ]
+      },
+      "IRIS OHYAMA": {
+        n: ["アイリスオーヤマ", "Iris Ohyama", "爱丽思"],
+        tag: ["圧力IHの入門・銘柄炊き分け", "Entry pressure IH / rice-variety modes", "压力IH入门·米种炊煮"],
+        t: [
+          "圧力IHを入門機として試したい方向け。50銘柄の炊き分けで、もっちり甘い仕上がり",
+          "For trying pressure IH as an entry model; 50 rice-variety modes for sweet, tender rice",
+          "适合想以入门款体验压力IH的人；50种米种程序，软糯回甜"
+        ]
+      },
+      ノジマオリジナル: {
+        n: ["ノジマオリジナル", "Nojima Original", "Nojima 原创"],
+        tag: ["最小2合・シンプル", "Smallest 2-cup, simple", "最小2合·简洁"],
+        t: [
+          "最小の2合炊き。炊飯器をあまり使わない一人暮らしや、少量だけ炊きたい方向けのシンプルな1台",
+          "The smallest 2-cup model; a simple pick for solo living or small batches",
+          "最小的2合机型，适合很少煮饭的独居者或只煮少量的人"
+        ]
+      }
+    },
+    j = [
+      [
+        "capfit",
+        ["容量の合い具合", "Capacity fit", "容量是否合适"],
         "📦",
         [
-          "容量(L)。大きなお弁当や大皿が入るかに直結します",
-          "Capacity in litres; decides whether big bento and platters fit",
-          "容量(L)，决定能否放入大便当与大盘"
+          "暮らし方に必要な炊飯量に、容量がどれだけ合うか",
+          "How well the capacity fits the amount you need to cook",
+          "容量与所需煮饭量的契合程度"
         ]
       ],
       [
-        "clean",
-        ["お手入れ", "Easy cleaning", "好打理"],
-        "🧽",
+        "taste",
+        ["炊き上がりのおいしさ", "Cooked-rice taste", "米饭口味"],
+        "🍚",
         [
-          "フラット庫内は拭くだけ。ターンテーブルは皿と回転が出入りの手間に",
-          "Flat-bed wipes clean; a turntable adds a plate to wash and can catch dishes",
-          "平板内胆一擦即净；转盘需额外清洗，也可能卡盘"
+          "加熱方式・内釜・味の評価をまとめた総合の味わい",
+          "Overall taste from heating method, inner pot and tasting grade",
+          "综合加热方式、内胆与口味评价的整体味道"
         ]
       ],
       [
-        "ease",
-        ["操作のかんたんさ", "Ease of use", "操作简便"],
-        "👆",
+        "texture",
+        ["食感の好み合致", "Texture match", "口感匹配"],
+        "👅",
         [
-          "ボタンの少なさ・ワンタッチで迷いません（メニューが多すぎる機種は少し低め）",
-          "Few buttons and one-touch use; models with very many menus score a little lower",
-          "按键少、一键即用；菜单过多的机型略低"
+          "もっちり／しゃっきり／炊き分けなど、好みに近いほど高得点",
+          "Scores higher the closer it is to your preference: chewy, firm or adjustable",
+          "越接近您偏好的软糯／爽口／可调节口感，得分越高"
+        ]
+      ],
+      [
+        "keep",
+        ["保温・保存向き", "Keep-warm and storage", "保温·储存"],
+        "🍱",
+        [
+          "保温時間と圧力の有無。冷凍・お弁当・長時間保温での食感の持ちやすさ",
+          "Keep-warm hours and pressure; how texture holds when frozen, packed or kept warm",
+          "保温时长与有无压力；冷冻、便当或长时间保温后的口感"
+        ]
+      ],
+      [
+        "steam",
+        ["蒸気・置き場所", "Steam and placement", "蒸汽·摆放"],
+        "☁️",
+        [
+          "蒸気を出さない・減らす機能。棚や食器棚に置く方向け",
+          "Steam-cut or reduced steam; for shelves and cabinets",
+          "不排或减少蒸汽，适合放在置物架或橱柜"
         ]
       ],
       [
@@ -4657,147 +4913,270 @@ window.NJ_HEAR = (function () {
         ["本体価格の手頃さ", "How affordable the unit is", "机身价格是否实惠"]
       ]
     ],
-    de = e => o(x.filter(t => t[0] === e)[0][1]),
-    pe = e => W.filter(t => t.id === e.groupId)[0],
-    Ce = [["まだ決めていない", "Not decided", "暂未决定"], "pending"],
-    j = [
-      {
-        id: "bud",
-        st: 9,
-        t: ["ご予算の上限は？", "What is your budget limit?", "预算上限是多少？"],
-        h: [
-          "上限を超える機種は候補から外します（絶対条件）。",
-          "Models above this are excluded (a must-have).",
-          "超过上限的机型将被排除（必要条件）。"
-        ],
-        o: [
-          [["〜1.1万円（とにかく安く）", "Up to ¥11k (cheapest)", "1.1万日元以内（最实惠）"], 11e3],
-          [["〜1.8万円（フラット庫内の標準機）", "Up to ¥18k (standard flat-bed)", "1.8万日元以内（平板标准款）"], 18e3],
-          [["〜3.5万円（センサー・高出力）", "Up to ¥35k (sensor, high power)", "3.5万日元以内（传感器·高功率）"], 35e3],
-          [["上限なし（最高峰も見たい）", "No limit (show flagships too)", "不设上限（也想看旗舰）"], 1e9]
-        ]
-      },
-      {
-        id: "sz",
-        st: 1,
-        t: ["温めるものの大きさは？", "How large are the dishes you heat?", "常加热的容器有多大？"],
-        h: [
-          "庫内容量の下限になります。足りない機種は外します。目安：17L＝お茶碗・マグ／18〜23L＝大きなお弁当・パスタ皿／23L〜＝大皿。",
-          "Sets the minimum capacity; smaller models drop out. Guide: 17L = bowls, mugs / 18-23L = big "
-            + "bento, pasta plates / 23L+ = platters.",
-          "设定最低容量，不足的机型将被排除。参考：17L＝饭碗、马克杯／18～23L＝大便当、意面盘／23L以上＝大盘。"
-        ],
-        o: [
-          [["お茶碗・マグカップ程度（17Lでよい）", "Bowls and mugs (17L is fine)", "饭碗、马克杯（17L即可）"], 0],
-          [
-            [
-              "大きなコンビニ弁当・パスタ皿（18L〜）",
-              "Large convenience bento, pasta plates (18L+)",
-              "大号便利店便当、意面盘（18L起）"
-            ],
-            18
-          ],
-          [["大皿・ピザ・多人数分（23L〜）", "Platters, pizza, family portions (23L+)", "大盘、披萨、多人份（23L起）"], 23]
-        ]
-      },
-      {
-        id: "fl",
-        st: 1,
-        t: ["庫内の形は？", "Which cavity type?", "内胆形式？"],
-        h: [
-          "フラット庫内は回転皿がなく拭くだけ。ターンテーブルは安い反面、大きなお弁当が当たることがあります。「必須」を選ぶとターンテーブル機は外します。",
-          'A flat-bed has no rotating plate and wipes clean. Turntables are cheaper but big bento can '
-            + 'catch. "Must" removes turntable models.',
-          "平板内胆无转盘，一擦即净；转盘款更便宜，但大便当可能被卡。选“必须”会排除转盘款。"
-        ],
-        o: [
-          [["フラット庫内が必須", "Flat-bed is a must", "必须是平板内胆"], "must"],
-          [["できればフラットがよい", "Flat-bed preferred", "最好是平板"], "like"],
-          [["ターンテーブルでもよい", "Turntable is fine", "转盘也可以"], "any"]
-        ]
-      },
-      {
-        id: "sn",
-        st: 2,
-        t: ["時間を合わせず自動で温まる「センサー」は必要？", "Do you want an auto-reheat sensor?", "是否需要免设时间的自动“传感器”？"],
-        h: [
-          "必要な方は「あたため精度」の重みを上げ、センサーなしの機種は減点します。",
-          "If yes, heating precision gets more weight and models without a sensor lose points.",
-          "需要的话将提高“加热精度”权重，无传感器机型会扣分。"
-        ],
-        o: [
-          [["必要（ワンタッチで適温に）", "Yes, one-touch is important", "需要（一键适温）"], "want"],
-          [["不要（自分で時間を合わせる）", "No, I set the timer myself", "不需要（自己设定时间）"], "none"]
-        ]
-      },
-      {
-        id: "pw",
-        st: 2,
-        t: ["温めるスピードは？", "How fast do you need it?", "加热速度的要求？"],
-        h: [
-          "900W以上のインバーターは短時間で一気に温まります。",
-          "900W+ inverters heat quickly in one go.",
-          "900W以上变频机型加热迅速。"
-        ],
-        o: [
-          [["忙しいので速さ重視（900W〜）", "Speed matters (900W+)", "追求速度（900W以上）"], "fast"],
-          [["標準出力で十分（500〜650W）", "Standard power is enough (500-650W)", "常规功率足够（500～650W）"], "std"]
-        ]
-      },
+    F = e => o(e[1]),
+    Ie = e => o(e[3]),
+    xe = e => F(j.filter(t => t[0] === e)[0]),
+    He = e => E.filter(t => t.id === e.groupId)[0],
+    W = e => P(e.name),
+    je = e => /土鍋/.test(e.heat)
+      ? "pot"
+      : /圧力/.test(e.heat) ? "press" : e.heat === "IH" || /炭/.test(e.heat) ? "ih" : "micro",
+    ze = {
+      pot: ["r15", "r6", "r11"],
+      carbon: ["r7", "r17", "r8"],
+      kamado: ["r16", "r18", "r11", "r10"]
+    };
+  let p = null;
+  const z = () => p.a.hh === 0,
+    x = () => z() && l("fq") === "rare",
+    C = [
       {
         id: "hh",
-        st: 2,
-        t: ["ご家族の人数は？", "How many people at home?", "家里几口人？"],
+        st: 1,
+        t: ["どんな暮らし方ですか？", "What is your household like?", "您是怎样的家庭/生活状态？"],
         h: [
-          "人数が多いほど温める量が増え、庫内の広さの重みが上がります。",
-          "More people means more food, so cavity size gets more weight.",
-          "人数越多加热量越大，内胆容量权重越高。"
+          "人数で必要な炊飯量と、選ぶ機能の幅が変わります。一人暮らしの場合は、機能を絞った質問に切り替えます。",
+          "Household size sets the capacity and how many features matter. If you live alone, the "
+            + "questions switch to a shorter, simpler set.",
+          "人数决定所需容量与功能范围。独居时问题会切换为更精简的版本。"
         ],
         o: [
-          [["1人", "1 person", "1人"], 1],
-          [["2人", "2 people", "2人"], 2],
-          [["3人以上", "3 or more", "3人及以上"], 3]
+          [["一人暮らし", "Living alone", "独居"], [1, 3]],
+          [["2人（夫婦・パートナー）", "2 people (couple / partners)", "2人（夫妻·伴侣）"], [2, 4]],
+          [["3〜4人（お子さまがいる）", "3–4 people (with kids)", "3～4人（有孩子）"], [3, 5]],
+          [["5人以上・大家族", "5 or more / large family", "5人以上·大家庭"], [5, 5.5]]
         ]
       },
       {
-        id: "dr",
-        st: 2,
-        t: ["扉の開き方のご希望は？", "Preferred door type?", "对开门方式的偏好？"],
+        id: "fq",
+        st: 1,
+        when: () => z(),
+        t: ["炊飯器は、どのくらい使いますか？", "How often will you use the rice cooker?", "电饭煲大概会用多少？"],
         h: [
-          "置き場所との相性です。合わない機種は少し減点します。",
-          "Depends on your kitchen layout; mismatches lose a few points.",
-          "取决于摆放位置，不符的机型会稍微扣分。"
+          "一人暮らし向けは機能がシンプルなモデルが中心です。マイコン式は「炊飯器をあまり使わない方」向け。毎日炊くならIH以上のほうが、火力・保温の面で快適です。",
+          "Models for solo living are mostly simple. Microcomputer models suit people who rarely use a "
+            + "cooker; if you cook daily, IH or above is more comfortable for power and keep-warm.",
+          "独居款多为功能简单的机型。微电脑款适合“很少用电饭煲”的人；若每天煮饭，IH以上在火力与保温上更舒适。"
         ],
         o: [
-          [["縦開き（手前に倒す）", "Drop-down door", "下翻门（向前放下）"], "v"],
-          [["横開き", "Side-opening door", "侧开门"], "s"],
-          [["どちらでもよい", "No preference", "都可以"], "any"]
+          [
+            [
+              "ほとんど使わない（パックご飯・外食が中心）",
+              "Hardly ever (packaged rice / eating out)",
+              "几乎不用（以即食米饭·外食为主）"
+            ],
+            "rare"
+          ],
+          [["週に数回炊く", "A few times a week", "每周煮几次"], "mid"],
+          [["ほぼ毎日炊く", "Almost every day", "几乎每天煮"], "daily"]
         ]
       },
       {
-        id: "wr",
-        st: 2,
+        id: "rq",
+        st: 1,
+        when: () => x(),
+        t: ["たまに炊くときの量は？", "How much do you cook when you do?", "偶尔煮饭时一次煮多少？"],
+        h: [
+          "量に合う小さめの容量を選ぶと、少量でもおいしく炊けます。",
+          "Choosing a small capacity that matches your batch keeps small amounts tasting good.",
+          "选择与用量匹配的小容量，少量也能煮得好吃。"
+        ],
+        o: [
+          [["1〜2合（その都度少しだけ）", "1–2 gō (a little at a time)", "1～2合（每次一点点）"], [1, 2]],
+          [["2〜3合（数日ぶんをまとめて）", "2–3 gō (a few days at once)", "2～3合（一次煮几天的量）"], [2, 3]]
+        ]
+      },
+      {
+        id: "big",
+        st: 1,
+        when: () => p.a.hh >= 2,
         t: [
-          "今のレンジで一番困っていることは？",
-          "Biggest frustration with your current microwave?",
-          "目前微波炉最让您困扰的是？"
+          "食べ盛りのお子さまなど、たくさん食べる人はいますか？",
+          "Is there anyone who eats a lot, such as growing kids?",
+          "家里有饭量大的人吗（如正在长身体的孩子）？"
         ],
         h: [
-          "困りごとに近い評価軸の重みを上げます。",
-          "The axis closest to your frustration gets more weight.",
-          "会提高最接近您困扰的评价维度的权重。"
+          "いる場合は、必要な炊飯量を少し大きめに見積もります。在庫の最大は5.5合です。",
+          "If yes, we estimate a larger batch size. Our largest in stock is 5.5 gō.",
+          "有的话会把所需煮饭量估得稍大一些。店内最大为5.5合。"
         ],
         o: [
-          [["温めムラ・温めすぎ", "Cold spots or overheating", "加热不均·过热"], "cold"],
-          [["庫内の掃除がつらい", "Cleaning the inside is a chore", "清洁内胆很麻烦"], "clean"],
-          [["大きなお弁当が入らない・当たる", "Big bento will not fit or catches", "大便当放不下·被卡"], "stuck"],
-          [["時間設定やボタン操作が面倒", "Timers and buttons are a hassle", "设定时间与按键操作麻烦"], "timer"],
-          [["特にない", "Nothing in particular", "没有特别困扰"], "none"]
+          [["いる（部活・食べ盛り）", "Yes (sports, growing kids)", "有（社团·长身体）"], 1.5],
+          [["特にいない", "No one in particular", "没有特别饭量大的"], 0]
+        ]
+      },
+      {
+        id: "us",
+        st: 1,
+        when: () => !x(),
+        t: ["炊いたご飯の食べ方で、いちばん多いのは？", "How do you most often eat the rice?", "煮好的米饭最常怎么吃？"],
+        h: ["この答えに合わせて、次の質問が変わります。", "Your answer changes the next question.", "您的回答会改变下一个问题。"],
+        o: [
+          [["多めに炊いて冷凍し、レンジで温める", "Cook extra, freeze and microwave", "多煮后冷冻，微波复热"], "freeze"],
+          [["保温を長く使う", "Use keep-warm for a long time", "长时间使用保温"], "keep"],
+          [["お弁当・おにぎりにする", "Bento and rice balls", "带便当·做饭团"], "bento"],
+          [["その都度食べ切る", "Eat it fresh each time", "每次吃完"], "fresh"]
+        ]
+      },
+      {
+        id: "fz",
+        st: 1,
+        when: () => l("us") === "freeze",
+        t: ["冷凍ご飯は、どのくらいおいしさを求めますか？", "How good should the frozen rice taste?", "冷冻米饭希望好吃到什么程度？"],
+        h: [
+          "圧力IHは、解凍後もふっくら・もちもち感が残りやすいのが強みです。",
+          "Pressure IH keeps rice plump and chewy after thawing.",
+          "压力IH的优势是解冻后仍保持松软、软糯。"
+        ],
+        o: [
+          [["炊きたてに近い食感を保ちたい", "Close to freshly cooked", "希望接近刚煮好的口感"], 3],
+          [["温め直してふつうに食べられればOK", "Fine if it reheats normally", "复热后正常吃就行"], 1.5]
+        ]
+      },
+      {
+        id: "kp",
+        st: 1,
+        when: () => l("us") === "keep",
+        t: ["保温は、どのくらいの時間使いますか？", "How long do you use keep-warm?", "保温大概用多久？"],
+        h: [
+          "長時間保温は、真空・スチーム保温の機種（東芝40時間・日立40時間など）が得意です。",
+          "For long keep-warm, vacuum and steam keep-warm models (Toshiba, Hitachi: up to 40 h) excel.",
+          "长时间保温适合真空·蒸汽保温机型（东芝、日立最长40小时）。"
+        ],
+        o: [
+          [["半日くらい（朝炊いて夜まで）", "About half a day", "大约半天（早上煮到晚上）"], "half"],
+          [["翌朝まで（約一晩）", "Until next morning", "到次日早晨"], "night"],
+          [["丸一日以上", "A full day or more", "一整天以上"], "long"]
+        ]
+      },
+      {
+        id: "bn",
+        st: 1,
+        when: () => l("us") === "bento",
+        t: ["お弁当・おにぎりでは、何を重視しますか？", "What matters for bento and rice balls?", "带便当·做饭团时更看重什么？"],
+        h: [
+          "冷めてもおいしい仕上がりは、圧力IHやもっちり系が得意です。",
+          "Rice that stays tasty when cold is a strength of pressure IH and chewy-style cookers.",
+          "冷了也好吃是压力IH与软糯型的强项。"
+        ],
+        o: [
+          [["冷めてもおいしさが落ちないこと", "Tasting good even when cold", "冷了也不影响口味"], 3],
+          [["特にこだわらない", "No special preference", "没有特别要求"], 1]
+        ]
+      },
+      {
+        id: "tx",
+        st: 1,
+        when: () => !x(),
+        t: ["好みのご飯の食感は？", "What rice texture do you like?", "喜欢哪种米饭口感？"],
+        h: [
+          "もっちり系は象印・タイガー、しゃっきり系は三菱・日立が得意です。",
+          "Zojirushi and Tiger lean chewy; Mitsubishi and Hitachi lean firm.",
+          "软糯型有象印·虎牌，爽口型有三菱·日立。"
+        ],
+        o: [
+          [["もっちり・柔らかめ・甘い", "Chewy, soft and sweet", "软糯、偏软、甘甜"], "chewy"],
+          [["しゃっきり・粒立ち", "Crisp, distinct grains", "爽口、颗粒分明"], "firm"],
+          [["炊き分けで好みを変えたい", "Adjustable by dish", "想按菜品调节软硬"], "var"],
+          [["普通でよい", "Standard is fine", "普通即可"], "std"]
+        ]
+      },
+      {
+        id: "rice",
+        st: 1,
+        when: () => !x() && l("tx") != null && l("tx") !== "std",
+        t: ["普段買うお米は？", "What rice do you usually buy?", "平时买什么米？"],
+        h: [
+          "銘柄米は釜と火力の差が味に出やすく、特売米・ブレンド米は圧力や高火力で食感が整いやすくなります。",
+          "Premium rice shows the pot and heat difference; budget or blended rice benefits from pressure and high heat.",
+          "品牌米更能体现内胆与火力差异；特价米·混合米借助压力与高火力口感更均衡。"
+        ],
+        o: [
+          [["銘柄米・新米をよく買う", "Premium or new-crop rice", "常买品牌米·新米"], "brand"],
+          [["特売米・ブレンド米が多い", "Sale or blended rice", "多为特价米·混合米"], "mix"],
+          [["そのときどき", "It varies", "视情况而定"], "both"]
+        ]
+      },
+      {
+        id: "kit",
+        st: 1,
+        when: () => !x(),
+        t: [
+          "炊飯器を置く場所は、蒸気が気になりますか？",
+          "Does steam matter where you will place the cooker?",
+          "放置电饭煲的位置是否在意蒸汽？"
+        ],
+        h: [
+          "この答えに合わせて、次の質問が変わります。蒸気が出る機種を外すことはしません。",
+          "Your answer changes the next question. Models that steam normally are never removed.",
+          "您的回答会改变下一个问题。不会排除正常排蒸汽的机型。"
+        ],
+        o: [
+          [["棚・食器棚に置く", "On a shelf or in a cabinet", "放在置物架或橱柜里"], "shelf"],
+          [["カウンターやワゴンなど開けた場所", "Open counter or cart", "放在台面或推车等开阔处"], "open"],
+          [["蒸気は気にしない", "Steam does not bother me", "不在意蒸汽"], "free"]
+        ]
+      },
+      {
+        id: "kit2",
+        st: 1,
+        when: () => l("kit") === "shelf",
+        t: ["棚の上や周りは、どんな状態ですか？", "What is above and around the shelf?", "架子上方与周围是什么情况？"],
+        h: [
+          "上に棚や家具がある場合は、蒸気カット機（日立）が安心です。",
+          "If there is a shelf or furniture above, a steam-cut model (Hitachi) is safer.",
+          "上方有架子或家具时，防蒸汽机型（日立）更放心。"
+        ],
+        o: [
+          [
+            [
+              "上に棚・家具がある（蒸気をできるだけ出したくない）",
+              "Shelf or furniture above (as little steam as possible)",
+              "上方有架子·家具（尽量不要蒸汽）"
+            ],
+            "fixed"
+          ],
+          [["スライド式で引き出せる／上が空いている", "Slide-out or open above", "可拉出或上方有空间"], "slide"]
+        ]
+      },
+      {
+        id: "pt",
+        st: 1,
+        when: () => !x(),
+        t: ["お米の味への思い入れは？", "How much do you care about the taste of your rice?", "对米饭口味有多讲究？"],
+        h: [
+          "「毎日ごちそう」を選ぶと、本土鍋・炭釜・炎舞炊きなどの最上位機も候補に入れて比べます。",
+          "Choose “every day a treat” and top models such as genuine clay pot, carbon pot and Flame "
+            + "Dance are also compared.",
+          "选择“每天都是享受”，会把真土锅·炭釜·炎舞炊等顶级机型也纳入比较。"
+        ],
+        o: [
+          [["毎日料亭のようなご飯を食べたい", "I want restaurant-quality rice every day", "希望每天吃到料亭级米饭"], "flag"],
+          [["ふつうにおいしければ十分", "Ordinary good rice is enough", "普通好吃就够了"], "mid"],
+          [["手軽さ・使いやすさが一番", "Ease of use comes first", "轻松易用最重要"], "easy"]
+        ]
+      },
+      {
+        id: "flag2",
+        st: 1,
+        when: () => l("pt") === "flag",
+        t: ["どんな炊き方に惹かれますか？", "Which cooking style appeals to you?", "您被哪种炊煮方式吸引？"],
+        h: [
+          "選んだ方式に近い機種を、少し上位に出します。",
+          "Models close to your choice are ranked a little higher.",
+          "与所选方式接近的机型会稍微靠前。"
+        ],
+        o: [
+          [["本物の土鍋で炊く", "Genuine clay pot", "真土锅"], "pot"],
+          [["炭釜で粒立ちを際立たせる", "Carbon pot for distinct grains", "炭釜凸显颗粒感"], "carbon"],
+          [["かまど・炎舞炊きの激しい対流", "Kamado / Flame Dance convection", "灶釜·炎舞炊的强对流"], "kamado"],
+          [["おまかせ", "Leave it to you", "交给您推荐"], "any"]
         ]
       },
       {
         id: "pri",
         st: 3,
+        when: () => !x(),
         t: ["最後に、どうしても譲れない1点は？", "Finally, what can you not compromise on?", "最后，最不能让步的1点是什么？"],
         h: [
           "選んだ軸は評価を約2.2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
@@ -4805,430 +5184,902 @@ window.NJ_HEAR = (function () {
           "所选维度在最终排名中约按2.2倍计分，最终画面也可切换维度对比。"
         ],
         o: [
-          [["あたため性能（センサー・高出力）", "Heating performance (sensor, power)", "加热性能（传感器·高功率）"], "heat"],
-          [["庫内の広さ", "Cavity size", "内胆容量"], "size"],
-          [["お手入れのしやすさ", "Easy cleaning", "好打理"], "clean"],
-          [["簡単操作", "Simple operation", "操作简便"], "ease"],
-          [["価格の安さ", "Low price", "价格便宜"], "price"]
+          [["炊き上がりのおいしさ", "Taste of the cooked rice", "米饭的口味"], "taste"],
+          [["食感が好みに合うこと", "Texture that matches my taste", "口感符合我的偏好"], "texture"],
+          [
+            ["冷凍・お弁当・保温での持ち", "Holding up when frozen, packed or kept warm", "冷冻·便当·保温后的口感"],
+            "keep"
+          ],
+          [["蒸気が出ない・置き場所", "No steam / placement", "不排蒸汽·摆放方便"], "steam"],
+          [["容量の合い具合", "Capacity fit", "容量合适"], "capfit"],
+          [["価格の手頃さ", "Affordable price", "价格实惠"], "price"]
+        ]
+      },
+      {
+        id: "pri1",
+        st: 3,
+        when: () => x(),
+        t: ["最後に、いちばん大事にしたい点は？", "Finally, what matters most to you?", "最后，您最看重哪一点？"],
+        h: [
+          "あまり使わない方向けに、選択肢を絞っています。",
+          "The choices are kept short for light users.",
+          "针对很少使用的人，选项已精简。"
+        ],
+        o: [
+          [["価格の手頃さ", "Affordable price", "价格实惠"], "price"],
+          [["小さくて場所を取らない（容量が合う）", "Small and compact (right capacity)", "小巧省空间（容量合适）"], "capfit"],
+          [["それでも味は妥協したくない", "Taste still matters", "口味也不想妥协"], "taste"]
+        ]
+      },
+      {
+        id: "budget",
+        st: 9,
+        t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
+        h: [
+          "ここまでの暮らし方を踏まえた目安です。少し上のモデルのほうが合う場合もあるので、あと少し足して買えるモデルも最後にご案内します。",
+          "A rough guide based on your lifestyle. A slightly higher model may suit you better, so "
+            + "we’ll also show what a small step up could get you.",
+          "请结合前面的生活方式作参考。稍高一档的机型可能更适合，最后也会介绍稍加预算就能买到的机型。"
+        ],
+        o: [
+          [["〜約1.5万円", "Up to about ¥15,000", "约1.5万日元以下"], 15e3],
+          [["〜約3万円", "Up to about ¥30,000", "约3万日元以下"], 3e4],
+          [["〜約6万円", "Up to about ¥60,000", "约6万日元以下"], 6e4],
+          [["〜約12万円", "Up to about ¥120,000", "约12万日元以下"], 12e4],
+          [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
         ]
       }
-    ];
-  j.push(
-    {
-      id: "sit",
-      st: 1,
-      t: ["まず、購入の状況を教えてください", "First, tell us about your situation", "请先告诉我们您的购买情况"],
-      h: [
-        "新生活で初めて買う方と、買い替えの方で、このあとの質問が変わります。",
-        "Questions change depending on whether this is a first purchase or a replacement.",
-        "首次购买与更换购买，后面的问题会有所不同。"
-      ],
-      o: [
-        [["新生活・初めて買う", "New home / first purchase", "新生活·首次购买"], "new"],
-        [["今のレンジから買い替える", "Replacing my current microwave", "更换现有微波炉"], "old"]
-      ]
+    ],
+    N = e => !e.when || e.when(),
+    J = e => C.filter(t => t.st === e && N(t)),
+    l = e => {
+      const t = C.filter(s => s.id === e)[0], a = p.a[e];
+      return a == null || !N(t) ? null : t.o[a][1];
     },
-    {
-      id: "plc",
-      st: 1,
-      t: ["置き場所の広さは？", "How much room do you have for it?", "摆放位置的空间有多大？"],
-      h: [
-        "狭い場合は、大型機（26L〜）を少し減点します。",
-        "If space is tight, large models (26L+) lose a few points.",
-        "空间紧张时，大型机型（26L以上）会稍微扣分。"
-      ],
-      o: [
-        [["ワンルーム・狭いキッチン", "Studio / tiny kitchen", "单间·狭小厨房"], "narrow"],
-        [["ふつうのキッチン・余裕あり", "Regular kitchen, enough room", "普通厨房·空间充足"], "normal"]
-      ]
-    },
-    {
-      id: "use",
-      st: 2,
-      t: ["主に何を温めますか？", "What do you mainly heat?", "主要加热什么？"],
-      h: [
-        "答えによって、このあとの質問が変わります。飲み物中心ならセンサーや高出力の質問を省きます。",
-        "Your answer changes the next questions. For drinks only, we skip sensor and power questions.",
-        "回答会改变后续问题。仅加热饮品时将省略传感器和功率相关提问。"
-      ],
-      o: [
-        [["ごはん・お弁当・おかずの温め", "Rice, bento and side dishes", "米饭·便当·菜肴加热"], "reheat"],
-        [["冷凍食品・冷凍ごはんの解凍", "Frozen food and frozen rice", "冷冻食品·冷冻米饭解冻"], "frozen"],
-        [["野菜・惣菜など簡単な調理にも", "Simple cooking too (veg, dishes)", "也用于蔬菜等简单烹饪"], "cook"],
-        [["飲み物・ちょっとした温めだけ", "Drinks and light reheating only", "只加热饮品和少量食物"], "light"]
-      ]
-    },
-    {
-      id: "fz",
-      st: 2,
-      t: ["冷凍食品はどのくらいの頻度で温めますか？", "How often do you heat frozen food?", "冷冻食品多久加热一次？"],
-      h: [
-        "頻度が高いほど、解凍・あたための出力と精度を重視します。",
-        "The more often, the more we weight power and heating precision.",
-        "频率越高，越重视功率与加热精度。"
-      ],
-      o: [
-        [["毎日のように", "Almost daily", "几乎每天"], "often"],
-        [["週に数回程度", "A few times a week", "每周数次"], "some"]
-      ]
-    },
-    {
-      id: "cm",
-      st: 2,
-      t: ["「自動メニュー」で調理したいですか？", "Do you want to cook with auto menus?", "想用“自动菜单”烹饪吗？"],
-      h: [
-        "メニューを選ぶだけで作れる機能の重みが変わります。",
-        "Changes how much weight easy auto menus get.",
-        "会改变“选菜单即可烹饪”功能的权重。"
-      ],
-      o: [
-        [["はい・選ぶだけで作りたい", "Yes, just pick and cook", "想要·选一下就能做"], "many"],
-        [["たまに使えれば十分", "Occasionally is enough", "偶尔用就够了"], "few"]
-      ]
-    },
-    {
-      id: "kd",
-      st: 2,
-      t: ["お子さまやご高齢の方も使いますか？", "Will children or seniors use it too?", "孩子或老人也会使用吗？"],
-      h: [
-        "はい、の場合は操作のわかりやすさと庫内の掃除しやすさを重視します。",
-        "If yes, simple controls and easy cleaning get more weight.",
-        "选“是”时更重视操作简单和易清洁。"
-      ],
-      o: [
-        [["はい（ボタンの分かりやすさ重視）", "Yes (simple controls matter)", "是（重视操作简单）"], "yes"],
-        [["いいえ", "No", "否"], "no"]
-      ]
-    },
-    {
-      id: "wc",
-      st: 2,
-      t: ["温めムラが一番気になる食品は？", "Which food has the worst cold spots?", "最在意哪种食物加热不均？"],
-      h: [
-        "食品によって、必要な出力やセンサーの重みが変わります。",
-        "The food decides how much power and sensor accuracy matter.",
-        "食物不同，所需功率与传感器权重也不同。"
-      ],
-      o: [
-        [["ごはん・お弁当", "Rice and bento", "米饭·便当"], "rice"],
-        [["冷凍食品", "Frozen food", "冷冻食品"], "frozen"],
-        [["飲み物・汁物", "Drinks and soups", "饮品·汤类"], "drink"]
-      ]
-    },
-    {
-      id: "wk",
-      st: 2,
-      t: ["庫内の掃除はどのくらいの頻度ですか？", "How often do you clean the inside?", "多久清洁一次内胆？"],
-      h: [
-        "毎日拭く方は、フラット庫内の重みが上がります。",
-        "If you wipe it daily, flat-bed models get more weight.",
-        "每天擦拭的话，平板内胆权重更高。"
-      ],
-      o: [
-        [["ほぼ毎日さっと拭く", "Wipe almost daily", "几乎每天擦"], "often"],
-        [["気づいたときだけ", "Only when I notice", "想起来才擦"], "rare"]
-      ]
-    }
-  );
-  const Q = [
-    "sit",
-    "bud",
-    "sz",
-    "fl",
-    "plc",
-    "hh",
-    "use",
-    "sn",
-    "fz",
-    "cm",
-    "pw",
-    "kd",
-    "wr",
-    "wc",
-    "wk",
-    "dr",
-    "pri"
-  ];
-  j.sort((e, t) => Q.indexOf(e.id) - Q.indexOf(t.id));
-  const B = e => !e.show || e.show(),
-    he = () => f("hh") > 1,
-    E = () => f("use"),
-    V = {
-      plc: () => f("sit") === "new",
-      wr: () => f("sit") === "old",
-      sn: () => E() !== "light",
-      pw: () => E() !== "light",
-      fz: () => E() === "frozen",
-      cm: () => E() === "cook",
-      kd: he,
-      wc: () => f("wr") === "cold",
-      wk: () => f("wr") === "clean",
-      dr: () => !(f("hh") === 1 && E() === "light")
+    D = e => {
+      const t = C.filter(s => s.id === e)[0], a = p.a[e];
+      return a == null || !N(t) ? "—" : b(t.o[a][0]);
     };
-  j.forEach(e => {
-    V[e.id] && (e.show = V[e.id]);
-  });
-  const fe = {
-    sn: () => ["reheat", "frozen", "cook"].indexOf(E()) >= 0 ? "want" : null,
-    pw: () => E() === "frozen" || f("fz") === "often" || f("hh") === 3 ? "fast" : null
-  },
-    $ = e => {
-      const t = fe[e.id], a = t && t();
-      return a == null ? -1 : e.o.findIndex(s => s[1] === a);
-    },
-    ue = "<style>.fr-opt.rec:not(.sel){background:#fffbeb;border-color:#fde68a}.fr-opt "
-      + ".rb{display:block;font-size:.72rem;color:#b45309;margin-top:2px}</style>";
-  let r = null;
-  const F = e => j.filter(t => t.st === e && B(t)),
-    f = e => {
-      const t = j.filter(s => s.id === e)[0], a = r.a[e];
-      return a == null || !B(t) ? null : t.o[a][1];
-    },
-    H = e => {
-      const t = j.filter(s => s.id === e)[0], a = r.a[e];
-      return a == null || !B(t) ? "—" : o(t.o[a][0]);
-    },
-    me = e => e.sensor !== "なし(タイマー)";
-  function be(e) {
+  function re() {
+    let e = (l("hh") || [2, 4]).slice();
+    return x() && l("rq") && (e = l("rq").slice()),
+      l("big") && (e[0] += 1, e[1] += 1.5),
+      l("us") === "freeze" && (e[0] += .5, e[1] += 1.5),
+      e;
+  }
+  function Se(e) {
     const t = [], a = [], s = [];
-    let n = 0;
-    const i = f("bud"), c = f("sz"), m = f("fl"), p = f("sn"), d = f("pw"), b = f("dr");
-    return i != null
-      && (
-        e.price > i
-          ? t.push([
-            "bud",
-            [
-              "予算上限を超えます（" + y(e.price) + "）",
-              "Over budget (" + y(e.price) + ")",
-              "超出预算（" + y(e.price) + "）"
-            ]
-          ])
-          : i < 1e9
-            && s.push([y(e.price) + "で予算内", "Within budget at " + y(e.price), y(e.price) + "，在预算内"])
-      ),
-      c
-        && (
-          e.cap < c
-            ? t.push([
-              "sz",
-              [
-                e.cap + "Lは希望の" + c + "L未満です",
-                e.cap + "L is below your " + c + "L minimum",
-                e.cap + "L低于所需的" + c + "L"
-              ]
-            ])
-            : s.push([e.cap + "Lで希望の容量を満たす", e.cap + "L meets your size need", e.cap + "L满足容量需求"])
-        ),
-      m === "must"
-        && (
-          e.table === "ターンテーブル"
-            ? t.push([
-              "fl",
-              ["ターンテーブル式（フラット必須）", "Turntable type (flat-bed required)", "转盘式（要求平板）"]
-            ])
-            : s.push(["フラット庫内で拭き掃除がラク", "Flat-bed wipes clean easily", "平板内胆易清洁"])
-        ),
-      m === "like"
-        && e.table === "ターンテーブル"
-        && (a.push(["ターンテーブル式（フラット希望）", "Turntable type (flat preferred)", "转盘式（希望平板）"]), n += 10),
-      p === "want"
-        && (
-          me(e)
-            ? s.push(["センサーで自動あたため", "Sensor-based auto reheat", "传感器自动加热"])
-            : (
-              a.push(["センサーなし（自動あたため希望）", "No sensor (auto reheat wanted)", "无传感器（希望自动加热）"]),
-                n += 25
-            )
-        ),
-      d === "fast"
-        && (
-          e.W < 900
-            ? (
-              a.push([
-                "最大" + e.W + "W（速さ重視には力不足）",
-                "Max " + e.W + "W (slower than you want)",
-                "最大" + e.W + "W（不够快）"
-              ]),
-                n += 14
-            )
-            : s.push([e.W + "Wの高出力", e.W + "W high output", e.W + "W高功率"])
-        ),
-      b === "v"
-        && e.door !== "縦開き"
-        && (a.push(["横開き（縦開き希望）", "Side-opening (drop-down wanted)", "侧开门（希望下翻门）"]), n += 8),
-      b === "s"
-        && e.door !== "横開き"
-        && (a.push(["縦開き（横開き希望）", "Drop-down (side-opening wanted)", "下翻门（希望侧开门）"]), n += 8),
-      f("plc") === "narrow"
-        && e.cap >= 26
-        && (
-          a.push(["大型で置き場所を取ります（狭い置き場）", "Large body for a tight spot", "机身较大，占地（空间紧张）"]), n += 8
-        ),
-      f("fz") === "often"
-        && e.W < 700
-        && (
-          a.push(["冷凍食品を頻繁に温めるには出力が控えめ", "Modest power for frequent frozen food", "频繁加热冷冻食品时功率偏低"]),
-            n += 8
-        ),
-      f("kd") === "yes"
-        && e.autoMenu > 13
+    let r = 0;
+    const i = re(), n = je(e), c = l("fq"), f = l("us"), d = l("kit2"), u = l("kit");
+    return e.cap < i[0] - 1.5
+      ? t.push([
+        "cap",
+        [
+          e.cap + "合は必要な約" + i[0] + "合を大きく下回ります",
+          e.cap + " gō is far below the " + i[0] + " gō you need",
+          e.cap + "合远低于所需的约" + i[0] + "合"
+        ]
+      ])
+      : e.cap < i[0]
+        ? (
+          a.push([
+            e.cap + "合：必要量の目安（約" + i[0] + "合）にやや届きません",
+            e.cap + " gō: slightly below the " + i[0] + " gō guide",
+            e.cap + "合：略低于所需量参考（约" + i[0] + "合）"
+          ]),
+            r += 6
+        )
+        : e.cap <= i[1]
+          && s.push([
+            e.cap + "合で、暮らし方に合う炊飯量",
+            e.cap + " gō fits your batch size",
+            e.cap + "合，符合您的煮饭量"
+          ]),
+      l("hh")
+        && l("hh")[0] === 5
+        && e.cap === 5.5
         && (
           a.push([
-            "メニューが多く、お子さま・ご高齢の方は迷いやすい",
-            "Many menus; may confuse kids or seniors",
-            "菜单较多，孩子或老人易混淆"
+            "在庫の最大は5.5合：6合以上は1回で炊けません",
+            "Our largest is 5.5 gō: 6 gō or more cannot be cooked at once",
+            "库存最大5.5合：无法一次煮6合以上"
           ]),
-            n += 5
+            r += 4
         ),
-      { ng: t, wn: a, ok: s, pen: n };
+      x()
+        ? n === "micro"
+          ? s.push([
+            "あまり炊かない方には、マイコンで十分です",
+            "A microcomputer model is enough if you rarely cook",
+            "很少煮饭的话，微电脑款就够用"
+          ])
+          : (
+            a.push([
+              "あまり炊飯器を使わないなら、機能が多すぎる可能性があります",
+              "It may have more features than you need if you rarely cook",
+              "如果很少用电饭煲，功能可能过多"
+            ]),
+              r += e.groupId === "standard_ih" ? 6 : 12
+          )
+        : z() && c === "daily" && n === "micro"
+          ? (
+            a.push([
+              "毎日炊くなら、マイコン式は火力・保温の面で物足りなく感じやすいです",
+              "If you cook daily, a microcomputer model may feel limited in power and keep-warm",
+              "如果每天煮饭，微电脑款在火力与保温上容易觉得不够"
+            ]),
+              r += 10
+          )
+          : z() && c === "mid" && n === "micro"
+            ? r += 3
+            : !z()
+              && n === "micro"
+              && (
+                a.push([
+                  "ご家族で使うなら、マイコン式は炊きムラや保温で物足りなくなりがちです",
+                  "For a family, a microcomputer model can feel limited in evenness and keep-warm",
+                  "家庭使用时，微电脑款在均匀度与保温上容易不足"
+                ]),
+                  r += 6
+              ),
+      u === "shelf"
+        && (
+          e.steam !== "標準"
+            ? s.push(["蒸気を抑える機能あり", "Reduces steam", "具备减蒸汽功能"])
+            : d === "fixed"
+              ? (
+                a.push([
+                  "蒸気が通常に出ます（上に棚・家具がある場合は注意）",
+                  "Steams normally (take care with a shelf or furniture above)",
+                  "正常排蒸汽（上方有架子·家具时需注意）"
+                ]),
+                  r += 14
+              )
+              : r += 4
+        ),
+      f === "keep"
+        && l("kp") === "long"
+        && e.hrs < 30
+        && (
+          a.push([
+            "保温は" + e.hrs + "時間まで：丸一日以上の保温には短めです",
+            "Keep-warm up to " + e.hrs + " h: short for a full day or more",
+            "保温最长" + e.hrs + "小时：对一整天以上的保温偏短"
+          ]),
+            r += 8
+        ),
+      { ng: t, wn: a, ok: s, pen: r };
   }
-  function ge(e) {
+  function Te(e) {
     const t = e.grades,
-      a = e.autoMenu === 0 ? 4 : e.autoMenu <= 4 ? 5 : e.autoMenu <= 13 ? 3.2 : 2.2;
+      a = l("tx"),
+      s = re(),
+      r = {
+        chewy: { chewy: 5, sweet: 4.2, var: 4, soft: 3, std: 2.5, firm: 1.5 },
+        firm: { firm: 5, var: 3.5, soft: 2.8, std: 2.5, sweet: 2, chewy: 1.5 },
+        var: { var: 5, chewy: 3.2, firm: 3.2, sweet: 3, soft: 3, std: 2.5 }
+      },
+      i = e.cap < s[0] ? s[0] - e.cap : e.cap > s[1] ? e.cap - s[1] : 0,
+      n = A(
+        (e.hrs >= 40 ? 5 : e.hrs >= 30 ? Math.max(G[t.keep], 4.4) : G[t.keep])
+          + (e.press === "あり" ? .4 : 0),
+        1,
+        5
+      );
     return {
-      heat: G((R[t.sensor] * 1.2 + R[t.power] + R[t.auto] * .8) / 3, 1, 5),
-      size: G(1 + (e.cap - 16) * .4, 1, 5),
-      clean: R[t.table],
-      ease: a,
-      price: e.price <= 9e3
+      capfit: e.cap < s[0] ? A(5 - i * 2.2, 1, 5) : A(5 - i * .5, 1, 5),
+      taste: A((G[t.taste] * 1.3 + G[t.method] + G[t.pot] * .8) / 3.1, 1, 5),
+      texture: r[a] ? r[a][e.tx] : 3,
+      keep: n,
+      steam: e.steam.indexOf("ほぼゼロ") >= 0 ? 5 : e.steam === "蒸気セーブ" ? 4 : 2,
+      price: e.price <= 6e3
         ? 5
-        : e.price <= 14e3 ? 4.2 : e.price <= 21e3 ? 3.2 : e.price <= 33e3 ? 2.2 : 1.5
+        : e.price <= 12e3
+          ? 4.4
+          : e.price <= 16e3
+            ? 4
+            : e.price <= 23e3
+              ? 3.4
+              : e.price <= 37e3 ? 2.6 : e.price <= 6e4 ? 2 : e.price <= 1e5 ? 1.4 : 1
     };
   }
-  function X() {
-    const e = { heat: 1, size: 1, clean: 1, ease: 1, price: 1.2 },
-      t = f("sn"),
-      a = f("pw"),
-      s = f("hh") || 1,
-      n = f("wr"),
-      i = f("sz"),
-      c = f("fl");
-    t === "want" && (e.heat += 2),
-      t === "none" && (e.heat = .6, e.ease += .3),
-      a === "fast" && (e.heat += 1.4),
-      s === 3 ? e.size += 1.2 : s === 2 && (e.size += .3),
-      n === "cold" && (e.heat += 1.8),
-      n === "clean" && (e.clean += 2),
-      n === "stuck" && (e.size += 1.5, e.clean += .5),
-      n === "timer" && (e.ease += 2, e.heat += .6),
-      i === 18 && (e.size += .6),
-      i === 23 && (e.size += 1.2),
-      c === "must" ? e.clean += 1 : c === "like" && (e.clean += .5);
-    const m = f("use"), p = f("fz"), d = f("cm"), b = f("kd"), g = f("wc"), u = f("wk");
-    m === "frozen" && (e.heat += .8),
-      m === "reheat" && (e.heat += .4),
-      m === "cook" && (e.ease += 1.2, e.heat += .4),
-      m === "light" && (e.heat = Math.max(.5, e.heat * .6), e.price += .6),
-      p === "often" ? e.heat += 1 : p === "some" && (e.heat += .4),
-      d === "many" ? e.ease += 1.8 : d === "few" && (e.ease += .4),
-      b === "yes" && (e.ease += 1.2, e.clean += .4),
-      g === "rice" && (e.heat += 1),
-      g === "frozen" && (e.heat += 1.2),
-      g === "drink" && (e.heat += .3),
-      u === "often" ? e.clean += 1.2 : u === "rare" && (e.clean += .3),
-      f("plc") === "narrow" && (e.size = Math.max(.5, e.size - .4));
-    const L = f("pri");
-    return L && (e[L] *= 2.2),
-      r.give
-        && Object.keys(r.give).forEach(function (h) {
-          r.give[h] && h !== L && e[h] != null && (e[h] *= .3);
+  function oe() {
+    const e = { capfit: 3, taste: 1.4, texture: 1, keep: 1, steam: .4, price: 1.2 },
+      t = l("fq"),
+      a = l("tx"),
+      s = l("us"),
+      r = l("pt"),
+      i = l("kit"),
+      n = l("kit2"),
+      c = l("rice");
+    x()
+      ? (e.price = 4, e.taste = .6, e.texture = .2, e.keep = .2, e.steam = .2)
+      : (
+        z() && t === "mid" && (e.price += .8),
+          z() && t === "daily" && (e.taste += .3, e.keep += .2),
+          a === "chewy" || a === "firm"
+            ? e.texture += 2.2
+            : a === "var" ? e.texture += 1.6 : a === "std" && (e.texture = .3),
+          s === "freeze" && (e.keep += 1.8 + (l("fz") || 0) * .3, e.taste += .3),
+          s === "keep" && (e.keep += 2 + (l("kp") === "long" ? 1.2 : l("kp") === "night" ? .4 : 0)),
+          s === "bento" && (e.keep += 1.4 + (l("bn") || 0) * .3, e.texture += .4),
+          s === "fresh" && (e.keep = .4, e.taste += .5),
+          c === "brand" ? e.taste += 1.2 : c === "mix" && (e.taste += .6, e.keep += .3),
+          r === "flag" ? (e.taste += 1.2, e.price *= .6) : r === "easy" && (e.price += .8),
+          i === "shelf" ? e.steam += n === "fixed" ? 3.5 : 1.5 : i === "free" && (e.steam = .2),
+          p.a.hh >= 2 && (e.keep += .3)
+      );
+    const f = l("pri") || l("pri1");
+    return f && e[f] != null && (e[f] *= 2.2),
+      p.give
+        && Object.keys(p.give).forEach(function (d) {
+          p.give[d] && d !== f && e[d] != null && (e[d] *= .3);
         }),
       e;
   }
-  function C() {
-    const e = X();
-    return P.map(t => {
-      const a = be(t), s = ge(t);
-      let n = 0, i = 0;
-      return x.forEach(c => {
-        n += e[c[0]] * s[c[0]] / 5, i += e[c[0]];
-      }),
+  function _(e) {
+    const t = oe(), a = e ? 1e9 : l("budget") || 1e9, s = l("flag2");
+    return B.map(r => {
+      const i = Se(r), n = Te(r);
+      let c = 0, f = 0;
+      j.forEach(m => {
+        c += t[m[0]] * n[m[0]] / 5, f += t[m[0]];
+      });
+      let d = 100 * c / f - i.pen - i.ng.length * 40;
+      s
+        && s !== "any"
+        && ze[s].indexOf(r.id) >= 0
+        && (
+          d += 8, i.ok.push(["ご希望の炊き方に近い釜", "A pot close to your preferred style", "接近您偏好炊煮方式的内胆"])
+        );
+      const u = Math.round(d), h = r.price > a;
+      return h && (d -= Math.min(55, (r.price - a) / a * 90 + 12)),
         {
-          p: t,
-          h: a,
-          a: s,
-          W: e,
-          sc: G(Math.round(100 * n / i - a.pen - a.ng.length * 40), 1, 99),
-          g: pe(t)
+          p: r,
+          h: i,
+          a: n,
+          W: t,
+          raw: A(u, 1, 99),
+          sc: A(Math.round(d), 1, 99),
+          over: h,
+          g: He(r)
         };
     });
   }
-  const N = e => e.filter(t => !t.h.ng.length),
-    Z = e => e.slice().sort((t, a) => a.sc - t.sc),
-    J = (e, t) => t.slice().sort((a, s) => s.a[e] - a.a[e] || s.sc - a.sc)[0];
-  function O() {
-    const e = Z(C()), t = N(e).slice(0, 3);
+  const S = e => e.filter(t => !t.h.ng.length),
+    K = e => e.slice().sort((t, a) => a.sc - t.sc),
+    $ = (e, t) => t.slice().sort((a, s) => s.a[e] - a.a[e] || s.sc - a.sc)[0];
+  function R() {
+    const e = K(_()), t = e.filter(a => !a.h.ng.length).slice(0, 3);
     for (let a = 0; t.length < 3 && a < e.length; a++)
       t.indexOf(e[a]) < 0 && t.push(e[a]);
     return { all: e, top: t };
   }
-  function q(e, t) {
-    const a = { budget: "#94a3b8", flat: "#0ea5e9", sensor: "#3b82f6", premium: "#7c3aed" }[e.class]
-      || "#3b82f6",
-      s = '<rect x="6" y="8" width="84" height="50" rx="8" fill="'
+  function ie(e, t) {
+    const a = {
+      budget_micro: "#94a3b8",
+      standard_ih: "#0ea5e9",
+      pressure_ih_middle: "#2563eb",
+      steam_cut_clean: "#6366f1",
+      premium_flagship: "#b45309"
+    }[e.id],
+      s = '<ellipse cx="48" cy="58" rx="30" ry="6" fill="#0f172a" opacity=".12"/><path d="M20 '
+        + '34h56v14a14 14 0 0 1-14 14H34a14 14 0 0 1-14-14z" fill="'
         + a
-        + '"/><rect x="12" y="14" width="52" height="38" rx="5" fill="#eff6ff"/><rect x="70" y="14" '
-        + 'width="14" height="38" rx="4" fill="#fff" opacity=".85"/>';
-    let n = "";
-    return e.class === "budget"
+        + '"/><path d="M18 34a30 14 0 0 1 60 0z" fill="#fff" stroke="'
+        + a
+        + '" stroke-width="3"/><circle cx="48" cy="18" r="3.5" fill="'
+        + a
+        + '"/>';
+    let r = "";
+    return e.id === "budget_micro"
       && (
-        n = '<ellipse class="mw-spin" style="--dl:'
-          + t
-          + 's" cx="38" cy="38" rx="17" ry="9" fill="none" stroke="#94a3b8" stroke-width="3" '
-          + 'stroke-dasharray="7 6"/><circle cx="77" cy="26" r="4" fill="'
-          + a
-          + '"/>'
+        r = [0, 1].map(
+          i => '<path class="rc-steam" style="--dl:'
+            + (t + i * .5)
+            + 's" d="M'
+            + (40 + i * 16)
+            + ' 12q-6-6 0-12" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>'
+        ).join("")
       ),
-      e.class === "flat"
+      e.id === "standard_ih"
         && (
-          n = '<rect class="mw-slide" style="--dl:'
+          r = '<ellipse class="rc-spin" style="--dl:'
             + t
-            + 's" x="22" y="30" width="30" height="14" rx="3" fill="#7dd3fc"/><rect x="16" y="46" '
-            + 'width="44" height="3" rx="1.5" fill="#0ea5e9"/>'
+            + 's" cx="48" cy="55" rx="20" ry="4" fill="none" stroke="#fbbf24" stroke-width="3" stroke-dasharray="6 5"/>'
         ),
-      e.class === "sensor"
+      e.id === "pressure_ih_middle"
         && (
-          n = '<circle class="mw-pulse" style="--dl:'
+          r = '<circle class="rc-pulse" style="--dl:'
             + t
-            + 's" cx="38" cy="32" r="12" fill="none" stroke="#3b82f6" stroke-width="3"/><circle cx="38" '
-            + 'cy="32" r="4" fill="#3b82f6"/><rect x="72" y="20" width="10" height="5" rx="2" fill="#3b82f6"/>'
+            + 's" cx="48" cy="46" r="9" fill="none" stroke="#fff" stroke-width="3"/><circle cx="48" cy="46"'
+            + ' r="3" fill="#fff"/>'
         ),
-      e.class === "premium"
+      e.id === "steam_cut_clean"
         && (
-          n = [0, 1, 2, 3].map(
-            i => [0, 1, 2, 3, 4].map(
-              c => '<circle class="mw-glow" style="--dl:'
-                + ((i * 5 + c) * .12 + t)
-                + 's" cx="'
-                + (22 + c * 8)
-                + '" cy="'
-                + (22 + i * 8)
-                + '" r="2.2" fill="#a78bfa"/>'
-            ).join("")
+          r = '<path d="M38 44l7 7 14-14" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"'
+            + ' stroke-linejoin="round" class="rc-glow" style="--dl:'
+            + t
+            + 's"/>'
+        ),
+      e.id === "premium_flagship"
+        && (
+          r = [[30, 46], [48, 52], [66, 46], [40, 40], [58, 40]].map(
+            (i, n) => '<circle class="rc-glow" style="--dl:'
+              + (t + n * .3)
+              + 's" cx="'
+              + i[0]
+              + '" cy="'
+              + i[1]
+              + '" r="2.4" fill="#fde68a"/>'
           ).join("")
         ),
-      '<svg class="mw-svg" viewBox="0 0 96 66">' + s + n + "</svg>";
+      '<svg class="rc-svg" viewBox="0 0 96 70">' + s + r + "</svg>";
   }
-  function ve(e, t) {
+  function Q(e, t) {
+    const a = j.filter(
+      s => s[0] !== "capfit" && s[0] !== "price" && e.a[s[0]] - t.a[s[0]] >= 1
+    ).map(s => s[2] + F(s));
+    return e.p.cap - t.p.cap >= 1.5 && a.push("📦+" + (e.p.cap - t.p.cap) + o(["合", " gō", "合"])),
+      a;
+  }
+  function Be(e, t, a) {
+    const s = B.map(c => c.price),
+      r = Math.min.apply(0, s),
+      i = Math.max.apply(0, s),
+      n = c => (c - r) / (i - r) * 100;
+    return '<div style="position:relative;height:22px;background:#f1f5f9;border-radius:99px;margin:10px '
+      + '0 4px"><div style="position:absolute;top:0;bottom:0;left:'
+      + Math.min(n(e), 95).toFixed(1)
+      + "%;width:"
+      + Math.max(5, n(t) - n(e)).toFixed(1)
+      + '%;background:#fef3c7;border:1.5px solid #f59e0b;border-radius:99px"></div>'
+      + a.map(
+        c => '<i style="position:absolute;top:6px;width:10px;height:10px;border-radius:50%;background:#f59e0b;left:calc('
+          + n(c).toFixed(1)
+          + '% - 5px)"></i>'
+      ).join("")
+      + '</div><div style="display:flex;justify-content:space-between;font-size:.72rem;color:#64748b"><span>'
+      + y(r)
+      + "</span><span>"
+      + y(i)
+      + "</span></div>";
+  }
+  function Me(e) {
+    if (p.a.hh == null)
+      return "";
+    const t = _(1), a = K(S(t));
+    if (!a.length)
+      return "";
+    const s = E.map(() => 0), r = {};
+    a.slice(0, 6).forEach(u => {
+      s[E.indexOf(u.g)] += u.sc;
+    });
+    const i = s.indexOf(Math.max.apply(0, s));
+    a.forEach(u => {
+      r[u.p.maker] || (r[u.p.maker] = u);
+    });
+    const n = Object.keys(r).map(u => r[u]).slice(0, 3),
+      c = E.map((u, h) => {
+        const m = t.filter(T => T.g === u && !T.h.ng.length).length, w = h === i;
+        return '<div class="rc-mini" style="flex:1;min-width:56px;text-align:center;padding:6px 2px;border-radius:10px;'
+          + (
+            w
+              ? "background:#fef3c7;border:1.5px solid #f59e0b"
+              : "background:#f8fafc;border:1px solid #e2e8f0" + (m ? "" : ";opacity:.4")
+          )
+          + '">'
+          + ie(u, (h * .8).toFixed(1))
+          + '<div style="font-size:.64rem;line-height:1.3;margin-top:2px">'
+          + (w ? "👉" : "")
+          + W(u).replace(/（.*$/, "").replace(/ \(.*$/, "")
+          + "<br>("
+          + m
+          + ")</div></div>";
+      }).join(""),
+      f = n.map(
+        u => '<div style="display:flex;align-items:center;gap:6px;font-size:.78rem;margin-top:5px"><b style="width:6.2em">'
+          + H(u.p)
+          + '</b><div class="fr-bar" style="flex:1"><i style="width:'
+          + u.sc
+          + '%"></i></div><span style="width:8.5em;text-align:right">'
+          + u.p.name
+          + "</span></div>"
+      ).join("");
+    let d = '<div class="fr-box" style="padding:10px 12px"><h3 style="font-size:.9rem">'
+      + o(["🔎 いまの見立て：5つのタイプのうち…", "🔎 Current read: which of the 5 types…", "🔎 目前判断：5种类型中…"])
+      + '</h3><div style="display:flex;gap:5px">'
+      + c
+      + '</div><p class="fr-p" style="margin:6px 0 2px;font-size:.82rem">'
+      + g(
+        [
+          "今のところ <b>{0}</b> が当てはまりそうです（{1}）。カッコ内は条件に合う残り機種数です。",
+          "So far <b>{0}</b> looks like the best match ({1}). Numbers in brackets are the models still matching.",
+          "目前<b>{0}</b>最可能适合（{1}）。括号内为仍符合条件的机型数。"
+        ],
+        W(E[i]).replace(/（.*$/, "").replace(/ \(.*$/, ""),
+        P(E[i].desc)
+      )
+      + '</p><div style="font-size:.76rem;color:#64748b">'
+      + o(["メーカー別の相性（いまの回答での上位）", "Maker fit so far (top models)", "各品牌目前契合度（代表机型）"])
+      + "</div>"
+      + f;
+    if (e && e.st === 3) {
+      const u = a[0],
+        h = a.slice(0, 3).map(M => M.p.price),
+        m = Math.min.apply(0, h),
+        w = Math.max.apply(0, h);
+      d += '<p class="fr-p" style="margin:10px 0 0;font-size:.82rem">💴 '
+        + g([
+          "ここまでの回答に最も合う機種の価格帯は <b>{0}〜{1}</b> です（薄く色が付いた範囲）。",
+          "The best-fitting models cost roughly <b>{0} – {1}</b> (softly highlighted).",
+          "最契合的机型价格约<b>{0}～{1}</b>（浅色高亮范围）。"
+        ], y(m), y(w))
+        + "</p>"
+        + Be(m, w, h);
+      const T = a.filter(
+        M => M.p.price > u.p.price && M.p.price <= u.p.price * 2.2 && Q(M, u).length
+      ).sort((M, te) => M.p.price - te.p.price)[0];
+      T
+        && (
+          d += '<p class="fr-p" style="margin:6px 0 0;font-size:.82rem">⬆️ '
+            + g([
+              "もう少し上のランクなら <b>{0}</b>（{1}）。現在の最有力（{4}）より<b>{2}プラス</b>で、{3}がプラスされます。",
+              "One rank up: <b>{0}</b> ({1}): <b>{2} more</b> than your current best fit ({4}), adding {3}.",
+              "再上一档：<b>{0}</b>（{1}），比目前最契合机型（{4}）<b>多{2}</b>，增加{3}。"
+            ], T.p.name, H(T.p), y(T.p.price - u.p.price), Q(T, u).join("・"), u.p.name)
+            + "</p>"
+        );
+    }
+    return d + "</div>";
+  }
+  function Fe() {
+    const e = [], t = l("fq"), a = l("us"), s = l("tx");
+    return x()
+      && e.push([
+        "炊飯器をあまり使わないなら、マイコン式で十分です。置き場所も取らず、必要なときだけさっと炊けます。",
+        "If you rarely use a cooker, a microcomputer model is enough: compact and quick when you need it.",
+        "很少使用电饭煲的话，微电脑款就够了：省空间、需要时就能快速煮饭。"
+      ]),
+      z()
+        && t === "daily"
+        && e.push([
+          "一人暮らしでも毎日炊くなら、IH以上が火力と保温で快適です。マイコン式は「あまり使わない方」向けの位置づけです。",
+          "Even living alone, if you cook daily IH or above is more comfortable in power and keep-warm;"
+            + " microcomputer models are meant for light users.",
+          "即使独居，每天煮饭的话IH以上在火力与保温上更舒适；微电脑款定位于“很少使用的人”。"
+        ]),
+      z()
+        && t === "mid"
+        && e.push([
+          "週に数回なら、小さめのIHも候補です。炊く量が少ないほど、容量の小さい機種がおいしく炊けます。",
+          "For a few times a week, a small IH is also a candidate; smaller capacities cook small batches better.",
+          "每周几次的话，小容量IH也可考虑；煮得越少，小容量越好吃。"
+        ]),
+      p.a.hh >= 2
+        && e.push([
+          "3人以上のご家庭では、5合前後の容量があると、毎回の炊き直しが減ります。",
+          "For 3+ people, around 5 gō means fewer repeat batches.",
+          "3人以上的家庭，5合左右的容量可减少重复煮饭。"
+        ]),
+      a === "freeze"
+        && e.push([
+          "冷凍ご飯が多いなら、圧力IHは解凍後もふっくら感が残りやすく、ひとつ上のクラスがおすすめです。",
+          "If you freeze a lot of rice, pressure IH keeps it plump after thawing: worth considering one class up.",
+          "常冷冻米饭的话，压力IH解冻后仍保持松软，建议考虑高一档。"
+        ]),
+      a === "keep"
+        && l("kp") === "long"
+        && e.push([
+          "丸一日以上の保温なら、真空・スチーム保温（最長40時間）の機種が向いています。",
+          "For a full day or more of keep-warm, vacuum or steam keep-warm models (up to 40 h) fit best.",
+          "一整天以上保温，适合真空·蒸汽保温机型（最长40小时）。"
+        ]),
+      s === "chewy"
+        && e.push([
+          "もっちり派は、圧力IHの象印・タイガーが得意な分野です。",
+          "Chewy fans: pressure IH from Zojirushi and Tiger excels here.",
+          "喜欢软糯的话，象印·虎牌的压力IH最擅长。"
+        ]),
+      s === "firm"
+        && e.push([
+          "しゃっきり派は、三菱の炭釜や日立が得意な分野です。",
+          "Firm-grain fans: Mitsubishi’s carbon pots and Hitachi excel here.",
+          "喜欢爽口的话，三菱炭釜与日立最擅长。"
+        ]),
+      l("kit2") === "fixed"
+        && e.push([
+          "上に棚がある場所には、蒸気カット機（日立）が安心です。",
+          "With a shelf above, a Hitachi steam-cut model is the safe choice.",
+          "上方有架子的位置，日立防蒸汽机型更放心。"
+        ]),
+      l("pt") === "flag"
+        && e.push([
+          "味に投資したい方は、本土鍋・炭釜・炎舞炊きなど最上位機も比べる価値があります。",
+          "If you want to invest in taste, genuine clay pot, carbon pot and Flame Dance models are worth comparing.",
+          "想在口味上投入的话，真土锅·炭釜·炎舞炊等顶级机型值得比较。"
+        ]),
+      e;
+  }
+  function Re() {
+    const e = l("budget");
+    if (e == null || e >= 1e9)
+      return "";
+    const t = _(1), a = K(S(t))[0], s = K(S(t).filter(r => r.p.price <= e))[0];
+    return !a || a.p.price <= e || s && a.sc - s.sc < 6
+      ? ""
+      : g([
+        "選ばれたご予算だと、ここまでのご希望に最も合う<b>{0}</b>には届きません（あと{1}）。この後の結果で比較できます。",
+        "Your budget falls short of <b>{0}</b>, the best fit so far ({1} more). You can compare in the results.",
+        "所选预算够不到目前最契合的<b>{0}</b>（还差{1}）。稍后结果页可对比。"
+      ], a.p.name, y(a.p.price - e));
+  }
+  function Ee(e) {
+    const t = Fe().map(s => "<li>" + o(s) + "</li>").join(""), a = e && e.st === 3 ? Re() : "";
+    return !t && !a
+      ? ""
+      : '<div class="fr-box" style="border-left:4px solid #f59e0b;background:#fffbeb"><h3>💡 '
+        + o(["お客様の暮らし方から", "From your lifestyle", "根据您的生活方式"])
+        + "</h3>"
+        + (t ? '<ul class="fr-ul">' + t + "</ul>" : "")
+        + (a ? '<p class="fr-p" style="margin:6px 0 0">' + a + "</p>" : "")
+        + "</div>";
+  }
+  function Ce(e) {
+    const t = { i: -1, note: "" };
+    if (e.id === "budget") {
+      const a = K(S(_(1))).slice(0, 3);
+      if (!a.length)
+        return t;
+      const s = a[0].p.price;
+      e.o.forEach((r, i) => {
+        t.i < 0 && r[1] >= s && (t.i = i);
+      }),
+        t.why = g([
+          "最有力の「{0}」が{1}前後のため",
+          "The best-fit “{0}” costs around {1}",
+          "最契合的“{0}”约{1}"
+        ], a[0].p.name, y(s)),
+        t.note = '<p class="fr-p" style="font-size:.84rem;background:#fffbeb;border-radius:8px;padding:8px '
+          + '10px;margin:0 0 8px">'
+          + o([
+            "薄く色が付いた選択肢が、ここまでの暮らし方に合う予算の目安です。",
+            "The softly highlighted option is the budget that fits your lifestyle so far.",
+            "浅色高亮的选项是契合目前生活方式的预算参考。"
+          ])
+          + '</p><p class="fr-p" style="font-size:.78rem;color:#64748b;margin:0 0 8px">'
+          + o([
+            "※価格は目安（約）です。在庫・価格は変動しますので、最新情報は売場スタッフ・店頭表示でご確認ください。",
+            "* Prices are approximate. Stock and prices change; please confirm the latest with store "
+              + "staff or the shelf tag.",
+            "※价格为大致参考。库存与价格会变动，请向店员或价签确认最新信息。"
+          ])
+          + "</p>";
+    } else if (e.id === "pri" || e.id === "pri1") {
+      const a = p.a[e.id];
+      delete p.a[e.id];
+      const s = oe();
+      a != null && (p.a[e.id] = a);
+      let r = null;
+      e.id === "pri1"
+        ? r = "price"
+        : (
+          j.forEach(i => {
+            i[0] !== "capfit" && i[0] !== "price" && (!r || s[i[0]] > s[r]) && (r = i[0]);
+          }),
+            (!r || s[r] < 2.4) && (r = "capfit")
+        ),
+        e.o.forEach((i, n) => {
+          i[1] === r && (t.i = n);
+        }),
+        t.why = g([
+          "回答から「{0}」を重視されているようです",
+          "Your answers suggest “{0}” matters to you",
+          "根据回答，您似乎重视“{0}”"
+        ], xe(r));
+    }
+    return t;
+  }
+  function _e(e, t) {
+    const a = p.a[e.id];
+    p.a[e.id] = t;
+    const s = R().top[0];
+    return a == null ? delete p.a[e.id] : p.a[e.id] = a, s;
+  }
+  function Pe() {
+    const e = R().top[0];
+    let t = 0;
+    const a = C.filter(r => N(r) && p.a[r.id] != null);
+    if (!e)
+      return "";
+    const s = a.map((r, i) => {
+      const n = p.a[r.id];
+      let c = 0;
+      const f = r.o.map((d, u) => ({ l: o(d[0]), v: u })).filter(d => d.v !== n).map(d => {
+        const u = _e(r, d.v), h = u.p !== e.p;
+        return h && (c++, t++),
+          '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
+            + 'font-size:.76rem;line-height:1.45;'
+            + (
+              h
+                ? "background:#fffbeb;border:1px dashed #f59e0b"
+                : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
+            )
+            + '">'
+            + d.l
+            + "<br><b>"
+            + (
+              h
+                ? o(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + u.p.name
+                : o(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
+            )
+            + "</b></span>";
+      }).join("");
+      return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
+        + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
+        + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
+        + 'line-height:17px">'
+        + (i + 1)
+        + '</span><div style="font-size:.78rem;color:#64748b">'
+        + o(r.t).replace(/[？?]$/, "")
+        + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
+        + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
+        + D(r.id)
+        + "</div>"
+        + (
+          f
+            ? "<details"
+              + (c ? " open" : "")
+              + '><summary style="font-size:.78rem;color:'
+              + (c ? "#b45309" : "#64748b")
+              + ';cursor:pointer">'
+              + g([
+                "もし別の選択をしていたら（1位が変わる選択肢：{0}件）",
+                "If you had chosen differently (options that change #1: {0})",
+                "若选了其他选项（会改变第1名的选项：{0}个）"
+              ], c)
+              + "</summary>"
+              + f
+              + "</details>"
+            : ""
+        )
+        + "</div>";
+    }).join("");
+    return '<div class="fr-box"><h3>🧭 '
+      + o(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
+      + '</h3><p class="fr-p" style="font-size:.82rem">'
+      + g([
+        "緑が選んだ回答です。点線の枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：{0}／分岐点 {1}か所の選択肢）。",
+        "Green is what you chose. Dashed boxes show the top pick if you had chosen differently; "
+          + "<b>yellow marks choices that would change #1</b> (current #1: {0} / {1} such choices).",
+        "绿色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：{0}／共{1}个）。"
+      ], e.p.name, t)
+      + "</p>"
+      + s
+      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
+      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
+      + e.p.name
+      + "（"
+      + H(e.p)
+      + "）</div></div>";
+  }
+  function ne() {
+    return '<div class="fr-win" style="margin-top:10px">'
+      + o([
+        "※価格は目安（約）です。在庫や価格は変動しますので、ご購入前に必ず売場スタッフ・店頭表示で最新の価格と在庫をご確認ください。",
+        "* Prices are approximate. Stock and prices change, so please confirm the latest price and "
+          + "availability with store staff or the shelf tag before buying.",
+        "※价格仅为大致参考。库存与价格会变动，购买前请务必向店员或价签确认最新价格与库存。"
+      ])
+      + "</div>";
+  }
+  function Ae() {
+    const e = S(_(1)), t = [15e3, 3e4, 6e4, 12e4, 1e9], a = l("budget"), s = [];
+    let r = null;
+    if (
+      t.forEach(n => {
+        const c = e.filter(f => f.p.price <= n).sort((f, d) => d.raw - f.raw)[0];
+        if (c) {
+          if (r && r.e === c) {
+            r.t2 = n;
+            return;
+          }
+          r = { e: c, t: n, t2: n, from: s.length ? s[s.length - 1] : null }, s.push(r);
+        }
+      }),
+        s.length < 2
+    )
+      return "";
+    const i = s.map((n, c) => {
+      const f = n.t2 >= 1e9
+        ? o(["それ以上", "Above that", "更高"])
+        : g(["〜{0}", "Up to {0}", "{0}以内"], y(n.t2)),
+        d = c ? n.e.raw - s[c - 1].e.raw : 0,
+        u = a != null && a >= n.t && a <= n.t2;
+      return '<div style="padding:7px 9px;margin-bottom:6px;border-radius:10px;'
+        + (
+          u
+            ? "background:#fef3c7;border:1.5px solid #f59e0b"
+            : "background:#f8fafc;border:1px solid #e2e8f0"
+        )
+        + '"><div style="display:flex;justify-content:space-between;font-size:.82rem"><b>'
+        + f
+        + (u ? " 👈" + o(["ご予算", " your budget", " 您的预算"]) : "")
+        + "</b><span>"
+        + g(["適合 {0}", "Fit {0}", "适合度 {0}"], n.e.raw)
+        + (
+          c
+            ? d >= 2
+              ? ' <b style="color:#059669">(+' + d + ")</b>"
+              : ' <span style="color:#94a3b8">('
+                + o(["ほぼ変わらず", "about the same", "基本不变"])
+                + ")</span>"
+            : ""
+        )
+        + '</span></div><div class="fr-bar" style="margin:4px 0"><i style="width:'
+        + n.e.raw
+        + '%"></i></div><div style="font-size:.8rem;color:#475569">'
+        + H(n.e.p)
+        + " "
+        + n.e.p.name
+        + "（"
+        + y(n.e.p.price)
+        + "）</div></div>";
+    }).join("");
+    return '<div class="fr-box"><h3>'
+      + o(["📈 予算を上げると、どう変わる？", "📈 What changes if you raise the budget?", "📈 提高预算会有什么变化？"])
+      + '</h3><p class="fr-p" style="font-size:.84rem">'
+      + o([
+        "予算の段階ごとに、あなたの暮らし方に最も合う機種を並べました。適合度の伸びが小さくなるところが、費用対効果の目安です。",
+        "For each budget tier, the model that best fits your lifestyle. Where the gain levels off is "
+          + "a good value point.",
+        "按预算档位列出最契合您生活方式的机型。适合度增幅变小的位置即性价比参考点。"
+      ])
+      + "</p>"
+      + i
+      + "</div>";
+  }
+  function Oe() {
+    const e = R(), t = e.top[0], a = e.top.map(s => s.p.id);
+    return t
+      ? S(e.all).filter(
+        s => a.indexOf(s.p.id) < 0
+          && s.p.price > t.p.price
+          && s.raw >= t.raw + 2
+          && s.p.price - t.p.price <= Math.max(2e4, t.p.price * .6)
+      ).sort((s, r) => r.raw - s.raw).slice(0, 2).map(s => ({ e: s, base: t }))
+      : [];
+  }
+  function We() {
+    const e = Oe();
+    if (!e.length)
+      return "";
+    const t = e[0].base,
+      a = e.map(s => {
+        const r = s.e,
+          i = r.p,
+          n = Q(r, t).map(c => '<span class="fr-chip ok">' + c + "</span>").join("");
+        return '<div class="fr-win"><b>'
+          + g(["あと{0}で「{1}」（{2}）", "For {0} more: {1} ({2})", "再加{0}：{1}（{2}）"], y(
+            i.price - t.p.price
+          ), i.name, H(i))
+          + "</b><br>"
+          + g(
+            ["{0}｜{1}／{2}｜合計 {3}", "{0} | {1} / {2} | total {3}", "{0}｜{1}／{2}｜合计 {3}"],
+            W(r.g).replace(/（.*$/, "").replace(/ \(.*$/, ""),
+            O(i),
+            b(U[i.heat]),
+            y(i.price)
+          )
+          + '<div style="margin-top:4px">'
+          + n
+          + "</div></div>";
+      }).join("");
+    return '<div class="fr-box"><h3>'
+      + o(["💡 もう少し予算を出せるなら", "💡 If you can stretch the budget a little", "💡 如果预算可以稍微放宽"])
+      + '</h3><p class="fr-p">'
+      + g([
+        "1位「{0}」より、少し足すだけで暮らしにもっと合う機種があります。",
+        "A small step up from #1 “{0}” gets you something that fits your life better.",
+        "比第1名“{0}”稍微多加一点预算，就有更贴合您生活的机型。"
+      ], t.p.name)
+      + "</p>"
+      + a
+      + "</div>";
+  }
+  function Ne() {
+    const e = R(), t = e.top[0];
+    if (!t)
+      return "";
+    const a = e.top.map(i => i.p.id),
+      s = S(e.all).filter(
+        i => a.indexOf(i.p.id) < 0
+          && i.p.price <= t.p.price * .85
+          && t.p.price - i.p.price >= 3e3
+          && i.p.cap >= t.p.cap - 1.5
+      ).sort((i, n) => n.sc - i.sc).slice(0, 2);
+    if (!s.length)
+      return "";
+    const r = s.map(i => {
+      const n = i.p,
+        c = j.filter(f => f[0] !== "capfit" && f[0] !== "price" && t.a[f[0]] - i.a[f[0]] >= 1).map(
+          f => '<span class="fr-chip ng">'
+            + f[2]
+            + g(["{0}は控えめ", "{0} is lighter", "{0}较弱"], F(f))
+            + "</span>"
+        ).join("");
+      return '<div class="fr-win"><b>'
+        + g(["{0}おさえて「{1}」（{2}）", "Save {0} with “{1}” ({2})", "省{0}：“{1}”（{2}）"], y(
+          t.p.price - n.price
+        ), n.name, H(n))
+        + "</b><br>"
+        + g(
+          ["{0}｜{1}／{2}｜価格 {3}", "{0} | {1} / {2} | price {3}", "{0}｜{1}／{2}｜价格 {3}"],
+          W(i.g).replace(/（.*$/, "").replace(/ \(.*$/, ""),
+          O(n),
+          b(U[n.heat]),
+          y(n.price)
+        )
+        + '<div style="margin-top:4px">'
+        + (
+          c
+            || '<span class="fr-chip ok">'
+              + o(["主な機能はほぼ同等", "Main features about the same", "主要功能大致相同"])
+              + "</span>"
+        )
+        + "</div></div>";
+    }).join("");
+    return '<div class="fr-box"><h3>'
+      + o(["💴 もう少し費用を抑えたい場合は", "💴 If you want to spend a little less", "💴 如果想再省一些预算"])
+      + '</h3><p class="fr-p">'
+      + g([
+        "1位「{0}」より価格をおさえたモデルもあります。その分、機能が控えめな点もあわせてご確認ください。",
+        "There are lower-priced models than #1 “{0}”. Please also check where they are lighter on features.",
+        "也有比第1名“{0}”更便宜的机型。请同时确认其功能较弱之处。"
+      ], t.p.name)
+      + "</p>"
+      + r
+      + "</div>";
+  }
+  const ce = () => [1, "rl", 3, "final"];
+  function pe(e) {
+    const t = ce();
+    let a = t.indexOf(e);
+    for (a = a + 1; a < t.length; a++) {
+      const s = t[a];
+      if (typeof s != "number")
+        return s;
+      if (J(s).length)
+        return { st: s, i: 0 };
+    }
+    return "final";
+  }
+  function le(e) {
+    const t = ce(),
+      a = typeof e == "object" ? e.st : e,
+      s = Math.max(0, t.indexOf(a)),
+      r = typeof e == "object" ? e.i / Math.max(1, J(e.st).length) : 0;
+    return 6 + 88 * (s + r) / t.length;
+  }
+  function Je(e, t) {
     const a = performance.now(), s = +e.textContent || 0;
-    (function n(i) {
-      const c = Math.min(1, (i - a) / 450);
-      e.textContent = Math.round(s + (t - s) * c), c < 1 && requestAnimationFrame(n);
+    (function r(i) {
+      const n = Math.min(1, (i - a) / 450);
+      e.textContent = Math.round(s + (t - s) * n), n < 1 && requestAnimationFrame(r);
     })(a);
   }
-  const ee = () => Object.keys(r.a).length ? N(C()).length : P.length;
-  function we() {
-    const e = document.getElementById("mw-n");
-    e && ve(e, ee());
+  const de = () => Object.keys(p.a).length ? S(_()).length : B.length;
+  function Le() {
+    const e = document.getElementById("rc-n");
+    e && Je(e, de());
   }
-  function I(e, t) {
-    t || r.hist.push(r.v), r.v = e, r.back = !!t, M(), w.scrollTo({ top: 0 });
+  function Y(e, t) {
+    t || p.hist.push(p.v), p.v = e, p.back = !!t, L(), k.scrollTo({ top: 0 });
   }
-  function M() {
-    const e = r.v;
-    let t = "", a = 0, s = T();
-    const n = '<select class="mw-sel" data-a="lang" aria-label="Language"><option value="ja"'
+  function L() {
+    const e = p.v;
+    let t = "", a = 0, s = I();
+    const r = '<select class="rc-sel" data-a="lang" aria-label="Language"><option value="ja"'
       + (s === 0 ? " selected" : "")
       + '>日本語</option><option value="en"'
       + (s === 1 ? " selected" : "")
@@ -5236,427 +6087,337 @@ window.NJ_HEAR = (function () {
       + (s === 2 ? " selected" : "")
       + ">中文</option></select>",
       i = '<div class="fr-top"><button class="fr-x" data-a="close">'
-        + l("back")
+        + o(["← 一覧へ", "← Back to list", "← 返回列表"])
         + "</button><b>"
-        + l("app")
-        + '</b><span class="fr-pill">'
-        + l("pill")
-        + '<i id="mw-n">'
-        + ee()
-        + "</i>/"
-        + P.length
-        + "</span>"
-        + n
-        + '</div><div class="fr-prog"><div id="mw-pg"></div></div>';
+        + o(["ノジマ式 炊飯器相談", "Nojima Rice Cooker Advisor", "Nojima 电饭煲选购咨询"])
+        + "</b>"
+        + r
+        + '<span class="fr-pill">'
+        + g([
+          '該当<i id="rc-n">{0}</i>/{1}機種',
+          '<i id="rc-n">{0}</i>/{1} match',
+          '符合<i id="rc-n">{0}</i>/{1}款'
+        ], de(), B.length)
+        + '</span></div><div class="fr-prog"><div id="rc-pg"></div></div>';
     if (e === "intro")
-      t = ke(), a = 4;
-    else if (e === "ov")
-      t = xe(), a = 4;
-    else if (e === "r1")
-      t = ze(), a = 38;
-    else if (e === "r2")
-      t = We(), a = 72;
+      t = Ge(), a = 3;
+    else if (e === "rl")
+      t = Ke(), a = le(e);
     else if (e === "final")
-      t = Te(), a = 100;
+      t = De(), a = 100;
     else if (e === "staff")
-      t = Se(), a = 100;
+      t = Ve(), a = 100;
     else {
-      const c = F(e.st)[e.i];
-      t = Le(c, e),
-        a = {
-          1: 6 + e.i / F(e.st).length * 32,
-          2: 40 + e.i / F(e.st).length * 32,
-          3: 74 + e.i / F(e.st).length * 20
-        }[e.st];
+      const n = J(e.st)[e.i];
+      t = Ze(n, e), a = le(e);
     }
-    w.className = "fr-root on" + (r.back ? " fr-back" : ""),
-      w.innerHTML = i + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
+    k.className = "fr-root on" + (p.back ? " fr-back" : ""),
+      k.innerHTML = i + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
       requestAnimationFrame(() => {
-        const c = document.getElementById("mw-pg");
-        c && (c.style.width = a + "%");
+        const n = document.getElementById("rc-pg");
+        n && (n.style.width = a + "%");
       });
   }
-  const l = e => o(k[e]),
-    ye = (e, t) => {
-      const a = e.map(t);
-      return y(Math.min.apply(0, a)) + (e.length > 1 ? "〜" + y(Math.max.apply(0, a)) : "");
-    };
-  function ke() {
-    const e = '<div class="mw-tabs"><button data-a="tab" data-m="mw" class="'
-      + (r.tab === "mw" ? "on" : "")
-      + '">♨️ '
-      + o(A[0].n)
-      + '</button><button data-a="tab" data-m="ov" class="'
-      + (r.tab === "ov" ? "on" : "")
-      + '">🍞 '
-      + l("tab2")
-      + "</button></div>",
-      t = A.map(
-        (n, i) => '<div class="fr-card fr-up" style="--i:'
-          + (i + 1)
-          + '" data-a="type"><div class="mw-bob" style="--dl:'
-          + i * .35
-          + 's">'
-          + n.e
-          + "</div><h3>"
-          + o(n.n)
-          + "</h3><small>"
-          + o(n.sub)
-          + (i === 0 ? "・" + P.length + l("unit") : "")
-          + '</small><div class="fr-more"><div><span>'
-          + o(k.tag[0])
-          + "</span>"
-          + o(n.who)
-          + "</div><div><span>"
-          + o(k.tag[1])
-          + "</span>"
-          + o(n.pro)
-          + "</div><div><span>"
-          + o(k.tag[2])
-          + "</span>"
-          + o(n.con)
-          + "</div></div></div>"
-      ).join(""),
-      a = W.map((n, i) => {
-        const c = P.filter(m => m.groupId === n.id);
-        return '<div class="fr-card fr-up" style="--i:'
-          + (i + 1)
-          + '" data-a="type">'
-          + q(n, i * .3)
-          + '<h3 style="font-size:.88rem">'
-          + z(n.name)
-          + "</h3><small>"
-          + c.length
-          + l("unit")
-          + "・"
-          + ye(c, m => m.price)
-          + '</small><div class="fr-more"><div>'
-          + z(n.desc)
-          + "</div><div><span>"
-          + o(k.tag[0])
-          + "</span>"
-          + o(S[n.id].who)
-          + "</div><div><span>"
-          + o(k.tag[1])
-          + "</span>"
-          + o(S[n.id].pro)
-          + "</div><div><span>"
-          + o(k.tag[2])
-          + "</span>"
-          + o(S[n.id].con)
-          + "</div></div></div>";
+  const he = e => W(e);
+  function Ge() {
+    const e = E.map((r, i) => {
+      const n = B.filter(c => c.groupId === r.id);
+      return '<div class="fr-card fr-up" style="--i:'
+        + (i + 1)
+        + '" data-a="type">'
+        + ie(r, i * .3)
+        + '<h3 style="font-size:.88rem">'
+        + he(r)
+        + "</h3><small>"
+        + n.length
+        + o(["機種", " models", "款"])
+        + '</small><div class="fr-more"><div>'
+        + P(r.desc)
+        + "</div><div><span>"
+        + o(["向く方", "Best for", "适合人群"])
+        + "</span>"
+        + b(X[r.id].who)
+        + "</div><div><span>"
+        + o(["強み", "Strengths", "优点"])
+        + "</span>"
+        + b(X[r.id].pro)
+        + "</div><div><span>"
+        + o(["注意", "Watch out", "注意"])
+        + "</span>"
+        + b(X[r.id].con)
+        + "</div><div><span>"
+        + o(["機種", "Models", "机型"])
+        + "</span>"
+        + n.map(c => H(c) + " " + c.model).join(" / ")
+        + "</div></div></div>";
+    }).join(""),
+      t = ve.map(r => "<tr><td>" + b(r[0]) + "</td><td>" + b(r[1]) + "</td></tr>").join(""),
+      a = Object.keys(Z).map(r => {
+        const i = B.filter(n => n.maker === r).length;
+        return "<tr><td>"
+          + b(Z[r].n)
+          + "</td><td><b>"
+          + b(Z[r].tag)
+          + "</b><br>"
+          + b(Z[r].t)
+          + '<br><span style="color:#94a3b8">'
+          + i
+          + o(["機種", " models", "款"])
+          + "</span></td></tr>";
       }).join(""),
-      s = k.flow.map(
-        (n, i) => i % 2 ? "" : "<span><b>" + o(n) + "</b>" + o(k.flow[i + 1]) + "</span>"
-      ).join("");
+      s = [
+        [["①暮らし方", "① Lifestyle", "①生活方式"], ["人数・使い方・食感", "Household, use, texture", "人数·用法·口感"]],
+        [["②メーカー傾向", "② Makers", "②品牌倾向"], ["相性を比較", "Fit compared", "契合度对比"]],
+        [["③譲れない点", "③ Priority", "③不可让步点"], ["1点だけ", "Just one", "只选1项"]],
+        [
+          ["④ご予算（候補を見てから）", "④ Budget (after seeing picks)", "④预算（看完候选后）"],
+          ["3機種＋α", "3 picks + more", "3款+其他"]
+        ]
+      ].map(r => "<span><b>" + b(r[0]) + "</b>" + b(r[1]) + "</span>").join("");
     return '<span class="fr-tag fr-up">'
-      + l("s0")
-      + "</span>"
-      + e
-      + '<h1 class="fr-h1 fr-up" style="--i:1">'
-      + l("h0")
+      + o(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
+      + '</span><h1 class="fr-h1 fr-up" style="--i:1">'
+      + o([
+        "炊飯器は、大きく<em>5タイプ</em>に分かれます",
+        "Rice cookers fall into <em>5 types</em>",
+        "电饭煲大致分为<em>5种类型</em>"
+      ])
       + '</h1><p class="fr-p fr-up" style="--i:2">'
-      + l("p0")
-      + '</p><div class="mw-flow fr-up" style="--i:2">'
+      + g([
+        "タップでタイプごとの違いを確認できます。まず<b>暮らし方・使い方</b>をおたずねし、回答に応じて質問が変わります。<b>ご予算は、"
+          + "候補をご覧になってから</b>おたずねします（少し上のモデルのほうが合う場合もあるためです）。店頭在庫{0}機種から3機種に絞ります。",
+        "Tap a card to see how the types differ. We start with <b>your lifestyle and usage</b>, and "
+          + "the questions change with your answers. <b>We ask about budget after showing the picks</b>, "
+          + "because a slightly higher model may suit you better. We narrow {0} in-store models to 3.",
+        "点击卡片查看各类型差异。先询问<b>生活方式与使用习惯</b>，问题会随回答而变化。<b>看完候选机型后再询问预算</b>，因为稍高一档的机型可能更适合您。从店内{0}款中筛出3款。"
+      ], B.length)
+      + '</p><div class="rc-flow fr-up" style="--i:2">'
       + s
       + '</div><div class="fr-types">'
+      + e
+      + '</div><div class="fr-box" style="margin-top:12px"><h3>'
+      + o(["加熱方式のちがい", "How heating methods differ", "加热方式的区别"])
+      + '</h3><table class="rc-tbl">'
       + t
-      + '</div><div class="fr-win" style="margin-top:12px">'
-      + l("ovNote")
-      + '</div><h3 style="margin:16px 0 8px;font-size:.98rem">'
-      + l("sub4")
-      + '</h3><div class="fr-types">'
-      + a
-      + '</div><button class="fr-btn" data-a="start">'
-      + l("go")
-      + '</button><button class="fr-btn s" data-a="ovview">'
-      + l("goOv")
-      + "</button>";
-  }
-  function xe() {
-    const e = A.slice(1),
-      t = e.map(
-        n => '<button class="mw-chip'
-          + (r.ov[n.id] ? " on" : "")
-          + '" data-a="ovpick" data-k="'
-          + n.id
-          + '">'
-          + n.e
-          + " "
-          + o(n.n)
-          + "</button>"
-      ).join(""),
-      a = [["tag0", "who"], ["tag1", "pro"], ["tag2", "con"]].map(
-        (n, i) => "<tr><td>"
-          + o(k.tag[i])
-          + "</td>"
-          + e.map(c => "<td>" + o(c[n[1]]) + "</td>").join("")
-          + "</tr>"
-      ).join(""),
-      s = k.ovList.map(n => "<li>" + o(n) + "</li>").join("");
-    return '<span class="fr-tag">'
-      + l("ovTitle")
-      + '</span><h1 class="fr-h1">'
-      + l("ovTitle")
-      + '</h1><p class="fr-p">'
-      + l("ovP")
-      + '</p><div class="fr-box">'
-      + t
-      + '</div><div class="fr-box" style="overflow-x:auto"><table class="mw-tbl"><tr><th></th>'
-      + e.map(n => "<th>" + n.e + " " + o(n.n) + "</th>").join("")
-      + "</tr>"
-      + a
       + '</table></div><div class="fr-box"><h3>'
-      + l("ovCheck")
-      + '</h3><ul class="fr-ul">'
-      + s
-      + '</ul></div><div class="fr-win">'
-      + l("ovNote")
-      + '</div><button class="fr-btn k" data-a="staff">'
-      + l("ovTo")
-      + '</button><button class="fr-btn" data-a="start">'
-      + l("go")
-      + '</button><button class="fr-btn s" data-a="back">'
-      + l("back1")
+      + o(["メーカーごとの特徴（ざっくり）", "Maker characteristics at a glance", "各品牌特点（概览）"])
+      + '</h3><table class="rc-tbl">'
+      + a
+      + '</table></div><div class="fr-box" style="border-left:4px solid #f59e0b;background:#fffbeb"><h3>🍚 '
+      + o(["一人暮らしの方へ", "If you live alone", "独居的您"])
+      + '</h3><p class="fr-p" style="margin:0">'
+      + o([
+        "一人暮らし向けは機能がシンプルなモデルが中心です。マイコン式は「炊飯器をあまり使わない方」向け。毎日炊く方は、一人暮らしでもIH以上が快適です。質問の中でお使いの頻度をおうかがいします。",
+        "Models for solo living are mostly simple. Microcomputer models are for people who rarely "
+          + "use a cooker; if you cook daily, IH or above is more comfortable even when living alone. We "
+          + "will ask how often you use it.",
+        "独居款多为功能简单的机型。微电脑款面向“很少使用电饭煲”的人；每天煮饭的话，即使独居IH以上也更舒适。我们会询问您的使用频率。"
+      ])
+      + '</p></div><button class="fr-btn" data-a="start">'
+      + o(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
       + "</button>";
   }
-  function Le(e, t) {
-    const a = F(t.st),
-      s = e.o.map(
-        (n, i) => '<button class="fr-opt fr-up'
-          + ($(e) === i ? " rec" : "")
-          + (r.a[e.id] === i ? " sel" : "")
+  function Ze(e, t) {
+    const a = J(t.st),
+      s = o(
+        {
+          1: ["暮らし方・使い方（生活スタイル）", "Your lifestyle & how you use it", "生活方式·使用习惯"],
+          3: ["最後に｜譲れない点", "Last | Your priority", "最后｜不可让步的点"]
+        }[t.st]
+      ),
+      r = Ce(e),
+      i = e.o.map(
+        (n, c) => '<button class="fr-opt fr-up'
+          + (r.i === c ? " rec" : "")
+          + (p.a[e.id] === c ? " sel" : "")
           + '" style="--i:'
-          + (i + 1)
+          + (c + 1)
           + '" data-a="pick" data-i="'
-          + i
+          + c
           + '"><span class="ck">'
-          + (r.a[e.id] === i ? "✓" : "")
+          + (p.a[e.id] === c ? "✓" : "")
           + "</span>"
-          + o(n[0])
+          + b(n[0])
           + (
-            $(e) === i
+            r.i === c
               ? '<span class="rb">'
-                + o(["💡 使い方から見たおすすめ", "💡 Suggested for your use", "💡 契合使用方式的推荐"])
+                + (
+                  r.why
+                    ? "💡 " + r.why
+                    : o(["💡 暮らし方から見たおすすめ", "💡 Suggested for your lifestyle", "💡 契合生活方式的推荐"])
+                )
                 + "</span>"
               : ""
           )
           + "</button>"
       ).join("");
     return '<span class="fr-tag">'
-      + o(k.st[t.st - 1])
+      + s
       + "</span>"
-      + ue
-      + Ee()
+      + Me(t)
+      + Ee(t)
       + '<div class="fr-q"><div class="no">Q'
       + (t.i + 1)
       + " / "
       + a.length
       + "</div><h2>"
-      + o(e.t)
+      + b(e.t)
       + '</h2><div class="fr-hint">💡 '
-      + o(e.h)
+      + b(e.h)
       + "</div>"
-      + s
-      + '</div><button class="fr-btn s" data-a="back">'
-      + l("back1")
-      + "</button>";
-  }
-  function ze() {
-    const e = C(), t = N(e), a = {};
-    e.forEach(
-      p => p.h.ng.forEach(d => {
-        a[d[0]] = (a[d[0]] || 0) + 1;
-      })
-    );
-    const s = W.map((p, d) => {
-      const b = e.filter(u => u.g === p), g = b.filter(u => !u.h.ng.length).length;
-      return '<div class="fr-row fr-up" style="--i:'
-        + d
-        + '"><b style="width:9em;font-size:.8rem">'
-        + z(p.name).replace(/（.*$/, "")
-        + '</b><div class="fr-bar'
-        + (g ? "" : " g")
-        + '"><i style="width:'
-        + (b.length ? g / b.length * 100 : 0)
-        + "%;--i:"
-        + d
-        + '"></i></div><span style="width:3.4em;text-align:right">'
-        + g
-        + "/"
-        + b.length
-        + "</span></div>";
-    }).join(""),
-      n = Object.keys(a).map(
-        p => '<span class="fr-chip ng">' + o(k.ch[p]) + "：" + a[p] + o(k.ns) + "</span>"
-      ).join("")
-        || '<span class="fr-chip ok">' + l("r1none") + "</span>",
-      i = t.filter(p => p.h.wn.length).length,
-      c = W.filter(p => t.some(d => d.g === p)).map(
-        p => '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
-          + z(p.name)
-          + "</b><br>"
-          + o(S[p.id].pro)
-          + '。<span style="color:#b45309">'
-          + o(S[p.id].con)
-          + "</span></div>"
-      ).join(""),
-      m = H("sz") + " ／ " + H("fl");
-    return '<span class="fr-tag">'
-      + l("r1t")
-      + '</span><h1 class="fr-h1">'
-      + l("r1h").replace("%n", t.length)
-      + '</h1><p class="fr-p">'
-      + m
-      + '</p><div class="fr-box"><h3>'
-      + l("r1b")
-      + "</h3>"
-      + s
-      + '</div><div class="fr-box"><h3>'
-      + l("r1w")
-      + "</h3>"
-      + n
-      + (i ? '<p class="fr-p" style="margin:8px 0 0">' + l("r1caut").replace("%n", i) + "</p>" : "")
-      + "</div>"
-      + (t.length < 3 ? '<div class="fr-win">' + l("r1warn") + "</div>" : "")
-      + '<div class="fr-box"><h3>'
-      + l("r1d")
-      + "</h3>"
-      + c
-      + '</div><button class="fr-btn" data-a="next">'
-      + l("nxt2")
-      + '</button><button class="fr-btn s" data-a="back">'
-      + l("back1")
-      + "</button>";
-  }
-  function We() {
-    const e = C(),
-      t = N(e),
-      a = X(),
-      s = Math.max.apply(0, x.map(d => a[d[0]])),
-      n = W.map(d => {
-        const b = t.filter(g => g.g === d);
-        return {
-          g: d,
-          n: b.length,
-          v: x.map(g => b.length ? b.reduce((u, L) => u + L.a[g[0]], 0) / b.length : 0)
-        };
-      });
-    let i = '<div class="fr-heat" style="grid-template-columns:6.4em repeat(5,1fr)"><div class="hd"></div>'
-      + x.map(d => '<div class="hd">' + d[2] + "<br>" + o(d[1]).slice(0, 4) + "</div>").join("");
-    n.forEach((d, b) => {
-      i += '<div class="rn">'
-        + z(d.g.name).replace(/（.*$/, "").slice(0, 9)
-        + '<br><small style="color:#94a3b8">'
-        + d.n
-        + l("unit")
-        + "</small></div>"
-        + d.v.map(
-          (g, u) => '<div style="--a:'
-            + (g ? (g / 5 * .85).toFixed(2) : 0)
-            + ";--i:"
-            + (b * 5 + u)
-            + ";color:"
-            + (g > 3.2 ? "#fff" : "#334155")
-            + '">'
-            + (g ? g.toFixed(1) : "—")
-            + "</div>"
-        ).join("");
-    }),
-      i += "</div>";
-    const c = x.map(
-      (d, b) => '<div class="fr-row fr-up" style="--i:'
-        + b
-        + '"><b style="width:8em">'
-        + d[2]
-        + " "
-        + o(d[1])
-        + '</b><div class="fr-bar"><i style="width:'
-        + a[d[0]] / s * 100
-        + "%;--i:"
-        + b
-        + '"></i></div></div>'
-    ).join(""),
-      m = x.map(
-        (d, b) => '<div class="fr-row fr-up" style="--i:'
-          + b
-          + ';align-items:flex-start"><b style="width:8em">'
-          + d[2]
-          + " "
-          + o(d[1])
-          + '</b><span style="flex:1;color:#475569">'
-          + o(d[3])
-          + "</span></div>"
-      ).join(""),
-      p = n.filter(d => d.n).map(
-        d => '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
-          + z(d.g.name)
-          + "</b>："
-          + o(S[d.g.id].pro)
-          + '。<span style="color:#b45309">'
-          + o(S[d.g.id].con)
-          + "</span></div>"
-      ).join("");
-    return '<span class="fr-tag">'
-      + l("r2t")
-      + '</span><h1 class="fr-h1">'
-      + l("r2h")
-      + '</h1><p class="fr-p">'
-      + l("r2p")
-      + '</p><div class="fr-box"><h3>'
-      + l("r2w")
-      + "</h3>"
-      + c
-      + '</div><div class="fr-box"><h3>'
-      + l("r2g")
-      + '</h3><div style="overflow-x:auto">'
+      + (r.note || "")
       + i
-      + '</div></div><div class="fr-box"><h3>'
-      + l("r2f")
-      + "</h3>"
-      + p
-      + '</div><div class="fr-box"><h3>'
-      + l("r2a")
-      + "</h3>"
-      + m
-      + '</div><button class="fr-btn" data-a="next">'
-      + l("nxt3")
-      + '</button><button class="fr-btn s" data-a="back">'
-      + l("back1")
+      + '</div><button class="fr-btn s" data-a="back">'
+      + o(["← ひとつ戻る", "← Back", "← 返回上一步"])
       + "</button>";
   }
-  const je = () => [
-    [0, e => y(e.price)],
-    [1, e => e.maker],
-    [2, e => e.cap + "L"],
-    [3, e => o(ie[e.table])],
-    [4, e => o(re[e.door])],
-    [5, e => ce(e.power)],
-    [6, e => o(le[e.sensor])],
-    [7, e => e.autoMenu || "—"]
-  ];
-  function Me() {
-    var e = j.filter(function (u) {
-      return u.id === "bud";
-    })[0],
-      t = r.a.bud,
-      a = r.give || {},
-      s = y,
-      n = x.filter(function (u) {
-        return u[0] !== "price";
-      }),
-      i = e.o.map(function (u, L) {
-        return '<button class="fr-opt'
-          + (t === L ? " sel" : "")
-          + '" data-a="bud" data-i="'
-          + L
-          + '"><span class="ck">'
-          + (t === L ? "✓" : "")
+  function Ke() {
+    const e = _(1),
+      t = S(e),
+      a = {},
+      s = C.filter(c => c.st === 1 && N(c) && p.a[c.id] != null).map(
+        c => '<span class="fr-chip">' + D(c.id) + "</span>"
+      ).join("");
+    t.forEach(c => {
+      (!a[c.p.maker] || c.raw > a[c.p.maker].raw) && (a[c.p.maker] = c);
+    });
+    const i = Object.keys(a).map(c => a[c]).sort((c, f) => f.raw - c.raw).map((c, f) => {
+      const d = c.p,
+        u = Z[d.maker],
+        h = '<span class="fr-chip ok">'
+          + b(U[d.heat])
+          + '</span><span class="fr-chip ok">'
+          + O(d)
           + "</span>"
-          + o(u[0])
+          + (
+            d.press === "あり"
+              ? '<span class="fr-chip ok">' + o(["圧力", "Pressure", "压力"]) + "</span>"
+              : ""
+          )
+          + (
+            d.steam !== "標準"
+              ? '<span class="fr-chip ok">' + o(["蒸気を抑える", "Reduced steam", "减蒸汽"]) + "</span>"
+              : ""
+          )
+          + '<span class="fr-chip">'
+          + ae(d)
+          + "</span>";
+      return '<div class="fr-box fr-up" style="--i:'
+        + f
+        + '"><h3>'
+        + H(d)
+        + "　"
+        + g(["相性 {0}%", "Match {0}%", "契合度 {0}%"], c.raw)
+        + '</h3><div class="fr-bar"><i style="width:'
+        + c.raw
+        + "%;--i:"
+        + f
+        + '"></i></div><p class="fr-p" style="margin:8px 0 2px"><b>'
+        + b(u.tag)
+        + '</b></p><p class="fr-p" style="margin:0 0 6px">'
+        + b(u.t)
+        + '</p><div style="font-size:.86rem">'
+        + g(
+          [
+            "この暮らしに合う機種：<b>{0}</b>（{1}）",
+            "Best fit for you: <b>{0}</b> ({1})",
+            "最适合的机型：<b>{0}</b>（{1}）"
+          ],
+          d.name,
+          W(c.g).replace(/（.*$/, "").replace(/ \(.*$/, "")
+        )
+        + '</div><div style="margin-top:5px">'
+        + h
+        + "</div></div>";
+    }).join(""),
+      n = z()
+        ? '<div class="fr-box" style="border-left:4px solid #f59e0b;background:#fffbeb"><h3>🍚 '
+          + o(["一人暮らしの方のポイント", "Points for solo living", "独居者的要点"])
+          + '</h3><p class="fr-p" style="margin:0">'
+          + (
+            x()
+              ? o([
+                "炊飯器をあまり使わないとのことなので、マイコン式を中心にご案内します。小さい容量なら置き場所も取りません。",
+                "Since you rarely use a cooker, we focus on microcomputer models. A small capacity takes little space.",
+                "您很少使用电饭煲，因此以微电脑款为主。小容量也不占地方。"
+              ])
+              : l("fq") === "daily"
+                ? o([
+                  "毎日炊くなら、一人暮らしでもIH以上が快適です。マイコン式は火力・保温の面で物足りなく感じやすいため、候補から後ろに下げています。",
+                  "Since you cook daily, IH or above is more comfortable even when living alone. Microcomputer "
+                    + "models are ranked lower for power and keep-warm.",
+                  "每天煮饭的话，即使独居IH以上也更舒适。微电脑款在火力与保温上容易不足，已靠后排列。"
+                ])
+                : o([
+                  "週に数回なら、小さめのIHも候補です。マイコン式は「あまり使わない方」向けなので、少し控えめに評価しています。",
+                  "For a few times a week, a small IH is also a candidate. Microcomputer models are for light "
+                    + "users, so they are rated slightly lower.",
+                  "每周几次的话，小容量IH也可考虑。微电脑款面向“很少使用的人”，评价略低。"
+                ])
+          )
+          + "</p></div>"
+        : "";
+    return '<span class="fr-tag">'
+      + o(["暮らし方の結果", "Your lifestyle result", "生活方式结果"])
+      + '</span><h1 class="fr-h1">'
+      + o([
+        "あなたの暮らしに合う<em>メーカーの傾向</em>",
+        "Which <em>makers</em> suit your life",
+        "适合您生活的<em>品牌倾向</em>"
+      ])
+      + '</h1><p class="fr-p">'
+      + o([
+        "ここまでの回答をもとに、メーカーごとの得意分野と、相性の高い機種を比べました。暮らし方の相性だけで比べています（価格は含みません）。",
+        "Based on your answers, we compared each maker’s strengths and its best-matching model, on "
+          + "lifestyle fit only (price excluded).",
+        "根据您的回答，仅按生活方式契合度比较各品牌的擅长领域与最契合机型（不含价格）。"
+      ])
+      + '</p><div style="margin-bottom:10px">'
+      + s
+      + "</div>"
+      + n
+      + i
+      + '<button class="fr-btn" data-a="next">'
+      + o(["次へ：譲れない点→", "Next: your priority →", "下一步：不可让步的点→"])
+      + '</button><button class="fr-btn s" data-a="back">'
+      + o(["← 質問に戻る", "← Back to questions", "← 返回问题"])
+      + "</button>";
+  }
+  const Ye = () => [
+    [["メーカー", "Maker", "品牌"], e => H(e)],
+    [["炊飯量", "Capacity", "容量"], O],
+    [["加熱方式", "Heating", "加热方式"], e => b(U[e.heat])],
+    [["内釜", "Inner pot", "内胆"], ke],
+    [["圧力", "Pressure", "压力"], e => o(e.press === "あり" ? ["あり", "Yes", "有"] : ["なし", "No", "无"])],
+    [["食感", "Texture", "口感"], we],
+    [["保温", "Keep-warm", "保温"], ae],
+    [["蒸気", "Steam", "蒸汽"], e => b(me[e.steam])],
+    [["価格（目安）", "Price (approx.)", "价格（参考）"], e => y(e.price)]
+  ];
+  function Ue() {
+    var e = C.filter(function (m) {
+      return m.id === "budget";
+    })[0],
+      t = p.a.budget,
+      a = p.give || {},
+      s = function (m) {
+        return "¥" + Number(m).toLocaleString("ja-JP");
+      },
+      r = j.filter(function (m) {
+        return m[0] !== "price";
+      }),
+      i = e.o.map(function (m, w) {
+        return '<button class="fr-opt'
+          + (t === w ? " sel" : "")
+          + '" data-a="bud" data-i="'
+          + w
+          + '"><span class="ck">'
+          + (t === w ? "✓" : "")
+          + "</span>"
+          + o(m[0])
           + "</button>";
       }).join(""),
-      c = '<div class="fr-box" id="bud-box"><h3>💴 '
+      n = '<div class="fr-box" id="bud-box"><h3>💴 '
         + o(["ご予算はいかがですか？", "What is your budget?", "您的预算是多少？"])
         + '</h3><p class="fr-p" style="font-size:.82rem">'
         + o([
@@ -5666,18 +6427,18 @@ window.NJ_HEAR = (function () {
         ])
         + "</p>"
         + i,
-      m = f("bud");
-    if (t != null && m != null && m < 1e9) {
-      var p = (function () {
-        var u = r.a.bud;
-        delete r.a.bud;
-        var L = O().top[0];
-        return r.a.bud = u, L;
+      c = l("budget");
+    if (t != null && c != null && c < 1e9) {
+      var f = (function () {
+        var m = p.a.budget;
+        delete p.a.budget;
+        var w = R().top[0];
+        return p.a.budget = m, w;
       })(),
-        d = O().top[0],
-        b = d.p.price > m;
-      if (p.p === d.p)
-        c += '<div class="fr-win" style="margin-top:10px">✅ '
+        d = R().top[0],
+        u = d.p.price > c;
+      if (f.p === d.p)
+        n += '<div class="fr-win" style="margin-top:10px">✅ '
           + o([
             "予算内でも第1候補は変わりません。諦めるものはありません：",
             "Your top pick stays the same within budget. Nothing to give up: ",
@@ -5689,12 +6450,12 @@ window.NJ_HEAR = (function () {
           + s(d.p.price)
           + "）</div>";
       else {
-        var g = n.filter(function (u) {
-          return p.a[u[0]] - d.a[u[0]] >= .8;
-        }).map(function (u) {
-          return u[2] + o(u[1]);
+        var h = r.filter(function (m) {
+          return f.a[m[0]] - d.a[m[0]] >= .8;
+        }).map(function (m) {
+          return m[2] + o(m[1]);
         });
-        c += '<div class="fr-win" style="margin-top:10px"><b>'
+        n += '<div class="fr-win" style="margin-top:10px"><b>'
           + o(["ご予算内の第1候補：", "Top pick within budget: ", "预算内第1名："])
           + d.p.name
           + "</b>（"
@@ -5706,10 +6467,10 @@ window.NJ_HEAR = (function () {
             "予算を考えない第1候補は <b>%a</b>（%p）でした。",
             "Without a budget the top pick was <b>%a</b> (%p).",
             "不考虑预算时的第1名是<b>%a</b>（%p）。"
-          ]).replace("%a", p.p.name).replace("%p", s(p.p.price))
+          ]).replace("%a", f.p.name).replace("%p", s(f.p.price))
           + "<br>"
           + (
-            b
+            u
               ? o([
                 "⚠ 予算内に収まる機種がありません。最も近い機種を表示しています。",
                 "⚠ No model fits the budget; showing the closest.",
@@ -5720,28 +6481,28 @@ window.NJ_HEAR = (function () {
           )
           + o(["予算内にすると、次を諦めることになります：", "Staying in budget means giving up:", "控制在预算内，需要舍弃："])
           + " "
-          + (g.length ? g.join("・") : o(["大きな差はありません", "no big difference", "差别不大"]))
+          + (h.length ? h.join("・") : o(["大きな差はありません", "no big difference", "差别不大"]))
           + "</div>",
-          c += '<p class="fr-p" style="font-size:.82rem;margin-top:8px">'
+          n += '<p class="fr-p" style="font-size:.82rem;margin-top:8px">'
             + o([
               "あと %d 足すと <b>%a</b> に届きます。",
               "Add %d more to reach <b>%a</b>.",
               "再加%d即可选择<b>%a</b>。"
-            ]).replace("%d", s(Math.max(0, p.p.price - m))).replace("%a", p.p.name)
+            ]).replace("%d", s(Math.max(0, f.p.price - c))).replace("%a", f.p.name)
             + "</p>";
       }
-      c += '<h3 style="font-size:.9rem;margin-top:12px">'
+      n += '<h3 style="font-size:.9rem;margin-top:12px">'
         + o(["何なら諦めてもよいですか？（タップで選択）", "What could you give up? (tap to select)", "哪些可以舍弃？（点按选择）"])
         + '</h3><div class="fr-ax">'
-        + n.map(function (u) {
+        + r.map(function (m) {
           return '<button data-a="give" data-k="'
-            + u[0]
+            + m[0]
             + '" class="'
-            + (a[u[0]] ? "on" : "")
+            + (a[m[0]] ? "on" : "")
             + '">'
-            + u[2]
+            + m[2]
             + " "
-            + o(u[1])
+            + o(m[1])
             + "</button>";
         }).join("")
         + '</div><p class="fr-p" style="font-size:.78rem;margin-top:6px">'
@@ -5752,19 +6513,16 @@ window.NJ_HEAR = (function () {
         ])
         + "</p>";
     }
-    return c + "</div>";
+    return n + "</div>";
   }
-  function Te() {
-    const e = O(),
+  function De() {
+    const e = R(),
       t = e.top,
-      a = r.ax || f("pri") || "heat",
-      s = de(a),
-      n = x.filter(h => h[0] === a)[0],
-      i = J(a, t),
-      c = J(a, N(e.all)),
-      m = t[0].W,
-      p = x.slice().sort((h, _) => m[_[0]] - m[h[0]]).slice(0, 2),
-      d = x.map(
+      a = p.ax || l("pri") || l("pri1") || "taste",
+      s = j.filter(h => h[0] === a)[0],
+      r = $(a, t),
+      i = $(a, S(e.all)),
+      n = j.map(
         h => '<button data-a="ax" data-k="'
           + h[0]
           + '" class="'
@@ -5772,60 +6530,80 @@ window.NJ_HEAR = (function () {
           + '">'
           + h[2]
           + " "
-          + o(h[1])
+          + F(h)
           + "</button>"
       ).join(""),
-      b = '<div class="fr-win"><b>'
-        + n[2]
-        + " "
-        + l("ifTop").replace("%a", T() === 0 ? "「" + s + "」" : '"' + s + '"')
-        + " "
-        + i.p.name
-        + "</b> ("
-        + i.p.maker
+      c = '<div class="fr-win"><b>'
+        + g([
+          "{0} 「{1}」を譲れないなら →{2}",
+          "{0} If “{1}” is non-negotiable → {2}",
+          "{0} 若“{1}”不可让步 →{2}"
+        ], s[2], F(s), r.p.name)
+        + "</b>"
+        + o(["（", " (", "（"])
+        + H(r.p)
         + " / "
-        + y(i.p.price)
-        + ")<br>"
-        + o(n[3])
-        + (T() === 0 ? "。" : ". ")
+        + y(r.p.price)
+        + o(["）", ")", "）"])
+        + "<br>"
+        + Ie(s)
+        + o(["。", ". ", "。"])
         + (
-          c && c !== i && c.a[a] > i.a[a]
+          i && i !== r && i.a[a] > r.a[a]
             ? "<br>"
-              + l("ifMore").replace("%a", s).replace("%p", c.p.name).replace("%y", y(c.p.price))
-            : l("ifOnly")
+              + g([
+                "さらに「{0}」に特化するなら <b>{1}</b>（{2}）も候補です。",
+                "For an even stronger “{0}”, <b>{1}</b> ({2}) is also a candidate.",
+                "若要更突出“{0}”，<b>{1}</b>（{2}）也是候选。"
+              ], F(s), i.p.name, y(i.p.price))
+            : o([
+              "この3機種の中ではここが最も強い項目です。",
+              "This is the strongest criterion among these 3 models.",
+              "这是这3款中最强的项目。"
+            ])
         )
         + "</div>",
-      g = t.map((h, _) => {
-        const D = h.p,
-          Ne = x.filter(v => J(v[0], t) === h && h.a[v[0]] >= 3.5).map(
-            v => '<span class="fr-chip ok">' + v[2] + l("best").replace("%a", o(v[1])) + "</span>"
+      f = t.map((h, m) => {
+        const w = h.p,
+          T = j.filter(v => $(v[0], t) === h && h.a[v[0]] >= 3.5).map(
+            v => '<span class="fr-chip ok">'
+              + v[2]
+              + g(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], F(v))
+              + "</span>"
           ).join(""),
-          se = p.filter(v => h.a[v[0]] >= 3.5).map(v => o(v[1])).join(" / "),
-          Oe = x.map(
-            (v, Be) => '<div class="fr-row" style="margin-bottom:5px"><b style="width:8em;'
+          M = j.map(
+            (v, $e) => '<div class="fr-row" style="margin-bottom:5px"><b style="width:9.4em;'
               + (v[0] === a ? "color:#d97706" : "")
               + '">'
               + v[2]
               + " "
-              + o(v[1])
+              + F(v)
               + '</b><div class="fr-bar"><i style="width:'
               + h.a[v[0]] / 5 * 100
               + "%;--i:"
-              + Be
+              + $e
               + (v[0] === a ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
               + '"></i></div></div>'
           ).join(""),
-          _e = h.h.ng.map(v => '<li class="n">' + l("ngp") + o(v[1]) + "</li>").concat(
-            h.h.wn.map(v => '<li class="w">' + o(v) + "</li>")
-          ).concat(h.h.ok.slice(0, 3).map(v => "<li>" + o(v) + "</li>")).join("");
+          te = h.h.ng.map(
+            v => '<li class="n">' + g(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], b(v[1])) + "</li>"
+          ).concat(h.h.wn.map(v => '<li class="w">' + b(v) + "</li>")).concat(
+            h.over
+              ? [
+                '<li class="w">'
+                  + g(["予算（{0}）を超えています", "Over your budget ({0})", "超出预算（{0}）"], D("budget"))
+                  + "</li>"
+              ]
+              : []
+          ).concat(h.h.ok.slice(0, 3).map(v => "<li>" + b(v) + "</li>")).join("");
         return '<div class="fr-rec fr-up'
-          + (h === i ? " hi" : " dim")
+          + (h === r ? " hi" : " dim")
           + '" style="--i:'
-          + _
+          + m
           + '"><span class="fr-rank">'
-          + l("rk").replace("%n", _ + 1)
+          + g(["第{0}位", "#{0}", "第{0}名"], m + 1)
           + " ・ "
-          + z(h.g.name).replace(/（.*$/, "")
+          + he(h.g)
           + '</span><div class="fr-head"><div class="fr-ring"><svg width="62" height="62" viewBox="0 0 '
           + '62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle class="fg" cx="31" cy="31" r="26" '
           + 'stroke-dasharray="'
@@ -5833,461 +6611,320 @@ window.NJ_HEAR = (function () {
           + ' 164"/></svg><b>'
           + h.sc
           + '</b></div><div><div class="fr-name">'
-          + D.name
+          + w.name
           + '</div><div style="font-size:.8rem;color:#64748b">'
-          + D.maker
+          + H(w)
+          + "・"
+          + O(w)
           + '</div><div class="fr-price">'
-          + y(D.price)
+          + y(w.price)
           + '</div></div></div><p class="fr-p" style="margin-bottom:6px">'
-          + z(D.desc)
+          + P(w.desc)
           + "</p>"
-          + Ne
-          + (se ? '<div style="font-size:.8rem;color:#64748b;margin:4px 0">★ ' + se + "</div>" : "")
-          + Oe
+          + T
           + '<ul class="fr-ul">'
-          + _e
-          + "</ul></div>";
+          + te
+          + "</ul>"
+          + M
+          + "</div>";
       }).join(""),
-      u = '<table class="fr-spec"><tr><td></td>'
-        + t.map(h => "<td><b>" + h.p.name + "</b></td>").join("")
+      d = '<table class="fr-spec"><tr><td></td>'
+        + t.map(h => "<td><b>" + h.p.model + "</b></td>").join("")
         + "</tr>"
-        + je().map(
+        + Ye().map(
           h => "<tr><td>"
-            + o(k.spec[h[0]])
+            + b(h[0])
             + "</td>"
-            + t.map(_ => "<td>" + h[1](_.p) + "</td>").join("")
+            + t.map(m => "<td>" + h[1](m.p) + "</td>").join("")
             + "</tr>"
         ).join("")
         + "</table>",
-      L = ne.map(
+      u = ue.map(
         h => '<div style="font-size:.86rem;margin-bottom:6px"><b>'
-          + z(h.name)
-          + "</b>（"
+          + P(h.name)
+          + "</b>"
+          + o(["（", " (", "（"])
           + y(+h.price.replace(/\D/g, ""))
-          + '）<br><span style="color:#64748b">'
-          + z(h.desc)
+          + o(["）", ")", "）"])
+          + '<br><span style="color:#64748b">'
+          + P(h.desc)
           + "</span></div>"
       ).join("");
     return '<span class="fr-tag">'
-      + l("ft")
+      + o(["最終結果", "Final result", "最终结果"])
       + '</span><h1 class="fr-h1">'
-      + l("fh")
+      + o(["あなたへのおすすめ<em>3機種</em>", "Your <em>3 recommended models</em>", "为您推荐的<em>3款</em>"])
       + '</h1><p class="fr-p">'
-      + l("fp")
+      + o([
+        "「譲れないポイント」を切り替えると、3機種のどれが最も強いかが変わります。",
+        "Switch the top priority to see which of the 3 is strongest on it.",
+        "切换“最不能让步的点”，可看到3款中哪一款最强。"
+      ])
       + '</p><div class="fr-ax">'
-      + d
+      + n
       + "</div>"
-      + b
-      + g
-      + Me()
-      + Ie()
+      + c
+      + f
+      + Ue()
       + '<div class="fr-box"><h3>'
-      + l("cmp")
+      + o(["3機種の比較表", "Side-by-side comparison", "3款对比表"])
       + '</h3><div style="overflow-x:auto">'
-      + u
-      + '</div></div><div class="fr-box"><h3>'
-      + l("acc")
+      + d
+      + "</div></div>"
+      + Ae()
+      + We()
+      + Ne()
+      + '<div class="fr-box"><h3>'
+      + o(["あわせて検討したい用品", "Handy extras", "建议一并考虑的用品"])
       + "</h3>"
-      + L
-      + '</div><button class="fr-btn k" data-a="staff">'
-      + l("staff")
+      + u
+      + "</div>"
+      + Pe()
+      + ne()
+      + '<button class="fr-btn k" data-a="staff">'
+      + o(["📸 スタッフに見せる（最終商談シート）", "📸 Show staff (final sheet)", "📸 出示给店员（最终洽谈单）"])
+      + '</button><button class="fr-btn s" data-a="back">'
+      + o(["← 質問に戻る", "← Back to questions", "← 返回问题"])
       + '</button><button class="fr-btn s" data-a="restart">'
-      + l("again")
+      + o(["もう一度診断する", "Start over", "重新诊断"])
+      + '</button><button class="fr-btn s" data-a="close">'
+      + o(["一覧に戻る", "Back to list", "返回列表"])
       + "</button>";
   }
-  function Se() {
-    const e = r.a.pri != null,
-      t = e ? O() : null,
-      a = j.map(
-        i => r.a[i.id] == null || !B(i)
+  function Ve() {
+    const e = p.a.budget != null,
+      t = e ? R() : null,
+      a = C.map(
+        r => p.a[r.id] == null || !N(r)
           ? ""
-          : "<tr><td>" + o(i.t).replace(/[？?]$/, "") + "</td><td>" + H(i.id) + "</td></tr>"
+          : "<tr><td>" + b(r.t).replace(/[？?]$/, "") + "</td><td>" + D(r.id) + "</td></tr>"
       ).join(""),
-      s = A.slice(1).filter(i => r.ov[i.id]).map(i => i.e + " " + o(i.n)).join(" / ") || l("none"),
-      n = e
+      s = e
         ? t.top.map(
-          (i, c) => '<div style="margin-bottom:6px;font-size:.88rem"><b>'
-            + l("rk").replace("%n", c + 1)
+          (r, i) => '<div style="margin-bottom:6px;font-size:.88rem"><b>'
+            + g(["第{0}位", "#{0}", "第{0}名"], i + 1)
             + " "
-            + i.p.name
+            + r.p.name
             + "</b>（"
-            + i.p.maker
+            + H(r.p)
             + "）"
-            + y(i.p.price)
+            + y(r.p.price)
             + "<br>"
-            + i.p.cap
-            + "L ／ "
-            + l("fit")
+            + O(r.p)
+            + " ／ "
+            + o(["適合度", "Fit", "适合度"])
             + " "
-            + i.sc
-            + (i.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + o(i.h.wn[0]) + "</span>" : "")
+            + r.sc
+            + (r.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + b(r.h.wn[0]) + "</span>" : "")
             + "</div>"
         ).join("")
         : "";
     return '<div class="fr-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
       + 'solid #111827;padding-bottom:6px;margin-bottom:8px"><b style="background:#111827;'
       + 'color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:.86rem">'
-      + l("sh")
+      + o(["スタッフ確認用シート（炊飯器）", "Staff confirmation sheet (Rice cooker)", "店员确认单（电饭煲）"])
       + '</b><span style="font-size:.8rem;color:#6b7280">'
-      + l(e ? "shf" : "shm")
-      + '</span></div><p style="font-size:.8rem;color:#d90429;font-weight:bold;margin-bottom:6px">'
-      + l("shn")
+      + o(e ? ["最終商談カード", "Final card", "最终洽谈卡"] : ["条件メモ", "Needs memo", "需求备忘"])
+      + '</span></div><p style="font-size:.8rem;color:#d90429;font-weight:700;margin-bottom:6px">'
+      + o([
+        "※この画面をスクリーンショットしてスタッフにお見せください",
+        "※Take a screenshot of this screen and show it to staff",
+        "※请截图此画面并出示给店员"
+      ])
       + "</p><table>"
       + a
-      + "<tr><td>"
-      + l("shov")
-      + "</td><td>"
-      + s
-      + "</td></tr></table>"
-      + n
+      + "</table>"
+      + (
+        s
+          ? '<b style="font-size:.88rem">'
+            + o(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
+            + "</b>"
+            + s
+          : ""
+      )
+      + ne()
       + '</div><button class="fr-btn s" data-a="back">'
-      + l("back1")
+      + o(["← 戻る", "← Back", "← 返回"])
       + "</button>";
   }
-  const te = (e, t) => x.filter(a => e.a[a[0]] - t.a[a[0]] >= 1).map(a => a[2] + o(a[1])),
-    ae = e => z(e.name).replace(/[（(].*$/, "");
-  function Ee() {
-    if (!Object.keys(r.a).length)
-      return "";
-    const e = C(), t = Z(N(e)), a = W.map(() => 0);
-    t.slice(0, 6).forEach(p => {
-      a[W.indexOf(p.g)] += p.sc;
-    });
-    const s = t.length ? a.indexOf(Math.max.apply(0, a)) : -1,
-      n = W.map((p, d) => {
-        const b = e.filter(u => u.g === p && !u.h.ng.length).length, g = d === s;
-        return '<div style="flex:1;min-width:64px;text-align:center;padding:6px 2px;border-radius:10px;'
-          + (
-            g
-              ? "background:#fef3c7;border:1.5px solid #f59e0b"
-              : "background:#f8fafc;border:1px solid #e2e8f0" + (b ? "" : ";opacity:.4")
-          )
-          + '"><div class="fr-mini">'
-          + q(p, (d * .3).toFixed(2))
-          + '</div><div style="font-size:.66rem;line-height:1.3;margin-top:2px;'
-          + (g ? "font-weight:700" : "")
-          + '">'
-          + (g ? "👉" : "")
-          + ae(p)
-          + "<br>("
-          + b
-          + ")</div></div>";
-      }).join("");
-    let i = '<div class="fr-box" style="padding:10px 12px"><h3 style="font-size:.9rem">'
-      + o(["🔎 いまの見立て：4つのグループのうち…", "🔎 Current read: which of the 4 groups…", "🔎 目前判断：4个分组中…"])
-      + '</h3><style>.fr-mini .mw-svg{width:48px;height:33px}</style><div style="display:flex;gap:5px">'
-      + n
-      + "</div>";
-    s >= 0
-      && (
-        i += '<p class="fr-p" style="margin:6px 0 0;font-size:.82rem">'
-          + o([
-            "今のところ <b>%g</b> が当てはまりそうです。カッコ内は、条件に合う残り機種数です。",
-            "So far <b>%g</b> looks like the best match. Numbers in brackets are models that still fit.",
-            "目前<b>%g</b>最可能适合。括号内为仍符合条件的机型数。"
-          ]).replace("%g", ae(W[s]))
-          + "</p>"
-      );
-    const c = t[0],
-      m = c
-        ? t.filter(
-          p => p.p.price > c.p.price && p.p.price <= c.p.price * 2.2 && te(p, c).length
-        ).sort((p, d) => p.p.price - d.p.price)[0]
-        : null;
-    return m
-      && (
-        i += '<p class="fr-p" style="margin:6px 0 0;font-size:.82rem">⬆️ '
-          + o([
-            "もう少し上のランクなら <b>%n</b>（%m・%c L）。現在の最有力（%b）より<b>%d プラス</b>で、%g がプラスされます。",
-            "One rank up: <b>%n</b> (%m, %c L): <b>%d more</b> than your current best fit (%b), adding %g.",
-            "再上一档：<b>%n</b>（%m·%c L），比目前最契合机型（%b）<b>多%d</b>，增加%g。"
-          ]).replace("%n", m.p.name).replace("%m", m.p.maker).replace("%c", m.p.cap).replace(
-            "%b",
-            c.p.name
-          ).replace("%d", y(m.p.price - c.p.price)).replace("%g", te(m, c).join("・"))
-          + "</p>"
-      ),
-      i + "</div>";
-  }
-  function Fe(e, t) {
-    const a = r.a[e.id];
-    r.a[e.id] = t;
-    const s = O().top[0];
-    return a == null ? delete r.a[e.id] : r.a[e.id] = a, s;
-  }
-  function Ie() {
-    const e = O().top[0];
-    let t = 0;
-    const a = j.filter(s => r.a[s.id] != null && B(s)).map((s, n) => {
-      const i = r.a[s.id];
-      let c = 0;
-      const m = s.o.map((p, d) => ({ l: o(p[0]), v: d })).filter(p => p.v !== i).map(p => {
-        const d = Fe(s, p.v), b = d.p !== e.p;
-        return b && (c++, t++),
-          '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
-            + 'font-size:.76rem;line-height:1.45;'
-            + (
-              b
-                ? "background:#fffbeb;border:1px dashed #f59e0b"
-                : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
-            )
-            + '">'
-            + p.l
-            + "<br><b>"
-            + (
-              b
-                ? o(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + d.p.name
-                : o(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
-            )
-            + "</b></span>";
-      }).join("");
-      return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
-        + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
-        + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
-        + 'line-height:17px">'
-        + (n + 1)
-        + '</span><div style="font-size:.78rem;color:#64748b">'
-        + o(s.t).replace(/[？?]$/, "")
-        + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
-        + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
-        + H(s.id)
-        + "</div>"
-        + (
-          m
-            ? "<details"
-              + (c ? " open" : "")
-              + '><summary style="font-size:.78rem;color:'
-              + (c ? "#b45309" : "#64748b")
-              + ';cursor:pointer">'
-              + o([
-                "もし別の選択をしていたら（1位が変わる選択肢：%n件）",
-                "If you had chosen differently (options that change #1: %n)",
-                "若选了其他选项（会改变第1名的选项：%n个）"
-              ]).replace("%n", c)
-              + "</summary>"
-              + m
-              + "</details>"
-            : ""
-        )
-        + "</div>";
-    }).join("");
-    return '<div class="fr-box"><h3>🧭 '
-      + o(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
-      + '</h3><p class="fr-p" style="font-size:.82rem">'
-      + o([
-        "青が選んだ回答です。点線の薄い枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：%p／分岐点 %n か所の選択肢）。",
-        "Blue is what you chose. Dashed boxes show the top pick if you had chosen differently; "
-          + "<b>yellow marks choices that would change #1</b> (current #1: %p / %n such choices).",
-        "蓝色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：%p／共%n个）。"
-      ]).replace("%p", e.p.name).replace("%n", t)
-      + "</p>"
-      + a
-      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
-      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
-      + e.p.name
-      + "（"
-      + e.p.maker
-      + "）</div></div>";
-  }
-  function Pe(e) {
-    if (r.lock)
+  function Xe(e) {
+    if (p.lock)
       return;
-    r.lock = 1;
-    const t = F(r.v.st)[r.v.i];
-    r.a[t.id] = e,
-      we(),
-      w.querySelectorAll(".fr-opt").forEach((a, s) => {
+    p.lock = 1;
+    const t = J(p.v.st)[p.v.i];
+    p.a[t.id] = e,
+      Le(),
+      k.querySelectorAll(".fr-opt").forEach((a, s) => {
         a.classList.toggle("sel", s === e), a.firstChild.textContent = s === e ? "✓" : "";
       }),
       setTimeout(() => {
-        const a = F(r.v.st);
-        r.lock = 0,
-          I(
-            r.v.i + 1 < a.length
-              ? { st: r.v.st, i: r.v.i + 1 }
-              : r.v.st === 1 ? "r1" : r.v.st === 2 ? "r2" : "final"
-          );
+        const a = J(p.v.st);
+        p.lock = 0, Y(p.v.i + 1 < a.length ? { st: p.v.st, i: p.v.i + 1 } : pe(p.v.st));
       }, 320);
   }
-  function U(e) {
-    r = {
-      a: {},
-      ov: {},
-      tab: e === "oven" ? "ov" : "mw",
-      v: e === "oven" ? "ov" : "intro",
-      hist: [],
-      ax: null
-    },
-      M(),
+  function q() {
+    p = { a: {}, v: "intro", hist: [], ax: null },
+      L(),
       document.documentElement.style.overflow = "hidden";
     try {
-      history.pushState({ mw: 1 }, "");
+      history.pushState({ rc: 1 }, "");
     } catch {}
   }
-  function Y(e) {
-    if (w.classList.remove("on"), document.documentElement.style.overflow = "", !e)
+  function V(e) {
+    if (k.classList.remove("on"), document.documentElement.style.overflow = "", !e)
       try {
-        history.state && history.state.mw && history.back();
+        history.state && history.state.rc && history.back();
       } catch {}
   }
-  w.addEventListener("click", e => {
+  k.addEventListener("click", e => {
     const t = e.target.closest("[data-a]");
-    if (!t)
+    if (!t || t.tagName === "SELECT")
       return;
     const a = t.dataset.a;
     if (a === "close")
-      Y();
+      V();
     else if (a === "start")
-      r.a = {}, r.hist = [], I({ st: 1, i: 0 });
-    else if (a === "tab")
-      t.dataset.m === "ov" ? I("ov") : (r.tab = "mw", M());
-    else if (a === "ovview")
-      I("ov");
-    else if (a === "ovpick") {
-      r.ov[t.dataset.k] = !r.ov[t.dataset.k];
-      const s = w.scrollTop;
-      r.back = !1, M(), w.scrollTop = s;
-    } else if (a === "type")
-      w.querySelectorAll(".fr-card").forEach(
+      p.a = {}, p.hist = [], Y({ st: 1, i: 0 });
+    else if (a === "type")
+      k.querySelectorAll(".fr-card").forEach(
         s => s.classList.toggle("sel", s === t && !t.classList.contains("sel"))
       );
     else if (a === "pick")
-      Pe(+t.dataset.i);
+      Xe(+t.dataset.i);
     else if (a === "next")
-      I(r.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
+      Y(pe(p.v));
     else if (a === "back") {
-      const s = r.hist.pop();
-      s != null ? I(s, !0) : Y();
+      const s = p.hist.pop();
+      s != null ? Y(s, !0) : V();
     } else if (a === "staff")
-      I("staff");
+      Y("staff");
     else if (a === "bud") {
-      const s = +t.dataset.i, n = w.scrollTop;
-      r.a.bud === s ? delete r.a.bud : r.a.bud = s, r.back = !1, M(), w.scrollTop = n;
+      const s = +t.dataset.i, r = k.scrollTop;
+      p.a.budget === s ? delete p.a.budget : p.a.budget = s, p.back = !1, L(), k.scrollTop = r;
     } else if (a === "give") {
-      r.give = r.give || {}, r.give[t.dataset.k] = !r.give[t.dataset.k];
-      const s = w.scrollTop;
-      r.back = !1, M(), w.scrollTop = s;
+      p.give = p.give || {}, p.give[t.dataset.k] = !p.give[t.dataset.k];
+      const s = k.scrollTop;
+      p.back = !1, L(), k.scrollTop = s;
     } else if (a === "ax") {
-      r.ax = t.dataset.k;
-      const s = w.scrollTop;
-      r.back = !1, M(), w.scrollTop = s;
+      p.ax = t.dataset.k;
+      const s = k.scrollTop;
+      p.back = !1, L(), k.scrollTop = s;
     } else
-      a === "restart" && U();
+      a === "restart" && q();
   }),
-    w.addEventListener("change", e => {
+    k.addEventListener("change", e => {
       if (e.target.dataset.a !== "lang")
         return;
       const t = document.getElementById("lang-switcher");
       t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
-      const a = w.scrollTop;
-      r.back = !1, M(), w.scrollTop = a;
+      const a = k.scrollTop;
+      p.back = !1, L(), k.scrollTop = a;
     }),
     window.addEventListener("popstate", () => {
-      w.classList.contains("on") && Y(!0);
+      k.classList.contains("on") && V(!0);
     }),
-    window.MicrowaveApp = { open: U, close: Y };
-  const K = document.getElementById("modal-link-btn");
-  K
-    && K.addEventListener("click", e => {
-      const t = K.dataset.app;
-      t !== "microwave" && t !== "oven"
-        || (e.preventDefault(), document.getElementById("modal").classList.remove("active"), U(t));
+    window.RiceApp = { open: q, close: V };
+  const ee = document.getElementById("modal-link-btn");
+  ee
+    && ee.addEventListener("click", e => {
+      ee.dataset.app === "rice"
+        && (e.preventDefault(), document.getElementById("modal").classList.remove("active"), q());
     });
-  try { window.NJ_HEAR && window.NJ_HEAR.hook([j], {"schema": "std", "root": "mw-app", "lock": ["bud", "pri"]}); } catch (e) { console.error(e); }
+  try { window.NJ_HEAR && window.NJ_HEAR.hook([C], {"schema": "std", "root": "rc-app", "lock": ["budget"]}); } catch (e) { console.error(e); }
 })();
 </script>
 <style id="app-motion-css">
 /* =====================================================================
    PC相談：スマホ・iPad向けの調整 ＋ Apple風の動き
    ===================================================================== */
-#mw-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
+#rc-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
 
 /* ---- 画面の出し入れ（iOSのシート／プッシュ） ---- */
-#mw-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
-#mw-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
-#mw-app .fr-in{animation:apPush .55s var(--ap) both}
-#mw-app.fr-back .fr-in{animation-name:apPop}
+#rc-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
+#rc-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
+#rc-app .fr-in{animation:apPush .55s var(--ap) both}
+#rc-app.fr-back .fr-in{animation-name:apPop}
 @keyframes apPush{from{opacity:0;transform:translate3d(32px,0,0)}}
 @keyframes apPop{from{opacity:0;transform:translate3d(-32px,0,0)}}
-#mw-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
-#mw-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
+#rc-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
+#rc-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
 @keyframes apRise{from{opacity:0;transform:translate3d(0,14px,0) scale(.985);filter:blur(4px)}}
 
 /* ---- 半透明のナビゲーションバー（スクロールすると細い境界線） ---- */
-#mw-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
-#mw-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
-#mw-app .fr-prog div{transition:width .8s var(--ap)}
+#rc-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
+#rc-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
+#rc-app .fr-prog div{transition:width .8s var(--ap)}
 
 /* ---- 押したときの沈み込み・選んだときの反応 ---- */
-#mw-app .fr-opt,#mw-app .fr-card,#mw-app .fr-btn,#mw-app .fr-x,#mw-app .iv-entry,#mw-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
-#mw-app .fr-opt:active,#mw-app .fr-card:active,#mw-app .fr-btn:active,#mw-app .fr-x:active,#mw-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
-#mw-app .fr-opt.sel{animation:apSel .5s var(--ap)}
+#rc-app .fr-opt,#rc-app .fr-card,#rc-app .fr-btn,#rc-app .fr-x,#rc-app .iv-entry,#rc-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
+#rc-app .fr-opt:active,#rc-app .fr-card:active,#rc-app .fr-btn:active,#rc-app .fr-x:active,#rc-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
+#rc-app .fr-opt.sel{animation:apSel .5s var(--ap)}
 @keyframes apSel{0%{transform:scale(.97)}}
-#mw-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
-#mw-app .fr-opt.sel .ck{transform:scale(1.08)}
-@media (hover:hover){#mw-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
-@media (hover:none){#mw-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
+#rc-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
+#rc-app .fr-opt.sel .ck{transform:scale(1.08)}
+@media (hover:hover){#rc-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
+@media (hover:none){#rc-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
 
 /* ---- ヒアリング（イラストなし） ---- */
-#mw-app .pc-qi{display:none!important}
-#mw-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
-#mw-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
-#mw-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
-#mw-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
-#mw-app .fr-opt{border-radius:14px;word-break:auto-phrase}
+#rc-app .pc-qi{display:none!important}
+#rc-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
+#rc-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
+#rc-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
+#rc-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
+#rc-app .fr-opt{border-radius:14px;word-break:auto-phrase}
 
 /* ---- 「いまの見立て」：タイプとメーカーの並びをそろえる ---- */
-#mw-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-#mw-app .pc-xe>div,#mw-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
-#mw-app .pc-xe>div>div:last-child,#mw-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
-#mw-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
-#mw-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-#mw-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
-#mw-app .pc-mk{width:100%;max-width:56px;height:auto}
-@media (max-width:600px){#mw-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#rc-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+#rc-app .pc-xe>div,#rc-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
+#rc-app .pc-xe>div>div:last-child,#rc-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
+#rc-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
+#rc-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+#rc-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
+#rc-app .pc-mk{width:100%;max-width:56px;height:auto}
+@media (max-width:600px){#rc-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* ---- 結果画面「いま合うメーカー」：アイコンの列と文字の頭をそろえる ---- */
-#mw-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
-#mw-app .fr-box h3+.pc-mkrow,#mw-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
-#mw-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
-#mw-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
-#mw-app .pc-mkrow>div b:first-child{font-size:.95rem}
-#mw-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
-@media (min-width:700px){#mw-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
+#rc-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
+#rc-app .fr-box h3+.pc-mkrow,#rc-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
+#rc-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
+#rc-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
+#rc-app .pc-mkrow>div b:first-child{font-size:.95rem}
+#rc-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
+@media (min-width:700px){#rc-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
 
 /* ---- 最初の画面：タイプのカード（7つ目が1枚だけ浮かないように） ---- */
-#mw-app .fr-types{align-items:stretch}
-#mw-app .fr-types>.fr-card{display:flex;flex-direction:column}
-#mw-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
-#mw-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
-#mw-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
-#mw-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
+#rc-app .fr-types{align-items:stretch}
+#rc-app .fr-types>.fr-card{display:flex;flex-direction:column}
+#rc-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+#rc-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
+#rc-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
+#rc-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
 
 /* ---- スマホ：上のバーを2段に（1段目：戻る・言語・該当数／2段目：タイトル・在庫管理） ---- */
 @media (max-width:600px){
-  #mw-app .fr-top{flex-wrap:wrap;row-gap:6px}
-  #mw-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  #mw-app .fr-top .iv-entry{order:6}
-  #mw-app .fr-q{padding:18px 14px 14px;border-radius:18px}
-  #mw-app .fr-wrap{padding-left:12px;padding-right:12px}
+  #rc-app .fr-top{flex-wrap:wrap;row-gap:6px}
+  #rc-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #rc-app .fr-top .iv-entry{order:6}
+  #rc-app .fr-q{padding:18px 14px 14px;border-radius:18px}
+  #rc-app .fr-wrap{padding-left:12px;padding-right:12px}
 }
 /* ---- iPad・PC：中央に寄せ、選択肢は2列 ---- */
 @media (min-width:700px){
-  #mw-app .fr-wrap{max-width:900px;margin:0 auto}
-  #mw-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
-  #mw-app .fr-q>*{grid-column:1/-1}
-  #mw-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
-  #mw-app .fr-q .no{justify-self:start}
-  #mw-app .fr-types{grid-template-columns:1fr 1fr}
+  #rc-app .fr-wrap{max-width:900px;margin:0 auto}
+  #rc-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
+  #rc-app .fr-q>*{grid-column:1/-1}
+  #rc-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
+  #rc-app .fr-q .no{justify-self:start}
+  #rc-app .fr-types{grid-template-columns:1fr 1fr}
 }
-@media (prefers-reduced-motion:reduce){#mw-app *,#mw-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){#rc-app *,#rc-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-#mw-app [class$="-qi"],#mw-app .tb-qi{display:none!important}
+#rc-app [class$="-qi"],#rc-app .tb-qi{display:none!important}
 </style>
 <script id="app-motion-js">
 /* PC相談：スクロールでナビゲーションバーに境界線（Apple風）／iOSで押した感触を出す */
 (function () {
-  var r = document.getElementById("mw-app");
+  var r = document.getElementById("rc-app");
   if (!r) return;
   var on = false;
   r.addEventListener("scroll", function () {
@@ -6297,6 +6934,6 @@ window.NJ_HEAR = (function () {
   document.addEventListener("touchstart", function () {}, { passive: true });   // iOSで :active を効かせる
 })();
 </script>
-<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("mw-app");</script>
+<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("rc-app");</script>
 </body>
 </html>

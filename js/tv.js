@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>ヘアアイロンの相談 | イオンモール成田店</title>
+<title>テレビの相談 | イオンモール成田店</title>
 <style id="product-shell-css">
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
@@ -12,7 +13,7 @@ body{background:linear-gradient(160deg,#e8f0ff,#f8fafc 45%,#eef2ff);color:#0f172
 .pg-ico{font-size:2.6rem}
 .pg-ttl{font-size:1.3rem;font-weight:800;margin:8px 0 18px}
 .pg-btn{display:block;width:100%;padding:14px;border-radius:12px;border:none;font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;margin-top:8px}
-.pg-btn.main{background:#ea580c;color:#fff}
+.pg-btn.main{background:#059669;color:#fff}
 .pg-btn.sub{background:#f1f5f9;color:#0f172a}
 #modal,#modal-link-btn,#lang-switcher{display:none}
 .fr-rec,.sv-rec{position:relative}
@@ -126,9 +127,9 @@ html[data-device=tablet] .fr-wrap {
 }
 </style>
 </head>
-<body data-lang="ja" data-dept="home" data-product="iron">
+<body data-lang="ja" data-dept="av" data-product="tv">
 <!-- ======================================================================
-     ▼▼▼ 在庫データ（ドライヤー・ヘアアイロン）▼▼▼
+     ▼▼▼ 在庫データ（テレビ）▼▼▼
      ・1商品 = items の中の { } ひとつ。型番・価格・スペック・大きさ・リンクなど
      ・status: "active"=販売中 / "ended"=販売終了（相談に出なくなる）
      ・links: type は "official"(メーカー公式HP) / "manual"(取扱説明書) / "ref"(参考リンク)
@@ -136,122 +137,130 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="inventory-data">
 {
-  "category": "dryer",
-  "label": "ドライヤー・ヘアアイロン",
+  "category": "tv",
+  "label": "テレビ",
   "version": "2026-10-23",
   "adminPin": "staff2026",
   "groups": [
     {
-      "id": "d1",
-      "name": "大風量・速乾タイプ"
+      "id": "compact_entry",
+      "name": "小型・個室向け"
     },
     {
-      "id": "d2",
-      "name": "うるおいケアタイプ"
+      "id": "standard_4k",
+      "name": "スタンダード4K液晶"
     },
     {
-      "id": "d3",
-      "name": "センシング・温度制御タイプ"
+      "id": "miniled_bright",
+      "name": "高輝度 Mini LED"
     },
     {
-      "id": "d4",
-      "name": "超軽量・遠赤外線タイプ"
+      "id": "oled_cinema",
+      "name": "有機EL（OLED）"
     },
     {
-      "id": "i1",
-      "name": "サロン仕様・即熱ストレート"
-    },
-    {
-      "id": "i2",
-      "name": "ケアプレート・ストレート"
-    },
-    {
-      "id": "i3",
-      "name": "2WAY・コスパタイプ"
+      "id": "giant_theater",
+      "name": "超大画面シアター"
     }
   ],
   "tagOptions": {},
   "schema": {
-    "root": "dr-app",
-    "icon": "💨",
-    "map": {
-      "maker": "mfg",
-      "groupId": "type",
-      "grades": "r"
-    },
+    "root": "tv-app",
+    "icon": "📺",
+    "map": {},
     "fields": [
       {
-        "k": "mode",
-        "l": "種類",
+        "k": "size",
+        "l": "画面サイズ（型）",
+        "t": "number"
+      },
+      {
+        "k": "panel",
+        "l": "パネル（LED / QLED / Mini LED / OLED）"
+      },
+      {
+        "k": "res",
+        "l": "解像度"
+      },
+      {
+        "k": "hz",
+        "l": "リフレッシュレート（Hz）",
+        "t": "number"
+      },
+      {
+        "k": "hdmi21",
+        "l": "HDMI 2.1",
         "t": "seg",
         "o": [
           [
-            "dryer",
-            "ドライヤー"
+            "Yes",
+            "あり"
           ],
           [
-            "iron",
-            "ヘアアイロン"
+            "No",
+            "なし"
           ]
         ]
       },
       {
-        "k": "feat",
-        "l": "特長（ひとこと）"
+        "k": "vrr",
+        "l": "VRR（ゲーム）",
+        "t": "seg",
+        "o": [
+          [
+            "Yes",
+            "あり"
+          ],
+          [
+            "No",
+            "なし"
+          ]
+        ]
       },
       {
-        "k": "air",
-        "l": "風量（m³/分・ドライヤー）",
-        "t": "number"
+        "k": "timeShift",
+        "l": "タイムシフト録画",
+        "t": "seg",
+        "o": [
+          [
+            "Yes",
+            "あり"
+          ],
+          [
+            "No",
+            "なし"
+          ]
+        ]
       },
       {
-        "k": "hu",
-        "l": "立ち上がり（秒・アイロン）",
-        "t": "number"
-      },
-      {
-        "k": "g",
-        "l": "重さ（g）",
-        "t": "number"
-      },
-      {
-        "k": "shape",
-        "l": "形（straight / 2way・アイロン）"
-      },
-      {
-        "k": "os",
-        "l": "海外対応（1=対応）",
-        "t": "number"
+        "k": "audio",
+        "l": "音声出力"
       }
     ],
     "listFields": [
-      "mode",
-      "feat"
+      "size",
+      "panel"
     ],
     "grades": [
       [
-        "speed",
-        "速乾力"
+        "size",
+        "画面サイズ"
       ],
       [
-        "care",
-        "ヘアケア"
+        "panel",
+        "画質"
       ],
       [
-        "light",
-        "軽さ"
+        "game",
+        "ゲーム"
       ],
       [
-        "travel",
-        "海外・携帯"
+        "sound",
+        "音質"
       ],
       [
-        "heat",
-        "速熱"
-      ],
-      [
-        "shape",
-        "カール対応"
+        "rec",
+        "録画"
       ]
     ],
     "gradeVals": [
@@ -262,77 +271,90 @@ html[data-device=tablet] .fr-wrap {
     ],
     "makers": [
       [
-        "KINUJO"
-      ],
-      [
-        "KOIZUMI"
+        "Hisense"
       ],
       [
         "Panasonic"
       ],
       [
-        "ReFa"
+        "REGZA"
       ],
       [
-        "TESCOM"
+        "SHARP"
       ],
       [
-        "Vidal Sassoon"
+        "SONY"
+      ],
+      [
+        "TCL"
+      ],
+      [
+        "e angle"
       ]
     ],
     "buckets": [
       [
         0,
-        15000,
-        "〜1.5万"
+        45000,
+        "〜4.5万"
       ],
       [
-        15000,
-        25000,
-        "1.5万〜2.5万"
+        45000,
+        150000,
+        "4.5万〜15万"
       ],
       [
-        25000,
-        35000,
-        "2.5万〜3.5万"
+        150000,
+        250000,
+        "15万〜25万"
       ],
       [
-        35000,
+        250000,
+        350000,
+        "25万〜35万"
+      ],
+      [
+        350000,
         1000000000000,
-        "3.5万〜"
+        "35万〜"
       ]
     ]
   },
   "items": [
     {
-      "id": "dry_01",
+      "id": "t1",
       "status": "active",
-      "maker": "KOIZUMI",
-      "name": "モンスター BLDC (KHDM800R)",
-      "model": "KHDM800R",
-      "price": 14080,
-      "groupId": "d1",
-      "mode": "dryer",
-      "feat": "ダブルファンBLDCで超速乾",
-      "air": 2.4,
-      "g": 520,
-      "os": 0,
+      "maker": "SHARP",
+      "name": "2T-C24GF1",
+      "model": "2T-C24GF1",
+      "price": 39600,
+      "groupId": "compact_entry",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "LED",
+      "res": "2K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "6W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◎",
-        "care": "◯"
+        "size": "△",
+        "panel": "◯",
+        "game": "△",
+        "sound": "◯",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "ダブルファンBLDCで超速乾",
-        "en": "",
-        "zh": ""
+        "ja": "人の声が聞き取りやすい「くっきり音声」搭載。寝室や書斎にぴったりなAQUOS",
+        "en": "Features voice clarity enhancement; perfect personal AQUOS for bedrooms",
+        "zh": "搭载人声清晰增强，适合次卧或书房的经典AQUOS小屏"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -341,46 +363,369 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akoizumi-seiki.jp%20KHDM800R",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%202T-C24GF1",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akoizumi-seiki.jp%20KHDM800R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%202T-C24GF1%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "dry_02",
+      "id": "t2",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "32V35S",
+      "model": "32V35S",
+      "price": 44000,
+      "groupId": "compact_entry",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "2K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "12W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "レグザエンジンPower Drive搭載。ネット動画や地デジノイズをクリアに再現する32型定番",
+        "en": "Powered by REGZA Engine for noise-free broadcast and crisp streaming",
+        "zh": "搭载REGZA画质芯片，抑制噪点，32英寸网络电视标杆款"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2032V35S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2032V35S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "status": "active",
+      "maker": "Hisense",
+      "name": "32A4S",
+      "model": "32A4S",
+      "price": 32780,
+      "groupId": "compact_entry",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "2K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "12W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "VIDAA搭載でネット動画にダイレクトアクセス。低遅延ゲームモードも備えた高コスパ機",
+        "en": "Direct streaming apps via VIDAA OS with low-latency game mode",
+        "zh": "VIDAA系统一键直达流媒体，带低延迟游戏模式，性价比极高"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2032A4S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2032A4S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "status": "active",
+      "maker": "e angle",
+      "name": "EHDTB32R4",
+      "model": "EHDTB32R4",
+      "price": 36080,
+      "groupId": "compact_entry",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "2K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "10W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◯",
+        "game": "△",
+        "sound": "◯",
+        "rec": "◎"
+      },
+      "desc": {
+        "ja": "ハードディスクを本体に内蔵！外付けHDDなしで買ってすぐにダブル裏番組録画が可能",
+        "en": "Built-in internal HDD! Dual recording ready without external hard drives",
+        "zh": "机身内置大容量机械硬盘，无需外接硬盘即可双路双调谐器录像"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aedion.com%20EHDTB32R4",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aedion.com%20EHDTB32R4%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t5",
+      "status": "active",
+      "maker": "TCL",
+      "name": "40S5K",
+      "model": "40S5K",
+      "price": 43780,
+      "groupId": "compact_entry",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "QLED",
+      "res": "2K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "16W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "量子ドット（QLED）採用で色が鮮やか。Google TV搭載で40インチ4万円台の破格モデル",
+        "en": "Rich colors powered by QLED and Google TV in an affordable 40\" body",
+        "zh": "量子点广色域技术加持，色彩生动，40英寸超值QLED液晶"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Atcl.com%2040S5K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Atcl.com%2040S5K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t6",
+      "status": "active",
+      "maker": "Hisense",
+      "name": "43A6S",
+      "model": "43A6S",
+      "price": 54780,
+      "groupId": "standard_4k",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "4K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "14W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "5万円台で手に入る43型4K。4K高画質処理とネット動画対応でリビング入門に最適",
+        "en": "Great entry 43\" 4K TV with streaming features around 55k JPY",
+        "zh": "5万多日元入手43英寸4K超清，主流视频应用齐全"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2043A6S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2043A6S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t7",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "43M550S",
+      "model": "43M550S",
+      "price": 87780,
+      "groupId": "standard_4k",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "4K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "20W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "レグザエンジンZR搭載。地デジのノイズを抑えて美しく再現する4K液晶の安心スタンダード",
+        "en": "Equipped with REGZA Engine ZR, delivering crisp terrestrial broadcasts",
+        "zh": "搭载REGZA ZR画质芯片，针对地上波信号深度降噪优化"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2043M550S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2043M550S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t8",
       "status": "active",
       "maker": "Panasonic",
-      "name": "ナノケア EH-NA0K",
-      "model": "EH-NA0K",
-      "price": 34650,
-      "groupId": "d2",
-      "mode": "dryer",
-      "feat": "高浸透ナノイーで圧倒的うるおい",
-      "air": 1.6,
-      "g": 595,
-      "os": 0,
+      "name": "TV-43W90B",
+      "model": "TV-43W90B",
+      "price": 143550,
+      "groupId": "standard_4k",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "LED",
+      "res": "4K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "30W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◯",
-        "care": "◎"
+        "size": "◯",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◎",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "高浸透ナノイーで圧倒的うるおい",
-        "en": "",
-        "zh": ""
+        "ja": "Fire TV内蔵でネット動画と放送波をシームレス横断検索。高音質30Wスピーカーを搭載",
+        "en": "Built-in Fire TV seamlessly searches broadcasts and internet streams",
+        "zh": "内置Fire TV系统，电视广播与网络视频跨平台混合检索，30W音效"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -389,46 +734,475 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NA0K",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-43W90B",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NA0K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-43W90B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "dry_03",
+      "id": "t9",
+      "status": "active",
+      "maker": "SHARP",
+      "name": "4T-C50HN2",
+      "model": "4T-C50HN2",
+      "price": 151800,
+      "groupId": "standard_4k",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "LED",
+      "res": "4K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "20W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "外光の映り込みを抑える低反射N-Blackパネル＆画像処理エンジンMedalist搭載の50型",
+        "en": "50\" AQUOS featuring low-reflection N-Black panel and Medalist engine",
+        "zh": "50英寸抗环境反光N-Black低反面板，明亮客厅反光大幅减弱"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-C50HN2",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-C50HN2%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t10",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "43Z770S",
+      "model": "43Z770S",
+      "price": 175780,
+      "groupId": "miniled_bright",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "40W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "43型でMini LED＋量子ドット＋144Hz倍速駆動。PS5やPCゲームの最高峰コンパクトモニター",
+        "en": "Rare 43\" Mini LED + Quantum Dot with 144Hz VRR. Ultimate gaming flagship",
+        "zh": "罕见的43英寸Mini LED+量子点+144Hz高刷，顶级桌面电竞神器"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2043Z770S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2043Z770S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t11",
+      "status": "active",
+      "maker": "SONY",
+      "name": "K-55XR70M2",
+      "model": "K-55XR70M2",
+      "price": 327800,
+      "groupId": "miniled_bright",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "40W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "認知特性プロセッサー「XR」と新世代Mini LED精密制御。まばゆい輝きと漆黒コントラストのBRAVIA 7",
+        "en": "BRAVIA 7 featuring XR Processor and precision Mini LED backlight control",
+        "zh": "索契认知芯片XR加持，高精密Mini LED控光，高亮与纯黑并存"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR70M2",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR70M2%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t12",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "50Z870R",
+      "model": "50Z870R",
+      "price": 217800,
+      "groupId": "miniled_bright",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "Yes",
+      "audio": "60W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◎"
+      },
+      "desc": {
+        "ja": "Mini LED＋重低音立体音響＋タイムシフトマシン。画質・ゲーム・録画を全方位網羅した傑作機",
+        "en": "Mini LED + Bass Audio + Time Shift Machine whole-channel recorder",
+        "zh": "Mini LED高亮面板、重低音音响与全时录像时光机集大成者"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2050Z870R",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2050Z870R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t13",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "65Z770S",
+      "model": "65Z770S",
+      "price": 228800,
+      "groupId": "miniled_bright",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "60W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "65型の大迫力Mini LED液晶。昼間の明るいリビングでも白飛びせず圧倒的な色彩を投射",
+        "en": "Massive 65\" Mini LED projecting stunning color even in sun-drenched rooms",
+        "zh": "65英寸巨幕Mini LED，高采光大客厅无惧阳光直射，色彩浓郁"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2065Z770S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2065Z770S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t14",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "48X8900R",
+      "model": "48X8900R",
+      "price": 217800,
+      "groupId": "oled_cinema",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "72W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◯",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "設置しやすい48型有機EL。自発光パネルならではの極上の黒と高出力重低音立体音響",
+        "en": "Accessible 48\" OLED delivering self-lit perfect blacks and 72W rich sound",
+        "zh": "好安装的48英寸OLED，自发光纯黑与72W澎湃重低音震撼结合"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2048X8900R",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2048X8900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t15",
+      "status": "active",
+      "maker": "SONY",
+      "name": "K-55XR80",
+      "model": "K-55XR80",
+      "price": 349800,
+      "groupId": "oled_cinema",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "50W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
+      },
+      "desc": {
+        "ja": "BRAVIA 8。画面そのものから音が出る「アコースティック サーフェス」と極限の有機EL画質",
+        "en": "BRAVIA 8 with Acoustic Surface Audio (sound from screen) and OLED black",
+        "zh": "屏幕发声黑科技，音画合一，沉浸式私人家庭影院天花板"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR80",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR80%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t16",
+      "status": "active",
+      "maker": "REGZA",
+      "name": "55X9900R",
+      "model": "55X9900R",
+      "price": 305800,
+      "groupId": "oled_cinema",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "Yes",
+      "audio": "90W",
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◎"
+      },
+      "desc": {
+        "ja": "レグザ最高峰有機EL＋タイムシフトマシン。過去番組を丸ごと遡れる自動録画と最高の画質",
+        "en": "Top-tier REGZA OLED with Time Shift Machine recording whole broadcasts",
+        "zh": "东芝REGZA有机EL画质巅峰，地视频道全部自动回看时光机"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2055X9900R",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2055X9900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "t17",
       "status": "active",
       "maker": "Panasonic",
-      "name": "イオニティ EH-NE7N",
-      "model": "EH-NE7N",
-      "price": 7678,
-      "groupId": "d1",
-      "mode": "dryer",
-      "feat": "大風量ダブルミネラルイオン",
-      "air": 2,
-      "g": 540,
-      "os": 0,
+      "name": "TV-55Z95CJ",
+      "model": "TV-55Z95CJ",
+      "price": 445500,
+      "groupId": "oled_cinema",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "160W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◯",
-        "care": "◯"
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "大風量ダブルミネラルイオン",
-        "en": "",
-        "zh": ""
+        "ja": "マイクロレンズアレイ（MLA）有機EL＋ラインアレイスピーカー160W。サウンドバー不要の最高音響",
+        "en": "MLA OLED with 160W multi-array spatial soundbar-grade audio system",
+        "zh": "微透镜MLA发光面板搭配160W多声道阵列音响，无需外置回音壁"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -437,46 +1211,51 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NE7N",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-55Z95CJ",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NE7N%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-55Z95CJ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "dry_04",
+      "id": "t18",
       "status": "active",
-      "maker": "ReFa",
-      "name": "ReFa BEAUTECH DRYER SMART W",
-      "model": "BEAUTECH",
-      "price": 40000,
-      "groupId": "d3",
-      "mode": "dryer",
-      "feat": "自動温冷調整＆海外対応スリム",
-      "air": null,
-      "g": 475,
-      "os": 1,
+      "maker": "SHARP",
+      "name": "4T-48S9A",
+      "model": "4T-48S9A",
+      "price": 283800,
+      "groupId": "oled_cinema",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "50W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◯",
-        "care": "◎"
+        "size": "◯",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "自動温冷調整＆海外対応スリム",
-        "en": "",
-        "zh": ""
+        "ja": "新世代RGB Tandem有機ELパネルと生成AI会話「AQUOS AI」搭載のフラッグシップ",
+        "en": "Flagship featuring RGB Tandem OLED and interactive generative AQUOS AI",
+        "zh": "搭载串联式RGB Tandem新型发光架构与生成式AI语音交互"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -485,46 +1264,51 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-48S9A",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-48S9A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "dry_05",
+      "id": "t19",
       "status": "active",
-      "maker": "KINUJO",
-      "name": "KINUJO ヘアドライヤー (KH301)",
-      "model": "KH301",
-      "price": 31680,
-      "groupId": "d4",
-      "mode": "dryer",
-      "feat": "超軽量コンパクト＆遠赤外線速乾",
-      "air": 2.2,
-      "g": 363,
-      "os": 0,
+      "maker": "REGZA",
+      "name": "65X9900R",
+      "model": "65X9900R",
+      "price": 396000,
+      "groupId": "giant_theater",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "OLED",
+      "res": "4K",
+      "hz": 120,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "Yes",
+      "audio": "90W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◎",
-        "care": "◎"
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◎"
       },
       "desc": {
-        "ja": "超軽量コンパクト＆遠赤外線速乾",
-        "en": "",
-        "zh": ""
+        "ja": "65型有機ELフラッグシップ。大画面いっぱいに広がる本物の黒と全チャンネル録画タイムシフト",
+        "en": "65\" Flagship OLED with all-channel Time Shift Machine recording",
+        "zh": "65英寸巨幅OLED纯黑震撼视野，兼备全天候频道整周录像"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -533,46 +1317,51 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20KH301",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2065X9900R",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20KH301%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2065X9900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "iron_01",
+      "id": "t20",
       "status": "active",
-      "maker": "TESCOM",
-      "name": "プロフェッショナル NIS700A",
-      "model": "NIS700A",
-      "price": 12980,
-      "groupId": "i1",
-      "mode": "iron",
-      "feat": "サロン仕様ヒーターで即効ストレート",
-      "hu": 18,
-      "g": 350,
-      "shape": "straight",
-      "os": 0,
+      "maker": "Hisense",
+      "name": "75A6S",
+      "model": "75A6S",
+      "price": 137500,
+      "groupId": "giant_theater",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "LED",
+      "res": "4K",
+      "hz": 60,
+      "hdmi21": "No",
+      "vrr": "No",
+      "timeShift": "No",
+      "audio": "30W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "care": "◯"
+        "size": "◎",
+        "panel": "◯",
+        "game": "◯",
+        "sound": "◯",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "サロン仕様ヒーターで即効ストレート",
-        "en": "",
-        "zh": ""
+        "ja": "圧倒的スケールの75型を13万円台で実現。リビングを巨大スクリーン化する超高コスパ機",
+        "en": "Massive 75\" screen under 140k JPY. Turns your living room into cinema",
+        "zh": "13万多日元即可拥有的75英寸巨幅电视，性价比大屏天花板"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -581,46 +1370,51 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atescom-japan.co.jp%20NIS700A",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2075A6S",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atescom-japan.co.jp%20NIS700A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2075A6S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "iron_02",
+      "id": "t21",
       "status": "active",
-      "maker": "Panasonic",
-      "name": "ストレートアイロン ナノケア (EHHS0J)",
-      "model": "EHHS0J",
-      "price": 14850,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "ナノイー＋3D密着プレート",
-      "hu": 20,
-      "g": 380,
-      "shape": "straight",
-      "os": 0,
+      "maker": "TCL",
+      "name": "75X11L",
+      "model": "75X11L",
+      "price": 693000,
+      "groupId": "giant_theater",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "No",
+      "audio": "80W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "care": "◎"
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◯"
       },
       "desc": {
-        "ja": "ナノイー＋3D密着プレート",
-        "en": "",
-        "zh": ""
+        "ja": "数万個単位のMini LEDを敷き詰めたSQD-Mini LED。眩いばかりのピーク輝度を誇るモンスター",
+        "en": "Monster 75\" SQD-Mini LED boasting dazzling peak luminance and 144Hz",
+        "zh": "搭载数万枚微米级灯珠的超高分区Mini LED，顶级工业巅峰"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -629,46 +1423,51 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EHHS0J",
+          "url": "https://www.google.com/search?q=site%3Atcl.com%2075X11L",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EHHS0J%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Atcl.com%2075X11L%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "iron_03",
+      "id": "t22",
       "status": "active",
-      "maker": "ReFa",
-      "name": "ReFa BEAUTECH STRAIGHT IRON",
-      "model": "BEAUTECH",
-      "price": 22000,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "カーボンレイヤーで潰さない・軽量",
-      "hu": 30,
-      "g": 295,
-      "shape": "straight",
-      "os": 0,
+      "maker": "REGZA",
+      "name": "85Z970R",
+      "model": "85Z970R",
+      "price": 463650,
+      "groupId": "giant_theater",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
+      "panel": "Mini LED",
+      "res": "4K",
+      "hz": 144,
+      "hdmi21": "Yes",
+      "vrr": "Yes",
+      "timeShift": "Yes",
+      "audio": "110W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "care": "◎"
+        "size": "◎",
+        "panel": "◎",
+        "game": "◎",
+        "sound": "◎",
+        "rec": "◎"
       },
       "desc": {
-        "ja": "カーボンレイヤーで潰さない・軽量",
-        "en": "",
-        "zh": ""
+        "ja": "国内最大級85型Mini LED＋タイムシフトマシン。リビングの主役になる圧巻のフラッグシップ",
+        "en": "85\" Mini LED master flagship with full-ch DVR and 110W multi-audio system",
+        "zh": "85英寸超大巨幕Mini LED，多声道环绕音响与全频道时光机"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -677,109 +1476,13 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2085Z970R",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_04",
-      "status": "active",
-      "maker": "KINUJO",
-      "name": "絹女 -KINUJO- (LM225)",
-      "model": "LM225",
-      "price": 24200,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "シルクプレートで水分蒸発を防ぐ",
-      "hu": 20,
-      "g": 390,
-      "shape": "straight",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "シルクプレートで水分蒸発を防ぐ",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20LM225",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20LM225%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_05",
-      "status": "active",
-      "maker": "Vidal Sassoon",
-      "name": "マイナスイオン 2WAY (VSI2550)",
-      "model": "VSI2550",
-      "price": 2470,
-      "groupId": "i3",
-      "mode": "iron",
-      "feat": "1台でカール＆ストレート超コスパ",
-      "hu": 45,
-      "g": 320,
-      "shape": "2way",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "△"
-      },
-      "desc": {
-        "ja": "1台でカール＆ストレート超コスパ",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Avidalsassoon.jp%20VSI2550",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Avidalsassoon.jp%20VSI2550%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Aregza.com%2085Z970R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
@@ -796,7 +1499,7 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="hearing-data">
 {
-  "category": "iron",
+  "category": "tv",
   "storeName": "",
   "version": "2026-10-23",
   "questions": {},
@@ -806,14 +1509,14 @@ html[data-device=tablet] .fr-wrap {
 <!-- ▲▲▲ ヒアリング設定ここまで ▲▲▲ -->
 <!-- アプリを閉じた直後・読み込み中に一瞬見える画面 -->
 <div class="pg-card">
-  <div class="pg-ico" aria-hidden="true">🏠</div>
-  <h1 class="pg-ttl">ヘアアイロン</h1>
+  <div class="pg-ico" aria-hidden="true">📺</div>
+  <h1 class="pg-ttl">テレビ</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="area-kaden.html">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="season-av/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="#"></a></div>
+<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -852,9 +1555,9 @@ html[data-device=tablet] .fr-wrap {
 var currentLang = "ja";
 (function () {
   "use strict";
-  var APP = "iron";                 // このページの相談アプリ
-  var ROOT_ID = "dr-app";            // アプリの表示エリア
-  var AREA_URL = "area-kaden.html";       // 閉じたときに戻るエリアページ
+  var APP = "tv";                 // このページの相談アプリ
+  var ROOT_ID = "tv-app";            // アプリの表示エリア
+  var AREA_URL = "season-av/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -3592,7 +4295,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "product-pc.html", out, "text/html");
+      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -3852,480 +4555,661 @@ window.NJ_HEAR = (function () {
 })();
 </script>
 
-<!-- ===== 相談アプリ: iron ===== -->
+<!-- ===== 相談アプリ: tv ===== -->
 <style>
-.dr-svg {
-  width: 84px;
-  height: 64px;
+.tv-svg {
+  width: 104px;
+  height: 70px;
   display: block;
-  margin: 0 auto 2px;
-  overflow: visible;
+  margin: 0 auto;
 }
-.dr-wind {
-  stroke: #60a5fa;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 6 8;
-  animation: drw 1.1s linear infinite;
-  animation-delay: var(--dl,0s);
+.fr-card.sel .tv-svg {
+  margin: 0;
 }
-@keyframes drw {
+@keyframes tvglow {
+  0%,
   to {
-    stroke-dashoffset: -28;
-  }
-}
-.dr-dot {
-  animation: drf 2.4s ease-in-out infinite;
-  animation-delay: var(--dl,0s);
-}
-@keyframes drf {
-  50% {
-    transform: translateY(-6px);
     opacity: .45;
   }
+  50% {
+    opacity: 1;
+  }
 }
-.dr-pl {
-  transform-box: fill-box;
-  transform-origin: left center;
-  animation: drp 3.2s ease-in-out infinite;
+.tv-glow {
+  animation: tvglow 2.4s ease-in-out infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes drp {
-  0%,
-  35%,
-  to {
-    transform: rotate(-16deg);
+@keyframes tvscan {
+  0% {
+    transform: translateY(-16px);
   }
-  52%,
-  86% {
+  to {
+    transform: translateY(60px);
+  }
+}
+.tv-scan {
+  animation: tvscan 2.8s linear infinite;
+  animation-delay: var(--dl,0s);
+}
+@keyframes tvspark {
+  0%,
+  to {
+    transform: scale(.5);
+    opacity: .2;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+.tv-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tvspark 1.8s ease-in-out infinite;
+  animation-delay: var(--dl,0s);
+}
+@keyframes tvray {
+  0% {
     transform: rotate(0);
   }
-}
-.dr-curl {
-  stroke-dasharray: 120;
-  animation: drc 3s ease-in-out infinite;
-}
-@keyframes drc {
-  0% {
-    stroke-dashoffset: 120;
-  }
-  60%,
   to {
-    stroke-dashoffset: 0;
+    transform: rotate(360deg);
   }
 }
-.dr-tabs {
-  display: flex;
-  gap: 6px;
+.tv-ray {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tvray 9s linear infinite;
+}
+.tv-cmp {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+.tv-cmp td,
+.tv-cmp th {
+  padding: 7px 6px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  text-align: left;
+}
+.tv-cmp th {
+  color: #1d4ed8;
+  white-space: nowrap;
+}
+.tv-meter {
+  position: relative;
+  height: 84px;
+  margin: 6px 22px 0;
+}
+.tv-track {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  border-radius: 99px;
   background: #e2e8f0;
+  overflow: hidden;
+}
+.tv-band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   border-radius: 99px;
-  padding: 4px;
-  margin-bottom: 14px;
+  background: linear-gradient(90deg,#3b82f6,#06b6d4);
+  transform-origin: left;
+  animation: tvband 1s cubic-bezier(.2,.8,.2,1);
 }
-.dr-tabs button {
-  flex: 1;
-  border: 0;
-  border-radius: 99px;
-  padding: 9px;
-  font-size: .92rem;
-  font-weight: 800;
-  color: #475569;
-  background: transparent;
-  cursor: pointer;
-  transition: .25s;
+@keyframes tvband {
+  0% {
+    transform: scaleX(0);
+    opacity: .2;
+  }
 }
-.dr-tabs button.on {
-  background: #fff;
-  color: #7c3aed;
-  box-shadow: 0 3px 10px #7c3aed33;
-}
-.dr-models {
-  margin-top: 6px;
-  font-size: .8rem;
-  color: #64748b;
-  line-height: 1.6;
-}
-.dr-flow {
-  display: flex;
-  gap: 6px;
-  margin: 0 0 14px;
-  font-size: .8rem;
-  font-weight: 800;
-  color: #475569;
-}
-.dr-flow span {
-  flex: 1;
+.tv-tk {
+  position: absolute;
+  top: 48px;
+  transform: translate(-50%);
   text-align: center;
-  background: #fff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 7px 2px;
-}
-.dr-flow span b {
-  display: block;
-  color: #7c3aed;
   font-size: .78rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.3;
+  white-space: nowrap;
 }
-.dr-why {
+.tv-tk i {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 2px;
+  height: 7px;
+  background: #94a3b8;
+}
+.tv-mk {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%);
+  animation: tvmark 1.1s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes tvmark {
+  0% {
+    opacity: 0;
+    transform: translate(-50%,-10px);
+  }
+}
+.tv-mk span {
+  display: block;
+  background: #111827;
+  color: #fbbf24;
   font-size: .8rem;
-  color: #334155;
-  background: #f5f3ff;
-  border-radius: 8px;
-  padding: 7px 9px;
-  margin: 6px 0;
-  line-height: 1.6;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
 }
-</style><div id="dr-app" class="fr-root" role="dialog" aria-label="ドライヤー・ヘアアイロン相談"></div>
+.tv-mk:after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 16px;
+  background: #111827;
+  margin: 0 auto;
+}
+.tv-src {
+  font-size: .78rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+body.motion-off .tv-glow,
+body.motion-off .tv-scan,
+body.motion-off .tv-spark,
+body.motion-off .tv-ray,
+body.motion-off .tv-band,
+body.motion-off .tv-mk {
+  animation: none!important;
+}
+</style><div id="tv-app" class="fr-root" role="dialog" aria-label="テレビ購入相談"></div>
 <script>
 (function () {
   "use strict";
-  const f = document.getElementById("dr-app"),
-    F = () => typeof currentLang < "u" && currentLang || "ja",
-    ae = { ja: 0, en: 1, zh: 2 },
-    a = e => Array.isArray(e) ? e[ae[F()]] : e,
-    p = function (e) {
-      let t = a(e);
-      for (let s = 1; s < arguments.length; s++)
-        t = t.split("{" + (s - 1) + "}").join(arguments[s]);
+  const R = (window.NJ_INV ? window.NJ_INV.products() : []),
+    Z = [
+      {
+        name: {
+          ja: "テレビ用高音質スリムサウンドバー (Dolby Atmos対応)",
+          en: "Dolby Atmos Slim Soundbar",
+          zh: "杜比全景声超薄回音壁音箱"
+        },
+        price: "¥24,800",
+        desc: {
+          ja: "映画のセリフがグッと聞き取りやすく、頭上と背後から包み込む立体音響",
+          en: "Expands spatial 3D audio; makes actor dialogues crystal clear",
+          zh: "人声对白极速清晰化，打造天空声道立体环绕包围感"
+        }
+      },
+      {
+        name: {
+          ja: "プレミアム超高速 HDMI 2.1ケーブル (4K 120Hz/eARC対応)",
+          en: "Ultra High-Speed HDMI 2.1 Cable",
+          zh: "HDMI 2.1极速发烧级信号线 (48Gbps)"
+        },
+        price: "¥2,980",
+        desc: {
+          ja: "PS5や最新サウンドバーの真価を引き出す48Gbps伝送対応ケーブル",
+          en: "Essential for PS5 4K 120Hz, VRR, and lossless eARC audio",
+          zh: "满血点亮PS5 4K 120Hz高刷低延迟与eARC无损音频传输"
+        }
+      },
+      {
+        name: {
+          ja: "テレビ録画用 静音外付けハードディスク 4TB",
+          en: "Silent 4TB TV Recording HDD",
+          zh: "电视录像专用静音外置硬盘 4TB"
+        },
+        price: "¥13,800",
+        desc: {
+          ja: "ファンレス静音設計。見たい連続ドラマやスポーツ中継をたっぷり約500時間録画",
+          en: "Fanless whisper-quiet design. Stores over 500 hours of TV series",
+          zh: "静音无风扇抗震散热，轻松装下约500小时高清剧集与比赛"
+        }
+      }
+    ];
+  Z.push(
+    {
+      name: { ja: "壁掛け金具（VESA対応・角度調整タイプ）", en: "VESA Wall Mount Bracket", zh: "VESA壁挂支架（可调角度）" },
+      price: "¥6,980",
+      desc: {
+        ja: "壁掛け設置に必須。対応サイズ・耐荷重・壁の下地の確認はスタッフが案内します",
+        en: "Required for wall mounting. Staff will confirm size, load and wall type",
+        zh: "壁挂安装必备，尺寸、承重与墙体由店员协助确认"
+      }
+    },
+    {
+      name: { ja: "テレビ転倒防止ベルト・耐震ジェル", en: "Anti-Tip Strap & Gel Pads", zh: "电视防倾倒固定带与防震胶垫" },
+      price: "¥1,980",
+      desc: {
+        ja: "地震やお子さま・ペットの接触による転倒を防止。台置きの大画面に特におすすめ",
+        en: "Prevents tipping from quakes, kids or pets. Best for stand-mounted large screens",
+        zh: "防止地震或儿童宠物碰撞导致倾倒，台置大屏尤为推荐"
+      }
+    }
+  );
+  var j = function () {
+    return typeof currentLang < "u" && currentLang || "ja";
+  },
+    N = function (e) {
+      return typeof e == "string" ? e : e && (e[j()] || e.ja) || "";
+    },
+    S = function (e) {
+      return "¥" + e.toLocaleString("ja-JP");
+    },
+    W = function (e, t, i) {
+      return Math.max(t, Math.min(i, e));
+    },
+    w = document.getElementById("tv-app"),
+    $ = { ja: 0, en: 1, zh: 2 },
+    a = function (e) {
+      return Array.isArray(e) ? e[$[j()]] : e;
+    },
+    m = function (e) {
+      for (var t = a(e), i = 1; i < arguments.length; i++)
+        t = t.split("{" + (i - 1) + "}").join(arguments[i]);
       return t;
     },
-    A = e => a(e.n),
-    se = { bud: ["予算", "Budget", "预算"], wt: ["重さ", "Weight", "重量"] },
-    q = {
-      dry_01: ["モンスター BLDC (KHDM800R)", "Monster BLDC (KHDM800R)", "Monster BLDC (KHDM800R)"],
-      dry_02: ["ナノケア EH-NA0K", "Nanocare EH-NA0K", "Nanocare EH-NA0K"],
-      dry_03: ["イオニティ EH-NE7N", "Ionity EH-NE7N", "Ionity EH-NE7N"],
-      dry_05: ["KINUJO ヘアドライヤー (KH301)", "KINUJO Hair Dryer (KH301)", "KINUJO 吹风机 (KH301)"],
-      iron_01: ["プロフェッショナル NIS700A", "Professional NIS700A", "专业款 NIS700A"],
-      iron_02: [
-        "ストレートアイロン ナノケア (EHHS0J)",
-        "Straight Iron Nanocare (EHHS0J)",
-        "直发夹板 Nanocare (EHHS0J)"
-      ],
-      iron_04: ["絹女 -KINUJO- (LM225)", "KINUJO (LM225)", "绢女 -KINUJO- (LM225)"],
-      iron_05: ["マイナスイオン 2WAY (VSI2550)", "Negative Ion 2WAY (VSI2550)", "负离子 2WAY (VSI2550)"]
+    u,
+    ee = { "◎": 5, "◯": 3.2, "△": 2 },
+    te = {
+      wd: ["横幅", "Width", "宽度"],
+      sw: ["台の幅", "Stand width", "台面宽度"],
+      sd: ["台の奥行", "Stand depth", "台面深度"],
+      ht: ["上の空き高さ", "Clearance above", "上方空余高度"],
+      ds: ["視聴距離", "Viewing distance", "观看距离"],
+      pa: ["搬入", "Delivery", "搬入"]
     },
-    J = {
-      dry_01: [
-        "ダブルファンBLDCで超速乾",
-        "Ultra-fast drying with a double-fan BLDC motor",
-        "双风扇BLDC电机，超速干发"
-      ],
-      dry_02: [
-        "高浸透ナノイーで圧倒的うるおい",
-        "Overwhelming moisture with high-penetration nanoe",
-        "高渗透纳米水离子，润泽感出众"
-      ],
-      dry_03: ["大風量ダブルミネラルイオン", "High airflow with double mineral ions", "大风量双矿物离子"],
-      dry_04: [
-        "自動温冷調整＆海外対応スリム",
-        "Automatic hot/cool adjustment and a slim, overseas-compatible body",
-        "自动温冷调节，轻薄且支持海外电压"
-      ],
-      dry_05: [
-        "超軽量コンパクト＆遠赤外線速乾",
-        "Ultra-light, compact, and far-infrared fast drying",
-        "超轻小巧，远红外线速干"
-      ],
-      iron_01: ["サロン仕様ヒーターで即効ストレート", "Salon-grade heater for quick straightening", "沙龙级加热元件，快速拉直"],
-      iron_02: ["ナノイー＋3D密着プレート", "Nanoe + 3D close-contact plates", "纳米水离子＋3D贴合夹板"],
-      iron_03: [
-        "カーボンレイヤーで潰さない・軽量",
-        "Carbon layer prevents flattening; lightweight",
-        "碳层夹板不压塌发丝，轻量"
-      ],
-      iron_04: ["シルクプレートで水分蒸発を防ぐ", "Silk plates prevent moisture from evaporating", "丝绸夹板防止水分蒸发"],
-      iron_05: [
-        "1台でカール＆ストレート超コスパ",
-        "Curl and straighten with one unit; great value",
-        "一台即可卷发+直发，超高性价比"
-      ]
-    },
-    E = e => q[e.id] ? a(q[e.id]) : e.name,
-    W = e => J[e.id] ? a(J[e.id]) : e.feat,
-    _ = () => a(
-      l.mode === "dryer" ? ["ドライヤー", "Hair Dryer", "吹风机"] : ["ヘアアイロン", "Hair Iron", "卷直发器"]
-    ),
-    w = e => "¥" + e.toLocaleString("ja-JP"),
-    D = { "◎": 5, "◯": 3.5, "△": 2 },
-    T = (e, t, s) => Math.max(t, Math.min(s, e)),
-    Q = (window.NJ_INV ? window.NJ_INV.products() : []),
-    oe = [
-      [
-        ["ヒートプロテクト ヘアオイル", "Heat-Protect Hair Oil", "防热护发精油"],
-        "¥1,980",
-        ["熱から髪を守りツヤ感をアップ", "Shields hair from heat and boosts shine", "保护头发免受高温伤害，提升光泽"]
-      ],
-      [
-        ["耐熱収納ポーチ", "Heat-Resistant Storage Pouch", "耐热收纳袋"],
-        "¥1,480",
-        [
-          "使用直後の熱い本体も安全に収納",
-          "Safely stores the unit even right after use, while still hot",
-          "刚使用完仍很烫的机身也能安全收纳"
-        ]
-      ]
-    ],
-    B = [
+    O = function () {
+      return a(["型", " in.", "英寸"]);
+    };
+  R.forEach(function (e) {
+    var t = e.size * 25.4 * .8715 + 12, i = e.size * 25.4 * .4902 + 12;
+    e.pw = Math.round(t),
+      e.ph = Math.round(i),
+      e.sh = e.size <= 32 ? 40 : 70,
+      e.th = e.ph + e.sh,
+      e.sw = Math.round(t * (e.size >= 55 ? .8 : e.size >= 43 ? .7 : .6)),
+      e.sd = e.size <= 32
+        ? 160
+        : e.size <= 43 ? 200 : e.size <= 55 ? 240 : e.size <= 65 ? 280 : e.size <= 75 ? 310 : 340,
+      e.kg = Math.round(
+        .0045 * e.size * e.size * (e.panel === "Mini LED" ? 1.3 : e.panel === "OLED" ? 1.1 : 1) * 10
+      )
+        / 10,
+      e.box = e.pw + 150,
+      e.wat = parseInt(e.audio) || 0;
+  });
+  var B = function (e) {
+    return e.panel === "LED" ? a(["液晶(LED)", "LCD (LED)", "液晶(LED)"]) : e.panel;
+  },
+    T = [
       {
-        id: "d1",
-        mode: "dryer",
-        n: ["大風量・速乾タイプ", "High-airflow / fast-drying type", "大风量·速干型"],
-        sub: ["風量で時短", "Saves time with airflow", "靠风量节省时间"],
-        who: [
-          "髪が多い・長い方／朝の時短をしたい方",
-          "Those with thick or long hair / those who want to save time in the morning",
-          "发量多·头发长的人／想节省早晨时间的人"
-        ],
+        id: "compact_entry",
+        n: ["小型・個室向け", "Compact / for private rooms", "小型·个人房间"],
+        sub: ["19〜40型", "19–40 in.", "19～40英寸"],
+        lay: "c",
+        who: ["寝室・書斎・キッチン・一人暮らし", "Bedrooms, studies, kitchens, living alone", "卧室·书房·厨房·独居"],
         pro: [
-          "風量が大きく乾燥時間を短縮。手頃な価格のモデルもある",
-          "Large airflow shortens drying time. Some models are reasonably priced.",
-          "风量大，缩短吹干时间。也有价格实惠的机型。"
+          "3〜4万円台から。置き場所を選ばず、本体にHDDを内蔵した録画対応機もある",
+          "From around ¥30,000–40,000. Fits almost anywhere, and some models have a built-in HDD for recording.",
+          "3～4万日元起。不挑摆放位置，也有内置硬盘可录像的机型。"
         ],
         con: [
-          "本体はやや重め（520〜540g）。ケア力は◯評価でケア最優先なら次のタイプ",
-          "Slightly heavy (520–540 g). Care rated ◯; if care is your top priority, choose the next type.",
-          "机身略重（520～540g）。护发力评为◯，若最重视护发请选择下一类型。"
+          "2K（フルHD）中心で、画面が小さく迫力は控えめ",
+          "Mostly 2K (Full HD) with a small screen, so less impact.",
+          "以2K（全高清）为主，屏幕较小，视觉冲击力一般。"
         ]
       },
       {
-        id: "d2",
-        mode: "dryer",
-        n: ["うるおいケアタイプ", "Moisture-care type", "润泽护理型"],
-        sub: ["高浸透ナノイー", "High-penetration nanoe", "高渗透纳米水离子"],
+        id: "standard_4k",
+        n: ["スタンダード4K液晶", "Standard 4K LCD", "标准4K液晶"],
+        sub: ["43〜55型", "43–55 in.", "43～55英寸"],
+        lay: "s",
         who: [
-          "ダメージ・パサつき・クセが気になる方",
-          "Those concerned about damage, dryness, and frizz",
-          "在意损伤·毛躁·发质不顺的人"
+          "リビングで地デジ・YouTube・配信を日常的に楽しむ方",
+          "Those who enjoy broadcast TV, YouTube, and streaming daily in the living room",
+          "在客厅日常观看地面数字电视·YouTube·流媒体的人"
         ],
-        pro: ["うるおい・ツヤのケア力が◎", "Top (◎) care for moisture and shine", "润泽·光泽护理力为◎"],
+        pro: [
+          "5万円台から。4Kで価格と画質のバランスが良く、機種も豊富",
+          "From around ¥50,000. 4K with a good balance of price and picture quality, and a wide choice of models.",
+          "5万日元起。4K画质与价格均衡，机型也很丰富。"
+        ],
         con: [
-          "約3.5万円と高めで、今回の中では最重量（595g）",
-          "Pricey at about ¥35,000, and the heaviest of this lineup (595 g).",
-          "约3.5万日元，价格偏高，且是本次对比中最重的（595g）。"
+          "黒の締まり・ピーク輝度・ゲーム性能は上位パネルに劣る",
+          "Black depth, peak brightness, and gaming performance fall behind higher-end panels.",
+          "黑色表现·峰值亮度·游戏性能不及高端面板。"
         ]
       },
       {
-        id: "d3",
-        mode: "dryer",
-        n: ["センシング・温度制御タイプ", "Sensing / temperature-control type", "感应·温控型"],
-        sub: ["温冷を自動調整", "Automatic hot/cool adjustment", "自动温冷调节"],
+        id: "miniled_bright",
+        n: ["高輝度 Mini LED", "High-brightness Mini LED", "高亮度 Mini LED"],
+        sub: ["43〜65型", "43–65 in.", "43～65英寸"],
+        lay: "m",
         who: [
-          "熱ダメージを抑えたい／海外でも使いたい方",
-          "Those who want to limit heat damage / use it overseas too",
-          "想减少热损伤／也想在海外使用的人"
+          "日当たりの良いリビング・ゲームもしっかり遊びたい方",
+          "Sunny living rooms, and those who want to game seriously",
+          "采光好的客厅·想认真玩游戏的人"
         ],
         pro: [
-          "温冷を自動調整。475gのスリムさと海外対応が強み",
-          "Automatic hot/cool adjustment. Strengths are its slim 475 g body and overseas compatibility.",
-          "自动调节温冷。优势是475g的轻薄机身和支持海外电压。"
+          "明るい部屋でも鮮やか。120〜144Hz・HDMI 2.1対応でゲームに強い",
+          "Vivid even in bright rooms. 120–144 Hz and HDMI 2.1 support make it strong for gaming.",
+          "明亮房间里依然鲜艳。支持120～144Hz·HDMI 2.1，游戏表现出色。"
         ],
         con: [
-          "約4万円と最も高価。速乾力は◯評価",
-          "The most expensive at about ¥40,000. Fast-drying power rated ◯.",
-          "约4万日元，价格最高。速干力评为◯。"
+          "有機ELほどの完全な漆黒ではなく、価格は中〜高め",
+          "Not as perfectly black as OLED, and the price is mid to high.",
+          "黑色不如OLED纯粹，价格中等偏高。"
         ]
       },
       {
-        id: "d4",
-        mode: "dryer",
-        n: ["超軽量・遠赤外線タイプ", "Ultra-light / far-infrared type", "超轻·远红外线型"],
-        sub: ["363gの軽さ", "Light at 363 g", "仅363g的轻盈"],
+        id: "oled_cinema",
+        n: ["有機EL（OLED）", "OLED", "有机EL（OLED）"],
+        sub: ["48〜65型", "48–65 in.", "48～65英寸"],
+        lay: "o",
         who: [
-          "腕の疲れ・持ち運びを減らしたい方",
-          "Those who want less arm fatigue and easier carrying",
-          "想减轻手臂疲劳·便于携带的人"
+          "夜に部屋を暗くして映画・ドラマを観る方",
+          "Those who watch movies and dramas in a darkened room at night",
+          "夜晚关灯看电影·电视剧的人"
         ],
         pro: [
-          "363gの超軽量で、速乾もケアも◎評価",
-          "Ultra-light at 363 g, with ◎ ratings for both fast drying and care.",
-          "363g超轻，速干与护发均为◎评价。"
-        ],
-        con: ["約3.2万円と価格は中〜高め", "Mid-to-high price at about ¥32,000.", "约3.2万日元，价格中等偏高。"]
-      },
-      {
-        id: "i1",
-        mode: "iron",
-        n: ["サロン仕様・即熱ストレート", "Salon-grade quick-heat straightener", "沙龙级·速热直发夹"],
-        sub: ["18秒で立ち上がり", "Heats up in 18 seconds", "18秒升温"],
-        who: [
-          "忙しい朝／毎日しっかりストレートにしたい方",
-          "Busy mornings / those who want solid straightening every day",
-          "忙碌的早晨／每天都想认真拉直的人"
-        ],
-        pro: [
-          "立ち上がり18秒で約1.3万円。時短と価格のバランスが良い",
-          "Heats in 18 seconds for about ¥13,000. A good balance of speed and price.",
-          "18秒升温，约1.3万日元。省时与价格均衡。"
-        ],
-        con: ["ストレート専用。ケア力は◯評価", "Straightening only. Care rated ◯.", "仅限直发。护发力评为◯。"]
-      },
-      {
-        id: "i2",
-        mode: "iron",
-        n: ["ケアプレート・ストレート", "Care-plate straightener", "护理夹板·直发夹"],
-        sub: ["ナノイー／カーボン／シルク", "Nanoe / carbon / silk", "纳米水离子／碳／丝绸"],
-        who: [
-          "カラー・ダメージが気になる方／毎日使う方",
-          "Those concerned about color treatment and damage / daily users",
-          "在意染发·损伤的人／每天使用的人"
-        ],
-        pro: [
-          "プレート素材で髪の傷みを抑える。機種ごとに強みが分かれる",
-          "Plate materials reduce hair damage. Strengths differ by model.",
-          "夹板材质可减少对头发的损伤。各机型的优势不同。"
+          "画素ごとに消灯できるため漆黒。コントラストと応答の速さが魅力",
+          "Each pixel can switch off, giving true black. Great contrast and fast response.",
+          "每个像素可单独熄灭，呈现纯黑。对比度高、响应速度快。"
         ],
         con: [
-          "1.5〜2.4万円台。立ち上がりは20〜30秒と機種で差がある",
-          "About ¥15,000–24,000. Heat-up takes 20–30 seconds depending on the model.",
-          "1.5～2.4万日元。升温时间为20～30秒，因机型而异。"
+          "日中の明るい部屋では映り込みが目立ちやすく、価格も高め",
+          "Reflections stand out in bright daytime rooms, and the price is high.",
+          "白天明亮的房间里反光明显，价格也较高。"
         ]
       },
       {
-        id: "i3",
-        mode: "iron",
-        n: ["2WAY・コスパタイプ", "2-way / value type", "2WAY·高性价比型"],
-        sub: ["カールもストレートも", "Curls and straightening", "可卷也可直"],
+        id: "giant_theater",
+        n: ["超大画面シアター", "Giant-screen theater", "超大屏影院"],
+        sub: ["65〜85型", "65–85 in.", "65～85英寸"],
+        lay: "g",
         who: [
-          "初めての1台／1台で巻きも伸ばしもしたい方",
-          "First-timers / those who want to curl and straighten with one unit",
-          "第一次购买／想一台兼顾卷发和直发的人"
+          "広いリビング・視聴距離が2.5m以上の方",
+          "Large living rooms, with a viewing distance of 2.5 m or more",
+          "宽敞客厅·观看距离在2.5m以上的人"
         ],
-        pro: ["約2,500円でカールもストレートもできる", "Curl and straighten for about ¥2,500.", "约2,500日元即可卷发和直发。"],
+        pro: [
+          "圧倒的な迫力。映画・スポーツ・ゲームをシアター感覚で",
+          "Overwhelming impact. Enjoy movies, sports, and games like in a theater.",
+          "震撼的视觉冲击。以影院般的感受观看电影·体育·游戏。"
+        ],
         con: [
-          "立ち上がり45秒、ケア・速熱は△評価",
-          "45-second heat-up; care and quick heating are rated △.",
-          "升温需45秒，护发与速热评为△。"
+          "本体が大きく重い。設置幅・視聴距離・搬入経路の確認が必須",
+          "Large and heavy. Installation width, viewing distance, and delivery route must be confirmed.",
+          "机身又大又重。必须确认安装宽度·观看距离·搬入路线。"
         ]
       }
     ],
-    ie = e => B.filter(t => t.id === e.type)[0],
-    re = {
-      d1: "#2563eb",
-      d2: "#a855f7",
-      d3: "#0ea5e9",
-      d4: "#f59e0b",
-      i1: "#ef4444",
-      i2: "#a855f7",
-      i3: "#10b981"
+    H = function (e) {
+      return a(e.n);
     };
-  function ne(e, t) {
-    const s = re[e.id], o = e.id;
-    if (e.mode === "dryer") {
-      let c = "";
-      return o === "d1"
-        && (
-          c = [0, 1, 2].map(
-            r => '<line class="dr-wind" style="--dl:'
-              + (t + r * .22)
-              + 's" x1="66" y1="'
-              + (20 + r * 9)
-              + '" x2="84" y2="'
-              + (20 + r * 9)
-              + '"/>'
-          ).join("")
-        ),
-        o === "d2"
-          && (
-            c = [0, 1, 2, 3].map(
-              r => '<circle class="dr-dot" style="--dl:'
-                + (t + r * .5)
-                + 's" cx="'
-                + (68 + r * 5)
-                + '" cy="'
-                + (18 + r % 2 * 14)
-                + '" r="2.6" fill="#c084fc"/>'
-            ).join("")
-          ),
-        o === "d3"
-          && (
-            c = '<path d="M68 18q8 8 0 16M74 14q12 12 0 24" fill="none" stroke="#38bdf8" stroke-width="2.5" '
-              + 'stroke-linecap="round" class="dr-dot" style="--dl:'
-              + t
-              + 's"/>'
-          ),
-        o === "d4"
-          && (
-            c = [0, 1].map(
-              r => '<path class="dr-dot" style="--dl:'
-                + (t + r * .7)
-                + 's" d="M70 '
-                + (20 + r * 14)
-                + 'q8-6 14 0q-6 6-14 0z" fill="#fbbf24"/>'
-            ).join("")
-          ),
-        '<svg class="dr-svg" viewBox="0 0 90 64"><path d="M8 12h44a9 9 0 0 1 9 9v9a9 9 0 0 1-9 9H8z" fill="'
-          + s
-          + '"/><rect x="18" y="38" width="13" height="23" rx="6" fill="'
-          + s
-          + '" opacity=".72"/><rect x="52" y="16" width="11" height="19" rx="3" fill="#cbd5e1"/>'
-          + c
-          + "</svg>";
-    }
-    const d = o === "i3",
-      n = (c, r) => '<rect class="dr-pl" style="--dl:'
-        + t
-        + "s;"
-        + (r ? "transform:scaleY(-1)" : "")
-        + '" x="10" y="'
-        + c
-        + '" width="64" height="9" rx="4.5" fill="'
-        + s
-        + '"/>';
-    return '<svg class="dr-svg" viewBox="0 0 90 64"><rect x="10" y="34" width="64" height="9" rx="4.5" fill="'
-      + s
-      + '" opacity=".75"/>'
-      + n(21, 0)
-      + '<rect x="6" y="46" width="12" height="14" rx="5" fill="#94a3b8"/>'
-      + (
-        d
-          ? '<path class="dr-curl" d="M74 30c10-2 10-14 2-14s-8 10 2 10 8-6 6-10" fill="none" '
-            + 'stroke="#34d399" stroke-width="3" stroke-linecap="round"/>'
-          : '<line class="dr-wind" style="--dl:'
-            + t
-            + 's;stroke:#fca5a5" x1="76" y1="32" x2="88" y2="32"/>'
-      )
-      + "</svg>";
+  function ie(e) {
+    return T.filter(function (t) {
+      return t.id === e.groupId;
+    })[0]
+      || T[0];
   }
-  const le = [
+  function ae(e, t) {
+    var i = 'style="--dl:-' + t + 's"',
+      o = {
+        c: [32, 16, 40, 24],
+        s: [20, 10, 64, 36],
+        m: [20, 10, 64, 36],
+        o: [20, 10, 64, 36],
+        g: [6, 4, 92, 52]
+      }[e],
+      s = o[0],
+      n = o[1],
+      d = o[2],
+      r = o[3],
+      c = s + d / 2,
+      h = n + r / 2,
+      p = "tvc" + e,
+      b = e === "o" ? "#05070f" : e === "m" ? "#1e3a8a" : e === "g" ? "#1e1b4b" : "#38bdf8",
+      z = '<defs><clipPath id="'
+        + p
+        + '"><rect x="'
+        + s
+        + '" y="'
+        + n
+        + '" width="'
+        + d
+        + '" height="'
+        + r
+        + '" rx="1.5"/></clipPath></defs><rect x="'
+        + (s - 2)
+        + '" y="'
+        + (n - 2)
+        + '" width="'
+        + (d + 4)
+        + '" height="'
+        + (r + 4)
+        + '" rx="3" fill="#1f2937"/><rect x="'
+        + s
+        + '" y="'
+        + n
+        + '" width="'
+        + d
+        + '" height="'
+        + r
+        + '" rx="1.5" fill="'
+        + b
+        + '"/>',
+      y = '<g clip-path="url(#' + p + ')">';
+    (e === "c" || e === "s")
+      && (
+        y += '<path d="M'
+          + s
+          + " "
+          + (n + r)
+          + "L"
+          + (s + d * .35)
+          + " "
+          + (n + r * .45)
+          + "L"
+          + (s + d * .6)
+          + " "
+          + (n + r * .75)
+          + "L"
+          + (s + d * .78)
+          + " "
+          + (n + r * .5)
+          + "L"
+          + (s + d)
+          + " "
+          + (n + r)
+          + 'Z" fill="#0369a1" opacity=".75"/><circle class="tv-glow" '
+          + i
+          + ' cx="'
+          + (s + d * .78)
+          + '" cy="'
+          + (n + r * .25)
+          + '" r="'
+          + r * .14
+          + '" fill="#fef9c3"/>'
+      ),
+      e === "m"
+        && (
+          y += '<circle class="tv-glow" '
+            + i
+            + ' cx="'
+            + c
+            + '" cy="'
+            + h
+            + '" r="'
+            + r * .5
+            + '" fill="#fde047" opacity=".35"/><circle class="tv-glow" '
+            + i
+            + ' cx="'
+            + c
+            + '" cy="'
+            + h
+            + '" r="'
+            + r * .22
+            + '" fill="#fff7ad"/><g class="tv-ray"><path d="M'
+            + c
+            + " "
+            + (h - r * .5)
+            + "V"
+            + (h + r * .5)
+            + "M"
+            + (c - r * .5)
+            + " "
+            + h
+            + "H"
+            + (c + r * .5)
+            + '" stroke="#fef08a" stroke-width="1.6" opacity=".7"/></g>'
+        ),
+      e === "o"
+        && (
+          y += '<circle class="tv-spark" '
+            + i
+            + ' cx="'
+            + (s + d * .25)
+            + '" cy="'
+            + (n + r * .35)
+            + '" r="3" fill="#f472b6"/><circle class="tv-spark" style="--dl:-.6s" cx="'
+            + (s + d * .6)
+            + '" cy="'
+            + (n + r * .6)
+            + '" r="3.4" fill="#38bdf8"/><circle class="tv-spark" style="--dl:-1.2s" cx="'
+            + (s + d * .8)
+            + '" cy="'
+            + (n + r * .3)
+            + '" r="2.4" fill="#facc15"/>'
+        ),
+      e === "g"
+        && (
+          y += '<path d="M'
+            + s
+            + " "
+            + (n + r)
+            + "L"
+            + (s + d * .3)
+            + " "
+            + (n + r * .4)
+            + "L"
+            + (s + d * .55)
+            + " "
+            + (n + r * .7)
+            + "L"
+            + (s + d * .8)
+            + " "
+            + (n + r * .3)
+            + "L"
+            + (s + d)
+            + " "
+            + (n + r * .7)
+            + "L"
+            + (s + d)
+            + " "
+            + (n + r)
+            + 'Z" fill="#4f46e5" opacity=".7"/><rect class="tv-scan" '
+            + i
+            + ' x="'
+            + s
+            + '" y="'
+            + n
+            + '" width="'
+            + d
+            + '" height="6" fill="#fff" opacity=".25"/>'
+        ),
+      y += "</g>";
+    var l = e === "g"
+      ? '<rect x="14" y="'
+        + (n + r + 3)
+        + '" width="10" height="4" rx="1" fill="#9ca3af"/><rect x="80" y="'
+        + (n + r + 3)
+        + '" width="10" height="4" rx="1" fill="#9ca3af"/>'
+      : '<path d="M'
+        + (c - 5)
+        + " "
+        + (n + r + 2)
+        + "H"
+        + (c + 5)
+        + "L"
+        + (c + 12)
+        + " "
+        + (n + r + 9)
+        + "H"
+        + (c - 12)
+        + 'Z" fill="#9ca3af"/>';
+    return '<svg class="tv-svg" viewBox="0 0 104 70">' + z + y + l + "</svg>";
+  }
+  var L = [
     [
-      "speed",
-      ["速乾力", "Drying speed", "速干力"],
-      "💨",
+      "sizefit",
+      ["画面サイズ", "Screen size", "屏幕尺寸"],
+      "📏",
       [
-        "風量の大きさ。髪が多い・長いほど乾燥時間に差が出ます",
-        "Airflow volume. The thicker or longer your hair, the bigger the difference in drying time.",
-        "风量大小。头发越多·越长，吹干时间的差距越明显。"
+        "視聴距離に対して画面の大きさがちょうどよいか（希望に応じて大きめ／小さめも反映）",
+        "Whether the screen size suits your viewing distance (bigger/smaller preferences are reflected)",
+        "屏幕大小是否适合观看距离（会反映您对偏大/偏小的偏好）"
       ]
     ],
     [
-      "care",
-      ["ヘアケア", "Hair care", "护发"],
-      "✨",
+      "picture",
+      ["画質", "Picture quality", "画质"],
+      "🎬",
       [
-        "イオン・温度制御など、熱ダメージを抑えうるおいを守る力",
-        "Ions, temperature control, etc. that reduce heat damage and protect moisture.",
-        "离子·温控等，减少热损伤并锁住水分的能力。"
+        "黒の深さ・コントラスト・色の鮮やかさ（有機EL＞Mini LED＞液晶）",
+        "Black depth, contrast, and color vividness (OLED > Mini LED > LCD)",
+        "黑色深度·对比度·色彩鲜艳度（OLED＞Mini LED＞液晶）"
       ]
     ],
     [
-      "light",
-      ["軽さ", "Lightness", "轻量"],
-      "🪶",
+      "bright",
+      ["明るい部屋", "Bright rooms", "明亮房间"],
+      "☀️",
       [
-        "本体重量。毎日腕で持つので疲れにくさに直結します",
-        "Unit weight. You hold it every day, so it directly affects fatigue.",
-        "机身重量。每天都要用手臂拿着，直接关系到是否容易疲劳。"
+        "日中の明るい部屋でも見やすいか（輝度の高さ・映り込みの少なさ）",
+        "Whether it is easy to see in a bright daytime room (high brightness, few reflections)",
+        "白天明亮的房间里是否也看得清（亮度高·反光少）"
       ]
     ],
     [
-      "travel",
-      ["海外・携帯", "Overseas / portable", "海外·便携"],
-      "✈️",
+      "game",
+      ["ゲーム", "Gaming", "游戏"],
+      "🎮",
       [
-        "海外電圧対応など。資料で確認できたもののみ高評価",
-        "Overseas voltage support, etc. Only models confirmed in the documentation score high.",
-        "是否支持海外电压等。仅资料中可确认的机型才获高评价。"
+        "4K 120Hz以上・HDMI 2.1・VRR（可変リフレッシュ）への対応",
+        "Support for 4K 120 Hz or higher, HDMI 2.1, and VRR (variable refresh rate)",
+        "是否支持4K 120Hz以上·HDMI 2.1·VRR（可变刷新率）"
+      ]
+    ],
+    [
+      "rec",
+      ["録画", "Recording", "录像"],
+      "📼",
+      [
+        "タイムシフトマシン（全チャンネル自動録画）や内蔵HDDなど録画のしやすさ",
+        "Ease of recording, such as Time Shift Machine (auto-recording of all channels) or a built-in HDD",
+        "录像的便利程度，如时移功能（自动录制全部频道）或内置硬盘"
+      ]
+    ],
+    [
+      "sound",
+      ["音質", "Sound quality", "音质"],
+      "🔊",
+      [
+        "スピーカー出力と音響技術。サウンドバー無しでも満足できるか",
+        "Speaker output and audio technology. Whether you will be satisfied without a soundbar",
+        "扬声器功率与音响技术。不加回音壁是否也能满意"
       ]
     ],
     [
@@ -4335,338 +5219,358 @@ window.NJ_HEAR = (function () {
       ["本体価格の手頃さ", "Affordability of the unit price", "机身价格是否实惠"]
     ]
   ],
-    ce = [
-      [
-        "heat",
-        ["速熱", "Quick heat", "速热"],
-        "⚡",
-        [
-          "電源を入れてから使える温度になるまでの速さ",
-          "How quickly it reaches usable temperature after power-on.",
-          "开机后达到可用温度的速度。"
-        ]
-      ],
-      [
-        "care",
-        ["プレートケア", "Plate care", "夹板护理"],
-        "✨",
-        [
-          "プレート素材・イオンなど、髪の傷みを抑える仕様",
-          "Plate material, ions, and other features that reduce hair damage.",
-          "夹板材质·离子等减少头发损伤的规格。"
-        ]
-      ],
-      [
-        "light",
-        ["軽さ", "Lightness", "轻量"],
-        "🪶",
-        [
-          "本体重量。手首への負担や持ち運びやすさ",
-          "Unit weight. Strain on your wrist and ease of carrying.",
-          "机身重量。对手腕的负担及携带便利性。"
-        ]
-      ],
-      [
-        "shape",
-        ["カール対応", "Curl capability", "卷发能力"],
-        "🔁",
-        ["ストレート専用か、カールもできる2WAYか", "Straight-only, or 2-way that can curl too.", "仅限直发，还是可卷发的2WAY。"]
-      ],
-      [
-        "price",
-        ["価格", "Price", "价格"],
-        "💴",
-        ["本体価格の手頃さ", "Affordability of the unit price", "机身价格是否实惠"]
-      ]
-    ],
-    k = e => a(e[1]),
-    X = e => a(e[3]),
-    z = () => l.mode === "dryer" ? le : ce,
-    V = {
-      id: "tr",
-      st: 1,
-      t: [
-        "海外旅行・出張でも使いますか？",
-        "Will you also use it on overseas trips or business travel?",
-        "出国旅行·出差时也会使用吗？"
-      ],
-      h: [
-        "海外電圧に非対応のものを海外で使うと故障の原因になります。「必須」を選ぶと、対応が資料で確認できない機種は減点し、店頭確認の注意を出します。",
-        "Using a model that does not support overseas voltage abroad can cause failure. If you "
-          + "choose “Essential”, models whose support cannot be confirmed in the documentation are "
-          + "penalized and flagged for in-store confirmation.",
-        "在海外使用不支持海外电压的机型可能导致故障。选择“必须”后，资料中无法确认支持的机型会被扣分，并提示需在店内确认。"
-      ],
-      o: [
-        [["必須（海外でも使う）", "Essential (I’ll use it overseas)", "必须（海外也会使用）"], "must"],
-        [["できれば対応していてほしい", "Preferably supported", "最好支持"], "like"],
-        [["自宅のみ", "Home use only", "仅在家使用"], "none"]
-      ]
+    k = function (e) {
+      return a(e[1]);
     },
-    G = e => ({
-      id: "hl",
-      st: 2,
-      t: ["髪の長さは？", "How long is your hair?", "头发有多长？"],
-      h: e,
-      o: [
-        [["ショート〜ボブ", "Short to bob", "短发～波波头"], 0],
-        [["ミディアム", "Medium", "中长发"], 1],
-        [["ロング", "Long", "长发"], 2]
-      ]
-    }),
-    de = [
+    _ = function (e) {
+      return a(e[3]);
+    },
+    M = [
       {
-        id: "bud",
-        st: 9,
-        t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
-        h: [
-          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。超えた分は減点で調整します。",
-          "We now know your needs. A pricier model may suit you better, so budget comes last; going "
-            + "over only lowers the score.",
-          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算；超出预算只会扣分。"
-        ],
-        o: [
-          [["〜1万円", "Up to ¥10,000", "1万日元以下"], 1e4],
-          [["〜2万円", "Up to ¥20,000", "2万日元以下"], 2e4],
-          [["〜3.5万円", "Up to ¥35,000", "3.5万日元以下"], 35e3],
-          [["〜4.5万円", "Up to ¥45,000", "4.5万日元以下"], 45e3],
-          [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
-        ]
-      },
-      {
-        id: "wt",
-        st: 2,
-        t: ["本体の重さ、どこまで許せますか？", "How heavy a unit can you tolerate?", "机身重量能接受到多少？"],
-        h: [
-          "乾かしている間ずっと腕で持ちます。目安：超軽量＝360g台／標準＝500g前後／やや重め＝600g弱。",
-          "You hold it with your arm the whole time you dry. Guide: ultra-light = 360 g range / "
-            + "standard = around 500 g / somewhat heavy = just under 600 g.",
-          "吹干期间一直要用手臂拿着。参考：超轻＝360g左右／标准＝500g左右／略重＝接近600g。"
-        ],
-        o: [
-          [["〜400g（とにかく軽く）", "Up to 400 g (as light as possible)", "400g以下（务必轻）"], 400],
-          [["〜500g", "Up to 500 g", "500g以下"], 500],
-          [["〜550g", "Up to 550 g", "550g以下"], 550],
-          [["気にしない", "Don’t mind", "不在意"], 9999]
-        ]
-      },
-      V,
-      G([
-        "長いほど乾かす時間が延び、風量の差が効いてきます。",
-        "The longer your hair, the longer drying takes, and the more airflow differences matter.",
-        "头发越长，吹干时间越久，风量差异的影响就越大。"
-      ]),
-      {
-        id: "vo",
-        st: 2,
-        t: ["髪の量・太さは？", "How much hair do you have, and how thick is it?", "发量·粗细如何？"],
-        h: [
-          "量が多い・太い髪は乾きにくく、速乾力の重みが上がります。",
-          "Thick or abundant hair dries slowly, so drying-speed weight goes up.",
-          "发量多·发质粗的头发不易干，速干力的权重会提高。"
-        ],
-        o: [
-          [["少なめ・細い", "Thin / fine", "少·细"], 0],
-          [["普通", "Average", "普通"], 1],
-          [["多い・太い", "Thick / abundant", "多·粗"], 2]
-        ]
-      },
-      {
-        id: "dm",
+        id: "mount",
         st: 1,
-        t: ["髪のダメージ・クセは？", "How is your hair’s damage and frizz?", "头发的损伤·发质状况如何？"],
+        t: ["テレビはどのように設置しますか？", "How will you set up the TV?", "电视打算如何安置？"],
         h: [
-          "カラー・ブリーチ・パサつきが強いほど、ヘアケア性能の重みを上げます。",
-          "The more color, bleach, and dryness damage, the more weight we give to hair-care performance.",
-          "染发·漂发·毛躁越严重，护发性能的权重就越高。"
+          "台に置く場合は「スタンド脚の幅」、壁掛けの場合は「画面の幅」で置けるかを判定します。壁掛けは別売の金具と壁の下地確認が必要です。",
+          "For stand placement we judge by the stand leg width; for wall mounting, by the screen "
+            + "width. Wall mounting needs a separately sold bracket and a check of the wall backing.",
+          "放在电视柜上时按“底座支脚宽度”判定，壁挂时按“屏幕宽度”判定。壁挂需另购支架并确认墙体底衬。"
         ],
         o: [
-          [["カラー・ブリーチ・パサつきが強い", "Heavy color/bleach damage or dryness", "染发·漂发·毛躁严重"], "high"],
-          [["クセ・うねりが強い", "Strong frizz or waves", "发质不顺·卷曲明显"], "wavy"],
-          [["あまり気にならない", "Not much of a concern", "不太在意"], "none"]
+          [["テレビ台（ローボード）に置く", "Place it on a TV stand (low board)", "放在电视柜（矮柜）上"], "board"],
+          [["壁掛け（金具で壁に取り付ける）", "Wall-mount it with a bracket", "壁挂（用支架固定在墙上）"], "wall"],
+          [
+            ["TVラック・壁寄せスタンドに置く", "Place it on a TV rack / wall-hugging stand", "放在电视架·靠墙支架上"],
+            "floor"
+          ]
         ]
       },
       {
-        id: "wr",
-        st: 2,
-        t: [
-          "今のドライヤーで一番困っていることは？",
-          "What bothers you most about your current dryer?",
-          "目前吹风机最让您困扰的是什么？"
-        ],
-        h: [
-          "困りごとに近い軸を優先的に重みづけします。",
-          "We weight the criteria closest to your pain point more heavily.",
-          "会优先提高与您困扰最接近的维度的权重。"
-        ],
-        o: [
-          [["乾くまで時間がかかる", "It takes a long time to dry", "要很久才能吹干"], "time"],
-          [["熱で髪や頭皮が傷む気がする", "Heat seems to damage my hair or scalp", "感觉热风会伤害头发或头皮"], "heat"],
-          [["重くて腕が疲れる", "It’s heavy and tires my arm", "太重，手臂容易累"], "heavy"],
-          [["特にない", "Nothing in particular", "没有特别困扰"], "none"]
-        ]
-      },
-      {
-        id: "af",
+        id: "width",
         st: 1,
-        t: ["風量は強い方がいいですか？", "Do you want strong airflow?", "希望风量大吗？"],
-        h: [
-          "風量が強いほど乾く時間は短くなりますが、音や重さは増えがちです。髪が多い・長い方ほど差が出ます。",
-          "Stronger airflow dries faster but tends to be louder and heavier. The difference grows with "
-            + "thick or long hair.",
-          "风量越大干得越快，但噪音和重量也容易增加。发量多·头发长的人差异更明显。"
-        ],
-        o: [
-          [["強い方がいい（とにかく早く乾かしたい）", "Strong (I want it dry fast)", "风量大（想尽快吹干）"], 2],
-          [["ふつうでよい", "Average is fine", "普通即可"], 1],
-          [["弱めでよい（静かさ・やさしさ重視）", "Gentle is fine (quiet, soft)", "弱一点也行（重视安静·温和）"], 0]
-        ]
-      },
-      {
-        id: "sn",
-        st: 2,
-        show: () => N("wr") === "heat",
-        t: ["熱で一番気になるのは？", "Where does heat bother you most?", "热量最困扰您的是哪里？"],
-        h: [
-          "頭皮の熱さが気になるなら温度を抑えられる機種を、毛先のパサつきならケア力を重く見ます。（「熱が気になる」と答えた方にだけおたずねします）",
-          "If scalp heat bothers you, we favor gentler temperatures; if dry ends, we weigh care more. "
-            + "(Asked only if heat is your concern.)",
-          "头皮发烫则看重温和温度，发尾干枯则更看重护发力。（仅在选择“在意热量”时询问）"
-        ],
-        o: [
-          [["頭皮・地肌が熱い", "Scalp feels too hot", "头皮发烫"], "scalp"],
-          [["毛先のパサつき・傷み", "Dry, damaged ends", "发尾干枯受损"], "ends"]
-        ]
-      },
-      {
-        id: "pri",
-        st: 3,
         t: [
-          "最後に、どうしても譲れない1点は？",
-          "Finally, what is the one thing you absolutely won’t compromise on?",
-          "最后，您绝对不能让步的一点是？"
+          "設置場所の「横幅」は？（テレビ台の天板の幅／壁掛けなら壁面の空き幅）",
+          "How wide is the space? (width of the TV stand top / free wall width if wall-mounted)",
+          "安装位置的“宽度”是多少？（电视柜台面宽度／壁挂则为墙面空余宽度）"
         ],
         h: [
-          "選んだ軸は評価を約2.2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
-          "The criterion you choose is weighted about 2.2x in the final ranking. You can switch "
-            + "criteria on the final screen to compare.",
-          "您选择的维度在最终排名中权重约为2.2倍。在最终画面可切换维度进行对比。"
+          "台に置く場合は、スタンド脚が台の上に載るかが基準です（画面が台より少し広いのは問題ありません）。壁掛けは画面の幅＋左右の余裕で判定します。",
+          "For stand placement, what matters is whether the stand legs fit on the stand (a screen "
+            + "slightly wider than the stand is fine). For wall mounting, we judge by screen width plus "
+            + "side clearance.",
+          "放在柜上时，以底座支脚能否放上柜面为准（屏幕比柜面稍宽没有问题）。壁挂则按屏幕宽度加左右余量判定。"
+        ],
+        o: [
+          [["〜80cm", "Up to 80 cm", "80cm以下"], 800],
+          [["〜100cm", "Up to 100 cm", "100cm以下"], 1e3],
+          [["〜120cm", "Up to 120 cm", "120cm以下"], 1200],
+          [["〜150cm", "Up to 150 cm", "150cm以下"], 1500],
+          [["〜180cm", "Up to 180 cm", "180cm以下"], 1800],
+          [["180cm以上・制限なし", "180 cm or more / no limit", "180cm以上·无限制"], 9999]
+        ]
+      },
+      {
+        id: "depth",
+        st: 1,
+        t: [
+          "テレビ台の「奥行」は？（台に置く場合）",
+          "How deep is the TV stand? (if placing on a stand)",
+          "电视柜的“深度”是多少？（放在柜上时）"
+        ],
+        h: [
+          "スタンドの奥行が台の天板に収まる必要があります。壁掛けの場合は「制限なし」を選んでください。",
+          "The stand depth must fit on the top of the TV stand. If wall-mounting, choose “no limit”.",
+          "底座深度必须能放进柜面。壁挂时请选择“无限制”。"
+        ],
+        o: [
+          [["〜25cm（薄型ラック）", "Up to 25 cm (slim rack)", "25cm以下（薄型架）"], 250],
+          [["〜30cm", "Up to 30 cm", "30cm以下"], 300],
+          [["〜40cm", "Up to 40 cm", "40cm以下"], 400],
+          [
+            ["40cm以上・壁掛けなど制限なし", "40 cm or more / no limit (e.g. wall-mounted)", "40cm以上·壁挂等无限制"],
+            9999
+          ]
+        ]
+      },
+      {
+        id: "height",
+        st: 1,
+        t: [
+          "テレビの上の「空き高さ」は？（台の天板から、窓・エアコン・棚までの高さ）",
+          "How much free height is above the TV? (from the stand top to the window, air conditioner, or shelf)",
+          "电视上方的“空余高度”是多少？（从柜面到窗户·空调·架子的高度）"
+        ],
+        h: [
+          "台に置く場合はスタンド込みの高さ（画面＋約4〜7cm）で判定します。壁掛けは画面の高さで判定します。",
+          "For stand placement we judge by height including the stand (screen + about 4–7 cm). For "
+            + "wall mounting, by screen height.",
+          "放在柜上时按含底座的高度（屏幕＋约4～7cm）判定。壁挂则按屏幕高度判定。"
+        ],
+        o: [
+          [["〜60cm（窓下・低い棚の下）", "Up to 60 cm (under a window / low shelf)", "60cm以下（窗下·矮架下方）"], 600],
+          [["〜80cm", "Up to 80 cm", "80cm以下"], 800],
+          [["〜100cm", "Up to 100 cm", "100cm以下"], 1e3],
+          [["100cm以上・制限なし", "100 cm or more / no limit", "100cm以上·无限制"], 9999]
+        ]
+      },
+      {
+        id: "dist",
+        st: 1,
+        t: [
+          "ソファ（座る位置）からテレビまでの「視聴距離」は？",
+          "What is the viewing distance from the sofa (your seat) to the TV?",
+          "从沙发（座位）到电视的“观看距离”是多少？"
+        ],
+        h: [
+          "距離から、ちょうどよい画面サイズ（距離×22〜32型が目安）を割り出します。極端に近いと大画面は不向きです。",
+          "From the distance we work out a suitable screen size (about distance × 22–32 inches). Very "
+            + "short distances are unsuited to large screens.",
+          "根据距离推算合适的屏幕尺寸（参考：距离×22～32英寸）。距离过近则不适合大屏。"
+        ],
+        o: [
+          [
+            ["1.0m未満（ベッド脇・デスク・キッチン）", "Under 1.0 m (bedside, desk, kitchen)", "不足1.0m（床边·书桌·厨房）"],
+            1
+          ],
+          [["1.2〜1.5m（寝室・ワンルーム）", "1.2–1.5 m (bedroom, studio)", "1.2～1.5m（卧室·单间）"], 1.4],
+          [["1.8〜2.2m（標準的なリビング）", "1.8–2.2 m (typical living room)", "1.8～2.2m（一般客厅）"], 2],
+          [["2.5m前後（広めのリビング）", "Around 2.5 m (larger living room)", "2.5m左右（较宽敞的客厅）"], 2.5],
+          [["3m以上（14畳以上・シアター）", "3 m or more (14+ tatami / theater)", "3m以上（14叠以上·影院）"], 3.2]
+        ]
+      },
+      {
+        id: "path",
+        st: 1,
+        t: [
+          "搬入経路で一番狭い・小さい場所は？（玄関・廊下・階段・エレベーター）",
+          "What is the narrowest or smallest spot on the delivery route? (entrance, hallway, stairs, elevator)",
+          "搬入路线上最窄·最小的地方是哪里？（玄关·走廊·楼梯·电梯）"
+        ],
+        h: [
+          "大型テレビは梱包が画面幅より約15cm大きく、長辺で運びます。階段やエレベーターの大きさで運べる最大サイズが決まります（目安。最終は下見で確認）。",
+          "Large TV packaging is about 15 cm wider than the screen and is carried by its long side. "
+            + "The size of stairs and elevators sets the maximum size you can bring in (a guide; final "
+            + "check by site visit).",
+          "大屏电视的包装比屏幕宽度大约15cm，需以长边搬运。楼梯和电梯的大小决定可搬入的最大尺寸（仅供参考，最终以上门勘察为准）。"
         ],
         o: [
           [
             [
-              "とにかく速く乾かしたい（速乾力）",
-              "I want it to dry as fast as possible (drying speed)",
-              "无论如何都想尽快吹干（速干力）"
+              "階段・小型エレベーターで狭い（〜55型まで目安）",
+              "Narrow stairs / small elevator (up to about 55 in.)",
+              "楼梯·小电梯较窄（约55英寸以内）"
             ],
-            "speed"
+            1400
           ],
-          [["髪のうるおい・ダメージケア", "Hair moisture and damage care", "头发的润泽·损伤护理"], "care"],
-          [["軽さ・疲れにくさ", "Lightness / less fatigue", "轻量·不易疲劳"], "light"],
-          [["海外・携帯性", "Overseas use / portability", "海外使用·便携性"], "travel"],
-          [["価格の安さ", "Low price", "价格便宜"], "price"]
+          [
+            [
+              "一般的なマンションのエレベーター（〜65型まで目安）",
+              "Typical apartment elevator (up to about 65 in.)",
+              "一般公寓电梯（约65英寸以内）"
+            ],
+            1700
+          ],
+          [["やや広い（〜75型まで目安）", "Somewhat wide (up to about 75 in.)", "较宽（约75英寸以内）"], 2e3],
+          [
+            ["広い・戸建て1階など制限なし", "Wide / no limit (e.g. ground floor of a house)", "宽敞·无限制（如独栋1楼）"],
+            9999
+          ]
         ]
-      }
-    ],
-    he = [
+      },
+      {
+        id: "mov",
+        st: 2,
+        t: [
+          "映画・ドラマ・配信の「画質」へのこだわりは？",
+          "How much do you care about picture quality for movies, dramas, and streaming?",
+          "对观看电影·电视剧·流媒体的“画质”有多大要求？"
+        ],
+        h: [
+          "黒の深さ・コントラスト・色の鮮やかさを重みづけします。有機ELやMini LEDが得意な領域です。",
+          "We weight black depth, contrast, and color vividness. This is where OLED and Mini LED excel.",
+          "会对黑色深度·对比度·色彩鲜艳度加权。这是OLED和Mini LED的强项。"
+        ],
+        o: [
+          [["最高の画質で観たい", "I want the best picture quality", "想要最好的画质"], 3],
+          [["きれいなら十分", "Good-looking is enough", "画面漂亮就够了"], 2],
+          [["普通でOK", "Ordinary is fine", "普通就可以"], 1],
+          [["画質より価格を優先", "Price over picture quality", "价格优先于画质"], .3]
+        ]
+      },
+      {
+        id: "light",
+        st: 2,
+        t: ["テレビを見る部屋の明るさは？", "How bright is the room where you watch TV?", "观看电视的房间亮度如何？"],
+        h: [
+          "日中に明るい部屋ではMini LEDなど輝度の高いパネルが有利、暗くして観るなら有機ELが映えます。",
+          "In rooms that are bright in the daytime, high-brightness panels such as Mini LED have the "
+            + "edge; if you watch in the dark, OLED shines.",
+          "白天明亮的房间里Mini LED等高亮度面板更有利，关灯观看则OLED更出色。"
+        ],
+        o: [
+          [
+            [
+              "南向きの大きな窓・昼間はかなり明るい",
+              "Large south-facing windows; quite bright in the daytime",
+              "朝南大窗·白天相当明亮"
+            ],
+            "b"
+          ],
+          [
+            [
+              "一般的な明るさ（昼夜ふつうに見る）",
+              "Average brightness (watch normally day and night)",
+              "一般亮度（昼夜都正常观看）"
+            ],
+            "n"
+          ],
+          [
+            [
+              "夜に照明を落として映画を観ることが多い",
+              "Often watch movies at night with the lights dimmed",
+              "经常在夜晚调暗灯光看电影"
+            ],
+            "d"
+          ]
+        ]
+      },
+      {
+        id: "game",
+        st: 2,
+        t: [
+          "ゲーム（PS5・ゲーミングPCなど）の利用は？",
+          "Do you use it for gaming (PS5, gaming PC, etc.)?",
+          "是否用于游戏（PS5·游戏PC等）？"
+        ],
+        h: [
+          "4K 120Hz・VRR・低遅延を使うには、HDMI 2.1対応のモデルが必要です。",
+          "To use 4K 120 Hz, VRR, and low latency, you need an HDMI 2.1 model.",
+          "要使用4K 120Hz·VRR·低延迟，需要支持HDMI 2.1的机型。"
+        ],
+        o: [
+          [
+            [
+              "PS5・PCで4K 120Hz／VRRを使いたい（必須）",
+              "I want 4K 120 Hz / VRR with a PS5 or PC (essential)",
+              "想用PS5·PC开启4K 120Hz／VRR（必须）"
+            ],
+            3
+          ],
+          [["Switchなどを軽く遊ぶ程度", "Only light gaming, e.g. Switch", "只是用Switch等轻度游戏"], 1.5],
+          [["ほとんどしない", "Almost never", "基本不玩"], .3]
+        ]
+      },
+      {
+        id: "rec",
+        st: 2,
+        t: [
+          "地上波の「録画」はどのくらい使いますか？",
+          "How much will you use recording of terrestrial broadcasts?",
+          "地面波电视节目的“录像”会用到什么程度？"
+        ],
+        h: [
+          "タイムシフトマシン（REGZA）は対応番組を全自動で録り続けます。内蔵HDDは外付け不要ですぐ録画できます。",
+          "Time Shift Machine (REGZA) keeps recording supported programs automatically. A built-in HDD "
+            + "lets you record right away without an external drive.",
+          "时移功能（REGZA）会自动持续录制支持的节目。内置硬盘无需外接即可立即录像。"
+        ],
+        o: [
+          [
+            [
+              "全チャンネルを自動録画（タイムシフト）したい",
+              "I want to auto-record all channels (time shift)",
+              "想自动录制全部频道（时移）"
+            ],
+            "ts"
+          ],
+          [
+            [
+              "本体にHDD内蔵で、買ってすぐ録画したい",
+              "I want a built-in HDD so I can record right after buying",
+              "希望内置硬盘，买来就能录像"
+            ],
+            "int"
+          ],
+          [
+            [
+              "見たい番組だけ外付けHDDにたまに録画",
+              "Occasionally record only shows I want to an external HDD",
+              "偶尔只把想看的节目录到外接硬盘"
+            ],
+            "ext"
+          ],
+          [
+            [
+              "配信・TVer中心で録画は不要",
+              "Mostly streaming / TVer; no recording needed",
+              "主要看流媒体·TVer，不需要录像"
+            ],
+            "none"
+          ]
+        ]
+      },
+      {
+        id: "snd",
+        st: 2,
+        t: [
+          "テレビ本体の「音」への期待は？",
+          "What do you expect from the TV’s built-in sound?",
+          "对电视本身的“音质”有何期待？"
+        ],
+        h: [
+          "出力が大きく音響技術のあるモデルは、サウンドバー無しでも迫力があります。",
+          "Models with high output and audio technology sound powerful even without a soundbar.",
+          "功率大、具备音响技术的机型，即使不加回音壁也很有气势。"
+        ],
+        o: [
+          [
+            [
+              "サウンドバー無しでも迫力の音で聴きたい",
+              "I want powerful sound even without a soundbar",
+              "不加回音壁也想听到震撼音效"
+            ],
+            "prem"
+          ],
+          [["セリフがはっきり聞こえればよい", "Clear dialogue is enough", "台词听得清楚就行"], "clear"],
+          [
+            ["サウンドバー・アンプを使うので気にしない", "I’ll use a soundbar/amp, so I don’t mind", "会使用回音壁·功放，所以不在意"],
+            "ext"
+          ]
+        ]
+      },
+      {
+        id: "sz",
+        st: 2,
+        t: ["画面サイズの希望は？", "What screen size do you prefer?", "希望的屏幕尺寸是？"],
+        h: [
+          "置けるなら大きく、は後悔の少ない選び方です。ただし視聴距離に合う範囲が前提です。",
+          "Going as big as will fit is a low-regret choice, as long as it suits your viewing distance.",
+          "能放下就选大一点，后悔较少。但前提是要符合观看距离。"
+        ],
+        o: [
+          [["置ける範囲で大きめ（迫力重視）", "As big as fits (impact first)", "在能放下的范围内尽量大（重视冲击力）"], "big"],
+          [
+            ["視聴距離にちょうどいい標準", "Standard size right for the viewing distance", "与观看距离相称的标准尺寸"],
+            "std"
+          ],
+          [["コンパクトでよい", "Compact is fine", "小巧即可"], "small"]
+        ]
+      },
       {
         id: "bud",
-        st: 9,
+        st: 2,
         t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
         h: [
-          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。超えた分は減点で調整します。",
-          "We now know your needs. A pricier model may suit you better, so budget comes last; going "
-            + "over only lowers the score.",
-          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算；超出预算只会扣分。"
+          "予算を超える機種は大きく減点します（ゼロにはしません）。",
+          "Models over budget are heavily penalized (but not ruled out entirely).",
+          "超出预算的机型会被大幅扣分（但不会直接排除）。"
         ],
         o: [
-          [["〜5千円", "Up to ¥5,000", "5千日元以下"], 5e3],
-          [["〜1.5万円", "Up to ¥15,000", "1.5万日元以下"], 15e3],
-          [["〜2.5万円", "Up to ¥25,000", "2.5万日元以下"], 25e3],
+          [["〜6万円", "Up to ¥60,000", "6万日元以下"], 6e4],
+          [["〜15万円", "Up to ¥150,000", "15万日元以下"], 15e4],
+          [["〜30万円", "Up to ¥300,000", "30万日元以下"], 3e5],
+          [["〜50万円", "Up to ¥500,000", "50万日元以下"], 5e5],
           [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
-        ]
-      },
-      {
-        id: "sh",
-        st: 1,
-        t: ["どんなスタイリングをしたいですか？", "What kind of styling do you want?", "想做什么样的造型？"],
-        h: [
-          "ストレート専用機は、本格的なカールが苦手（毛先の内巻き程度が目安）。カールが必須なら2WAYが有利です。",
-          "Straight-only models struggle with real curls (inward curling of the ends is about the "
-            + "limit). If curls are essential, a 2-way model is better.",
-          "直发专用机不擅长做完整的卷发（大致只能做发尾内卷）。如果必须卷发，2WAY更有利。"
-        ],
-        o: [
-          [["ストレート中心", "Mostly straightening", "以直发为主"], "straight"],
-          [["カール中心", "Mostly curling", "以卷发为主"], "curl"],
-          [["1台でどちらもしたい", "Both with one unit", "一台兼顾两者"], "both"]
-        ]
-      },
-      V,
-      G([
-        "長いほど処理に時間がかかり、立ち上がりの速さと軽さが効いてきます。",
-        "The longer your hair, the more time it takes, so heat-up speed and lightness matter more.",
-        "头发越长，造型耗时越久，升温速度和轻量性就越重要。"
-      ]),
-      {
-        id: "dm",
-        st: 1,
-        t: ["髪のダメージ・クセは？", "How is your hair’s damage and frizz?", "头发的损伤·发质状况如何？"],
-        h: [
-          "カラー・ブリーチ・パサつきが強いほど、プレートのケア性能の重みを上げます。",
-          "The more color, bleach, and dryness damage, the more weight we give to plate care performance.",
-          "染发·漂发·毛躁越严重，夹板护理性能的权重就越高。"
-        ],
-        o: [
-          [["カラー・ブリーチ・パサつきが強い", "Heavy color/bleach damage or dryness", "染发·漂发·毛躁严重"], "high"],
-          [["クセ・うねりが強い", "Strong frizz or waves", "发质不顺·卷曲明显"], "wavy"],
-          [["あまり気にならない", "Not much of a concern", "不太在意"], "none"]
-        ]
-      },
-      {
-        id: "fq",
-        st: 2,
-        t: ["使う頻度は？", "How often do you use it?", "使用频率如何？"],
-        h: [
-          "毎日使うほど髪へのダメージが積み重なり、ケア重視に。たまに使うだけなら価格・軽さが優先です。",
-          "The more often you use it, the more damage accumulates, so care becomes important. For "
-            + "occasional use, price and lightness take priority.",
-          "使用越频繁，对头发的损伤累积越多，应更重视护理。偶尔使用的话，价格与轻量优先。"
-        ],
-        o: [
-          [["ほぼ毎日", "Almost daily", "几乎每天"], "daily"],
-          [["週に数回", "A few times a week", "每周几次"], "some"],
-          [["前髪・お出かけ時のみ", "Only for bangs / when going out", "仅用于刘海／外出时"], "occ"]
-        ]
-      },
-      {
-        id: "rs",
-        st: 2,
-        t: ["朝の準備にかけられる時間は？", "How much time do you have for morning prep?", "早晨准备能花多少时间？"],
-        h: [
-          "時間が短いほど「立ち上がりの速さ」の重みを上げます。",
-          "The shorter your time, the more weight we give to heat-up speed.",
-          "时间越短，“升温速度”的权重越高。"
-        ],
-        o: [
-          [["とにかく急いでいる（数分）", "In a big hurry (a few minutes)", "非常赶时间（几分钟）"], "rush"],
-          [["ゆとりがある", "Have some time to spare", "时间比较充裕"], "calm"]
-        ]
-      },
-      {
-        id: "cv",
-        st: 2,
-        show: () => ["curl", "both"].includes(N("sh")),
-        t: ["どんな仕上がりのカールにしたいですか？", "What kind of curl finish do you want?", "想要什么样的卷度？"],
-        h: [
-          "ゆるく毛先だけならストレート兼用でも十分。しっかり巻くなら2WAYが有利です。（カールを選んだ方にだけおたずねします）",
-          "For soft ends-only curls, a straight iron is fine; for defined curls a 2-way is better. "
-            + "(Asked only if you want curls.)",
-          "只卷发尾轻柔卷度，直发夹也够用；要明显卷度则2WAY更有利。（仅在想要卷发时询问）"
-        ],
-        o: [
-          [["ゆるふわ・毛先だけ", "Soft waves / ends only", "柔和卷·只卷发尾"], "soft"],
-          [["しっかり巻きたい", "Defined curls", "明显卷度"], "tight"]
         ]
       },
       {
@@ -4678,615 +5582,893 @@ window.NJ_HEAR = (function () {
           "最后，您绝对不能让步的一点是？"
         ],
         h: [
-          "選んだ軸は評価を約2.2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
-          "The criterion you choose is weighted about 2.2x in the final ranking. You can switch "
-            + "criteria on the final screen to compare.",
-          "您选择的维度在最终排名中权重约为2.2倍。在最终画面可切换维度进行对比。"
+          "選んだ軸は評価を約2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
+          "The criterion you choose is weighted about 2x in the final ranking. You can switch criteria "
+            + "on the final screen to compare.",
+          "您选择的维度在最终排名中权重约为2倍。在最终画面可切换维度进行对比。"
         ],
         o: [
-          [["立ち上がりの速さ", "Heat-up speed", "升温速度"], "heat"],
-          [["髪を傷めないケア性能", "Care performance that protects hair", "不伤发的护理性能"], "care"],
-          [["軽さ・手首への負担", "Lightness / less wrist strain", "轻量·减轻手腕负担"], "light"],
-          [["カールもできる", "Can also curl", "也能卷发"], "shape"],
-          [["価格の安さ", "Low price", "价格便宜"], "price"]
+          [["価格の安さ", "Low price", "价格便宜"], "price"],
+          [["画面サイズ・迫力", "Screen size / impact", "屏幕尺寸·冲击力"], "sizefit"],
+          [["画質（黒の深さ・色）", "Picture quality (black depth, color)", "画质（黑色深度·色彩）"], "picture"],
+          [["明るい部屋での見やすさ", "Visibility in bright rooms", "明亮房间里的可视性"], "bright"],
+          [["ゲーム性能（120Hz・VRR）", "Gaming performance (120 Hz, VRR)", "游戏性能（120Hz·VRR）"], "game"],
+          [["録画のしやすさ", "Ease of recording", "录像便利性"], "rec"],
+          [["音の良さ", "Good sound", "音质好"], "sound"]
         ]
       }
-    ];
-  let l = null;
-  const O = () => l.mode === "dryer" ? de : he,
-    U = e => O().filter(t => t.st === e && (!t.show || t.show())).sort((x, y) => ORD(x) - ORD(y)),
-    N = e => {
-      const t = O().filter(o => o.id === e)[0], s = l.a[e];
-      return s == null || t.show && !t.show() ? null : t.o[s][1];
-    },
-    S = e => {
-      const t = O().filter(o => o.id === e)[0], s = l.a[e];
-      return s == null ? "—" : a(t.o[s][0]);
-    },
-    Z = () => Q.filter(e => e.mode === l.mode);
-  function pe(e) {
-    const t = [], s = [], o = [];
-    let d = 0;
-    const n = N("bud"), c = N("wt"), r = N("tr"), g = N("sh");
-    return n != null
-      && (
-        e.price > n
-          ? (
-            d += Math.min(35, (e.price - n) / n * 90 + 8),
-              s.push(
-                p(["{0}は予算を超えます（減点）", "{0} is over budget (score reduced)", "{0}超出预算（已扣分）"], w(
-                  e.price
-                ))
-              )
-          )
-          : o.push(p(["{0}で予算内", "{0} is within budget", "{0}在预算内"], w(e.price)))
-      ),
-      c != null
-        && (
-          e.g > c
-            ? t.push([
-              "wt",
-              p(["{0}gは許容の重さを超えます", "{0} g exceeds your weight limit", "{0}g超出可接受的重量"], e.g)
-            ])
-            : o.push(p(["{0}gで許容内", "{0} g is within your limit", "{0}g在可接受范围内"], e.g))
-        ),
-      g === "curl"
-        && e.shape === "straight"
-        && (
-          s.push(
-            a([
-              "ストレート専用機：本格的なカールは苦手（毛先の内巻き程度）",
-              "Straight-only: not good at real curls (inward curling of the ends at best)",
-              "直发专用机：不擅长做完整卷发（最多做发尾内卷）"
-            ])
-          ),
-            d += 30
-        ),
-      g === "both"
-        && e.shape === "straight"
-        && (
-          s.push(
-            a([
-              "ストレート専用機：カールは簡単な内巻き程度",
-              "Straight-only: curls are limited to a simple inward curl",
-              "直发专用机：卷发仅限简单的内卷"
-            ])
-          ),
-            d += 14
-        ),
-      (g === "curl" || g === "both")
-        && e.shape === "2way"
-        && o.push(a(["1台でカールもストレートもできる", "Can curl and straighten with one unit", "一台即可卷发和直发"])),
-      r === "must"
-        && !e.os
-        && (
-          s.push(
-            a([
-              "海外電圧への対応が資料で確認できません（店頭で要確認）",
-              "Overseas voltage support cannot be confirmed in the documentation (check in store)",
-              "资料中无法确认是否支持海外电压（需在店内确认）"
-            ])
-          ),
-            d += 25
-        ),
-      r && r !== "none" && e.os && o.push(a(["海外対応", "Overseas compatible", "支持海外电压"])),
-      { ng: t, wn: s, ok: o, pen: d };
-  }
-  function me(e) {
-    return e.mode === "dryer"
-      ? {
-        speed: T(D[e.r.speed] + (e.air ? (e.air - 2) * .5 : 0), 1, 5),
-        care: D[e.r.care],
-        light: T(5 - (e.g - 360) / 70, 1, 5),
-        travel: e.os ? 5 : 2,
-        price: e.price <= 1e4
-          ? 5
-          : e.price <= 2e4 ? 4 : e.price <= 35e3 ? 3 : e.price <= 42e3 ? 2 : 1.5
-      }
-      : {
-        heat: T(5 - (e.hu - 18) / 9, 1, 5),
-        care: D[e.r.care],
-        light: T(5 - (e.g - 295) / 45, 1, 5),
-        shape: e.shape === "2way" ? 5 : 2,
-        price: e.price <= 5e3
-          ? 5
-          : e.price <= 13e3 ? 4 : e.price <= 16e3 ? 3.5 : e.price <= 23e3 ? 2.5 : 2
-      };
-  }
-  function $() {
-    const e = o => N(o), t = {};
-    if (l.mode === "dryer") {
-      const o = e("hl") || 0, d = e("vo") || 0, n = e("dm"), c = e("wr"), r = e("tr");
-      t.speed = 1
-        + o * .5
-        + d * .6
-        + (c === "time" ? 1.6 : 0)
-        + (N("af") == null ? 0 : N("af") * .9),
-        t.care = 1
-          + (n === "high" ? 2 : n === "wavy" ? 1.3 : 0)
-          + (c === "heat" ? 1.6 : 0)
-          + (N("sn") === "ends" ? 1.4 : N("sn") === "scalp" ? .8 : 0),
-        t.light = 1 + (c === "heavy" ? 2 : 0) + (o === 0 ? .3 : 0),
-        t.travel = r === "must" ? 2.5 : r === "like" ? 1.6 : .4,
-        t.price = 1.3;
-    } else {
-      const o = e("hl") || 0, d = e("dm"), n = e("fq"), c = e("rs"), r = e("sh");
-      t.heat = 1 + (c === "rush" ? 2 : 0) + o * .3 + (n === "daily" ? .4 : 0),
-        t.care = 1
-          + (d === "high" ? 2 : d === "wavy" ? 1.2 : 0)
-          + (n === "daily" ? 1 : n === "some" ? .4 : 0),
-        t.light = 1 + (n === "occ" ? .8 : 0) + (o === 0 ? .3 : 0),
-        t.shape = (r === "curl" ? 3 : r === "both" ? 2.2 : .6) + (N("cv") === "tight" ? 1.5 : 0),
-        t.price = 1.3 + (n === "occ" ? .9 : 0);
-    }
-    const s = e("pri");
-    return s && (t[s] *= 2.2), t;
-  }
-  function I() {
-    const e = $();
-    return Z().map(t => {
-      const s = pe(t), o = me(t);
-      let d = 0, n = 0;
-      z().forEach(r => {
-        d += e[r[0]] * o[r[0]] / 5, n += e[r[0]];
+    ],
+    V = function (e) {
+      return M.filter(function (t) {
+        return t.st === e;
       });
-      const c = 100 * d / n - s.pen - s.ng.length * 40;
-      return { p: t, h: s, a: o, W: e, sc: T(Math.round(c), 1, 99), t: ie(t) };
+    },
+    ne = function (e) {
+      return M.indexOf(e);
+    },
+    f = function (e) {
+      var t = M.filter(function (o) {
+        return o.id === e;
+      })[0],
+        i = u.a[e];
+      return i == null ? null : t.o[i][1];
+    },
+    D = function (e) {
+      var t = M.filter(function (o) {
+        return o.id === e;
+      })[0],
+        i = u.a[e];
+      return i == null ? "—" : a(t.o[i][0]);
+    };
+  function U() {
+    var e = f("dist") || 2, t = e * 22, i = e * 32, o = f("sz") || "std";
+    return o === "big" ? (t = i, i = i * 1.35) : o === "small" && (i = t * 1.1, t = t * .8), [t, i];
+  }
+  function re(e) {
+    var t = [],
+      i = [],
+      o = [],
+      s = f("mount"),
+      n = s === "wall",
+      d = f("width"),
+      r = f("depth"),
+      c = f("height"),
+      h = f("dist"),
+      p = f("path");
+    if (
+      d != null
+        && (
+          n
+            ? e.pw + 100 > d
+              ? t.push([
+                "wd",
+                m([
+                  "画面幅約{0}mm＋左右の余裕が、壁面の空き幅に入りません",
+                  "Screen width of about {0} mm plus side clearance does not fit the free wall width",
+                  "屏幕宽度约{0}mm加上左右余量，放不进墙面空余宽度"
+                ], e.pw)
+              ])
+              : o.push(
+                m([
+                  "画面幅約{0}mm（壁面に収まる）",
+                  "Screen width about {0} mm (fits the wall)",
+                  "屏幕宽度约{0}mm（可装进墙面）"
+                ], e.pw)
+              )
+            : e.sw + 20 > d
+              ? t.push([
+                "sw",
+                m([
+                  "スタンド脚の幅約{0}mmがテレビ台に載りません",
+                  "Stand leg width of about {0} mm does not fit on the TV stand",
+                  "底座支脚宽度约{0}mm放不上电视柜"
+                ], e.sw)
+              ])
+              : (
+                o.push(
+                  m([
+                    "スタンド脚幅約{0}mm（台に載る）",
+                    "Stand leg width about {0} mm (fits on the stand)",
+                    "底座支脚宽度约{0}mm（可放上柜面）"
+                  ], e.sw)
+                ),
+                  e.pw > d
+                    && i.push(
+                      m([
+                        "画面幅約{0}mmが台からはみ出します（転倒防止の対策を推奨）",
+                        "Screen width of about {0} mm overhangs the stand (anti-tip measures recommended)",
+                        "屏幕宽度约{0}mm超出柜面（建议采取防倾倒措施）"
+                      ], e.pw)
+                    )
+              )
+        ),
+        r != null
+          && !n
+          && (
+            e.sd > r
+              ? t.push([
+                "sd",
+                m([
+                  "スタンド奥行約{0}mmが台の奥行に収まりません",
+                  "Stand depth of about {0} mm does not fit the stand depth",
+                  "底座深度约{0}mm放不进柜面深度"
+                ], e.sd)
+              ])
+              : o.push(
+                m([
+                  "スタンド奥行約{0}mm（台に収まる）",
+                  "Stand depth about {0} mm (fits on the stand)",
+                  "底座深度约{0}mm（可放进柜面）"
+                ], e.sd)
+              )
+          ),
+        c != null
+    ) {
+      var b = n ? e.ph : e.th;
+      b + 30 > c
+        ? t.push([
+          "ht",
+          m([
+            "高さ約{0}mm＋余裕が、上の空きに入りません",
+            "Height of about {0} mm plus clearance does not fit the space above",
+            "高度约{0}mm加上余量，放不进上方空间"
+          ], b)
+        ])
+        : o.push(
+          m([
+            "高さ約{0}mm（上の空きに収まる）",
+            "Height about {0} mm (fits the space above)",
+            "高度约{0}mm（可放进上方空间）"
+          ], b)
+        );
+    }
+    if (h != null) {
+      var z = U();
+      e.size > h * 40
+        ? t.push([
+          "ds",
+          m([
+            "視聴距離に対して画面が大きすぎます（目安 約{0}型まで）",
+            "The screen is too big for the viewing distance (up to about {0} in.)",
+            "相对观看距离，屏幕过大（参考：最大约{0}英寸）"
+          ], Math.floor(h * 40))
+        ])
+        : e.size < h * 16
+          ? i.push(
+            a([
+              "視聴距離に対して画面が小さめ（迫力不足の恐れ）",
+              "The screen is a little small for the viewing distance (may lack impact)",
+              "相对观看距离，屏幕偏小（可能缺乏冲击力）"
+            ])
+          )
+          : e.size >= z[0] * .9
+            && e.size <= z[1] * 1.1
+            && o.push(
+              m([
+                "画面サイズが視聴距離に合う（{0}型）",
+                "Screen size suits the viewing distance ({0} in.)",
+                "屏幕尺寸与观看距离相符（{0}英寸）"
+              ], e.size)
+            );
+    }
+    return p != null
+      && (
+        e.box > p
+          ? t.push([
+            "pa",
+            m([
+              "梱包の長辺約{0}mmが搬入経路を通れない恐れ",
+              "The long side of the packaging (about {0} mm) may not pass through the delivery route",
+              "包装长边约{0}mm可能无法通过搬入路线"
+            ], e.box)
+          ])
+          : p < 9999
+            && o.push(
+              a(["搬入経路を通過できる見込み", "Likely to pass through the delivery route", "预计可通过搬入路线"])
+            )
+      ),
+      n
+        && (
+          e.kg > 25
+            ? i.push(
+              m([
+                "重量約{0}kg：壁の下地補強・専用金具が必要",
+                "Weight about {0} kg: wall reinforcement and a dedicated bracket are required",
+                "重量约{0}kg：需要加固墙体底衬并使用专用支架"
+              ], e.kg)
+            )
+            : o.push(
+              a([
+                "壁掛けには別売の金具が必要（下地確認はスタッフが案内）",
+                "A separately sold bracket is needed for wall mounting (staff will guide the wall-backing check)",
+                "壁挂需另购支架（墙体底衬确认由店员指导）"
+              ])
+            )
+        ),
+      f("game") === 3
+        && !(e.hz >= 120 && e.hdmi21 === "Yes")
+        && i.push(
+          a([
+            "4K 120Hz／HDMI 2.1に非対応（ゲーム用途には不向き）",
+            "No support for 4K 120 Hz / HDMI 2.1 (not suited to gaming)",
+            "不支持4K 120Hz／HDMI 2.1（不适合游戏用途）"
+          ])
+        ),
+      f("rec") === "ts"
+        && e.timeShift !== "Yes"
+        && i.push(
+          a([
+            "タイムシフト（全チャンネル自動録画）に非対応",
+            "No time shift (auto-recording of all channels)",
+            "不支持时移（自动录制全部频道）"
+          ])
+        ),
+      { ng: t, wn: i, ok: o };
+  }
+  function se(e) {
+    var t = U(),
+      i = e.size < t[0] ? t[0] - e.size : e.size > t[1] ? e.size - t[1] : 0,
+      o = { OLED: 5, "Mini LED": 4.3, QLED: 3.6, LED: 3 },
+      s = o[e.panel] - (e.res === "2K" ? .4 : 0),
+      n = e.panel === "Mini LED"
+        ? 5
+        : e.panel === "QLED"
+          ? 3.8
+          : e.panel === "LED"
+            ? e.id === "t9" ? 4 : 3.4
+            : e.id === "t17" ? 3.6 : e.id === "t18" ? 3.5 : e.id === "t15" ? 3.2 : 2.6,
+      d = e.hz >= 144 && e.hdmi21 === "Yes"
+        ? 5
+        : e.hz >= 120 && e.hdmi21 === "Yes" ? 4.5 : ee[e.grades.game],
+      r = e.timeShift === "Yes"
+        ? 5
+        : e.id === "t4" ? f("rec") === "int" ? 5 : 4.5 : e.grades.rec === "◎" ? 4.5 : 3,
+      c = e.wat,
+      h = c >= 100
+        ? 5
+        : c >= 60 ? 4.5 : c >= 40 ? 4 : c >= 30 ? 3.5 : c >= 15 ? 3 : c >= 10 ? 2.5 : 2,
+      p = e.price <= 5e4
+        ? 5
+        : e.price <= 9e4
+          ? 4.5
+          : e.price <= 15e4
+            ? 3.5
+            : e.price <= 25e4 ? 2.5 : e.price <= 35e4 ? 2 : e.price <= 45e4 ? 1.5 : 1;
+    return {
+      sizefit: W(5 - i / 7, 1, 5),
+      picture: s,
+      bright: n,
+      game: d,
+      rec: r,
+      sound: h,
+      price: p
+    };
+  }
+  function oe() {
+    var e = function (d, r) {
+      var c = f(d);
+      return c ?? r;
+    },
+      t = { b: 3, n: 1.5, d: .3 }[f("light")];
+    t == null && (t = 1.5);
+    var i = { ts: 3, int: 2.5, ext: 1, none: .3 }[f("rec")];
+    i == null && (i = 1);
+    var o = { prem: 3, clear: 2, ext: .3 }[f("snd")];
+    o == null && (o = 1.5);
+    var s = f("pri"),
+      n = {
+        sizefit: 3,
+        picture: (.5 + e("mov", 1.5) * 1.2) * (f("light") === "d" ? 1.25 : 1),
+        bright: .5 + t * 1.2,
+        game: .5 + e("game", 1) * 1.2,
+        rec: .5 + i * 1.2,
+        sound: .5 + o * 1.2,
+        price: 1.5
+      };
+    return s && (n[s] *= 2.2), n;
+  }
+  function x() {
+    var e = oe(), t = f("bud") || 1e9;
+    return R.map(function (i) {
+      var o = re(i), s = se(i), n = 0, d = 0;
+      L.forEach(function (h) {
+        n += e[h[0]] * s[h[0]] / 5, d += e[h[0]];
+      });
+      var r = 100 * n / d - o.wn.length * 12 - o.ng.length * 40, c = i.price > t;
+      return c && (r -= Math.min(35, (i.price - t) / t * 90 + 8)),
+        { p: i, h: o, a: s, sc: Math.max(1, Math.min(99, Math.round(r))), over: c, t: ie(i) };
     });
   }
-  const M = e => e.filter(t => !t.h.ng.length), ue = e => e.slice().sort((t, s) => s.sc - t.sc);
-  function ge(e, t) {
-    const s = performance.now(), o = +e.textContent || 0;
-    (function d(n) {
-      const c = Math.min(1, (n - s) / 450);
-      e.textContent = Math.round(o + (t - o) * c), c < 1 && requestAnimationFrame(d);
-    })(s);
+  var A = function (e) {
+    return e.filter(function (t) {
+      return !t.h.ng.length;
+    });
+  },
+    de = function (e) {
+      return e.slice().sort(function (t, i) {
+        return i.sc - t.sc;
+      });
+    };
+  function le(e, t) {
+    var i = performance.now(), o = +e.textContent || 0;
+    (function s(n) {
+      var d = Math.min(1, (n - i) / 450);
+      e.textContent = Math.round(o + (t - o) * d), d < 1 && requestAnimationFrame(s);
+    })(i);
   }
-  function fe() {
-    const e = document.getElementById("dr-n");
-    e && ge(e, M(I()).length);
+  function ce() {
+    var e = document.getElementById("tv-n");
+    e && le(e, A(x()).length);
   }
-  function L(e, t) {
-    t || l.hist.push(l.v), l.v = e, l.back = !!t, P(), f.scrollTo({ top: 0 });
+  function I(e, t) {
+    t || u.hist.push(u.v), u.v = e, u.back = !!t, K(), w.scrollTo({ top: 0 });
   }
-  function P() {
-    const e = l.v;
-    let t = "", s = 0;
-    const o = F(),
-      d = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
-        + (o === "ja" ? " selected" : "")
+  function K() {
+    var e = u.v,
+      t = "",
+      i = 0,
+      o = M.length,
+      s = j(),
+      n = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
+        + (s === "ja" ? " selected" : "")
         + '>日本語</option><option value="en"'
-        + (o === "en" ? " selected" : "")
+        + (s === "en" ? " selected" : "")
         + '>English</option><option value="zh"'
-        + (o === "zh" ? " selected" : "")
+        + (s === "zh" ? " selected" : "")
         + ">中文</option></select>",
-      n = '<div class="fr-top"><button class="fr-x" data-a="close">'
+      d = '<div class="fr-top"><button class="fr-x" data-a="close">'
         + a(["← 一覧へ", "← Back to list", "← 返回列表"])
         + "</button><b>"
-        + p(["ノジマ式 {0}相談", "Nojima {0} Advisor", "Nojima {0}选购咨询"], _())
+        + a(["ノジマ式 テレビ相談", "Nojima TV Advisor", "Nojima 电视选购咨询"])
         + "</b>"
-        + d
+        + n
         + '<span class="fr-pill">'
-        + p([
-          '該当<i id="dr-n">{0}</i>/{1}機種',
-          '<i id="dr-n">{0}</i>/{1} match',
-          '符合<i id="dr-n">{0}</i>/{1}款'
-        ], M(I()).length, Z().length)
-        + '</span></div><div class="fr-prog"><div id="dr-pg"></div></div>';
+        + m([
+          '該当<i id="tv-n">{0}</i>/{1}機種',
+          '<i id="tv-n">{0}</i>/{1} match',
+          '符合<i id="tv-n">{0}</i>/{1}款'
+        ], A(x()).length, R.length)
+        + '</span></div><div class="fr-prog"><div id="tv-pg"></div></div>';
     if (e === "intro")
-      t = ye(), s = 4;
+      t = he(), i = 3;
     else if (e === "r1")
-      t = ve(), s = 38;
+      t = fe(), i = 45;
     else if (e === "r2")
-      t = we(), s = 72;
+      t = pe(), i = 90;
     else if (e === "final")
-      t = ke(), s = 100;
+      t = ge(), i = 100;
     else if (e === "staff")
-      t = xe(), s = 100;
+      t = ve(), i = 100;
     else {
-      const c = U(e.st)[e.i];
-      t = be(c, e), s = { 1: 6 + e.i * 10, 2: 40 + e.i * 7, 3: 74, 9: 88 }[e.st];
+      var r = V(e.st)[e.i];
+      t = me(r, e), i = 5 + ne(r) / o * 88;
     }
-    f.className = "fr-root on" + (l.back ? " fr-back" : ""),
-      f.innerHTML = n + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
-      requestAnimationFrame(() => {
-        const c = document.getElementById("dr-pg");
-        c && (c.style.width = s + "%");
+    w.className = "fr-root on" + (u.back ? " fr-back" : ""),
+      w.innerHTML = d + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
+      requestAnimationFrame(function () {
+        var c = document.getElementById("tv-pg");
+        c && (c.style.width = i + "%");
       });
   }
-  function ye() {
-    const e = a(["〜", "–", "～"]),
-      t = a(["／", " / ", "／"]),
-      s = '<div class="dr-tabs"><button data-a="mode" data-m="dryer" class="'
-        + (l.mode === "dryer" ? "on" : "")
-        + '">'
-        + a(["💨 ドライヤー", "💨 Hair dryer", "💨 吹风机"])
-        + '</button><button data-a="mode" data-m="iron" class="'
-        + (l.mode === "iron" ? "on" : "")
-        + '">'
-        + a(["🔥 ヘアアイロン", "🔥 Hair iron", "🔥 卷直发器"])
-        + "</button></div>",
-      o = B.filter(n => n.mode === l.mode),
-      d = o.map((n, c) => {
-        const r = Q.filter(u => u.type === n.id),
-          g = r.map(u => u.price),
-          b = r.map(u => u.g),
-          x = l.mode === "dryer"
-            ? ""
-            : p(
-              ["／立ち上がり{0}秒", " / heat-up {0} sec", "／升温{0}秒"],
-              Math.min.apply(0, r.map(u => u.hu))
-                + (r.length > 1 ? e + Math.max.apply(0, r.map(u => u.hu)) : "")
-            );
+  function he() {
+    var e = function (s) {
+      return Math.min.apply(0, s);
+    },
+      t = function (s) {
+        return Math.max.apply(0, s);
+      },
+      i = T.map(function (s, n) {
+        var d = R.filter(function (p) {
+          return p.groupId === s.id;
+        }),
+          r = d.map(function (p) {
+            return p.size;
+          }),
+          c = d.map(function (p) {
+            return p.pw;
+          }),
+          h = d.map(function (p) {
+            return p.price;
+          });
         return '<div class="fr-card fr-up" style="--i:'
-          + (c + 1)
-          + '" data-a="type">'
-          + ne(n, c * .3)
+          + (n + 1)
+          + '" data-a="type" data-i="'
+          + n
+          + '">'
+          + ae(s.lay, (n * .5).toFixed(1))
           + "<h3>"
-          + A(n)
+          + H(s)
           + "</h3><small>"
-          + a(n.sub)
+          + a(s.sub)
           + "・"
-          + r.length
+          + d.length
           + a(["機種", " models", "款"])
           + '</small><div class="fr-more"><div><span>'
           + a(["向く方", "Best for", "适合人群"])
           + "</span>"
-          + a(n.who)
+          + a(s.who)
           + "</div><div><span>"
           + a(["強み", "Strengths", "优点"])
           + "</span>"
-          + a(n.pro)
+          + a(s.pro)
           + "</div><div><span>"
           + a(["注意", "Watch out", "注意"])
           + "</span>"
-          + a(n.con)
+          + a(s.con)
           + "</div><div><span>"
           + a(["目安", "Range", "参考"])
           + "</span>"
-          + w(Math.min.apply(0, g))
-          + (r.length > 1 ? e + w(Math.max.apply(0, g)) : "")
-          + t
-          + Math.min.apply(0, b)
-          + (r.length > 1 ? e + Math.max.apply(0, b) : "")
-          + "g"
-          + x
-          + '</div><div class="dr-models">📋 '
-          + r.map(u => u.mfg + " " + E(u).replace(/\s*\(.*\)/, "")).join(a([" ／ ", " / ", " ／ "]))
+          + m([
+            "{0}〜{1}型／画面幅 約{2}〜{3}cm／{4}〜",
+            "{0}–{1} in. / screen width approx. {2}–{3} cm / from {4}",
+            "{0}～{1}英寸／屏幕宽约{2}～{3}cm／{4}起"
+          ], e(r), t(r), Math.round(e(c) / 10), Math.round(t(c) / 10), S(e(h)))
           + "</div></div></div>";
-      }).join("");
+      }).join(""),
+      o = '<div class="fr-box fr-up" style="--i:7"><h3>'
+        + a([
+          "まず知っておきたい「パネル」と「サイズ」の違い",
+          "Basics to know first: panel types and sizes",
+          "先了解“面板”与“尺寸”的区别"
+        ])
+        + '</h3><table class="tv-cmp"><tr><th>'
+        + a(["液晶(LED)", "LCD (LED)", "液晶(LED)"])
+        + "</th><td>"
+        + a([
+          "安価で明るい部屋に強い。4Kなら日常使いに十分。黒はやや浮いて見える",
+          "Inexpensive and strong in bright rooms. 4K is plenty for everyday use. Blacks look slightly washed out.",
+          "价格实惠，适合明亮房间。4K足以满足日常使用。黑色略显发灰。"
+        ])
+        + "</td></tr><tr><th>Mini LED</th><td>"
+        + a([
+          "小さなLEDで細かく光を制御。<b>明るさと色の鮮やかさ</b>が強み。120Hz以上のゲーム対応機が多い",
+          "Tiny LEDs control light finely. Strengths are <b>brightness and vivid color</b>. Many "
+            + "models support 120 Hz+ gaming.",
+          "以微小LED精细控光，强项是<b>亮度与色彩鲜艳度</b>。多数机型支持120Hz以上游戏。"
+        ])
+        + "</td></tr><tr><th>"
+        + a(["有機EL", "OLED", "有机EL"])
+        + "</th><td>"
+        + a([
+          "画素が自ら発光し、黒は完全な漆黒。<b>暗い部屋での映画</b>に最適。昼の映り込みには注意",
+          "Pixels emit their own light, so blacks are perfectly black. Ideal for <b>movies in a dark "
+            + "room</b>. Watch out for reflections in daytime.",
+          "像素自发光，黑色为纯黑。最适合<b>在暗室中看电影</b>。白天需注意反光。"
+        ])
+        + "</td></tr><tr><th>"
+        + a(["距離とサイズ", "Distance & size", "距离与尺寸"])
+        + "</th><td>"
+        + a([
+          "視聴距離1m＝約22〜32型／1.5m＝約33〜48型／2m＝約44〜64型／2.5m＝約55〜80型／3m＝約66型〜 が目安",
+          "Rough guide: 1 m = about 22–32 in. / 1.5 m = 33–48 in. / 2 m = 44–64 in. / 2.5 m = 55–80 "
+            + "in. / 3 m = 66 in. and up",
+          "参考：观看距离1m＝约22～32英寸／1.5m＝约33～48英寸／2m＝约44～64英寸／2.5m＝约55～80英寸／3m＝约66英寸以上"
+        ])
+        + "</td></tr><tr><th>"
+        + a(["設置の絶対条件", "Must-check installation", "安装硬性条件"])
+        + "</th><td>"
+        + a([
+          "置く場所の<b>幅・奥行・上の空き高さ</b>、搬入経路。台置きは<b>画面幅ではなくスタンド脚の幅</b>が基準です",
+          "The placement spot’s <b>width, depth, and clearance above</b>, plus the delivery route. For "
+            + "stand placement, the <b>stand leg width, not the screen width</b>, is the standard.",
+          "放置位置的<b>宽度·深度·上方空余高度</b>以及搬入路线。放在柜上时，以<b>底座支脚宽度而非屏幕宽度</b>为准。"
+        ])
+        + '</td></tr></table><p class="tv-src">'
+        + a([
+          "※寸法・重量は画面サイズから算出した目安です。最終の寸法確認は店頭スタッフがカタログで行います。",
+          "* Dimensions and weights are estimates calculated from screen size. Final dimension checks "
+            + "are done by in-store staff using the catalog.",
+          "※尺寸·重量为根据屏幕尺寸推算的参考值。最终尺寸确认由店员对照目录进行。"
+        ])
+        + "</p></div>";
     return '<span class="fr-tag fr-up">'
       + a(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
-      + "</span>"
-      + s
-      + '<h1 class="fr-h1 fr-up" style="--i:1">'
-      + p([
-        "{0}は、大きく<em>{1}つのタイプ</em>に分かれます",
-        "{0}s fall into <em>{1} main types</em>",
-        "{0}大致分为<em>{1}种类型</em>"
-      ], _(), o.length)
-      + '</h1><p class="fr-p fr-up" style="--i:2">'
+      + '</span><h1 class="fr-h1 fr-up" style="--i:1">'
       + a([
-        "タップでタイプごとの違いと、店頭でご案内できる機種が見られます。",
-        "Tap a card to see how the types differ and which models we can show you in store.",
-        "点击卡片可查看各类型的差异以及店内可介绍的机型。"
+        "テレビは、大きく<em>5つのタイプ</em>に分かれます",
+        "TVs fall into <em>5 main types</em>",
+        "电视大致分为<em>5种类型</em>"
       ])
-      + '</p><div class="dr-flow fr-up" style="--i:2"><span><b>'
-      + a(["前半", "Part 1", "前半"])
-      + "</b>"
-      + a(["絶対条件", "Must-haves", "硬性条件"])
-      + "</span><span><b>"
-      + a(["後半", "Part 2", "后半"])
-      + "</b>"
-      + a(["こだわり", "Preferences", "偏好"])
-      + "</span><span><b>"
-      + a(["最終", "Final", "最终"])
-      + "</b>"
-      + a(["譲れない1点", "Non-negotiable", "不可让步的一点"])
-      + "</span><span><b>"
-      + a(["提案", "Result", "推荐"])
-      + "</b>"
-      + a(["3機種", "3 models", "3款"])
-      + '</span></div><div class="fr-types">'
-      + d
-      + '</div><button class="fr-btn" data-a="start">'
+      + '</h1><p class="fr-p fr-up" style="--i:2">'
+      + m([
+        "タップでタイプごとの違いを確認できます。そのあと、<b>設置条件（絶対条件）</b>→<b>見え方・使い方のこだわり</b>→<b>譲れない1点</b>の順におたずねして、店頭在庫{0}機種から3機種に絞ります。",
+        "Tap a card to see how the types differ. Then we ask about <b>installation limits "
+          + "(must-haves)</b> → <b>viewing and usage preferences</b> → <b>your one non-negotiable</b>, "
+          + "narrowing {0} in-store models to 3.",
+        "点击卡片查看各类型差异。之后依次询问<b>安装条件（硬性条件）</b>→<b>观看·使用偏好</b>→<b>不可让步的一点</b>，从店内{0}款中筛出3款。"
+      ], R.length)
+      + '</p><div class="fr-types">'
+      + i
+      + "</div>"
+      + o
+      + '<button class="fr-btn" data-a="start">'
       + a(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
       + "</button>";
   }
-  function be(e, t) {
-    const s = U(t.st),
+  function me(e, t) {
+    var i = V(t.st),
       o = a(
         {
-          1: ["前半｜まず優先して聞きたいこと", "Part 1 | Top priorities first", "前半｜优先确认的事项"],
-          2: ["後半｜重さ・髪質・使い方", "Part 2 | Weight, hair type and usage", "后半｜重量·发质·使用方式"],
-          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"],
-          9: ["最後｜ご予算", "Last | Your budget", "最后｜预算"]
+          1: [
+            "前半｜絶対条件（置けるか・収まるか・運べるか）",
+            "Part 1 | Must-haves (will it fit, will it sit, can it be delivered)",
+            "前半｜硬性条件（放得下·装得进·搬得进）"
+          ],
+          2: ["後半｜見え方・使い方のこだわり", "Part 2 | Viewing and usage preferences", "后半｜观看·使用偏好"],
+          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"]
         }[t.st]
       ),
-      d = e.o.map(
-        (n, c) => '<button class="fr-opt fr-up'
-          + (l.a[e.id] === c ? " sel" : "")
+      s = e.o.map(function (n, d) {
+        return '<button class="fr-opt fr-up'
+          + (u.a[e.id] === d ? " sel" : "")
           + '" style="--i:'
-          + (c + 1)
+          + (d + 1)
           + '" data-a="pick" data-i="'
-          + c
+          + d
           + '"><span class="ck">'
-          + (l.a[e.id] === c ? "✓" : "")
+          + (u.a[e.id] === d ? "✓" : "")
           + "</span>"
           + a(n[0])
-          + "</button>"
-      ).join("");
+          + "</button>";
+      }).join("");
     return '<span class="fr-tag">'
       + o
-      + '</span>'
-      + TP()
-      + '<div class="fr-q"><div class="no">Q'
+      + '</span><div class="fr-q"><div class="no">Q'
       + (t.i + 1)
       + " / "
-      + s.length
+      + i.length
       + "</div><h2>"
       + a(e.t)
       + '</h2><div class="fr-hint">💡 '
       + a(e.h)
       + "</div>"
-      + d
+      + s
       + '</div><button class="fr-btn s" data-a="back">'
       + a(["← ひとつ戻る", "← Back", "← 返回上一步"])
       + "</button>";
   }
-  function ve() {
-    const e = I(), t = M(e), s = {};
-    e.forEach(
-      r => r.h.ng.forEach(g => {
-        s[g[0]] = (s[g[0]] || 0) + 1;
-      })
-    );
-    const o = B.filter(r => r.mode === l.mode).map((r, g) => {
-      const b = e.filter(u => u.t === r), x = b.filter(u => !u.h.ng.length).length;
+  function ue(e) {
+    var t = 15,
+      i = 95,
+      o = function (r) {
+        return (W(r, t, i) - t) / (i - t) * 100;
+      },
+      s = e * 22,
+      n = e * 32,
+      d = [24, 32, 43, 55, 65, 75, 85].map(function (r) {
+        return '<div class="tv-tk" style="left:'
+          + o(r)
+          + '%"><i></i>'
+          + r
+          + a(["型", '"', "寸"])
+          + "</div>";
+      }).join("");
+    return '<div class="tv-meter"><div class="tv-track"><div class="tv-band" style="left:'
+      + o(s)
+      + "%;width:"
+      + (o(n) - o(s))
+      + '%"></div></div>'
+      + d
+      + '<div class="tv-mk" style="left:'
+      + o((s + n) / 2)
+      + '%"><span>'
+      + m(["おすすめ 約{0}〜{1}型", "Recommended ~{0}–{1} in.", "推荐约{0}～{1}英寸"], Math.round(s), Math.round(
+        n
+      ))
+      + "</span></div></div>";
+  }
+  function fe() {
+    var e = x(), t = A(e), i = {}, o = f("dist"), s = [];
+    e.forEach(function (h) {
+      h.h.ng.forEach(function (p) {
+        i[p[0]] = (i[p[0]] || 0) + 1;
+      });
+    });
+    var n = T.map(function (h, p) {
+      var b = e.filter(function (y) {
+        return y.t === h;
+      }),
+        z = b.filter(function (y) {
+          return !y.h.ng.length;
+        }).length;
       return '<div class="fr-row fr-up" style="--i:'
-        + g
-        + '"><b style="width:9em">'
-        + A(r)
+        + p
+        + '"><b style="width:9.6em">'
+        + H(h)
         + '</b><div class="fr-bar'
-        + (x ? "" : " g")
+        + (z ? "" : " g")
         + '"><i style="width:'
-        + (b.length ? x / b.length * 100 : 0)
+        + (b.length ? z / b.length * 100 : 0)
         + "%;--i:"
-        + g
+        + p
         + '"></i></div><span style="width:3.4em;text-align:right">'
-        + x
+        + z
         + "/"
         + b.length
         + "</span></div>";
     }).join(""),
-      d = Object.keys(s).map(
-        r => '<span class="fr-chip ng">'
-          + p(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], a(se[r]), s[r])
-          + "</span>"
-      ).join("")
-        || '<span class="fr-chip ok">' + a(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>",
-      n = t.filter(r => r.h.wn.length).length,
-      c = l.mode === "dryer"
-        ? p([
-          "予算 {0}／重さ {1}／海外 {2}",
-          "Budget {0} / Weight {1} / Overseas {2}",
-          "预算 {0}／重量 {1}／海外 {2}"
-        ], S("bud"), S("wt"), S("tr"))
-        : p([
-          "予算 {0}／スタイル {1}／海外 {2}",
-          "Budget {0} / Style {1} / Overseas {2}",
-          "预算 {0}／造型 {1}／海外 {2}"
-        ], S("bud"), S("sh"), S("tr"));
+      d = Object.keys(i).map(function (h) {
+        return '<span class="fr-chip ng">'
+          + m(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], a(te[h]), i[h])
+          + "</span>";
+      }).join("")
+        || '<span class="fr-chip ok">' + a(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>";
+    o != null
+      && s.push(
+        m([
+          "<b>サイズの考え方</b>：視聴距離（{0}）なら、画面は <b>約{1}〜{2}型</b> がちょうどよい範囲です。",
+          "<b>How size is chosen</b>: for a viewing distance of ({0}), the screen sweet spot is "
+            + "<b>about {1}–{2} in.</b>",
+          "<b>尺寸的考虑方式</b>：观看距离为（{0}）时，屏幕<b>约{1}～{2}英寸</b>最为合适。"
+        ], D("dist"), Math.round(o * 22), Math.round(o * 32))
+      ),
+      t.length
+        && s.push(
+          m(
+            [
+              "設置条件を満たす中で一番大きいのは <b>{0}型</b>、一番小さいのは <b>{1}型</b> です。",
+              "Among models meeting your installation conditions, the largest is <b>{0} in.</b> and the "
+                + "smallest is <b>{1} in.</b>",
+              "在满足安装条件的机型中，最大的是<b>{0}英寸</b>，最小的是<b>{1}英寸</b>。"
+            ],
+            Math.max.apply(
+              0,
+              t.map(function (h) {
+                return h.p.size;
+              })
+            ),
+            Math.min.apply(
+              0,
+              t.map(function (h) {
+                return h.p.size;
+              })
+            )
+          )
+        ),
+      f("mount") === "wall"
+        ? s.push(
+          a([
+            "壁掛けは画面の幅・高さで判定しています。重い機種（約25kg超）は壁の下地補強が必要になるため注意つきで表示します。",
+            "Wall mounting is judged by screen width and height. Heavy models (over about 25 kg) need "
+              + "wall reinforcement, so they are shown with a caution.",
+            "壁挂按屏幕宽度·高度判定。较重的机型（约25kg以上）需要加固墙体底衬，因此会附带注意事项显示。"
+          ])
+        )
+        : s.push(
+          a([
+            "台置きは「スタンド脚の幅」が台に載るかで判定しています。画面が台より広い機種は、はみ出し注意つきで表示します。",
+            "Stand placement is judged by whether the stand leg width fits on the stand. Models whose "
+              + "screen is wider than the stand are shown with an overhang caution.",
+            "放在柜上按“底座支脚宽度”能否放上柜面判定。屏幕比柜面宽的机型会附带超出提醒。"
+          ])
+        );
+    var r = t.filter(function (h) {
+      return h.h.wn.length;
+    }).length,
+      c = o != null
+        ? '<div class="fr-box"><h3>'
+          + a([
+            "視聴距離から見た、ちょうどよい画面サイズ",
+            "Ideal screen size for your viewing distance",
+            "根据观看距离得出的合适屏幕尺寸"
+          ])
+          + "</h3>"
+          + ue(o)
+          + "</div>"
+        : "";
     return '<span class="fr-tag">'
       + a(["前半の結果", "Part 1 result", "前半结果"])
       + '</span><h1 class="fr-h1">'
-      + p([
+      + m([
         "絶対条件で、<em>{0}機種</em>に絞り込みました",
         "Your must-haves narrowed it to <em>{0} models</em>",
         "根据硬性条件，已筛选出<em>{0}款</em>"
       ], t.length)
       + '</h1><p class="fr-p">'
+      + m([
+        "設置 {0}／幅 {1}／奥行 {2}／高さ {3}／距離 {4}／搬入 {5}",
+        "Setup {0} / Width {1} / Depth {2} / Height {3} / Distance {4} / Delivery {5}",
+        "安置 {0}／宽 {1}／深 {2}／高 {3}／距离 {4}／搬入 {5}"
+      ], D("mount"), D("width"), D("depth"), D("height"), D("dist"), D("path"))
+      + "</p>"
       + c
-      + '</p><div class="fr-box"><h3>'
+      + '<div class="fr-box"><h3>'
       + a(["タイプ別に残った機種数", "Models remaining by type", "各类型剩余机型数"])
       + "</h3>"
-      + o
+      + n
       + '</div><div class="fr-box"><h3>'
       + a(["外れた理由", "Why models were excluded", "被排除的原因"])
       + "</h3>"
       + d
+      + '<p class="fr-p" style="margin:8px 0 0">'
+      + s.join("<br>")
       + (
-        n
-          ? '<p class="fr-p" style="margin:8px 0 0">'
-            + p([
-              "残った機種のうち {0} 機種に注意点（減点）があります。最終画面に明記します。",
-              "{0} of the remaining models have caution points (penalties). These are noted on the final screen.",
-              "剩余机型中有{0}款存在注意事项（扣分）。将在最终画面中标明。"
-            ], n)
-            + "</p>"
+        r
+          ? "<br>"
+            + m(["（要確認の注意つき：{0}機種）", "(with cautions to check: {0} models)", "（需确认的注意事项：{0}款）"], r)
           : ""
       )
-      + "</div>"
+      + "</p></div>"
       + (
         t.length < 3
           ? '<div class="fr-win">'
             + a([
-              "⚠️ 条件にぴったり合う機種が3つ未満です。最終提案では「条件外」の近い機種も参考に表示します（赤字で明記）。条件を見直すと選択肢が広がる場合があります。",
-              "⚠️ Fewer than 3 models match your conditions exactly. The final proposal also shows close "
-                + "“out-of-spec” models for reference (marked in red). Revisiting your conditions may widen "
-                + "your options.",
-              "⚠️ 完全符合条件的机型不足3款。最终推荐中也会参考性地显示接近的“条件外”机型（以红字标明）。重新考虑条件可能会增加选择。"
+              "⚠️ 条件にぴったり合う機種が3つ未満です。後半では「条件外」の近い機種も参考に表示します（赤字で明記）。台の幅・上の空き・搬入経路を見直すと選択肢が広がる場合があります。",
+              "⚠️ Fewer than 3 models match your conditions exactly. In Part 2 we also show close "
+                + "“out-of-spec” models for reference (marked in red). Rechecking the stand width, clearance "
+                + "above, and delivery route may widen your options.",
+              "⚠️ 完全符合条件的机型不足3款。后半部分也会参考性地显示接近的“条件外”机型（以红字标明）。重新核对台面宽度·上方空间·搬入路线，可能会增加选择。"
             ])
             + "</div>"
           : ""
       )
       + '<button class="fr-btn" data-a="next">'
-      + a(["後半の質問へ →", "To Part 2 →", "前往后半部分 →"])
+      + a(["後半の質問へ（こだわり7問）→", "To Part 2 (7 preference questions) →", "前往后半部分（7个偏好问题）→"])
+      + '</button><button class="fr-btn k" data-a="staff">'
+      + a(["📸 スタッフに見せる（条件メモ）", "📸 Show to staff (requirements memo)", "📸 出示给店员（条件备忘）"])
       + '</button><button class="fr-btn s" data-a="back">'
       + a(["← 前半をやり直す", "← Redo Part 1", "← 重做前半部分"])
       + "</button>";
   }
-  function we() {
-    const e = I(),
-      t = M(e),
-      s = z(),
-      o = $(),
-      d = Math.max.apply(0, s.map(h => o[h[0]])),
-      n = B.filter(h => h.mode === l.mode).map(h => {
-        const y = t.filter(v => v.t === h);
+  function pe() {
+    var e = x(),
+      t = A(e),
+      i = T.map(function (r) {
+        var c = t.filter(function (h) {
+          return h.t === r;
+        });
         return {
-          t: h,
-          n: y.length,
-          v: s.map(v => y.length ? y.reduce((i, H) => i + H.a[v[0]], 0) / y.length : 0)
+          t: r,
+          n: c.length,
+          v: L.map(function (h) {
+            return c.length
+              ? c.reduce(function (p, b) {
+                return p + b.a[h[0]];
+              }, 0)
+                / c.length
+              : 0;
+          })
         };
       }),
-      c = F() === "en",
-      r = h => c ? k(h).split(" ")[0] : k(h).slice(0, 4);
-    let g = '<div class="fr-heat" style="grid-template-columns:6.4em repeat(5,1fr)"><div class="hd"></div>'
-      + s.map(h => '<div class="hd">' + h[2] + "<br>" + r(h) + "</div>").join("");
-    n.forEach((h, y) => {
-      g += '<div class="rn">'
-        + (c ? A(h.t) : A(h.t).slice(0, 9))
+      o = function (r) {
+        return j() === "en" ? k(r).split(" ")[0] : k(r).slice(0, 4);
+      },
+      s = '<div class="fr-heat" style="grid-template-columns:7.4em repeat(7,1fr);min-width:480px"><div '
+        + 'class="hd"></div>'
+        + L.map(function (r) {
+          return '<div class="hd">' + r[2] + "<br>" + o(r) + "</div>";
+        }).join("");
+    i.forEach(function (r, c) {
+      s += '<div class="rn">'
+        + H(r.t)
         + '<br><small style="color:#94a3b8">'
-        + h.n
+        + r.n
         + a(["機種", " models", "款"])
         + "</small></div>"
-        + h.v.map(
-          (v, i) => '<div style="--a:'
-            + (v ? (v / 5 * .85).toFixed(2) : 0)
+        + r.v.map(function (h, p) {
+          return '<div style="--a:'
+            + (h ? (h / 5 * .85).toFixed(2) : 0)
             + ";--i:"
-            + (y * 5 + i)
+            + (c * 7 + p)
             + ";color:"
-            + (v > 3.2 ? "#fff" : "#334155")
+            + (h > 3.2 ? "#fff" : "#334155")
             + '">'
-            + (v ? v.toFixed(1) : "—")
-            + "</div>"
-        ).join("");
+            + (h ? h.toFixed(1) : "—")
+            + "</div>";
+        }).join("");
     }),
-      g += "</div>";
-    const b = s.map(
-      (h, y) => '<div class="fr-row fr-up" style="--i:'
-        + y
-        + '"><b style="width:7.4em">'
-        + h[2]
+      s += "</div>";
+    var n = L.map(function (r, c) {
+      return '<div class="fr-row fr-up" style="--i:'
+        + c
+        + ';align-items:flex-start"><b style="width:8em">'
+        + r[2]
         + " "
-        + k(h)
-        + '</b><div class="fr-bar"><i style="width:'
-        + o[h[0]] / d * 100
-        + "%;--i:"
-        + y
-        + '"></i></div></div>'
-    ).join(""),
-      x = s.map(
-        (h, y) => '<div class="fr-row fr-up" style="--i:'
-          + y
-          + ';align-items:flex-start"><b style="width:7.4em">'
-          + h[2]
-          + " "
-          + k(h)
-          + '</b><span style="flex:1;color:#475569">'
-          + X(h)
-          + "</span></div>"
-      ).join(""),
-      u = n.filter(h => h.n).map(
-        h => '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
-          + A(h.t)
-          + "</b>"
-          + a(["：", ": ", "："])
-          + a(h.t.pro)
+        + k(r)
+        + '</b><span style="flex:1;color:#475569">'
+        + _(r)
+        + "</span></div>";
+    }).join(""),
+      d = i.filter(function (r) {
+        return r.n;
+      }).map(function (r) {
+        return '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
+          + H(r.t)
+          + "</b>："
+          + a(r.t.pro)
           + a(["。", ". ", "。"])
           + '<span style="color:#b45309">'
-          + a(h.t.con)
-          + "</span></div>"
-      ).join("");
+          + a(r.t.con)
+          + "</span></div>";
+      }).join("");
     return '<span class="fr-tag">'
       + a(["後半の結果", "Part 2 result", "后半结果"])
       + '</span><h1 class="fr-h1">'
-      + a(["お客様の<em>重みづけ</em>が決まりました", "Your <em>weighting</em> is set", "您的<em>权重设置</em>已确定"])
+      + a([
+        "タイプごとの<em>違い</em>を見てみましょう",
+        "Let’s look at the <em>differences</em> between types",
+        "来看看各类型的<em>差异</em>"
+      ])
       + '</h1><p class="fr-p">'
       + a([
-        "髪質・お悩みから、5つの評価軸の重要度を自動で決めました（長いほど重視）。このあと最後の1点で、さらに優先軸を決めます。",
-        "Based on your hair type and concerns, we set the importance of the 5 criteria automatically "
-          + "(longer bar = more weight). Next, your final pick sets the top priority.",
-        "根据您的发质和困扰，已自动确定5个评价维度的重要度（条越长越重视）。接下来通过最后一个问题进一步确定优先维度。"
+        "条件に合う機種の平均点です（濃いほど得意・5点満点）。あなたの回答に応じて、この7つの軸で重みづけして点数をつけます。",
+        "Average scores of matching models (darker = stronger, out of 5). Based on your answers, we "
+          + "weight these 7 criteria to score each model.",
+        "符合条件机型的平均分（颜色越深越强，满分5分）。根据您的回答，对这7个维度加权打分。"
       ])
       + '</p><div class="fr-box"><h3>'
-      + a(["あなたの重みづけ", "Your weighting", "您的权重设置"])
-      + "</h3>"
-      + b
-      + '</div><div class="fr-box"><h3>'
-      + a([
-        "タイプ × 評価軸（平均点・5点満点）",
-        "Type × criteria (average score, out of 5)",
-        "类型 × 评价维度（平均分·满分5分）"
-      ])
+      + a(["タイプ × 評価軸", "Type × criteria", "类型 × 评价维度"])
       + '</h3><div style="overflow-x:auto">'
-      + g
+      + s
       + '</div></div><div class="fr-box"><h3>'
       + a(["タイプごとの特徴", "Traits of each type", "各类型的特点"])
       + "</h3>"
-      + u
+      + d
       + '</div><div class="fr-box"><h3>'
       + a(["評価軸の見方", "How to read the criteria", "评价维度说明"])
       + "</h3>"
-      + x
+      + n
       + '</div><button class="fr-btn" data-a="next">'
       + a(["最後の質問へ →", "To the last question →", "前往最后一个问题 →"])
       + '</button><button class="fr-btn s" data-a="back">'
       + a(["← 後半をやり直す", "← Redo Part 2", "← 重做后半部分"])
       + "</button>";
   }
-  const K = (e, t) => t.slice().sort((s, o) => o.a[e] - s.a[e] || o.sc - s.sc)[0];
-  function ee() {
-    const e = ue(I()), t = e.filter(s => !s.h.ng.length).slice(0, 3);
-    for (let s = 0; t.length < 3 && s < e.length; s++)
-      t.indexOf(e[s]) < 0 && t.push(e[s]);
+  function Y(e, t) {
+    return t.slice().sort(function (i, o) {
+      return o.a[e] - i.a[e] || o.sc - i.sc;
+    })[0];
+  }
+  function q() {
+    for (var e = de(x()), t = e.filter(function (o) {
+      return !o.h.ng.length;
+    }).slice(0, 3), i = 0; t.length < 3 && i < e.length; i++)
+      t.indexOf(e[i]) < 0 && t.push(e[i]);
     return { all: e, top: t };
   }
-  function ke() {
-    const e = ee(),
+  function ge() {
+    var e = q(),
       t = e.top,
-      s = z(),
-      o = l.ax || N("pri") || s[0][0],
-      d = s.filter(i => i[0] === o)[0],
-      n = K(o, t),
-      c = K(o, M(e.all)),
-      r = t[0].W,
-      g = s.slice().sort((i, H) => r[H[0]] - r[i[0]]).slice(0, 2),
-      b = s.map(
-        i => '<button data-a="ax" data-k="'
-          + i[0]
+      i = u.ax || f("pri") || "sizefit",
+      o = L.filter(function (l) {
+        return l[0] === i;
+      })[0],
+      s = Y(i, t),
+      n = Y(i, A(e.all)),
+      d = L.map(function (l) {
+        return '<button data-a="ax" data-k="'
+          + l[0]
           + '" class="'
-          + (i[0] === o ? "on" : "")
+          + (l[0] === i ? "on" : "")
           + '">'
-          + i[2]
+          + l[2]
           + " "
-          + k(i)
-          + "</button>"
-      ).join(""),
-      x = '<div class="fr-win"><b>'
-        + p([
-          "{0} 「{1}」を譲れないなら →{2}",
+          + k(l)
+          + "</button>";
+      }).join(""),
+      r = '<div class="fr-win"><b>'
+        + m([
+          "{0} 「{1}」を譲れないなら → {2}",
           "{0} If “{1}” is non-negotiable → {2}",
           "{0} 若“{1}”不可让步 → {2}"
-        ], d[2], k(d), E(n.p))
+        ], o[2], k(o), s.p.name)
         + "</b>"
         + a(["（", " (", "（"])
-        + n.p.mfg
+        + s.p.maker
         + " / "
-        + w(n.p.price)
+        + S(s.p.price)
         + a(["）", ")", "）"])
         + "<br>"
-        + X(d)
+        + _(o)
         + a(["。", ". ", "。"])
         + (
-          c && c !== n && c.a[o] > n.a[o]
+          n && n !== s && n.a[i] > s.a[i]
             ? "<br>"
-              + p([
+              + m([
                 "さらに「{0}」に特化するなら <b>{1}</b>（{2}）も候補です。",
                 "For an even stronger “{0}”, <b>{1}</b> ({2}) is also a candidate.",
                 "若要更突出“{0}”，<b>{1}</b>（{2}）也是候选。"
-              ], k(d), E(c.p), w(c.p.price))
+              ], k(o), n.p.name, S(n.p.price))
             : a([
               "この3機種の中ではここが最も強い項目です。",
               "This is the strongest criterion among these 3 models.",
@@ -5294,127 +6476,217 @@ window.NJ_HEAR = (function () {
             ])
         )
         + "</div>",
-      u = t.map((i, H) => {
-        const j = i.p,
-          Se = s.filter(m => K(m[0], t) === i && i.a[m[0]] >= 3.5).map(
-            m => '<span class="fr-chip ok">'
-              + m[2]
-              + p(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], k(m))
-              + "</span>"
-          ).join(""),
-          te = g.filter(m => i.a[m[0]] >= 3.5).map(m => k(m)).join(a(["・", ", ", "·"])),
-          Ae = s.map(
-            (m, Ne) => '<div class="fr-row" style="margin-bottom:5px"><b style="width:7.4em;'
-              + (m[0] === o ? "color:#d97706" : "")
+      c = f("mount") === "wall",
+      h = f("width"),
+      p = t.map(function (l, E) {
+        var v = l.p,
+          C = L.filter(function (g) {
+            return Y(g[0], t) === l && l.a[g[0]] >= 3.5;
+          }).map(function (g) {
+            return '<span class="fr-chip ok">'
+              + g[2]
+              + m(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], k(g))
+              + "</span>";
+          }).join(""),
+          we = L.map(function (g, ze) {
+            return '<div class="fr-row" style="margin-bottom:5px"><b style="width:9.4em;'
+              + (g[0] === i ? "color:#d97706" : "")
               + '">'
-              + m[2]
+              + g[2]
               + " "
-              + k(m)
+              + k(g)
               + '</b><div class="fr-bar"><i style="width:'
-              + i.a[m[0]] / 5 * 100
+              + l.a[g[0]] / 5 * 100
               + "%;--i:"
-              + Ne
-              + (m[0] === o ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
-              + '"></i></div></div>'
-          ).join(""),
-          Ee = i.h.ng.map(
-            m => '<li class="n">' + p(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], m[1]) + "</li>"
-          ).concat(i.h.wn.map(m => '<li class="w">' + m + "</li>")).concat(
-            i.h.ok.slice(0, 3).map(m => "<li>" + m + "</li>")
-          ).join("");
+              + ze
+              + (g[0] === i ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
+              + '"></i></div></div>';
+          }).join(""),
+          Q = "";
+        if (h && h < 9999) {
+          var X = c ? v.pw : v.sw, J = W(X / h * 100, 0, 100);
+          Q = '<div class="fr-row" style="margin-bottom:5px"><b style="width:9.4em">📐 '
+            + a(c ? ["画面幅", "Screen width", "屏幕宽度"] : ["脚幅", "Leg width", "支脚宽度"])
+            + a(["／設置幅", " / space", "／安装宽度"])
+            + '</b><div class="fr-bar"><i style="width:'
+            + J
+            + "%;--i:8"
+            + (J > 96 ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
+            + '"></i></div><span style="width:8em;font-size:.8rem">'
+            + X
+            + "/"
+            + h
+            + "mm</span></div>";
+        }
+        var ye = l.h.ng.map(function (g) {
+          return '<li class="n">' + m(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], g[1]) + "</li>";
+        }).concat(
+          l.h.wn.map(function (g) {
+            return '<li class="w">' + g + "</li>";
+          })
+        ).concat(
+          l.over
+            ? [
+              '<li class="w">'
+                + m(["予算（{0}）を超えています", "Over your budget ({0})", "超出预算（{0}）"], D("bud"))
+                + "</li>"
+            ]
+            : []
+        ).concat(
+          l.h.ok.slice(0, 3).map(function (g) {
+            return "<li>" + g + "</li>";
+          })
+        ).join("");
         return '<div class="fr-rec fr-up'
-          + (i === n ? " hi" : " dim")
+          + (l === s ? " hi" : " dim")
           + '" style="--i:'
-          + H
+          + E
           + '"><span class="fr-rank">'
-          + p(["第{0}位", "#{0}", "第{0}名"], H + 1)
+          + m(["第{0}位", "#{0}", "第{0}名"], E + 1)
           + " ・ "
-          + A(i.t)
+          + H(l.t)
           + '</span><div class="fr-head"><div class="fr-ring"><svg width="62" height="62" viewBox="0 0 '
           + '62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle class="fg" cx="31" cy="31" r="26" '
           + 'stroke-dasharray="'
-          + (i.sc * 1.634).toFixed(0)
+          + (l.sc * 1.634).toFixed(0)
           + ' 164"/></svg><b>'
-          + i.sc
+          + l.sc
           + '</b></div><div><div class="fr-name">'
-          + E(j)
+          + v.name
           + '</div><div style="font-size:.8rem;color:#64748b">'
-          + j.mfg
+          + v.maker
           + "・"
-          + j.g
-          + 'g</div><div class="fr-price">'
-          + w(j.price)
+          + v.size
+          + O()
+          + "・"
+          + B(v)
+          + '</div><div class="fr-price">'
+          + S(v.price)
           + '</div></div></div><p class="fr-p" style="margin-bottom:6px">'
-          + W(j)
+          + N(v.desc)
           + "</p>"
-          + (
-            te
-              ? '<div class="dr-why">🎯 '
-                + p([
-                  "あなたが重視する「{0}」に強いモデルです",
-                  "A model that is strong in what you value: {0}",
-                  "在您重视的“{0}”方面表现出色的机型"
-                ], te)
-                + "</div>"
-              : ""
-          )
-          + Se
+          + C
           + '<ul class="fr-ul">'
-          + Ee
+          + ye
           + "</ul>"
-          + Ae
+          + Q
+          + we
           + "</div>";
       }).join(""),
-      h = l.mode === "dryer"
-        ? [
-          [["価格", "Price", "价格"], i => w(i.price)],
-          [["メーカー", "Maker", "厂商"], i => i.mfg],
-          [
-            ["風量", "Airflow", "风量"],
-            i => i.air
-              ? p(["{0}m³/分", "{0} m³/min", "{0}m³/分"], i.air)
-              : a(["センシング制御", "Sensing control", "感应控制"])
-          ],
-          [["重さ", "Weight", "重量"], i => i.g + "g"],
-          [
-            ["海外対応", "Overseas support", "海外电压支持"],
-            i => i.os ? a(["対応", "Supported", "支持"]) : a(["要確認", "Needs checking", "需确认"])
-          ],
-          [["特徴", "Features", "特点"], i => W(i)]
-        ]
-        : [
-          [["価格", "Price", "价格"], i => w(i.price)],
-          [["メーカー", "Maker", "厂商"], i => i.mfg],
-          [["立ち上がり", "Heat-up time", "升温时间"], i => p(["{0}秒", "{0} sec", "{0}秒"], i.hu)],
-          [["重さ", "Weight", "重量"], i => i.g + "g"],
-          [
-            ["形状", "Shape", "形状"],
-            i => i.shape === "2way" ? "2WAY" : a(["ストレート", "Straight", "直发"])
-          ],
-          [["特徴", "Features", "特点"], i => W(i)]
+      b = [
+        [
+          ["価格", "Price", "价格"],
+          function (l) {
+            return S(l.price);
+          }
         ],
-      y = '<table class="fr-spec"><tr><td></td>'
-        + t.map(i => "<td><b>" + E(i.p).replace(/\s*\(.*\)/, "") + "</b></td>").join("")
+        [
+          ["画面サイズ", "Screen size", "屏幕尺寸"],
+          function (l) {
+            return l.size + O();
+          }
+        ],
+        [
+          ["パネル／解像度", "Panel / resolution", "面板／分辨率"],
+          function (l) {
+            return B(l) + "／" + l.res;
+          }
+        ],
+        [
+          ["倍速/HDMI2.1/VRR", "Refresh / HDMI 2.1 / VRR", "刷新率/HDMI2.1/VRR"],
+          function (l) {
+            return l.hz + "Hz／" + l.hdmi21 + "／" + l.vrr;
+          }
+        ],
+        [
+          ["画面 幅×高(mm)", "Screen W×H (mm)", "屏幕 宽×高(mm)"],
+          function (l) {
+            return l.pw + "×" + l.ph;
+          }
+        ],
+        [
+          ["スタンド込み高/脚幅/奥行", "Height w/ stand / leg width / depth", "含底座高度/支脚宽/深度"],
+          function (l) {
+            return l.th + "/" + l.sw + "/" + l.sd;
+          }
+        ],
+        [
+          ["重量(目安)", "Weight (approx.)", "重量（参考）"],
+          function (l) {
+            return m(["約{0}kg", "approx. {0} kg", "约{0}kg"], l.kg);
+          }
+        ],
+        [
+          ["スピーカー出力", "Speaker output", "扬声器功率"],
+          function (l) {
+            return l.audio;
+          }
+        ],
+        [
+          ["タイムシフト", "Time shift", "时移"],
+          function (l) {
+            return l.timeShift === "Yes" ? a(["あり", "Yes", "有"]) : a(["なし", "No", "无"]);
+          }
+        ]
+      ],
+      z = '<table class="fr-spec"><tr><td></td>'
+        + t.map(function (l) {
+          return "<td><b>" + l.p.name + "</b></td>";
+        }).join("")
         + "</tr>"
-        + h.map(
-          i => "<tr><td>"
-            + a(i[0])
+        + b.map(function (l) {
+          return "<tr><td>"
+            + a(l[0])
             + "</td>"
-            + t.map(H => "<td>" + i[1](H.p) + "</td>").join("")
-            + "</tr>"
-        ).join("")
+            + t.map(function (E) {
+              return "<td>" + l[1](E.p) + "</td>";
+            }).join("")
+            + "</tr>";
+        }).join("")
         + "</table>",
-      v = oe.map(
-        i => '<div style="font-size:.86rem;margin-bottom:6px"><b>'
-          + a(i[0])
-          + "</b>"
-          + a(["（", " (", "（"])
-          + i[1]
-          + a(["）", ")", "）"])
-          + '<br><span style="color:#64748b">'
-          + a(i[2])
-          + "</span></div>"
-      ).join("");
+      y = Z.map(function (l, E) {
+        var v = "";
+        return E === 0
+          && f("snd") === "prem"
+          && t.some(function (C) {
+            return C.p.wat < 40;
+          })
+          && (
+            v = a([
+              "本体の音が控えめなモデルの方におすすめ",
+              "Recommended if the TV’s own sound is modest",
+              "推荐机身音质较一般的机型"
+            ])
+          ),
+          E === 1
+            && f("game") === 3
+            && (
+              v = a([
+                "ゲーム機（4K120Hz）の方におすすめ",
+                "Recommended for game consoles (4K 120 Hz)",
+                "推荐用于游戏机（4K 120Hz）"
+              ])
+            ),
+          E === 2
+            && (f("rec") === "ext" || f("rec") === "ts" || f("rec") === "int")
+            && (v = a(["録画を使う方におすすめ", "Recommended if you record programs", "推荐需要录像的用户"])),
+          E === 3 && c && (v = a(["壁掛けの方は必須", "Essential for wall mounting", "壁挂用户必备"])),
+          E === 4
+            && !c
+            && (
+              v = a(["台置きの大画面の方におすすめ", "Recommended for large screens on a stand", "推荐放在柜上的大屏电视"])
+            ),
+          '<div style="font-size:.86rem;margin-bottom:6px"><b>'
+            + N(l.name)
+            + "</b>"
+            + a(["（", " (", "（"])
+            + l.price
+            + a(["）", ")", "）"])
+            + (v ? ' <span class="fr-chip w">' + v + "</span>" : "")
+            + '<br><span style="color:#64748b">'
+            + N(l.desc)
+            + "</span></div>";
+      }).join("");
     return '<span class="fr-tag">'
       + a(["最終結果", "Final result", "最终结果"])
       + '</span><h1 class="fr-h1">'
@@ -5426,21 +6698,26 @@ window.NJ_HEAR = (function () {
         "切换“不可让步的点”，可查看3款中哪款最强。"
       ])
       + '</p><div class="fr-ax">'
-      + b
+      + d
       + "</div>"
-      + x
-      + u
+      + r
+      + p
       + '<div class="fr-box"><h3>'
       + a(["3機種の比較表", "Comparison of the 3 models", "3款对比表"])
       + '</h3><div style="overflow-x:auto">'
-      + y
-      + '</div></div><div class="fr-box"><h3>'
-      + a(["あわせて検討したい用品", "Accessories worth considering", "建议一并考虑的配件"])
+      + z
+      + '</div><p class="tv-src">'
+      + a([
+        "※寸法・重量は画面サイズからの目安です。最終確認は店頭スタッフがカタログで行います。",
+        "* Dimensions and weights are estimates based on screen size. Final confirmation is done by "
+          + "in-store staff using the catalog.",
+        "※尺寸·重量为根据屏幕尺寸推算的参考值。最终确认由店员对照目录进行。"
+      ])
+      + '</p></div><div class="fr-box"><h3>'
+      + a(["一緒に選ばれている便利アイテム", "Handy items often chosen together", "常一起选购的实用配件"])
       + "</h3>"
-      + v
-      + '</div>'
-      + PATH()
-      + '<button class="fr-btn k" data-a="staff">'
+      + y
+      + '</div><button class="fr-btn k" data-a="staff">'
       + a([
         "📸 スタッフに見せる（最終商談シート）",
         "📸 Show to staff (final consultation sheet)",
@@ -5454,159 +6731,48 @@ window.NJ_HEAR = (function () {
       + a(["一覧に戻る", "Back to list", "返回列表"])
       + "</button>";
   }
-  function PATH() {
-    const e = ee().top[0], qs = O().filter(n => (!n.show || n.show()) && l.a[n.id] != null);
-    let cnt = 0;
-    const rows = qs.map((n, o) => {
-      const cur = l.a[n.id];
-      let d = 0;
-      const alt = n.o.map((m, g) => ({ l: a(m[0]), v: g })).filter(m => m.v !== cur).map(m => {
-        const old = l.a[n.id];
-        l.a[n.id] = m.v;
-        const g = ee().top[0];
-        l.a[n.id] = old;
-        const c = g.p !== e.p;
-        return c && (d++, cnt++),
-          '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
-            + 'font-size:.76rem;line-height:1.45;'
-            + (
-              c
-                ? "background:#fffbeb;border:1px dashed #f59e0b"
-                : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
-            )
-            + '">'
-            + m.l
-            + "<br><b>"
-            + (
-              c
-                ? a(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + E(g.p)
-                : a(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
-            )
-            + "</b></span>";
-      }).join("");
-      return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
-        + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
-        + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
-        + 'line-height:17px">'
-        + (o + 1)
-        + '</span><div style="font-size:.78rem;color:#64748b">'
-        + a(n.t).replace(/[？?]$/, "")
-        + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
-        + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
-        + S(n.id)
-        + "</div>"
-        + (
-          alt
-            ? "<details"
-              + (d ? " open" : "")
-              + '><summary style="font-size:.78rem;color:'
-              + (d ? "#b45309" : "#64748b")
-              + ';cursor:pointer">'
-              + p([
-                "もし別の選択をしていたら（1位が変わる選択肢：{0}件）",
-                "If you had chosen differently (options that change #1: {0})",
-                "若选了其他选项（会改变第1名的选项：{0}个）"
-              ], d)
-              + "</summary>"
-              + alt
-              + "</details>"
-            : ""
-        )
-        + "</div>";
-    }).join("");
-    return '<div class="fr-box"><h3>🧭 '
-      + a(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
-      + '</h3><p class="fr-p" style="font-size:.82rem">'
-      + p([
-        "青が選んだ回答です。点線の薄い枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：{0}／分岐点 {1}か所の選択肢）。",
-        "Blue is what you chose. Dashed boxes show the top pick if you had chosen differently; "
-          + "<b>yellow marks choices that would change #1</b> (current #1: {0} / {1} such choices).",
-        "蓝色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：{0}／共{1}个）。"
-      ], E(e.p), cnt)
-      + "</p>"
-      + rows
-      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
-      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
-      + E(e.p)
-      + "（"
-      + e.p.mfg
-      + "）</div></div>";
-  }
-  function TP() {
-    const all = M(I()),
-      any = Object.keys(l.a).length > 0,
-      ty = B.filter(r => r.mode === l.mode),
-      sc = ty.map(r => Math.max(0, ...all.filter(u => u.t === r).map(u => u.sc))),
-      best = Math.max(...sc),
-      cards = ty.map((r, g) => {
-        const lead = any && sc[g] === best && best > 0;
-        return '<div style="flex:1;min-width:0;text-align:center;padding:6px 3px 5px;border-radius:10px;border:2px solid '
-          + (lead ? "#2563eb" : "#e2e8f0")
-          + ";background:"
-          + (lead ? "#eff6ff" : "#fff")
-          + ";opacity:"
-          + (sc[g] > 0 ? 1 : .4)
-          + '"><div style="height:46px;overflow:hidden"><div style="transform:scale(.72);transform-origin:top center">'
-          + ne(r, g * .3)
-          + '</div></div><div style="font-size:.64rem;font-weight:700;line-height:1.3;margin-top:2px">'
-          + A(r)
-          + '</div><div style="font-size:.62rem;color:'
-          + (lead ? "#2563eb" : "#64748b")
-          + '">'
-          + (lead ? "👑 " : "")
-          + (any && sc[g] > 0 ? p(["適合度{0}", "match {0}", "匹配度{0}"], sc[g]) : "—")
-          + "</div></div>";
-      }).join("");
-    return '<div class="fr-box" style="padding:8px"><div style="font-size:.74rem;color:#475569;margin-bottom:6px">🧭 '
-      + a(
-        any
-          ? [
-            "ここまでの回答だと、一番近いのは王冠のタイプ",
-            "Based on your answers so far, the crowned type fits best",
-            "按目前回答，最接近的是皇冠标记的类型"
-          ]
-          : [
-            "回答するたびに、どのタイプに近いかここに表示されます",
-            "This shows which type you are closest to as you answer",
-            "每次回答后，这里会显示最接近的类型"
-          ]
-      )
-      + '</div><div style="display:flex;gap:6px">'
-      + cards
-      + "</div></div>";
-  }
-  const ORD = i => {
-    const n = ["dm", "tr", "af", "sh", "wt"].indexOf(i.id);
-    return n < 0 ? 99 : n;
-  };
-  function xe() {
-    const e = ee(),
-      t = l.a.pri != null,
-      s = O().map(
-        d => l.a[d.id] == null
+  function ve() {
+    var e = q(),
+      t = u.a.pri != null,
+      i = M.map(function (n) {
+        return u.a[n.id] == null
           ? ""
-          : "<tr><td>" + a(d.t).replace(/[？?]$/, "") + "</td><td>" + S(d.id) + "</td></tr>"
-      ).join(""),
-      o = t
-        ? e.top.map(
-          (d, n) => '<div style="margin-bottom:6px;font-size:.88rem"><b>'
-            + p(["第{0}位", "#{0}", "第{0}名"], n + 1)
+          : "<tr><td>"
+            + a(n.t).replace(/[？?]$/, "").replace(/（.*?）/g, "").replace(/ ?\(.*?\)/g, "")
+            + "</td><td>"
+            + D(n.id)
+            + "</td></tr>";
+      }).join(""),
+      o = f("dist"),
+      s = t
+        ? e.top.map(function (n, d) {
+          return '<div style="margin-bottom:6px;font-size:.88rem"><b>'
+            + m(["第{0}位", "#{0}", "第{0}名"], d + 1)
             + " "
-            + E(d.p)
+            + n.p.name
             + "</b>（"
-            + d.p.mfg
+            + n.p.maker
+            + "・"
+            + n.p.size
+            + O()
+            + "・"
+            + B(n.p)
             + "）"
-            + w(d.p.price)
+            + S(n.p.price)
             + "<br>"
-            + p(["{0}g ／ 適合度{1}", "{0} g / match {1}", "{0}g ／ 匹配度{1}"], d.p.g, d.sc)
-            + (d.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + d.h.wn[0] + "</span>" : "")
-            + "</div>"
-        ).join("")
+            + m([
+              "画面 {0}×{1}mm／脚幅 {2}mm／奥行 {3}mm／約{4}kg／適合度{5}",
+              "Screen {0}×{1} mm / leg width {2} mm / depth {3} mm / approx. {4} kg / match {5}",
+              "屏幕 {0}×{1}mm／支脚宽 {2}mm／深度 {3}mm／约{4}kg／匹配度{5}"
+            ], n.p.pw, n.p.ph, n.p.sw, n.p.sd, n.p.kg, n.sc)
+            + (n.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + n.h.wn[0] + "</span>" : "")
+            + "</div>";
+        }).join("")
         : "";
     return '<div class="fr-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
       + 'solid #111827;padding-bottom:6px;margin-bottom:8px"><b style="background:#111827;'
       + 'color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:.86rem">'
-      + p(["スタッフ確認用シート（{0}）", "Staff confirmation sheet ({0})", "店员确认单（{0}）"], _())
+      + a(["スタッフ確認用シート（テレビ）", "Staff confirmation sheet (TV)", "店员确认单（电视）"])
       + '</b><span style="font-size:.8rem;color:#6b7280">'
       + a(
         t ? ["最終商談カード", "Final consultation card", "最终洽谈卡"] : ["条件メモ", "Requirements memo", "条件备忘"]
@@ -5618,199 +6784,207 @@ window.NJ_HEAR = (function () {
         "※请截屏并出示给店员"
       ])
       + "</p><table>"
-      + s
+      + i
+      + (
+        o != null
+          ? "<tr><td>"
+            + a(["推奨サイズの目安", "Recommended size guide", "推荐尺寸参考"])
+            + "</td><td>"
+            + m(["約{0}〜{1}型", "about {0}–{1} in.", "约{0}～{1}英寸"], Math.round(o * 22), Math.round(
+              o * 32
+            ))
+            + "</td></tr>"
+          : ""
+      )
       + "</table>"
       + (
-        o
+        s
           ? '<b style="font-size:.88rem">'
             + a(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
             + "</b>"
-            + o
+            + s
           : ""
       )
       + '</div><button class="fr-btn s" data-a="back">'
       + a(["← 戻る", "← Back", "← 返回"])
       + "</button>";
   }
-  function He(e) {
-    if (l.lock)
-      return;
-    l.lock = 1;
-    const t = U(l.v.st)[l.v.i];
-    l.a[t.id] = e,
-      fe(),
-      f.querySelectorAll(".fr-opt").forEach((s, o) => {
-        s.classList.toggle("sel", o === e), s.firstChild.textContent = o === e ? "✓" : "";
-      }),
-      setTimeout(() => {
-        const s = U(l.v.st);
-        l.lock = 0,
-          L(
-            l.v.i + 1 < s.length
-              ? { st: l.v.st, i: l.v.i + 1 }
-              : l.v.st === 1 ? "r1" : l.v.st === 2 ? "r2" : l.v.st === 3 ? { st: 9, i: 0 } : "final"
-          );
-      }, 320);
+  function be(e) {
+    if (!u.lock) {
+      u.lock = 1;
+      var t = V(u.v.st)[u.v.i];
+      u.a[t.id] = e,
+        ce(),
+        w.querySelectorAll(".fr-opt").forEach(function (i, o) {
+          i.classList.toggle("sel", o === e), i.firstChild.textContent = o === e ? "✓" : "";
+        }),
+        setTimeout(function () {
+          var i = V(u.v.st);
+          u.lock = 0,
+            I(
+              u.v.i + 1 < i.length
+                ? { st: u.v.st, i: u.v.i + 1 }
+                : u.v.st === 1 ? "r1" : u.v.st === 2 ? "r2" : "final"
+            );
+        }, 320);
+    }
   }
-  function R(e) {
-    l = { mode: e || "dryer", a: {}, v: "intro", hist: [], ax: null },
-      P(),
+  function F() {
+    u = { a: {}, v: "intro", hist: [], ax: null },
+      K(),
       document.documentElement.style.overflow = "hidden";
     try {
-      history.pushState({ dr: 1 }, "");
+      history.pushState({ tv: 1 }, "");
     } catch {}
   }
-  function C(e) {
-    if (f.classList.remove("on"), document.documentElement.style.overflow = "", !e)
+  function P(e) {
+    if (w.classList.remove("on"), document.documentElement.style.overflow = "", !e)
       try {
-        history.state && history.state.dr && history.back();
+        history.state && history.state.tv && history.back();
       } catch {}
   }
-  f.addEventListener("click", e => {
-    const t = e.target.closest("[data-a]");
-    if (!t || t.tagName === "SELECT")
-      return;
-    const s = t.dataset.a;
-    if (s === "close")
-      C();
-    else if (s === "start")
-      L({ st: 1, i: 0 });
-    else if (s === "mode")
-      l = { mode: t.dataset.m, a: {}, v: "intro", hist: [], ax: null }, P();
-    else if (s === "type")
-      f.querySelectorAll(".fr-card").forEach(
-        o => o.classList.toggle("sel", o === t && !t.classList.contains("sel"))
-      );
-    else if (s === "pick")
-      He(+t.dataset.i);
-    else if (s === "next")
-      L(l.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
-    else if (s === "back") {
-      const o = l.hist.pop();
-      o != null ? L(o, !0) : C();
-    } else if (s === "staff")
-      L("staff");
-    else if (s === "ax") {
-      l.ax = t.dataset.k;
-      const o = f.scrollTop;
-      l.back = !1, P(), f.scrollTop = o;
-    } else
-      s === "restart" && R(l.mode);
+  w.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-a]");
+    if (!(!t || t.tagName === "SELECT")) {
+      var i = t.dataset.a;
+      if (i === "close")
+        P();
+      else if (i === "start")
+        I({ st: 1, i: 0 });
+      else if (i === "type")
+        w.querySelectorAll(".fr-card").forEach(function (n) {
+          n.classList.toggle("sel", n === t && !t.classList.contains("sel"));
+        });
+      else if (i === "pick")
+        be(+t.dataset.i);
+      else if (i === "next")
+        I(u.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
+      else if (i === "back") {
+        var o = u.hist.pop();
+        o != null ? I(o, !0) : P();
+      } else if (i === "staff")
+        I("staff");
+      else if (i === "ax") {
+        u.ax = t.dataset.k;
+        var s = w.scrollTop;
+        u.back = !1, K(), w.scrollTop = s;
+      } else
+        i === "restart" && F();
+    }
   }),
-    f.addEventListener("change", e => {
-      if (e.target.dataset.a !== "lang")
-        return;
-      const t = document.getElementById("lang-switcher");
-      t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
-      const s = f.scrollTop;
-      l.back = !1, P(), f.scrollTop = s;
+    w.addEventListener("change", function (e) {
+      if (e.target.dataset.a === "lang") {
+        var t = document.getElementById("lang-switcher");
+        t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
+        var i = w.scrollTop;
+        u.back = !1, K(), w.scrollTop = i;
+      }
     }),
-    window.addEventListener("popstate", () => {
-      f.classList.contains("on") && C(!0);
+    window.addEventListener("popstate", function () {
+      w.classList.contains("on") && P(!0);
     }),
-    window.DryerApp = { open: R, close: C };
-  const Y = document.getElementById("modal-link-btn");
-  Y
-    && Y.addEventListener("click", e => {
-      const t = Y.dataset.app;
-      t !== "dryer" && t !== "iron"
-        || (e.preventDefault(), document.getElementById("modal").classList.remove("active"), R(t));
+    window.TvApp = { open: F, close: P };
+  var G = document.getElementById("modal-link-btn");
+  G
+    && G.addEventListener("click", function (e) {
+      G.dataset.app === "tv"
+        && (e.preventDefault(), document.getElementById("modal").classList.remove("active"), F());
     });
-  try { window.NJ_HEAR && window.NJ_HEAR.hook([de, he], {"schema": "std", "root": "dr-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
+  try { window.NJ_HEAR && window.NJ_HEAR.hook([M], {"schema": "std", "root": "tv-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
 })();
 </script>
 <style id="app-motion-css">
 /* =====================================================================
    PC相談：スマホ・iPad向けの調整 ＋ Apple風の動き
    ===================================================================== */
-#dr-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
+#tv-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
 
 /* ---- 画面の出し入れ（iOSのシート／プッシュ） ---- */
-#dr-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
-#dr-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
-#dr-app .fr-in{animation:apPush .55s var(--ap) both}
-#dr-app.fr-back .fr-in{animation-name:apPop}
+#tv-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
+#tv-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
+#tv-app .fr-in{animation:apPush .55s var(--ap) both}
+#tv-app.fr-back .fr-in{animation-name:apPop}
 @keyframes apPush{from{opacity:0;transform:translate3d(32px,0,0)}}
 @keyframes apPop{from{opacity:0;transform:translate3d(-32px,0,0)}}
-#dr-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
-#dr-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
+#tv-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
+#tv-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
 @keyframes apRise{from{opacity:0;transform:translate3d(0,14px,0) scale(.985);filter:blur(4px)}}
 
 /* ---- 半透明のナビゲーションバー（スクロールすると細い境界線） ---- */
-#dr-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
-#dr-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
-#dr-app .fr-prog div{transition:width .8s var(--ap)}
+#tv-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
+#tv-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
+#tv-app .fr-prog div{transition:width .8s var(--ap)}
 
 /* ---- 押したときの沈み込み・選んだときの反応 ---- */
-#dr-app .fr-opt,#dr-app .fr-card,#dr-app .fr-btn,#dr-app .fr-x,#dr-app .iv-entry,#dr-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
-#dr-app .fr-opt:active,#dr-app .fr-card:active,#dr-app .fr-btn:active,#dr-app .fr-x:active,#dr-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
-#dr-app .fr-opt.sel{animation:apSel .5s var(--ap)}
+#tv-app .fr-opt,#tv-app .fr-card,#tv-app .fr-btn,#tv-app .fr-x,#tv-app .iv-entry,#tv-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
+#tv-app .fr-opt:active,#tv-app .fr-card:active,#tv-app .fr-btn:active,#tv-app .fr-x:active,#tv-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
+#tv-app .fr-opt.sel{animation:apSel .5s var(--ap)}
 @keyframes apSel{0%{transform:scale(.97)}}
-#dr-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
-#dr-app .fr-opt.sel .ck{transform:scale(1.08)}
-@media (hover:hover){#dr-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
-@media (hover:none){#dr-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
+#tv-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
+#tv-app .fr-opt.sel .ck{transform:scale(1.08)}
+@media (hover:hover){#tv-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
+@media (hover:none){#tv-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
 
 /* ---- ヒアリング（イラストなし） ---- */
-#dr-app .pc-qi{display:none!important}
-#dr-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
-#dr-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
-#dr-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
-#dr-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
-#dr-app .fr-opt{border-radius:14px;word-break:auto-phrase}
+#tv-app .pc-qi{display:none!important}
+#tv-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
+#tv-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
+#tv-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
+#tv-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
+#tv-app .fr-opt{border-radius:14px;word-break:auto-phrase}
 
 /* ---- 「いまの見立て」：タイプとメーカーの並びをそろえる ---- */
-#dr-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-#dr-app .pc-xe>div,#dr-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
-#dr-app .pc-xe>div>div:last-child,#dr-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
-#dr-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
-#dr-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-#dr-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
-#dr-app .pc-mk{width:100%;max-width:56px;height:auto}
-@media (max-width:600px){#dr-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#tv-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+#tv-app .pc-xe>div,#tv-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
+#tv-app .pc-xe>div>div:last-child,#tv-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
+#tv-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
+#tv-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+#tv-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
+#tv-app .pc-mk{width:100%;max-width:56px;height:auto}
+@media (max-width:600px){#tv-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* ---- 結果画面「いま合うメーカー」：アイコンの列と文字の頭をそろえる ---- */
-#dr-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
-#dr-app .fr-box h3+.pc-mkrow,#dr-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
-#dr-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
-#dr-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
-#dr-app .pc-mkrow>div b:first-child{font-size:.95rem}
-#dr-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
-@media (min-width:700px){#dr-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
+#tv-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
+#tv-app .fr-box h3+.pc-mkrow,#tv-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
+#tv-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
+#tv-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
+#tv-app .pc-mkrow>div b:first-child{font-size:.95rem}
+#tv-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
+@media (min-width:700px){#tv-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
 
 /* ---- 最初の画面：タイプのカード（7つ目が1枚だけ浮かないように） ---- */
-#dr-app .fr-types{align-items:stretch}
-#dr-app .fr-types>.fr-card{display:flex;flex-direction:column}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
+#tv-app .fr-types{align-items:stretch}
+#tv-app .fr-types>.fr-card{display:flex;flex-direction:column}
+#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
+#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
+#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
 
 /* ---- スマホ：上のバーを2段に（1段目：戻る・言語・該当数／2段目：タイトル・在庫管理） ---- */
 @media (max-width:600px){
-  #dr-app .fr-top{flex-wrap:wrap;row-gap:6px}
-  #dr-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  #dr-app .fr-top .iv-entry{order:6}
-  #dr-app .fr-q{padding:18px 14px 14px;border-radius:18px}
-  #dr-app .fr-wrap{padding-left:12px;padding-right:12px}
+  #tv-app .fr-top{flex-wrap:wrap;row-gap:6px}
+  #tv-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #tv-app .fr-top .iv-entry{order:6}
+  #tv-app .fr-q{padding:18px 14px 14px;border-radius:18px}
+  #tv-app .fr-wrap{padding-left:12px;padding-right:12px}
 }
 /* ---- iPad・PC：中央に寄せ、選択肢は2列 ---- */
 @media (min-width:700px){
-  #dr-app .fr-wrap{max-width:900px;margin:0 auto}
-  #dr-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
-  #dr-app .fr-q>*{grid-column:1/-1}
-  #dr-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
-  #dr-app .fr-q .no{justify-self:start}
-  #dr-app .fr-types{grid-template-columns:1fr 1fr}
+  #tv-app .fr-wrap{max-width:900px;margin:0 auto}
+  #tv-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
+  #tv-app .fr-q>*{grid-column:1/-1}
+  #tv-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
+  #tv-app .fr-q .no{justify-self:start}
+  #tv-app .fr-types{grid-template-columns:1fr 1fr}
 }
-@media (prefers-reduced-motion:reduce){#dr-app *,#dr-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){#tv-app *,#tv-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-#dr-app [class$="-qi"],#dr-app .tb-qi{display:none!important}
+#tv-app [class$="-qi"],#tv-app .tb-qi{display:none!important}
 </style>
 <script id="app-motion-js">
 /* PC相談：スクロールでナビゲーションバーに境界線（Apple風）／iOSで押した感触を出す */
 (function () {
-  var r = document.getElementById("dr-app");
+  var r = document.getElementById("tv-app");
   if (!r) return;
   var on = false;
   r.addEventListener("scroll", function () {
@@ -5820,6 +6994,6 @@ window.NJ_HEAR = (function () {
   document.addEventListener("touchstart", function () {}, { passive: true });   // iOSで :active を効かせる
 })();
 </script>
-<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("dr-app");</script>
+<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("tv-app");</script>
 </body>
 </html>

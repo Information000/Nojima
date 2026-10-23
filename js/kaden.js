@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>通信エリア | イオンモール成田店</title>
+<title>家電エリア | イオンモール成田店</title>
 <style id="area-shell-css">
-:root{--ac:#7c3aed;--ac-soft:#f5f3ff;--text:#0f172a;--sub:#475569;--line:#e2e8f0}
+:root{--ac:#ea580c;--ac-soft:#fff7ed;--text:#0f172a;--sub:#475569;--line:#e2e8f0}
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
 body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--text);min-height:100vh;padding:12px 16px 40px;display:flex;flex-direction:column;align-items:center}
@@ -58,7 +59,7 @@ body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--te
 
 </style>
 </head>
-<body data-lang="ja" data-dept="comm">
+<body data-lang="ja" data-dept="home">
 <div class="ar-wrap">
   <div class="ar-top">
     <a class="ar-back" id="ar-back" href="index.html?skip=1">← ホームへ戻る</a>
@@ -71,8 +72,8 @@ body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--te
     </div>
   </div>
   <div class="ar-hero">
-    <div class="ar-ico" aria-hidden="true">📱</div>
-    <div><h1 class="ar-ttl" id="ar-ttl">通信エリア</h1><p class="ar-desc" id="ar-desc"></p></div>
+    <div class="ar-ico" aria-hidden="true">🏠</div>
+    <div><h1 class="ar-ttl" id="ar-ttl">家電エリア</h1><p class="ar-desc" id="ar-desc"></p></div>
   </div>
   <p class="ar-lead" id="ar-lead"></p>
   <div class="ar-grid" id="ar-grid"></div>
@@ -84,14 +85,24 @@ var currentLang = "ja";
 (function () {
   "use strict";
   var HOME_URL = "index.html";            // ホーム画面のファイル名
-  var DEPT = "comm";
-  var AREA = {"ja": {"title": "【通信エリア】何をお探しですか？", "items": [{"label": "スマートフォン（展示・販売）", "key": "mobile-device"}, {"label": "携帯コーナー（ご契約カウンター）", "key": "mobile-corner"}, {"label": "ワイヤレスイヤホン・有線イヤホン", "key": "earphones"}, {"label": "ヘッドホン・オーディオ機器", "key": "headphone-hub"}, {"label": "スマホケース・液晶保護フィルム", "key": "case-film"}, {"label": "充電器・充電ケーブル", "key": "case-film"}]}, "en": {"title": "[Telecom & Audio] What are you looking for?", "items": [{"label": "Mobile Phones (Display & Device)", "key": "mobile-device"}, {"label": "Mobile Corner (Carrier Desk)", "key": "mobile-corner"}, {"label": "Wireless & Wired Earphones", "key": "earphones"}, {"label": "Headphones & Audio Goods", "key": "headphone-hub"}, {"label": "Phone Cases & Screen Film", "key": "case-film"}, {"label": "Chargers & USB Cables", "key": "case-film"}]}, "zh": {"title": "【通信网络区域】您在寻找什么商品？", "items": [{"label": "手机 (智能手机样品与展示)", "key": "mobile-device"}, {"label": "手机专区 (综合服务柜台)", "key": "mobile-corner"}, {"label": "无线耳机·有线耳机", "key": "earphones"}, {"label": "头戴式耳机·拓展设备", "key": "headphone-hub"}, {"label": "手机壳·保护贴膜", "key": "case-film"}, {"label": "充电器·充电线", "key": "case-film"}]}};                       // このエリアの一覧（3言語）
-  var ZONE = {"case-film": {"names": {"ja": "スマホケース・充電・フィルム", "en": "Cases & Film", "zh": "手机壳与保护膜"}, "url": null, "related": ["charge-cable", "sp-case-wall"]}, "earphones": {"names": {"ja": "イヤホン・ヘッドホン", "en": "Earphones / Headphones", "zh": "耳机·头戴式耳机"}, "related": ["headphone-hub", "mobile-corner", "case-film"]}, "headphone-hub": {"names": {"ja": "ヘッドホン・USBハブ", "en": "Headphones & USB Hub", "zh": "耳机与拓展坞"}, "related": ["earphones", "pc-accessories"]}, "mobile-corner": {"names": {"ja": "携帯コーナー", "en": "Mobile Corner", "zh": "手机专区"}, "url": null, "related": ["case-film", "charge-cable", "earphones"]}, "mobile-device": {"names": {"ja": "携帯 (スマートフォン)", "en": "Mobile Phone", "zh": "手机"}, "url": null, "related": ["mobile-corner", "case-film"]}, "pc-accessories": {"names": {"ja": "PC / パソコン・PC付属品", "en": "PC & Laptop", "zh": "电脑与配件"}, "app": "pc", "url": "#pc", "related": ["ipad", "smart-watch", "printer", "keyboard-mouse"]}};                       // 売り場データ（名前・アプリ・関連）
-  var TXT = {"ja": {"name": "通信エリア", "desc": "スマホ・光回線・インターネット等", "preparing": "このコーナーの紹介ページは、ただいま準備中です。", "view": "売り場の紹介ページを見る ↗"}, "en": {"name": "Telecom & Audio", "desc": "Smartphone, Fiber Optic, Internet", "preparing": "This page is currently under preparation.", "view": "Visit Area Website ↗"}, "zh": {"name": "通信网络区域", "desc": "手机·光纤宽带·互联网", "preparing": "该专区页面正在“准备中”。", "view": "查看专区官方网页 ↗"}};
+  var DEPT = "home";
+  var AREA = {"ja": {"title": "【家電エリア】何をお探しですか？", "items": [{"label": "冷蔵庫", "key": "refrigerator"}, {"label": "洗濯機", "key": "washing-machine"}, {"label": "掃除機・スティック型", "key": "vacuum-cleaner"}, {"label": "ロボット掃除機（ルンバ等）", "key": "robot-cleaner"}, {"label": "炊飯器", "key": "rice-cooker"}, {"label": "電子レンジ", "key": "microwave"}, {"label": "オーブン・グリル", "key": "oven-grill"}, {"label": "ヘアドライヤー", "key": "dryer"}, {"label": "ヘアアイロン（コテ・ストレート）", "key": "hair-iron"}, {"label": "メンズシェーバー", "key": "shaver"}, {"label": "電動歯ブラシ", "key": "electric-toothbrush"}, {"label": "シャワーヘッド", "key": "shower-head"}]}, "en": {"title": "[Home Appliances] What are you looking for?", "items": [{"label": "Refrigerator", "key": "refrigerator"}, {"label": "Washing Machine", "key": "washing-machine"}, {"label": "Vacuum Cleaner", "key": "vacuum-cleaner"}, {"label": "Robot Vacuum", "key": "robot-cleaner"}, {"label": "Rice Cooker", "key": "rice-cooker"}, {"label": "Microwave", "key": "microwave"}, {"label": "Oven / Grill", "key": "oven-grill"}, {"label": "Hair Dryer", "key": "dryer"}, {"label": "Hair Curler & Iron", "key": "hair-iron"}, {"label": "Men's Shaver", "key": "shaver"}, {"label": "Electric Toothbrush", "key": "electric-toothbrush"}, {"label": "Shower Head", "key": "shower-head"}]}, "zh": {"title": "【家电区域】您在寻找什么商品？", "items": [{"label": "冰箱", "key": "refrigerator"}, {"label": "洗衣机", "key": "washing-machine"}, {"label": "吸尘器", "key": "vacuum-cleaner"}, {"label": "扫地机器人", "key": "robot-cleaner"}, {"label": "电饭煲", "key": "rice-cooker"}, {"label": "微波炉", "key": "microwave"}, {"label": "烤箱·烧烤炉", "key": "oven-grill"}, {"label": "吹风机", "key": "dryer"}, {"label": "直卷发器", "key": "hair-iron"}, {"label": "男士剃须刀", "key": "shaver"}, {"label": "电动牙刷", "key": "electric-toothbrush"}, {"label": "花洒喷头", "key": "shower-head"}]}};                       // このエリアの一覧（3言語）
+  var ZONE = {"dryer": {"names": {"ja": "ドライヤー", "en": "Hair Dryer", "zh": "吹风机"}, "app": "dryer", "url": "#dryer", "related": ["hair-iron", "hair-removal", "beauty"]}, "electric-toothbrush": {"names": {"ja": "電動歯ブラシ", "en": "Electric Toothbrush", "zh": "电动牙刷"}, "app": "toothbrush", "url": "#toothbrush", "related": ["shaver", "shower-head"]}, "hair-iron": {"names": {"ja": "ヘアアイロン", "en": "Hair Curler", "zh": "直卷发器"}, "app": "iron", "url": "#iron", "related": ["dryer", "beauty"]}, "microwave": {"names": {"ja": "電子レンジ", "en": "Microwave", "zh": "微波炉"}, "app": "microwave", "url": "#microwave", "related": ["oven-grill", "rice-cooker"]}, "oven-grill": {"names": {"ja": "オーブン・グリル", "en": "Oven / Grill", "zh": "烤箱·烧烤炉"}, "app": "oven", "url": "#oven", "related": ["microwave", "rice-cooker"]}, "refrigerator": {"names": {"ja": "冷蔵庫コーナー", "en": "Refrigerator", "zh": "冰箱专区"}, "app": "fridge", "url": "#fridge", "related": ["washing-machine", "oven-grill", "microwave", "rice-cooker"]}, "rice-cooker": {"names": {"ja": "炊飯器", "en": "Rice Cooker", "zh": "电饭煲"}, "app": "rice", "url": "#rice", "related": ["microwave", "oven-grill"]}, "robot-cleaner": {"names": {"ja": "ロボット掃除機", "en": "Robot Vacuum", "zh": "扫地机器人"}, "related": ["vacuum-cleaner", "handy-cleaner"]}, "shaver": {"names": {"ja": "シェーバー", "en": "Shaver", "zh": "剃须刀"}, "app": "shaver", "url": "#shaver", "related": ["electric-toothbrush", "hair-clipper"]}, "shower-head": {"names": {"ja": "シャワーヘッド", "en": "Shower Head", "zh": "淋浴花洒"}, "related": ["electric-toothbrush", "shaver"]}, "vacuum-cleaner": {"names": {"ja": "掃除機", "en": "Vacuum Cleaner", "zh": "吸尘器"}, "related": ["robot-cleaner", "handy-cleaner"]}, "washing-machine": {"names": {"ja": "洗濯機コーナー", "en": "Washing Machine", "zh": "洗衣机专区"}, "app": "washer", "url": "#washer", "related": ["refrigerator", "iron"]}};                       // 売り場データ（名前・アプリ・関連）
+  var TXT = {"ja": {"name": "家電エリア", "desc": "洗濯機・冷蔵庫・炊飯器・レンジ等", "preparing": "このコーナーの紹介ページは、ただいま準備中です。", "view": "売り場の紹介ページを見る ↗"}, "en": {"name": "Home Appliances", "desc": "Washer, Fridge, Rice Cooker, Microwave", "preparing": "This page is currently under preparation.", "view": "Visit Area Website ↗"}, "zh": {"name": "家电区域", "desc": "洗衣机·冰箱·电饭煲·微波炉", "preparing": "该专区页面正在“准备中”。", "view": "查看专区官方网页 ↗"}};
   var I18N = {"back": ["← ホームへ戻る", "← Back to home", "← 返回首页"], "map": ["🗺 マップで場所を見る", "🗺 See it on the map", "🗺 在地图上查看"], "close": ["閉じる", "Close", "关闭"], "start": ["相談をはじめる", "Start consultation", "开始咨询"], "info": ["場所・情報を見る", "Location & info", "位置与信息"], "guide": ["店内ガイドあり", "In-store guide", "店内导购"], "lead": ["気になる商品をタップしてください", "Tap a product to begin", "请点击想了解的商品"], "related": ["こちらの売り場もよく見られています", "Frequently Viewed Together", "顾客常搭配查看的商品"], "fav": ["マイリスト", "My List", "我的收藏"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "store": ["イオンモール成田店", "AEON Mall Narita", "永旺梦乐城成田店"], "appBtn": ["{0}の相談をはじめる →", "Start the {0} consultation →", "开始{0}选购咨询 →"]};
   var APP_NAMES = {"fridge": ["冷蔵庫", "Refrigerator", "冰箱"], "washer": ["洗濯機", "Washing Machine", "洗衣机"], "rice": ["炊飯器", "Rice Cooker", "电饭煲"], "microwave": ["電子レンジ", "Microwave", "微波炉"], "oven": ["オーブン・グリル", "Oven / Grill", "烤箱·烧烤炉"], "aircon": ["エアコン", "Air Conditioner", "空调"], "tv": ["テレビ", "TV", "电视"], "printer": ["プリンター", "Printer", "打印机"], "dryer": ["ドライヤー", "Hair Dryer", "吹风机"], "iron": ["ヘアアイロン", "Hair Iron", "卷直发器"], "toothbrush": ["電動歯ブラシ", "Electric Toothbrush", "电动牙刷"], "shaver": ["シェーバー", "Shaver", "剃须刀"], "pc": ["パソコン", "PC", "电脑"]};
   // ▼ 商品ページへのリンク（相談アプリごとに独立したHTML）
-  var PRODUCT_LINKS = {};
+  var PRODUCT_LINKS = {
+    fridge:     "fridge/",
+    washer:     "washer/",
+    rice:       "rice/",
+    microwave:  "microwave/",
+    oven:       "oven/",
+    dryer:      "dryer/",
+    iron:       "iron/",
+    shaver:     "shaver/",
+    toothbrush: "toothbrush/"
+  };
   var FAV_CAT = {};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }

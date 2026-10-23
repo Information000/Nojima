@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>テレビの相談 | イオンモール成田店</title>
+<title>シェーバーの相談 | イオンモール成田店</title>
 <style id="product-shell-css">
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
@@ -12,7 +13,7 @@ body{background:linear-gradient(160deg,#e8f0ff,#f8fafc 45%,#eef2ff);color:#0f172
 .pg-ico{font-size:2.6rem}
 .pg-ttl{font-size:1.3rem;font-weight:800;margin:8px 0 18px}
 .pg-btn{display:block;width:100%;padding:14px;border-radius:12px;border:none;font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;margin-top:8px}
-.pg-btn.main{background:#059669;color:#fff}
+.pg-btn.main{background:#ea580c;color:#fff}
 .pg-btn.sub{background:#f1f5f9;color:#0f172a}
 #modal,#modal-link-btn,#lang-switcher{display:none}
 .fr-rec,.sv-rec{position:relative}
@@ -126,9 +127,9 @@ html[data-device=tablet] .fr-wrap {
 }
 </style>
 </head>
-<body data-lang="ja" data-dept="av" data-product="tv">
+<body data-lang="ja" data-dept="home" data-product="shaver">
 <!-- ======================================================================
-     ▼▼▼ 在庫データ（テレビ）▼▼▼
+     ▼▼▼ 在庫データ（メンズシェーバー）▼▼▼
      ・1商品 = items の中の { } ひとつ。型番・価格・スペック・大きさ・リンクなど
      ・status: "active"=販売中 / "ended"=販売終了（相談に出なくなる）
      ・links: type は "official"(メーカー公式HP) / "manual"(取扱説明書) / "ref"(参考リンク)
@@ -136,130 +137,103 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="inventory-data">
 {
-  "category": "tv",
-  "label": "テレビ",
+  "category": "shaver",
+  "label": "メンズシェーバー",
   "version": "2026-10-23",
   "adminPin": "staff2026",
   "groups": [
     {
-      "id": "compact_entry",
-      "name": "小型・個室向け"
+      "id": "entry_value",
+      "name": "エントリー"
     },
     {
-      "id": "standard_4k",
-      "name": "スタンダード4K液晶"
+      "id": "mid_standard",
+      "name": "往復式・スタンダード"
     },
     {
-      "id": "miniled_bright",
-      "name": "高輝度 Mini LED"
+      "id": "deep_closeness_high",
+      "name": "往復式・深剃りPRO"
     },
     {
-      "id": "oled_cinema",
-      "name": "有機EL（OLED）"
+      "id": "skin_sensitive_rotary",
+      "name": "回転式（肌にやさしい）"
     },
     {
-      "id": "giant_theater",
-      "name": "超大画面シアター"
+      "id": "flagship_palm_in",
+      "name": "フラッグシップ"
     }
   ],
   "tagOptions": {},
   "schema": {
-    "root": "tv-app",
-    "icon": "📺",
+    "root": "sv-app",
+    "icon": "🪒",
     "map": {},
     "fields": [
       {
-        "k": "size",
-        "l": "画面サイズ（型）",
-        "t": "number"
+        "k": "type",
+        "l": "方式"
       },
       {
-        "k": "panel",
-        "l": "パネル（LED / QLED / Mini LED / OLED）"
+        "k": "blades",
+        "l": "刃"
       },
       {
-        "k": "res",
-        "l": "解像度"
+        "k": "closeness",
+        "l": "深剃り"
       },
       {
-        "k": "hz",
-        "l": "リフレッシュレート（Hz）",
-        "t": "number"
+        "k": "skin",
+        "l": "肌へのやさしさ"
       },
       {
-        "k": "hdmi21",
-        "l": "HDMI 2.1",
-        "t": "seg",
-        "o": [
-          [
-            "Yes",
-            "あり"
-          ],
-          [
-            "No",
-            "なし"
-          ]
-        ]
+        "k": "waterproof",
+        "l": "防水"
       },
       {
-        "k": "vrr",
-        "l": "VRR（ゲーム）",
-        "t": "seg",
-        "o": [
-          [
-            "Yes",
-            "あり"
-          ],
-          [
-            "No",
-            "なし"
-          ]
-        ]
+        "k": "wet",
+        "l": "お風呂剃り"
       },
       {
-        "k": "timeShift",
-        "l": "タイムシフト録画",
-        "t": "seg",
-        "o": [
-          [
-            "Yes",
-            "あり"
-          ],
-          [
-            "No",
-            "なし"
-          ]
-        ]
+        "k": "cleaning",
+        "l": "洗浄"
       },
       {
-        "k": "audio",
-        "l": "音声出力"
+        "k": "charge",
+        "l": "充電"
+      },
+      {
+        "k": "battery",
+        "l": "電池"
+      },
+      {
+        "k": "weight",
+        "l": "重さ"
       }
     ],
     "listFields": [
-      "size",
-      "panel"
+      "type",
+      "blades"
     ],
     "grades": [
       [
-        "size",
-        "画面サイズ"
+        "type",
+        "方式"
       ],
       [
-        "panel",
-        "画質"
+        "closeness",
+        "深剃り力"
       ],
       [
-        "game",
-        "ゲーム"
+        "skin",
+        "肌やさしさ"
       ],
       [
-        "sound",
-        "音質"
+        "cleaning",
+        "お手入れ"
       ],
       [
-        "rec",
-        "録画"
+        "weight",
+        "軽さ・携帯"
       ]
     ],
     "gradeVals": [
@@ -270,461 +244,81 @@ html[data-device=tablet] .fr-wrap {
     ],
     "makers": [
       [
-        "Hisense"
+        "BRAUN"
+      ],
+      [
+        "PHILIPS"
       ],
       [
         "Panasonic"
-      ],
-      [
-        "REGZA"
-      ],
-      [
-        "SHARP"
-      ],
-      [
-        "SONY"
-      ],
-      [
-        "TCL"
-      ],
-      [
-        "e angle"
       ]
     ],
     "buckets": [
       [
         0,
-        45000,
-        "〜4.5万"
+        8000,
+        "〜8千"
       ],
       [
-        45000,
-        150000,
-        "4.5万〜15万"
+        8000,
+        15000,
+        "8千〜1.5万"
       ],
       [
-        150000,
-        250000,
-        "15万〜25万"
+        15000,
+        20000,
+        "1.5万〜2万"
       ],
       [
-        250000,
-        350000,
-        "25万〜35万"
+        20000,
+        30000,
+        "2万〜3万"
       ],
       [
-        350000,
+        30000,
         1000000000000,
-        "35万〜"
+        "3万〜"
       ]
     ]
   },
   "items": [
     {
-      "id": "t1",
-      "status": "active",
-      "maker": "SHARP",
-      "name": "2T-C24GF1",
-      "model": "2T-C24GF1",
-      "price": 39600,
-      "groupId": "compact_entry",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "2K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "6W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "△",
-        "panel": "◯",
-        "game": "△",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "人の声が聞き取りやすい「くっきり音声」搭載。寝室や書斎にぴったりなAQUOS",
-        "en": "Features voice clarity enhancement; perfect personal AQUOS for bedrooms",
-        "zh": "搭载人声清晰增强，适合次卧或书房的经典AQUOS小屏"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%202T-C24GF1",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%202T-C24GF1%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t2",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "32V35S",
-      "model": "32V35S",
-      "price": 44000,
-      "groupId": "compact_entry",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "2K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "12W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "レグザエンジンPower Drive搭載。ネット動画や地デジノイズをクリアに再現する32型定番",
-        "en": "Powered by REGZA Engine for noise-free broadcast and crisp streaming",
-        "zh": "搭载REGZA画质芯片，抑制噪点，32英寸网络电视标杆款"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2032V35S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2032V35S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t3",
-      "status": "active",
-      "maker": "Hisense",
-      "name": "32A4S",
-      "model": "32A4S",
-      "price": 32780,
-      "groupId": "compact_entry",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "2K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "12W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "VIDAA搭載でネット動画にダイレクトアクセス。低遅延ゲームモードも備えた高コスパ機",
-        "en": "Direct streaming apps via VIDAA OS with low-latency game mode",
-        "zh": "VIDAA系统一键直达流媒体，带低延迟游戏模式，性价比极高"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2032A4S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2032A4S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t4",
-      "status": "active",
-      "maker": "e angle",
-      "name": "EHDTB32R4",
-      "model": "EHDTB32R4",
-      "price": 36080,
-      "groupId": "compact_entry",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "2K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "10W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "△",
-        "sound": "◯",
-        "rec": "◎"
-      },
-      "desc": {
-        "ja": "ハードディスクを本体に内蔵！外付けHDDなしで買ってすぐにダブル裏番組録画が可能",
-        "en": "Built-in internal HDD! Dual recording ready without external hard drives",
-        "zh": "机身内置大容量机械硬盘，无需外接硬盘即可双路双调谐器录像"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20EHDTB32R4",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aedion.com%20EHDTB32R4%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t5",
-      "status": "active",
-      "maker": "TCL",
-      "name": "40S5K",
-      "model": "40S5K",
-      "price": 43780,
-      "groupId": "compact_entry",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "QLED",
-      "res": "2K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "16W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "量子ドット（QLED）採用で色が鮮やか。Google TV搭載で40インチ4万円台の破格モデル",
-        "en": "Rich colors powered by QLED and Google TV in an affordable 40\" body",
-        "zh": "量子点广色域技术加持，色彩生动，40英寸超值QLED液晶"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atcl.com%2040S5K",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atcl.com%2040S5K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t6",
-      "status": "active",
-      "maker": "Hisense",
-      "name": "43A6S",
-      "model": "43A6S",
-      "price": 54780,
-      "groupId": "standard_4k",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "4K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "14W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "5万円台で手に入る43型4K。4K高画質処理とネット動画対応でリビング入門に最適",
-        "en": "Great entry 43\" 4K TV with streaming features around 55k JPY",
-        "zh": "5万多日元入手43英寸4K超清，主流视频应用齐全"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2043A6S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2043A6S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t7",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "43M550S",
-      "model": "43M550S",
-      "price": 87780,
-      "groupId": "standard_4k",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "4K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "20W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "レグザエンジンZR搭載。地デジのノイズを抑えて美しく再現する4K液晶の安心スタンダード",
-        "en": "Equipped with REGZA Engine ZR, delivering crisp terrestrial broadcasts",
-        "zh": "搭载REGZA ZR画质芯片，针对地上波信号深度降噪优化"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2043M550S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2043M550S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t8",
+      "id": "sh1",
       "status": "active",
       "maker": "Panasonic",
-      "name": "TV-43W90B",
-      "model": "TV-43W90B",
-      "price": 143550,
-      "groupId": "standard_4k",
+      "name": "ES-KS30-K",
+      "model": "ES-KS30-K",
+      "price": 2178,
+      "groupId": "entry_value",
+      "type": "回転式(乾電池)",
+      "blades": "回転刃",
+      "closeness": "ふつう",
+      "skin": "やさしい",
+      "waterproof": "生活防水",
+      "wet": "×",
+      "cleaning": "ブラシ洗浄",
+      "charge": "乾電池駆動",
+      "battery": "乾電池",
+      "weight": "約120g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "LED",
-      "res": "4K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "30W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◯",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◎",
-        "rec": "◯"
+        "type": "◯",
+        "closeness": "△",
+        "skin": "◯",
+        "cleaning": "△",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "Fire TV内蔵でネット動画と放送波をシームレス横断検索。高音質30Wスピーカーを搭載",
-        "en": "Built-in Fire TV seamlessly searches broadcasts and internet streams",
-        "zh": "内置Fire TV系统，电视广播与网络视频跨平台混合检索，30W音效"
+        "ja": "手のひらサイズの回転刃ポータブル。出張や旅行の携帯に便利な乾電池式エントリー",
+        "en": "Palm-sized rotary portable shaver powered by dry batteries for travel",
+        "zh": "掌心旋转便携干电池式，出差旅行随身应急轻装上阵"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -733,475 +327,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-43W90B",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-KS30-K",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-43W90B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-KS30-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t9",
-      "status": "active",
-      "maker": "SHARP",
-      "name": "4T-C50HN2",
-      "model": "4T-C50HN2",
-      "price": 151800,
-      "groupId": "standard_4k",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "LED",
-      "res": "4K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "20W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "外光の映り込みを抑える低反射N-Blackパネル＆画像処理エンジンMedalist搭載の50型",
-        "en": "50\" AQUOS featuring low-reflection N-Black panel and Medalist engine",
-        "zh": "50英寸抗环境反光N-Black低反面板，明亮客厅反光大幅减弱"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-C50HN2",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-C50HN2%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t10",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "43Z770S",
-      "model": "43Z770S",
-      "price": 175780,
-      "groupId": "miniled_bright",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "40W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "43型でMini LED＋量子ドット＋144Hz倍速駆動。PS5やPCゲームの最高峰コンパクトモニター",
-        "en": "Rare 43\" Mini LED + Quantum Dot with 144Hz VRR. Ultimate gaming flagship",
-        "zh": "罕见的43英寸Mini LED+量子点+144Hz高刷，顶级桌面电竞神器"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2043Z770S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2043Z770S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t11",
-      "status": "active",
-      "maker": "SONY",
-      "name": "K-55XR70M2",
-      "model": "K-55XR70M2",
-      "price": 327800,
-      "groupId": "miniled_bright",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "40W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "認知特性プロセッサー「XR」と新世代Mini LED精密制御。まばゆい輝きと漆黒コントラストのBRAVIA 7",
-        "en": "BRAVIA 7 featuring XR Processor and precision Mini LED backlight control",
-        "zh": "索契认知芯片XR加持，高精密Mini LED控光，高亮与纯黑并存"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR70M2",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR70M2%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t12",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "50Z870R",
-      "model": "50Z870R",
-      "price": 217800,
-      "groupId": "miniled_bright",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "Yes",
-      "audio": "60W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◎"
-      },
-      "desc": {
-        "ja": "Mini LED＋重低音立体音響＋タイムシフトマシン。画質・ゲーム・録画を全方位網羅した傑作機",
-        "en": "Mini LED + Bass Audio + Time Shift Machine whole-channel recorder",
-        "zh": "Mini LED高亮面板、重低音音响与全时录像时光机集大成者"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2050Z870R",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2050Z870R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t13",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "65Z770S",
-      "model": "65Z770S",
-      "price": 228800,
-      "groupId": "miniled_bright",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "60W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "65型の大迫力Mini LED液晶。昼間の明るいリビングでも白飛びせず圧倒的な色彩を投射",
-        "en": "Massive 65\" Mini LED projecting stunning color even in sun-drenched rooms",
-        "zh": "65英寸巨幕Mini LED，高采光大客厅无惧阳光直射，色彩浓郁"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2065Z770S",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2065Z770S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t14",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "48X8900R",
-      "model": "48X8900R",
-      "price": 217800,
-      "groupId": "oled_cinema",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "72W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◯",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "設置しやすい48型有機EL。自発光パネルならではの極上の黒と高出力重低音立体音響",
-        "en": "Accessible 48\" OLED delivering self-lit perfect blacks and 72W rich sound",
-        "zh": "好安装的48英寸OLED，自发光纯黑与72W澎湃重低音震撼结合"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2048X8900R",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2048X8900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t15",
-      "status": "active",
-      "maker": "SONY",
-      "name": "K-55XR80",
-      "model": "K-55XR80",
-      "price": 349800,
-      "groupId": "oled_cinema",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "50W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
-      },
-      "desc": {
-        "ja": "BRAVIA 8。画面そのものから音が出る「アコースティック サーフェス」と極限の有機EL画質",
-        "en": "BRAVIA 8 with Acoustic Surface Audio (sound from screen) and OLED black",
-        "zh": "屏幕发声黑科技，音画合一，沉浸式私人家庭影院天花板"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR80",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Asony.jp%20K-55XR80%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t16",
-      "status": "active",
-      "maker": "REGZA",
-      "name": "55X9900R",
-      "model": "55X9900R",
-      "price": 305800,
-      "groupId": "oled_cinema",
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "Yes",
-      "audio": "90W",
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◎"
-      },
-      "desc": {
-        "ja": "レグザ最高峰有機EL＋タイムシフトマシン。過去番組を丸ごと遡れる自動録画と最高の画質",
-        "en": "Top-tier REGZA OLED with Time Shift Machine recording whole broadcasts",
-        "zh": "东芝REGZA有机EL画质巅峰，地视频道全部自动回看时光机"
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2055X9900R",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2055X9900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "t17",
+      "id": "sh2",
       "status": "active",
       "maker": "Panasonic",
-      "name": "TV-55Z95CJ",
-      "model": "TV-55Z95CJ",
-      "price": 445500,
-      "groupId": "oled_cinema",
+      "name": "ES-L321D-A (3枚刃)",
+      "model": "ES-L321D-A",
+      "price": 8228,
+      "groupId": "entry_value",
+      "type": "往復式3枚刃",
+      "blades": "3枚刃",
+      "closeness": "◯",
+      "skin": "◯",
+      "waterproof": "本体水洗い",
+      "wet": "×",
+      "cleaning": "水洗い",
+      "charge": "専用コード",
+      "battery": "約8日",
+      "weight": "約145g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "160W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "マイクロレンズアレイ（MLA）有機EL＋ラインアレイスピーカー160W。サウンドバー不要の最高音響",
-        "en": "MLA OLED with 160W multi-array spatial soundbar-grade audio system",
-        "zh": "微透镜MLA发光面板搭配160W多声道阵列音响，无需外置回音壁"
+        "ja": "約13,000ストローク/分のリニアモーター駆動。基本性能を凝縮したラムダッシュ3枚刃の入口",
+        "en": "Linear motor drive (~13,000 strokes/min); essential Ramdash 3-blade entry model",
+        "zh": "约13,000转/分高速线性驱动，LAMDASH 3枚刃扎实性价比基础款"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1210,51 +383,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-55Z95CJ",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L321D-A",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20TV-55Z95CJ%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L321D-A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t18",
+      "id": "sh3",
       "status": "active",
-      "maker": "SHARP",
-      "name": "4T-48S9A",
-      "model": "4T-48S9A",
-      "price": 283800,
-      "groupId": "oled_cinema",
+      "maker": "BRAUN",
+      "name": "シリーズ3 300s-B",
+      "model": "300s-B",
+      "price": 6981,
+      "groupId": "entry_value",
+      "type": "往復式3枚刃",
+      "blades": "3連サスペンション",
+      "closeness": "◯",
+      "skin": "◯",
+      "waterproof": "完全防水(丸ごと水洗い)",
+      "wet": "×",
+      "cleaning": "水道水洗い",
+      "charge": "1時間充電",
+      "battery": "約20分",
+      "weight": "約220g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "50W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◯",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◯"
       },
       "desc": {
-        "ja": "新世代RGB Tandem有機ELパネルと生成AI会話「AQUOS AI」搭載のフラッグシップ",
-        "en": "Flagship featuring RGB Tandem OLED and interactive generative AQUOS AI",
-        "zh": "搭载串联式RGB Tandem新型发光架构与生成式AI语音交互"
+        "ja": "3連サスペンションヘッドが顔の凹凸に追従。ディープキャッチ網刃で短いヒゲも効率よくキャッチ",
+        "en": "3-action suspension head following facial contours with deep catch foil",
+        "zh": "3连独立浮动刀头紧贴面部起伏，深层捕捉短须，德国博朗入门经典"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1263,51 +439,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-48S9A",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%20300s-B",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ajp.sharp%204T-48S9A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%20300s-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t19",
+      "id": "sh4",
       "status": "active",
-      "maker": "REGZA",
-      "name": "65X9900R",
-      "model": "65X9900R",
-      "price": 396000,
-      "groupId": "giant_theater",
+      "maker": "PHILIPS",
+      "name": "S3882/00 (3000シリーズ)",
+      "model": "S3882/00",
+      "price": 7018,
+      "groupId": "entry_value",
+      "type": "回転式3ヘッド",
+      "blades": "5方向可動ヘッド",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約60分",
+      "weight": "約185g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "OLED",
-      "res": "4K",
-      "hz": 120,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "Yes",
-      "audio": "90W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◎"
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "65型有機ELフラッグシップ。大画面いっぱいに広がる本物の黒と全チャンネル録画タイムシフト",
-        "en": "65\" Flagship OLED with all-channel Time Shift Machine recording",
-        "zh": "65英寸巨幅OLED纯黑震撼视野，兼备全天候频道整周录像"
+        "ja": "5方向可動ヘッドが顔の凹凸にフィット。自動研磨システムで切れ味が長持ちするフィリップス回転式",
+        "en": "5-way pivot heads with self-sharpening blades providing a comfortable rotary shave",
+        "zh": "5方向灵活浮动刀头，配合自动研磨系统，长久保持顺滑舒适旋转剃须"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1316,51 +495,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2065X9900R",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S3882/00",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2065X9900R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S3882/00%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t20",
+      "id": "sh5",
       "status": "active",
-      "maker": "Hisense",
-      "name": "75A6S",
-      "model": "75A6S",
-      "price": 137500,
-      "groupId": "giant_theater",
+      "maker": "Panasonic",
+      "name": "ES-L322W-K (3枚刃)",
+      "model": "ES-L322W-K",
+      "price": 10640,
+      "groupId": "mid_standard",
+      "type": "往復式3枚刃(お風呂剃り)",
+      "blades": "3枚刃+ヒゲセンサー",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約14日",
+      "weight": "約155g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "LED",
-      "res": "4K",
-      "hz": 60,
-      "hdmi21": "No",
-      "vrr": "No",
-      "timeShift": "No",
-      "audio": "30W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◎",
-        "panel": "◯",
-        "game": "◯",
-        "sound": "◯",
-        "rec": "◯"
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "圧倒的スケールの75型を13万円台で実現。リビングを巨大スクリーン化する超高コスパ機",
-        "en": "Massive 75\" screen under 140k JPY. Turns your living room into cinema",
-        "zh": "13万多日元即可拥有的75英寸巨幅电视，性价比大屏天花板"
+        "ja": "お風呂剃り対応＆ヒゲセンサー搭載！毎日の肌負担を抑えながらスムーズに深剃り",
+        "en": "Wet/dry shaving support with beard density sensor adjusting motor power dynamically",
+        "zh": "支持泡泡浴湿剃加智能胡须密度感应，自动调节强弱减少皮肤刺激"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1369,51 +551,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2075A6S",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L322W-K",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Ahisense.co.jp%2075A6S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L322W-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t21",
+      "id": "sh6",
       "status": "active",
-      "maker": "TCL",
-      "name": "75X11L",
-      "model": "75X11L",
-      "price": 693000,
-      "groupId": "giant_theater",
+      "maker": "Panasonic",
+      "name": "ES-L342D-R (3枚刃)",
+      "model": "ES-L342D-R",
+      "price": 14900,
+      "groupId": "mid_standard",
+      "type": "往復式3枚刃(密着スイング)",
+      "blades": "3枚刃+スイングヘッド",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "ウォータースルー洗浄",
+      "charge": "1時間充電",
+      "battery": "約14日",
+      "weight": "約165g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "No",
-      "audio": "80W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◯"
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "数万個単位のMini LEDを敷き詰めたSQD-Mini LED。眩いばかりのピーク輝度を誇るモンスター",
-        "en": "Monster 75\" SQD-Mini LED boasting dazzling peak luminance and 144Hz",
-        "zh": "搭载数万枚微米级灯珠的超高分区Mini LED，顶级工业巅峰"
+        "ja": "上下・左右の密着スイングヘッドを搭載。外刃を外さずヒゲくずを洗い流せるウォータースルー洗浄",
+        "en": "Multi-flex swing head with quick water-through cleaning slot without removing outer foil",
+        "zh": "上下左右密着摇摆刀头，配合免卸外刀网的“水流直通清洗”孔，冲洗极快"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1422,51 +607,54 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atcl.com%2075X11L",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L342D-R",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atcl.com%2075X11L%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L342D-R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "t22",
+      "id": "sh7",
       "status": "active",
-      "maker": "REGZA",
-      "name": "85Z970R",
-      "model": "85Z970R",
-      "price": 463650,
-      "groupId": "giant_theater",
+      "maker": "BRAUN",
+      "name": "シリーズ5 53-B1200s",
+      "model": "53-B1200s",
+      "price": 8778,
+      "groupId": "mid_standard",
+      "type": "往復式3連密着",
+      "blades": "3連密着ブレード",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "クイック洗浄システム",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約173g",
       "size": {
         "w": null,
         "d": null,
         "h": null
       },
-      "panel": "Mini LED",
-      "res": "4K",
-      "hz": 144,
-      "hdmi21": "Yes",
-      "vrr": "Yes",
-      "timeShift": "Yes",
-      "audio": "110W",
       "specs": {},
       "jan": "",
       "tags": [],
       "grades": {
-        "size": "◎",
-        "panel": "◎",
-        "game": "◎",
-        "sound": "◎",
-        "rec": "◎"
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "国内最大級85型Mini LED＋タイムシフトマシン。リビングの主役になる圧巻のフラッグシップ",
-        "en": "85\" Mini LED master flagship with full-ch DVR and 110W multi-audio system",
-        "zh": "85英寸超大巨幕Mini LED，多声道环绕音响与全频道时光机"
+        "ja": "ヘッドを外さずにヒゲくずを洗い流せるクイック洗浄システム。お風呂剃り対応の人気スタンダード",
+        "en": "Quick clean system allowing water rinsing through the head without detachment",
+        "zh": "无需拆卸刀头即可一键冲洗的快速清洁系统，德国精工泡澡湿剃主力款"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -1475,13 +663,517 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2085Z970R",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2053-B1200s",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Aregza.com%2085Z970R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2053-B1200s%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh8",
+      "status": "active",
+      "maker": "PHILIPS",
+      "name": "フィリップス 5000X (X5006/05)",
+      "model": "X5006/05",
+      "price": 16500,
+      "groupId": "mid_standard",
+      "type": "回転式3ヘッド",
+      "blades": "スキンプロテクション",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約175g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "人間工学に基づいたスリムで自立するボディ。マイクロビーズコーティングで滑らかな肌当たり",
+        "en": "Ergonomic self-standing body with micro-bead coating for ultra-smooth glide",
+        "zh": "人体工学纤细自立机身，微珠亲肤涂层顺滑滑过面部，防滑好握"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20X5006/05",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20X5006/05%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh9",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ6 62-S1200s",
+      "model": "62-S1200s",
+      "price": 16280,
+      "groupId": "mid_standard",
+      "type": "往復式スイング密着",
+      "blades": "スイング密着システム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "クイック洗浄",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約182g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "前後に可動するスイング密着システムで肌への摩擦を大幅軽減。やさしさと深剃りを高い次元で両立",
+        "en": "Swinging head system minimizing skin friction while delivering a close shave",
+        "zh": "前后浮动摇摆密着系统，大幅降低面部施压摩擦，敏感肌也能安心深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2062-S1200s",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2062-S1200s%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh10",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L551D-K (5枚刃)",
+      "model": "ES-L551D-K",
+      "price": 21780,
+      "groupId": "deep_closeness_high",
+      "type": "ラムダッシュPRO 5枚刃",
+      "blades": "5枚刃+約14,000ストローク",
+      "closeness": "◎",
+      "skin": "◯",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約200g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "5枚刃システム×毎分約14,000ストロークの超高速リニアモーター。長いアゴヒゲやくせヒゲも一網打尽",
+        "en": "5-blade array driven by ~14,000 strokes/min linear motor for unbeatable fast shaving",
+        "zh": "5枚刃矩阵配每分钟约14,000转超高速线性马达，再长的顽固杂须也能瞬间剃净"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L551D-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L551D-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh11",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L571U-S (5枚刃)",
+      "model": "ES-L571U-S",
+      "price": 28380,
+      "groupId": "deep_closeness_high",
+      "type": "ラムダッシュPRO 5枚刃",
+      "blades": "5枚刃+5Dアクティブサス",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約210g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "5Dアクティブサスペンション搭載！アゴ下の複雑な凹凸にヘッドが密着し、摩擦を抑えるスムースローラー",
+        "en": "5D active suspension head tracking complex jawline contours effortlessly",
+        "zh": "5D全方向浮动减震悬挂头，紧密贴合下巴与喉咙凹凸死角，带顺滑滚轮减擦"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L571U-S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L571U-S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh12",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ7 73-S85010cc",
+      "model": "73-S85010cc",
+      "price": 25080,
+      "groupId": "deep_closeness_high",
+      "type": "往復式360°密着",
+      "blades": "360°密着システム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "アルコール自動洗浄器",
+      "charge": "急速1時間",
+      "battery": "約50分",
+      "weight": "約185g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "360°密着システム＆人工知能AIテクノロジー。ヒゲの濃さを読み取り自動でパワーを最適化、洗浄器付き",
+        "en": "360-degree contour adaptation with AI power adjusting tech and alcohol cleaning center",
+        "zh": "360度全向贴合与AI智能胡须感应，每秒自动调节动力，配备酒精自动清洗中心"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2073-S85010cc",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2073-S85010cc%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh13",
+      "status": "active",
+      "maker": "PHILIPS",
+      "name": "フィリップス 7000 (S7885/50)",
+      "model": "S7885/50",
+      "price": 31460,
+      "groupId": "skin_sensitive_rotary",
+      "type": "回転式3ヘッド",
+      "blades": "ナノスキンプロテクション",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い/ポッド対応",
+      "charge": "1時間充電",
+      "battery": "約60分",
+      "weight": "約194g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "ヘッド表面に微粒子コーティングを施し肌摩擦を大幅軽減。アプリガイドでヒゲ剃りの圧力を最適化",
+        "en": "Skin-glide micro-bead coating reducing friction by 50%; app coaching for sensitive skin",
+        "zh": "表面纳米微粒防摩擦涂层，配合APP实时压力反馈指导，专为敏感肌设计的旋转旗舰"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S7885/50",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S7885/50%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh14",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ラムダッシュPRO 6枚刃 (ES-L670U)",
+      "model": "ES-L670U-K",
+      "price": 57420,
+      "groupId": "flagship_palm_in",
+      "type": "ラムダッシュPRO 6枚刃",
+      "blades": "6枚刃+2種4枚深剃り刃",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "全自動洗浄充電器",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約220g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "パナソニック最高峰6枚刃システム。2種4枚の極薄深剃り刃と2枚のアゴ下トリマー刃で究極の早剃り",
+        "en": "Flagship 6-blade system with ultra-thin deep shaving foils and dual under-chin trimmers",
+        "zh": "松下至高6枚刃旗舰矩阵！超薄深剃刀网与双下巴胡须捕捉刃，实现颠覆性极速深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L670U-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L670U-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh15",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ9 Pro+ (9660CC)",
+      "model": "9660cc",
+      "price": 60280,
+      "groupId": "flagship_palm_in",
+      "type": "往復式5+1カット",
+      "blades": "プロトリマー+5カットシステム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "5段階アルコール洗浄",
+      "charge": "急速1時間",
+      "battery": "約60分",
+      "weight": "約215g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "ブラウン最高峰。新形状プロトリマーを搭載し、寝たヒゲやくせヒゲも0.05mmの極限深剃り",
+        "en": "Braun's absolute peak with ProTrimmer blade, achieving 0.05mm ultra-closeness",
+        "zh": "博朗9系Pro+至尊巅峰！全新PRO特制修剪器，实现0.05mm极限贴面深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%209660cc",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%209660cc%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh16",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ラムダッシュ パームイン 5枚刃 (ES-PV6A)",
+      "model": "ES-PV6A-W",
+      "price": 34650,
+      "groupId": "flagship_palm_in",
+      "type": "パームイン5枚刃",
+      "blades": "5枚刃(NAGORI素材)",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い/USB-C",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約145g(超軽量)",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "手のひらでなでるように剃る新しいシェービング体験。海洋由来ミネラル素材「NAGORI」の上質な陶器質感",
+        "en": "Revolutionary palm-in form factor crafted with marine-derived ceramic-like NAGORI material",
+        "zh": "手掌心直觉掌控的革新形态，采用天然海洋矿物NAGORI仿陶瓷温润触感，5枚刃高能"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-PV6A-W",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-PV6A-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
@@ -1498,7 +1190,7 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="hearing-data">
 {
-  "category": "tv",
+  "category": "shaver",
   "storeName": "",
   "version": "2026-10-23",
   "questions": {},
@@ -1508,14 +1200,14 @@ html[data-device=tablet] .fr-wrap {
 <!-- ▲▲▲ ヒアリング設定ここまで ▲▲▲ -->
 <!-- アプリを閉じた直後・読み込み中に一瞬見える画面 -->
 <div class="pg-card">
-  <div class="pg-ico" aria-hidden="true">📺</div>
-  <h1 class="pg-ttl">テレビ</h1>
+  <div class="pg-ico" aria-hidden="true">🏠</div>
+  <h1 class="pg-ttl">シェーバー</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="area-season-av.html">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="kaden/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="#"></a></div>
+<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -1554,9 +1246,9 @@ html[data-device=tablet] .fr-wrap {
 var currentLang = "ja";
 (function () {
   "use strict";
-  var APP = "tv";                 // このページの相談アプリ
-  var ROOT_ID = "tv-app";            // アプリの表示エリア
-  var AREA_URL = "area-season-av.html";       // 閉じたときに戻るエリアページ
+  var APP = "shaver";                 // このページの相談アプリ
+  var ROOT_ID = "sv-app";            // アプリの表示エリア
+  var AREA_URL = "kaden/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -4294,7 +3986,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "product-pc.html", out, "text/html");
+      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -4554,661 +4246,1075 @@ window.NJ_HEAR = (function () {
 })();
 </script>
 
-<!-- ===== 相談アプリ: tv ===== -->
+<!-- ===== 相談アプリ: shaver ===== -->
 <style>
-.tv-svg {
-  width: 104px;
-  height: 70px;
+#sv-app {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(160deg,#e3faf5,#f8fafc 45%,#ecfeff);
+  color: #0f172a;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(28px) scale(.985);
+  transition: opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1),visibility 0s .5s;
+}
+#sv-app.on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+#sv-app * {
+  box-sizing: border-box;
+  font-family: Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;
+}
+.sv-top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #ffffffe0;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+}
+.sv-top b {
+  flex: 1;
+  font-size: .98rem;
+  color: #0f766e;
+}
+.sv-x {
+  border: 0;
+  background: #f1f5f9;
+  border-radius: 99px;
+  padding: 7px 12px;
+  font-size: .86rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+}
+.sv-pill {
+  background: #0f766e;
+  color: #fff;
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-size: .8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sv-pill i {
+  font-style: normal;
+  font-size: 1.05rem;
+  margin: 0 2px;
+}
+.sv-prog {
+  height: 3px;
+  background: #ccfbf1;
+}
+.sv-prog div {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,#14b8a6,#0ea5e9);
+  transition: width .6s cubic-bezier(.2,.8,.2,1);
+}
+.sv-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 18px 14px 70px;
+}
+.sv-in {
+  animation: svin .5s cubic-bezier(.2,.8,.2,1) both;
+}
+.sv-back .sv-in {
+  animation-name: svinb;
+}
+@keyframes svin {
+  0% {
+    opacity: 0;
+    transform: translate(34px);
+  }
+}
+@keyframes svinb {
+  0% {
+    opacity: 0;
+    transform: translate(-34px);
+  }
+}
+@keyframes svup {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+.sv-up {
+  animation: svup .55s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: calc(var(--i,0)*70ms);
+}
+.sv-h1 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.sv-h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg,#0d9488,#0ea5e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sv-p {
+  font-size: .92rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.sv-tag {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: #ccfbf1;
+  color: #0f766e;
+  margin-bottom: 8px;
+}
+.sv-vs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.sv-vs>div {
+  border-radius: 12px;
+  padding: 10px 11px;
+  font-size: .86rem;
+  line-height: 1.65;
+  color: #334155;
+  background: #f8fafc;
+  border-top: 3px solid #0d9488;
+}
+.sv-vs>div:last-child {
+  border-top-color: #0ea5e9;
+}
+.sv-vs b {
+  display: block;
+  font-size: .92rem;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+.sv-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sv-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  transition: .25s;
+  box-shadow: 0 2px 8px #0f172a0d;
+  position: relative;
+  overflow: hidden;
+}
+.sv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #0d94882e;
+}
+.sv-card.sel {
+  border-color: #0d9488;
+  grid-column: 1/-1;
+  box-shadow: 0 10px 28px #0d948838;
+}
+.sv-card h3 {
+  font-size: .98rem;
+  margin: 6px 0 2px;
+}
+.sv-card small {
+  color: #64748b;
+  font-size: .8rem;
+  display: block;
+}
+.sv-more {
+  display: none;
+  margin-top: 8px;
+  font-size: .86rem;
+  line-height: 1.65;
+  color: #334155;
+}
+.sv-card.sel .sv-more {
+  display: block;
+  animation: svup .4s both;
+}
+.sv-more div {
+  margin-bottom: 4px;
+}
+.sv-more span {
+  display: inline-block;
+  min-width: 3.4em;
+  font-weight: 800;
+  color: #0d9488;
+}
+.sv-svg {
+  width: 62px;
+  height: 96px;
   display: block;
   margin: 0 auto;
 }
-.fr-card.sel .tv-svg {
+.sv-card.sel .sv-svg {
   margin: 0;
 }
-@keyframes tvglow {
-  0%,
-  to {
-    opacity: .45;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-.tv-glow {
-  animation: tvglow 2.4s ease-in-out infinite;
+.sv-osc {
+  animation: svosc 1.3s ease-in-out infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes tvscan {
-  0% {
-    transform: translateY(-16px);
-  }
-  to {
-    transform: translateY(60px);
-  }
+.sv-osc.b {
+  animation-direction: reverse;
 }
-.tv-scan {
-  animation: tvscan 2.8s linear infinite;
-  animation-delay: var(--dl,0s);
-}
-@keyframes tvspark {
+@keyframes svosc {
   0%,
   to {
-    transform: scale(.5);
-    opacity: .2;
+    transform: translateY(-3px);
   }
   50% {
-    transform: scale(1.5);
-    opacity: 1;
+    transform: translateY(3px);
   }
 }
-.tv-spark {
+.sv-spin {
   transform-box: fill-box;
   transform-origin: center;
-  animation: tvspark 1.8s ease-in-out infinite;
+  animation: svsp 2.6s linear infinite;
   animation-delay: var(--dl,0s);
 }
-@keyframes tvray {
-  0% {
-    transform: rotate(0);
-  }
+@keyframes svsp {
   to {
     transform: rotate(360deg);
   }
 }
-.tv-ray {
+.sv-tw {
   transform-box: fill-box;
   transform-origin: center;
-  animation: tvray 9s linear infinite;
+  animation: svtw 1.8s ease-in-out infinite;
 }
-.tv-cmp {
-  width: 100%;
-  border-collapse: collapse;
+@keyframes svtw {
+  50% {
+    transform: scale(1.4) rotate(20deg);
+    opacity: .7;
+  }
+}
+.sv-q {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px 16px;
+  box-shadow: 0 8px 28px #0f172a14;
+}
+.sv-q .no {
+  font-size: .8rem;
+  font-weight: 800;
+  color: #0d9488;
+  letter-spacing: .05em;
+}
+.sv-q h2 {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 4px 0 6px;
+}
+.sv-hint {
   font-size: .86rem;
-  line-height: 1.55;
+  color: #475569;
+  background: #ecfeff;
+  border-left: 3px solid #06b6d4;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.6;
+  margin-bottom: 8px;
 }
-.tv-cmp td,
-.tv-cmp th {
-  padding: 7px 6px;
-  border-bottom: 1px solid #e2e8f0;
-  vertical-align: top;
+.sv-eff {
+  font-size: .8rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  line-height: 2;
+}
+.sv-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
   text-align: left;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 13px;
+  margin-bottom: 8px;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+  color: #0f172a;
 }
-.tv-cmp th {
-  color: #1d4ed8;
-  white-space: nowrap;
+.sv-opt:hover {
+  border-color: #5eead4;
+  transform: translate(3px);
 }
-.tv-meter {
-  position: relative;
-  height: 84px;
-  margin: 6px 22px 0;
+.sv-opt.sel {
+  border-color: #0d9488;
+  background: #f0fdfa;
+  color: #0f766e;
+  animation: svpop .35s;
 }
-.tv-track {
-  position: absolute;
-  top: 34px;
-  left: 0;
-  right: 0;
-  height: 10px;
-  border-radius: 99px;
+.sv-opt .ck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  color: #fff;
+}
+.sv-opt.sel .ck {
+  background: #0d9488;
+  border-color: #0d9488;
+}
+@keyframes svpop {
+  50% {
+    transform: scale(1.025);
+  }
+}
+.sv-btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg,#0d9488,#0f766e);
+  cursor: pointer;
+  box-shadow: 0 8px 20px #0d94884d;
+  transition: .2s;
+}
+.sv-btn:active {
+  transform: scale(.98);
+}
+.sv-btn.s {
+  background: #fff;
+  color: #475569;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: none;
+  margin-top: 8px;
+  font-size: .92rem;
+  padding: 11px;
+}
+.sv-btn.k {
+  background: #111827;
+  color: #fbbf24;
+}
+.sv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .86rem;
+  margin-bottom: 9px;
+}
+.sv-row b {
+  width: 7.2em;
+  flex: none;
+}
+.sv-bar {
+  flex: 1;
+  height: 12px;
   background: #e2e8f0;
+  border-radius: 99px;
   overflow: hidden;
 }
-.tv-band {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-radius: 99px;
-  background: linear-gradient(90deg,#3b82f6,#06b6d4);
-  transform-origin: left;
-  animation: tvband 1s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes tvband {
-  0% {
-    transform: scaleX(0);
-    opacity: .2;
-  }
-}
-.tv-tk {
-  position: absolute;
-  top: 48px;
-  transform: translate(-50%);
-  text-align: center;
-  font-size: .78rem;
-  font-weight: 700;
-  color: #475569;
-  line-height: 1.3;
-  white-space: nowrap;
-}
-.tv-tk i {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  width: 2px;
-  height: 7px;
-  background: #94a3b8;
-}
-.tv-mk {
-  position: absolute;
-  top: 0;
-  transform: translate(-50%);
-  animation: tvmark 1.1s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes tvmark {
-  0% {
-    opacity: 0;
-    transform: translate(-50%,-10px);
-  }
-}
-.tv-mk span {
+.sv-bar i {
   display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg,#14b8a6,#0ea5e9);
+  animation: svbar .9s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: calc(var(--i,0)*60ms + .1s);
+}
+.sv-bar.g i {
+  background: #cbd5e1;
+}
+@keyframes svbar {
+  0% {
+    width: 0;
+  }
+}
+.sv-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 16px #0f172a0f;
+}
+.sv-box h3 {
+  font-size: .98rem;
+  margin-bottom: 8px;
+}
+.sv-chip {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 99px;
+  margin: 0 4px 4px 0;
+  background: #f1f5f9;
+  color: #334155;
+}
+.sv-chip.ok {
+  background: #d1fae5;
+  color: #065f46;
+}
+.sv-chip.w {
+  background: #fef3c7;
+  color: #92400e;
+}
+.sv-chip.ng {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.sv-chip.ax {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+.sv-ax {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  scroll-snap-type: x proximity;
+}
+.sv-ax button {
+  flex: none;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  border-radius: 99px;
+  padding: 8px 13px;
+  font-size: .86rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #334155;
+  transition: .2s;
+  scroll-snap-align: start;
+}
+.sv-ax button.on {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #fff;
+  transform: scale(1.05);
+}
+.sv-win {
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg,#fef3c7,#fde68a);
+  font-size: .88rem;
+  line-height: 1.6;
+  animation: svup .4s both;
+}
+.sv-rec {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+  position: relative;
+  transition: .3s;
+  box-shadow: 0 4px 16px #0f172a0f;
+}
+.sv-rec.hi {
+  border-color: #f59e0b;
+  box-shadow: 0 12px 32px #f59e0b4d;
+  transform: scale(1.015);
+}
+.sv-rec.dim {
+  opacity: .85;
+}
+.sv-rank {
+  position: absolute;
+  top: -11px;
+  left: 14px;
   background: #111827;
   color: #fbbf24;
   font-size: .8rem;
   font-weight: 800;
-  padding: 3px 9px;
+  padding: 3px 11px;
   border-radius: 99px;
-  white-space: nowrap;
 }
-.tv-mk:after {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 16px;
-  background: #111827;
-  margin: 0 auto;
+.sv-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 4px 0 8px;
 }
-.tv-src {
+.sv-ring {
+  width: 62px;
+  height: 62px;
+  flex: none;
+  position: relative;
+}
+.sv-ring svg {
+  transform: rotate(-90deg);
+}
+.sv-ring circle {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.sv-ring .bg {
+  stroke: #e2e8f0;
+}
+.sv-ring .fg {
+  stroke: #0d9488;
+  animation: svrg 1.1s cubic-bezier(.2,.8,.2,1) both;
+}
+.sv-ring b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+}
+@keyframes svrg {
+  0% {
+    stroke-dasharray: 0 164;
+  }
+}
+.sv-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.sv-price {
+  font-weight: 800;
+  color: #d90429;
+  font-size: 1.1rem;
+}
+.sv-spec {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+  margin: 8px 0;
+}
+.sv-spec td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+.sv-spec td:first-child {
+  color: #64748b;
+  font-weight: 700;
+  width: 26%;
+}
+.sv-ul {
+  list-style: none;
+  font-size: .86rem;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+.sv-ul li {
+  padding-left: 1.4em;
+  position: relative;
+}
+.sv-ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 900;
+}
+.sv-ul li.w:before {
+  content: "!";
+  color: #d97706;
+}
+.sv-ul li.n:before {
+  content: "×";
+  color: #dc2626;
+}
+.sv-heat {
+  display: grid;
+  gap: 3px;
   font-size: .78rem;
-  color: #94a3b8;
-  line-height: 1.5;
-  margin-top: 6px;
+  text-align: center;
 }
-body.motion-off .tv-glow,
-body.motion-off .tv-scan,
-body.motion-off .tv-spark,
-body.motion-off .tv-ray,
-body.motion-off .tv-band,
-body.motion-off .tv-mk {
+.sv-heat div {
+  padding: 7px 2px;
+  border-radius: 6px;
+  background: rgba(13,148,136,var(--a,0));
+  animation: svup .5s both;
+  animation-delay: calc(var(--i,0)*25ms);
+}
+.sv-heat .hd {
+  background: none;
+  font-weight: 800;
+  color: #475569;
+}
+.sv-heat .rn {
+  text-align: left;
+  font-weight: 800;
+  background: none;
+}
+.sv-ss {
+  border: 2px solid #111827;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+.sv-ss table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  margin-bottom: 8px;
+}
+.sv-ss td {
+  padding: 5px 7px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+.sv-ss td:first-child {
+  background: #f3f4f6;
+  font-weight: 800;
+  width: 38%;
+}
+body.motion-off #sv-app * {
   animation: none!important;
+  transition: none!important;
 }
-</style><div id="tv-app" class="fr-root" role="dialog" aria-label="テレビ購入相談"></div>
+@media (prefers-reduced-motion:reduce) {
+  #sv-app * {
+    animation: none!important;
+  }
+}
+</style><div id="sv-app" role="dialog" aria-label="メンズシェーバー購入相談"></div>
 <script>
 (function () {
   "use strict";
-  const R = (window.NJ_INV ? window.NJ_INV.products() : []),
-    Z = [
+  const E = (window.NJ_INV ? window.NJ_INV.products() : []),
+    J = [
       {
         name: {
-          ja: "テレビ用高音質スリムサウンドバー (Dolby Atmos対応)",
-          en: "Dolby Atmos Slim Soundbar",
-          zh: "杜比全景声超薄回音壁音箱"
+          ja: "パナソニック ラムダッシュ専用 替え刃 (内刃・外刃セット)",
+          en: "OEM Replacement Inner & Outer Foil Blade Set",
+          zh: "原厂适配各型号剃须刀替换内刀片与外刀网套装"
         },
-        price: "¥24,800",
+        price: "¥4,980",
         desc: {
-          ja: "映画のセリフがグッと聞き取りやすく、頭上と背後から包み込む立体音響",
-          en: "Expands spatial 3D audio; makes actor dialogues crystal clear",
-          zh: "人声对白极速清晰化，打造天空声道立体环绕包围感"
+          ja: "切れ味を新品同様に復活させるために約1.5〜2年ごとの交換がおすすめ",
+          en: "Restores original razor-sharp cutting performance; recommended every 1.5-2 years",
+          zh: "定期更换锋利如初，建议每1.5至2年更换一次内外刀头刀网"
         }
       },
       {
         name: {
-          ja: "プレミアム超高速 HDMI 2.1ケーブル (4K 120Hz/eARC対応)",
-          en: "Ultra High-Speed HDMI 2.1 Cable",
-          zh: "HDMI 2.1极速发烧级信号线 (48Gbps)"
+          ja: "ブラウン シェーバー専用 アルコール洗浄液 (6個入)",
+          en: "Braun Clean & Renew Alcohol Refill Cartridges (6-pack)",
+          zh: "博朗剃须刀专用酒精清洗液补充装 (6只装)"
         },
-        price: "¥2,980",
+        price: "¥3,980",
         desc: {
-          ja: "PS5や最新サウンドバーの真価を引き出す48Gbps伝送対応ケーブル",
-          en: "Essential for PS5 4K 120Hz, VRR, and lossless eARC audio",
-          zh: "满血点亮PS5 4K 120Hz高刷低延迟与eARC无损音频传输"
+          ja: "皮脂汚れやヒゲくずを99.9%除菌洗浄。清潔な潤いを保ち、レモンの爽やかな香り",
+          en: "Hygienic 99.9% alcohol sterilization keeping blades lubricated with fresh scent",
+          zh: "99.9%高效除菌去异味，润滑刀头减少磨损，保持每次剃须清新柠檬香"
         }
       },
       {
         name: {
-          ja: "テレビ録画用 静音外付けハードディスク 4TB",
-          en: "Silent 4TB TV Recording HDD",
-          zh: "电视录像专用静音外置硬盘 4TB"
+          ja: "メンズ シェービングフォーム / ジェル (敏感肌用)",
+          en: "Sensitive Skin Shaving Foam & Gel",
+          zh: "男士敏感肌专用清爽剃须泡沫/啫喱"
         },
-        price: "¥13,800",
+        price: "¥880",
         desc: {
-          ja: "ファンレス静音設計。見たい連続ドラマやスポーツ中継をたっぷり約500時間録画",
-          en: "Fanless whisper-quiet design. Stores over 500 hours of TV series",
-          zh: "静音无风扇抗震散热，轻松装下约500小时高清剧集与比赛"
+          ja: "カミソリ負けやヒリヒリ感を防止。お風呂剃りやドライ剃りの滑りを劇的に向上",
+          en: "Protects skin from razor burn and friction during dry or wet shaves",
+          zh: "有效隔离刀网与皮肤直接摩擦，防止泛红刺痛，泡沫绵密易冲洗"
         }
       }
     ];
-  Z.push(
-    {
-      name: { ja: "壁掛け金具（VESA対応・角度調整タイプ）", en: "VESA Wall Mount Bracket", zh: "VESA壁挂支架（可调角度）" },
-      price: "¥6,980",
-      desc: {
-        ja: "壁掛け設置に必須。対応サイズ・耐荷重・壁の下地の確認はスタッフが案内します",
-        en: "Required for wall mounting. Staff will confirm size, load and wall type",
-        zh: "壁挂安装必备，尺寸、承重与墙体由店员协助确认"
-      }
-    },
-    {
-      name: { ja: "テレビ転倒防止ベルト・耐震ジェル", en: "Anti-Tip Strap & Gel Pads", zh: "电视防倾倒固定带与防震胶垫" },
-      price: "¥1,980",
-      desc: {
-        ja: "地震やお子さま・ペットの接触による転倒を防止。台置きの大画面に特におすすめ",
-        en: "Prevents tipping from quakes, kids or pets. Best for stand-mounted large screens",
-        zh: "防止地震或儿童宠物碰撞导致倾倒，台置大屏尤为推荐"
-      }
-    }
-  );
-  var j = function () {
+  var x = function () {
     return typeof currentLang < "u" && currentLang || "ja";
   },
-    N = function (e) {
-      return typeof e == "string" ? e : e && (e[j()] || e.ja) || "";
+    W = function (e) {
+      return typeof e == "string" ? e : e && (e[x()] || e.ja) || "";
     },
     S = function (e) {
       return "¥" + e.toLocaleString("ja-JP");
     },
-    W = function (e, t, i) {
-      return Math.max(t, Math.min(i, e));
+    b = document.getElementById("sv-app"),
+    L = { ja: 0, en: 1, zh: 2 },
+    s = function (e) {
+      return Array.isArray(e) ? e[L[x()]] : e;
     },
-    w = document.getElementById("tv-app"),
-    $ = { ja: 0, en: 1, zh: 2 },
-    a = function (e) {
-      return Array.isArray(e) ? e[$[j()]] : e;
-    },
-    m = function (e) {
-      for (var t = a(e), i = 1; i < arguments.length; i++)
-        t = t.split("{" + (i - 1) + "}").join(arguments[i]);
+    p = function (e) {
+      for (var t = s(e), n = 1; n < arguments.length; n++)
+        t = t.split("{" + (n - 1) + "}").join(arguments[n]);
       return t;
     },
-    u,
-    ee = { "◎": 5, "◯": 3.2, "△": 2 },
-    te = {
-      wd: ["横幅", "Width", "宽度"],
-      sw: ["台の幅", "Stand width", "台面宽度"],
-      sd: ["台の奥行", "Stand depth", "台面深度"],
-      ht: ["上の空き高さ", "Clearance above", "上方空余高度"],
-      ds: ["視聴距離", "Viewing distance", "观看距离"],
-      pa: ["搬入", "Delivery", "搬入"]
+    T = function (e) {
+      return s(e.n);
     },
-    O = function () {
-      return a(["型", " in.", "英寸"]);
-    };
-  R.forEach(function (e) {
-    var t = e.size * 25.4 * .8715 + 12, i = e.size * 25.4 * .4902 + 12;
-    e.pw = Math.round(t),
-      e.ph = Math.round(i),
-      e.sh = e.size <= 32 ? 40 : 70,
-      e.th = e.ph + e.sh,
-      e.sw = Math.round(t * (e.size >= 55 ? .8 : e.size >= 43 ? .7 : .6)),
-      e.sd = e.size <= 32
-        ? 160
-        : e.size <= 43 ? 200 : e.size <= 55 ? 240 : e.size <= 65 ? 280 : e.size <= 75 ? 310 : 340,
-      e.kg = Math.round(
-        .0045 * e.size * e.size * (e.panel === "Mini LED" ? 1.3 : e.panel === "OLED" ? 1.1 : 1) * 10
-      )
-        / 10,
-      e.box = e.pw + 150,
-      e.wat = parseInt(e.audio) || 0;
-  });
-  var B = function (e) {
-    return e.panel === "LED" ? a(["液晶(LED)", "LCD (LED)", "液晶(LED)"]) : e.panel;
-  },
-    T = [
-      {
-        id: "compact_entry",
-        n: ["小型・個室向け", "Compact / for private rooms", "小型·个人房间"],
-        sub: ["19〜40型", "19–40 in.", "19～40英寸"],
-        lay: "c",
-        who: ["寝室・書斎・キッチン・一人暮らし", "Bedrooms, studies, kitchens, living alone", "卧室·书房·厨房·独居"],
-        pro: [
-          "3〜4万円台から。置き場所を選ばず、本体にHDDを内蔵した録画対応機もある",
-          "From around ¥30,000–40,000. Fits almost anywhere, and some models have a built-in HDD for recording.",
-          "3～4万日元起。不挑摆放位置，也有内置硬盘可录像的机型。"
-        ],
-        con: [
-          "2K（フルHD）中心で、画面が小さく迫力は控えめ",
-          "Mostly 2K (Full HD) with a small screen, so less impact.",
-          "以2K（全高清）为主，屏幕较小，视觉冲击力一般。"
-        ]
+    Z = {
+      wet: ["お風呂剃り", "Wet shaving", "湿剃"],
+      method: ["方式", "Blade type", "方式"],
+      dock: ["洗浄器", "Cleaning station", "清洗座"],
+      bud: ["予算", "Budget", "预算"],
+      val: ["性能優先", "Performance first", "性能优先"]
+    },
+    ee = {
+      type: {
+        "回転式(乾電池)": ["Rotary (dry battery)", "旋转式(干电池)"],
+        往復式3枚刃: ["Reciprocating 3-blade", "往复式3枚刃"],
+        回転式3ヘッド: ["Rotary 3-head", "旋转式3刀头"],
+        "往復式3枚刃(お風呂剃り)": ["Reciprocating 3-blade (wet shaving)", "往复式3枚刃(泡澡湿剃)"],
+        "往復式3枚刃(密着スイング)": ["Reciprocating 3-blade (contour swing)", "往复式3枚刃(贴合摇摆)"],
+        往復式3連密着: ["Reciprocating 3-flex contour", "往复式3连贴合"],
+        往復式スイング密着: ["Reciprocating swing contour", "往复式摇摆贴合"],
+        "ラムダッシュPRO 5枚刃": ["LAMDASH PRO 5-blade", "LAMDASH PRO 5枚刃"],
+        "往復式360°密着": ["Reciprocating 360° contour", "往复式360°贴合"],
+        "ラムダッシュPRO 6枚刃": ["LAMDASH PRO 6-blade", "LAMDASH PRO 6枚刃"],
+        "往復式5+1カット": ["Reciprocating 5+1 cut", "往复式5+1切割"],
+        パームイン5枚刃: ["Palm-In 5-blade", "Palm-In 5枚刃"]
       },
-      {
-        id: "standard_4k",
-        n: ["スタンダード4K液晶", "Standard 4K LCD", "标准4K液晶"],
-        sub: ["43〜55型", "43–55 in.", "43～55英寸"],
-        lay: "s",
-        who: [
-          "リビングで地デジ・YouTube・配信を日常的に楽しむ方",
-          "Those who enjoy broadcast TV, YouTube, and streaming daily in the living room",
-          "在客厅日常观看地面数字电视·YouTube·流媒体的人"
-        ],
-        pro: [
-          "5万円台から。4Kで価格と画質のバランスが良く、機種も豊富",
-          "From around ¥50,000. 4K with a good balance of price and picture quality, and a wide choice of models.",
-          "5万日元起。4K画质与价格均衡，机型也很丰富。"
-        ],
-        con: [
-          "黒の締まり・ピーク輝度・ゲーム性能は上位パネルに劣る",
-          "Black depth, peak brightness, and gaming performance fall behind higher-end panels.",
-          "黑色表现·峰值亮度·游戏性能不及高端面板。"
-        ]
+      blades: {
+        回転刃: ["Rotary blades", "旋转刀头"],
+        "3枚刃": ["3 blades", "3枚刃"],
+        "3連サスペンション": ["3-flex suspension", "3连悬浮"],
+        "5方向可動ヘッド": ["5-way pivoting head", "5方向可动刀头"],
+        "3枚刃+ヒゲセンサー": ["3 blades + beard sensor", "3枚刃+胡须感应器"],
+        "3枚刃+スイングヘッド": ["3 blades + swing head", "3枚刃+摇摆刀头"],
+        "3連密着ブレード": ["3 contour blades", "3连贴合刀片"],
+        スキンプロテクション: ["Skin protection", "肌肤保护"],
+        スイング密着システム: ["Swing contour system", "摇摆贴合系统"],
+        "5枚刃+約14,000ストローク": ["5 blades + ~14,000 strokes/min", "5枚刃+约14,000转/分"],
+        "5枚刃+5Dアクティブサス": ["5 blades + 5D active suspension", "5枚刃+5D主动悬浮"],
+        "360°密着システム": ["360° contour system", "360°贴合系统"],
+        ナノスキンプロテクション: ["Nano skin protection", "纳米肌肤保护"],
+        "6枚刃+2種4枚深剃り刃": ["6 blades + 2 types of 4 deep-shave foils", "6枚刃+2种4枚深剃刀网"],
+        "プロトリマー+5カットシステム": ["ProTrimmer + 5-cut system", "ProTrimmer+5切割系统"],
+        "5枚刃(NAGORI素材)": ["5 blades (NAGORI material)", "5枚刃(NAGORI材质)"]
       },
-      {
-        id: "miniled_bright",
-        n: ["高輝度 Mini LED", "High-brightness Mini LED", "高亮度 Mini LED"],
-        sub: ["43〜65型", "43–65 in.", "43～65英寸"],
-        lay: "m",
-        who: [
-          "日当たりの良いリビング・ゲームもしっかり遊びたい方",
-          "Sunny living rooms, and those who want to game seriously",
-          "采光好的客厅·想认真玩游戏的人"
-        ],
-        pro: [
-          "明るい部屋でも鮮やか。120〜144Hz・HDMI 2.1対応でゲームに強い",
-          "Vivid even in bright rooms. 120–144 Hz and HDMI 2.1 support make it strong for gaming.",
-          "明亮房间里依然鲜艳。支持120～144Hz·HDMI 2.1，游戏表现出色。"
-        ],
-        con: [
-          "有機ELほどの完全な漆黒ではなく、価格は中〜高め",
-          "Not as perfectly black as OLED, and the price is mid to high.",
-          "黑色不如OLED纯粹，价格中等偏高。"
-        ]
+      cleaning: {
+        ブラシ洗浄: ["Brush cleaning", "毛刷清洁"],
+        水洗い: ["Rinse with water", "水洗"],
+        水道水洗い: ["Tap-water rinse", "自来水冲洗"],
+        ウォータースルー洗浄: ["Water-through cleaning", "水流直通清洗"],
+        クイック洗浄システム: ["Quick clean system", "快速清洁系统"],
+        クイック洗浄: ["Quick cleaning", "快速清洁"],
+        アルコール自動洗浄器: ["Automatic alcohol cleaner", "酒精自动清洗器"],
+        "水洗い/ポッド対応": ["Rinse / pod compatible", "水洗/支持清洁仓"],
+        全自動洗浄充電器: ["Fully automatic cleaning & charging station", "全自动清洗充电座"],
+        "5段階アルコール洗浄": ["5-stage alcohol cleaning", "5段酒精清洗"],
+        "水洗い/USB-C": ["Rinse / USB-C", "水洗/USB-C"]
       },
-      {
-        id: "oled_cinema",
-        n: ["有機EL（OLED）", "OLED", "有机EL（OLED）"],
-        sub: ["48〜65型", "48–65 in.", "48～65英寸"],
-        lay: "o",
-        who: [
-          "夜に部屋を暗くして映画・ドラマを観る方",
-          "Those who watch movies and dramas in a darkened room at night",
-          "夜晚关灯看电影·电视剧的人"
-        ],
-        pro: [
-          "画素ごとに消灯できるため漆黒。コントラストと応答の速さが魅力",
-          "Each pixel can switch off, giving true black. Great contrast and fast response.",
-          "每个像素可单独熄灭，呈现纯黑。对比度高、响应速度快。"
-        ],
-        con: [
-          "日中の明るい部屋では映り込みが目立ちやすく、価格も高め",
-          "Reflections stand out in bright daytime rooms, and the price is high.",
-          "白天明亮的房间里反光明显，价格也较高。"
-        ]
-      },
-      {
-        id: "giant_theater",
-        n: ["超大画面シアター", "Giant-screen theater", "超大屏影院"],
-        sub: ["65〜85型", "65–85 in.", "65～85英寸"],
-        lay: "g",
-        who: [
-          "広いリビング・視聴距離が2.5m以上の方",
-          "Large living rooms, with a viewing distance of 2.5 m or more",
-          "宽敞客厅·观看距离在2.5m以上的人"
-        ],
-        pro: [
-          "圧倒的な迫力。映画・スポーツ・ゲームをシアター感覚で",
-          "Overwhelming impact. Enjoy movies, sports, and games like in a theater.",
-          "震撼的视觉冲击。以影院般的感受观看电影·体育·游戏。"
-        ],
-        con: [
-          "本体が大きく重い。設置幅・視聴距離・搬入経路の確認が必須",
-          "Large and heavy. Installation width, viewing distance, and delivery route must be confirmed.",
-          "机身又大又重。必须确认安装宽度·观看距离·搬入路线。"
-        ]
+      charge: {
+        乾電池駆動: ["Dry-battery powered", "干电池驱动"],
+        専用コード: ["Dedicated cord", "专用电源线"],
+        "1時間充電": ["1-hour charge", "充电1小时"],
+        急速1時間: ["Quick 1-hour charge", "快充1小时"]
       }
-    ],
-    H = function (e) {
-      return a(e.n);
-    };
-  function ie(e) {
-    return T.filter(function (t) {
-      return t.id === e.groupId;
+    },
+    I = function (e, t) {
+      var n = L[x()] || 0;
+      if (!n)
+        return t;
+      var a = ee[e][t];
+      return a ? a[n - 1] : t;
+    },
+    te = function (e) {
+      var t = L[x()] || 0;
+      return t
+        ? e === "乾電池"
+          ? t === 1 ? "Dry battery" : "干电池"
+          : e.replace(/約(\d+)日/g, t === 1 ? "approx. $1 days" : "约$1天").replace(
+            /約(\d+)分/g,
+            t === 1 ? "approx. $1 min" : "约$1分钟"
+          )
+        : e;
+    },
+    U = function (e) {
+      var t = L[x()] || 0;
+      return t
+        ? e.replace(/約(\d+)g/g, t === 1 ? "approx. $1 g" : "约$1g").replace(
+          /\(超軽量\)/g,
+          t === 1 ? " (ultra-light)" : "(超轻)"
+        )
+        : e;
+    },
+    j = function (e) {
+      var t = L[x()] || 0, n = e.name;
+      return t
+        ? (
+          n = n.replace(/シリーズ(\d+)/g, t === 1 ? "Series $1" : "$1系列").replace(
+            /(\d+)シリーズ/g,
+            t === 1 ? "$1 Series" : "$1系列"
+          ),
+            t === 1 && (n = n.replace(/(\d+)枚刃/g, "$1-blade")),
+            n.replace(/ラムダッシュ/g, "LAMDASH").replace(/パームイン/g, "Palm-In").replace(
+              /フィリップス/g,
+              t === 1 ? "Philips" : "飞利浦"
+            )
+        )
+        : n;
+    },
+    h,
+    q = { "◎": 5, "◯": 3.5, "〇": 3.5, "△": 2 },
+    ne = {
+      sh1: 3,
+      sh2: 3,
+      sh3: 3,
+      sh4: 3,
+      sh5: 3,
+      sh6: 3,
+      sh7: 3,
+      sh8: 3,
+      sh9: 3,
+      sh10: 5,
+      sh11: 5,
+      sh12: 5,
+      sh13: 3,
+      sh14: 6,
+      sh15: 5,
+      sh16: 5
+    },
+    se = 22e3;
+  E.forEach(function (e) {
+    var t = e.blades + e.type;
+    e.rot = /回転/.test(e.type),
+      e.dock = /全自動|自動洗浄|アルコール/.test(e.cleaning),
+      e.wetOk = e.wet.charAt(0) !== "×",
+      e.g = parseInt((e.weight.match(/(\d+)\s*g/) || [0, 200])[1], 10),
+      e.flex = /5D|360|スイング/.test(t) ? 2 : /サスペンション|密着|可動/.test(t) ? 1 : 0,
+      e.palm = /パームイン/.test(e.name + e.type),
+      e.n = ne[e.id] || 3;
+  });
+  var B = [
+    {
+      id: "t1",
+      n: ["エントリー", "Entry", "入门款"],
+      sub: ["〜1万円台前半", "Up to the low ¥10,000s", "约1万日元出头以下"],
+      ic: "foilS",
+      who: [
+        "はじめての方・たまに使う・出張の予備に",
+        "First-timers, occasional use, or a travel backup",
+        "第一次使用·偶尔使用·出差备用"
+      ],
+      pro: [
+        "初期費用を抑えて始められる。乾電池式の超軽量機もある",
+        "Start with a low upfront cost. There are even ultra-light dry-battery models.",
+        "初期花费低，易于上手。还有干电池式超轻机型。"
+      ],
+      con: [
+        "お風呂剃り非対応の機種が多く、深剃りや洗浄の楽さは控えめ",
+        "Many models don’t support wet shaving, and close-shave power and easy cleaning are modest.",
+        "许多机型不支持泡澡湿剃，深剃力和清洁便利性较为一般。"
+      ],
+      test: function (e) {
+        return e.groupId === "entry_value";
+      }
+    },
+    {
+      id: "t2",
+      n: ["往復式・スタンダード", "Reciprocating · Standard", "往复式·标准款"],
+      sub: ["お風呂剃り対応の主力", "Mainstream, wet-shave capable", "支持湿剃的主力款"],
+      ic: "foil3",
+      who: [
+        "毎日手軽に剃りたい・泡剃りもしたい方",
+        "Those who want an easy daily shave and want to shave with foam too",
+        "想每天轻松剃须·也想用泡沫剃须的人"
+      ],
+      pro: [
+        "3枚刃＋お風呂剃り対応で水洗いもラク。密着ヘッドの機種は肌当たりと深剃りのバランス良",
+        "3 blades plus wet-shave support, and easy rinsing. Contour-head models balance skin comfort "
+          + "and close shaving.",
+        "3枚刃＋支持湿剃，水洗也轻松。贴合刀头的机型在肌肤触感与深剃之间平衡良好。"
+      ],
+      con: [
+        "濃いヒゲのアゴ下は上位のPRO機に及ばない",
+        "Under the chin with thick beards, it falls short of higher-end PRO models.",
+        "对于浓密胡须的下巴区域，不及高端PRO机型。"
+      ],
+      test: function (e) {
+        return e.groupId === "mid_standard" && !e.rot;
+      }
+    },
+    {
+      id: "t3",
+      n: ["回転式（フィリップス）", "Rotary (Philips)", "旋转式（飞利浦）"],
+      sub: ["肌へのやさしさ重視", "Gentle on skin", "注重温和护肤"],
+      ic: "rot",
+      who: [
+        "カミソリ負け・赤みが出やすい敏感肌の方",
+        "Those with sensitive skin prone to razor burn and redness",
+        "容易剃须过敏·泛红的敏感肌人群"
+      ],
+      pro: [
+        "円を描くように剃り、肌への摩擦が少ない。コーティングや押し付け防止で肌を守る",
+        "Shaves in circular motions with less friction. Coatings and pressure guidance protect skin.",
+        "以画圆方式剃须，对肌肤摩擦少。涂层和防压过度功能保护肌肤。"
+      ],
+      con: [
+        "往復式に比べ、直線的に速く深く剃る力は控えめ",
+        "Compared with reciprocating models, less power for fast, deep straight-line shaving.",
+        "与往复式相比，直线式快速深剃的能力较弱。"
+      ],
+      test: function (e) {
+        return e.rot && e.groupId !== "entry_value";
+      }
+    },
+    {
+      id: "t4",
+      n: ["往復式・深剃りPRO", "Reciprocating · Deep-shave PRO", "往复式·深剃PRO"],
+      sub: ["濃いヒゲ・アゴ下に強い", "Strong on thick beards and under the chin", "擅长应对浓密胡须和下巴区域"],
+      ic: "foil5",
+      who: [
+        "夕方の青ヒゲ・アゴ下や首の剃り残しが気になる方",
+        "Those bothered by evening stubble and missed spots under the chin and on the neck",
+        "在意傍晚青胡茬及下巴·脖子剃不干净的人"
+      ],
+      pro: [
+        "5枚刃・高速リニア・5D/360°ヘッドなど。濃いヒゲでもしっかり深剃り",
+        "5 blades, high-speed linear motor, 5D/360° heads, and more. Shaves thick beards closely.",
+        "5枚刃·高速线性马达·5D/360°刀头等。即使浓密胡须也能深度剃净。"
+      ],
+      con: [
+        "約185〜210gと重めで、価格も上がる",
+        "Heavier at about 185–210 g, and the price goes up.",
+        "约185～210g较重，价格也更高。"
+      ],
+      test: function (e) {
+        return e.groupId === "deep_closeness_high";
+      }
+    },
+    {
+      id: "t5",
+      n: ["フラッグシップ", "Flagship", "旗舰款"],
+      sub: ["各社の最上位", "Top of each maker’s lineup", "各品牌的最高端"],
+      ic: "star",
+      who: [
+        "剃り味も手入れの楽さも妥協したくない方",
+        "Those who won’t compromise on shave quality or easy maintenance",
+        "剃须体验和保养便利都不想妥协的人"
+      ],
+      pro: [
+        "6枚刃・ProTrimmer・全自動洗浄器など各社の最高峰。パームインは約145gと超軽量",
+        "6 blades, ProTrimmer, fully automatic cleaning stations—each maker’s best. The Palm-In is "
+          + "ultra-light at about 145 g.",
+        "6枚刃·ProTrimmer·全自动清洗座等各品牌的巅峰之作。Palm-In仅约145g，超轻。"
+      ],
+      con: [
+        "価格が高く、洗浄器付きの機種は置き場所も必要",
+        "High price, and models with a cleaning station need space for it.",
+        "价格高，带清洗座的机型还需要放置空间。"
+      ],
+      test: function (e) {
+        return e.groupId === "flagship_palm_in";
+      }
+    }
+  ];
+  function K(e) {
+    return B.filter(function (t) {
+      return t.test(e);
     })[0]
-      || T[0];
+      || B[0];
   }
   function ae(e, t) {
-    var i = 'style="--dl:-' + t + 's"',
-      o = {
-        c: [32, 16, 40, 24],
-        s: [20, 10, 64, 36],
-        m: [20, 10, 64, 36],
-        o: [20, 10, 64, 36],
-        g: [6, 4, 92, 52]
-      }[e],
-      s = o[0],
-      n = o[1],
-      d = o[2],
-      r = o[3],
-      c = s + d / 2,
-      h = n + r / 2,
-      p = "tvc" + e,
-      b = e === "o" ? "#05070f" : e === "m" ? "#1e3a8a" : e === "g" ? "#1e1b4b" : "#38bdf8",
-      z = '<defs><clipPath id="'
-        + p
-        + '"><rect x="'
-        + s
-        + '" y="'
-        + n
-        + '" width="'
-        + d
-        + '" height="'
-        + r
-        + '" rx="1.5"/></clipPath></defs><rect x="'
-        + (s - 2)
-        + '" y="'
-        + (n - 2)
-        + '" width="'
-        + (d + 4)
-        + '" height="'
-        + (r + 4)
-        + '" rx="3" fill="#1f2937"/><rect x="'
-        + s
-        + '" y="'
-        + n
-        + '" width="'
-        + d
-        + '" height="'
-        + r
-        + '" rx="1.5" fill="'
-        + b
-        + '"/>',
-      y = '<g clip-path="url(#' + p + ')">';
-    (e === "c" || e === "s")
-      && (
-        y += '<path d="M'
-          + s
-          + " "
-          + (n + r)
-          + "L"
-          + (s + d * .35)
-          + " "
-          + (n + r * .45)
-          + "L"
-          + (s + d * .6)
-          + " "
-          + (n + r * .75)
-          + "L"
-          + (s + d * .78)
-          + " "
-          + (n + r * .5)
-          + "L"
-          + (s + d)
-          + " "
-          + (n + r)
-          + 'Z" fill="#0369a1" opacity=".75"/><circle class="tv-glow" '
-          + i
-          + ' cx="'
-          + (s + d * .78)
+    var n = 'style="--dl:' + t + 's"',
+      a = '<rect x="15" y="40" width="32" height="54" rx="14" fill="#e2e8f0" stroke="#94a3b8" '
+        + 'stroke-width="1.5"/><rect x="26" y="54" width="10" height="18" rx="5" fill="#14b8a6"/>',
+      i = '<rect x="6" y="6" width="50" height="38" rx="12" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/>',
+      c = "",
+      r;
+    if (e === "rot")
+      [[31, 17], [19, 32], [43, 32]].forEach(function (d, v) {
+        c += '<g class="sv-spin" style="--dl:'
+          + (t - v * .3).toFixed(2)
+          + 's"><circle cx="'
+          + d[0]
           + '" cy="'
-          + (n + r * .25)
-          + '" r="'
-          + r * .14
-          + '" fill="#fef9c3"/>'
-      ),
-      e === "m"
+          + d[1]
+          + '" r="9" fill="#f8fafc" stroke="#0e7490" stroke-width="1.6"/><path d="M'
+          + (d[0] - 6)
+          + " "
+          + d[1]
+          + "h12M"
+          + d[0]
+          + " "
+          + (d[1] - 6)
+          + 'v12" stroke="#0e7490" stroke-width="1.6" stroke-linecap="round"/></g>';
+      });
+    else {
+      var l = { foilS: 3, foil3: 3, foil5: 5, star: 6 }[e],
+        u = (38 - (l - 1) * 3) / l,
+        m = e === "foilS"
+          ? "#94a3b8"
+          : e === "foil3" ? "#14b8a6" : e === "foil5" ? "#0f766e" : "#0e7490";
+      for (c = '<rect x="10" y="10" width="42" height="30" rx="6" fill="#f1f5f9"/>', r = 0; r < l; r++)
+        c += '<rect class="sv-osc'
+          + (r % 2 ? " b" : "")
+          + '" '
+          + n
+          + ' x="'
+          + (12 + r * (u + 3)).toFixed(1)
+          + '" y="13" width="'
+          + u.toFixed(1)
+          + '" height="24" rx="2.5" fill="'
+          + m
+          + '"/>';
+      e === "star"
         && (
-          y += '<circle class="tv-glow" '
-            + i
-            + ' cx="'
-            + c
-            + '" cy="'
-            + h
-            + '" r="'
-            + r * .5
-            + '" fill="#fde047" opacity=".35"/><circle class="tv-glow" '
-            + i
-            + ' cx="'
-            + c
-            + '" cy="'
-            + h
-            + '" r="'
-            + r * .22
-            + '" fill="#fff7ad"/><g class="tv-ray"><path d="M'
-            + c
-            + " "
-            + (h - r * .5)
-            + "V"
-            + (h + r * .5)
-            + "M"
-            + (c - r * .5)
-            + " "
-            + h
-            + "H"
-            + (c + r * .5)
-            + '" stroke="#fef08a" stroke-width="1.6" opacity=".7"/></g>'
-        ),
-      e === "o"
-        && (
-          y += '<circle class="tv-spark" '
-            + i
-            + ' cx="'
-            + (s + d * .25)
-            + '" cy="'
-            + (n + r * .35)
-            + '" r="3" fill="#f472b6"/><circle class="tv-spark" style="--dl:-.6s" cx="'
-            + (s + d * .6)
-            + '" cy="'
-            + (n + r * .6)
-            + '" r="3.4" fill="#38bdf8"/><circle class="tv-spark" style="--dl:-1.2s" cx="'
-            + (s + d * .8)
-            + '" cy="'
-            + (n + r * .3)
-            + '" r="2.4" fill="#facc15"/>'
-        ),
-      e === "g"
-        && (
-          y += '<path d="M'
-            + s
-            + " "
-            + (n + r)
-            + "L"
-            + (s + d * .3)
-            + " "
-            + (n + r * .4)
-            + "L"
-            + (s + d * .55)
-            + " "
-            + (n + r * .7)
-            + "L"
-            + (s + d * .8)
-            + " "
-            + (n + r * .3)
-            + "L"
-            + (s + d)
-            + " "
-            + (n + r * .7)
-            + "L"
-            + (s + d)
-            + " "
-            + (n + r)
-            + 'Z" fill="#4f46e5" opacity=".7"/><rect class="tv-scan" '
-            + i
-            + ' x="'
-            + s
-            + '" y="'
-            + n
-            + '" width="'
-            + d
-            + '" height="6" fill="#fff" opacity=".25"/>'
-        ),
-      y += "</g>";
-    var l = e === "g"
-      ? '<rect x="14" y="'
-        + (n + r + 3)
-        + '" width="10" height="4" rx="1" fill="#9ca3af"/><rect x="80" y="'
-        + (n + r + 3)
-        + '" width="10" height="4" rx="1" fill="#9ca3af"/>'
-      : '<path d="M'
-        + (c - 5)
-        + " "
-        + (n + r + 2)
-        + "H"
-        + (c + 5)
-        + "L"
-        + (c + 12)
-        + " "
-        + (n + r + 9)
-        + "H"
-        + (c - 12)
-        + 'Z" fill="#9ca3af"/>';
-    return '<svg class="tv-svg" viewBox="0 0 104 70">' + z + y + l + "</svg>";
+          c += '<path class="sv-tw" d="M53 2l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z" fill="#f59e0b"/>'
+        );
+    }
+    return '<svg class="sv-svg" viewBox="0 0 62 96">' + a + i + c + "</svg>";
   }
-  var L = [
+  var y = [
     [
-      "sizefit",
-      ["画面サイズ", "Screen size", "屏幕尺寸"],
-      "📏",
+      "closeness",
+      ["深剃り力", "Close-shave power", "深剃力"],
+      "🪒",
       [
-        "視聴距離に対して画面の大きさがちょうどよいか（希望に応じて大きめ／小さめも反映）",
-        "Whether the screen size suits your viewing distance (bigger/smaller preferences are reflected)",
-        "屏幕大小是否适合观看距离（会反映您对偏大/偏小的偏好）"
+        "アゴ下・濃いヒゲまで剃り残さないか（刃構成・ヘッドの密着）",
+        "Whether it leaves no missed spots under the chin or on thick beards (blade setup, head contact)",
+        "下巴和浓密胡须是否能剃干净（刀头配置·贴合度）"
       ]
     ],
     [
-      "picture",
-      ["画質", "Picture quality", "画质"],
-      "🎬",
+      "skin",
+      ["肌やさしさ", "Skin gentleness", "肌肤温和度"],
+      "🧴",
+      ["摩擦やカミソリ負けの起きにくさ", "How unlikely it is to cause friction or razor burn", "不易产生摩擦或剃须过敏的程度"]
+    ],
+    [
+      "cleaning",
+      ["お手入れ", "Maintenance", "保养清洁"],
+      "🫧",
       [
-        "黒の深さ・コントラスト・色の鮮やかさ（有機EL＞Mini LED＞液晶）",
-        "Black depth, contrast, and color vividness (OLED > Mini LED > LCD)",
-        "黑色深度·对比度·色彩鲜艳度（OLED＞Mini LED＞液晶）"
+        "水洗い・自動洗浄器など毎日の手入れのラクさ",
+        "Ease of daily care, e.g. rinsing with water or an automatic cleaning station",
+        "水洗·自动清洗座等日常保养的便利程度"
       ]
     ],
     [
-      "bright",
-      ["明るい部屋", "Bright rooms", "明亮房间"],
-      "☀️",
+      "weight",
+      ["軽さ・携帯", "Light & portable", "轻便·便携"],
+      "🧳",
       [
-        "日中の明るい部屋でも見やすいか（輝度の高さ・映り込みの少なさ）",
-        "Whether it is easy to see in a bright daytime room (high brightness, few reflections)",
-        "白天明亮的房间里是否也看得清（亮度高·反光少）"
-      ]
-    ],
-    [
-      "game",
-      ["ゲーム", "Gaming", "游戏"],
-      "🎮",
-      [
-        "4K 120Hz以上・HDMI 2.1・VRR（可変リフレッシュ）への対応",
-        "Support for 4K 120 Hz or higher, HDMI 2.1, and VRR (variable refresh rate)",
-        "是否支持4K 120Hz以上·HDMI 2.1·VRR（可变刷新率）"
-      ]
-    ],
-    [
-      "rec",
-      ["録画", "Recording", "录像"],
-      "📼",
-      [
-        "タイムシフトマシン（全チャンネル自動録画）や内蔵HDDなど録画のしやすさ",
-        "Ease of recording, such as Time Shift Machine (auto-recording of all channels) or a built-in HDD",
-        "录像的便利程度，如时移功能（自动录制全部频道）或内置硬盘"
-      ]
-    ],
-    [
-      "sound",
-      ["音質", "Sound quality", "音质"],
-      "🔊",
-      [
-        "スピーカー出力と音響技術。サウンドバー無しでも満足できるか",
-        "Speaker output and audio technology. Whether you will be satisfied without a soundbar",
-        "扬声器功率与音响技术。不加回音壁是否也能满意"
+        "本体の軽さ。出張・旅行に持ち歩きやすいか",
+        "Unit lightness: how easy it is to carry on business trips and travel",
+        "机身轻量程度：出差·旅行是否便于携带"
       ]
     ],
     [
@@ -5218,363 +5324,205 @@ body.motion-off .tv-mk {
       ["本体価格の手頃さ", "Affordability of the unit price", "机身价格是否实惠"]
     ]
   ],
-    k = function (e) {
-      return a(e[1]);
+    w = function (e) {
+      return s(e[1]);
     },
-    _ = function (e) {
-      return a(e[3]);
+    Y = function (e) {
+      return s(e[3]);
     },
-    M = [
+    D = [
       {
-        id: "mount",
-        st: 1,
-        t: ["テレビはどのように設置しますか？", "How will you set up the TV?", "电视打算如何安置？"],
-        h: [
-          "台に置く場合は「スタンド脚の幅」、壁掛けの場合は「画面の幅」で置けるかを判定します。壁掛けは別売の金具と壁の下地確認が必要です。",
-          "For stand placement we judge by the stand leg width; for wall mounting, by the screen "
-            + "width. Wall mounting needs a separately sold bracket and a check of the wall backing.",
-          "放在电视柜上时按“底座支脚宽度”判定，壁挂时按“屏幕宽度”判定。壁挂需另购支架并确认墙体底衬。"
-        ],
-        o: [
-          [["テレビ台（ローボード）に置く", "Place it on a TV stand (low board)", "放在电视柜（矮柜）上"], "board"],
-          [["壁掛け（金具で壁に取り付ける）", "Wall-mount it with a bracket", "壁挂（用支架固定在墙上）"], "wall"],
-          [
-            ["TVラック・壁寄せスタンドに置く", "Place it on a TV rack / wall-hugging stand", "放在电视架·靠墙支架上"],
-            "floor"
-          ]
-        ]
-      },
-      {
-        id: "width",
-        st: 1,
-        t: [
-          "設置場所の「横幅」は？（テレビ台の天板の幅／壁掛けなら壁面の空き幅）",
-          "How wide is the space? (width of the TV stand top / free wall width if wall-mounted)",
-          "安装位置的“宽度”是多少？（电视柜台面宽度／壁挂则为墙面空余宽度）"
-        ],
-        h: [
-          "台に置く場合は、スタンド脚が台の上に載るかが基準です（画面が台より少し広いのは問題ありません）。壁掛けは画面の幅＋左右の余裕で判定します。",
-          "For stand placement, what matters is whether the stand legs fit on the stand (a screen "
-            + "slightly wider than the stand is fine). For wall mounting, we judge by screen width plus "
-            + "side clearance.",
-          "放在柜上时，以底座支脚能否放上柜面为准（屏幕比柜面稍宽没有问题）。壁挂则按屏幕宽度加左右余量判定。"
-        ],
-        o: [
-          [["〜80cm", "Up to 80 cm", "80cm以下"], 800],
-          [["〜100cm", "Up to 100 cm", "100cm以下"], 1e3],
-          [["〜120cm", "Up to 120 cm", "120cm以下"], 1200],
-          [["〜150cm", "Up to 150 cm", "150cm以下"], 1500],
-          [["〜180cm", "Up to 180 cm", "180cm以下"], 1800],
-          [["180cm以上・制限なし", "180 cm or more / no limit", "180cm以上·无限制"], 9999]
-        ]
-      },
-      {
-        id: "depth",
-        st: 1,
-        t: [
-          "テレビ台の「奥行」は？（台に置く場合）",
-          "How deep is the TV stand? (if placing on a stand)",
-          "电视柜的“深度”是多少？（放在柜上时）"
-        ],
-        h: [
-          "スタンドの奥行が台の天板に収まる必要があります。壁掛けの場合は「制限なし」を選んでください。",
-          "The stand depth must fit on the top of the TV stand. If wall-mounting, choose “no limit”.",
-          "底座深度必须能放进柜面。壁挂时请选择“无限制”。"
-        ],
-        o: [
-          [["〜25cm（薄型ラック）", "Up to 25 cm (slim rack)", "25cm以下（薄型架）"], 250],
-          [["〜30cm", "Up to 30 cm", "30cm以下"], 300],
-          [["〜40cm", "Up to 40 cm", "40cm以下"], 400],
-          [
-            ["40cm以上・壁掛けなど制限なし", "40 cm or more / no limit (e.g. wall-mounted)", "40cm以上·壁挂等无限制"],
-            9999
-          ]
-        ]
-      },
-      {
-        id: "height",
-        st: 1,
-        t: [
-          "テレビの上の「空き高さ」は？（台の天板から、窓・エアコン・棚までの高さ）",
-          "How much free height is above the TV? (from the stand top to the window, air conditioner, or shelf)",
-          "电视上方的“空余高度”是多少？（从柜面到窗户·空调·架子的高度）"
-        ],
-        h: [
-          "台に置く場合はスタンド込みの高さ（画面＋約4〜7cm）で判定します。壁掛けは画面の高さで判定します。",
-          "For stand placement we judge by height including the stand (screen + about 4–7 cm). For "
-            + "wall mounting, by screen height.",
-          "放在柜上时按含底座的高度（屏幕＋约4～7cm）判定。壁挂则按屏幕高度判定。"
-        ],
-        o: [
-          [["〜60cm（窓下・低い棚の下）", "Up to 60 cm (under a window / low shelf)", "60cm以下（窗下·矮架下方）"], 600],
-          [["〜80cm", "Up to 80 cm", "80cm以下"], 800],
-          [["〜100cm", "Up to 100 cm", "100cm以下"], 1e3],
-          [["100cm以上・制限なし", "100 cm or more / no limit", "100cm以上·无限制"], 9999]
-        ]
-      },
-      {
-        id: "dist",
-        st: 1,
-        t: [
-          "ソファ（座る位置）からテレビまでの「視聴距離」は？",
-          "What is the viewing distance from the sofa (your seat) to the TV?",
-          "从沙发（座位）到电视的“观看距离”是多少？"
-        ],
-        h: [
-          "距離から、ちょうどよい画面サイズ（距離×22〜32型が目安）を割り出します。極端に近いと大画面は不向きです。",
-          "From the distance we work out a suitable screen size (about distance × 22–32 inches). Very "
-            + "short distances are unsuited to large screens.",
-          "根据距离推算合适的屏幕尺寸（参考：距离×22～32英寸）。距离过近则不适合大屏。"
-        ],
-        o: [
-          [
-            ["1.0m未満（ベッド脇・デスク・キッチン）", "Under 1.0 m (bedside, desk, kitchen)", "不足1.0m（床边·书桌·厨房）"],
-            1
-          ],
-          [["1.2〜1.5m（寝室・ワンルーム）", "1.2–1.5 m (bedroom, studio)", "1.2～1.5m（卧室·单间）"], 1.4],
-          [["1.8〜2.2m（標準的なリビング）", "1.8–2.2 m (typical living room)", "1.8～2.2m（一般客厅）"], 2],
-          [["2.5m前後（広めのリビング）", "Around 2.5 m (larger living room)", "2.5m左右（较宽敞的客厅）"], 2.5],
-          [["3m以上（14畳以上・シアター）", "3 m or more (14+ tatami / theater)", "3m以上（14叠以上·影院）"], 3.2]
-        ]
-      },
-      {
-        id: "path",
-        st: 1,
-        t: [
-          "搬入経路で一番狭い・小さい場所は？（玄関・廊下・階段・エレベーター）",
-          "What is the narrowest or smallest spot on the delivery route? (entrance, hallway, stairs, elevator)",
-          "搬入路线上最窄·最小的地方是哪里？（玄关·走廊·楼梯·电梯）"
-        ],
-        h: [
-          "大型テレビは梱包が画面幅より約15cm大きく、長辺で運びます。階段やエレベーターの大きさで運べる最大サイズが決まります（目安。最終は下見で確認）。",
-          "Large TV packaging is about 15 cm wider than the screen and is carried by its long side. "
-            + "The size of stairs and elevators sets the maximum size you can bring in (a guide; final "
-            + "check by site visit).",
-          "大屏电视的包装比屏幕宽度大约15cm，需以长边搬运。楼梯和电梯的大小决定可搬入的最大尺寸（仅供参考，最终以上门勘察为准）。"
-        ],
-        o: [
-          [
-            [
-              "階段・小型エレベーターで狭い（〜55型まで目安）",
-              "Narrow stairs / small elevator (up to about 55 in.)",
-              "楼梯·小电梯较窄（约55英寸以内）"
-            ],
-            1400
-          ],
-          [
-            [
-              "一般的なマンションのエレベーター（〜65型まで目安）",
-              "Typical apartment elevator (up to about 65 in.)",
-              "一般公寓电梯（约65英寸以内）"
-            ],
-            1700
-          ],
-          [["やや広い（〜75型まで目安）", "Somewhat wide (up to about 75 in.)", "较宽（约75英寸以内）"], 2e3],
-          [
-            ["広い・戸建て1階など制限なし", "Wide / no limit (e.g. ground floor of a house)", "宽敞·无限制（如独栋1楼）"],
-            9999
-          ]
-        ]
-      },
-      {
-        id: "mov",
-        st: 2,
-        t: [
-          "映画・ドラマ・配信の「画質」へのこだわりは？",
-          "How much do you care about picture quality for movies, dramas, and streaming?",
-          "对观看电影·电视剧·流媒体的“画质”有多大要求？"
-        ],
-        h: [
-          "黒の深さ・コントラスト・色の鮮やかさを重みづけします。有機ELやMini LEDが得意な領域です。",
-          "We weight black depth, contrast, and color vividness. This is where OLED and Mini LED excel.",
-          "会对黑色深度·对比度·色彩鲜艳度加权。这是OLED和Mini LED的强项。"
-        ],
-        o: [
-          [["最高の画質で観たい", "I want the best picture quality", "想要最好的画质"], 3],
-          [["きれいなら十分", "Good-looking is enough", "画面漂亮就够了"], 2],
-          [["普通でOK", "Ordinary is fine", "普通就可以"], 1],
-          [["画質より価格を優先", "Price over picture quality", "价格优先于画质"], .3]
-        ]
-      },
-      {
-        id: "light",
-        st: 2,
-        t: ["テレビを見る部屋の明るさは？", "How bright is the room where you watch TV?", "观看电视的房间亮度如何？"],
-        h: [
-          "日中に明るい部屋ではMini LEDなど輝度の高いパネルが有利、暗くして観るなら有機ELが映えます。",
-          "In rooms that are bright in the daytime, high-brightness panels such as Mini LED have the "
-            + "edge; if you watch in the dark, OLED shines.",
-          "白天明亮的房间里Mini LED等高亮度面板更有利，关灯观看则OLED更出色。"
-        ],
-        o: [
-          [
-            [
-              "南向きの大きな窓・昼間はかなり明るい",
-              "Large south-facing windows; quite bright in the daytime",
-              "朝南大窗·白天相当明亮"
-            ],
-            "b"
-          ],
-          [
-            [
-              "一般的な明るさ（昼夜ふつうに見る）",
-              "Average brightness (watch normally day and night)",
-              "一般亮度（昼夜都正常观看）"
-            ],
-            "n"
-          ],
-          [
-            [
-              "夜に照明を落として映画を観ることが多い",
-              "Often watch movies at night with the lights dimmed",
-              "经常在夜晚调暗灯光看电影"
-            ],
-            "d"
-          ]
-        ]
-      },
-      {
-        id: "game",
-        st: 2,
-        t: [
-          "ゲーム（PS5・ゲーミングPCなど）の利用は？",
-          "Do you use it for gaming (PS5, gaming PC, etc.)?",
-          "是否用于游戏（PS5·游戏PC等）？"
-        ],
-        h: [
-          "4K 120Hz・VRR・低遅延を使うには、HDMI 2.1対応のモデルが必要です。",
-          "To use 4K 120 Hz, VRR, and low latency, you need an HDMI 2.1 model.",
-          "要使用4K 120Hz·VRR·低延迟，需要支持HDMI 2.1的机型。"
-        ],
-        o: [
-          [
-            [
-              "PS5・PCで4K 120Hz／VRRを使いたい（必須）",
-              "I want 4K 120 Hz / VRR with a PS5 or PC (essential)",
-              "想用PS5·PC开启4K 120Hz／VRR（必须）"
-            ],
-            3
-          ],
-          [["Switchなどを軽く遊ぶ程度", "Only light gaming, e.g. Switch", "只是用Switch等轻度游戏"], 1.5],
-          [["ほとんどしない", "Almost never", "基本不玩"], .3]
-        ]
-      },
-      {
-        id: "rec",
-        st: 2,
-        t: [
-          "地上波の「録画」はどのくらい使いますか？",
-          "How much will you use recording of terrestrial broadcasts?",
-          "地面波电视节目的“录像”会用到什么程度？"
-        ],
-        h: [
-          "タイムシフトマシン（REGZA）は対応番組を全自動で録り続けます。内蔵HDDは外付け不要ですぐ録画できます。",
-          "Time Shift Machine (REGZA) keeps recording supported programs automatically. A built-in HDD "
-            + "lets you record right away without an external drive.",
-          "时移功能（REGZA）会自动持续录制支持的节目。内置硬盘无需外接即可立即录像。"
-        ],
-        o: [
-          [
-            [
-              "全チャンネルを自動録画（タイムシフト）したい",
-              "I want to auto-record all channels (time shift)",
-              "想自动录制全部频道（时移）"
-            ],
-            "ts"
-          ],
-          [
-            [
-              "本体にHDD内蔵で、買ってすぐ録画したい",
-              "I want a built-in HDD so I can record right after buying",
-              "希望内置硬盘，买来就能录像"
-            ],
-            "int"
-          ],
-          [
-            [
-              "見たい番組だけ外付けHDDにたまに録画",
-              "Occasionally record only shows I want to an external HDD",
-              "偶尔只把想看的节目录到外接硬盘"
-            ],
-            "ext"
-          ],
-          [
-            [
-              "配信・TVer中心で録画は不要",
-              "Mostly streaming / TVer; no recording needed",
-              "主要看流媒体·TVer，不需要录像"
-            ],
-            "none"
-          ]
-        ]
-      },
-      {
-        id: "snd",
-        st: 2,
-        t: [
-          "テレビ本体の「音」への期待は？",
-          "What do you expect from the TV’s built-in sound?",
-          "对电视本身的“音质”有何期待？"
-        ],
-        h: [
-          "出力が大きく音響技術のあるモデルは、サウンドバー無しでも迫力があります。",
-          "Models with high output and audio technology sound powerful even without a soundbar.",
-          "功率大、具备音响技术的机型，即使不加回音壁也很有气势。"
-        ],
-        o: [
-          [
-            [
-              "サウンドバー無しでも迫力の音で聴きたい",
-              "I want powerful sound even without a soundbar",
-              "不加回音壁也想听到震撼音效"
-            ],
-            "prem"
-          ],
-          [["セリフがはっきり聞こえればよい", "Clear dialogue is enough", "台词听得清楚就行"], "clear"],
-          [
-            ["サウンドバー・アンプを使うので気にしない", "I’ll use a soundbar/amp, so I don’t mind", "会使用回音壁·功放，所以不在意"],
-            "ext"
-          ]
-        ]
-      },
-      {
-        id: "sz",
-        st: 2,
-        t: ["画面サイズの希望は？", "What screen size do you prefer?", "希望的屏幕尺寸是？"],
-        h: [
-          "置けるなら大きく、は後悔の少ない選び方です。ただし視聴距離に合う範囲が前提です。",
-          "Going as big as will fit is a low-regret choice, as long as it suits your viewing distance.",
-          "能放下就选大一点，后悔较少。但前提是要符合观看距离。"
-        ],
-        o: [
-          [["置ける範囲で大きめ（迫力重視）", "As big as fits (impact first)", "在能放下的范围内尽量大（重视冲击力）"], "big"],
-          [
-            ["視聴距離にちょうどいい標準", "Standard size right for the viewing distance", "与观看距离相称的标准尺寸"],
-            "std"
-          ],
-          [["コンパクトでよい", "Compact is fine", "小巧即可"], "small"]
-        ]
-      },
-      {
-        id: "bud",
-        st: 2,
+        id: "budget",
+        st: 9,
+        k: ["絶対条件", "price"],
         t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
         h: [
-          "予算を超える機種は大きく減点します（ゼロにはしません）。",
-          "Models over budget are heavily penalized (but not ruled out entirely).",
-          "超出预算的机型会被大幅扣分（但不会直接排除）。"
+          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。上限を2割以上超える機種は対象外、少し超える機種は減点します。",
+          "We now know your needs. A pricier model may suit you better, so budget comes last. Models "
+            + "over 20% above the limit are excluded; slightly over models are penalized.",
+          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算。超出上限20%以上的机型将被排除，略微超出的会被扣分。"
         ],
         o: [
+          [["〜1万円", "Up to ¥10,000", "1万日元以下"], 1e4],
+          [["〜2.5万円", "Up to ¥25,000", "2.5万日元以下"], 25e3],
+          [["〜4万円", "Up to ¥40,000", "4万日元以下"], 4e4],
           [["〜6万円", "Up to ¥60,000", "6万日元以下"], 6e4],
-          [["〜15万円", "Up to ¥150,000", "15万日元以下"], 15e4],
-          [["〜30万円", "Up to ¥300,000", "30万日元以下"], 3e5],
-          [["〜50万円", "Up to ¥500,000", "50万日元以下"], 5e5],
           [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
+        ]
+      },
+      {
+        id: "method",
+        st: 1,
+        k: ["絶対条件"],
+        t: ["刃（ヘッド）の方式のお好みは？", "Which blade (head) type do you prefer?", "您偏好哪种刀头方式？"],
+        h: [
+          "往復式＝網刃が直線に動き、速く深く剃れる（パナソニック・ブラウン）。回転式＝円を描いて肌にやさしい（フィリップス）。",
+          "Reciprocating = foils move in straight lines for fast, deep shaving (Panasonic, Braun). "
+            + "Rotary = circular motion that is gentle on skin (Philips).",
+          "往复式＝刀网直线运动，剃得又快又深（松下·博朗）。旋转式＝画圆运动，对肌肤温和（飞利浦）。"
+        ],
+        o: [
+          [
+            [
+              "往復式がいい（スパッと速く剃りたい）",
+              "Reciprocating (I want a quick, clean shave)",
+              "想要往复式（想快速干脆地剃干净）"
+            ],
+            "foil"
+          ],
+          [["回転式がいい（肌にやさしく）", "Rotary (gentle on skin)", "想要旋转式（对肌肤温和）"], "rot"],
+          [["どちらでもよい", "Either is fine", "都可以"], "any"]
+        ]
+      },
+      {
+        id: "dock",
+        st: 1,
+        k: ["絶対条件", "cleaning"],
+        t: [
+          "「自動洗浄器」（洗浄・除菌・乾燥・充電）はほしいですか？",
+          "Do you want an “automatic cleaning station” (cleaning, sterilizing, drying, charging)?",
+          "您想要“自动清洗座”（清洗·除菌·干燥·充电）吗？"
+        ],
+        h: [
+          "洗浄器が付くのは上位機種が中心です。「ほしい」を選ぶと候補が大きく絞られます。",
+          "Cleaning stations come mostly with higher-end models. Choosing “Yes” narrows the candidates considerably.",
+          "带清洗座的主要是高端机型。选择“想要”会大幅减少候选机型。"
+        ],
+        o: [
+          [["ほしい", "Yes", "想要"], "must"],
+          [["不要（水洗い）", "No (rinsing is enough)", "不需要（水洗即可）"], "none"]
+        ]
+      },
+      {
+        id: "travel",
+        st: 2,
+        k: ["絶対条件", "weight"],
+        t: ["出張・旅行で持ち歩きますか？", "Will you carry it on business trips or travel?", "出差·旅行时会随身携带吗？"],
+        h: [
+          "持ち歩くなら軽さ（約160g以下が目安）が大切。重い機種には注意表示をつけ、軽さの評価を重くします。",
+          "If you carry it, lightness (about 160 g or less) matters. Heavy models get a caution, and "
+            + "lightness is weighted more.",
+          "如果要随身携带，轻量（约160g以下为参考）很重要。较重的机型会附带注意提示，并提高轻量的权重。"
+        ],
+        o: [
+          [["よく持ち歩く", "Often carry it", "经常携带"], "often"],
+          [["たまに旅行で持っていく", "Occasionally take it on trips", "偶尔旅行时带上"], "some"],
+          [["自宅専用", "Home use only", "仅在家使用"], "home"]
+        ]
+      },
+      {
+        id: "beard",
+        st: 1,
+        k: ["closeness"],
+        t: ["おヒゲの濃さ・生え方は？", "How thick is your beard, and how does it grow?", "胡须的浓密程度·生长状况如何？"],
+        h: [
+          "濃いヒゲほど、刃の枚数やモーターの力による「深剃り力」の差が出ます。",
+          "The thicker the beard, the more the blade count and motor power affect close-shave performance.",
+          "胡须越浓密，刀头数量和马达力量带来的“深剃力”差异就越明显。"
+        ],
+        o: [
+          [
+            ["濃い・太い・硬い（夕方に青ヒゲ）", "Thick, coarse, stiff (stubble by evening)", "浓密·粗·硬（傍晚冒青胡茬）"],
+            "dense"
+          ],
+          [["普通（毎日の身だしなみ程度）", "Average (everyday grooming)", "普通（日常整理仪容的程度）"], "normal"],
+          [["薄い・柔らかい", "Thin / soft", "稀疏·柔软"], "thin"]
+        ]
+      },
+      {
+        id: "skin",
+        st: 1,
+        k: ["skin"],
+        t: ["剃ったあとのお肌の状態は？", "How is your skin after shaving?", "剃须后的皮肤状态如何？"],
+        h: [
+          "敏感な方ほど、肌への摩擦を抑える方式（回転式・スイング密着など）の価値が上がります。",
+          "The more sensitive your skin, the more valuable friction-reducing designs (rotary, swing "
+            + "contour, etc.) become.",
+          "皮肤越敏感，减少摩擦的方式（旋转式·摇摆贴合等）就越有价值。"
+        ],
+        o: [
+          [
+            ["赤み・ヒリヒリが出やすい（敏感肌）", "Prone to redness and stinging (sensitive skin)", "容易泛红·刺痛（敏感肌）"],
+            "sens"
+          ],
+          [["深剃りするとたまにヒリつく", "Sometimes stings after a close shave", "深剃时偶尔会刺痛"], "mid"],
+          [["強い・荒れにくい", "Tough / rarely irritated", "皮肤耐受·不易受刺激"], "tough"]
+        ]
+      },
+      {
+        id: "chin",
+        st: 1,
+        k: ["closeness"],
+        t: [
+          "アゴ下・首元の剃り残しは？",
+          "Do you miss spots under the chin or on the neck?",
+          "下巴·脖子处是否有剃不干净的地方？"
+        ],
+        h: [
+          "5Dアクティブサスや360°ヘッドなど、ヘッドが顔の凹凸に追従する機種ほどアゴ下に強くなります。",
+          "Models whose heads follow facial contours, like 5D active suspension and 360° heads, handle the chin better.",
+          "5D主动悬浮、360°刀头等能紧随面部凹凸的机型，对下巴区域更有效。"
+        ],
+        o: [
+          [["よく残る・ここを攻略したい", "Often missed — I want this solved", "经常剃不干净·想重点解决"], "high"],
+          [["たまに残る", "Sometimes missed", "偶尔剃不干净"], "mid"],
+          [["気にならない", "Not a concern", "不在意"], "low"]
+        ]
+      },
+      {
+        id: "care",
+        st: 2,
+        k: ["cleaning"],
+        t: ["日々のお手入れの手間は？", "How do you feel about daily upkeep effort?", "对日常保养的麻烦程度怎么看？"],
+        h: [
+          "水洗い・クイック洗浄・洗浄器付きで手入れのラクさが変わります。",
+          "Ease of care varies with rinsing, quick cleaning, and cleaning stations.",
+          "水洗·快速清洁·带清洗座会让保养的便利程度不同。"
+        ],
+        o: [
+          [["とにかくラクにしたい", "I want it as easy as possible", "希望尽可能省事"], "easy"],
+          [["水洗いできれば十分", "Rinsing with water is enough", "能水洗就足够"], "ok"],
+          [["手入れは苦にならない", "Upkeep doesn’t bother me", "保养不嫌麻烦"], "any"]
+        ]
+      },
+      {
+        id: "wet",
+        st: 2,
+        k: ["絶対条件"],
+        t: ["お風呂場でも使いますか？", "Will you also use it in the bath?", "您会在浴室里使用吗？"],
+        h: [
+          "お風呂での泡剃り（ウェット剃り）に対応しているかは機種ごとに違います。「する」を選ぶと非対応の機種は対象外にします。",
+          "Wet-shave support varies by model. If you choose “Yes”, models without it are excluded.",
+          "是否支持浴室湿剃因机型而异。选择“会”将排除不支持的机型。"
+        ],
+        o: [[["する", "Yes", "会"], "must"], [["しない", "No", "不会"], "dry"]]
+      },
+      {
+        id: "val",
+        st: 2,
+        k: ["price"],
+        t: [
+          "価格と性能、どちらの感覚に近いですか？",
+          "Which is closer to your view: price or performance?",
+          "价格和性能，您更倾向哪一边？"
+        ],
+        h: [
+          "価格の軽さをどれだけ重視するか、評価の重みに反映します。予算を「こだわらない」とした場合、「バランス重視」「性能優先」では価格を評価に入れません。「性能優先」では約2.2万円以下の機種は対象外にします。",
+          "How much you value low price is reflected in the weighting. If budget is “no concern”, "
+            + "price is not scored under “Balance” or “Performance first”. “Performance first” excludes "
+            + "models of about ¥22,000 or less.",
+          "您对低价的重视程度会反映在评价权重中。若预算选择“不限”，选“平衡”或“性能优先”时价格不计入评分。“性能优先”会排除约2.2万日元以下的机型。"
+        ],
+        o: [
+          [["できるだけ安く抑えたい", "Keep it as cheap as possible", "尽量控制在低价"], "cheap"],
+          [["価格と性能のバランス重視", "Balance of price and performance", "重视价格与性能的平衡"], "bal"],
+          [["性能優先。価格は二の次", "Performance first; price is secondary", "性能优先，价格其次"], "perf"]
         ]
       },
       {
         id: "pri",
         st: 3,
+        k: ["譲れない1点"],
         t: [
           "最後に、どうしても譲れない1点は？",
           "Finally, what is the one thing you absolutely won’t compromise on?",
@@ -5587,1403 +5535,1344 @@ body.motion-off .tv-mk {
           "您选择的维度在最终排名中权重约为2倍。在最终画面可切换维度进行对比。"
         ],
         o: [
-          [["価格の安さ", "Low price", "价格便宜"], "price"],
-          [["画面サイズ・迫力", "Screen size / impact", "屏幕尺寸·冲击力"], "sizefit"],
-          [["画質（黒の深さ・色）", "Picture quality (black depth, color)", "画质（黑色深度·色彩）"], "picture"],
-          [["明るい部屋での見やすさ", "Visibility in bright rooms", "明亮房间里的可视性"], "bright"],
-          [["ゲーム性能（120Hz・VRR）", "Gaming performance (120 Hz, VRR)", "游戏性能（120Hz·VRR）"], "game"],
-          [["録画のしやすさ", "Ease of recording", "录像便利性"], "rec"],
-          [["音の良さ", "Good sound", "音质好"], "sound"]
+          [["深剃り・剃り上がり", "Close shave / finish", "深剃·剃净效果"], "closeness"],
+          [["肌へのやさしさ", "Gentleness to skin", "对肌肤的温和"], "skin"],
+          [["お手入れのラクさ", "Easy maintenance", "保养便利"], "cleaning"],
+          [["軽さ・持ち運び", "Lightness / portability", "轻便·便携"], "weight"],
+          [["価格の安さ", "Low price", "价格便宜"], "price"]
         ]
       }
     ],
-    V = function (e) {
-      return M.filter(function (t) {
+    F = function (e) {
+      return D.filter(function (t) {
         return t.st === e;
+      }).sort(function (x, y) {
+        return ORDV(x) - ORDV(y);
       });
     },
-    ne = function (e) {
-      return M.indexOf(e);
-    },
-    f = function (e) {
-      var t = M.filter(function (o) {
-        return o.id === e;
+    g = function (e) {
+      var t = D.filter(function (a) {
+        return a.id === e;
       })[0],
-        i = u.a[e];
-      return i == null ? null : t.o[i][1];
+        n = h.a[e];
+      return n == null ? null : t.o[n][1];
     },
-    D = function (e) {
-      var t = M.filter(function (o) {
-        return o.id === e;
+    A = function (e) {
+      var t = D.filter(function (a) {
+        return a.id === e;
       })[0],
-        i = u.a[e];
-      return i == null ? "—" : a(t.o[i][0]);
+        n = h.a[e];
+      return n == null ? "—" : s(t.o[n][0]);
+    },
+    Q = function (e) {
+      return y.filter(function (t) {
+        return t[0] === e;
+      })[0];
     };
-  function U() {
-    var e = f("dist") || 2, t = e * 22, i = e * 32, o = f("sz") || "std";
-    return o === "big" ? (t = i, i = i * 1.35) : o === "small" && (i = t * 1.1, t = t * .8), [t, i];
+  var ORDV = function (i) {
+    var n = ["skin", "beard", "chin", "method", "dock", "travel", "wet", "care", "val"].indexOf(
+      i.id
+    );
+    return n < 0 ? 99 : n;
+  };
+  function TP() {
+    var all = M(z()),
+      any = Object.keys(h.a).length > 0,
+      sc = B.map(function (r) {
+        return Math.max.apply(
+          0,
+          [0].concat(
+            all.filter(function (u) {
+              return u.t === r;
+            }).map(function (u) {
+              return u.sc;
+            })
+          )
+        );
+      }),
+      best = Math.max.apply(0, sc),
+      cards = B.map(function (r, g) {
+        var lead = any && sc[g] === best && best > 0;
+        return '<div style="flex:1;min-width:0;text-align:center;padding:5px 2px 4px;border-radius:10px;border:2px solid '
+          + (lead ? "#2563eb" : "#e2e8f0")
+          + ";background:"
+          + (lead ? "#eff6ff" : "#fff")
+          + ";opacity:"
+          + (sc[g] > 0 ? 1 : .4)
+          + '"><div style="height:42px;overflow:hidden"><div style="transform:scale(.5);transform-origin:top center">'
+          + ae(r.ic, g * .3)
+          + '</div></div><div style="font-size:.58rem;font-weight:700;line-height:1.25;margin-top:2px">'
+          + T(r)
+          + '</div><div style="font-size:.58rem;color:'
+          + (lead ? "#2563eb" : "#64748b")
+          + '">'
+          + (lead ? "👑" : "")
+          + (any && sc[g] > 0 ? sc[g] : "—")
+          + "</div></div>";
+      }).join("");
+    return '<div class="sv-box" style="padding:8px"><div style="font-size:.74rem;color:#475569;margin-bottom:6px">🧭 '
+      + s(
+        any
+          ? [
+            "ここまでの回答だと、一番近いのは王冠のタイプ（数字は適合度）",
+            "Based on your answers so far, the crowned type fits best (number = match)",
+            "按目前回答，最接近的是皇冠标记的类型（数字为匹配度）"
+          ]
+          : [
+            "回答するたびに、どのタイプに近いかここに表示されます",
+            "This shows which type you are closest to as you answer",
+            "每次回答后，这里会显示最接近的类型"
+          ]
+      )
+      + '</div><div style="display:flex;gap:4px">'
+      + cards
+      + "</div></div>";
+  }
+  function PATH() {
+    var top = V().top[0],
+      cnt = 0,
+      rows = D.filter(function (n) {
+        return h.a[n.id] != null;
+      }).map(function (n, o) {
+        var cur = h.a[n.id],
+          d = 0,
+          alt = n.o.map(function (m, g) {
+            return { l: s(m[0]), v: g };
+          }).filter(function (m) {
+            return m.v !== cur;
+          }).map(function (m) {
+            var old = h.a[n.id];
+            h.a[n.id] = m.v;
+            var g = V().top[0];
+            h.a[n.id] = old;
+            var c = g.p !== top.p;
+            return c && (d++, cnt++),
+              '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
+                + 'font-size:.76rem;line-height:1.45;'
+                + (
+                  c
+                    ? "background:#fffbeb;border:1px dashed #f59e0b"
+                    : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
+                )
+                + '">'
+                + m.l
+                + "<br><b>"
+                + (
+                  c
+                    ? s(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + g.p.name
+                    : s(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
+                )
+                + "</b></span>";
+          }).join("");
+        return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
+          + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
+          + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
+          + 'line-height:17px">'
+          + (o + 1)
+          + '</span><div style="font-size:.78rem;color:#64748b">'
+          + s(n.t).replace(/[？?]$/, "")
+          + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
+          + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
+          + A(n.id)
+          + "</div>"
+          + (
+            alt
+              ? "<details"
+                + (d ? " open" : "")
+                + '><summary style="font-size:.78rem;color:'
+                + (d ? "#b45309" : "#64748b")
+                + ';cursor:pointer">'
+                + p([
+                  "もし別の選択をしていたら（1位が変わる選択肢：{0}件）",
+                  "If you had chosen differently (options that change #1: {0})",
+                  "若选了其他选项（会改变第1名的选项：{0}个）"
+                ], d)
+                + "</summary>"
+                + alt
+                + "</details>"
+              : ""
+          )
+          + "</div>";
+      }).join("");
+    return '<div class="sv-box"><h3>🧭 '
+      + s(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
+      + '</h3><p class="sv-p" style="font-size:.82rem">'
+      + p([
+        "青が選んだ回答です。点線の薄い枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：{0}／分岐点 {1}か所の選択肢）。",
+        "Blue is what you chose. Dashed boxes show the top pick if you had chosen differently; "
+          + "<b>yellow marks choices that would change #1</b> (current #1: {0} / {1} such choices).",
+        "蓝色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：{0}／共{1}个）。"
+      ], top.p.name, cnt)
+      + "</p>"
+      + rows
+      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
+      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
+      + top.p.name
+      + "（"
+      + top.p.maker
+      + "）</div></div>";
+  }
+  function ie(e) {
+    var t = [],
+      n = [],
+      a = [],
+      i = g("wet"),
+      c = g("budget"),
+      r = g("method"),
+      l = g("dock"),
+      u = g("travel");
+    return i === "must"
+      && (
+        e.wetOk
+          ? a.push(s(["お風呂剃りに対応", "Supports wet shaving", "支持湿剃"]))
+          : t.push([
+            "wet",
+            s(["お風呂剃り（泡剃り）に非対応です", "Does not support wet (foam) shaving", "不支持湿剃（泡沫剃须）"])
+          ])
+      ),
+      r === "foil" && e.rot
+        ? t.push([
+          "method",
+          s([
+            "回転式のため、往復式の希望と異なります",
+            "It is a rotary model, which differs from your reciprocating preference",
+            "为旋转式，与您偏好的往复式不符"
+          ])
+        ])
+        : r === "rot" && !e.rot
+          ? t.push([
+            "method",
+            s([
+              "往復式のため、回転式の希望と異なります",
+              "It is a reciprocating model, which differs from your rotary preference",
+              "为往复式，与您偏好的旋转式不符"
+            ])
+          ])
+          : (r === "foil" || r === "rot")
+            && a.push(
+              p(
+                ["{0}の希望に合致", "Matches your {0} preference", "符合您对{0}的偏好"],
+                s(e.rot ? ["回転式", "rotary", "旋转式"] : ["往復式", "reciprocating", "往复式"])
+              )
+            ),
+      l === "must"
+        && (
+          e.dock
+            ? a.push(
+              p(["自動洗浄器つき（{0}）", "Includes an automatic cleaning station ({0})", "配有自动清洗座（{0}）"], I(
+                "cleaning",
+                e.cleaning
+              ))
+            )
+            : t.push([
+              "dock",
+              s(["自動洗浄器が付きません", "No automatic cleaning station included", "不带自动清洗座"])
+            ])
+        ),
+      c != null
+        && c < 1e9
+        && (
+          e.price > c * 1.2
+            ? t.push([
+              "bud",
+              p(["上限を2割以上超えます（{0}）", "More than 20% over your limit ({0})", "超出上限20%以上（{0}）"], S(
+                e.price
+              ))
+            ])
+            : e.price <= c && a.push(p(["予算内（{0}）", "Within budget ({0})", "预算内（{0}）"], S(e.price)))
+        ),
+      g("val") === "perf"
+        && e.price <= se
+        && t.push([
+          "val",
+          s([
+            "性能優先のため、約2.2万円以下の機種は対象外です",
+            "Excluded under “Performance first” (about ¥22,000 or less)",
+            "因“性能优先”，约2.2万日元以下的机型被排除"
+          ])
+        ]),
+      u === "home"
+        && e.palm
+        && n.push(
+          s([
+            "手のひらで持つ形状。自宅専用なら持ち手のある通常タイプがおすすめ",
+            "Palm-held shape. For home-only use, a standard grip-type model is recommended",
+            "掌握式造型。仅在家使用的话，推荐带握柄的常规款"
+          ])
+        ),
+      u === "often"
+        && (
+          e.g > 200
+            ? n.push(
+              p([
+                "約{0}g：毎日持ち歩くにはやや重め",
+                "About {0} g: a bit heavy to carry daily",
+                "约{0}g：每天携带略显沉重"
+              ], e.g)
+            )
+            : e.g <= 160
+              && a.push(p(["約{0}gで持ち歩きやすい", "About {0} g, easy to carry", "约{0}g，便于携带"], e.g))
+        ),
+      { ng: t, wn: n, ok: a };
   }
   function re(e) {
-    var t = [],
-      i = [],
-      o = [],
-      s = f("mount"),
-      n = s === "wall",
-      d = f("width"),
-      r = f("depth"),
-      c = f("height"),
-      h = f("dist"),
-      p = f("path");
-    if (
-      d != null
-        && (
-          n
-            ? e.pw + 100 > d
-              ? t.push([
-                "wd",
-                m([
-                  "画面幅約{0}mm＋左右の余裕が、壁面の空き幅に入りません",
-                  "Screen width of about {0} mm plus side clearance does not fit the free wall width",
-                  "屏幕宽度约{0}mm加上左右余量，放不进墙面空余宽度"
-                ], e.pw)
-              ])
-              : o.push(
-                m([
-                  "画面幅約{0}mm（壁面に収まる）",
-                  "Screen width about {0} mm (fits the wall)",
-                  "屏幕宽度约{0}mm（可装进墙面）"
-                ], e.pw)
-              )
-            : e.sw + 20 > d
-              ? t.push([
-                "sw",
-                m([
-                  "スタンド脚の幅約{0}mmがテレビ台に載りません",
-                  "Stand leg width of about {0} mm does not fit on the TV stand",
-                  "底座支脚宽度约{0}mm放不上电视柜"
-                ], e.sw)
-              ])
-              : (
-                o.push(
-                  m([
-                    "スタンド脚幅約{0}mm（台に載る）",
-                    "Stand leg width about {0} mm (fits on the stand)",
-                    "底座支脚宽度约{0}mm（可放上柜面）"
-                  ], e.sw)
-                ),
-                  e.pw > d
-                    && i.push(
-                      m([
-                        "画面幅約{0}mmが台からはみ出します（転倒防止の対策を推奨）",
-                        "Screen width of about {0} mm overhangs the stand (anti-tip measures recommended)",
-                        "屏幕宽度约{0}mm超出柜面（建议采取防倾倒措施）"
-                      ], e.pw)
-                    )
-              )
-        ),
-        r != null
-          && !n
-          && (
-            e.sd > r
-              ? t.push([
-                "sd",
-                m([
-                  "スタンド奥行約{0}mmが台の奥行に収まりません",
-                  "Stand depth of about {0} mm does not fit the stand depth",
-                  "底座深度约{0}mm放不进柜面深度"
-                ], e.sd)
-              ])
-              : o.push(
-                m([
-                  "スタンド奥行約{0}mm（台に収まる）",
-                  "Stand depth about {0} mm (fits on the stand)",
-                  "底座深度约{0}mm（可放进柜面）"
-                ], e.sd)
-              )
-          ),
-        c != null
-    ) {
-      var b = n ? e.ph : e.th;
-      b + 30 > c
-        ? t.push([
-          "ht",
-          m([
-            "高さ約{0}mm＋余裕が、上の空きに入りません",
-            "Height of about {0} mm plus clearance does not fit the space above",
-            "高度约{0}mm加上余量，放不进上方空间"
-          ], b)
-        ])
-        : o.push(
-          m([
-            "高さ約{0}mm（上の空きに収まる）",
-            "Height about {0} mm (fits the space above)",
-            "高度约{0}mm（可放进上方空间）"
-          ], b)
-        );
-    }
-    if (h != null) {
-      var z = U();
-      e.size > h * 40
-        ? t.push([
-          "ds",
-          m([
-            "視聴距離に対して画面が大きすぎます（目安 約{0}型まで）",
-            "The screen is too big for the viewing distance (up to about {0} in.)",
-            "相对观看距离，屏幕过大（参考：最大约{0}英寸）"
-          ], Math.floor(h * 40))
-        ])
-        : e.size < h * 16
-          ? i.push(
-            a([
-              "視聴距離に対して画面が小さめ（迫力不足の恐れ）",
-              "The screen is a little small for the viewing distance (may lack impact)",
-              "相对观看距离，屏幕偏小（可能缺乏冲击力）"
-            ])
-          )
-          : e.size >= z[0] * .9
-            && e.size <= z[1] * 1.1
-            && o.push(
-              m([
-                "画面サイズが視聴距離に合う（{0}型）",
-                "Screen size suits the viewing distance ({0} in.)",
-                "屏幕尺寸与观看距离相符（{0}英寸）"
-              ], e.size)
-            );
-    }
-    return p != null
-      && (
-        e.box > p
-          ? t.push([
-            "pa",
-            m([
-              "梱包の長辺約{0}mmが搬入経路を通れない恐れ",
-              "The long side of the packaging (about {0} mm) may not pass through the delivery route",
-              "包装长边约{0}mm可能无法通过搬入路线"
-            ], e.box)
-          ])
-          : p < 9999
-            && o.push(
-              a(["搬入経路を通過できる見込み", "Likely to pass through the delivery route", "预计可通过搬入路线"])
-            )
-      ),
-      n
-        && (
-          e.kg > 25
-            ? i.push(
-              m([
-                "重量約{0}kg：壁の下地補強・専用金具が必要",
-                "Weight about {0} kg: wall reinforcement and a dedicated bracket are required",
-                "重量约{0}kg：需要加固墙体底衬并使用专用支架"
-              ], e.kg)
-            )
-            : o.push(
-              a([
-                "壁掛けには別売の金具が必要（下地確認はスタッフが案内）",
-                "A separately sold bracket is needed for wall mounting (staff will guide the wall-backing check)",
-                "壁挂需另购支架（墙体底衬确认由店员指导）"
-              ])
-            )
-        ),
-      f("game") === 3
-        && !(e.hz >= 120 && e.hdmi21 === "Yes")
-        && i.push(
-          a([
-            "4K 120Hz／HDMI 2.1に非対応（ゲーム用途には不向き）",
-            "No support for 4K 120 Hz / HDMI 2.1 (not suited to gaming)",
-            "不支持4K 120Hz／HDMI 2.1（不适合游戏用途）"
-          ])
-        ),
-      f("rec") === "ts"
-        && e.timeShift !== "Yes"
-        && i.push(
-          a([
-            "タイムシフト（全チャンネル自動録画）に非対応",
-            "No time shift (auto-recording of all channels)",
-            "不支持时移（自动录制全部频道）"
-          ])
-        ),
-      { ng: t, wn: i, ok: o };
-  }
-  function se(e) {
-    var t = U(),
-      i = e.size < t[0] ? t[0] - e.size : e.size > t[1] ? e.size - t[1] : 0,
-      o = { OLED: 5, "Mini LED": 4.3, QLED: 3.6, LED: 3 },
-      s = o[e.panel] - (e.res === "2K" ? .4 : 0),
-      n = e.panel === "Mini LED"
-        ? 5
-        : e.panel === "QLED"
-          ? 3.8
-          : e.panel === "LED"
-            ? e.id === "t9" ? 4 : 3.4
-            : e.id === "t17" ? 3.6 : e.id === "t18" ? 3.5 : e.id === "t15" ? 3.2 : 2.6,
-      d = e.hz >= 144 && e.hdmi21 === "Yes"
-        ? 5
-        : e.hz >= 120 && e.hdmi21 === "Yes" ? 4.5 : ee[e.grades.game],
-      r = e.timeShift === "Yes"
-        ? 5
-        : e.id === "t4" ? f("rec") === "int" ? 5 : 4.5 : e.grades.rec === "◎" ? 4.5 : 3,
-      c = e.wat,
-      h = c >= 100
-        ? 5
-        : c >= 60 ? 4.5 : c >= 40 ? 4 : c >= 30 ? 3.5 : c >= 15 ? 3 : c >= 10 ? 2.5 : 2,
-      p = e.price <= 5e4
-        ? 5
-        : e.price <= 9e4
-          ? 4.5
-          : e.price <= 15e4
-            ? 3.5
-            : e.price <= 25e4 ? 2.5 : e.price <= 35e4 ? 2 : e.price <= 45e4 ? 1.5 : 1;
+    var t = g("chin"),
+      n = q[e.grades.closeness] || 3.5,
+      a = e.rot ? 3.2 : e.n >= 6 ? 5 : e.n >= 5 ? 4.4 : 3,
+      i = .6 * a + .4 * n + (e.flex === 2 ? .3 : 0);
+    t === "high" && e.flex === 2 && (i += .5), i = Math.min(5, i);
+    var c;
+    e.maker === "PHILIPS"
+      ? c = 5
+      : e.rot
+        ? c = q[e.grades.skin] || 3.5
+        : c = Math.min(5, (e.n >= 6 ? 4.6 : e.n >= 5 ? 4.1 : 3.1) + (e.flex === 2 ? .2 : 0));
+    var r = e.price <= 5e3
+      ? 5
+      : e.price <= 1e4
+        ? 4.5
+        : e.price <= 17e3 ? 3.5 : e.price <= 3e4 ? 2.6 : e.price <= 45e3 ? 1.9 : 1.2,
+      l = e.g <= 150 ? 5 : e.g <= 185 ? 4 : e.g <= 210 ? 3 : 2.2;
     return {
-      sizefit: W(5 - i / 7, 1, 5),
-      picture: s,
-      bright: n,
-      game: d,
-      rec: r,
-      sound: h,
-      price: p
+      closeness: i,
+      skin: c,
+      cleaning: e.dock ? 5 : q[e.grades.cleaning] || 3.5,
+      weight: l,
+      price: r
     };
   }
-  function oe() {
-    var e = function (d, r) {
-      var c = f(d);
-      return c ?? r;
-    },
-      t = { b: 3, n: 1.5, d: .3 }[f("light")];
-    t == null && (t = 1.5);
-    var i = { ts: 3, int: 2.5, ext: 1, none: .3 }[f("rec")];
-    i == null && (i = 1);
-    var o = { prem: 3, clear: 2, ext: .3 }[f("snd")];
-    o == null && (o = 1.5);
-    var s = f("pri"),
-      n = {
-        sizefit: 3,
-        picture: (.5 + e("mov", 1.5) * 1.2) * (f("light") === "d" ? 1.25 : 1),
-        bright: .5 + t * 1.2,
-        game: .5 + e("game", 1) * 1.2,
-        rec: .5 + i * 1.2,
-        sound: .5 + o * 1.2,
-        price: 1.5
-      };
-    return s && (n[s] *= 2.2), n;
+  function X() {
+    var e = { closeness: 1.5, skin: 1.5, cleaning: 1.2, weight: 1, price: 1.4 },
+      t = g("val"),
+      n = g("budget"),
+      a = g("pri");
+    return e.closeness += { dense: 2, normal: .8, thin: 0 }[g("beard")] || 0,
+      e.closeness += { high: 1.2, mid: .5, low: 0 }[g("chin")] || 0,
+      e.skin += { sens: 2.4, mid: .9, tough: 0 }[g("skin")] || 0,
+      e.cleaning += { easy: 2, ok: .6, any: 0 }[g("care")] || 0,
+      e.weight += { often: 2.4, some: .8, home: 0 }[g("travel")] || 0,
+      g("travel") === "home" && (e.weight = .3),
+      t === "cheap"
+        ? (e.price += 2, n != null && n <= 1e4 && (e.price += 1))
+        : t === "bal" || t === "perf"
+          ? e.price = n != null && n >= 1e9 ? 0 : t === "bal" ? .4 : .2
+          : n != null && n <= 1e4 && (e.price += 1),
+      a === "price" && (e.price = Math.max(e.price, 1.4)),
+      a && (e[a] *= 2.2),
+      e;
   }
-  function x() {
-    var e = oe(), t = f("bud") || 1e9;
-    return R.map(function (i) {
-      var o = re(i), s = se(i), n = 0, d = 0;
-      L.forEach(function (h) {
-        n += e[h[0]] * s[h[0]] / 5, d += e[h[0]];
+  function z() {
+    var e = X(), t = g("budget") || 1e9;
+    return E.map(function (n) {
+      var a = ie(n), i = re(n), c = 0, r = 0;
+      y.forEach(function (m) {
+        c += e[m[0]] * i[m[0]] / 5, r += e[m[0]];
       });
-      var r = 100 * n / d - o.wn.length * 12 - o.ng.length * 40, c = i.price > t;
-      return c && (r -= Math.min(35, (i.price - t) / t * 90 + 8)),
-        { p: i, h: o, a: s, sc: Math.max(1, Math.min(99, Math.round(r))), over: c, t: ie(i) };
+      var l = 100 * c / r - a.wn.length * 10 - a.ng.length * 40, u = n.price > t;
+      return g("skin") === "sens" && n.maker === "PHILIPS" && (l += 5),
+        u && (l -= Math.min(30, (n.price - t) / t * 80 + 6)),
+        { p: n, h: a, a: i, sc: Math.max(1, Math.min(99, Math.round(l))), over: u, t: K(n) };
     });
   }
-  var A = function (e) {
+  var M = function (e) {
     return e.filter(function (t) {
       return !t.h.ng.length;
     });
   },
-    de = function (e) {
-      return e.slice().sort(function (t, i) {
-        return i.sc - t.sc;
+    oe = function (e) {
+      return e.slice().sort(function (t, n) {
+        return n.sc - t.sc;
       });
     };
-  function le(e, t) {
-    var i = performance.now(), o = +e.textContent || 0;
-    (function s(n) {
-      var d = Math.min(1, (n - i) / 450);
-      e.textContent = Math.round(o + (t - o) * d), d < 1 && requestAnimationFrame(s);
-    })(i);
+  function ce(e, t) {
+    var n = performance.now(), a = +e.textContent || 0;
+    (function i(c) {
+      var r = Math.min(1, (c - n) / 450);
+      e.textContent = Math.round(a + (t - a) * r), r < 1 && requestAnimationFrame(i);
+    })(n);
   }
-  function ce() {
-    var e = document.getElementById("tv-n");
-    e && le(e, A(x()).length);
+  function le() {
+    var e = document.getElementById("sv-n");
+    e && ce(e, M(z()).length);
   }
-  function I(e, t) {
-    t || u.hist.push(u.v), u.v = e, u.back = !!t, K(), w.scrollTo({ top: 0 });
+  function O(e, t) {
+    t || h.hist.push(h.v), h.v = e, h.back = !!t, _(), b.scrollTo({ top: 0 });
   }
-  function K() {
-    var e = u.v,
+  function _() {
+    var e = h.v,
       t = "",
-      i = 0,
-      o = M.length,
-      s = j(),
-      n = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
-        + (s === "ja" ? " selected" : "")
+      n = 0,
+      a = x(),
+      i = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
+        + (a === "ja" ? " selected" : "")
         + '>日本語</option><option value="en"'
-        + (s === "en" ? " selected" : "")
+        + (a === "en" ? " selected" : "")
         + '>English</option><option value="zh"'
-        + (s === "zh" ? " selected" : "")
+        + (a === "zh" ? " selected" : "")
         + ">中文</option></select>",
-      d = '<div class="fr-top"><button class="fr-x" data-a="close">'
-        + a(["← 一覧へ", "← Back to list", "← 返回列表"])
+      c = '<div class="sv-top"><button class="sv-x" data-a="close">'
+        + s(["← 一覧へ", "← Back to list", "← 返回列表"])
         + "</button><b>"
-        + a(["ノジマ式 テレビ相談", "Nojima TV Advisor", "Nojima 电视选购咨询"])
+        + s(["ノジマ式 シェーバー相談", "Nojima Shaver Advisor", "Nojima 剃须刀选购咨询"])
         + "</b>"
-        + n
-        + '<span class="fr-pill">'
-        + m([
-          '該当<i id="tv-n">{0}</i>/{1}機種',
-          '<i id="tv-n">{0}</i>/{1} match',
-          '符合<i id="tv-n">{0}</i>/{1}款'
-        ], A(x()).length, R.length)
-        + '</span></div><div class="fr-prog"><div id="tv-pg"></div></div>';
+        + i
+        + '<span class="sv-pill">'
+        + p([
+          '該当<i id="sv-n">{0}</i>/{1}機種',
+          '<i id="sv-n">{0}</i>/{1} match',
+          '符合<i id="sv-n">{0}</i>/{1}款'
+        ], M(z()).length, E.length)
+        + '</span></div><div class="sv-prog"><div id="sv-pg"></div></div>';
     if (e === "intro")
-      t = he(), i = 3;
+      t = de(), n = 4;
     else if (e === "r1")
-      t = fe(), i = 45;
+      t = ue(), n = 38;
     else if (e === "r2")
-      t = pe(), i = 90;
+      t = pe(), n = 72;
     else if (e === "final")
-      t = ge(), i = 100;
+      t = ge(), n = 100;
     else if (e === "staff")
-      t = ve(), i = 100;
+      t = ve(), n = 100;
     else {
-      var r = V(e.st)[e.i];
-      t = me(r, e), i = 5 + ne(r) / o * 88;
+      var r = F(e.st)[e.i];
+      t = he(r, e), n = { 1: 6 + e.i * 6.4, 2: 40 + e.i * 6.4, 3: 74, 9: 88 }[e.st];
     }
-    w.className = "fr-root on" + (u.back ? " fr-back" : ""),
-      w.innerHTML = d + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
+    b.className = "on" + (h.back ? " sv-back" : ""),
+      b.innerHTML = c + '<div class="sv-wrap"><div class="sv-in">' + t + "</div></div>",
       requestAnimationFrame(function () {
-        var c = document.getElementById("tv-pg");
-        c && (c.style.width = i + "%");
+        var l = document.getElementById("sv-pg");
+        l && (l.style.width = n + "%");
       });
   }
-  function he() {
-    var e = function (s) {
-      return Math.min.apply(0, s);
-    },
-      t = function (s) {
-        return Math.max.apply(0, s);
-      },
-      i = T.map(function (s, n) {
-        var d = R.filter(function (p) {
-          return p.groupId === s.id;
+  function N(e, t) {
+    return t.apply(0, e);
+  }
+  function de() {
+    var e = s(["〜", "–", "～"]),
+      t = s(["／", " / ", "／"]),
+      n = B.map(function (a, i) {
+        var c = E.filter(function (u) {
+          return K(u) === a;
         }),
-          r = d.map(function (p) {
-            return p.size;
+          r = c.map(function (u) {
+            return u.price;
           }),
-          c = d.map(function (p) {
-            return p.pw;
-          }),
-          h = d.map(function (p) {
-            return p.price;
+          l = c.map(function (u) {
+            return u.g;
           });
-        return '<div class="fr-card fr-up" style="--i:'
-          + (n + 1)
+        return '<div class="sv-card sv-up" style="--i:'
+          + (i + 3)
           + '" data-a="type" data-i="'
-          + n
+          + i
           + '">'
-          + ae(s.lay, (n * .5).toFixed(1))
+          + ae(a.ic, (i * .35).toFixed(2))
           + "<h3>"
-          + H(s)
+          + T(a)
           + "</h3><small>"
-          + a(s.sub)
+          + s(a.sub)
           + "・"
-          + d.length
-          + a(["機種", " models", "款"])
-          + '</small><div class="fr-more"><div><span>'
-          + a(["向く方", "Best for", "适合人群"])
+          + c.length
+          + s(["機種", " models", "款"])
+          + '</small><div class="sv-more"><div><span>'
+          + s(["向く方", "Best for", "适合人群"])
           + "</span>"
-          + a(s.who)
+          + s(a.who)
           + "</div><div><span>"
-          + a(["強み", "Strengths", "优点"])
+          + s(["強み", "Strengths", "优点"])
           + "</span>"
-          + a(s.pro)
+          + s(a.pro)
           + "</div><div><span>"
-          + a(["注意", "Watch out", "注意"])
+          + s(["注意", "Watch out", "注意"])
           + "</span>"
-          + a(s.con)
+          + s(a.con)
           + "</div><div><span>"
-          + a(["目安", "Range", "参考"])
+          + s(["目安", "Range", "参考"])
           + "</span>"
-          + m([
-            "{0}〜{1}型／画面幅 約{2}〜{3}cm／{4}〜",
-            "{0}–{1} in. / screen width approx. {2}–{3} cm / from {4}",
-            "{0}～{1}英寸／屏幕宽约{2}～{3}cm／{4}起"
-          ], e(r), t(r), Math.round(e(c) / 10), Math.round(t(c) / 10), S(e(h)))
+          + S(N(r, Math.min))
+          + e
+          + S(N(r, Math.max))
+          + t
+          + p(["約{0}〜{1}g", "approx. {0}–{1} g", "约{0}～{1}g"], N(l, Math.min), N(l, Math.max))
+          + "</div><div><span>"
+          + s(["機種", "Models", "机型"])
+          + "</span>"
+          + c.map(function (u) {
+            return u.maker + " " + u.model;
+          }).join(s(["、", ", ", "、"]))
           + "</div></div></div>";
-      }).join(""),
-      o = '<div class="fr-box fr-up" style="--i:7"><h3>'
-        + a([
-          "まず知っておきたい「パネル」と「サイズ」の違い",
-          "Basics to know first: panel types and sizes",
-          "先了解“面板”与“尺寸”的区别"
-        ])
-        + '</h3><table class="tv-cmp"><tr><th>'
-        + a(["液晶(LED)", "LCD (LED)", "液晶(LED)"])
-        + "</th><td>"
-        + a([
-          "安価で明るい部屋に強い。4Kなら日常使いに十分。黒はやや浮いて見える",
-          "Inexpensive and strong in bright rooms. 4K is plenty for everyday use. Blacks look slightly washed out.",
-          "价格实惠，适合明亮房间。4K足以满足日常使用。黑色略显发灰。"
-        ])
-        + "</td></tr><tr><th>Mini LED</th><td>"
-        + a([
-          "小さなLEDで細かく光を制御。<b>明るさと色の鮮やかさ</b>が強み。120Hz以上のゲーム対応機が多い",
-          "Tiny LEDs control light finely. Strengths are <b>brightness and vivid color</b>. Many "
-            + "models support 120 Hz+ gaming.",
-          "以微小LED精细控光，强项是<b>亮度与色彩鲜艳度</b>。多数机型支持120Hz以上游戏。"
-        ])
-        + "</td></tr><tr><th>"
-        + a(["有機EL", "OLED", "有机EL"])
-        + "</th><td>"
-        + a([
-          "画素が自ら発光し、黒は完全な漆黒。<b>暗い部屋での映画</b>に最適。昼の映り込みには注意",
-          "Pixels emit their own light, so blacks are perfectly black. Ideal for <b>movies in a dark "
-            + "room</b>. Watch out for reflections in daytime.",
-          "像素自发光，黑色为纯黑。最适合<b>在暗室中看电影</b>。白天需注意反光。"
-        ])
-        + "</td></tr><tr><th>"
-        + a(["距離とサイズ", "Distance & size", "距离与尺寸"])
-        + "</th><td>"
-        + a([
-          "視聴距離1m＝約22〜32型／1.5m＝約33〜48型／2m＝約44〜64型／2.5m＝約55〜80型／3m＝約66型〜 が目安",
-          "Rough guide: 1 m = about 22–32 in. / 1.5 m = 33–48 in. / 2 m = 44–64 in. / 2.5 m = 55–80 "
-            + "in. / 3 m = 66 in. and up",
-          "参考：观看距离1m＝约22～32英寸／1.5m＝约33～48英寸／2m＝约44～64英寸／2.5m＝约55～80英寸／3m＝约66英寸以上"
-        ])
-        + "</td></tr><tr><th>"
-        + a(["設置の絶対条件", "Must-check installation", "安装硬性条件"])
-        + "</th><td>"
-        + a([
-          "置く場所の<b>幅・奥行・上の空き高さ</b>、搬入経路。台置きは<b>画面幅ではなくスタンド脚の幅</b>が基準です",
-          "The placement spot’s <b>width, depth, and clearance above</b>, plus the delivery route. For "
-            + "stand placement, the <b>stand leg width, not the screen width</b>, is the standard.",
-          "放置位置的<b>宽度·深度·上方空余高度</b>以及搬入路线。放在柜上时，以<b>底座支脚宽度而非屏幕宽度</b>为准。"
-        ])
-        + '</td></tr></table><p class="tv-src">'
-        + a([
-          "※寸法・重量は画面サイズから算出した目安です。最終の寸法確認は店頭スタッフがカタログで行います。",
-          "* Dimensions and weights are estimates calculated from screen size. Final dimension checks "
-            + "are done by in-store staff using the catalog.",
-          "※尺寸·重量为根据屏幕尺寸推算的参考值。最终尺寸确认由店员对照目录进行。"
-        ])
-        + "</p></div>";
-    return '<span class="fr-tag fr-up">'
-      + a(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
-      + '</span><h1 class="fr-h1 fr-up" style="--i:1">'
-      + a([
-        "テレビは、大きく<em>5つのタイプ</em>に分かれます",
-        "TVs fall into <em>5 main types</em>",
-        "电视大致分为<em>5种类型</em>"
+      }).join("");
+    return '<span class="sv-tag sv-up">'
+      + s(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
+      + '</span><h1 class="sv-h1 sv-up" style="--i:1">'
+      + s([
+        "メンズシェーバーは、大きく<em>5つのタイプ</em>に分かれます",
+        "Men’s shavers fall into <em>5 main types</em>",
+        "男士剃须刀大致分为<em>5种类型</em>"
       ])
-      + '</h1><p class="fr-p fr-up" style="--i:2">'
-      + m([
-        "タップでタイプごとの違いを確認できます。そのあと、<b>設置条件（絶対条件）</b>→<b>見え方・使い方のこだわり</b>→<b>譲れない1点</b>の順におたずねして、店頭在庫{0}機種から3機種に絞ります。",
-        "Tap a card to see how the types differ. Then we ask about <b>installation limits "
-          + "(must-haves)</b> → <b>viewing and usage preferences</b> → <b>your one non-negotiable</b>, "
-          + "narrowing {0} in-store models to 3.",
-        "点击卡片查看各类型差异。之后依次询问<b>安装条件（硬性条件）</b>→<b>观看·使用偏好</b>→<b>不可让步的一点</b>，从店内{0}款中筛出3款。"
-      ], R.length)
-      + '</p><div class="fr-types">'
-      + i
-      + "</div>"
-      + o
-      + '<button class="fr-btn" data-a="start">'
-      + a(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
+      + '</h1><p class="sv-p sv-up" style="--i:2">'
+      + p([
+        "まず「刃の方式」で2系統。タップでタイプごとの違いを確認できます。そのあと、<b>優先したいこと</b>→<b>持ち運び・"
+          + "お手入れ</b>→<b>譲れない1点</b>→<b>予算</b>の順におたずねして、店頭在庫{0}機種から3機種に絞ります。",
+        "First, there are 2 families by “blade type”. Tap a card to see how the types differ. Then "
+          + "we ask about <b>your top priorities</b> → <b>carrying and upkeep</b> → <b>your one "
+          + "non-negotiable</b> → <b>budget</b>, narrowing {0} in-store models to 3.",
+        "首先按“刀头方式”分为2大系统。点击卡片查看各类型差异。之后依次询问<b>优先事项</b>→<b>携带·保养</b>→<b>不可让步的一点</b>→<b>预算</b>，从店内{0}款中筛出3款。"
+      ], E.length)
+      + '</p><div class="sv-box sv-up" style="--i:2"><h3>'
+      + s(["まず知っておきたい「刃の方式」", "Basics to know first: blade type", "先了解“刀头方式”"])
+      + '</h3><div class="sv-vs"><div><b>'
+      + s(["往復式", "Reciprocating", "往复式"])
+      + "</b>"
+      + s([
+        "網刃が直線に動き、速く深く剃れる。パナソニック「ラムダッシュ」・ブラウン",
+        "Foils move in straight lines for fast, deep shaving. Panasonic “LAMDASH” and Braun.",
+        "刀网直线运动，剃得又快又深。松下“LAMDASH”·博朗"
+      ])
+      + "</div><div><b>"
+      + s(["回転式", "Rotary", "旋转式"])
+      + "</b>"
+      + s([
+        "円を描くように肌をなでて剃る。摩擦が少なく肌にやさしい。フィリップス",
+        "Strokes the skin in circular motions. Low friction and gentle on skin. Philips.",
+        "以画圆方式轻抚肌肤剃须。摩擦少，对肌肤温和。飞利浦"
+      ])
+      + '</div></div></div><div class="sv-types">'
+      + n
+      + '</div><button class="sv-btn" data-a="start">'
+      + s(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
       + "</button>";
   }
-  function me(e, t) {
-    var i = V(t.st),
-      o = a(
+  function he(e, t) {
+    var n = F(t.st),
+      a = s(
         {
           1: [
-            "前半｜絶対条件（置けるか・収まるか・運べるか）",
-            "Part 1 | Must-haves (will it fit, will it sit, can it be delivered)",
-            "前半｜硬性条件（放得下·装得进·搬得进）"
+            "前半｜まず優先して聞きたいこと（肌・ヒゲ・刃の方式）",
+            "Part 1 | Top priorities first (skin, beard, blade type)",
+            "前半｜优先确认的事项（肌肤·胡须·刀头方式）"
           ],
-          2: ["後半｜見え方・使い方のこだわり", "Part 2 | Viewing and usage preferences", "后半｜观看·使用偏好"],
-          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"]
+          2: [
+            "後半｜持ち運び・お風呂・お手入れ・価格感",
+            "Part 2 | Carrying, bath, upkeep and price feel",
+            "后半｜携带·浴室·保养·价格倾向"
+          ],
+          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"],
+          9: ["最後｜ご予算", "Last | Your budget", "最后｜预算"]
         }[t.st]
       ),
-      s = e.o.map(function (n, d) {
-        return '<button class="fr-opt fr-up'
-          + (u.a[e.id] === d ? " sel" : "")
+      i = e.k.map(function (r) {
+        var l = Q(r);
+        return l
+          ? '<span class="sv-chip ax">'
+            + p(["{0}に効く", "Affects {0}", "影响{0}"], l[2] + " " + w(l))
+            + "</span>"
+          : '<span class="sv-chip'
+            + (r === "絶対条件" ? " ng" : " ok")
+            + '">'
+            + s(
+              r === "絶対条件"
+                ? ["合わない機種を除外", "Excludes models that don’t fit", "排除不符合的机型"]
+                : ["譲れない1点", "Your one non-negotiable", "不可让步的一点"]
+            )
+            + "</span>";
+      }).join(""),
+      c = e.o.map(function (r, l) {
+        return '<button class="sv-opt sv-up'
+          + (h.a[e.id] === l ? " sel" : "")
           + '" style="--i:'
-          + (d + 1)
+          + (l + 1)
           + '" data-a="pick" data-i="'
-          + d
+          + l
           + '"><span class="ck">'
-          + (u.a[e.id] === d ? "✓" : "")
+          + (h.a[e.id] === l ? "✓" : "")
           + "</span>"
-          + a(n[0])
+          + s(r[0])
           + "</button>";
       }).join("");
-    return '<span class="fr-tag">'
-      + o
-      + '</span><div class="fr-q"><div class="no">Q'
+    return '<span class="sv-tag">'
+      + a
+      + '</span>'
+      + TP()
+      + '<div class="sv-q"><div class="no">Q'
       + (t.i + 1)
       + " / "
-      + i.length
+      + n.length
       + "</div><h2>"
-      + a(e.t)
-      + '</h2><div class="fr-hint">💡 '
-      + a(e.h)
+      + s(e.t)
+      + '</h2><div class="sv-hint">💡 '
+      + s(e.h)
+      + '</div><div class="sv-eff">'
+      + i
       + "</div>"
-      + s
-      + '</div><button class="fr-btn s" data-a="back">'
-      + a(["← ひとつ戻る", "← Back", "← 返回上一步"])
+      + c
+      + '</div><button class="sv-btn s" data-a="back">'
+      + s(["← ひとつ戻る", "← Back", "← 返回上一步"])
       + "</button>";
   }
-  function ue(e) {
-    var t = 15,
-      i = 95,
-      o = function (r) {
-        return (W(r, t, i) - t) / (i - t) * 100;
-      },
-      s = e * 22,
-      n = e * 32,
-      d = [24, 32, 43, 55, 65, 75, 85].map(function (r) {
-        return '<div class="tv-tk" style="left:'
-          + o(r)
-          + '%"><i></i>'
-          + r
-          + a(["型", '"', "寸"])
-          + "</div>";
-      }).join("");
-    return '<div class="tv-meter"><div class="tv-track"><div class="tv-band" style="left:'
-      + o(s)
-      + "%;width:"
-      + (o(n) - o(s))
-      + '%"></div></div>'
-      + d
-      + '<div class="tv-mk" style="left:'
-      + o((s + n) / 2)
-      + '%"><span>'
-      + m(["おすすめ 約{0}〜{1}型", "Recommended ~{0}–{1} in.", "推荐约{0}～{1}英寸"], Math.round(s), Math.round(
-        n
-      ))
-      + "</span></div></div>";
-  }
-  function fe() {
-    var e = x(), t = A(e), i = {}, o = f("dist"), s = [];
-    e.forEach(function (h) {
-      h.h.ng.forEach(function (p) {
-        i[p[0]] = (i[p[0]] || 0) + 1;
+  function ue() {
+    var e = z(), t = M(e), n = {};
+    e.forEach(function (l) {
+      l.h.ng.forEach(function (u) {
+        n[u[0]] = (n[u[0]] || 0) + 1;
       });
     });
-    var n = T.map(function (h, p) {
-      var b = e.filter(function (y) {
-        return y.t === h;
+    var a = B.map(function (l, u) {
+      var m = e.filter(function (v) {
+        return v.t === l;
       }),
-        z = b.filter(function (y) {
-          return !y.h.ng.length;
+        d = m.filter(function (v) {
+          return !v.h.ng.length;
         }).length;
-      return '<div class="fr-row fr-up" style="--i:'
-        + p
-        + '"><b style="width:9.6em">'
-        + H(h)
-        + '</b><div class="fr-bar'
-        + (z ? "" : " g")
+      return '<div class="sv-row sv-up" style="--i:'
+        + u
+        + '"><b style="width:9.5em">'
+        + T(l)
+        + '</b><div class="sv-bar'
+        + (d ? "" : " g")
         + '"><i style="width:'
-        + (b.length ? z / b.length * 100 : 0)
+        + (m.length ? d / m.length * 100 : 0)
         + "%;--i:"
-        + p
+        + u
         + '"></i></div><span style="width:3.4em;text-align:right">'
-        + z
+        + d
         + "/"
-        + b.length
+        + m.length
         + "</span></div>";
     }).join(""),
-      d = Object.keys(i).map(function (h) {
-        return '<span class="fr-chip ng">'
-          + m(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], a(te[h]), i[h])
+      i = Object.keys(n).map(function (l) {
+        return '<span class="sv-chip ng">'
+          + p(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], s(Z[l]), n[l])
           + "</span>";
       }).join("")
-        || '<span class="fr-chip ok">' + a(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>";
-    o != null
-      && s.push(
-        m([
-          "<b>サイズの考え方</b>：視聴距離（{0}）なら、画面は <b>約{1}〜{2}型</b> がちょうどよい範囲です。",
-          "<b>How size is chosen</b>: for a viewing distance of ({0}), the screen sweet spot is "
-            + "<b>about {1}–{2} in.</b>",
-          "<b>尺寸的考虑方式</b>：观看距离为（{0}）时，屏幕<b>约{1}～{2}英寸</b>最为合适。"
-        ], D("dist"), Math.round(o * 22), Math.round(o * 32))
-      ),
-      t.length
-        && s.push(
-          m(
-            [
-              "設置条件を満たす中で一番大きいのは <b>{0}型</b>、一番小さいのは <b>{1}型</b> です。",
-              "Among models meeting your installation conditions, the largest is <b>{0} in.</b> and the "
-                + "smallest is <b>{1} in.</b>",
-              "在满足安装条件的机型中，最大的是<b>{0}英寸</b>，最小的是<b>{1}英寸</b>。"
-            ],
-            Math.max.apply(
-              0,
-              t.map(function (h) {
-                return h.p.size;
-              })
-            ),
-            Math.min.apply(
-              0,
-              t.map(function (h) {
-                return h.p.size;
-              })
-            )
-          )
-        ),
-      f("mount") === "wall"
-        ? s.push(
-          a([
-            "壁掛けは画面の幅・高さで判定しています。重い機種（約25kg超）は壁の下地補強が必要になるため注意つきで表示します。",
-            "Wall mounting is judged by screen width and height. Heavy models (over about 25 kg) need "
-              + "wall reinforcement, so they are shown with a caution.",
-            "壁挂按屏幕宽度·高度判定。较重的机型（约25kg以上）需要加固墙体底衬，因此会附带注意事项显示。"
+        || '<span class="sv-chip ok">' + s(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>",
+      c = t.map(function (l) {
+        return '<span class="sv-chip'
+          + (l.h.wn.length ? " w" : " ok")
+          + '">'
+          + l.p.maker
+          + " "
+          + l.p.model
+          + "</span>";
+      }).join(""),
+      r = g("method") === "any"
+        ? s([
+          "方式にこだわりがないので、往復式・回転式の両方を比べます。",
+          "Since you have no blade-type preference, both reciprocating and rotary models are compared.",
+          "由于对方式没有特别要求，将对往复式和旋转式进行比较。"
+        ])
+        : g("method") === "foil"
+          ? s([
+            "往復式（ラムダッシュ・ブラウン）に絞っています。",
+            "Narrowed to reciprocating models (LAMDASH, Braun).",
+            "已筛选为往复式（LAMDASH·博朗）。"
           ])
-        )
-        : s.push(
-          a([
-            "台置きは「スタンド脚の幅」が台に載るかで判定しています。画面が台より広い機種は、はみ出し注意つきで表示します。",
-            "Stand placement is judged by whether the stand leg width fits on the stand. Models whose "
-              + "screen is wider than the stand are shown with an overhang caution.",
-            "放在柜上按“底座支脚宽度”能否放上柜面判定。屏幕比柜面宽的机型会附带超出提醒。"
-          ])
-        );
-    var r = t.filter(function (h) {
-      return h.h.wn.length;
-    }).length,
-      c = o != null
-        ? '<div class="fr-box"><h3>'
-          + a([
-            "視聴距離から見た、ちょうどよい画面サイズ",
-            "Ideal screen size for your viewing distance",
-            "根据观看距离得出的合适屏幕尺寸"
-          ])
-          + "</h3>"
-          + ue(o)
-          + "</div>"
-        : "";
-    return '<span class="fr-tag">'
-      + a(["前半の結果", "Part 1 result", "前半结果"])
-      + '</span><h1 class="fr-h1">'
-      + m([
+          : s(["回転式（フィリップス）に絞っています。", "Narrowed to rotary models (Philips).", "已筛选为旋转式（飞利浦）。"]);
+    return '<span class="sv-tag">'
+      + s(["前半の結果", "Part 1 result", "前半结果"])
+      + '</span><h1 class="sv-h1">'
+      + p([
         "絶対条件で、<em>{0}機種</em>に絞り込みました",
         "Your must-haves narrowed it to <em>{0} models</em>",
         "根据硬性条件，已筛选出<em>{0}款</em>"
       ], t.length)
-      + '</h1><p class="fr-p">'
-      + m([
-        "設置 {0}／幅 {1}／奥行 {2}／高さ {3}／距離 {4}／搬入 {5}",
-        "Setup {0} / Width {1} / Depth {2} / Height {3} / Distance {4} / Delivery {5}",
-        "安置 {0}／宽 {1}／深 {2}／高 {3}／距离 {4}／搬入 {5}"
-      ], D("mount"), D("width"), D("depth"), D("height"), D("dist"), D("path"))
-      + "</p>"
-      + c
-      + '<div class="fr-box"><h3>'
-      + a(["タイプ別に残った機種数", "Models remaining by type", "各类型剩余机型数"])
+      + '</h1><p class="sv-p">'
+      + p([
+        "肌 {0}／ヒゲ {1}／方式 {2}／洗浄器 {3}",
+        "Skin {0} / Beard {1} / Type {2} / Cleaning station {3}",
+        "肌肤 {0}／胡须 {1}／方式 {2}／清洗座 {3}"
+      ], A("skin"), A("beard"), A("method"), A("dock"))
+      + '</p><div class="sv-box"><h3>'
+      + s(["タイプ別に残った機種数", "Models remaining by type", "各类型剩余机型数"])
       + "</h3>"
-      + n
-      + '</div><div class="fr-box"><h3>'
-      + a(["外れた理由", "Why models were excluded", "被排除的原因"])
+      + a
+      + '</div><div class="sv-box"><h3>'
+      + s(["外れた理由", "Why models were excluded", "被排除的原因"])
       + "</h3>"
-      + d
-      + '<p class="fr-p" style="margin:8px 0 0">'
-      + s.join("<br>")
-      + (
-        r
-          ? "<br>"
-            + m(["（要確認の注意つき：{0}機種）", "(with cautions to check: {0} models)", "（需确认的注意事项：{0}款）"], r)
-          : ""
-      )
+      + i
+      + '<p class="sv-p" style="margin:8px 0 0">'
+      + r
+      + s(["（黄色は注意表示つき）", " (yellow = with caution notice)", "（黄色表示附带注意事项）"])
       + "</p></div>"
       + (
+        t.length
+          ? '<div class="sv-box"><h3>'
+            + s(["残った機種", "Remaining models", "剩余机型"])
+            + "</h3>"
+            + c
+            + "</div>"
+          : ""
+      )
+      + (
         t.length < 3
-          ? '<div class="fr-win">'
-            + a([
-              "⚠️ 条件にぴったり合う機種が3つ未満です。後半では「条件外」の近い機種も参考に表示します（赤字で明記）。台の幅・上の空き・搬入経路を見直すと選択肢が広がる場合があります。",
-              "⚠️ Fewer than 3 models match your conditions exactly. In Part 2 we also show close "
-                + "“out-of-spec” models for reference (marked in red). Rechecking the stand width, clearance "
-                + "above, and delivery route may widen your options.",
-              "⚠️ 完全符合条件的机型不足3款。后半部分也会参考性地显示接近的“条件外”机型（以红字标明）。重新核对台面宽度·上方空间·搬入路线，可能会增加选择。"
+          ? '<div class="sv-win">'
+            + s([
+              "⚠️ 条件にぴったり合う機種が3つ未満です。最終画面では「条件外」の近い機種も参考に表示します（赤字で明記）。条件を見直すと選択肢が広がる場合があります。",
+              "⚠️ Fewer than 3 models match your conditions exactly. The final screen also shows close "
+                + "“out-of-spec” models for reference (marked in red). Revisiting your conditions may widen "
+                + "your options.",
+              "⚠️ 完全符合条件的机型不足3款。最终画面中也会参考性地显示接近的“条件外”机型（以红字标明）。重新考虑条件可能会增加选择。"
             ])
             + "</div>"
           : ""
       )
-      + '<button class="fr-btn" data-a="next">'
-      + a(["後半の質問へ（こだわり7問）→", "To Part 2 (7 preference questions) →", "前往后半部分（7个偏好问题）→"])
-      + '</button><button class="fr-btn k" data-a="staff">'
-      + a(["📸 スタッフに見せる（条件メモ）", "📸 Show to staff (requirements memo)", "📸 出示给店员（条件备忘）"])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 前半をやり直す", "← Redo Part 1", "← 重做前半部分"])
+      + '<button class="sv-btn" data-a="next">'
+      + s(["後半の質問へ →", "To Part 2 →", "前往后半部分 →"])
+      + '</button><button class="sv-btn k" data-a="staff">'
+      + s(["📸 スタッフに見せる（条件メモ）", "📸 Show to staff (requirements memo)", "📸 出示给店员（条件备忘）"])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 前半をやり直す", "← Redo Part 1", "← 重做前半部分"])
       + "</button>";
   }
   function pe() {
-    var e = x(),
-      t = A(e),
-      i = T.map(function (r) {
-        var c = t.filter(function (h) {
-          return h.t === r;
+    var e = z(),
+      t = M(e),
+      n = X(),
+      a = Math.max.apply(
+        0,
+        y.map(function (d) {
+          return n[d[0]];
+        })
+      ),
+      i = B.map(function (d) {
+        var v = t.filter(function (k) {
+          return k.t === d;
         });
         return {
-          t: r,
-          n: c.length,
-          v: L.map(function (h) {
-            return c.length
-              ? c.reduce(function (p, b) {
-                return p + b.a[h[0]];
+          t: d,
+          n: v.length,
+          v: y.map(function (k) {
+            return v.length
+              ? v.reduce(function (o, R) {
+                return o + R.a[k[0]];
               }, 0)
-                / c.length
+                / v.length
               : 0;
           })
         };
       }),
-      o = function (r) {
-        return j() === "en" ? k(r).split(" ")[0] : k(r).slice(0, 4);
+      c = function (d) {
+        return x() === "en" ? w(d).split(/[ \-]/)[0] : w(d).slice(0, 4);
       },
-      s = '<div class="fr-heat" style="grid-template-columns:7.4em repeat(7,1fr);min-width:480px"><div '
-        + 'class="hd"></div>'
-        + L.map(function (r) {
-          return '<div class="hd">' + r[2] + "<br>" + o(r) + "</div>";
+      r = '<div class="sv-heat" style="grid-template-columns:7.2em repeat(5,1fr)"><div class="hd"></div>'
+        + y.map(function (d) {
+          return '<div class="hd">' + d[2] + "<br>" + c(d) + "</div>";
         }).join("");
-    i.forEach(function (r, c) {
-      s += '<div class="rn">'
-        + H(r.t)
+    i.forEach(function (d, v) {
+      r += '<div class="rn">'
+        + T(d.t)
         + '<br><small style="color:#94a3b8">'
-        + r.n
-        + a(["機種", " models", "款"])
+        + d.n
+        + s(["機種", " models", "款"])
         + "</small></div>"
-        + r.v.map(function (h, p) {
+        + d.v.map(function (k, o) {
           return '<div style="--a:'
-            + (h ? (h / 5 * .85).toFixed(2) : 0)
+            + (k ? (k / 5 * .85).toFixed(2) : 0)
             + ";--i:"
-            + (c * 7 + p)
+            + (v * 5 + o)
             + ";color:"
-            + (h > 3.2 ? "#fff" : "#334155")
+            + (k > 3.2 ? "#fff" : "#334155")
             + '">'
-            + (h ? h.toFixed(1) : "—")
+            + (k ? k.toFixed(1) : "—")
             + "</div>";
         }).join("");
     }),
-      s += "</div>";
-    var n = L.map(function (r, c) {
-      return '<div class="fr-row fr-up" style="--i:'
-        + c
-        + ';align-items:flex-start"><b style="width:8em">'
-        + r[2]
+      r += "</div>";
+    var l = y.map(function (d, v) {
+      return '<div class="sv-row sv-up" style="--i:'
+        + v
+        + '"><b>'
+        + d[2]
         + " "
-        + k(r)
-        + '</b><span style="flex:1;color:#475569">'
-        + _(r)
-        + "</span></div>";
+        + w(d)
+        + '</b><div class="sv-bar"><i style="width:'
+        + (n[d[0]] / a * 100).toFixed(0)
+        + "%;--i:"
+        + v
+        + '"></i></div></div>';
     }).join(""),
-      d = i.filter(function (r) {
-        return r.n;
-      }).map(function (r) {
+      u = y.map(function (d, v) {
+        return '<div class="sv-row sv-up" style="--i:'
+          + v
+          + ';align-items:flex-start"><b>'
+          + d[2]
+          + " "
+          + w(d)
+          + '</b><span style="flex:1;color:#475569">'
+          + Y(d)
+          + "</span></div>";
+      }).join(""),
+      m = i.filter(function (d) {
+        return d.n;
+      }).map(function (d) {
         return '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
-          + H(r.t)
-          + "</b>："
-          + a(r.t.pro)
-          + a(["。", ". ", "。"])
+          + T(d.t)
+          + "</b>"
+          + s(["：", ": ", "："])
+          + s(d.t.pro)
+          + s(["。", ". ", "。"])
           + '<span style="color:#b45309">'
-          + a(r.t.con)
+          + s(d.t.con)
           + "</span></div>";
       }).join("");
-    return '<span class="fr-tag">'
-      + a(["後半の結果", "Part 2 result", "后半结果"])
-      + '</span><h1 class="fr-h1">'
-      + a([
-        "タイプごとの<em>違い</em>を見てみましょう",
-        "Let’s look at the <em>differences</em> between types",
-        "来看看各类型的<em>差异</em>"
+    return '<span class="sv-tag">'
+      + s(["後半の結果", "Part 2 result", "后半结果"])
+      + '</span><h1 class="sv-h1">'
+      + s([
+        "タイプごとの<em>違い</em>と、あなたの<em>重みづけ</em>",
+        "<em>Differences</em> between types, and <em>your weighting</em>",
+        "各类型的<em>差异</em>与您的<em>权重设置</em>"
       ])
-      + '</h1><p class="fr-p">'
-      + a([
-        "条件に合う機種の平均点です（濃いほど得意・5点満点）。あなたの回答に応じて、この7つの軸で重みづけして点数をつけます。",
-        "Average scores of matching models (darker = stronger, out of 5). Based on your answers, we "
-          + "weight these 7 criteria to score each model.",
-        "符合条件机型的平均分（颜色越深越强，满分5分）。根据您的回答，对这7个维度加权打分。"
+      + '</h1><p class="sv-p">'
+      + s([
+        "残った機種のタイプ別の平均点です（濃いほど得意・5点満点）。あなたの回答から、5つの評価軸の重みを次のように決めました。",
+        "Average scores of the remaining models by type (darker = stronger, out of 5). Based on your "
+          + "answers, we set the weights of the 5 criteria as follows.",
+        "剩余机型按类型统计的平均分（颜色越深越强，满分5分）。根据您的回答，5个评价维度的权重设置如下。"
       ])
-      + '</p><div class="fr-box"><h3>'
-      + a(["タイプ × 評価軸", "Type × criteria", "类型 × 评价维度"])
+      + '</p><div class="sv-box"><h3>'
+      + s(["あなたの重みづけ", "Your weighting", "您的权重设置"])
+      + "</h3>"
+      + l
+      + '</div><div class="sv-box"><h3>'
+      + s(["タイプ × 評価軸", "Type × criteria", "类型 × 评价维度"])
       + '</h3><div style="overflow-x:auto">'
-      + s
-      + '</div></div><div class="fr-box"><h3>'
-      + a(["タイプごとの特徴", "Traits of each type", "各类型的特点"])
+      + r
+      + '</div></div><div class="sv-box"><h3>'
+      + s(["タイプごとの特徴", "Traits of each type", "各类型的特点"])
       + "</h3>"
-      + d
-      + '</div><div class="fr-box"><h3>'
-      + a(["評価軸の見方", "How to read the criteria", "评价维度说明"])
+      + m
+      + '</div><div class="sv-box"><h3>'
+      + s(["評価軸の見方", "How to read the criteria", "评价维度说明"])
       + "</h3>"
-      + n
-      + '</div><button class="fr-btn" data-a="next">'
-      + a(["最後の質問へ →", "To the last question →", "前往最后一个问题 →"])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 後半をやり直す", "← Redo Part 2", "← 重做后半部分"])
+      + u
+      + '</div><button class="sv-btn" data-a="next">'
+      + s(["最後の質問へ →", "To the last question →", "前往最后一个问题 →"])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 後半をやり直す", "← Redo Part 2", "← 重做后半部分"])
       + "</button>";
   }
-  function Y(e, t) {
-    return t.slice().sort(function (i, o) {
-      return o.a[e] - i.a[e] || o.sc - i.sc;
+  function H(e, t) {
+    return t.slice().sort(function (n, a) {
+      return a.a[e] - n.a[e] || a.sc - n.sc;
     })[0];
   }
-  function q() {
-    for (var e = de(x()), t = e.filter(function (o) {
-      return !o.h.ng.length;
-    }).slice(0, 3), i = 0; t.length < 3 && i < e.length; i++)
-      t.indexOf(e[i]) < 0 && t.push(e[i]);
-    return { all: e, top: t };
+  function V() {
+    var e = oe(z()),
+      t = e.filter(function (r) {
+        return !r.h.ng.length;
+      }),
+      n = [];
+    for (t.length < 3 && e.forEach(function (r) {
+      t.indexOf(r) < 0 && t.push(r);
+    }); n.length < 3 && t.length;) {
+      var a = n.map(function (r) {
+        return r.t;
+      }),
+        i = null,
+        c = -1e9;
+      t.forEach(function (r) {
+        var l = r.sc - (a.indexOf(r.t) >= 0 ? 8 : 0);
+        l > c && (c = l, i = r);
+      }),
+        n.push(i),
+        t.splice(t.indexOf(i), 1);
+    }
+    return n.sort(function (r, l) {
+      return l.sc - r.sc;
+    }),
+      { all: e, top: n };
   }
   function ge() {
-    var e = q(),
+    var e = V(),
       t = e.top,
-      i = u.ax || f("pri") || "sizefit",
-      o = L.filter(function (l) {
-        return l[0] === i;
-      })[0],
-      s = Y(i, t),
-      n = Y(i, A(e.all)),
-      d = L.map(function (l) {
+      n = h.ax || g("pri") || "closeness",
+      a = Q(n),
+      i = H(n, t),
+      c = H(n, M(e.all)),
+      r = y.map(function (o) {
         return '<button data-a="ax" data-k="'
-          + l[0]
+          + o[0]
           + '" class="'
-          + (l[0] === i ? "on" : "")
+          + (o[0] === n ? "on" : "")
           + '">'
-          + l[2]
+          + o[2]
           + " "
-          + k(l)
+          + w(o)
           + "</button>";
       }).join(""),
-      r = '<div class="fr-win"><b>'
-        + m([
-          "{0} 「{1}」を譲れないなら → {2}",
+      l = '<div class="sv-win"><b>'
+        + p([
+          "{0} 「{1}」を譲れないなら →{2}",
           "{0} If “{1}” is non-negotiable → {2}",
           "{0} 若“{1}”不可让步 → {2}"
-        ], o[2], k(o), s.p.name)
+        ], a[2], w(a), j(i.p))
         + "</b>"
-        + a(["（", " (", "（"])
-        + s.p.maker
+        + s(["（", " (", "（"])
+        + i.p.maker
         + " / "
-        + S(s.p.price)
-        + a(["）", ")", "）"])
+        + S(i.p.price)
+        + s(["）", ")", "）"])
         + "<br>"
-        + _(o)
-        + a(["。", ". ", "。"])
+        + Y(a)
+        + s(["。", ". ", "。"])
         + (
-          n && n !== s && n.a[i] > s.a[i]
+          c && c !== i && c.a[n] > i.a[n]
             ? "<br>"
-              + m([
+              + p([
                 "さらに「{0}」に特化するなら <b>{1}</b>（{2}）も候補です。",
                 "For an even stronger “{0}”, <b>{1}</b> ({2}) is also a candidate.",
                 "若要更突出“{0}”，<b>{1}</b>（{2}）也是候选。"
-              ], k(o), n.p.name, S(n.p.price))
-            : a([
+              ], w(a), j(c.p), S(c.p.price))
+            : s([
               "この3機種の中ではここが最も強い項目です。",
               "This is the strongest criterion among these 3 models.",
               "这是这3款中最强的项目。"
             ])
         )
         + "</div>",
-      c = f("mount") === "wall",
-      h = f("width"),
-      p = t.map(function (l, E) {
-        var v = l.p,
-          C = L.filter(function (g) {
-            return Y(g[0], t) === l && l.a[g[0]] >= 3.5;
-          }).map(function (g) {
-            return '<span class="fr-chip ok">'
-              + g[2]
-              + m(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], k(g))
+      u = y.map(function (o, R) {
+        var P = H(o[0], t);
+        return '<div class="sv-row sv-up" style="--i:'
+          + R
+          + ';align-items:flex-start"><b style="width:8em">'
+          + o[2]
+          + " "
+          + w(o)
+          + '</b><span style="flex:1;line-height:1.5">→ <b>'
+          + j(P.p)
+          + "</b>"
+          + s(["（", " (", "（"])
+          + S(P.p.price)
+          + s(["）", ")", "）"])
+          + "</span></div>";
+      }).join(""),
+      m = t.map(function (o, R) {
+        var P = o.p,
+          me = y.filter(function (f) {
+            return H(f[0], t) === o && o.a[f[0]] >= 3.5;
+          }).map(function (f) {
+            return '<span class="sv-chip ok">'
+              + f[2]
+              + p(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], w(f))
               + "</span>";
           }).join(""),
-          we = L.map(function (g, ze) {
-            return '<div class="fr-row" style="margin-bottom:5px"><b style="width:9.4em;'
-              + (g[0] === i ? "color:#d97706" : "")
+          be = y.map(function (f, we) {
+            return '<div class="sv-row" style="margin-bottom:5px"><b style="width:7.4em;'
+              + (f[0] === n ? "color:#d97706" : "")
               + '">'
-              + g[2]
+              + f[2]
               + " "
-              + k(g)
-              + '</b><div class="fr-bar"><i style="width:'
-              + l.a[g[0]] / 5 * 100
+              + w(f)
+              + '</b><div class="sv-bar"><i style="width:'
+              + o.a[f[0]] / 5 * 100
               + "%;--i:"
-              + ze
-              + (g[0] === i ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
+              + we
+              + (f[0] === n ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
               + '"></i></div></div>';
           }).join(""),
-          Q = "";
-        if (h && h < 9999) {
-          var X = c ? v.pw : v.sw, J = W(X / h * 100, 0, 100);
-          Q = '<div class="fr-row" style="margin-bottom:5px"><b style="width:9.4em">📐 '
-            + a(c ? ["画面幅", "Screen width", "屏幕宽度"] : ["脚幅", "Leg width", "支脚宽度"])
-            + a(["／設置幅", " / space", "／安装宽度"])
-            + '</b><div class="fr-bar"><i style="width:'
-            + J
-            + "%;--i:8"
-            + (J > 96 ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
-            + '"></i></div><span style="width:8em;font-size:.8rem">'
-            + X
-            + "/"
-            + h
-            + "mm</span></div>";
-        }
-        var ye = l.h.ng.map(function (g) {
-          return '<li class="n">' + m(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], g[1]) + "</li>";
-        }).concat(
-          l.h.wn.map(function (g) {
-            return '<li class="w">' + g + "</li>";
-          })
-        ).concat(
-          l.over
-            ? [
-              '<li class="w">'
-                + m(["予算（{0}）を超えています", "Over your budget ({0})", "超出预算（{0}）"], D("bud"))
-                + "</li>"
-            ]
-            : []
-        ).concat(
-          l.h.ok.slice(0, 3).map(function (g) {
-            return "<li>" + g + "</li>";
-          })
-        ).join("");
-        return '<div class="fr-rec fr-up'
-          + (l === s ? " hi" : " dim")
+          ye = o.h.ng.map(function (f) {
+            return '<li class="n">' + p(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], f[1]) + "</li>";
+          }).concat(
+            o.h.wn.map(function (f) {
+              return '<li class="w">' + f + "</li>";
+            })
+          ).concat(
+            o.over && !o.h.ng.length
+              ? [
+                '<li class="w">'
+                  + p(["予算（{0}）を少し超えています", "Slightly over your budget ({0})", "略微超出预算（{0}）"], A(
+                    "budget"
+                  ))
+                  + "</li>"
+              ]
+              : []
+          ).concat(
+            o.h.ok.slice(0, 3).map(function (f) {
+              return "<li>" + f + "</li>";
+            })
+          ).join("");
+        return '<div class="sv-rec sv-up'
+          + (o === i ? " hi" : " dim")
           + '" style="--i:'
-          + E
-          + '"><span class="fr-rank">'
-          + m(["第{0}位", "#{0}", "第{0}名"], E + 1)
+          + R
+          + '"><span class="sv-rank">'
+          + p(["第{0}位", "#{0}", "第{0}名"], R + 1)
           + " ・ "
-          + H(l.t)
-          + '</span><div class="fr-head"><div class="fr-ring"><svg width="62" height="62" viewBox="0 0 '
+          + T(o.t)
+          + '</span><div class="sv-head"><div class="sv-ring"><svg width="62" height="62" viewBox="0 0 '
           + '62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle class="fg" cx="31" cy="31" r="26" '
           + 'stroke-dasharray="'
-          + (l.sc * 1.634).toFixed(0)
+          + (o.sc * 1.634).toFixed(0)
           + ' 164"/></svg><b>'
-          + l.sc
-          + '</b></div><div><div class="fr-name">'
-          + v.name
+          + o.sc
+          + '</b></div><div><div class="sv-name">'
+          + j(P)
           + '</div><div style="font-size:.8rem;color:#64748b">'
-          + v.maker
+          + P.maker
           + "・"
-          + v.size
-          + O()
+          + I("type", P.type)
           + "・"
-          + B(v)
-          + '</div><div class="fr-price">'
-          + S(v.price)
-          + '</div></div></div><p class="fr-p" style="margin-bottom:6px">'
-          + N(v.desc)
+          + U(P.weight)
+          + '</div><div class="sv-price">'
+          + S(P.price)
+          + '</div></div></div><p class="sv-p" style="margin-bottom:6px">'
+          + W(P.desc)
           + "</p>"
-          + C
-          + '<ul class="fr-ul">'
+          + me
+          + '<ul class="sv-ul">'
           + ye
           + "</ul>"
-          + Q
-          + we
+          + be
           + "</div>";
       }).join(""),
-      b = [
+      d = [
         [
           ["価格", "Price", "价格"],
-          function (l) {
-            return S(l.price);
+          function (o) {
+            return S(o.price);
           }
         ],
         [
-          ["画面サイズ", "Screen size", "屏幕尺寸"],
-          function (l) {
-            return l.size + O();
+          ["方式", "Type", "方式"],
+          function (o) {
+            return I("type", o.type);
           }
         ],
         [
-          ["パネル／解像度", "Panel / resolution", "面板／分辨率"],
-          function (l) {
-            return B(l) + "／" + l.res;
+          ["刃構成", "Blade setup", "刀头配置"],
+          function (o) {
+            return I("blades", o.blades);
           }
         ],
         [
-          ["倍速/HDMI2.1/VRR", "Refresh / HDMI 2.1 / VRR", "刷新率/HDMI2.1/VRR"],
-          function (l) {
-            return l.hz + "Hz／" + l.hdmi21 + "／" + l.vrr;
+          ["お風呂剃り", "Wet shaving", "湿剃"],
+          function (o) {
+            return o.wetOk ? s(["対応", "Supported", "支持"]) : s(["非対応", "Not supported", "不支持"]);
           }
         ],
         [
-          ["画面 幅×高(mm)", "Screen W×H (mm)", "屏幕 宽×高(mm)"],
-          function (l) {
-            return l.pw + "×" + l.ph;
+          ["お手入れ", "Cleaning", "清洁"],
+          function (o) {
+            return I("cleaning", o.cleaning);
           }
         ],
         [
-          ["スタンド込み高/脚幅/奥行", "Height w/ stand / leg width / depth", "含底座高度/支脚宽/深度"],
-          function (l) {
-            return l.th + "/" + l.sw + "/" + l.sd;
+          ["重さ", "Weight", "重量"],
+          function (o) {
+            return U(o.weight);
           }
         ],
         [
-          ["重量(目安)", "Weight (approx.)", "重量（参考）"],
-          function (l) {
-            return m(["約{0}kg", "approx. {0} kg", "约{0}kg"], l.kg);
-          }
-        ],
-        [
-          ["スピーカー出力", "Speaker output", "扬声器功率"],
-          function (l) {
-            return l.audio;
-          }
-        ],
-        [
-          ["タイムシフト", "Time shift", "时移"],
-          function (l) {
-            return l.timeShift === "Yes" ? a(["あり", "Yes", "有"]) : a(["なし", "No", "无"]);
+          ["充電・稼働", "Charging / runtime", "充电·续航"],
+          function (o) {
+            return I("charge", o.charge) + s(["／", " / ", "／"]) + te(o.battery);
           }
         ]
       ],
-      z = '<table class="fr-spec"><tr><td></td>'
-        + t.map(function (l) {
-          return "<td><b>" + l.p.name + "</b></td>";
+      v = '<table class="sv-spec"><tr><td></td>'
+        + t.map(function (o) {
+          return "<td><b>" + j(o.p) + "</b></td>";
         }).join("")
         + "</tr>"
-        + b.map(function (l) {
+        + d.map(function (o) {
           return "<tr><td>"
-            + a(l[0])
+            + s(o[0])
             + "</td>"
-            + t.map(function (E) {
-              return "<td>" + l[1](E.p) + "</td>";
+            + t.map(function (R) {
+              return "<td>" + o[1](R.p) + "</td>";
             }).join("")
             + "</tr>";
         }).join("")
         + "</table>",
-      y = Z.map(function (l, E) {
-        var v = "";
-        return E === 0
-          && f("snd") === "prem"
-          && t.some(function (C) {
-            return C.p.wat < 40;
-          })
-          && (
-            v = a([
-              "本体の音が控えめなモデルの方におすすめ",
-              "Recommended if the TV’s own sound is modest",
-              "推荐机身音质较一般的机型"
-            ])
-          ),
-          E === 1
-            && f("game") === 3
-            && (
-              v = a([
-                "ゲーム機（4K120Hz）の方におすすめ",
-                "Recommended for game consoles (4K 120 Hz)",
-                "推荐用于游戏机（4K 120Hz）"
-              ])
-            ),
-          E === 2
-            && (f("rec") === "ext" || f("rec") === "ts" || f("rec") === "int")
-            && (v = a(["録画を使う方におすすめ", "Recommended if you record programs", "推荐需要录像的用户"])),
-          E === 3 && c && (v = a(["壁掛けの方は必須", "Essential for wall mounting", "壁挂用户必备"])),
-          E === 4
-            && !c
-            && (
-              v = a(["台置きの大画面の方におすすめ", "Recommended for large screens on a stand", "推荐放在柜上的大屏电视"])
-            ),
-          '<div style="font-size:.86rem;margin-bottom:6px"><b>'
-            + N(l.name)
-            + "</b>"
-            + a(["（", " (", "（"])
-            + l.price
-            + a(["）", ")", "）"])
-            + (v ? ' <span class="fr-chip w">' + v + "</span>" : "")
-            + '<br><span style="color:#64748b">'
-            + N(l.desc)
-            + "</span></div>";
+      k = J.map(function (o) {
+        return '<div style="font-size:.86rem;margin-bottom:6px"><b>'
+          + W(o.name)
+          + "</b>"
+          + s(["（", " (", "（"])
+          + o.price
+          + s(["）", ")", "）"])
+          + '<br><span style="color:#64748b">'
+          + W(o.desc)
+          + "</span></div>";
       }).join("");
-    return '<span class="fr-tag">'
-      + a(["最終結果", "Final result", "最终结果"])
-      + '</span><h1 class="fr-h1">'
-      + a(["あなたへのおすすめ<em>3機種</em>", "Your recommended <em>3 models</em>", "为您推荐的<em>3款</em>"])
-      + '</h1><p class="fr-p">'
-      + a([
+    return '<span class="sv-tag">'
+      + s(["最終結果", "Final result", "最终结果"])
+      + '</span><h1 class="sv-h1">'
+      + s(["あなたへのおすすめ<em>3機種</em>", "Your recommended <em>3 models</em>", "为您推荐的<em>3款</em>"])
+      + '</h1><p class="sv-p">'
+      + s([
         "「譲れないポイント」を切り替えると、3機種のどれが最も強いかが変わります。",
         "Switch your non-negotiable point to see which of the 3 is strongest.",
         "切换“不可让步的点”，可查看3款中哪款最强。"
       ])
-      + '</p><div class="fr-ax">'
-      + d
-      + "</div>"
+      + '</p><div class="sv-ax">'
       + r
-      + p
-      + '<div class="fr-box"><h3>'
-      + a(["3機種の比較表", "Comparison of the 3 models", "3款对比表"])
-      + '</h3><div style="overflow-x:auto">'
-      + z
-      + '</div><p class="tv-src">'
-      + a([
-        "※寸法・重量は画面サイズからの目安です。最終確認は店頭スタッフがカタログで行います。",
-        "* Dimensions and weights are estimates based on screen size. Final confirmation is done by "
-          + "in-store staff using the catalog.",
-        "※尺寸·重量为根据屏幕尺寸推算的参考值。最终确认由店员对照目录进行。"
-      ])
-      + '</p></div><div class="fr-box"><h3>'
-      + a(["一緒に選ばれている便利アイテム", "Handy items often chosen together", "常一起选购的实用配件"])
+      + "</div>"
+      + l
+      + '<div class="sv-box"><h3>'
+      + s(["ゆずれないポイント別・どれを選ぶ？", "Which to choose by non-negotiable point?", "按不可让步的点来看·选哪一款？"])
       + "</h3>"
-      + y
-      + '</div><button class="fr-btn k" data-a="staff">'
-      + a([
+      + u
+      + "</div>"
+      + m
+      + '<div class="sv-box"><h3>'
+      + s(["3機種の比較表", "Comparison of the 3 models", "3款对比表"])
+      + '</h3><div style="overflow-x:auto">'
+      + v
+      + '</div></div><div class="sv-box"><h3>'
+      + s(["一緒に選ばれている便利アイテム", "Handy items often chosen together", "常一起选购的实用配件"])
+      + "</h3>"
+      + k
+      + '</div>'
+      + PATH()
+      + '<button class="sv-btn k" data-a="staff">'
+      + s([
         "📸 スタッフに見せる（最終商談シート）",
         "📸 Show to staff (final consultation sheet)",
         "📸 出示给店员（最终洽谈单）"
       ])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 質問に戻る", "← Back to questions", "← 返回问题"])
-      + '</button><button class="fr-btn s" data-a="restart">'
-      + a(["最初からやり直す", "Start over", "重新开始"])
-      + '</button><button class="fr-btn s" data-a="close">'
-      + a(["一覧に戻る", "Back to list", "返回列表"])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 質問に戻る", "← Back to questions", "← 返回问题"])
+      + '</button><button class="sv-btn s" data-a="restart">'
+      + s(["最初からやり直す", "Start over", "重新开始"])
+      + '</button><button class="sv-btn s" data-a="close">'
+      + s(["一覧に戻る", "Back to list", "返回列表"])
       + "</button>";
   }
   function ve() {
-    var e = q(),
-      t = u.a.pri != null,
-      i = M.map(function (n) {
-        return u.a[n.id] == null
+    var e = V(),
+      t = h.a.pri != null,
+      n = D.map(function (i) {
+        return h.a[i.id] == null
           ? ""
-          : "<tr><td>"
-            + a(n.t).replace(/[？?]$/, "").replace(/（.*?）/g, "").replace(/ ?\(.*?\)/g, "")
-            + "</td><td>"
-            + D(n.id)
-            + "</td></tr>";
+          : "<tr><td>" + s(i.t).replace(/[？?]$/, "") + "</td><td>" + A(i.id) + "</td></tr>";
       }).join(""),
-      o = f("dist"),
-      s = t
-        ? e.top.map(function (n, d) {
+      a = t
+        ? e.top.map(function (i, c) {
           return '<div style="margin-bottom:6px;font-size:.88rem"><b>'
-            + m(["第{0}位", "#{0}", "第{0}名"], d + 1)
+            + p(["第{0}位", "#{0}", "第{0}名"], c + 1)
             + " "
-            + n.p.name
+            + j(i.p)
             + "</b>（"
-            + n.p.maker
-            + "・"
-            + n.p.size
-            + O()
-            + "・"
-            + B(n.p)
+            + i.p.maker
             + "）"
-            + S(n.p.price)
+            + S(i.p.price)
             + "<br>"
-            + m([
-              "画面 {0}×{1}mm／脚幅 {2}mm／奥行 {3}mm／約{4}kg／適合度{5}",
-              "Screen {0}×{1} mm / leg width {2} mm / depth {3} mm / approx. {4} kg / match {5}",
-              "屏幕 {0}×{1}mm／支脚宽 {2}mm／深度 {3}mm／约{4}kg／匹配度{5}"
-            ], n.p.pw, n.p.ph, n.p.sw, n.p.sd, n.p.kg, n.sc)
-            + (n.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + n.h.wn[0] + "</span>" : "")
+            + p(["{0} ／ {1} ／ 適合度{2}", "{0} / {1} / match {2}", "{0} ／ {1} ／ 匹配度{2}"], I(
+              "type",
+              i.p.type
+            ), U(i.p.weight), i.sc)
+            + (i.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + i.h.wn[0] + "</span>" : "")
             + "</div>";
         }).join("")
         : "";
-    return '<div class="fr-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
+    return '<div class="sv-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
       + 'solid #111827;padding-bottom:6px;margin-bottom:8px"><b style="background:#111827;'
       + 'color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:.86rem">'
-      + a(["スタッフ確認用シート（テレビ）", "Staff confirmation sheet (TV)", "店员确认单（电视）"])
+      + s(["スタッフ確認用シート", "Staff confirmation sheet", "店员确认单"])
       + '</b><span style="font-size:.8rem;color:#6b7280">'
-      + a(
+      + s(
         t ? ["最終商談カード", "Final consultation card", "最终洽谈卡"] : ["条件メモ", "Requirements memo", "条件备忘"]
       )
       + '</span></div><p style="font-size:.8rem;color:#d90429;font-weight:700;margin-bottom:6px">'
-      + a([
+      + s([
         "※この画面をスクリーンショットしてスタッフにお見せください",
         "Please screenshot this screen and show it to our staff",
         "※请截屏并出示给店员"
       ])
       + "</p><table>"
-      + i
-      + (
-        o != null
-          ? "<tr><td>"
-            + a(["推奨サイズの目安", "Recommended size guide", "推荐尺寸参考"])
-            + "</td><td>"
-            + m(["約{0}〜{1}型", "about {0}–{1} in.", "约{0}～{1}英寸"], Math.round(o * 22), Math.round(
-              o * 32
-            ))
-            + "</td></tr>"
-          : ""
-      )
+      + n
       + "</table>"
       + (
-        s
+        a
           ? '<b style="font-size:.88rem">'
-            + a(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
+            + s(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
             + "</b>"
-            + s
+            + a
           : ""
       )
-      + '</div><button class="fr-btn s" data-a="back">'
-      + a(["← 戻る", "← Back", "← 返回"])
+      + '</div><button class="sv-btn s" data-a="back">'
+      + s(["← 戻る", "← Back", "← 返回"])
       + "</button>";
   }
-  function be(e) {
-    if (!u.lock) {
-      u.lock = 1;
-      var t = V(u.v.st)[u.v.i];
-      u.a[t.id] = e,
-        ce(),
-        w.querySelectorAll(".fr-opt").forEach(function (i, o) {
-          i.classList.toggle("sel", o === e), i.firstChild.textContent = o === e ? "✓" : "";
-        }),
+  function fe(e) {
+    if (!h.lock) {
+      h.lock = 1;
+      var t = F(h.v.st)[h.v.i];
+      h.a[t.id] = e, le();
+      var n = b.querySelectorAll(".sv-opt");
+      n.forEach(function (a, i) {
+        a.classList.toggle("sel", i === e), a.firstChild.textContent = i === e ? "✓" : "";
+      }),
         setTimeout(function () {
-          var i = V(u.v.st);
-          u.lock = 0,
-            I(
-              u.v.i + 1 < i.length
-                ? { st: u.v.st, i: u.v.i + 1 }
-                : u.v.st === 1 ? "r1" : u.v.st === 2 ? "r2" : "final"
+          var a = F(h.v.st);
+          h.lock = 0,
+            O(
+              h.v.i + 1 < a.length
+                ? { st: h.v.st, i: h.v.i + 1 }
+                : h.v.st === 1
+                  ? "r1"
+                  : h.v.st === 2 ? "r2" : h.v.st === 3 ? { st: 9, i: 0 } : "final"
             );
         }, 320);
     }
   }
-  function F() {
-    u = { a: {}, v: "intro", hist: [], ax: null },
-      K(),
+  function G() {
+    h = { a: {}, v: "intro", hist: [], ax: null },
+      _(),
       document.documentElement.style.overflow = "hidden";
     try {
-      history.pushState({ tv: 1 }, "");
+      history.pushState({ sv: 1 }, "");
     } catch {}
   }
-  function P(e) {
-    if (w.classList.remove("on"), document.documentElement.style.overflow = "", !e)
+  function C(e) {
+    if (b.classList.remove("on"), document.documentElement.style.overflow = "", !e)
       try {
-        history.state && history.state.tv && history.back();
+        history.state && history.state.sv && history.back();
       } catch {}
   }
-  w.addEventListener("click", function (e) {
+  b.addEventListener("click", function (e) {
     var t = e.target.closest("[data-a]");
     if (!(!t || t.tagName === "SELECT")) {
-      var i = t.dataset.a;
-      if (i === "close")
-        P();
-      else if (i === "start")
-        I({ st: 1, i: 0 });
-      else if (i === "type")
-        w.querySelectorAll(".fr-card").forEach(function (n) {
-          n.classList.toggle("sel", n === t && !t.classList.contains("sel"));
+      var n = t.dataset.a;
+      if (n === "close")
+        C();
+      else if (n === "start")
+        O({ st: 1, i: 0 });
+      else if (n === "type")
+        b.querySelectorAll(".sv-card").forEach(function (c) {
+          c.classList.toggle("sel", c === t && !t.classList.contains("sel"));
         });
-      else if (i === "pick")
-        be(+t.dataset.i);
-      else if (i === "next")
-        I(u.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
-      else if (i === "back") {
-        var o = u.hist.pop();
-        o != null ? I(o, !0) : P();
-      } else if (i === "staff")
-        I("staff");
-      else if (i === "ax") {
-        u.ax = t.dataset.k;
-        var s = w.scrollTop;
-        u.back = !1, K(), w.scrollTop = s;
+      else if (n === "pick")
+        fe(+t.dataset.i);
+      else if (n === "next")
+        O(h.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
+      else if (n === "back") {
+        var a = h.hist.pop();
+        a != null ? O(a, !0) : C();
+      } else if (n === "staff")
+        O("staff");
+      else if (n === "ax") {
+        h.ax = t.dataset.k;
+        var i = b.scrollTop;
+        h.back = !1, _(), b.scrollTop = i;
       } else
-        i === "restart" && F();
+        n === "restart" && G();
     }
   }),
-    w.addEventListener("change", function (e) {
+    b.addEventListener("change", function (e) {
       if (e.target.dataset.a === "lang") {
         var t = document.getElementById("lang-switcher");
         t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
-        var i = w.scrollTop;
-        u.back = !1, K(), w.scrollTop = i;
+        var n = b.scrollTop;
+        h.back = !1, _(), b.scrollTop = n;
       }
     }),
     window.addEventListener("popstate", function () {
-      w.classList.contains("on") && P(!0);
+      b.classList.contains("on") && C(!0);
     }),
-    window.TvApp = { open: F, close: P };
-  var G = document.getElementById("modal-link-btn");
-  G
-    && G.addEventListener("click", function (e) {
-      G.dataset.app === "tv"
-        && (e.preventDefault(), document.getElementById("modal").classList.remove("active"), F());
+    window.ShaverApp = { open: G, close: C };
+  var $ = document.getElementById("modal-link-btn");
+  $
+    && $.addEventListener("click", function (e) {
+      $.dataset.app === "shaver"
+        && (e.preventDefault(), document.getElementById("modal").classList.remove("active"), G());
     });
-  try { window.NJ_HEAR && window.NJ_HEAR.hook([M], {"schema": "std", "root": "tv-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
+  try { window.NJ_HEAR && window.NJ_HEAR.hook([D], {"schema": "std", "root": "sv-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
 })();
 </script>
 <style id="app-motion-css">
 /* =====================================================================
    PC相談：スマホ・iPad向けの調整 ＋ Apple風の動き
    ===================================================================== */
-#tv-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
+#sv-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
 
 /* ---- 画面の出し入れ（iOSのシート／プッシュ） ---- */
-#tv-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
-#tv-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
-#tv-app .fr-in{animation:apPush .55s var(--ap) both}
-#tv-app.fr-back .fr-in{animation-name:apPop}
+#sv-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
+#sv-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
+#sv-app .sv-in{animation:apPush .55s var(--ap) both}
+#sv-app.sv-back .sv-in{animation-name:apPop}
 @keyframes apPush{from{opacity:0;transform:translate3d(32px,0,0)}}
 @keyframes apPop{from{opacity:0;transform:translate3d(-32px,0,0)}}
-#tv-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
-#tv-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
+#sv-app .sv-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
+#sv-app .sv-card.sel .sv-more{animation:apRise .5s var(--ap) both}
 @keyframes apRise{from{opacity:0;transform:translate3d(0,14px,0) scale(.985);filter:blur(4px)}}
 
 /* ---- 半透明のナビゲーションバー（スクロールすると細い境界線） ---- */
-#tv-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
-#tv-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
-#tv-app .fr-prog div{transition:width .8s var(--ap)}
+#sv-app .sv-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
+#sv-app.scrolled .sv-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
+#sv-app .sv-prog div{transition:width .8s var(--ap)}
 
 /* ---- 押したときの沈み込み・選んだときの反応 ---- */
-#tv-app .fr-opt,#tv-app .fr-card,#tv-app .fr-btn,#tv-app .fr-x,#tv-app .iv-entry,#tv-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
-#tv-app .fr-opt:active,#tv-app .fr-card:active,#tv-app .fr-btn:active,#tv-app .fr-x:active,#tv-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
-#tv-app .fr-opt.sel{animation:apSel .5s var(--ap)}
+#sv-app .sv-opt,#sv-app .sv-card,#sv-app .sv-btn,#sv-app .sv-x,#sv-app .iv-entry,#sv-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
+#sv-app .sv-opt:active,#sv-app .sv-card:active,#sv-app .sv-btn:active,#sv-app .sv-x:active,#sv-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
+#sv-app .sv-opt.sel{animation:apSel .5s var(--ap)}
 @keyframes apSel{0%{transform:scale(.97)}}
-#tv-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
-#tv-app .fr-opt.sel .ck{transform:scale(1.08)}
-@media (hover:hover){#tv-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
-@media (hover:none){#tv-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
+#sv-app .sv-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
+#sv-app .sv-opt.sel .ck{transform:scale(1.08)}
+@media (hover:hover){#sv-app .sv-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
+@media (hover:none){#sv-app .sv-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
 
 /* ---- ヒアリング（イラストなし） ---- */
-#tv-app .pc-qi{display:none!important}
-#tv-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
-#tv-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
-#tv-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
-#tv-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
-#tv-app .fr-opt{border-radius:14px;word-break:auto-phrase}
+#sv-app .pc-qi{display:none!important}
+#sv-app .sv-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
+#sv-app .sv-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
+#sv-app .sv-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
+#sv-app .sv-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
+#sv-app .sv-opt{border-radius:14px;word-break:auto-phrase}
 
 /* ---- 「いまの見立て」：タイプとメーカーの並びをそろえる ---- */
-#tv-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-#tv-app .pc-xe>div,#tv-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
-#tv-app .pc-xe>div>div:last-child,#tv-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
-#tv-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
-#tv-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-#tv-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
-#tv-app .pc-mk{width:100%;max-width:56px;height:auto}
-@media (max-width:600px){#tv-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#sv-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+#sv-app .pc-xe>div,#sv-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
+#sv-app .pc-xe>div>div:last-child,#sv-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
+#sv-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
+#sv-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+#sv-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
+#sv-app .pc-mk{width:100%;max-width:56px;height:auto}
+@media (max-width:600px){#sv-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* ---- 結果画面「いま合うメーカー」：アイコンの列と文字の頭をそろえる ---- */
-#tv-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
-#tv-app .fr-box h3+.pc-mkrow,#tv-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
-#tv-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
-#tv-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
-#tv-app .pc-mkrow>div b:first-child{font-size:.95rem}
-#tv-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
-@media (min-width:700px){#tv-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
+#sv-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
+#sv-app .sv-box h3+.pc-mkrow,#sv-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
+#sv-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
+#sv-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
+#sv-app .pc-mkrow>div b:first-child{font-size:.95rem}
+#sv-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
+@media (min-width:700px){#sv-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
 
 /* ---- 最初の画面：タイプのカード（7つ目が1枚だけ浮かないように） ---- */
-#tv-app .fr-types{align-items:stretch}
-#tv-app .fr-types>.fr-card{display:flex;flex-direction:column}
-#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
-#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
-#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
-#tv-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
+#sv-app .sv-types{align-items:stretch}
+#sv-app .sv-types>.sv-card{display:flex;flex-direction:column}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
 
 /* ---- スマホ：上のバーを2段に（1段目：戻る・言語・該当数／2段目：タイトル・在庫管理） ---- */
 @media (max-width:600px){
-  #tv-app .fr-top{flex-wrap:wrap;row-gap:6px}
-  #tv-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  #tv-app .fr-top .iv-entry{order:6}
-  #tv-app .fr-q{padding:18px 14px 14px;border-radius:18px}
-  #tv-app .fr-wrap{padding-left:12px;padding-right:12px}
+  #sv-app .sv-top{flex-wrap:wrap;row-gap:6px}
+  #sv-app .sv-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #sv-app .sv-top .iv-entry{order:6}
+  #sv-app .sv-q{padding:18px 14px 14px;border-radius:18px}
+  #sv-app .sv-wrap{padding-left:12px;padding-right:12px}
 }
 /* ---- iPad・PC：中央に寄せ、選択肢は2列 ---- */
 @media (min-width:700px){
-  #tv-app .fr-wrap{max-width:900px;margin:0 auto}
-  #tv-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
-  #tv-app .fr-q>*{grid-column:1/-1}
-  #tv-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
-  #tv-app .fr-q .no{justify-self:start}
-  #tv-app .fr-types{grid-template-columns:1fr 1fr}
+  #sv-app .sv-wrap{max-width:900px;margin:0 auto}
+  #sv-app .sv-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
+  #sv-app .sv-q>*{grid-column:1/-1}
+  #sv-app .sv-q>.sv-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
+  #sv-app .sv-q .no{justify-self:start}
+  #sv-app .sv-types{grid-template-columns:1fr 1fr}
 }
-@media (prefers-reduced-motion:reduce){#tv-app *,#tv-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){#sv-app *,#sv-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-#tv-app [class$="-qi"],#tv-app .tb-qi{display:none!important}
+#sv-app [class$="-qi"],#sv-app .tb-qi{display:none!important}
 </style>
 <script id="app-motion-js">
 /* PC相談：スクロールでナビゲーションバーに境界線（Apple風）／iOSで押した感触を出す */
 (function () {
-  var r = document.getElementById("tv-app");
+  var r = document.getElementById("sv-app");
   if (!r) return;
   var on = false;
   r.addEventListener("scroll", function () {
@@ -6993,6 +6882,6 @@ body.motion-off .tv-mk {
   document.addEventListener("touchstart", function () {}, { passive: true });   // iOSで :active を効かせる
 })();
 </script>
-<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("tv-app");</script>
+<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("sv-app");</script>
 </body>
 </html>

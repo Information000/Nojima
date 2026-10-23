@@ -17407,10 +17407,10 @@ html #splash .stage {
 (function () {
   "use strict";
   window.AREA_LINKS = {
-    home: "area-kaden.html",      // 家電エリア
-    av:   "area-season-av.html",  // 季節・AVエリア
-    info: "area-info.html",       // 情報エリア
-    comm: "area-tsushin.html"     // 通信エリア
+    home: "kaden/",      // 家電エリア
+    av:   "season-av/",  // 季節・AVエリア
+    info: "info/",       // 情報エリア
+    comm: "tsushin/"     // 通信エリア
   };
   // 相談アプリ → どのエリアページにあるか
   var APP_AREA = {"fridge": "home", "washer": "home", "rice": "home", "microwave": "home", "oven": "home", "dryer": "home", "iron": "home", "shaver": "home", "toothbrush": "home", "aircon": "av", "tv": "av", "pc": "info", "printer": "info"};

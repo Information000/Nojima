@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>ドライヤーの相談 | イオンモール成田店</title>
+<title>シェーバーの相談 | イオンモール成田店</title>
 <style id="product-shell-css">
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
@@ -126,9 +127,9 @@ html[data-device=tablet] .fr-wrap {
 }
 </style>
 </head>
-<body data-lang="ja" data-dept="home" data-product="dryer">
+<body data-lang="ja" data-dept="home" data-product="shaver">
 <!-- ======================================================================
-     ▼▼▼ 在庫データ（ドライヤー・ヘアアイロン）▼▼▼
+     ▼▼▼ 在庫データ（メンズシェーバー）▼▼▼
      ・1商品 = items の中の { } ひとつ。型番・価格・スペック・大きさ・リンクなど
      ・status: "active"=販売中 / "ended"=販売終了（相談に出なくなる）
      ・links: type は "official"(メーカー公式HP) / "manual"(取扱説明書) / "ref"(参考リンク)
@@ -136,122 +137,103 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="inventory-data">
 {
-  "category": "dryer",
-  "label": "ドライヤー・ヘアアイロン",
+  "category": "shaver",
+  "label": "メンズシェーバー",
   "version": "2026-10-23",
   "adminPin": "staff2026",
   "groups": [
     {
-      "id": "d1",
-      "name": "大風量・速乾タイプ"
+      "id": "entry_value",
+      "name": "エントリー"
     },
     {
-      "id": "d2",
-      "name": "うるおいケアタイプ"
+      "id": "mid_standard",
+      "name": "往復式・スタンダード"
     },
     {
-      "id": "d3",
-      "name": "センシング・温度制御タイプ"
+      "id": "deep_closeness_high",
+      "name": "往復式・深剃りPRO"
     },
     {
-      "id": "d4",
-      "name": "超軽量・遠赤外線タイプ"
+      "id": "skin_sensitive_rotary",
+      "name": "回転式（肌にやさしい）"
     },
     {
-      "id": "i1",
-      "name": "サロン仕様・即熱ストレート"
-    },
-    {
-      "id": "i2",
-      "name": "ケアプレート・ストレート"
-    },
-    {
-      "id": "i3",
-      "name": "2WAY・コスパタイプ"
+      "id": "flagship_palm_in",
+      "name": "フラッグシップ"
     }
   ],
   "tagOptions": {},
   "schema": {
-    "root": "dr-app",
-    "icon": "💨",
-    "map": {
-      "maker": "mfg",
-      "groupId": "type",
-      "grades": "r"
-    },
+    "root": "sv-app",
+    "icon": "🪒",
+    "map": {},
     "fields": [
       {
-        "k": "mode",
-        "l": "種類",
-        "t": "seg",
-        "o": [
-          [
-            "dryer",
-            "ドライヤー"
-          ],
-          [
-            "iron",
-            "ヘアアイロン"
-          ]
-        ]
+        "k": "type",
+        "l": "方式"
       },
       {
-        "k": "feat",
-        "l": "特長（ひとこと）"
+        "k": "blades",
+        "l": "刃"
       },
       {
-        "k": "air",
-        "l": "風量（m³/分・ドライヤー）",
-        "t": "number"
+        "k": "closeness",
+        "l": "深剃り"
       },
       {
-        "k": "hu",
-        "l": "立ち上がり（秒・アイロン）",
-        "t": "number"
+        "k": "skin",
+        "l": "肌へのやさしさ"
       },
       {
-        "k": "g",
-        "l": "重さ（g）",
-        "t": "number"
+        "k": "waterproof",
+        "l": "防水"
       },
       {
-        "k": "shape",
-        "l": "形（straight / 2way・アイロン）"
+        "k": "wet",
+        "l": "お風呂剃り"
       },
       {
-        "k": "os",
-        "l": "海外対応（1=対応）",
-        "t": "number"
+        "k": "cleaning",
+        "l": "洗浄"
+      },
+      {
+        "k": "charge",
+        "l": "充電"
+      },
+      {
+        "k": "battery",
+        "l": "電池"
+      },
+      {
+        "k": "weight",
+        "l": "重さ"
       }
     ],
     "listFields": [
-      "mode",
-      "feat"
+      "type",
+      "blades"
     ],
     "grades": [
       [
-        "speed",
-        "速乾力"
+        "type",
+        "方式"
       ],
       [
-        "care",
-        "ヘアケア"
+        "closeness",
+        "深剃り力"
       ],
       [
-        "light",
-        "軽さ"
+        "skin",
+        "肌やさしさ"
       ],
       [
-        "travel",
-        "海外・携帯"
+        "cleaning",
+        "お手入れ"
       ],
       [
-        "heat",
-        "速熱"
-      ],
-      [
-        "shape",
-        "カール対応"
+        "weight",
+        "軽さ・携帯"
       ]
     ],
     "gradeVals": [
@@ -262,61 +244,62 @@ html[data-device=tablet] .fr-wrap {
     ],
     "makers": [
       [
-        "KINUJO"
+        "BRAUN"
       ],
       [
-        "KOIZUMI"
+        "PHILIPS"
       ],
       [
         "Panasonic"
-      ],
-      [
-        "ReFa"
-      ],
-      [
-        "TESCOM"
-      ],
-      [
-        "Vidal Sassoon"
       ]
     ],
     "buckets": [
       [
         0,
+        8000,
+        "〜8千"
+      ],
+      [
+        8000,
         15000,
-        "〜1.5万"
+        "8千〜1.5万"
       ],
       [
         15000,
-        25000,
-        "1.5万〜2.5万"
+        20000,
+        "1.5万〜2万"
       ],
       [
-        25000,
-        35000,
-        "2.5万〜3.5万"
+        20000,
+        30000,
+        "2万〜3万"
       ],
       [
-        35000,
+        30000,
         1000000000000,
-        "3.5万〜"
+        "3万〜"
       ]
     ]
   },
   "items": [
     {
-      "id": "dry_01",
+      "id": "sh1",
       "status": "active",
-      "maker": "KOIZUMI",
-      "name": "モンスター BLDC (KHDM800R)",
-      "model": "KHDM800R",
-      "price": 14080,
-      "groupId": "d1",
-      "mode": "dryer",
-      "feat": "ダブルファンBLDCで超速乾",
-      "air": 2.4,
-      "g": 520,
-      "os": 0,
+      "maker": "Panasonic",
+      "name": "ES-KS30-K",
+      "model": "ES-KS30-K",
+      "price": 2178,
+      "groupId": "entry_value",
+      "type": "回転式(乾電池)",
+      "blades": "回転刃",
+      "closeness": "ふつう",
+      "skin": "やさしい",
+      "waterproof": "生活防水",
+      "wet": "×",
+      "cleaning": "ブラシ洗浄",
+      "charge": "乾電池駆動",
+      "battery": "乾電池",
+      "weight": "約120g",
       "size": {
         "w": null,
         "d": null,
@@ -326,13 +309,16 @@ html[data-device=tablet] .fr-wrap {
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◎",
-        "care": "◯"
+        "type": "◯",
+        "closeness": "△",
+        "skin": "◯",
+        "cleaning": "△",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "ダブルファンBLDCで超速乾",
-        "en": "",
-        "zh": ""
+        "ja": "手のひらサイズの回転刃ポータブル。出張や旅行の携帯に便利な乾電池式エントリー",
+        "en": "Palm-sized rotary portable shaver powered by dry batteries for travel",
+        "zh": "掌心旋转便携干电池式，出差旅行随身应急轻装上阵"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -341,30 +327,819 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akoizumi-seiki.jp%20KHDM800R",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-KS30-K",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akoizumi-seiki.jp%20KHDM800R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-KS30-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
     },
     {
-      "id": "dry_02",
+      "id": "sh2",
       "status": "active",
       "maker": "Panasonic",
-      "name": "ナノケア EH-NA0K",
-      "model": "EH-NA0K",
+      "name": "ES-L321D-A (3枚刃)",
+      "model": "ES-L321D-A",
+      "price": 8228,
+      "groupId": "entry_value",
+      "type": "往復式3枚刃",
+      "blades": "3枚刃",
+      "closeness": "◯",
+      "skin": "◯",
+      "waterproof": "本体水洗い",
+      "wet": "×",
+      "cleaning": "水洗い",
+      "charge": "専用コード",
+      "battery": "約8日",
+      "weight": "約145g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "約13,000ストローク/分のリニアモーター駆動。基本性能を凝縮したラムダッシュ3枚刃の入口",
+        "en": "Linear motor drive (~13,000 strokes/min); essential Ramdash 3-blade entry model",
+        "zh": "约13,000转/分高速线性驱动，LAMDASH 3枚刃扎实性价比基础款"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L321D-A",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L321D-A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh3",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ3 300s-B",
+      "model": "300s-B",
+      "price": 6981,
+      "groupId": "entry_value",
+      "type": "往復式3枚刃",
+      "blades": "3連サスペンション",
+      "closeness": "◯",
+      "skin": "◯",
+      "waterproof": "完全防水(丸ごと水洗い)",
+      "wet": "×",
+      "cleaning": "水道水洗い",
+      "charge": "1時間充電",
+      "battery": "約20分",
+      "weight": "約220g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "3連サスペンションヘッドが顔の凹凸に追従。ディープキャッチ網刃で短いヒゲも効率よくキャッチ",
+        "en": "3-action suspension head following facial contours with deep catch foil",
+        "zh": "3连独立浮动刀头紧贴面部起伏，深层捕捉短须，德国博朗入门经典"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%20300s-B",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%20300s-B%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh4",
+      "status": "active",
+      "maker": "PHILIPS",
+      "name": "S3882/00 (3000シリーズ)",
+      "model": "S3882/00",
+      "price": 7018,
+      "groupId": "entry_value",
+      "type": "回転式3ヘッド",
+      "blades": "5方向可動ヘッド",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約60分",
+      "weight": "約185g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "5方向可動ヘッドが顔の凹凸にフィット。自動研磨システムで切れ味が長持ちするフィリップス回転式",
+        "en": "5-way pivot heads with self-sharpening blades providing a comfortable rotary shave",
+        "zh": "5方向灵活浮动刀头，配合自动研磨系统，长久保持顺滑舒适旋转剃须"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S3882/00",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S3882/00%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh5",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L322W-K (3枚刃)",
+      "model": "ES-L322W-K",
+      "price": 10640,
+      "groupId": "mid_standard",
+      "type": "往復式3枚刃(お風呂剃り)",
+      "blades": "3枚刃+ヒゲセンサー",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約14日",
+      "weight": "約155g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "お風呂剃り対応＆ヒゲセンサー搭載！毎日の肌負担を抑えながらスムーズに深剃り",
+        "en": "Wet/dry shaving support with beard density sensor adjusting motor power dynamically",
+        "zh": "支持泡泡浴湿剃加智能胡须密度感应，自动调节强弱减少皮肤刺激"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L322W-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L322W-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh6",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L342D-R (3枚刃)",
+      "model": "ES-L342D-R",
+      "price": 14900,
+      "groupId": "mid_standard",
+      "type": "往復式3枚刃(密着スイング)",
+      "blades": "3枚刃+スイングヘッド",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "ウォータースルー洗浄",
+      "charge": "1時間充電",
+      "battery": "約14日",
+      "weight": "約165g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "上下・左右の密着スイングヘッドを搭載。外刃を外さずヒゲくずを洗い流せるウォータースルー洗浄",
+        "en": "Multi-flex swing head with quick water-through cleaning slot without removing outer foil",
+        "zh": "上下左右密着摇摆刀头，配合免卸外刀网的“水流直通清洗”孔，冲洗极快"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L342D-R",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L342D-R%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh7",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ5 53-B1200s",
+      "model": "53-B1200s",
+      "price": 8778,
+      "groupId": "mid_standard",
+      "type": "往復式3連密着",
+      "blades": "3連密着ブレード",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "クイック洗浄システム",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約173g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "ヘッドを外さずにヒゲくずを洗い流せるクイック洗浄システム。お風呂剃り対応の人気スタンダード",
+        "en": "Quick clean system allowing water rinsing through the head without detachment",
+        "zh": "无需拆卸刀头即可一键冲洗的快速清洁系统，德国精工泡澡湿剃主力款"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2053-B1200s",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2053-B1200s%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh8",
+      "status": "active",
+      "maker": "PHILIPS",
+      "name": "フィリップス 5000X (X5006/05)",
+      "model": "X5006/05",
+      "price": 16500,
+      "groupId": "mid_standard",
+      "type": "回転式3ヘッド",
+      "blades": "スキンプロテクション",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約175g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "人間工学に基づいたスリムで自立するボディ。マイクロビーズコーティングで滑らかな肌当たり",
+        "en": "Ergonomic self-standing body with micro-bead coating for ultra-smooth glide",
+        "zh": "人体工学纤细自立机身，微珠亲肤涂层顺滑滑过面部，防滑好握"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20X5006/05",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20X5006/05%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh9",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ6 62-S1200s",
+      "model": "62-S1200s",
+      "price": 16280,
+      "groupId": "mid_standard",
+      "type": "往復式スイング密着",
+      "blades": "スイング密着システム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "クイック洗浄",
+      "charge": "1時間充電",
+      "battery": "約50分",
+      "weight": "約182g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "前後に可動するスイング密着システムで肌への摩擦を大幅軽減。やさしさと深剃りを高い次元で両立",
+        "en": "Swinging head system minimizing skin friction while delivering a close shave",
+        "zh": "前后浮动摇摆密着系统，大幅降低面部施压摩擦，敏感肌也能安心深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2062-S1200s",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2062-S1200s%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh10",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L551D-K (5枚刃)",
+      "model": "ES-L551D-K",
+      "price": 21780,
+      "groupId": "deep_closeness_high",
+      "type": "ラムダッシュPRO 5枚刃",
+      "blades": "5枚刃+約14,000ストローク",
+      "closeness": "◎",
+      "skin": "◯",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約200g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◯",
+        "cleaning": "◯",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "5枚刃システム×毎分約14,000ストロークの超高速リニアモーター。長いアゴヒゲやくせヒゲも一網打尽",
+        "en": "5-blade array driven by ~14,000 strokes/min linear motor for unbeatable fast shaving",
+        "zh": "5枚刃矩阵配每分钟约14,000转超高速线性马达，再长的顽固杂须也能瞬间剃净"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L551D-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L551D-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh11",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ES-L571U-S (5枚刃)",
+      "model": "ES-L571U-S",
+      "price": 28380,
+      "groupId": "deep_closeness_high",
+      "type": "ラムダッシュPRO 5枚刃",
+      "blades": "5枚刃+5Dアクティブサス",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約210g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "5Dアクティブサスペンション搭載！アゴ下の複雑な凹凸にヘッドが密着し、摩擦を抑えるスムースローラー",
+        "en": "5D active suspension head tracking complex jawline contours effortlessly",
+        "zh": "5D全方向浮动减震悬挂头，紧密贴合下巴与喉咙凹凸死角，带顺滑滚轮减擦"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L571U-S",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L571U-S%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh12",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ7 73-S85010cc",
+      "model": "73-S85010cc",
+      "price": 25080,
+      "groupId": "deep_closeness_high",
+      "type": "往復式360°密着",
+      "blades": "360°密着システム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "アルコール自動洗浄器",
+      "charge": "急速1時間",
+      "battery": "約50分",
+      "weight": "約185g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◎"
+      },
+      "desc": {
+        "ja": "360°密着システム＆人工知能AIテクノロジー。ヒゲの濃さを読み取り自動でパワーを最適化、洗浄器付き",
+        "en": "360-degree contour adaptation with AI power adjusting tech and alcohol cleaning center",
+        "zh": "360度全向贴合与AI智能胡须感应，每秒自动调节动力，配备酒精自动清洗中心"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2073-S85010cc",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%2073-S85010cc%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh13",
+      "status": "active",
+      "maker": "PHILIPS",
+      "name": "フィリップス 7000 (S7885/50)",
+      "model": "S7885/50",
+      "price": 31460,
+      "groupId": "skin_sensitive_rotary",
+      "type": "回転式3ヘッド",
+      "blades": "ナノスキンプロテクション",
+      "closeness": "◯",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い/ポッド対応",
+      "charge": "1時間充電",
+      "battery": "約60分",
+      "weight": "約194g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◯",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "ヘッド表面に微粒子コーティングを施し肌摩擦を大幅軽減。アプリガイドでヒゲ剃りの圧力を最適化",
+        "en": "Skin-glide micro-bead coating reducing friction by 50%; app coaching for sensitive skin",
+        "zh": "表面纳米微粒防摩擦涂层，配合APP实时压力反馈指导，专为敏感肌设计的旋转旗舰"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S7885/50",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Aphilips.co.jp%20S7885/50%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh14",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ラムダッシュPRO 6枚刃 (ES-L670U)",
+      "model": "ES-L670U-K",
+      "price": 57420,
+      "groupId": "flagship_palm_in",
+      "type": "ラムダッシュPRO 6枚刃",
+      "blades": "6枚刃+2種4枚深剃り刃",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "全自動洗浄充電器",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約220g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "パナソニック最高峰6枚刃システム。2種4枚の極薄深剃り刃と2枚のアゴ下トリマー刃で究極の早剃り",
+        "en": "Flagship 6-blade system with ultra-thin deep shaving foils and dual under-chin trimmers",
+        "zh": "松下至高6枚刃旗舰矩阵！超薄深剃刀网与双下巴胡须捕捉刃，实现颠覆性极速深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L670U-K",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-L670U-K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh15",
+      "status": "active",
+      "maker": "BRAUN",
+      "name": "シリーズ9 Pro+ (9660CC)",
+      "model": "9660cc",
+      "price": 60280,
+      "groupId": "flagship_palm_in",
+      "type": "往復式5+1カット",
+      "blades": "プロトリマー+5カットシステム",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "5段階アルコール洗浄",
+      "charge": "急速1時間",
+      "battery": "約60分",
+      "weight": "約215g",
+      "size": {
+        "w": null,
+        "d": null,
+        "h": null
+      },
+      "specs": {},
+      "jan": "",
+      "tags": [],
+      "grades": {
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◎",
+        "weight": "◯"
+      },
+      "desc": {
+        "ja": "ブラウン最高峰。新形状プロトリマーを搭載し、寝たヒゲやくせヒゲも0.05mmの極限深剃り",
+        "en": "Braun's absolute peak with ProTrimmer blade, achieving 0.05mm ultra-closeness",
+        "zh": "博朗9系Pro+至尊巅峰！全新PRO特制修剪器，实现0.05mm极限贴面深剃"
+      },
+      "note": "",
+      "updated": "2026-10-23",
+      "photo": null,
+      "links": [
+        {
+          "type": "official",
+          "title": "メーカーサイトで型番を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%209660cc",
+          "auto": true
+        },
+        {
+          "type": "manual",
+          "title": "取扱説明書を検索",
+          "url": "https://www.google.com/search?q=site%3Abraun.jp%209660cc%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "sh16",
+      "status": "active",
+      "maker": "Panasonic",
+      "name": "ラムダッシュ パームイン 5枚刃 (ES-PV6A)",
+      "model": "ES-PV6A-W",
       "price": 34650,
-      "groupId": "d2",
-      "mode": "dryer",
-      "feat": "高浸透ナノイーで圧倒的うるおい",
-      "air": 1.6,
-      "g": 595,
-      "os": 0,
+      "groupId": "flagship_palm_in",
+      "type": "パームイン5枚刃",
+      "blades": "5枚刃(NAGORI素材)",
+      "closeness": "◎",
+      "skin": "◎",
+      "waterproof": "完全防水",
+      "wet": "〇(お風呂対応)",
+      "cleaning": "水洗い/USB-C",
+      "charge": "急速1時間",
+      "battery": "約14日",
+      "weight": "約145g(超軽量)",
       "size": {
         "w": null,
         "d": null,
@@ -374,13 +1149,16 @@ html[data-device=tablet] .fr-wrap {
       "jan": "",
       "tags": [],
       "grades": {
-        "speed": "◯",
-        "care": "◎"
+        "type": "◎",
+        "closeness": "◎",
+        "skin": "◎",
+        "cleaning": "◯",
+        "weight": "◎"
       },
       "desc": {
-        "ja": "高浸透ナノイーで圧倒的うるおい",
-        "en": "",
-        "zh": ""
+        "ja": "手のひらでなでるように剃る新しいシェービング体験。海洋由来ミネラル素材「NAGORI」の上質な陶器質感",
+        "en": "Revolutionary palm-in form factor crafted with marine-derived ceramic-like NAGORI material",
+        "zh": "手掌心直觉掌控的革新形态，采用天然海洋矿物NAGORI仿陶瓷温润触感，5枚刃高能"
       },
       "note": "",
       "updated": "2026-10-23",
@@ -389,397 +1167,13 @@ html[data-device=tablet] .fr-wrap {
         {
           "type": "official",
           "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NA0K",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-PV6A-W",
           "auto": true
         },
         {
           "type": "manual",
           "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NA0K%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "dry_03",
-      "status": "active",
-      "maker": "Panasonic",
-      "name": "イオニティ EH-NE7N",
-      "model": "EH-NE7N",
-      "price": 7678,
-      "groupId": "d1",
-      "mode": "dryer",
-      "feat": "大風量ダブルミネラルイオン",
-      "air": 2,
-      "g": 540,
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "speed": "◯",
-        "care": "◯"
-      },
-      "desc": {
-        "ja": "大風量ダブルミネラルイオン",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NE7N",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EH-NE7N%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "dry_04",
-      "status": "active",
-      "maker": "ReFa",
-      "name": "ReFa BEAUTECH DRYER SMART W",
-      "model": "BEAUTECH",
-      "price": 40000,
-      "groupId": "d3",
-      "mode": "dryer",
-      "feat": "自動温冷調整＆海外対応スリム",
-      "air": null,
-      "g": 475,
-      "os": 1,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "speed": "◯",
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "自動温冷調整＆海外対応スリム",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "dry_05",
-      "status": "active",
-      "maker": "KINUJO",
-      "name": "KINUJO ヘアドライヤー (KH301)",
-      "model": "KH301",
-      "price": 31680,
-      "groupId": "d4",
-      "mode": "dryer",
-      "feat": "超軽量コンパクト＆遠赤外線速乾",
-      "air": 2.2,
-      "g": 363,
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "speed": "◎",
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "超軽量コンパクト＆遠赤外線速乾",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20KH301",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20KH301%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_01",
-      "status": "active",
-      "maker": "TESCOM",
-      "name": "プロフェッショナル NIS700A",
-      "model": "NIS700A",
-      "price": 12980,
-      "groupId": "i1",
-      "mode": "iron",
-      "feat": "サロン仕様ヒーターで即効ストレート",
-      "hu": 18,
-      "g": 350,
-      "shape": "straight",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "◯"
-      },
-      "desc": {
-        "ja": "サロン仕様ヒーターで即効ストレート",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Atescom-japan.co.jp%20NIS700A",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Atescom-japan.co.jp%20NIS700A%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_02",
-      "status": "active",
-      "maker": "Panasonic",
-      "name": "ストレートアイロン ナノケア (EHHS0J)",
-      "model": "EHHS0J",
-      "price": 14850,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "ナノイー＋3D密着プレート",
-      "hu": 20,
-      "g": 380,
-      "shape": "straight",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "ナノイー＋3D密着プレート",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EHHS0J",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20EHHS0J%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_03",
-      "status": "active",
-      "maker": "ReFa",
-      "name": "ReFa BEAUTECH STRAIGHT IRON",
-      "model": "BEAUTECH",
-      "price": 22000,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "カーボンレイヤーで潰さない・軽量",
-      "hu": 30,
-      "g": 295,
-      "shape": "straight",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "カーボンレイヤーで潰さない・軽量",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Arefa.net%20BEAUTECH%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_04",
-      "status": "active",
-      "maker": "KINUJO",
-      "name": "絹女 -KINUJO- (LM225)",
-      "model": "LM225",
-      "price": 24200,
-      "groupId": "i2",
-      "mode": "iron",
-      "feat": "シルクプレートで水分蒸発を防ぐ",
-      "hu": 20,
-      "g": 390,
-      "shape": "straight",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "◎"
-      },
-      "desc": {
-        "ja": "シルクプレートで水分蒸発を防ぐ",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20LM225",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Akinujo.jp%20LM225%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
-          "auto": true
-        }
-      ]
-    },
-    {
-      "id": "iron_05",
-      "status": "active",
-      "maker": "Vidal Sassoon",
-      "name": "マイナスイオン 2WAY (VSI2550)",
-      "model": "VSI2550",
-      "price": 2470,
-      "groupId": "i3",
-      "mode": "iron",
-      "feat": "1台でカール＆ストレート超コスパ",
-      "hu": 45,
-      "g": 320,
-      "shape": "2way",
-      "os": 0,
-      "size": {
-        "w": null,
-        "d": null,
-        "h": null
-      },
-      "specs": {},
-      "jan": "",
-      "tags": [],
-      "grades": {
-        "care": "△"
-      },
-      "desc": {
-        "ja": "1台でカール＆ストレート超コスパ",
-        "en": "",
-        "zh": ""
-      },
-      "note": "",
-      "updated": "2026-10-23",
-      "photo": null,
-      "links": [
-        {
-          "type": "official",
-          "title": "メーカーサイトで型番を検索",
-          "url": "https://www.google.com/search?q=site%3Avidalsassoon.jp%20VSI2550",
-          "auto": true
-        },
-        {
-          "type": "manual",
-          "title": "取扱説明書を検索",
-          "url": "https://www.google.com/search?q=site%3Avidalsassoon.jp%20VSI2550%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
+          "url": "https://www.google.com/search?q=site%3Apanasonic.jp%20ES-PV6A-W%20%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8",
           "auto": true
         }
       ]
@@ -796,7 +1190,7 @@ html[data-device=tablet] .fr-wrap {
      ====================================================================== -->
 <script type="application/json" id="hearing-data">
 {
-  "category": "dryer",
+  "category": "shaver",
   "storeName": "",
   "version": "2026-10-23",
   "questions": {},
@@ -807,13 +1201,13 @@ html[data-device=tablet] .fr-wrap {
 <!-- アプリを閉じた直後・読み込み中に一瞬見える画面 -->
 <div class="pg-card">
   <div class="pg-ico" aria-hidden="true">🏠</div>
-  <h1 class="pg-ttl">ドライヤー</h1>
+  <h1 class="pg-ttl">シェーバー</h1>
   <button type="button" class="pg-btn main" id="pg-open">相談をもう一度ひらく</button>
-  <a class="pg-btn sub" id="pg-back" href="area-kaden.html">← エリアへ戻る</a>
+  <a class="pg-btn sub" id="pg-back" href="kaden/">← エリアへ戻る</a>
 </div>
 <!-- アプリが使う部品（画面には出ません） -->
 <select id="lang-switcher" aria-hidden="true" tabindex="-1"><option value="ja">ja</option><option value="en">en</option><option value="zh">zh</option></select>
-<div id="modal"><a id="modal-link-btn" href="#"></a></div>
+<div id="modal"><a id="modal-link-btn" href="javascript:void(0)"></a></div>
 <script id="device-adapt-js">
 (function () {
   var i = document.documentElement, a;
@@ -852,9 +1246,9 @@ html[data-device=tablet] .fr-wrap {
 var currentLang = "ja";
 (function () {
   "use strict";
-  var APP = "dryer";                 // このページの相談アプリ
-  var ROOT_ID = "dr-app";            // アプリの表示エリア
-  var AREA_URL = "area-kaden.html";       // 閉じたときに戻るエリアページ
+  var APP = "shaver";                 // このページの相談アプリ
+  var ROOT_ID = "sv-app";            // アプリの表示エリア
+  var AREA_URL = "kaden/";       // 閉じたときに戻るエリアページ
   var I18N = {"backArea": ["← エリアへ戻る", "← Back to area", "← 返回区域"], "reopen": ["相談をもう一度ひらく", "Open the consultation", "重新打开咨询"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "favAdded": ["マイリストに追加しました", "Added to My List", "已加入收藏"], "favRemoved": ["マイリストから外しました", "Removed from My List", "已取消收藏"]};
   var $ = function (id) { return document.getElementById(id); };
   function li() { return currentLang === "en" ? 1 : currentLang === "zh" ? 2 : 0; }
@@ -3592,7 +3986,7 @@ window.NJ_HEAR = (function () {
       var hc = H.cfg(); hc.version = today();
       var hj = JSON.stringify(hc, null, 2).replace(/<\//g, "<\\/");
       out = out.replace(/(<script type="application\/json" id="hearing-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + "\n" + hj + "\n" + b; });
-      download(location.pathname.split("/").pop() || "product-pc.html", out, "text/html");
+      download(location.pathname.split("/").pop() || "pc/", out, "text/html");
       k(); toast("HTMLを書き出しました。サイトに上げ直すと全端末の在庫が更新されます", { type: "ok", ms: 6000 });
     }).catch(function () {
       download("inventory-" + B.category + ".json", JSON.stringify(merged(), null, 2), "application/json");
@@ -3852,480 +4246,1075 @@ window.NJ_HEAR = (function () {
 })();
 </script>
 
-<!-- ===== 相談アプリ: dryer ===== -->
+<!-- ===== 相談アプリ: shaver ===== -->
 <style>
-.dr-svg {
-  width: 84px;
-  height: 64px;
-  display: block;
-  margin: 0 auto 2px;
-  overflow: visible;
+#sv-app {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(160deg,#e3faf5,#f8fafc 45%,#ecfeff);
+  color: #0f172a;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(28px) scale(.985);
+  transition: opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1),visibility 0s .5s;
 }
-.dr-wind {
-  stroke: #60a5fa;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 6 8;
-  animation: drw 1.1s linear infinite;
-  animation-delay: var(--dl,0s);
+#sv-app.on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
 }
-@keyframes drw {
-  to {
-    stroke-dashoffset: -28;
-  }
+#sv-app * {
+  box-sizing: border-box;
+  font-family: Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;
 }
-.dr-dot {
-  animation: drf 2.4s ease-in-out infinite;
-  animation-delay: var(--dl,0s);
-}
-@keyframes drf {
-  50% {
-    transform: translateY(-6px);
-    opacity: .45;
-  }
-}
-.dr-pl {
-  transform-box: fill-box;
-  transform-origin: left center;
-  animation: drp 3.2s ease-in-out infinite;
-  animation-delay: var(--dl,0s);
-}
-@keyframes drp {
-  0%,
-  35%,
-  to {
-    transform: rotate(-16deg);
-  }
-  52%,
-  86% {
-    transform: rotate(0);
-  }
-}
-.dr-curl {
-  stroke-dasharray: 120;
-  animation: drc 3s ease-in-out infinite;
-}
-@keyframes drc {
-  0% {
-    stroke-dashoffset: 120;
-  }
-  60%,
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-.dr-tabs {
+.sv-top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   display: flex;
-  gap: 6px;
-  background: #e2e8f0;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #ffffffe0;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+}
+.sv-top b {
+  flex: 1;
+  font-size: .98rem;
+  color: #0f766e;
+}
+.sv-x {
+  border: 0;
+  background: #f1f5f9;
   border-radius: 99px;
-  padding: 4px;
+  padding: 7px 12px;
+  font-size: .86rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+}
+.sv-pill {
+  background: #0f766e;
+  color: #fff;
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-size: .8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sv-pill i {
+  font-style: normal;
+  font-size: 1.05rem;
+  margin: 0 2px;
+}
+.sv-prog {
+  height: 3px;
+  background: #ccfbf1;
+}
+.sv-prog div {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,#14b8a6,#0ea5e9);
+  transition: width .6s cubic-bezier(.2,.8,.2,1);
+}
+.sv-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 18px 14px 70px;
+}
+.sv-in {
+  animation: svin .5s cubic-bezier(.2,.8,.2,1) both;
+}
+.sv-back .sv-in {
+  animation-name: svinb;
+}
+@keyframes svin {
+  0% {
+    opacity: 0;
+    transform: translate(34px);
+  }
+}
+@keyframes svinb {
+  0% {
+    opacity: 0;
+    transform: translate(-34px);
+  }
+}
+@keyframes svup {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+.sv-up {
+  animation: svup .55s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: calc(var(--i,0)*70ms);
+}
+.sv-h1 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.sv-h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg,#0d9488,#0ea5e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sv-p {
+  font-size: .92rem;
+  color: #475569;
+  line-height: 1.7;
   margin-bottom: 14px;
 }
-.dr-tabs button {
-  flex: 1;
-  border: 0;
+.sv-tag {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 800;
+  padding: 3px 9px;
   border-radius: 99px;
-  padding: 9px;
+  background: #ccfbf1;
+  color: #0f766e;
+  margin-bottom: 8px;
+}
+.sv-vs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.sv-vs>div {
+  border-radius: 12px;
+  padding: 10px 11px;
+  font-size: .86rem;
+  line-height: 1.65;
+  color: #334155;
+  background: #f8fafc;
+  border-top: 3px solid #0d9488;
+}
+.sv-vs>div:last-child {
+  border-top-color: #0ea5e9;
+}
+.sv-vs b {
+  display: block;
   font-size: .92rem;
-  font-weight: 800;
-  color: #475569;
-  background: transparent;
-  cursor: pointer;
-  transition: .25s;
+  color: #0f172a;
+  margin-bottom: 2px;
 }
-.dr-tabs button.on {
-  background: #fff;
-  color: #7c3aed;
-  box-shadow: 0 3px 10px #7c3aed33;
+.sv-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.dr-models {
-  margin-top: 6px;
-  font-size: .8rem;
-  color: #64748b;
-  line-height: 1.6;
-}
-.dr-flow {
-  display: flex;
-  gap: 6px;
-  margin: 0 0 14px;
-  font-size: .8rem;
-  font-weight: 800;
-  color: #475569;
-}
-.dr-flow span {
-  flex: 1;
-  text-align: center;
+.sv-card {
   background: #fff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 7px 2px;
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  transition: .25s;
+  box-shadow: 0 2px 8px #0f172a0d;
+  position: relative;
+  overflow: hidden;
 }
-.dr-flow span b {
-  display: block;
-  color: #7c3aed;
-  font-size: .78rem;
+.sv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #0d94882e;
 }
-.dr-why {
+.sv-card.sel {
+  border-color: #0d9488;
+  grid-column: 1/-1;
+  box-shadow: 0 10px 28px #0d948838;
+}
+.sv-card h3 {
+  font-size: .98rem;
+  margin: 6px 0 2px;
+}
+.sv-card small {
+  color: #64748b;
   font-size: .8rem;
-  color: #334155;
-  background: #f5f3ff;
-  border-radius: 8px;
-  padding: 7px 9px;
-  margin: 6px 0;
-  line-height: 1.6;
+  display: block;
 }
-</style><div id="dr-app" class="fr-root" role="dialog" aria-label="ドライヤー・ヘアアイロン相談"></div>
+.sv-more {
+  display: none;
+  margin-top: 8px;
+  font-size: .86rem;
+  line-height: 1.65;
+  color: #334155;
+}
+.sv-card.sel .sv-more {
+  display: block;
+  animation: svup .4s both;
+}
+.sv-more div {
+  margin-bottom: 4px;
+}
+.sv-more span {
+  display: inline-block;
+  min-width: 3.4em;
+  font-weight: 800;
+  color: #0d9488;
+}
+.sv-svg {
+  width: 62px;
+  height: 96px;
+  display: block;
+  margin: 0 auto;
+}
+.sv-card.sel .sv-svg {
+  margin: 0;
+}
+.sv-osc {
+  animation: svosc 1.3s ease-in-out infinite;
+  animation-delay: var(--dl,0s);
+}
+.sv-osc.b {
+  animation-direction: reverse;
+}
+@keyframes svosc {
+  0%,
+  to {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+.sv-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: svsp 2.6s linear infinite;
+  animation-delay: var(--dl,0s);
+}
+@keyframes svsp {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sv-tw {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: svtw 1.8s ease-in-out infinite;
+}
+@keyframes svtw {
+  50% {
+    transform: scale(1.4) rotate(20deg);
+    opacity: .7;
+  }
+}
+.sv-q {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px 16px;
+  box-shadow: 0 8px 28px #0f172a14;
+}
+.sv-q .no {
+  font-size: .8rem;
+  font-weight: 800;
+  color: #0d9488;
+  letter-spacing: .05em;
+}
+.sv-q h2 {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 4px 0 6px;
+}
+.sv-hint {
+  font-size: .86rem;
+  color: #475569;
+  background: #ecfeff;
+  border-left: 3px solid #06b6d4;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.sv-eff {
+  font-size: .8rem;
+  color: #64748b;
+  margin-bottom: 12px;
+  line-height: 2;
+}
+.sv-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 13px;
+  margin-bottom: 8px;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+  color: #0f172a;
+}
+.sv-opt:hover {
+  border-color: #5eead4;
+  transform: translate(3px);
+}
+.sv-opt.sel {
+  border-color: #0d9488;
+  background: #f0fdfa;
+  color: #0f766e;
+  animation: svpop .35s;
+}
+.sv-opt .ck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  color: #fff;
+}
+.sv-opt.sel .ck {
+  background: #0d9488;
+  border-color: #0d9488;
+}
+@keyframes svpop {
+  50% {
+    transform: scale(1.025);
+  }
+}
+.sv-btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg,#0d9488,#0f766e);
+  cursor: pointer;
+  box-shadow: 0 8px 20px #0d94884d;
+  transition: .2s;
+}
+.sv-btn:active {
+  transform: scale(.98);
+}
+.sv-btn.s {
+  background: #fff;
+  color: #475569;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: none;
+  margin-top: 8px;
+  font-size: .92rem;
+  padding: 11px;
+}
+.sv-btn.k {
+  background: #111827;
+  color: #fbbf24;
+}
+.sv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .86rem;
+  margin-bottom: 9px;
+}
+.sv-row b {
+  width: 7.2em;
+  flex: none;
+}
+.sv-bar {
+  flex: 1;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.sv-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg,#14b8a6,#0ea5e9);
+  animation: svbar .9s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay: calc(var(--i,0)*60ms + .1s);
+}
+.sv-bar.g i {
+  background: #cbd5e1;
+}
+@keyframes svbar {
+  0% {
+    width: 0;
+  }
+}
+.sv-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 16px #0f172a0f;
+}
+.sv-box h3 {
+  font-size: .98rem;
+  margin-bottom: 8px;
+}
+.sv-chip {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 99px;
+  margin: 0 4px 4px 0;
+  background: #f1f5f9;
+  color: #334155;
+}
+.sv-chip.ok {
+  background: #d1fae5;
+  color: #065f46;
+}
+.sv-chip.w {
+  background: #fef3c7;
+  color: #92400e;
+}
+.sv-chip.ng {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.sv-chip.ax {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+.sv-ax {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  scroll-snap-type: x proximity;
+}
+.sv-ax button {
+  flex: none;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  border-radius: 99px;
+  padding: 8px 13px;
+  font-size: .86rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #334155;
+  transition: .2s;
+  scroll-snap-align: start;
+}
+.sv-ax button.on {
+  background: #0d9488;
+  border-color: #0d9488;
+  color: #fff;
+  transform: scale(1.05);
+}
+.sv-win {
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg,#fef3c7,#fde68a);
+  font-size: .88rem;
+  line-height: 1.6;
+  animation: svup .4s both;
+}
+.sv-rec {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+  position: relative;
+  transition: .3s;
+  box-shadow: 0 4px 16px #0f172a0f;
+}
+.sv-rec.hi {
+  border-color: #f59e0b;
+  box-shadow: 0 12px 32px #f59e0b4d;
+  transform: scale(1.015);
+}
+.sv-rec.dim {
+  opacity: .85;
+}
+.sv-rank {
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  background: #111827;
+  color: #fbbf24;
+  font-size: .8rem;
+  font-weight: 800;
+  padding: 3px 11px;
+  border-radius: 99px;
+}
+.sv-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 4px 0 8px;
+}
+.sv-ring {
+  width: 62px;
+  height: 62px;
+  flex: none;
+  position: relative;
+}
+.sv-ring svg {
+  transform: rotate(-90deg);
+}
+.sv-ring circle {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.sv-ring .bg {
+  stroke: #e2e8f0;
+}
+.sv-ring .fg {
+  stroke: #0d9488;
+  animation: svrg 1.1s cubic-bezier(.2,.8,.2,1) both;
+}
+.sv-ring b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+}
+@keyframes svrg {
+  0% {
+    stroke-dasharray: 0 164;
+  }
+}
+.sv-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.sv-price {
+  font-weight: 800;
+  color: #d90429;
+  font-size: 1.1rem;
+}
+.sv-spec {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+  margin: 8px 0;
+}
+.sv-spec td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+.sv-spec td:first-child {
+  color: #64748b;
+  font-weight: 700;
+  width: 26%;
+}
+.sv-ul {
+  list-style: none;
+  font-size: .86rem;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+.sv-ul li {
+  padding-left: 1.4em;
+  position: relative;
+}
+.sv-ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 900;
+}
+.sv-ul li.w:before {
+  content: "!";
+  color: #d97706;
+}
+.sv-ul li.n:before {
+  content: "×";
+  color: #dc2626;
+}
+.sv-heat {
+  display: grid;
+  gap: 3px;
+  font-size: .78rem;
+  text-align: center;
+}
+.sv-heat div {
+  padding: 7px 2px;
+  border-radius: 6px;
+  background: rgba(13,148,136,var(--a,0));
+  animation: svup .5s both;
+  animation-delay: calc(var(--i,0)*25ms);
+}
+.sv-heat .hd {
+  background: none;
+  font-weight: 800;
+  color: #475569;
+}
+.sv-heat .rn {
+  text-align: left;
+  font-weight: 800;
+  background: none;
+}
+.sv-ss {
+  border: 2px solid #111827;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+.sv-ss table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  margin-bottom: 8px;
+}
+.sv-ss td {
+  padding: 5px 7px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+.sv-ss td:first-child {
+  background: #f3f4f6;
+  font-weight: 800;
+  width: 38%;
+}
+body.motion-off #sv-app * {
+  animation: none!important;
+  transition: none!important;
+}
+@media (prefers-reduced-motion:reduce) {
+  #sv-app * {
+    animation: none!important;
+  }
+}
+</style><div id="sv-app" role="dialog" aria-label="メンズシェーバー購入相談"></div>
 <script>
 (function () {
   "use strict";
-  const f = document.getElementById("dr-app"),
-    F = () => typeof currentLang < "u" && currentLang || "ja",
-    ae = { ja: 0, en: 1, zh: 2 },
-    a = e => Array.isArray(e) ? e[ae[F()]] : e,
+  const E = (window.NJ_INV ? window.NJ_INV.products() : []),
+    J = [
+      {
+        name: {
+          ja: "パナソニック ラムダッシュ専用 替え刃 (内刃・外刃セット)",
+          en: "OEM Replacement Inner & Outer Foil Blade Set",
+          zh: "原厂适配各型号剃须刀替换内刀片与外刀网套装"
+        },
+        price: "¥4,980",
+        desc: {
+          ja: "切れ味を新品同様に復活させるために約1.5〜2年ごとの交換がおすすめ",
+          en: "Restores original razor-sharp cutting performance; recommended every 1.5-2 years",
+          zh: "定期更换锋利如初，建议每1.5至2年更换一次内外刀头刀网"
+        }
+      },
+      {
+        name: {
+          ja: "ブラウン シェーバー専用 アルコール洗浄液 (6個入)",
+          en: "Braun Clean & Renew Alcohol Refill Cartridges (6-pack)",
+          zh: "博朗剃须刀专用酒精清洗液补充装 (6只装)"
+        },
+        price: "¥3,980",
+        desc: {
+          ja: "皮脂汚れやヒゲくずを99.9%除菌洗浄。清潔な潤いを保ち、レモンの爽やかな香り",
+          en: "Hygienic 99.9% alcohol sterilization keeping blades lubricated with fresh scent",
+          zh: "99.9%高效除菌去异味，润滑刀头减少磨损，保持每次剃须清新柠檬香"
+        }
+      },
+      {
+        name: {
+          ja: "メンズ シェービングフォーム / ジェル (敏感肌用)",
+          en: "Sensitive Skin Shaving Foam & Gel",
+          zh: "男士敏感肌专用清爽剃须泡沫/啫喱"
+        },
+        price: "¥880",
+        desc: {
+          ja: "カミソリ負けやヒリヒリ感を防止。お風呂剃りやドライ剃りの滑りを劇的に向上",
+          en: "Protects skin from razor burn and friction during dry or wet shaves",
+          zh: "有效隔离刀网与皮肤直接摩擦，防止泛红刺痛，泡沫绵密易冲洗"
+        }
+      }
+    ];
+  var x = function () {
+    return typeof currentLang < "u" && currentLang || "ja";
+  },
+    W = function (e) {
+      return typeof e == "string" ? e : e && (e[x()] || e.ja) || "";
+    },
+    S = function (e) {
+      return "¥" + e.toLocaleString("ja-JP");
+    },
+    b = document.getElementById("sv-app"),
+    L = { ja: 0, en: 1, zh: 2 },
+    s = function (e) {
+      return Array.isArray(e) ? e[L[x()]] : e;
+    },
     p = function (e) {
-      let t = a(e);
-      for (let s = 1; s < arguments.length; s++)
-        t = t.split("{" + (s - 1) + "}").join(arguments[s]);
+      for (var t = s(e), n = 1; n < arguments.length; n++)
+        t = t.split("{" + (n - 1) + "}").join(arguments[n]);
       return t;
     },
-    A = e => a(e.n),
-    se = { bud: ["予算", "Budget", "预算"], wt: ["重さ", "Weight", "重量"] },
-    q = {
-      dry_01: ["モンスター BLDC (KHDM800R)", "Monster BLDC (KHDM800R)", "Monster BLDC (KHDM800R)"],
-      dry_02: ["ナノケア EH-NA0K", "Nanocare EH-NA0K", "Nanocare EH-NA0K"],
-      dry_03: ["イオニティ EH-NE7N", "Ionity EH-NE7N", "Ionity EH-NE7N"],
-      dry_05: ["KINUJO ヘアドライヤー (KH301)", "KINUJO Hair Dryer (KH301)", "KINUJO 吹风机 (KH301)"],
-      iron_01: ["プロフェッショナル NIS700A", "Professional NIS700A", "专业款 NIS700A"],
-      iron_02: [
-        "ストレートアイロン ナノケア (EHHS0J)",
-        "Straight Iron Nanocare (EHHS0J)",
-        "直发夹板 Nanocare (EHHS0J)"
-      ],
-      iron_04: ["絹女 -KINUJO- (LM225)", "KINUJO (LM225)", "绢女 -KINUJO- (LM225)"],
-      iron_05: ["マイナスイオン 2WAY (VSI2550)", "Negative Ion 2WAY (VSI2550)", "负离子 2WAY (VSI2550)"]
+    T = function (e) {
+      return s(e.n);
     },
-    J = {
-      dry_01: [
-        "ダブルファンBLDCで超速乾",
-        "Ultra-fast drying with a double-fan BLDC motor",
-        "双风扇BLDC电机，超速干发"
-      ],
-      dry_02: [
-        "高浸透ナノイーで圧倒的うるおい",
-        "Overwhelming moisture with high-penetration nanoe",
-        "高渗透纳米水离子，润泽感出众"
-      ],
-      dry_03: ["大風量ダブルミネラルイオン", "High airflow with double mineral ions", "大风量双矿物离子"],
-      dry_04: [
-        "自動温冷調整＆海外対応スリム",
-        "Automatic hot/cool adjustment and a slim, overseas-compatible body",
-        "自动温冷调节，轻薄且支持海外电压"
-      ],
-      dry_05: [
-        "超軽量コンパクト＆遠赤外線速乾",
-        "Ultra-light, compact, and far-infrared fast drying",
-        "超轻小巧，远红外线速干"
-      ],
-      iron_01: ["サロン仕様ヒーターで即効ストレート", "Salon-grade heater for quick straightening", "沙龙级加热元件，快速拉直"],
-      iron_02: ["ナノイー＋3D密着プレート", "Nanoe + 3D close-contact plates", "纳米水离子＋3D贴合夹板"],
-      iron_03: [
-        "カーボンレイヤーで潰さない・軽量",
-        "Carbon layer prevents flattening; lightweight",
-        "碳层夹板不压塌发丝，轻量"
-      ],
-      iron_04: ["シルクプレートで水分蒸発を防ぐ", "Silk plates prevent moisture from evaporating", "丝绸夹板防止水分蒸发"],
-      iron_05: [
-        "1台でカール＆ストレート超コスパ",
-        "Curl and straighten with one unit; great value",
-        "一台即可卷发+直发，超高性价比"
-      ]
+    Z = {
+      wet: ["お風呂剃り", "Wet shaving", "湿剃"],
+      method: ["方式", "Blade type", "方式"],
+      dock: ["洗浄器", "Cleaning station", "清洗座"],
+      bud: ["予算", "Budget", "预算"],
+      val: ["性能優先", "Performance first", "性能优先"]
     },
-    E = e => q[e.id] ? a(q[e.id]) : e.name,
-    W = e => J[e.id] ? a(J[e.id]) : e.feat,
-    _ = () => a(
-      l.mode === "dryer" ? ["ドライヤー", "Hair Dryer", "吹风机"] : ["ヘアアイロン", "Hair Iron", "卷直发器"]
-    ),
-    w = e => "¥" + e.toLocaleString("ja-JP"),
-    D = { "◎": 5, "◯": 3.5, "△": 2 },
-    T = (e, t, s) => Math.max(t, Math.min(s, e)),
-    Q = (window.NJ_INV ? window.NJ_INV.products() : []),
-    oe = [
-      [
-        ["ヒートプロテクト ヘアオイル", "Heat-Protect Hair Oil", "防热护发精油"],
-        "¥1,980",
-        ["熱から髪を守りツヤ感をアップ", "Shields hair from heat and boosts shine", "保护头发免受高温伤害，提升光泽"]
-      ],
-      [
-        ["耐熱収納ポーチ", "Heat-Resistant Storage Pouch", "耐热收纳袋"],
-        "¥1,480",
-        [
-          "使用直後の熱い本体も安全に収納",
-          "Safely stores the unit even right after use, while still hot",
-          "刚使用完仍很烫的机身也能安全收纳"
-        ]
-      ]
-    ],
-    B = [
-      {
-        id: "d1",
-        mode: "dryer",
-        n: ["大風量・速乾タイプ", "High-airflow / fast-drying type", "大风量·速干型"],
-        sub: ["風量で時短", "Saves time with airflow", "靠风量节省时间"],
-        who: [
-          "髪が多い・長い方／朝の時短をしたい方",
-          "Those with thick or long hair / those who want to save time in the morning",
-          "发量多·头发长的人／想节省早晨时间的人"
-        ],
-        pro: [
-          "風量が大きく乾燥時間を短縮。手頃な価格のモデルもある",
-          "Large airflow shortens drying time. Some models are reasonably priced.",
-          "风量大，缩短吹干时间。也有价格实惠的机型。"
-        ],
-        con: [
-          "本体はやや重め（520〜540g）。ケア力は◯評価でケア最優先なら次のタイプ",
-          "Slightly heavy (520–540 g). Care rated ◯; if care is your top priority, choose the next type.",
-          "机身略重（520～540g）。护发力评为◯，若最重视护发请选择下一类型。"
-        ]
+    ee = {
+      type: {
+        "回転式(乾電池)": ["Rotary (dry battery)", "旋转式(干电池)"],
+        往復式3枚刃: ["Reciprocating 3-blade", "往复式3枚刃"],
+        回転式3ヘッド: ["Rotary 3-head", "旋转式3刀头"],
+        "往復式3枚刃(お風呂剃り)": ["Reciprocating 3-blade (wet shaving)", "往复式3枚刃(泡澡湿剃)"],
+        "往復式3枚刃(密着スイング)": ["Reciprocating 3-blade (contour swing)", "往复式3枚刃(贴合摇摆)"],
+        往復式3連密着: ["Reciprocating 3-flex contour", "往复式3连贴合"],
+        往復式スイング密着: ["Reciprocating swing contour", "往复式摇摆贴合"],
+        "ラムダッシュPRO 5枚刃": ["LAMDASH PRO 5-blade", "LAMDASH PRO 5枚刃"],
+        "往復式360°密着": ["Reciprocating 360° contour", "往复式360°贴合"],
+        "ラムダッシュPRO 6枚刃": ["LAMDASH PRO 6-blade", "LAMDASH PRO 6枚刃"],
+        "往復式5+1カット": ["Reciprocating 5+1 cut", "往复式5+1切割"],
+        パームイン5枚刃: ["Palm-In 5-blade", "Palm-In 5枚刃"]
       },
-      {
-        id: "d2",
-        mode: "dryer",
-        n: ["うるおいケアタイプ", "Moisture-care type", "润泽护理型"],
-        sub: ["高浸透ナノイー", "High-penetration nanoe", "高渗透纳米水离子"],
-        who: [
-          "ダメージ・パサつき・クセが気になる方",
-          "Those concerned about damage, dryness, and frizz",
-          "在意损伤·毛躁·发质不顺的人"
-        ],
-        pro: ["うるおい・ツヤのケア力が◎", "Top (◎) care for moisture and shine", "润泽·光泽护理力为◎"],
-        con: [
-          "約3.5万円と高めで、今回の中では最重量（595g）",
-          "Pricey at about ¥35,000, and the heaviest of this lineup (595 g).",
-          "约3.5万日元，价格偏高，且是本次对比中最重的（595g）。"
-        ]
+      blades: {
+        回転刃: ["Rotary blades", "旋转刀头"],
+        "3枚刃": ["3 blades", "3枚刃"],
+        "3連サスペンション": ["3-flex suspension", "3连悬浮"],
+        "5方向可動ヘッド": ["5-way pivoting head", "5方向可动刀头"],
+        "3枚刃+ヒゲセンサー": ["3 blades + beard sensor", "3枚刃+胡须感应器"],
+        "3枚刃+スイングヘッド": ["3 blades + swing head", "3枚刃+摇摆刀头"],
+        "3連密着ブレード": ["3 contour blades", "3连贴合刀片"],
+        スキンプロテクション: ["Skin protection", "肌肤保护"],
+        スイング密着システム: ["Swing contour system", "摇摆贴合系统"],
+        "5枚刃+約14,000ストローク": ["5 blades + ~14,000 strokes/min", "5枚刃+约14,000转/分"],
+        "5枚刃+5Dアクティブサス": ["5 blades + 5D active suspension", "5枚刃+5D主动悬浮"],
+        "360°密着システム": ["360° contour system", "360°贴合系统"],
+        ナノスキンプロテクション: ["Nano skin protection", "纳米肌肤保护"],
+        "6枚刃+2種4枚深剃り刃": ["6 blades + 2 types of 4 deep-shave foils", "6枚刃+2种4枚深剃刀网"],
+        "プロトリマー+5カットシステム": ["ProTrimmer + 5-cut system", "ProTrimmer+5切割系统"],
+        "5枚刃(NAGORI素材)": ["5 blades (NAGORI material)", "5枚刃(NAGORI材质)"]
       },
-      {
-        id: "d3",
-        mode: "dryer",
-        n: ["センシング・温度制御タイプ", "Sensing / temperature-control type", "感应·温控型"],
-        sub: ["温冷を自動調整", "Automatic hot/cool adjustment", "自动温冷调节"],
-        who: [
-          "熱ダメージを抑えたい／海外でも使いたい方",
-          "Those who want to limit heat damage / use it overseas too",
-          "想减少热损伤／也想在海外使用的人"
-        ],
-        pro: [
-          "温冷を自動調整。475gのスリムさと海外対応が強み",
-          "Automatic hot/cool adjustment. Strengths are its slim 475 g body and overseas compatibility.",
-          "自动调节温冷。优势是475g的轻薄机身和支持海外电压。"
-        ],
-        con: [
-          "約4万円と最も高価。速乾力は◯評価",
-          "The most expensive at about ¥40,000. Fast-drying power rated ◯.",
-          "约4万日元，价格最高。速干力评为◯。"
-        ]
+      cleaning: {
+        ブラシ洗浄: ["Brush cleaning", "毛刷清洁"],
+        水洗い: ["Rinse with water", "水洗"],
+        水道水洗い: ["Tap-water rinse", "自来水冲洗"],
+        ウォータースルー洗浄: ["Water-through cleaning", "水流直通清洗"],
+        クイック洗浄システム: ["Quick clean system", "快速清洁系统"],
+        クイック洗浄: ["Quick cleaning", "快速清洁"],
+        アルコール自動洗浄器: ["Automatic alcohol cleaner", "酒精自动清洗器"],
+        "水洗い/ポッド対応": ["Rinse / pod compatible", "水洗/支持清洁仓"],
+        全自動洗浄充電器: ["Fully automatic cleaning & charging station", "全自动清洗充电座"],
+        "5段階アルコール洗浄": ["5-stage alcohol cleaning", "5段酒精清洗"],
+        "水洗い/USB-C": ["Rinse / USB-C", "水洗/USB-C"]
       },
-      {
-        id: "d4",
-        mode: "dryer",
-        n: ["超軽量・遠赤外線タイプ", "Ultra-light / far-infrared type", "超轻·远红外线型"],
-        sub: ["363gの軽さ", "Light at 363 g", "仅363g的轻盈"],
-        who: [
-          "腕の疲れ・持ち運びを減らしたい方",
-          "Those who want less arm fatigue and easier carrying",
-          "想减轻手臂疲劳·便于携带的人"
-        ],
-        pro: [
-          "363gの超軽量で、速乾もケアも◎評価",
-          "Ultra-light at 363 g, with ◎ ratings for both fast drying and care.",
-          "363g超轻，速干与护发均为◎评价。"
-        ],
-        con: ["約3.2万円と価格は中〜高め", "Mid-to-high price at about ¥32,000.", "约3.2万日元，价格中等偏高。"]
-      },
-      {
-        id: "i1",
-        mode: "iron",
-        n: ["サロン仕様・即熱ストレート", "Salon-grade quick-heat straightener", "沙龙级·速热直发夹"],
-        sub: ["18秒で立ち上がり", "Heats up in 18 seconds", "18秒升温"],
-        who: [
-          "忙しい朝／毎日しっかりストレートにしたい方",
-          "Busy mornings / those who want solid straightening every day",
-          "忙碌的早晨／每天都想认真拉直的人"
-        ],
-        pro: [
-          "立ち上がり18秒で約1.3万円。時短と価格のバランスが良い",
-          "Heats in 18 seconds for about ¥13,000. A good balance of speed and price.",
-          "18秒升温，约1.3万日元。省时与价格均衡。"
-        ],
-        con: ["ストレート専用。ケア力は◯評価", "Straightening only. Care rated ◯.", "仅限直发。护发力评为◯。"]
-      },
-      {
-        id: "i2",
-        mode: "iron",
-        n: ["ケアプレート・ストレート", "Care-plate straightener", "护理夹板·直发夹"],
-        sub: ["ナノイー／カーボン／シルク", "Nanoe / carbon / silk", "纳米水离子／碳／丝绸"],
-        who: [
-          "カラー・ダメージが気になる方／毎日使う方",
-          "Those concerned about color treatment and damage / daily users",
-          "在意染发·损伤的人／每天使用的人"
-        ],
-        pro: [
-          "プレート素材で髪の傷みを抑える。機種ごとに強みが分かれる",
-          "Plate materials reduce hair damage. Strengths differ by model.",
-          "夹板材质可减少对头发的损伤。各机型的优势不同。"
-        ],
-        con: [
-          "1.5〜2.4万円台。立ち上がりは20〜30秒と機種で差がある",
-          "About ¥15,000–24,000. Heat-up takes 20–30 seconds depending on the model.",
-          "1.5～2.4万日元。升温时间为20～30秒，因机型而异。"
-        ]
-      },
-      {
-        id: "i3",
-        mode: "iron",
-        n: ["2WAY・コスパタイプ", "2-way / value type", "2WAY·高性价比型"],
-        sub: ["カールもストレートも", "Curls and straightening", "可卷也可直"],
-        who: [
-          "初めての1台／1台で巻きも伸ばしもしたい方",
-          "First-timers / those who want to curl and straighten with one unit",
-          "第一次购买／想一台兼顾卷发和直发的人"
-        ],
-        pro: ["約2,500円でカールもストレートもできる", "Curl and straighten for about ¥2,500.", "约2,500日元即可卷发和直发。"],
-        con: [
-          "立ち上がり45秒、ケア・速熱は△評価",
-          "45-second heat-up; care and quick heating are rated △.",
-          "升温需45秒，护发与速热评为△。"
-        ]
+      charge: {
+        乾電池駆動: ["Dry-battery powered", "干电池驱动"],
+        専用コード: ["Dedicated cord", "专用电源线"],
+        "1時間充電": ["1-hour charge", "充电1小时"],
+        急速1時間: ["Quick 1-hour charge", "快充1小时"]
       }
-    ],
-    ie = e => B.filter(t => t.id === e.type)[0],
-    re = {
-      d1: "#2563eb",
-      d2: "#a855f7",
-      d3: "#0ea5e9",
-      d4: "#f59e0b",
-      i1: "#ef4444",
-      i2: "#a855f7",
-      i3: "#10b981"
-    };
-  function ne(e, t) {
-    const s = re[e.id], o = e.id;
-    if (e.mode === "dryer") {
-      let c = "";
-      return o === "d1"
-        && (
-          c = [0, 1, 2].map(
-            r => '<line class="dr-wind" style="--dl:'
-              + (t + r * .22)
-              + 's" x1="66" y1="'
-              + (20 + r * 9)
-              + '" x2="84" y2="'
-              + (20 + r * 9)
-              + '"/>'
-          ).join("")
-        ),
-        o === "d2"
-          && (
-            c = [0, 1, 2, 3].map(
-              r => '<circle class="dr-dot" style="--dl:'
-                + (t + r * .5)
-                + 's" cx="'
-                + (68 + r * 5)
-                + '" cy="'
-                + (18 + r % 2 * 14)
-                + '" r="2.6" fill="#c084fc"/>'
-            ).join("")
+    },
+    I = function (e, t) {
+      var n = L[x()] || 0;
+      if (!n)
+        return t;
+      var a = ee[e][t];
+      return a ? a[n - 1] : t;
+    },
+    te = function (e) {
+      var t = L[x()] || 0;
+      return t
+        ? e === "乾電池"
+          ? t === 1 ? "Dry battery" : "干电池"
+          : e.replace(/約(\d+)日/g, t === 1 ? "approx. $1 days" : "约$1天").replace(
+            /約(\d+)分/g,
+            t === 1 ? "approx. $1 min" : "约$1分钟"
+          )
+        : e;
+    },
+    U = function (e) {
+      var t = L[x()] || 0;
+      return t
+        ? e.replace(/約(\d+)g/g, t === 1 ? "approx. $1 g" : "约$1g").replace(
+          /\(超軽量\)/g,
+          t === 1 ? " (ultra-light)" : "(超轻)"
+        )
+        : e;
+    },
+    j = function (e) {
+      var t = L[x()] || 0, n = e.name;
+      return t
+        ? (
+          n = n.replace(/シリーズ(\d+)/g, t === 1 ? "Series $1" : "$1系列").replace(
+            /(\d+)シリーズ/g,
+            t === 1 ? "$1 Series" : "$1系列"
           ),
-        o === "d3"
-          && (
-            c = '<path d="M68 18q8 8 0 16M74 14q12 12 0 24" fill="none" stroke="#38bdf8" stroke-width="2.5" '
-              + 'stroke-linecap="round" class="dr-dot" style="--dl:'
-              + t
-              + 's"/>'
-          ),
-        o === "d4"
-          && (
-            c = [0, 1].map(
-              r => '<path class="dr-dot" style="--dl:'
-                + (t + r * .7)
-                + 's" d="M70 '
-                + (20 + r * 14)
-                + 'q8-6 14 0q-6 6-14 0z" fill="#fbbf24"/>'
-            ).join("")
-          ),
-        '<svg class="dr-svg" viewBox="0 0 90 64"><path d="M8 12h44a9 9 0 0 1 9 9v9a9 9 0 0 1-9 9H8z" fill="'
-          + s
-          + '"/><rect x="18" y="38" width="13" height="23" rx="6" fill="'
-          + s
-          + '" opacity=".72"/><rect x="52" y="16" width="11" height="19" rx="3" fill="#cbd5e1"/>'
-          + c
-          + "</svg>";
+            t === 1 && (n = n.replace(/(\d+)枚刃/g, "$1-blade")),
+            n.replace(/ラムダッシュ/g, "LAMDASH").replace(/パームイン/g, "Palm-In").replace(
+              /フィリップス/g,
+              t === 1 ? "Philips" : "飞利浦"
+            )
+        )
+        : n;
+    },
+    h,
+    q = { "◎": 5, "◯": 3.5, "〇": 3.5, "△": 2 },
+    ne = {
+      sh1: 3,
+      sh2: 3,
+      sh3: 3,
+      sh4: 3,
+      sh5: 3,
+      sh6: 3,
+      sh7: 3,
+      sh8: 3,
+      sh9: 3,
+      sh10: 5,
+      sh11: 5,
+      sh12: 5,
+      sh13: 3,
+      sh14: 6,
+      sh15: 5,
+      sh16: 5
+    },
+    se = 22e3;
+  E.forEach(function (e) {
+    var t = e.blades + e.type;
+    e.rot = /回転/.test(e.type),
+      e.dock = /全自動|自動洗浄|アルコール/.test(e.cleaning),
+      e.wetOk = e.wet.charAt(0) !== "×",
+      e.g = parseInt((e.weight.match(/(\d+)\s*g/) || [0, 200])[1], 10),
+      e.flex = /5D|360|スイング/.test(t) ? 2 : /サスペンション|密着|可動/.test(t) ? 1 : 0,
+      e.palm = /パームイン/.test(e.name + e.type),
+      e.n = ne[e.id] || 3;
+  });
+  var B = [
+    {
+      id: "t1",
+      n: ["エントリー", "Entry", "入门款"],
+      sub: ["〜1万円台前半", "Up to the low ¥10,000s", "约1万日元出头以下"],
+      ic: "foilS",
+      who: [
+        "はじめての方・たまに使う・出張の予備に",
+        "First-timers, occasional use, or a travel backup",
+        "第一次使用·偶尔使用·出差备用"
+      ],
+      pro: [
+        "初期費用を抑えて始められる。乾電池式の超軽量機もある",
+        "Start with a low upfront cost. There are even ultra-light dry-battery models.",
+        "初期花费低，易于上手。还有干电池式超轻机型。"
+      ],
+      con: [
+        "お風呂剃り非対応の機種が多く、深剃りや洗浄の楽さは控えめ",
+        "Many models don’t support wet shaving, and close-shave power and easy cleaning are modest.",
+        "许多机型不支持泡澡湿剃，深剃力和清洁便利性较为一般。"
+      ],
+      test: function (e) {
+        return e.groupId === "entry_value";
+      }
+    },
+    {
+      id: "t2",
+      n: ["往復式・スタンダード", "Reciprocating · Standard", "往复式·标准款"],
+      sub: ["お風呂剃り対応の主力", "Mainstream, wet-shave capable", "支持湿剃的主力款"],
+      ic: "foil3",
+      who: [
+        "毎日手軽に剃りたい・泡剃りもしたい方",
+        "Those who want an easy daily shave and want to shave with foam too",
+        "想每天轻松剃须·也想用泡沫剃须的人"
+      ],
+      pro: [
+        "3枚刃＋お風呂剃り対応で水洗いもラク。密着ヘッドの機種は肌当たりと深剃りのバランス良",
+        "3 blades plus wet-shave support, and easy rinsing. Contour-head models balance skin comfort "
+          + "and close shaving.",
+        "3枚刃＋支持湿剃，水洗也轻松。贴合刀头的机型在肌肤触感与深剃之间平衡良好。"
+      ],
+      con: [
+        "濃いヒゲのアゴ下は上位のPRO機に及ばない",
+        "Under the chin with thick beards, it falls short of higher-end PRO models.",
+        "对于浓密胡须的下巴区域，不及高端PRO机型。"
+      ],
+      test: function (e) {
+        return e.groupId === "mid_standard" && !e.rot;
+      }
+    },
+    {
+      id: "t3",
+      n: ["回転式（フィリップス）", "Rotary (Philips)", "旋转式（飞利浦）"],
+      sub: ["肌へのやさしさ重視", "Gentle on skin", "注重温和护肤"],
+      ic: "rot",
+      who: [
+        "カミソリ負け・赤みが出やすい敏感肌の方",
+        "Those with sensitive skin prone to razor burn and redness",
+        "容易剃须过敏·泛红的敏感肌人群"
+      ],
+      pro: [
+        "円を描くように剃り、肌への摩擦が少ない。コーティングや押し付け防止で肌を守る",
+        "Shaves in circular motions with less friction. Coatings and pressure guidance protect skin.",
+        "以画圆方式剃须，对肌肤摩擦少。涂层和防压过度功能保护肌肤。"
+      ],
+      con: [
+        "往復式に比べ、直線的に速く深く剃る力は控えめ",
+        "Compared with reciprocating models, less power for fast, deep straight-line shaving.",
+        "与往复式相比，直线式快速深剃的能力较弱。"
+      ],
+      test: function (e) {
+        return e.rot && e.groupId !== "entry_value";
+      }
+    },
+    {
+      id: "t4",
+      n: ["往復式・深剃りPRO", "Reciprocating · Deep-shave PRO", "往复式·深剃PRO"],
+      sub: ["濃いヒゲ・アゴ下に強い", "Strong on thick beards and under the chin", "擅长应对浓密胡须和下巴区域"],
+      ic: "foil5",
+      who: [
+        "夕方の青ヒゲ・アゴ下や首の剃り残しが気になる方",
+        "Those bothered by evening stubble and missed spots under the chin and on the neck",
+        "在意傍晚青胡茬及下巴·脖子剃不干净的人"
+      ],
+      pro: [
+        "5枚刃・高速リニア・5D/360°ヘッドなど。濃いヒゲでもしっかり深剃り",
+        "5 blades, high-speed linear motor, 5D/360° heads, and more. Shaves thick beards closely.",
+        "5枚刃·高速线性马达·5D/360°刀头等。即使浓密胡须也能深度剃净。"
+      ],
+      con: [
+        "約185〜210gと重めで、価格も上がる",
+        "Heavier at about 185–210 g, and the price goes up.",
+        "约185～210g较重，价格也更高。"
+      ],
+      test: function (e) {
+        return e.groupId === "deep_closeness_high";
+      }
+    },
+    {
+      id: "t5",
+      n: ["フラッグシップ", "Flagship", "旗舰款"],
+      sub: ["各社の最上位", "Top of each maker’s lineup", "各品牌的最高端"],
+      ic: "star",
+      who: [
+        "剃り味も手入れの楽さも妥協したくない方",
+        "Those who won’t compromise on shave quality or easy maintenance",
+        "剃须体验和保养便利都不想妥协的人"
+      ],
+      pro: [
+        "6枚刃・ProTrimmer・全自動洗浄器など各社の最高峰。パームインは約145gと超軽量",
+        "6 blades, ProTrimmer, fully automatic cleaning stations—each maker’s best. The Palm-In is "
+          + "ultra-light at about 145 g.",
+        "6枚刃·ProTrimmer·全自动清洗座等各品牌的巅峰之作。Palm-In仅约145g，超轻。"
+      ],
+      con: [
+        "価格が高く、洗浄器付きの機種は置き場所も必要",
+        "High price, and models with a cleaning station need space for it.",
+        "价格高，带清洗座的机型还需要放置空间。"
+      ],
+      test: function (e) {
+        return e.groupId === "flagship_palm_in";
+      }
     }
-    const d = o === "i3",
-      n = (c, r) => '<rect class="dr-pl" style="--dl:'
-        + t
-        + "s;"
-        + (r ? "transform:scaleY(-1)" : "")
-        + '" x="10" y="'
-        + c
-        + '" width="64" height="9" rx="4.5" fill="'
-        + s
-        + '"/>';
-    return '<svg class="dr-svg" viewBox="0 0 90 64"><rect x="10" y="34" width="64" height="9" rx="4.5" fill="'
-      + s
-      + '" opacity=".75"/>'
-      + n(21, 0)
-      + '<rect x="6" y="46" width="12" height="14" rx="5" fill="#94a3b8"/>'
-      + (
-        d
-          ? '<path class="dr-curl" d="M74 30c10-2 10-14 2-14s-8 10 2 10 8-6 6-10" fill="none" '
-            + 'stroke="#34d399" stroke-width="3" stroke-linecap="round"/>'
-          : '<line class="dr-wind" style="--dl:'
-            + t
-            + 's;stroke:#fca5a5" x1="76" y1="32" x2="88" y2="32"/>'
-      )
-      + "</svg>";
+  ];
+  function K(e) {
+    return B.filter(function (t) {
+      return t.test(e);
+    })[0]
+      || B[0];
   }
-  const le = [
+  function ae(e, t) {
+    var n = 'style="--dl:' + t + 's"',
+      a = '<rect x="15" y="40" width="32" height="54" rx="14" fill="#e2e8f0" stroke="#94a3b8" '
+        + 'stroke-width="1.5"/><rect x="26" y="54" width="10" height="18" rx="5" fill="#14b8a6"/>',
+      i = '<rect x="6" y="6" width="50" height="38" rx="12" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1.5"/>',
+      c = "",
+      r;
+    if (e === "rot")
+      [[31, 17], [19, 32], [43, 32]].forEach(function (d, v) {
+        c += '<g class="sv-spin" style="--dl:'
+          + (t - v * .3).toFixed(2)
+          + 's"><circle cx="'
+          + d[0]
+          + '" cy="'
+          + d[1]
+          + '" r="9" fill="#f8fafc" stroke="#0e7490" stroke-width="1.6"/><path d="M'
+          + (d[0] - 6)
+          + " "
+          + d[1]
+          + "h12M"
+          + d[0]
+          + " "
+          + (d[1] - 6)
+          + 'v12" stroke="#0e7490" stroke-width="1.6" stroke-linecap="round"/></g>';
+      });
+    else {
+      var l = { foilS: 3, foil3: 3, foil5: 5, star: 6 }[e],
+        u = (38 - (l - 1) * 3) / l,
+        m = e === "foilS"
+          ? "#94a3b8"
+          : e === "foil3" ? "#14b8a6" : e === "foil5" ? "#0f766e" : "#0e7490";
+      for (c = '<rect x="10" y="10" width="42" height="30" rx="6" fill="#f1f5f9"/>', r = 0; r < l; r++)
+        c += '<rect class="sv-osc'
+          + (r % 2 ? " b" : "")
+          + '" '
+          + n
+          + ' x="'
+          + (12 + r * (u + 3)).toFixed(1)
+          + '" y="13" width="'
+          + u.toFixed(1)
+          + '" height="24" rx="2.5" fill="'
+          + m
+          + '"/>';
+      e === "star"
+        && (
+          c += '<path class="sv-tw" d="M53 2l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7z" fill="#f59e0b"/>'
+        );
+    }
+    return '<svg class="sv-svg" viewBox="0 0 62 96">' + a + i + c + "</svg>";
+  }
+  var y = [
     [
-      "speed",
-      ["速乾力", "Drying speed", "速干力"],
-      "💨",
+      "closeness",
+      ["深剃り力", "Close-shave power", "深剃力"],
+      "🪒",
       [
-        "風量の大きさ。髪が多い・長いほど乾燥時間に差が出ます",
-        "Airflow volume. The thicker or longer your hair, the bigger the difference in drying time.",
-        "风量大小。头发越多·越长，吹干时间的差距越明显。"
+        "アゴ下・濃いヒゲまで剃り残さないか（刃構成・ヘッドの密着）",
+        "Whether it leaves no missed spots under the chin or on thick beards (blade setup, head contact)",
+        "下巴和浓密胡须是否能剃干净（刀头配置·贴合度）"
       ]
     ],
     [
-      "care",
-      ["ヘアケア", "Hair care", "护发"],
-      "✨",
+      "skin",
+      ["肌やさしさ", "Skin gentleness", "肌肤温和度"],
+      "🧴",
+      ["摩擦やカミソリ負けの起きにくさ", "How unlikely it is to cause friction or razor burn", "不易产生摩擦或剃须过敏的程度"]
+    ],
+    [
+      "cleaning",
+      ["お手入れ", "Maintenance", "保养清洁"],
+      "🫧",
       [
-        "イオン・温度制御など、熱ダメージを抑えうるおいを守る力",
-        "Ions, temperature control, etc. that reduce heat damage and protect moisture.",
-        "离子·温控等，减少热损伤并锁住水分的能力。"
+        "水洗い・自動洗浄器など毎日の手入れのラクさ",
+        "Ease of daily care, e.g. rinsing with water or an automatic cleaning station",
+        "水洗·自动清洗座等日常保养的便利程度"
       ]
     ],
     [
-      "light",
-      ["軽さ", "Lightness", "轻量"],
-      "🪶",
+      "weight",
+      ["軽さ・携帯", "Light & portable", "轻便·便携"],
+      "🧳",
       [
-        "本体重量。毎日腕で持つので疲れにくさに直結します",
-        "Unit weight. You hold it every day, so it directly affects fatigue.",
-        "机身重量。每天都要用手臂拿着，直接关系到是否容易疲劳。"
-      ]
-    ],
-    [
-      "travel",
-      ["海外・携帯", "Overseas / portable", "海外·便携"],
-      "✈️",
-      [
-        "海外電圧対応など。資料で確認できたもののみ高評価",
-        "Overseas voltage support, etc. Only models confirmed in the documentation score high.",
-        "是否支持海外电压等。仅资料中可确认的机型才获高评价。"
+        "本体の軽さ。出張・旅行に持ち歩きやすいか",
+        "Unit lightness: how easy it is to carry on business trips and travel",
+        "机身轻量程度：出差·旅行是否便于携带"
       ]
     ],
     [
@@ -4335,1235 +5324,299 @@ window.NJ_HEAR = (function () {
       ["本体価格の手頃さ", "Affordability of the unit price", "机身价格是否实惠"]
     ]
   ],
-    ce = [
-      [
-        "heat",
-        ["速熱", "Quick heat", "速热"],
-        "⚡",
-        [
-          "電源を入れてから使える温度になるまでの速さ",
-          "How quickly it reaches usable temperature after power-on.",
-          "开机后达到可用温度的速度。"
-        ]
-      ],
-      [
-        "care",
-        ["プレートケア", "Plate care", "夹板护理"],
-        "✨",
-        [
-          "プレート素材・イオンなど、髪の傷みを抑える仕様",
-          "Plate material, ions, and other features that reduce hair damage.",
-          "夹板材质·离子等减少头发损伤的规格。"
-        ]
-      ],
-      [
-        "light",
-        ["軽さ", "Lightness", "轻量"],
-        "🪶",
-        [
-          "本体重量。手首への負担や持ち運びやすさ",
-          "Unit weight. Strain on your wrist and ease of carrying.",
-          "机身重量。对手腕的负担及携带便利性。"
-        ]
-      ],
-      [
-        "shape",
-        ["カール対応", "Curl capability", "卷发能力"],
-        "🔁",
-        ["ストレート専用か、カールもできる2WAYか", "Straight-only, or 2-way that can curl too.", "仅限直发，还是可卷发的2WAY。"]
-      ],
-      [
-        "price",
-        ["価格", "Price", "价格"],
-        "💴",
-        ["本体価格の手頃さ", "Affordability of the unit price", "机身价格是否实惠"]
-      ]
-    ],
-    k = e => a(e[1]),
-    X = e => a(e[3]),
-    z = () => l.mode === "dryer" ? le : ce,
-    V = {
-      id: "tr",
-      st: 1,
-      t: [
-        "海外旅行・出張でも使いますか？",
-        "Will you also use it on overseas trips or business travel?",
-        "出国旅行·出差时也会使用吗？"
-      ],
-      h: [
-        "海外電圧に非対応のものを海外で使うと故障の原因になります。「必須」を選ぶと、対応が資料で確認できない機種は減点し、店頭確認の注意を出します。",
-        "Using a model that does not support overseas voltage abroad can cause failure. If you "
-          + "choose “Essential”, models whose support cannot be confirmed in the documentation are "
-          + "penalized and flagged for in-store confirmation.",
-        "在海外使用不支持海外电压的机型可能导致故障。选择“必须”后，资料中无法确认支持的机型会被扣分，并提示需在店内确认。"
-      ],
-      o: [
-        [["必須（海外でも使う）", "Essential (I’ll use it overseas)", "必须（海外也会使用）"], "must"],
-        [["できれば対応していてほしい", "Preferably supported", "最好支持"], "like"],
-        [["自宅のみ", "Home use only", "仅在家使用"], "none"]
-      ]
+    w = function (e) {
+      return s(e[1]);
     },
-    G = e => ({
-      id: "hl",
-      st: 2,
-      t: ["髪の長さは？", "How long is your hair?", "头发有多长？"],
-      h: e,
-      o: [
-        [["ショート〜ボブ", "Short to bob", "短发～波波头"], 0],
-        [["ミディアム", "Medium", "中长发"], 1],
-        [["ロング", "Long", "长发"], 2]
-      ]
-    }),
-    de = [
+    Y = function (e) {
+      return s(e[3]);
+    },
+    D = [
       {
-        id: "bud",
+        id: "budget",
         st: 9,
+        k: ["絶対条件", "price"],
         t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
         h: [
-          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。超えた分は減点で調整します。",
-          "We now know your needs. A pricier model may suit you better, so budget comes last; going "
-            + "over only lowers the score.",
-          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算；超出预算只会扣分。"
+          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。上限を2割以上超える機種は対象外、少し超える機種は減点します。",
+          "We now know your needs. A pricier model may suit you better, so budget comes last. Models "
+            + "over 20% above the limit are excluded; slightly over models are penalized.",
+          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算。超出上限20%以上的机型将被排除，略微超出的会被扣分。"
         ],
         o: [
           [["〜1万円", "Up to ¥10,000", "1万日元以下"], 1e4],
-          [["〜2万円", "Up to ¥20,000", "2万日元以下"], 2e4],
-          [["〜3.5万円", "Up to ¥35,000", "3.5万日元以下"], 35e3],
-          [["〜4.5万円", "Up to ¥45,000", "4.5万日元以下"], 45e3],
+          [["〜2.5万円", "Up to ¥25,000", "2.5万日元以下"], 25e3],
+          [["〜4万円", "Up to ¥40,000", "4万日元以下"], 4e4],
+          [["〜6万円", "Up to ¥60,000", "6万日元以下"], 6e4],
           [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
         ]
       },
       {
-        id: "wt",
-        st: 2,
-        t: ["本体の重さ、どこまで許せますか？", "How heavy a unit can you tolerate?", "机身重量能接受到多少？"],
-        h: [
-          "乾かしている間ずっと腕で持ちます。目安：超軽量＝360g台／標準＝500g前後／やや重め＝600g弱。",
-          "You hold it with your arm the whole time you dry. Guide: ultra-light = 360 g range / "
-            + "standard = around 500 g / somewhat heavy = just under 600 g.",
-          "吹干期间一直要用手臂拿着。参考：超轻＝360g左右／标准＝500g左右／略重＝接近600g。"
-        ],
-        o: [
-          [["〜400g（とにかく軽く）", "Up to 400 g (as light as possible)", "400g以下（务必轻）"], 400],
-          [["〜500g", "Up to 500 g", "500g以下"], 500],
-          [["〜550g", "Up to 550 g", "550g以下"], 550],
-          [["気にしない", "Don’t mind", "不在意"], 9999]
-        ]
-      },
-      V,
-      G([
-        "長いほど乾かす時間が延び、風量の差が効いてきます。",
-        "The longer your hair, the longer drying takes, and the more airflow differences matter.",
-        "头发越长，吹干时间越久，风量差异的影响就越大。"
-      ]),
-      {
-        id: "vo",
-        st: 2,
-        t: ["髪の量・太さは？", "How much hair do you have, and how thick is it?", "发量·粗细如何？"],
-        h: [
-          "量が多い・太い髪は乾きにくく、速乾力の重みが上がります。",
-          "Thick or abundant hair dries slowly, so drying-speed weight goes up.",
-          "发量多·发质粗的头发不易干，速干力的权重会提高。"
-        ],
-        o: [
-          [["少なめ・細い", "Thin / fine", "少·细"], 0],
-          [["普通", "Average", "普通"], 1],
-          [["多い・太い", "Thick / abundant", "多·粗"], 2]
-        ]
-      },
-      {
-        id: "dm",
+        id: "method",
         st: 1,
-        t: ["髪のダメージ・クセは？", "How is your hair’s damage and frizz?", "头发的损伤·发质状况如何？"],
+        k: ["絶対条件"],
+        t: ["刃（ヘッド）の方式のお好みは？", "Which blade (head) type do you prefer?", "您偏好哪种刀头方式？"],
         h: [
-          "カラー・ブリーチ・パサつきが強いほど、ヘアケア性能の重みを上げます。",
-          "The more color, bleach, and dryness damage, the more weight we give to hair-care performance.",
-          "染发·漂发·毛躁越严重，护发性能的权重就越高。"
-        ],
-        o: [
-          [["カラー・ブリーチ・パサつきが強い", "Heavy color/bleach damage or dryness", "染发·漂发·毛躁严重"], "high"],
-          [["クセ・うねりが強い", "Strong frizz or waves", "发质不顺·卷曲明显"], "wavy"],
-          [["あまり気にならない", "Not much of a concern", "不太在意"], "none"]
-        ]
-      },
-      {
-        id: "wr",
-        st: 2,
-        t: [
-          "今のドライヤーで一番困っていることは？",
-          "What bothers you most about your current dryer?",
-          "目前吹风机最让您困扰的是什么？"
-        ],
-        h: [
-          "困りごとに近い軸を優先的に重みづけします。",
-          "We weight the criteria closest to your pain point more heavily.",
-          "会优先提高与您困扰最接近的维度的权重。"
-        ],
-        o: [
-          [["乾くまで時間がかかる", "It takes a long time to dry", "要很久才能吹干"], "time"],
-          [["熱で髪や頭皮が傷む気がする", "Heat seems to damage my hair or scalp", "感觉热风会伤害头发或头皮"], "heat"],
-          [["重くて腕が疲れる", "It’s heavy and tires my arm", "太重，手臂容易累"], "heavy"],
-          [["特にない", "Nothing in particular", "没有特别困扰"], "none"]
-        ]
-      },
-      {
-        id: "af",
-        st: 1,
-        t: ["風量は強い方がいいですか？", "Do you want strong airflow?", "希望风量大吗？"],
-        h: [
-          "風量が強いほど乾く時間は短くなりますが、音や重さは増えがちです。髪が多い・長い方ほど差が出ます。",
-          "Stronger airflow dries faster but tends to be louder and heavier. The difference grows with "
-            + "thick or long hair.",
-          "风量越大干得越快，但噪音和重量也容易增加。发量多·头发长的人差异更明显。"
-        ],
-        o: [
-          [["強い方がいい（とにかく早く乾かしたい）", "Strong (I want it dry fast)", "风量大（想尽快吹干）"], 2],
-          [["ふつうでよい", "Average is fine", "普通即可"], 1],
-          [["弱めでよい（静かさ・やさしさ重視）", "Gentle is fine (quiet, soft)", "弱一点也行（重视安静·温和）"], 0]
-        ]
-      },
-      {
-        id: "sn",
-        st: 2,
-        show: () => N("wr") === "heat",
-        t: ["熱で一番気になるのは？", "Where does heat bother you most?", "热量最困扰您的是哪里？"],
-        h: [
-          "頭皮の熱さが気になるなら温度を抑えられる機種を、毛先のパサつきならケア力を重く見ます。（「熱が気になる」と答えた方にだけおたずねします）",
-          "If scalp heat bothers you, we favor gentler temperatures; if dry ends, we weigh care more. "
-            + "(Asked only if heat is your concern.)",
-          "头皮发烫则看重温和温度，发尾干枯则更看重护发力。（仅在选择“在意热量”时询问）"
-        ],
-        o: [
-          [["頭皮・地肌が熱い", "Scalp feels too hot", "头皮发烫"], "scalp"],
-          [["毛先のパサつき・傷み", "Dry, damaged ends", "发尾干枯受损"], "ends"]
-        ]
-      },
-      {
-        id: "pri",
-        st: 3,
-        t: [
-          "最後に、どうしても譲れない1点は？",
-          "Finally, what is the one thing you absolutely won’t compromise on?",
-          "最后，您绝对不能让步的一点是？"
-        ],
-        h: [
-          "選んだ軸は評価を約2.2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
-          "The criterion you choose is weighted about 2.2x in the final ranking. You can switch "
-            + "criteria on the final screen to compare.",
-          "您选择的维度在最终排名中权重约为2.2倍。在最终画面可切换维度进行对比。"
+          "往復式＝網刃が直線に動き、速く深く剃れる（パナソニック・ブラウン）。回転式＝円を描いて肌にやさしい（フィリップス）。",
+          "Reciprocating = foils move in straight lines for fast, deep shaving (Panasonic, Braun). "
+            + "Rotary = circular motion that is gentle on skin (Philips).",
+          "往复式＝刀网直线运动，剃得又快又深（松下·博朗）。旋转式＝画圆运动，对肌肤温和（飞利浦）。"
         ],
         o: [
           [
             [
-              "とにかく速く乾かしたい（速乾力）",
-              "I want it to dry as fast as possible (drying speed)",
-              "无论如何都想尽快吹干（速干力）"
+              "往復式がいい（スパッと速く剃りたい）",
+              "Reciprocating (I want a quick, clean shave)",
+              "想要往复式（想快速干脆地剃干净）"
             ],
-            "speed"
+            "foil"
           ],
-          [["髪のうるおい・ダメージケア", "Hair moisture and damage care", "头发的润泽·损伤护理"], "care"],
-          [["軽さ・疲れにくさ", "Lightness / less fatigue", "轻量·不易疲劳"], "light"],
-          [["海外・携帯性", "Overseas use / portability", "海外使用·便携性"], "travel"],
-          [["価格の安さ", "Low price", "价格便宜"], "price"]
-        ]
-      }
-    ],
-    he = [
-      {
-        id: "bud",
-        st: 9,
-        t: ["ご予算の上限は？", "What is your maximum budget?", "预算上限是多少？"],
-        h: [
-          "ここまでのお話で、暮らしに合う機種が見えてきました。高価格帯の方が合う場合もあるため、予算は最後におたずねします。超えた分は減点で調整します。",
-          "We now know your needs. A pricier model may suit you better, so budget comes last; going "
-            + "over only lowers the score.",
-          "已了解您的需求。更高价位的机型可能更适合，所以最后才询问预算；超出预算只会扣分。"
-        ],
-        o: [
-          [["〜5千円", "Up to ¥5,000", "5千日元以下"], 5e3],
-          [["〜1.5万円", "Up to ¥15,000", "1.5万日元以下"], 15e3],
-          [["〜2.5万円", "Up to ¥25,000", "2.5万日元以下"], 25e3],
-          [["予算にこだわらない", "Budget is no concern", "不限预算"], 1e9]
+          [["回転式がいい（肌にやさしく）", "Rotary (gentle on skin)", "想要旋转式（对肌肤温和）"], "rot"],
+          [["どちらでもよい", "Either is fine", "都可以"], "any"]
         ]
       },
       {
-        id: "sh",
+        id: "dock",
         st: 1,
-        t: ["どんなスタイリングをしたいですか？", "What kind of styling do you want?", "想做什么样的造型？"],
+        k: ["絶対条件", "cleaning"],
+        t: [
+          "「自動洗浄器」（洗浄・除菌・乾燥・充電）はほしいですか？",
+          "Do you want an “automatic cleaning station” (cleaning, sterilizing, drying, charging)?",
+          "您想要“自动清洗座”（清洗·除菌·干燥·充电）吗？"
+        ],
         h: [
-          "ストレート専用機は、本格的なカールが苦手（毛先の内巻き程度が目安）。カールが必須なら2WAYが有利です。",
-          "Straight-only models struggle with real curls (inward curling of the ends is about the "
-            + "limit). If curls are essential, a 2-way model is better.",
-          "直发专用机不擅长做完整的卷发（大致只能做发尾内卷）。如果必须卷发，2WAY更有利。"
+          "洗浄器が付くのは上位機種が中心です。「ほしい」を選ぶと候補が大きく絞られます。",
+          "Cleaning stations come mostly with higher-end models. Choosing “Yes” narrows the candidates considerably.",
+          "带清洗座的主要是高端机型。选择“想要”会大幅减少候选机型。"
         ],
         o: [
-          [["ストレート中心", "Mostly straightening", "以直发为主"], "straight"],
-          [["カール中心", "Mostly curling", "以卷发为主"], "curl"],
-          [["1台でどちらもしたい", "Both with one unit", "一台兼顾两者"], "both"]
+          [["ほしい", "Yes", "想要"], "must"],
+          [["不要（水洗い）", "No (rinsing is enough)", "不需要（水洗即可）"], "none"]
         ]
       },
-      V,
-      G([
-        "長いほど処理に時間がかかり、立ち上がりの速さと軽さが効いてきます。",
-        "The longer your hair, the more time it takes, so heat-up speed and lightness matter more.",
-        "头发越长，造型耗时越久，升温速度和轻量性就越重要。"
-      ]),
       {
-        id: "dm",
+        id: "travel",
+        st: 2,
+        k: ["絶対条件", "weight"],
+        t: ["出張・旅行で持ち歩きますか？", "Will you carry it on business trips or travel?", "出差·旅行时会随身携带吗？"],
+        h: [
+          "持ち歩くなら軽さ（約160g以下が目安）が大切。重い機種には注意表示をつけ、軽さの評価を重くします。",
+          "If you carry it, lightness (about 160 g or less) matters. Heavy models get a caution, and "
+            + "lightness is weighted more.",
+          "如果要随身携带，轻量（约160g以下为参考）很重要。较重的机型会附带注意提示，并提高轻量的权重。"
+        ],
+        o: [
+          [["よく持ち歩く", "Often carry it", "经常携带"], "often"],
+          [["たまに旅行で持っていく", "Occasionally take it on trips", "偶尔旅行时带上"], "some"],
+          [["自宅専用", "Home use only", "仅在家使用"], "home"]
+        ]
+      },
+      {
+        id: "beard",
         st: 1,
-        t: ["髪のダメージ・クセは？", "How is your hair’s damage and frizz?", "头发的损伤·发质状况如何？"],
+        k: ["closeness"],
+        t: ["おヒゲの濃さ・生え方は？", "How thick is your beard, and how does it grow?", "胡须的浓密程度·生长状况如何？"],
         h: [
-          "カラー・ブリーチ・パサつきが強いほど、プレートのケア性能の重みを上げます。",
-          "The more color, bleach, and dryness damage, the more weight we give to plate care performance.",
-          "染发·漂发·毛躁越严重，夹板护理性能的权重就越高。"
+          "濃いヒゲほど、刃の枚数やモーターの力による「深剃り力」の差が出ます。",
+          "The thicker the beard, the more the blade count and motor power affect close-shave performance.",
+          "胡须越浓密，刀头数量和马达力量带来的“深剃力”差异就越明显。"
         ],
         o: [
-          [["カラー・ブリーチ・パサつきが強い", "Heavy color/bleach damage or dryness", "染发·漂发·毛躁严重"], "high"],
-          [["クセ・うねりが強い", "Strong frizz or waves", "发质不顺·卷曲明显"], "wavy"],
-          [["あまり気にならない", "Not much of a concern", "不太在意"], "none"]
+          [
+            ["濃い・太い・硬い（夕方に青ヒゲ）", "Thick, coarse, stiff (stubble by evening)", "浓密·粗·硬（傍晚冒青胡茬）"],
+            "dense"
+          ],
+          [["普通（毎日の身だしなみ程度）", "Average (everyday grooming)", "普通（日常整理仪容的程度）"], "normal"],
+          [["薄い・柔らかい", "Thin / soft", "稀疏·柔软"], "thin"]
         ]
       },
       {
-        id: "fq",
-        st: 2,
-        t: ["使う頻度は？", "How often do you use it?", "使用频率如何？"],
+        id: "skin",
+        st: 1,
+        k: ["skin"],
+        t: ["剃ったあとのお肌の状態は？", "How is your skin after shaving?", "剃须后的皮肤状态如何？"],
         h: [
-          "毎日使うほど髪へのダメージが積み重なり、ケア重視に。たまに使うだけなら価格・軽さが優先です。",
-          "The more often you use it, the more damage accumulates, so care becomes important. For "
-            + "occasional use, price and lightness take priority.",
-          "使用越频繁，对头发的损伤累积越多，应更重视护理。偶尔使用的话，价格与轻量优先。"
+          "敏感な方ほど、肌への摩擦を抑える方式（回転式・スイング密着など）の価値が上がります。",
+          "The more sensitive your skin, the more valuable friction-reducing designs (rotary, swing "
+            + "contour, etc.) become.",
+          "皮肤越敏感，减少摩擦的方式（旋转式·摇摆贴合等）就越有价值。"
         ],
         o: [
-          [["ほぼ毎日", "Almost daily", "几乎每天"], "daily"],
-          [["週に数回", "A few times a week", "每周几次"], "some"],
-          [["前髪・お出かけ時のみ", "Only for bangs / when going out", "仅用于刘海／外出时"], "occ"]
+          [
+            ["赤み・ヒリヒリが出やすい（敏感肌）", "Prone to redness and stinging (sensitive skin)", "容易泛红·刺痛（敏感肌）"],
+            "sens"
+          ],
+          [["深剃りするとたまにヒリつく", "Sometimes stings after a close shave", "深剃时偶尔会刺痛"], "mid"],
+          [["強い・荒れにくい", "Tough / rarely irritated", "皮肤耐受·不易受刺激"], "tough"]
         ]
       },
       {
-        id: "rs",
-        st: 2,
-        t: ["朝の準備にかけられる時間は？", "How much time do you have for morning prep?", "早晨准备能花多少时间？"],
+        id: "chin",
+        st: 1,
+        k: ["closeness"],
+        t: [
+          "アゴ下・首元の剃り残しは？",
+          "Do you miss spots under the chin or on the neck?",
+          "下巴·脖子处是否有剃不干净的地方？"
+        ],
         h: [
-          "時間が短いほど「立ち上がりの速さ」の重みを上げます。",
-          "The shorter your time, the more weight we give to heat-up speed.",
-          "时间越短，“升温速度”的权重越高。"
+          "5Dアクティブサスや360°ヘッドなど、ヘッドが顔の凹凸に追従する機種ほどアゴ下に強くなります。",
+          "Models whose heads follow facial contours, like 5D active suspension and 360° heads, handle the chin better.",
+          "5D主动悬浮、360°刀头等能紧随面部凹凸的机型，对下巴区域更有效。"
         ],
         o: [
-          [["とにかく急いでいる（数分）", "In a big hurry (a few minutes)", "非常赶时间（几分钟）"], "rush"],
-          [["ゆとりがある", "Have some time to spare", "时间比较充裕"], "calm"]
+          [["よく残る・ここを攻略したい", "Often missed — I want this solved", "经常剃不干净·想重点解决"], "high"],
+          [["たまに残る", "Sometimes missed", "偶尔剃不干净"], "mid"],
+          [["気にならない", "Not a concern", "不在意"], "low"]
         ]
       },
       {
-        id: "cv",
+        id: "care",
         st: 2,
-        show: () => ["curl", "both"].includes(N("sh")),
-        t: ["どんな仕上がりのカールにしたいですか？", "What kind of curl finish do you want?", "想要什么样的卷度？"],
+        k: ["cleaning"],
+        t: ["日々のお手入れの手間は？", "How do you feel about daily upkeep effort?", "对日常保养的麻烦程度怎么看？"],
         h: [
-          "ゆるく毛先だけならストレート兼用でも十分。しっかり巻くなら2WAYが有利です。（カールを選んだ方にだけおたずねします）",
-          "For soft ends-only curls, a straight iron is fine; for defined curls a 2-way is better. "
-            + "(Asked only if you want curls.)",
-          "只卷发尾轻柔卷度，直发夹也够用；要明显卷度则2WAY更有利。（仅在想要卷发时询问）"
+          "水洗い・クイック洗浄・洗浄器付きで手入れのラクさが変わります。",
+          "Ease of care varies with rinsing, quick cleaning, and cleaning stations.",
+          "水洗·快速清洁·带清洗座会让保养的便利程度不同。"
         ],
         o: [
-          [["ゆるふわ・毛先だけ", "Soft waves / ends only", "柔和卷·只卷发尾"], "soft"],
-          [["しっかり巻きたい", "Defined curls", "明显卷度"], "tight"]
+          [["とにかくラクにしたい", "I want it as easy as possible", "希望尽可能省事"], "easy"],
+          [["水洗いできれば十分", "Rinsing with water is enough", "能水洗就足够"], "ok"],
+          [["手入れは苦にならない", "Upkeep doesn’t bother me", "保养不嫌麻烦"], "any"]
+        ]
+      },
+      {
+        id: "wet",
+        st: 2,
+        k: ["絶対条件"],
+        t: ["お風呂場でも使いますか？", "Will you also use it in the bath?", "您会在浴室里使用吗？"],
+        h: [
+          "お風呂での泡剃り（ウェット剃り）に対応しているかは機種ごとに違います。「する」を選ぶと非対応の機種は対象外にします。",
+          "Wet-shave support varies by model. If you choose “Yes”, models without it are excluded.",
+          "是否支持浴室湿剃因机型而异。选择“会”将排除不支持的机型。"
+        ],
+        o: [[["する", "Yes", "会"], "must"], [["しない", "No", "不会"], "dry"]]
+      },
+      {
+        id: "val",
+        st: 2,
+        k: ["price"],
+        t: [
+          "価格と性能、どちらの感覚に近いですか？",
+          "Which is closer to your view: price or performance?",
+          "价格和性能，您更倾向哪一边？"
+        ],
+        h: [
+          "価格の軽さをどれだけ重視するか、評価の重みに反映します。予算を「こだわらない」とした場合、「バランス重視」「性能優先」では価格を評価に入れません。「性能優先」では約2.2万円以下の機種は対象外にします。",
+          "How much you value low price is reflected in the weighting. If budget is “no concern”, "
+            + "price is not scored under “Balance” or “Performance first”. “Performance first” excludes "
+            + "models of about ¥22,000 or less.",
+          "您对低价的重视程度会反映在评价权重中。若预算选择“不限”，选“平衡”或“性能优先”时价格不计入评分。“性能优先”会排除约2.2万日元以下的机型。"
+        ],
+        o: [
+          [["できるだけ安く抑えたい", "Keep it as cheap as possible", "尽量控制在低价"], "cheap"],
+          [["価格と性能のバランス重視", "Balance of price and performance", "重视价格与性能的平衡"], "bal"],
+          [["性能優先。価格は二の次", "Performance first; price is secondary", "性能优先，价格其次"], "perf"]
         ]
       },
       {
         id: "pri",
         st: 3,
+        k: ["譲れない1点"],
         t: [
           "最後に、どうしても譲れない1点は？",
           "Finally, what is the one thing you absolutely won’t compromise on?",
           "最后，您绝对不能让步的一点是？"
         ],
         h: [
-          "選んだ軸は評価を約2.2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
-          "The criterion you choose is weighted about 2.2x in the final ranking. You can switch "
-            + "criteria on the final screen to compare.",
-          "您选择的维度在最终排名中权重约为2.2倍。在最终画面可切换维度进行对比。"
+          "選んだ軸は評価を約2倍にして最終順位を決めます。最終画面で軸を切り替えて見比べもできます。",
+          "The criterion you choose is weighted about 2x in the final ranking. You can switch criteria "
+            + "on the final screen to compare.",
+          "您选择的维度在最终排名中权重约为2倍。在最终画面可切换维度进行对比。"
         ],
         o: [
-          [["立ち上がりの速さ", "Heat-up speed", "升温速度"], "heat"],
-          [["髪を傷めないケア性能", "Care performance that protects hair", "不伤发的护理性能"], "care"],
-          [["軽さ・手首への負担", "Lightness / less wrist strain", "轻量·减轻手腕负担"], "light"],
-          [["カールもできる", "Can also curl", "也能卷发"], "shape"],
+          [["深剃り・剃り上がり", "Close shave / finish", "深剃·剃净效果"], "closeness"],
+          [["肌へのやさしさ", "Gentleness to skin", "对肌肤的温和"], "skin"],
+          [["お手入れのラクさ", "Easy maintenance", "保养便利"], "cleaning"],
+          [["軽さ・持ち運び", "Lightness / portability", "轻便·便携"], "weight"],
           [["価格の安さ", "Low price", "价格便宜"], "price"]
         ]
       }
-    ];
-  let l = null;
-  const O = () => l.mode === "dryer" ? de : he,
-    U = e => O().filter(t => t.st === e && (!t.show || t.show())).sort((x, y) => ORD(x) - ORD(y)),
-    N = e => {
-      const t = O().filter(o => o.id === e)[0], s = l.a[e];
-      return s == null || t.show && !t.show() ? null : t.o[s][1];
-    },
-    S = e => {
-      const t = O().filter(o => o.id === e)[0], s = l.a[e];
-      return s == null ? "—" : a(t.o[s][0]);
-    },
-    Z = () => Q.filter(e => e.mode === l.mode);
-  function pe(e) {
-    const t = [], s = [], o = [];
-    let d = 0;
-    const n = N("bud"), c = N("wt"), r = N("tr"), g = N("sh");
-    return n != null
-      && (
-        e.price > n
-          ? (
-            d += Math.min(35, (e.price - n) / n * 90 + 8),
-              s.push(
-                p(["{0}は予算を超えます（減点）", "{0} is over budget (score reduced)", "{0}超出预算（已扣分）"], w(
-                  e.price
-                ))
-              )
-          )
-          : o.push(p(["{0}で予算内", "{0} is within budget", "{0}在预算内"], w(e.price)))
-      ),
-      c != null
-        && (
-          e.g > c
-            ? t.push([
-              "wt",
-              p(["{0}gは許容の重さを超えます", "{0} g exceeds your weight limit", "{0}g超出可接受的重量"], e.g)
-            ])
-            : o.push(p(["{0}gで許容内", "{0} g is within your limit", "{0}g在可接受范围内"], e.g))
-        ),
-      g === "curl"
-        && e.shape === "straight"
-        && (
-          s.push(
-            a([
-              "ストレート専用機：本格的なカールは苦手（毛先の内巻き程度）",
-              "Straight-only: not good at real curls (inward curling of the ends at best)",
-              "直发专用机：不擅长做完整卷发（最多做发尾内卷）"
-            ])
-          ),
-            d += 30
-        ),
-      g === "both"
-        && e.shape === "straight"
-        && (
-          s.push(
-            a([
-              "ストレート専用機：カールは簡単な内巻き程度",
-              "Straight-only: curls are limited to a simple inward curl",
-              "直发专用机：卷发仅限简单的内卷"
-            ])
-          ),
-            d += 14
-        ),
-      (g === "curl" || g === "both")
-        && e.shape === "2way"
-        && o.push(a(["1台でカールもストレートもできる", "Can curl and straighten with one unit", "一台即可卷发和直发"])),
-      r === "must"
-        && !e.os
-        && (
-          s.push(
-            a([
-              "海外電圧への対応が資料で確認できません（店頭で要確認）",
-              "Overseas voltage support cannot be confirmed in the documentation (check in store)",
-              "资料中无法确认是否支持海外电压（需在店内确认）"
-            ])
-          ),
-            d += 25
-        ),
-      r && r !== "none" && e.os && o.push(a(["海外対応", "Overseas compatible", "支持海外电压"])),
-      { ng: t, wn: s, ok: o, pen: d };
-  }
-  function me(e) {
-    return e.mode === "dryer"
-      ? {
-        speed: T(D[e.r.speed] + (e.air ? (e.air - 2) * .5 : 0), 1, 5),
-        care: D[e.r.care],
-        light: T(5 - (e.g - 360) / 70, 1, 5),
-        travel: e.os ? 5 : 2,
-        price: e.price <= 1e4
-          ? 5
-          : e.price <= 2e4 ? 4 : e.price <= 35e3 ? 3 : e.price <= 42e3 ? 2 : 1.5
-      }
-      : {
-        heat: T(5 - (e.hu - 18) / 9, 1, 5),
-        care: D[e.r.care],
-        light: T(5 - (e.g - 295) / 45, 1, 5),
-        shape: e.shape === "2way" ? 5 : 2,
-        price: e.price <= 5e3
-          ? 5
-          : e.price <= 13e3 ? 4 : e.price <= 16e3 ? 3.5 : e.price <= 23e3 ? 2.5 : 2
-      };
-  }
-  function $() {
-    const e = o => N(o), t = {};
-    if (l.mode === "dryer") {
-      const o = e("hl") || 0, d = e("vo") || 0, n = e("dm"), c = e("wr"), r = e("tr");
-      t.speed = 1
-        + o * .5
-        + d * .6
-        + (c === "time" ? 1.6 : 0)
-        + (N("af") == null ? 0 : N("af") * .9),
-        t.care = 1
-          + (n === "high" ? 2 : n === "wavy" ? 1.3 : 0)
-          + (c === "heat" ? 1.6 : 0)
-          + (N("sn") === "ends" ? 1.4 : N("sn") === "scalp" ? .8 : 0),
-        t.light = 1 + (c === "heavy" ? 2 : 0) + (o === 0 ? .3 : 0),
-        t.travel = r === "must" ? 2.5 : r === "like" ? 1.6 : .4,
-        t.price = 1.3;
-    } else {
-      const o = e("hl") || 0, d = e("dm"), n = e("fq"), c = e("rs"), r = e("sh");
-      t.heat = 1 + (c === "rush" ? 2 : 0) + o * .3 + (n === "daily" ? .4 : 0),
-        t.care = 1
-          + (d === "high" ? 2 : d === "wavy" ? 1.2 : 0)
-          + (n === "daily" ? 1 : n === "some" ? .4 : 0),
-        t.light = 1 + (n === "occ" ? .8 : 0) + (o === 0 ? .3 : 0),
-        t.shape = (r === "curl" ? 3 : r === "both" ? 2.2 : .6) + (N("cv") === "tight" ? 1.5 : 0),
-        t.price = 1.3 + (n === "occ" ? .9 : 0);
-    }
-    const s = e("pri");
-    return s && (t[s] *= 2.2), t;
-  }
-  function I() {
-    const e = $();
-    return Z().map(t => {
-      const s = pe(t), o = me(t);
-      let d = 0, n = 0;
-      z().forEach(r => {
-        d += e[r[0]] * o[r[0]] / 5, n += e[r[0]];
+    ],
+    F = function (e) {
+      return D.filter(function (t) {
+        return t.st === e;
+      }).sort(function (x, y) {
+        return ORDV(x) - ORDV(y);
       });
-      const c = 100 * d / n - s.pen - s.ng.length * 40;
-      return { p: t, h: s, a: o, W: e, sc: T(Math.round(c), 1, 99), t: ie(t) };
-    });
-  }
-  const M = e => e.filter(t => !t.h.ng.length), ue = e => e.slice().sort((t, s) => s.sc - t.sc);
-  function ge(e, t) {
-    const s = performance.now(), o = +e.textContent || 0;
-    (function d(n) {
-      const c = Math.min(1, (n - s) / 450);
-      e.textContent = Math.round(o + (t - o) * c), c < 1 && requestAnimationFrame(d);
-    })(s);
-  }
-  function fe() {
-    const e = document.getElementById("dr-n");
-    e && ge(e, M(I()).length);
-  }
-  function L(e, t) {
-    t || l.hist.push(l.v), l.v = e, l.back = !!t, P(), f.scrollTo({ top: 0 });
-  }
-  function P() {
-    const e = l.v;
-    let t = "", s = 0;
-    const o = F(),
-      d = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
-        + (o === "ja" ? " selected" : "")
-        + '>日本語</option><option value="en"'
-        + (o === "en" ? " selected" : "")
-        + '>English</option><option value="zh"'
-        + (o === "zh" ? " selected" : "")
-        + ">中文</option></select>",
-      n = '<div class="fr-top"><button class="fr-x" data-a="close">'
-        + a(["← 一覧へ", "← Back to list", "← 返回列表"])
-        + "</button><b>"
-        + p(["ノジマ式 {0}相談", "Nojima {0} Advisor", "Nojima {0}选购咨询"], _())
-        + "</b>"
-        + d
-        + '<span class="fr-pill">'
-        + p([
-          '該当<i id="dr-n">{0}</i>/{1}機種',
-          '<i id="dr-n">{0}</i>/{1} match',
-          '符合<i id="dr-n">{0}</i>/{1}款'
-        ], M(I()).length, Z().length)
-        + '</span></div><div class="fr-prog"><div id="dr-pg"></div></div>';
-    if (e === "intro")
-      t = ye(), s = 4;
-    else if (e === "r1")
-      t = ve(), s = 38;
-    else if (e === "r2")
-      t = we(), s = 72;
-    else if (e === "final")
-      t = ke(), s = 100;
-    else if (e === "staff")
-      t = xe(), s = 100;
-    else {
-      const c = U(e.st)[e.i];
-      t = be(c, e), s = { 1: 6 + e.i * 10, 2: 40 + e.i * 7, 3: 74, 9: 88 }[e.st];
-    }
-    f.className = "fr-root on" + (l.back ? " fr-back" : ""),
-      f.innerHTML = n + '<div class="fr-wrap"><div class="fr-in">' + t + "</div></div>",
-      requestAnimationFrame(() => {
-        const c = document.getElementById("dr-pg");
-        c && (c.style.width = s + "%");
-      });
-  }
-  function ye() {
-    const e = a(["〜", "–", "～"]),
-      t = a(["／", " / ", "／"]),
-      s = '<div class="dr-tabs"><button data-a="mode" data-m="dryer" class="'
-        + (l.mode === "dryer" ? "on" : "")
-        + '">'
-        + a(["💨 ドライヤー", "💨 Hair dryer", "💨 吹风机"])
-        + '</button><button data-a="mode" data-m="iron" class="'
-        + (l.mode === "iron" ? "on" : "")
-        + '">'
-        + a(["🔥 ヘアアイロン", "🔥 Hair iron", "🔥 卷直发器"])
-        + "</button></div>",
-      o = B.filter(n => n.mode === l.mode),
-      d = o.map((n, c) => {
-        const r = Q.filter(u => u.type === n.id),
-          g = r.map(u => u.price),
-          b = r.map(u => u.g),
-          x = l.mode === "dryer"
-            ? ""
-            : p(
-              ["／立ち上がり{0}秒", " / heat-up {0} sec", "／升温{0}秒"],
-              Math.min.apply(0, r.map(u => u.hu))
-                + (r.length > 1 ? e + Math.max.apply(0, r.map(u => u.hu)) : "")
-            );
-        return '<div class="fr-card fr-up" style="--i:'
-          + (c + 1)
-          + '" data-a="type">'
-          + ne(n, c * .3)
-          + "<h3>"
-          + A(n)
-          + "</h3><small>"
-          + a(n.sub)
-          + "・"
-          + r.length
-          + a(["機種", " models", "款"])
-          + '</small><div class="fr-more"><div><span>'
-          + a(["向く方", "Best for", "适合人群"])
-          + "</span>"
-          + a(n.who)
-          + "</div><div><span>"
-          + a(["強み", "Strengths", "优点"])
-          + "</span>"
-          + a(n.pro)
-          + "</div><div><span>"
-          + a(["注意", "Watch out", "注意"])
-          + "</span>"
-          + a(n.con)
-          + "</div><div><span>"
-          + a(["目安", "Range", "参考"])
-          + "</span>"
-          + w(Math.min.apply(0, g))
-          + (r.length > 1 ? e + w(Math.max.apply(0, g)) : "")
-          + t
-          + Math.min.apply(0, b)
-          + (r.length > 1 ? e + Math.max.apply(0, b) : "")
-          + "g"
-          + x
-          + '</div><div class="dr-models">📋 '
-          + r.map(u => u.mfg + " " + E(u).replace(/\s*\(.*\)/, "")).join(a([" ／ ", " / ", " ／ "]))
-          + "</div></div></div>";
-      }).join("");
-    return '<span class="fr-tag fr-up">'
-      + a(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
-      + "</span>"
-      + s
-      + '<h1 class="fr-h1 fr-up" style="--i:1">'
-      + p([
-        "{0}は、大きく<em>{1}つのタイプ</em>に分かれます",
-        "{0}s fall into <em>{1} main types</em>",
-        "{0}大致分为<em>{1}种类型</em>"
-      ], _(), o.length)
-      + '</h1><p class="fr-p fr-up" style="--i:2">'
-      + a([
-        "タップでタイプごとの違いと、店頭でご案内できる機種が見られます。",
-        "Tap a card to see how the types differ and which models we can show you in store.",
-        "点击卡片可查看各类型的差异以及店内可介绍的机型。"
-      ])
-      + '</p><div class="dr-flow fr-up" style="--i:2"><span><b>'
-      + a(["前半", "Part 1", "前半"])
-      + "</b>"
-      + a(["絶対条件", "Must-haves", "硬性条件"])
-      + "</span><span><b>"
-      + a(["後半", "Part 2", "后半"])
-      + "</b>"
-      + a(["こだわり", "Preferences", "偏好"])
-      + "</span><span><b>"
-      + a(["最終", "Final", "最终"])
-      + "</b>"
-      + a(["譲れない1点", "Non-negotiable", "不可让步的一点"])
-      + "</span><span><b>"
-      + a(["提案", "Result", "推荐"])
-      + "</b>"
-      + a(["3機種", "3 models", "3款"])
-      + '</span></div><div class="fr-types">'
-      + d
-      + '</div><button class="fr-btn" data-a="start">'
-      + a(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
-      + "</button>";
-  }
-  function be(e, t) {
-    const s = U(t.st),
-      o = a(
-        {
-          1: ["前半｜まず優先して聞きたいこと", "Part 1 | Top priorities first", "前半｜优先确认的事项"],
-          2: ["後半｜重さ・髪質・使い方", "Part 2 | Weight, hair type and usage", "后半｜重量·发质·使用方式"],
-          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"],
-          9: ["最後｜ご予算", "Last | Your budget", "最后｜预算"]
-        }[t.st]
-      ),
-      d = e.o.map(
-        (n, c) => '<button class="fr-opt fr-up'
-          + (l.a[e.id] === c ? " sel" : "")
-          + '" style="--i:'
-          + (c + 1)
-          + '" data-a="pick" data-i="'
-          + c
-          + '"><span class="ck">'
-          + (l.a[e.id] === c ? "✓" : "")
-          + "</span>"
-          + a(n[0])
-          + "</button>"
-      ).join("");
-    return '<span class="fr-tag">'
-      + o
-      + '</span>'
-      + TP()
-      + '<div class="fr-q"><div class="no">Q'
-      + (t.i + 1)
-      + " / "
-      + s.length
-      + "</div><h2>"
-      + a(e.t)
-      + '</h2><div class="fr-hint">💡 '
-      + a(e.h)
-      + "</div>"
-      + d
-      + '</div><button class="fr-btn s" data-a="back">'
-      + a(["← ひとつ戻る", "← Back", "← 返回上一步"])
-      + "</button>";
-  }
-  function ve() {
-    const e = I(), t = M(e), s = {};
-    e.forEach(
-      r => r.h.ng.forEach(g => {
-        s[g[0]] = (s[g[0]] || 0) + 1;
-      })
+    },
+    g = function (e) {
+      var t = D.filter(function (a) {
+        return a.id === e;
+      })[0],
+        n = h.a[e];
+      return n == null ? null : t.o[n][1];
+    },
+    A = function (e) {
+      var t = D.filter(function (a) {
+        return a.id === e;
+      })[0],
+        n = h.a[e];
+      return n == null ? "—" : s(t.o[n][0]);
+    },
+    Q = function (e) {
+      return y.filter(function (t) {
+        return t[0] === e;
+      })[0];
+    };
+  var ORDV = function (i) {
+    var n = ["skin", "beard", "chin", "method", "dock", "travel", "wet", "care", "val"].indexOf(
+      i.id
     );
-    const o = B.filter(r => r.mode === l.mode).map((r, g) => {
-      const b = e.filter(u => u.t === r), x = b.filter(u => !u.h.ng.length).length;
-      return '<div class="fr-row fr-up" style="--i:'
-        + g
-        + '"><b style="width:9em">'
-        + A(r)
-        + '</b><div class="fr-bar'
-        + (x ? "" : " g")
-        + '"><i style="width:'
-        + (b.length ? x / b.length * 100 : 0)
-        + "%;--i:"
-        + g
-        + '"></i></div><span style="width:3.4em;text-align:right">'
-        + x
-        + "/"
-        + b.length
-        + "</span></div>";
-    }).join(""),
-      d = Object.keys(s).map(
-        r => '<span class="fr-chip ng">'
-          + p(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], a(se[r]), s[r])
-          + "</span>"
-      ).join("")
-        || '<span class="fr-chip ok">' + a(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>",
-      n = t.filter(r => r.h.wn.length).length,
-      c = l.mode === "dryer"
-        ? p([
-          "予算 {0}／重さ {1}／海外 {2}",
-          "Budget {0} / Weight {1} / Overseas {2}",
-          "预算 {0}／重量 {1}／海外 {2}"
-        ], S("bud"), S("wt"), S("tr"))
-        : p([
-          "予算 {0}／スタイル {1}／海外 {2}",
-          "Budget {0} / Style {1} / Overseas {2}",
-          "预算 {0}／造型 {1}／海外 {2}"
-        ], S("bud"), S("sh"), S("tr"));
-    return '<span class="fr-tag">'
-      + a(["前半の結果", "Part 1 result", "前半结果"])
-      + '</span><h1 class="fr-h1">'
-      + p([
-        "絶対条件で、<em>{0}機種</em>に絞り込みました",
-        "Your must-haves narrowed it to <em>{0} models</em>",
-        "根据硬性条件，已筛选出<em>{0}款</em>"
-      ], t.length)
-      + '</h1><p class="fr-p">'
-      + c
-      + '</p><div class="fr-box"><h3>'
-      + a(["タイプ別に残った機種数", "Models remaining by type", "各类型剩余机型数"])
-      + "</h3>"
-      + o
-      + '</div><div class="fr-box"><h3>'
-      + a(["外れた理由", "Why models were excluded", "被排除的原因"])
-      + "</h3>"
-      + d
-      + (
-        n
-          ? '<p class="fr-p" style="margin:8px 0 0">'
-            + p([
-              "残った機種のうち {0} 機種に注意点（減点）があります。最終画面に明記します。",
-              "{0} of the remaining models have caution points (penalties). These are noted on the final screen.",
-              "剩余机型中有{0}款存在注意事项（扣分）。将在最终画面中标明。"
-            ], n)
-            + "</p>"
-          : ""
-      )
-      + "</div>"
-      + (
-        t.length < 3
-          ? '<div class="fr-win">'
-            + a([
-              "⚠️ 条件にぴったり合う機種が3つ未満です。最終提案では「条件外」の近い機種も参考に表示します（赤字で明記）。条件を見直すと選択肢が広がる場合があります。",
-              "⚠️ Fewer than 3 models match your conditions exactly. The final proposal also shows close "
-                + "“out-of-spec” models for reference (marked in red). Revisiting your conditions may widen "
-                + "your options.",
-              "⚠️ 完全符合条件的机型不足3款。最终推荐中也会参考性地显示接近的“条件外”机型（以红字标明）。重新考虑条件可能会增加选择。"
-            ])
-            + "</div>"
-          : ""
-      )
-      + '<button class="fr-btn" data-a="next">'
-      + a(["後半の質問へ →", "To Part 2 →", "前往后半部分 →"])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 前半をやり直す", "← Redo Part 1", "← 重做前半部分"])
-      + "</button>";
-  }
-  function we() {
-    const e = I(),
-      t = M(e),
-      s = z(),
-      o = $(),
-      d = Math.max.apply(0, s.map(h => o[h[0]])),
-      n = B.filter(h => h.mode === l.mode).map(h => {
-        const y = t.filter(v => v.t === h);
-        return {
-          t: h,
-          n: y.length,
-          v: s.map(v => y.length ? y.reduce((i, H) => i + H.a[v[0]], 0) / y.length : 0)
-        };
-      }),
-      c = F() === "en",
-      r = h => c ? k(h).split(" ")[0] : k(h).slice(0, 4);
-    let g = '<div class="fr-heat" style="grid-template-columns:6.4em repeat(5,1fr)"><div class="hd"></div>'
-      + s.map(h => '<div class="hd">' + h[2] + "<br>" + r(h) + "</div>").join("");
-    n.forEach((h, y) => {
-      g += '<div class="rn">'
-        + (c ? A(h.t) : A(h.t).slice(0, 9))
-        + '<br><small style="color:#94a3b8">'
-        + h.n
-        + a(["機種", " models", "款"])
-        + "</small></div>"
-        + h.v.map(
-          (v, i) => '<div style="--a:'
-            + (v ? (v / 5 * .85).toFixed(2) : 0)
-            + ";--i:"
-            + (y * 5 + i)
-            + ";color:"
-            + (v > 3.2 ? "#fff" : "#334155")
-            + '">'
-            + (v ? v.toFixed(1) : "—")
-            + "</div>"
-        ).join("");
-    }),
-      g += "</div>";
-    const b = s.map(
-      (h, y) => '<div class="fr-row fr-up" style="--i:'
-        + y
-        + '"><b style="width:7.4em">'
-        + h[2]
-        + " "
-        + k(h)
-        + '</b><div class="fr-bar"><i style="width:'
-        + o[h[0]] / d * 100
-        + "%;--i:"
-        + y
-        + '"></i></div></div>'
-    ).join(""),
-      x = s.map(
-        (h, y) => '<div class="fr-row fr-up" style="--i:'
-          + y
-          + ';align-items:flex-start"><b style="width:7.4em">'
-          + h[2]
-          + " "
-          + k(h)
-          + '</b><span style="flex:1;color:#475569">'
-          + X(h)
-          + "</span></div>"
-      ).join(""),
-      u = n.filter(h => h.n).map(
-        h => '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
-          + A(h.t)
-          + "</b>"
-          + a(["：", ": ", "："])
-          + a(h.t.pro)
-          + a(["。", ". ", "。"])
-          + '<span style="color:#b45309">'
-          + a(h.t.con)
-          + "</span></div>"
-      ).join("");
-    return '<span class="fr-tag">'
-      + a(["後半の結果", "Part 2 result", "后半结果"])
-      + '</span><h1 class="fr-h1">'
-      + a(["お客様の<em>重みづけ</em>が決まりました", "Your <em>weighting</em> is set", "您的<em>权重设置</em>已确定"])
-      + '</h1><p class="fr-p">'
-      + a([
-        "髪質・お悩みから、5つの評価軸の重要度を自動で決めました（長いほど重視）。このあと最後の1点で、さらに優先軸を決めます。",
-        "Based on your hair type and concerns, we set the importance of the 5 criteria automatically "
-          + "(longer bar = more weight). Next, your final pick sets the top priority.",
-        "根据您的发质和困扰，已自动确定5个评价维度的重要度（条越长越重视）。接下来通过最后一个问题进一步确定优先维度。"
-      ])
-      + '</p><div class="fr-box"><h3>'
-      + a(["あなたの重みづけ", "Your weighting", "您的权重设置"])
-      + "</h3>"
-      + b
-      + '</div><div class="fr-box"><h3>'
-      + a([
-        "タイプ × 評価軸（平均点・5点満点）",
-        "Type × criteria (average score, out of 5)",
-        "类型 × 评价维度（平均分·满分5分）"
-      ])
-      + '</h3><div style="overflow-x:auto">'
-      + g
-      + '</div></div><div class="fr-box"><h3>'
-      + a(["タイプごとの特徴", "Traits of each type", "各类型的特点"])
-      + "</h3>"
-      + u
-      + '</div><div class="fr-box"><h3>'
-      + a(["評価軸の見方", "How to read the criteria", "评价维度说明"])
-      + "</h3>"
-      + x
-      + '</div><button class="fr-btn" data-a="next">'
-      + a(["最後の質問へ →", "To the last question →", "前往最后一个问题 →"])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 後半をやり直す", "← Redo Part 2", "← 重做后半部分"])
-      + "</button>";
-  }
-  const K = (e, t) => t.slice().sort((s, o) => o.a[e] - s.a[e] || o.sc - s.sc)[0];
-  function ee() {
-    const e = ue(I()), t = e.filter(s => !s.h.ng.length).slice(0, 3);
-    for (let s = 0; t.length < 3 && s < e.length; s++)
-      t.indexOf(e[s]) < 0 && t.push(e[s]);
-    return { all: e, top: t };
-  }
-  function ke() {
-    const e = ee(),
-      t = e.top,
-      s = z(),
-      o = l.ax || N("pri") || s[0][0],
-      d = s.filter(i => i[0] === o)[0],
-      n = K(o, t),
-      c = K(o, M(e.all)),
-      r = t[0].W,
-      g = s.slice().sort((i, H) => r[H[0]] - r[i[0]]).slice(0, 2),
-      b = s.map(
-        i => '<button data-a="ax" data-k="'
-          + i[0]
-          + '" class="'
-          + (i[0] === o ? "on" : "")
-          + '">'
-          + i[2]
-          + " "
-          + k(i)
-          + "</button>"
-      ).join(""),
-      x = '<div class="fr-win"><b>'
-        + p([
-          "{0} 「{1}」を譲れないなら →{2}",
-          "{0} If “{1}” is non-negotiable → {2}",
-          "{0} 若“{1}”不可让步 → {2}"
-        ], d[2], k(d), E(n.p))
-        + "</b>"
-        + a(["（", " (", "（"])
-        + n.p.mfg
-        + " / "
-        + w(n.p.price)
-        + a(["）", ")", "）"])
-        + "<br>"
-        + X(d)
-        + a(["。", ". ", "。"])
-        + (
-          c && c !== n && c.a[o] > n.a[o]
-            ? "<br>"
-              + p([
-                "さらに「{0}」に特化するなら <b>{1}</b>（{2}）も候補です。",
-                "For an even stronger “{0}”, <b>{1}</b> ({2}) is also a candidate.",
-                "若要更突出“{0}”，<b>{1}</b>（{2}）也是候选。"
-              ], k(d), E(c.p), w(c.p.price))
-            : a([
-              "この3機種の中ではここが最も強い項目です。",
-              "This is the strongest criterion among these 3 models.",
-              "这是这3款中最强的项目。"
-            ])
-        )
-        + "</div>",
-      u = t.map((i, H) => {
-        const j = i.p,
-          Se = s.filter(m => K(m[0], t) === i && i.a[m[0]] >= 3.5).map(
-            m => '<span class="fr-chip ok">'
-              + m[2]
-              + p(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], k(m))
-              + "</span>"
-          ).join(""),
-          te = g.filter(m => i.a[m[0]] >= 3.5).map(m => k(m)).join(a(["・", ", ", "·"])),
-          Ae = s.map(
-            (m, Ne) => '<div class="fr-row" style="margin-bottom:5px"><b style="width:7.4em;'
-              + (m[0] === o ? "color:#d97706" : "")
-              + '">'
-              + m[2]
-              + " "
-              + k(m)
-              + '</b><div class="fr-bar"><i style="width:'
-              + i.a[m[0]] / 5 * 100
-              + "%;--i:"
-              + Ne
-              + (m[0] === o ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
-              + '"></i></div></div>'
-          ).join(""),
-          Ee = i.h.ng.map(
-            m => '<li class="n">' + p(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], m[1]) + "</li>"
-          ).concat(i.h.wn.map(m => '<li class="w">' + m + "</li>")).concat(
-            i.h.ok.slice(0, 3).map(m => "<li>" + m + "</li>")
-          ).join("");
-        return '<div class="fr-rec fr-up'
-          + (i === n ? " hi" : " dim")
-          + '" style="--i:'
-          + H
-          + '"><span class="fr-rank">'
-          + p(["第{0}位", "#{0}", "第{0}名"], H + 1)
-          + " ・ "
-          + A(i.t)
-          + '</span><div class="fr-head"><div class="fr-ring"><svg width="62" height="62" viewBox="0 0 '
-          + '62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle class="fg" cx="31" cy="31" r="26" '
-          + 'stroke-dasharray="'
-          + (i.sc * 1.634).toFixed(0)
-          + ' 164"/></svg><b>'
-          + i.sc
-          + '</b></div><div><div class="fr-name">'
-          + E(j)
-          + '</div><div style="font-size:.8rem;color:#64748b">'
-          + j.mfg
-          + "・"
-          + j.g
-          + 'g</div><div class="fr-price">'
-          + w(j.price)
-          + '</div></div></div><p class="fr-p" style="margin-bottom:6px">'
-          + W(j)
-          + "</p>"
-          + (
-            te
-              ? '<div class="dr-why">🎯 '
-                + p([
-                  "あなたが重視する「{0}」に強いモデルです",
-                  "A model that is strong in what you value: {0}",
-                  "在您重视的“{0}”方面表现出色的机型"
-                ], te)
-                + "</div>"
-              : ""
-          )
-          + Se
-          + '<ul class="fr-ul">'
-          + Ee
-          + "</ul>"
-          + Ae
-          + "</div>";
-      }).join(""),
-      h = l.mode === "dryer"
-        ? [
-          [["価格", "Price", "价格"], i => w(i.price)],
-          [["メーカー", "Maker", "厂商"], i => i.mfg],
-          [
-            ["風量", "Airflow", "风量"],
-            i => i.air
-              ? p(["{0}m³/分", "{0} m³/min", "{0}m³/分"], i.air)
-              : a(["センシング制御", "Sensing control", "感应控制"])
-          ],
-          [["重さ", "Weight", "重量"], i => i.g + "g"],
-          [
-            ["海外対応", "Overseas support", "海外电压支持"],
-            i => i.os ? a(["対応", "Supported", "支持"]) : a(["要確認", "Needs checking", "需确认"])
-          ],
-          [["特徴", "Features", "特点"], i => W(i)]
-        ]
-        : [
-          [["価格", "Price", "价格"], i => w(i.price)],
-          [["メーカー", "Maker", "厂商"], i => i.mfg],
-          [["立ち上がり", "Heat-up time", "升温时间"], i => p(["{0}秒", "{0} sec", "{0}秒"], i.hu)],
-          [["重さ", "Weight", "重量"], i => i.g + "g"],
-          [
-            ["形状", "Shape", "形状"],
-            i => i.shape === "2way" ? "2WAY" : a(["ストレート", "Straight", "直发"])
-          ],
-          [["特徴", "Features", "特点"], i => W(i)]
-        ],
-      y = '<table class="fr-spec"><tr><td></td>'
-        + t.map(i => "<td><b>" + E(i.p).replace(/\s*\(.*\)/, "") + "</b></td>").join("")
-        + "</tr>"
-        + h.map(
-          i => "<tr><td>"
-            + a(i[0])
-            + "</td>"
-            + t.map(H => "<td>" + i[1](H.p) + "</td>").join("")
-            + "</tr>"
-        ).join("")
-        + "</table>",
-      v = oe.map(
-        i => '<div style="font-size:.86rem;margin-bottom:6px"><b>'
-          + a(i[0])
-          + "</b>"
-          + a(["（", " (", "（"])
-          + i[1]
-          + a(["）", ")", "）"])
-          + '<br><span style="color:#64748b">'
-          + a(i[2])
-          + "</span></div>"
-      ).join("");
-    return '<span class="fr-tag">'
-      + a(["最終結果", "Final result", "最终结果"])
-      + '</span><h1 class="fr-h1">'
-      + a(["あなたへのおすすめ<em>3機種</em>", "Your recommended <em>3 models</em>", "为您推荐的<em>3款</em>"])
-      + '</h1><p class="fr-p">'
-      + a([
-        "「譲れないポイント」を切り替えると、3機種のどれが最も強いかが変わります。",
-        "Switch your non-negotiable point to see which of the 3 is strongest.",
-        "切换“不可让步的点”，可查看3款中哪款最强。"
-      ])
-      + '</p><div class="fr-ax">'
-      + b
-      + "</div>"
-      + x
-      + u
-      + '<div class="fr-box"><h3>'
-      + a(["3機種の比較表", "Comparison of the 3 models", "3款对比表"])
-      + '</h3><div style="overflow-x:auto">'
-      + y
-      + '</div></div><div class="fr-box"><h3>'
-      + a(["あわせて検討したい用品", "Accessories worth considering", "建议一并考虑的配件"])
-      + "</h3>"
-      + v
-      + '</div>'
-      + PATH()
-      + '<button class="fr-btn k" data-a="staff">'
-      + a([
-        "📸 スタッフに見せる（最終商談シート）",
-        "📸 Show to staff (final consultation sheet)",
-        "📸 出示给店员（最终洽谈单）"
-      ])
-      + '</button><button class="fr-btn s" data-a="back">'
-      + a(["← 質問に戻る", "← Back to questions", "← 返回问题"])
-      + '</button><button class="fr-btn s" data-a="restart">'
-      + a(["最初からやり直す", "Start over", "重新开始"])
-      + '</button><button class="fr-btn s" data-a="close">'
-      + a(["一覧に戻る", "Back to list", "返回列表"])
-      + "</button>";
-  }
-  function PATH() {
-    const e = ee().top[0], qs = O().filter(n => (!n.show || n.show()) && l.a[n.id] != null);
-    let cnt = 0;
-    const rows = qs.map((n, o) => {
-      const cur = l.a[n.id];
-      let d = 0;
-      const alt = n.o.map((m, g) => ({ l: a(m[0]), v: g })).filter(m => m.v !== cur).map(m => {
-        const old = l.a[n.id];
-        l.a[n.id] = m.v;
-        const g = ee().top[0];
-        l.a[n.id] = old;
-        const c = g.p !== e.p;
-        return c && (d++, cnt++),
-          '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
-            + 'font-size:.76rem;line-height:1.45;'
-            + (
-              c
-                ? "background:#fffbeb;border:1px dashed #f59e0b"
-                : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
-            )
-            + '">'
-            + m.l
-            + "<br><b>"
-            + (
-              c
-                ? a(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + E(g.p)
-                : a(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
-            )
-            + "</b></span>";
-      }).join("");
-      return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
-        + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
-        + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
-        + 'line-height:17px">'
-        + (o + 1)
-        + '</span><div style="font-size:.78rem;color:#64748b">'
-        + a(n.t).replace(/[？?]$/, "")
-        + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
-        + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
-        + S(n.id)
-        + "</div>"
-        + (
-          alt
-            ? "<details"
-              + (d ? " open" : "")
-              + '><summary style="font-size:.78rem;color:'
-              + (d ? "#b45309" : "#64748b")
-              + ';cursor:pointer">'
-              + p([
-                "もし別の選択をしていたら（1位が変わる選択肢：{0}件）",
-                "If you had chosen differently (options that change #1: {0})",
-                "若选了其他选项（会改变第1名的选项：{0}个）"
-              ], d)
-              + "</summary>"
-              + alt
-              + "</details>"
-            : ""
-        )
-        + "</div>";
-    }).join("");
-    return '<div class="fr-box"><h3>🧭 '
-      + a(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
-      + '</h3><p class="fr-p" style="font-size:.82rem">'
-      + p([
-        "青が選んだ回答です。点線の薄い枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：{0}／分岐点 {1}か所の選択肢）。",
-        "Blue is what you chose. Dashed boxes show the top pick if you had chosen differently; "
-          + "<b>yellow marks choices that would change #1</b> (current #1: {0} / {1} such choices).",
-        "蓝色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：{0}／共{1}个）。"
-      ], E(e.p), cnt)
-      + "</p>"
-      + rows
-      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
-      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
-      + E(e.p)
-      + "（"
-      + e.p.mfg
-      + "）</div></div>";
-  }
+    return n < 0 ? 99 : n;
+  };
   function TP() {
-    const all = M(I()),
-      any = Object.keys(l.a).length > 0,
-      ty = B.filter(r => r.mode === l.mode),
-      sc = ty.map(r => Math.max(0, ...all.filter(u => u.t === r).map(u => u.sc))),
-      best = Math.max(...sc),
-      cards = ty.map((r, g) => {
-        const lead = any && sc[g] === best && best > 0;
-        return '<div style="flex:1;min-width:0;text-align:center;padding:6px 3px 5px;border-radius:10px;border:2px solid '
+    var all = M(z()),
+      any = Object.keys(h.a).length > 0,
+      sc = B.map(function (r) {
+        return Math.max.apply(
+          0,
+          [0].concat(
+            all.filter(function (u) {
+              return u.t === r;
+            }).map(function (u) {
+              return u.sc;
+            })
+          )
+        );
+      }),
+      best = Math.max.apply(0, sc),
+      cards = B.map(function (r, g) {
+        var lead = any && sc[g] === best && best > 0;
+        return '<div style="flex:1;min-width:0;text-align:center;padding:5px 2px 4px;border-radius:10px;border:2px solid '
           + (lead ? "#2563eb" : "#e2e8f0")
           + ";background:"
           + (lead ? "#eff6ff" : "#fff")
           + ";opacity:"
           + (sc[g] > 0 ? 1 : .4)
-          + '"><div style="height:46px;overflow:hidden"><div style="transform:scale(.72);transform-origin:top center">'
-          + ne(r, g * .3)
-          + '</div></div><div style="font-size:.64rem;font-weight:700;line-height:1.3;margin-top:2px">'
-          + A(r)
-          + '</div><div style="font-size:.62rem;color:'
+          + '"><div style="height:42px;overflow:hidden"><div style="transform:scale(.5);transform-origin:top center">'
+          + ae(r.ic, g * .3)
+          + '</div></div><div style="font-size:.58rem;font-weight:700;line-height:1.25;margin-top:2px">'
+          + T(r)
+          + '</div><div style="font-size:.58rem;color:'
           + (lead ? "#2563eb" : "#64748b")
           + '">'
-          + (lead ? "👑 " : "")
-          + (any && sc[g] > 0 ? p(["適合度{0}", "match {0}", "匹配度{0}"], sc[g]) : "—")
+          + (lead ? "👑" : "")
+          + (any && sc[g] > 0 ? sc[g] : "—")
           + "</div></div>";
       }).join("");
-    return '<div class="fr-box" style="padding:8px"><div style="font-size:.74rem;color:#475569;margin-bottom:6px">🧭 '
-      + a(
+    return '<div class="sv-box" style="padding:8px"><div style="font-size:.74rem;color:#475569;margin-bottom:6px">🧭 '
+      + s(
         any
           ? [
-            "ここまでの回答だと、一番近いのは王冠のタイプ",
-            "Based on your answers so far, the crowned type fits best",
-            "按目前回答，最接近的是皇冠标记的类型"
+            "ここまでの回答だと、一番近いのは王冠のタイプ（数字は適合度）",
+            "Based on your answers so far, the crowned type fits best (number = match)",
+            "按目前回答，最接近的是皇冠标记的类型（数字为匹配度）"
           ]
           : [
             "回答するたびに、どのタイプに近いかここに表示されます",
@@ -5571,246 +5624,1255 @@ window.NJ_HEAR = (function () {
             "每次回答后，这里会显示最接近的类型"
           ]
       )
-      + '</div><div style="display:flex;gap:6px">'
+      + '</div><div style="display:flex;gap:4px">'
       + cards
       + "</div></div>";
   }
-  const ORD = i => {
-    const n = ["dm", "tr", "af", "sh", "wt"].indexOf(i.id);
-    return n < 0 ? 99 : n;
-  };
-  function xe() {
-    const e = ee(),
-      t = l.a.pri != null,
-      s = O().map(
-        d => l.a[d.id] == null
-          ? ""
-          : "<tr><td>" + a(d.t).replace(/[？?]$/, "") + "</td><td>" + S(d.id) + "</td></tr>"
-      ).join(""),
-      o = t
-        ? e.top.map(
-          (d, n) => '<div style="margin-bottom:6px;font-size:.88rem"><b>'
-            + p(["第{0}位", "#{0}", "第{0}名"], n + 1)
-            + " "
-            + E(d.p)
-            + "</b>（"
-            + d.p.mfg
-            + "）"
-            + w(d.p.price)
-            + "<br>"
-            + p(["{0}g ／ 適合度{1}", "{0} g / match {1}", "{0}g ／ 匹配度{1}"], d.p.g, d.sc)
-            + (d.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + d.h.wn[0] + "</span>" : "")
+  function PATH() {
+    var top = V().top[0],
+      cnt = 0,
+      rows = D.filter(function (n) {
+        return h.a[n.id] != null;
+      }).map(function (n, o) {
+        var cur = h.a[n.id],
+          d = 0,
+          alt = n.o.map(function (m, g) {
+            return { l: s(m[0]), v: g };
+          }).filter(function (m) {
+            return m.v !== cur;
+          }).map(function (m) {
+            var old = h.a[n.id];
+            h.a[n.id] = m.v;
+            var g = V().top[0];
+            h.a[n.id] = old;
+            var c = g.p !== top.p;
+            return c && (d++, cnt++),
+              '<span style="display:inline-block;margin:3px 4px 0 0;padding:4px 8px;border-radius:8px;'
+                + 'font-size:.76rem;line-height:1.45;'
+                + (
+                  c
+                    ? "background:#fffbeb;border:1px dashed #f59e0b"
+                    : "background:#f8fafc;border:1px dashed #cbd5e1;color:#64748b"
+                )
+                + '">'
+                + m.l
+                + "<br><b>"
+                + (
+                  c
+                    ? s(["→ 1位は ", "→ #1 would be ", "→ 第1名将是 "]) + g.p.name
+                    : s(["→ 1位は変わらず", "→ #1 unchanged", "→ 第1名不变"])
+                )
+                + "</b></span>";
+          }).join("");
+        return '<div style="position:relative;margin:0 0 12px 12px;padding:0 0 0 16px;border-left:3px solid '
+          + '#93c5fd"><span style="position:absolute;left:-10px;top:1px;width:17px;height:17px;'
+          + 'border-radius:50%;background:#2563eb;color:#fff;font-size:.64rem;text-align:center;'
+          + 'line-height:17px">'
+          + (o + 1)
+          + '</span><div style="font-size:.78rem;color:#64748b">'
+          + s(n.t).replace(/[？?]$/, "")
+          + '</div><div style="display:inline-block;margin:3px 0;padding:5px 10px;border-radius:8px;'
+          + 'background:#dbeafe;border:1.5px solid #2563eb;font-weight:700;font-size:.86rem">✓ '
+          + A(n.id)
+          + "</div>"
+          + (
+            alt
+              ? "<details"
+                + (d ? " open" : "")
+                + '><summary style="font-size:.78rem;color:'
+                + (d ? "#b45309" : "#64748b")
+                + ';cursor:pointer">'
+                + p([
+                  "もし別の選択をしていたら（1位が変わる選択肢：{0}件）",
+                  "If you had chosen differently (options that change #1: {0})",
+                  "若选了其他选项（会改变第1名的选项：{0}个）"
+                ], d)
+                + "</summary>"
+                + alt
+                + "</details>"
+              : ""
+          )
+          + "</div>";
+      }).join("");
+    return '<div class="sv-box"><h3>🧭 '
+      + s(["あなたの選択の経路図", "Your path through the questions", "您的选择路径图"])
+      + '</h3><p class="sv-p" style="font-size:.82rem">'
+      + p([
+        "青が選んだ回答です。点線の薄い枠は「ここで別の選択をしていたら」の場合の1位で、<b>黄色は1位の機種が変わる分岐点</b>です（現在の1位：{0}／分岐点 {1}か所の選択肢）。",
+        "Blue is what you chose. Dashed boxes show the top pick if you had chosen differently; "
+          + "<b>yellow marks choices that would change #1</b> (current #1: {0} / {1} such choices).",
+        "蓝色为您的选择。虚线框为“若选了其他选项”时的第1名；<b>黄色表示会改变第1名的分岐点</b>（当前第1名：{0}／共{1}个）。"
+      ], top.p.name, cnt)
+      + "</p>"
+      + rows
+      + '<div style="margin-left:12px;padding:6px 10px;border-radius:8px;background:#dcfce7;'
+      + 'border:1.5px solid #16a34a;font-weight:700;font-size:.88rem">🏁 '
+      + top.p.name
+      + "（"
+      + top.p.maker
+      + "）</div></div>";
+  }
+  function ie(e) {
+    var t = [],
+      n = [],
+      a = [],
+      i = g("wet"),
+      c = g("budget"),
+      r = g("method"),
+      l = g("dock"),
+      u = g("travel");
+    return i === "must"
+      && (
+        e.wetOk
+          ? a.push(s(["お風呂剃りに対応", "Supports wet shaving", "支持湿剃"]))
+          : t.push([
+            "wet",
+            s(["お風呂剃り（泡剃り）に非対応です", "Does not support wet (foam) shaving", "不支持湿剃（泡沫剃须）"])
+          ])
+      ),
+      r === "foil" && e.rot
+        ? t.push([
+          "method",
+          s([
+            "回転式のため、往復式の希望と異なります",
+            "It is a rotary model, which differs from your reciprocating preference",
+            "为旋转式，与您偏好的往复式不符"
+          ])
+        ])
+        : r === "rot" && !e.rot
+          ? t.push([
+            "method",
+            s([
+              "往復式のため、回転式の希望と異なります",
+              "It is a reciprocating model, which differs from your rotary preference",
+              "为往复式，与您偏好的旋转式不符"
+            ])
+          ])
+          : (r === "foil" || r === "rot")
+            && a.push(
+              p(
+                ["{0}の希望に合致", "Matches your {0} preference", "符合您对{0}的偏好"],
+                s(e.rot ? ["回転式", "rotary", "旋转式"] : ["往復式", "reciprocating", "往复式"])
+              )
+            ),
+      l === "must"
+        && (
+          e.dock
+            ? a.push(
+              p(["自動洗浄器つき（{0}）", "Includes an automatic cleaning station ({0})", "配有自动清洗座（{0}）"], I(
+                "cleaning",
+                e.cleaning
+              ))
+            )
+            : t.push([
+              "dock",
+              s(["自動洗浄器が付きません", "No automatic cleaning station included", "不带自动清洗座"])
+            ])
+        ),
+      c != null
+        && c < 1e9
+        && (
+          e.price > c * 1.2
+            ? t.push([
+              "bud",
+              p(["上限を2割以上超えます（{0}）", "More than 20% over your limit ({0})", "超出上限20%以上（{0}）"], S(
+                e.price
+              ))
+            ])
+            : e.price <= c && a.push(p(["予算内（{0}）", "Within budget ({0})", "预算内（{0}）"], S(e.price)))
+        ),
+      g("val") === "perf"
+        && e.price <= se
+        && t.push([
+          "val",
+          s([
+            "性能優先のため、約2.2万円以下の機種は対象外です",
+            "Excluded under “Performance first” (about ¥22,000 or less)",
+            "因“性能优先”，约2.2万日元以下的机型被排除"
+          ])
+        ]),
+      u === "home"
+        && e.palm
+        && n.push(
+          s([
+            "手のひらで持つ形状。自宅専用なら持ち手のある通常タイプがおすすめ",
+            "Palm-held shape. For home-only use, a standard grip-type model is recommended",
+            "掌握式造型。仅在家使用的话，推荐带握柄的常规款"
+          ])
+        ),
+      u === "often"
+        && (
+          e.g > 200
+            ? n.push(
+              p([
+                "約{0}g：毎日持ち歩くにはやや重め",
+                "About {0} g: a bit heavy to carry daily",
+                "约{0}g：每天携带略显沉重"
+              ], e.g)
+            )
+            : e.g <= 160
+              && a.push(p(["約{0}gで持ち歩きやすい", "About {0} g, easy to carry", "约{0}g，便于携带"], e.g))
+        ),
+      { ng: t, wn: n, ok: a };
+  }
+  function re(e) {
+    var t = g("chin"),
+      n = q[e.grades.closeness] || 3.5,
+      a = e.rot ? 3.2 : e.n >= 6 ? 5 : e.n >= 5 ? 4.4 : 3,
+      i = .6 * a + .4 * n + (e.flex === 2 ? .3 : 0);
+    t === "high" && e.flex === 2 && (i += .5), i = Math.min(5, i);
+    var c;
+    e.maker === "PHILIPS"
+      ? c = 5
+      : e.rot
+        ? c = q[e.grades.skin] || 3.5
+        : c = Math.min(5, (e.n >= 6 ? 4.6 : e.n >= 5 ? 4.1 : 3.1) + (e.flex === 2 ? .2 : 0));
+    var r = e.price <= 5e3
+      ? 5
+      : e.price <= 1e4
+        ? 4.5
+        : e.price <= 17e3 ? 3.5 : e.price <= 3e4 ? 2.6 : e.price <= 45e3 ? 1.9 : 1.2,
+      l = e.g <= 150 ? 5 : e.g <= 185 ? 4 : e.g <= 210 ? 3 : 2.2;
+    return {
+      closeness: i,
+      skin: c,
+      cleaning: e.dock ? 5 : q[e.grades.cleaning] || 3.5,
+      weight: l,
+      price: r
+    };
+  }
+  function X() {
+    var e = { closeness: 1.5, skin: 1.5, cleaning: 1.2, weight: 1, price: 1.4 },
+      t = g("val"),
+      n = g("budget"),
+      a = g("pri");
+    return e.closeness += { dense: 2, normal: .8, thin: 0 }[g("beard")] || 0,
+      e.closeness += { high: 1.2, mid: .5, low: 0 }[g("chin")] || 0,
+      e.skin += { sens: 2.4, mid: .9, tough: 0 }[g("skin")] || 0,
+      e.cleaning += { easy: 2, ok: .6, any: 0 }[g("care")] || 0,
+      e.weight += { often: 2.4, some: .8, home: 0 }[g("travel")] || 0,
+      g("travel") === "home" && (e.weight = .3),
+      t === "cheap"
+        ? (e.price += 2, n != null && n <= 1e4 && (e.price += 1))
+        : t === "bal" || t === "perf"
+          ? e.price = n != null && n >= 1e9 ? 0 : t === "bal" ? .4 : .2
+          : n != null && n <= 1e4 && (e.price += 1),
+      a === "price" && (e.price = Math.max(e.price, 1.4)),
+      a && (e[a] *= 2.2),
+      e;
+  }
+  function z() {
+    var e = X(), t = g("budget") || 1e9;
+    return E.map(function (n) {
+      var a = ie(n), i = re(n), c = 0, r = 0;
+      y.forEach(function (m) {
+        c += e[m[0]] * i[m[0]] / 5, r += e[m[0]];
+      });
+      var l = 100 * c / r - a.wn.length * 10 - a.ng.length * 40, u = n.price > t;
+      return g("skin") === "sens" && n.maker === "PHILIPS" && (l += 5),
+        u && (l -= Math.min(30, (n.price - t) / t * 80 + 6)),
+        { p: n, h: a, a: i, sc: Math.max(1, Math.min(99, Math.round(l))), over: u, t: K(n) };
+    });
+  }
+  var M = function (e) {
+    return e.filter(function (t) {
+      return !t.h.ng.length;
+    });
+  },
+    oe = function (e) {
+      return e.slice().sort(function (t, n) {
+        return n.sc - t.sc;
+      });
+    };
+  function ce(e, t) {
+    var n = performance.now(), a = +e.textContent || 0;
+    (function i(c) {
+      var r = Math.min(1, (c - n) / 450);
+      e.textContent = Math.round(a + (t - a) * r), r < 1 && requestAnimationFrame(i);
+    })(n);
+  }
+  function le() {
+    var e = document.getElementById("sv-n");
+    e && ce(e, M(z()).length);
+  }
+  function O(e, t) {
+    t || h.hist.push(h.v), h.v = e, h.back = !!t, _(), b.scrollTo({ top: 0 });
+  }
+  function _() {
+    var e = h.v,
+      t = "",
+      n = 0,
+      a = x(),
+      i = '<select class="tb-sel" data-a="lang" aria-label="Language"><option value="ja"'
+        + (a === "ja" ? " selected" : "")
+        + '>日本語</option><option value="en"'
+        + (a === "en" ? " selected" : "")
+        + '>English</option><option value="zh"'
+        + (a === "zh" ? " selected" : "")
+        + ">中文</option></select>",
+      c = '<div class="sv-top"><button class="sv-x" data-a="close">'
+        + s(["← 一覧へ", "← Back to list", "← 返回列表"])
+        + "</button><b>"
+        + s(["ノジマ式 シェーバー相談", "Nojima Shaver Advisor", "Nojima 剃须刀选购咨询"])
+        + "</b>"
+        + i
+        + '<span class="sv-pill">'
+        + p([
+          '該当<i id="sv-n">{0}</i>/{1}機種',
+          '<i id="sv-n">{0}</i>/{1} match',
+          '符合<i id="sv-n">{0}</i>/{1}款'
+        ], M(z()).length, E.length)
+        + '</span></div><div class="sv-prog"><div id="sv-pg"></div></div>';
+    if (e === "intro")
+      t = de(), n = 4;
+    else if (e === "r1")
+      t = ue(), n = 38;
+    else if (e === "r2")
+      t = pe(), n = 72;
+    else if (e === "final")
+      t = ge(), n = 100;
+    else if (e === "staff")
+      t = ve(), n = 100;
+    else {
+      var r = F(e.st)[e.i];
+      t = he(r, e), n = { 1: 6 + e.i * 6.4, 2: 40 + e.i * 6.4, 3: 74, 9: 88 }[e.st];
+    }
+    b.className = "on" + (h.back ? " sv-back" : ""),
+      b.innerHTML = c + '<div class="sv-wrap"><div class="sv-in">' + t + "</div></div>",
+      requestAnimationFrame(function () {
+        var l = document.getElementById("sv-pg");
+        l && (l.style.width = n + "%");
+      });
+  }
+  function N(e, t) {
+    return t.apply(0, e);
+  }
+  function de() {
+    var e = s(["〜", "–", "～"]),
+      t = s(["／", " / ", "／"]),
+      n = B.map(function (a, i) {
+        var c = E.filter(function (u) {
+          return K(u) === a;
+        }),
+          r = c.map(function (u) {
+            return u.price;
+          }),
+          l = c.map(function (u) {
+            return u.g;
+          });
+        return '<div class="sv-card sv-up" style="--i:'
+          + (i + 3)
+          + '" data-a="type" data-i="'
+          + i
+          + '">'
+          + ae(a.ic, (i * .35).toFixed(2))
+          + "<h3>"
+          + T(a)
+          + "</h3><small>"
+          + s(a.sub)
+          + "・"
+          + c.length
+          + s(["機種", " models", "款"])
+          + '</small><div class="sv-more"><div><span>'
+          + s(["向く方", "Best for", "适合人群"])
+          + "</span>"
+          + s(a.who)
+          + "</div><div><span>"
+          + s(["強み", "Strengths", "优点"])
+          + "</span>"
+          + s(a.pro)
+          + "</div><div><span>"
+          + s(["注意", "Watch out", "注意"])
+          + "</span>"
+          + s(a.con)
+          + "</div><div><span>"
+          + s(["目安", "Range", "参考"])
+          + "</span>"
+          + S(N(r, Math.min))
+          + e
+          + S(N(r, Math.max))
+          + t
+          + p(["約{0}〜{1}g", "approx. {0}–{1} g", "约{0}～{1}g"], N(l, Math.min), N(l, Math.max))
+          + "</div><div><span>"
+          + s(["機種", "Models", "机型"])
+          + "</span>"
+          + c.map(function (u) {
+            return u.maker + " " + u.model;
+          }).join(s(["、", ", ", "、"]))
+          + "</div></div></div>";
+      }).join("");
+    return '<span class="sv-tag sv-up">'
+      + s(["STEP 0 ・ まずは全体像", "STEP 0 · The big picture", "STEP 0 · 先看整体概况"])
+      + '</span><h1 class="sv-h1 sv-up" style="--i:1">'
+      + s([
+        "メンズシェーバーは、大きく<em>5つのタイプ</em>に分かれます",
+        "Men’s shavers fall into <em>5 main types</em>",
+        "男士剃须刀大致分为<em>5种类型</em>"
+      ])
+      + '</h1><p class="sv-p sv-up" style="--i:2">'
+      + p([
+        "まず「刃の方式」で2系統。タップでタイプごとの違いを確認できます。そのあと、<b>優先したいこと</b>→<b>持ち運び・"
+          + "お手入れ</b>→<b>譲れない1点</b>→<b>予算</b>の順におたずねして、店頭在庫{0}機種から3機種に絞ります。",
+        "First, there are 2 families by “blade type”. Tap a card to see how the types differ. Then "
+          + "we ask about <b>your top priorities</b> → <b>carrying and upkeep</b> → <b>your one "
+          + "non-negotiable</b> → <b>budget</b>, narrowing {0} in-store models to 3.",
+        "首先按“刀头方式”分为2大系统。点击卡片查看各类型差异。之后依次询问<b>优先事项</b>→<b>携带·保养</b>→<b>不可让步的一点</b>→<b>预算</b>，从店内{0}款中筛出3款。"
+      ], E.length)
+      + '</p><div class="sv-box sv-up" style="--i:2"><h3>'
+      + s(["まず知っておきたい「刃の方式」", "Basics to know first: blade type", "先了解“刀头方式”"])
+      + '</h3><div class="sv-vs"><div><b>'
+      + s(["往復式", "Reciprocating", "往复式"])
+      + "</b>"
+      + s([
+        "網刃が直線に動き、速く深く剃れる。パナソニック「ラムダッシュ」・ブラウン",
+        "Foils move in straight lines for fast, deep shaving. Panasonic “LAMDASH” and Braun.",
+        "刀网直线运动，剃得又快又深。松下“LAMDASH”·博朗"
+      ])
+      + "</div><div><b>"
+      + s(["回転式", "Rotary", "旋转式"])
+      + "</b>"
+      + s([
+        "円を描くように肌をなでて剃る。摩擦が少なく肌にやさしい。フィリップス",
+        "Strokes the skin in circular motions. Low friction and gentle on skin. Philips.",
+        "以画圆方式轻抚肌肤剃须。摩擦少，对肌肤温和。飞利浦"
+      ])
+      + '</div></div></div><div class="sv-types">'
+      + n
+      + '</div><button class="sv-btn" data-a="start">'
+      + s(["診断をはじめる →", "Start the consultation →", "开始诊断 →"])
+      + "</button>";
+  }
+  function he(e, t) {
+    var n = F(t.st),
+      a = s(
+        {
+          1: [
+            "前半｜まず優先して聞きたいこと（肌・ヒゲ・刃の方式）",
+            "Part 1 | Top priorities first (skin, beard, blade type)",
+            "前半｜优先确认的事项（肌肤·胡须·刀头方式）"
+          ],
+          2: [
+            "後半｜持ち運び・お風呂・お手入れ・価格感",
+            "Part 2 | Carrying, bath, upkeep and price feel",
+            "后半｜携带·浴室·保养·价格倾向"
+          ],
+          3: ["最終｜譲れない1点", "Final | Your one non-negotiable", "最终｜不可让步的一点"],
+          9: ["最後｜ご予算", "Last | Your budget", "最后｜预算"]
+        }[t.st]
+      ),
+      i = e.k.map(function (r) {
+        var l = Q(r);
+        return l
+          ? '<span class="sv-chip ax">'
+            + p(["{0}に効く", "Affects {0}", "影响{0}"], l[2] + " " + w(l))
+            + "</span>"
+          : '<span class="sv-chip'
+            + (r === "絶対条件" ? " ng" : " ok")
+            + '">'
+            + s(
+              r === "絶対条件"
+                ? ["合わない機種を除外", "Excludes models that don’t fit", "排除不符合的机型"]
+                : ["譲れない1点", "Your one non-negotiable", "不可让步的一点"]
+            )
+            + "</span>";
+      }).join(""),
+      c = e.o.map(function (r, l) {
+        return '<button class="sv-opt sv-up'
+          + (h.a[e.id] === l ? " sel" : "")
+          + '" style="--i:'
+          + (l + 1)
+          + '" data-a="pick" data-i="'
+          + l
+          + '"><span class="ck">'
+          + (h.a[e.id] === l ? "✓" : "")
+          + "</span>"
+          + s(r[0])
+          + "</button>";
+      }).join("");
+    return '<span class="sv-tag">'
+      + a
+      + '</span>'
+      + TP()
+      + '<div class="sv-q"><div class="no">Q'
+      + (t.i + 1)
+      + " / "
+      + n.length
+      + "</div><h2>"
+      + s(e.t)
+      + '</h2><div class="sv-hint">💡 '
+      + s(e.h)
+      + '</div><div class="sv-eff">'
+      + i
+      + "</div>"
+      + c
+      + '</div><button class="sv-btn s" data-a="back">'
+      + s(["← ひとつ戻る", "← Back", "← 返回上一步"])
+      + "</button>";
+  }
+  function ue() {
+    var e = z(), t = M(e), n = {};
+    e.forEach(function (l) {
+      l.h.ng.forEach(function (u) {
+        n[u[0]] = (n[u[0]] || 0) + 1;
+      });
+    });
+    var a = B.map(function (l, u) {
+      var m = e.filter(function (v) {
+        return v.t === l;
+      }),
+        d = m.filter(function (v) {
+          return !v.h.ng.length;
+        }).length;
+      return '<div class="sv-row sv-up" style="--i:'
+        + u
+        + '"><b style="width:9.5em">'
+        + T(l)
+        + '</b><div class="sv-bar'
+        + (d ? "" : " g")
+        + '"><i style="width:'
+        + (m.length ? d / m.length * 100 : 0)
+        + "%;--i:"
+        + u
+        + '"></i></div><span style="width:3.4em;text-align:right">'
+        + d
+        + "/"
+        + m.length
+        + "</span></div>";
+    }).join(""),
+      i = Object.keys(n).map(function (l) {
+        return '<span class="sv-chip ng">'
+          + p(["{0}で {1}機種が対象外", "{1} models out by {0}", "因{0}排除{1}款"], s(Z[l]), n[l])
+          + "</span>";
+      }).join("")
+        || '<span class="sv-chip ok">' + s(["対象外なし", "Nothing excluded", "无被排除机型"]) + "</span>",
+      c = t.map(function (l) {
+        return '<span class="sv-chip'
+          + (l.h.wn.length ? " w" : " ok")
+          + '">'
+          + l.p.maker
+          + " "
+          + l.p.model
+          + "</span>";
+      }).join(""),
+      r = g("method") === "any"
+        ? s([
+          "方式にこだわりがないので、往復式・回転式の両方を比べます。",
+          "Since you have no blade-type preference, both reciprocating and rotary models are compared.",
+          "由于对方式没有特别要求，将对往复式和旋转式进行比较。"
+        ])
+        : g("method") === "foil"
+          ? s([
+            "往復式（ラムダッシュ・ブラウン）に絞っています。",
+            "Narrowed to reciprocating models (LAMDASH, Braun).",
+            "已筛选为往复式（LAMDASH·博朗）。"
+          ])
+          : s(["回転式（フィリップス）に絞っています。", "Narrowed to rotary models (Philips).", "已筛选为旋转式（飞利浦）。"]);
+    return '<span class="sv-tag">'
+      + s(["前半の結果", "Part 1 result", "前半结果"])
+      + '</span><h1 class="sv-h1">'
+      + p([
+        "絶対条件で、<em>{0}機種</em>に絞り込みました",
+        "Your must-haves narrowed it to <em>{0} models</em>",
+        "根据硬性条件，已筛选出<em>{0}款</em>"
+      ], t.length)
+      + '</h1><p class="sv-p">'
+      + p([
+        "肌 {0}／ヒゲ {1}／方式 {2}／洗浄器 {3}",
+        "Skin {0} / Beard {1} / Type {2} / Cleaning station {3}",
+        "肌肤 {0}／胡须 {1}／方式 {2}／清洗座 {3}"
+      ], A("skin"), A("beard"), A("method"), A("dock"))
+      + '</p><div class="sv-box"><h3>'
+      + s(["タイプ別に残った機種数", "Models remaining by type", "各类型剩余机型数"])
+      + "</h3>"
+      + a
+      + '</div><div class="sv-box"><h3>'
+      + s(["外れた理由", "Why models were excluded", "被排除的原因"])
+      + "</h3>"
+      + i
+      + '<p class="sv-p" style="margin:8px 0 0">'
+      + r
+      + s(["（黄色は注意表示つき）", " (yellow = with caution notice)", "（黄色表示附带注意事项）"])
+      + "</p></div>"
+      + (
+        t.length
+          ? '<div class="sv-box"><h3>'
+            + s(["残った機種", "Remaining models", "剩余机型"])
+            + "</h3>"
+            + c
             + "</div>"
-        ).join("")
+          : ""
+      )
+      + (
+        t.length < 3
+          ? '<div class="sv-win">'
+            + s([
+              "⚠️ 条件にぴったり合う機種が3つ未満です。最終画面では「条件外」の近い機種も参考に表示します（赤字で明記）。条件を見直すと選択肢が広がる場合があります。",
+              "⚠️ Fewer than 3 models match your conditions exactly. The final screen also shows close "
+                + "“out-of-spec” models for reference (marked in red). Revisiting your conditions may widen "
+                + "your options.",
+              "⚠️ 完全符合条件的机型不足3款。最终画面中也会参考性地显示接近的“条件外”机型（以红字标明）。重新考虑条件可能会增加选择。"
+            ])
+            + "</div>"
+          : ""
+      )
+      + '<button class="sv-btn" data-a="next">'
+      + s(["後半の質問へ →", "To Part 2 →", "前往后半部分 →"])
+      + '</button><button class="sv-btn k" data-a="staff">'
+      + s(["📸 スタッフに見せる（条件メモ）", "📸 Show to staff (requirements memo)", "📸 出示给店员（条件备忘）"])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 前半をやり直す", "← Redo Part 1", "← 重做前半部分"])
+      + "</button>";
+  }
+  function pe() {
+    var e = z(),
+      t = M(e),
+      n = X(),
+      a = Math.max.apply(
+        0,
+        y.map(function (d) {
+          return n[d[0]];
+        })
+      ),
+      i = B.map(function (d) {
+        var v = t.filter(function (k) {
+          return k.t === d;
+        });
+        return {
+          t: d,
+          n: v.length,
+          v: y.map(function (k) {
+            return v.length
+              ? v.reduce(function (o, R) {
+                return o + R.a[k[0]];
+              }, 0)
+                / v.length
+              : 0;
+          })
+        };
+      }),
+      c = function (d) {
+        return x() === "en" ? w(d).split(/[ \-]/)[0] : w(d).slice(0, 4);
+      },
+      r = '<div class="sv-heat" style="grid-template-columns:7.2em repeat(5,1fr)"><div class="hd"></div>'
+        + y.map(function (d) {
+          return '<div class="hd">' + d[2] + "<br>" + c(d) + "</div>";
+        }).join("");
+    i.forEach(function (d, v) {
+      r += '<div class="rn">'
+        + T(d.t)
+        + '<br><small style="color:#94a3b8">'
+        + d.n
+        + s(["機種", " models", "款"])
+        + "</small></div>"
+        + d.v.map(function (k, o) {
+          return '<div style="--a:'
+            + (k ? (k / 5 * .85).toFixed(2) : 0)
+            + ";--i:"
+            + (v * 5 + o)
+            + ";color:"
+            + (k > 3.2 ? "#fff" : "#334155")
+            + '">'
+            + (k ? k.toFixed(1) : "—")
+            + "</div>";
+        }).join("");
+    }),
+      r += "</div>";
+    var l = y.map(function (d, v) {
+      return '<div class="sv-row sv-up" style="--i:'
+        + v
+        + '"><b>'
+        + d[2]
+        + " "
+        + w(d)
+        + '</b><div class="sv-bar"><i style="width:'
+        + (n[d[0]] / a * 100).toFixed(0)
+        + "%;--i:"
+        + v
+        + '"></i></div></div>';
+    }).join(""),
+      u = y.map(function (d, v) {
+        return '<div class="sv-row sv-up" style="--i:'
+          + v
+          + ';align-items:flex-start"><b>'
+          + d[2]
+          + " "
+          + w(d)
+          + '</b><span style="flex:1;color:#475569">'
+          + Y(d)
+          + "</span></div>";
+      }).join(""),
+      m = i.filter(function (d) {
+        return d.n;
+      }).map(function (d) {
+        return '<div style="margin-bottom:8px;font-size:.86rem;line-height:1.6"><b>'
+          + T(d.t)
+          + "</b>"
+          + s(["：", ": ", "："])
+          + s(d.t.pro)
+          + s(["。", ". ", "。"])
+          + '<span style="color:#b45309">'
+          + s(d.t.con)
+          + "</span></div>";
+      }).join("");
+    return '<span class="sv-tag">'
+      + s(["後半の結果", "Part 2 result", "后半结果"])
+      + '</span><h1 class="sv-h1">'
+      + s([
+        "タイプごとの<em>違い</em>と、あなたの<em>重みづけ</em>",
+        "<em>Differences</em> between types, and <em>your weighting</em>",
+        "各类型的<em>差异</em>与您的<em>权重设置</em>"
+      ])
+      + '</h1><p class="sv-p">'
+      + s([
+        "残った機種のタイプ別の平均点です（濃いほど得意・5点満点）。あなたの回答から、5つの評価軸の重みを次のように決めました。",
+        "Average scores of the remaining models by type (darker = stronger, out of 5). Based on your "
+          + "answers, we set the weights of the 5 criteria as follows.",
+        "剩余机型按类型统计的平均分（颜色越深越强，满分5分）。根据您的回答，5个评价维度的权重设置如下。"
+      ])
+      + '</p><div class="sv-box"><h3>'
+      + s(["あなたの重みづけ", "Your weighting", "您的权重设置"])
+      + "</h3>"
+      + l
+      + '</div><div class="sv-box"><h3>'
+      + s(["タイプ × 評価軸", "Type × criteria", "类型 × 评价维度"])
+      + '</h3><div style="overflow-x:auto">'
+      + r
+      + '</div></div><div class="sv-box"><h3>'
+      + s(["タイプごとの特徴", "Traits of each type", "各类型的特点"])
+      + "</h3>"
+      + m
+      + '</div><div class="sv-box"><h3>'
+      + s(["評価軸の見方", "How to read the criteria", "评价维度说明"])
+      + "</h3>"
+      + u
+      + '</div><button class="sv-btn" data-a="next">'
+      + s(["最後の質問へ →", "To the last question →", "前往最后一个问题 →"])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 後半をやり直す", "← Redo Part 2", "← 重做后半部分"])
+      + "</button>";
+  }
+  function H(e, t) {
+    return t.slice().sort(function (n, a) {
+      return a.a[e] - n.a[e] || a.sc - n.sc;
+    })[0];
+  }
+  function V() {
+    var e = oe(z()),
+      t = e.filter(function (r) {
+        return !r.h.ng.length;
+      }),
+      n = [];
+    for (t.length < 3 && e.forEach(function (r) {
+      t.indexOf(r) < 0 && t.push(r);
+    }); n.length < 3 && t.length;) {
+      var a = n.map(function (r) {
+        return r.t;
+      }),
+        i = null,
+        c = -1e9;
+      t.forEach(function (r) {
+        var l = r.sc - (a.indexOf(r.t) >= 0 ? 8 : 0);
+        l > c && (c = l, i = r);
+      }),
+        n.push(i),
+        t.splice(t.indexOf(i), 1);
+    }
+    return n.sort(function (r, l) {
+      return l.sc - r.sc;
+    }),
+      { all: e, top: n };
+  }
+  function ge() {
+    var e = V(),
+      t = e.top,
+      n = h.ax || g("pri") || "closeness",
+      a = Q(n),
+      i = H(n, t),
+      c = H(n, M(e.all)),
+      r = y.map(function (o) {
+        return '<button data-a="ax" data-k="'
+          + o[0]
+          + '" class="'
+          + (o[0] === n ? "on" : "")
+          + '">'
+          + o[2]
+          + " "
+          + w(o)
+          + "</button>";
+      }).join(""),
+      l = '<div class="sv-win"><b>'
+        + p([
+          "{0} 「{1}」を譲れないなら →{2}",
+          "{0} If “{1}” is non-negotiable → {2}",
+          "{0} 若“{1}”不可让步 → {2}"
+        ], a[2], w(a), j(i.p))
+        + "</b>"
+        + s(["（", " (", "（"])
+        + i.p.maker
+        + " / "
+        + S(i.p.price)
+        + s(["）", ")", "）"])
+        + "<br>"
+        + Y(a)
+        + s(["。", ". ", "。"])
+        + (
+          c && c !== i && c.a[n] > i.a[n]
+            ? "<br>"
+              + p([
+                "さらに「{0}」に特化するなら <b>{1}</b>（{2}）も候補です。",
+                "For an even stronger “{0}”, <b>{1}</b> ({2}) is also a candidate.",
+                "若要更突出“{0}”，<b>{1}</b>（{2}）也是候选。"
+              ], w(a), j(c.p), S(c.p.price))
+            : s([
+              "この3機種の中ではここが最も強い項目です。",
+              "This is the strongest criterion among these 3 models.",
+              "这是这3款中最强的项目。"
+            ])
+        )
+        + "</div>",
+      u = y.map(function (o, R) {
+        var P = H(o[0], t);
+        return '<div class="sv-row sv-up" style="--i:'
+          + R
+          + ';align-items:flex-start"><b style="width:8em">'
+          + o[2]
+          + " "
+          + w(o)
+          + '</b><span style="flex:1;line-height:1.5">→ <b>'
+          + j(P.p)
+          + "</b>"
+          + s(["（", " (", "（"])
+          + S(P.p.price)
+          + s(["）", ")", "）"])
+          + "</span></div>";
+      }).join(""),
+      m = t.map(function (o, R) {
+        var P = o.p,
+          me = y.filter(function (f) {
+            return H(f[0], t) === o && o.a[f[0]] >= 3.5;
+          }).map(function (f) {
+            return '<span class="sv-chip ok">'
+              + f[2]
+              + p(["{0}が3機種で最強", "Best of the 3 for {0}", "{0}为3款中最强"], w(f))
+              + "</span>";
+          }).join(""),
+          be = y.map(function (f, we) {
+            return '<div class="sv-row" style="margin-bottom:5px"><b style="width:7.4em;'
+              + (f[0] === n ? "color:#d97706" : "")
+              + '">'
+              + f[2]
+              + " "
+              + w(f)
+              + '</b><div class="sv-bar"><i style="width:'
+              + o.a[f[0]] / 5 * 100
+              + "%;--i:"
+              + we
+              + (f[0] === n ? ";background:linear-gradient(90deg,#f59e0b,#ef4444)" : "")
+              + '"></i></div></div>';
+          }).join(""),
+          ye = o.h.ng.map(function (f) {
+            return '<li class="n">' + p(["条件外：{0}", "Out of spec: {0}", "条件外：{0}"], f[1]) + "</li>";
+          }).concat(
+            o.h.wn.map(function (f) {
+              return '<li class="w">' + f + "</li>";
+            })
+          ).concat(
+            o.over && !o.h.ng.length
+              ? [
+                '<li class="w">'
+                  + p(["予算（{0}）を少し超えています", "Slightly over your budget ({0})", "略微超出预算（{0}）"], A(
+                    "budget"
+                  ))
+                  + "</li>"
+              ]
+              : []
+          ).concat(
+            o.h.ok.slice(0, 3).map(function (f) {
+              return "<li>" + f + "</li>";
+            })
+          ).join("");
+        return '<div class="sv-rec sv-up'
+          + (o === i ? " hi" : " dim")
+          + '" style="--i:'
+          + R
+          + '"><span class="sv-rank">'
+          + p(["第{0}位", "#{0}", "第{0}名"], R + 1)
+          + " ・ "
+          + T(o.t)
+          + '</span><div class="sv-head"><div class="sv-ring"><svg width="62" height="62" viewBox="0 0 '
+          + '62 62"><circle class="bg" cx="31" cy="31" r="26"/><circle class="fg" cx="31" cy="31" r="26" '
+          + 'stroke-dasharray="'
+          + (o.sc * 1.634).toFixed(0)
+          + ' 164"/></svg><b>'
+          + o.sc
+          + '</b></div><div><div class="sv-name">'
+          + j(P)
+          + '</div><div style="font-size:.8rem;color:#64748b">'
+          + P.maker
+          + "・"
+          + I("type", P.type)
+          + "・"
+          + U(P.weight)
+          + '</div><div class="sv-price">'
+          + S(P.price)
+          + '</div></div></div><p class="sv-p" style="margin-bottom:6px">'
+          + W(P.desc)
+          + "</p>"
+          + me
+          + '<ul class="sv-ul">'
+          + ye
+          + "</ul>"
+          + be
+          + "</div>";
+      }).join(""),
+      d = [
+        [
+          ["価格", "Price", "价格"],
+          function (o) {
+            return S(o.price);
+          }
+        ],
+        [
+          ["方式", "Type", "方式"],
+          function (o) {
+            return I("type", o.type);
+          }
+        ],
+        [
+          ["刃構成", "Blade setup", "刀头配置"],
+          function (o) {
+            return I("blades", o.blades);
+          }
+        ],
+        [
+          ["お風呂剃り", "Wet shaving", "湿剃"],
+          function (o) {
+            return o.wetOk ? s(["対応", "Supported", "支持"]) : s(["非対応", "Not supported", "不支持"]);
+          }
+        ],
+        [
+          ["お手入れ", "Cleaning", "清洁"],
+          function (o) {
+            return I("cleaning", o.cleaning);
+          }
+        ],
+        [
+          ["重さ", "Weight", "重量"],
+          function (o) {
+            return U(o.weight);
+          }
+        ],
+        [
+          ["充電・稼働", "Charging / runtime", "充电·续航"],
+          function (o) {
+            return I("charge", o.charge) + s(["／", " / ", "／"]) + te(o.battery);
+          }
+        ]
+      ],
+      v = '<table class="sv-spec"><tr><td></td>'
+        + t.map(function (o) {
+          return "<td><b>" + j(o.p) + "</b></td>";
+        }).join("")
+        + "</tr>"
+        + d.map(function (o) {
+          return "<tr><td>"
+            + s(o[0])
+            + "</td>"
+            + t.map(function (R) {
+              return "<td>" + o[1](R.p) + "</td>";
+            }).join("")
+            + "</tr>";
+        }).join("")
+        + "</table>",
+      k = J.map(function (o) {
+        return '<div style="font-size:.86rem;margin-bottom:6px"><b>'
+          + W(o.name)
+          + "</b>"
+          + s(["（", " (", "（"])
+          + o.price
+          + s(["）", ")", "）"])
+          + '<br><span style="color:#64748b">'
+          + W(o.desc)
+          + "</span></div>";
+      }).join("");
+    return '<span class="sv-tag">'
+      + s(["最終結果", "Final result", "最终结果"])
+      + '</span><h1 class="sv-h1">'
+      + s(["あなたへのおすすめ<em>3機種</em>", "Your recommended <em>3 models</em>", "为您推荐的<em>3款</em>"])
+      + '</h1><p class="sv-p">'
+      + s([
+        "「譲れないポイント」を切り替えると、3機種のどれが最も強いかが変わります。",
+        "Switch your non-negotiable point to see which of the 3 is strongest.",
+        "切换“不可让步的点”，可查看3款中哪款最强。"
+      ])
+      + '</p><div class="sv-ax">'
+      + r
+      + "</div>"
+      + l
+      + '<div class="sv-box"><h3>'
+      + s(["ゆずれないポイント別・どれを選ぶ？", "Which to choose by non-negotiable point?", "按不可让步的点来看·选哪一款？"])
+      + "</h3>"
+      + u
+      + "</div>"
+      + m
+      + '<div class="sv-box"><h3>'
+      + s(["3機種の比較表", "Comparison of the 3 models", "3款对比表"])
+      + '</h3><div style="overflow-x:auto">'
+      + v
+      + '</div></div><div class="sv-box"><h3>'
+      + s(["一緒に選ばれている便利アイテム", "Handy items often chosen together", "常一起选购的实用配件"])
+      + "</h3>"
+      + k
+      + '</div>'
+      + PATH()
+      + '<button class="sv-btn k" data-a="staff">'
+      + s([
+        "📸 スタッフに見せる（最終商談シート）",
+        "📸 Show to staff (final consultation sheet)",
+        "📸 出示给店员（最终洽谈单）"
+      ])
+      + '</button><button class="sv-btn s" data-a="back">'
+      + s(["← 質問に戻る", "← Back to questions", "← 返回问题"])
+      + '</button><button class="sv-btn s" data-a="restart">'
+      + s(["最初からやり直す", "Start over", "重新开始"])
+      + '</button><button class="sv-btn s" data-a="close">'
+      + s(["一覧に戻る", "Back to list", "返回列表"])
+      + "</button>";
+  }
+  function ve() {
+    var e = V(),
+      t = h.a.pri != null,
+      n = D.map(function (i) {
+        return h.a[i.id] == null
+          ? ""
+          : "<tr><td>" + s(i.t).replace(/[？?]$/, "") + "</td><td>" + A(i.id) + "</td></tr>";
+      }).join(""),
+      a = t
+        ? e.top.map(function (i, c) {
+          return '<div style="margin-bottom:6px;font-size:.88rem"><b>'
+            + p(["第{0}位", "#{0}", "第{0}名"], c + 1)
+            + " "
+            + j(i.p)
+            + "</b>（"
+            + i.p.maker
+            + "）"
+            + S(i.p.price)
+            + "<br>"
+            + p(["{0} ／ {1} ／ 適合度{2}", "{0} / {1} / match {2}", "{0} ／ {1} ／ 匹配度{2}"], I(
+              "type",
+              i.p.type
+            ), U(i.p.weight), i.sc)
+            + (i.h.wn.length ? '<br><span style="color:#b45309">⚠ ' + i.h.wn[0] + "</span>" : "")
+            + "</div>";
+        }).join("")
         : "";
-    return '<div class="fr-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
+    return '<div class="sv-ss"><div style="display:flex;justify-content:space-between;border-bottom:2px '
       + 'solid #111827;padding-bottom:6px;margin-bottom:8px"><b style="background:#111827;'
       + 'color:#fbbf24;padding:2px 8px;border-radius:4px;font-size:.86rem">'
-      + p(["スタッフ確認用シート（{0}）", "Staff confirmation sheet ({0})", "店员确认单（{0}）"], _())
+      + s(["スタッフ確認用シート", "Staff confirmation sheet", "店员确认单"])
       + '</b><span style="font-size:.8rem;color:#6b7280">'
-      + a(
+      + s(
         t ? ["最終商談カード", "Final consultation card", "最终洽谈卡"] : ["条件メモ", "Requirements memo", "条件备忘"]
       )
       + '</span></div><p style="font-size:.8rem;color:#d90429;font-weight:700;margin-bottom:6px">'
-      + a([
+      + s([
         "※この画面をスクリーンショットしてスタッフにお見せください",
         "Please screenshot this screen and show it to our staff",
         "※请截屏并出示给店员"
       ])
       + "</p><table>"
-      + s
+      + n
       + "</table>"
       + (
-        o
+        a
           ? '<b style="font-size:.88rem">'
-            + a(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
+            + s(["【最終提案TOP3】", "[Final TOP 3 proposal]", "【最终推荐TOP3】"])
             + "</b>"
-            + o
+            + a
           : ""
       )
-      + '</div><button class="fr-btn s" data-a="back">'
-      + a(["← 戻る", "← Back", "← 返回"])
+      + '</div><button class="sv-btn s" data-a="back">'
+      + s(["← 戻る", "← Back", "← 返回"])
       + "</button>";
   }
-  function He(e) {
-    if (l.lock)
-      return;
-    l.lock = 1;
-    const t = U(l.v.st)[l.v.i];
-    l.a[t.id] = e,
-      fe(),
-      f.querySelectorAll(".fr-opt").forEach((s, o) => {
-        s.classList.toggle("sel", o === e), s.firstChild.textContent = o === e ? "✓" : "";
+  function fe(e) {
+    if (!h.lock) {
+      h.lock = 1;
+      var t = F(h.v.st)[h.v.i];
+      h.a[t.id] = e, le();
+      var n = b.querySelectorAll(".sv-opt");
+      n.forEach(function (a, i) {
+        a.classList.toggle("sel", i === e), a.firstChild.textContent = i === e ? "✓" : "";
       }),
-      setTimeout(() => {
-        const s = U(l.v.st);
-        l.lock = 0,
-          L(
-            l.v.i + 1 < s.length
-              ? { st: l.v.st, i: l.v.i + 1 }
-              : l.v.st === 1 ? "r1" : l.v.st === 2 ? "r2" : l.v.st === 3 ? { st: 9, i: 0 } : "final"
-          );
-      }, 320);
+        setTimeout(function () {
+          var a = F(h.v.st);
+          h.lock = 0,
+            O(
+              h.v.i + 1 < a.length
+                ? { st: h.v.st, i: h.v.i + 1 }
+                : h.v.st === 1
+                  ? "r1"
+                  : h.v.st === 2 ? "r2" : h.v.st === 3 ? { st: 9, i: 0 } : "final"
+            );
+        }, 320);
+    }
   }
-  function R(e) {
-    l = { mode: e || "dryer", a: {}, v: "intro", hist: [], ax: null },
-      P(),
+  function G() {
+    h = { a: {}, v: "intro", hist: [], ax: null },
+      _(),
       document.documentElement.style.overflow = "hidden";
     try {
-      history.pushState({ dr: 1 }, "");
+      history.pushState({ sv: 1 }, "");
     } catch {}
   }
   function C(e) {
-    if (f.classList.remove("on"), document.documentElement.style.overflow = "", !e)
+    if (b.classList.remove("on"), document.documentElement.style.overflow = "", !e)
       try {
-        history.state && history.state.dr && history.back();
+        history.state && history.state.sv && history.back();
       } catch {}
   }
-  f.addEventListener("click", e => {
-    const t = e.target.closest("[data-a]");
-    if (!t || t.tagName === "SELECT")
-      return;
-    const s = t.dataset.a;
-    if (s === "close")
-      C();
-    else if (s === "start")
-      L({ st: 1, i: 0 });
-    else if (s === "mode")
-      l = { mode: t.dataset.m, a: {}, v: "intro", hist: [], ax: null }, P();
-    else if (s === "type")
-      f.querySelectorAll(".fr-card").forEach(
-        o => o.classList.toggle("sel", o === t && !t.classList.contains("sel"))
-      );
-    else if (s === "pick")
-      He(+t.dataset.i);
-    else if (s === "next")
-      L(l.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
-    else if (s === "back") {
-      const o = l.hist.pop();
-      o != null ? L(o, !0) : C();
-    } else if (s === "staff")
-      L("staff");
-    else if (s === "ax") {
-      l.ax = t.dataset.k;
-      const o = f.scrollTop;
-      l.back = !1, P(), f.scrollTop = o;
-    } else
-      s === "restart" && R(l.mode);
+  b.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-a]");
+    if (!(!t || t.tagName === "SELECT")) {
+      var n = t.dataset.a;
+      if (n === "close")
+        C();
+      else if (n === "start")
+        O({ st: 1, i: 0 });
+      else if (n === "type")
+        b.querySelectorAll(".sv-card").forEach(function (c) {
+          c.classList.toggle("sel", c === t && !t.classList.contains("sel"));
+        });
+      else if (n === "pick")
+        fe(+t.dataset.i);
+      else if (n === "next")
+        O(h.v === "r1" ? { st: 2, i: 0 } : { st: 3, i: 0 });
+      else if (n === "back") {
+        var a = h.hist.pop();
+        a != null ? O(a, !0) : C();
+      } else if (n === "staff")
+        O("staff");
+      else if (n === "ax") {
+        h.ax = t.dataset.k;
+        var i = b.scrollTop;
+        h.back = !1, _(), b.scrollTop = i;
+      } else
+        n === "restart" && G();
+    }
   }),
-    f.addEventListener("change", e => {
-      if (e.target.dataset.a !== "lang")
-        return;
-      const t = document.getElementById("lang-switcher");
-      t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
-      const s = f.scrollTop;
-      l.back = !1, P(), f.scrollTop = s;
+    b.addEventListener("change", function (e) {
+      if (e.target.dataset.a === "lang") {
+        var t = document.getElementById("lang-switcher");
+        t && (t.value = e.target.value, t.dispatchEvent(new Event("change")));
+        var n = b.scrollTop;
+        h.back = !1, _(), b.scrollTop = n;
+      }
     }),
-    window.addEventListener("popstate", () => {
-      f.classList.contains("on") && C(!0);
+    window.addEventListener("popstate", function () {
+      b.classList.contains("on") && C(!0);
     }),
-    window.DryerApp = { open: R, close: C };
-  const Y = document.getElementById("modal-link-btn");
-  Y
-    && Y.addEventListener("click", e => {
-      const t = Y.dataset.app;
-      t !== "dryer" && t !== "iron"
-        || (e.preventDefault(), document.getElementById("modal").classList.remove("active"), R(t));
+    window.ShaverApp = { open: G, close: C };
+  var $ = document.getElementById("modal-link-btn");
+  $
+    && $.addEventListener("click", function (e) {
+      $.dataset.app === "shaver"
+        && (e.preventDefault(), document.getElementById("modal").classList.remove("active"), G());
     });
-  try { window.NJ_HEAR && window.NJ_HEAR.hook([de, he], {"schema": "std", "root": "dr-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
+  try { window.NJ_HEAR && window.NJ_HEAR.hook([D], {"schema": "std", "root": "sv-app", "lock": ["pri"]}); } catch (e) { console.error(e); }
 })();
 </script>
 <style id="app-motion-css">
 /* =====================================================================
    PC相談：スマホ・iPad向けの調整 ＋ Apple風の動き
    ===================================================================== */
-#dr-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
+#sv-app{--ap:cubic-bezier(.32,.72,0,1);--aps:cubic-bezier(.25,1,.5,1)}
 
 /* ---- 画面の出し入れ（iOSのシート／プッシュ） ---- */
-#dr-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
-#dr-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
-#dr-app .fr-in{animation:apPush .55s var(--ap) both}
-#dr-app.fr-back .fr-in{animation-name:apPop}
+#sv-app{transition:opacity .4s var(--ap),transform .6s var(--ap),visibility 0s .6s}
+#sv-app.on{transition:opacity .4s var(--ap),transform .6s var(--ap)}
+#sv-app .sv-in{animation:apPush .55s var(--ap) both}
+#sv-app.sv-back .sv-in{animation-name:apPop}
 @keyframes apPush{from{opacity:0;transform:translate3d(32px,0,0)}}
 @keyframes apPop{from{opacity:0;transform:translate3d(-32px,0,0)}}
-#dr-app .fr-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
-#dr-app .fr-card.sel .fr-more{animation:apRise .5s var(--ap) both}
+#sv-app .sv-up{animation:apRise .7s var(--ap) both;animation-delay:calc(var(--i,0)*45ms)}
+#sv-app .sv-card.sel .sv-more{animation:apRise .5s var(--ap) both}
 @keyframes apRise{from{opacity:0;transform:translate3d(0,14px,0) scale(.985);filter:blur(4px)}}
 
 /* ---- 半透明のナビゲーションバー（スクロールすると細い境界線） ---- */
-#dr-app .fr-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
-#dr-app.scrolled .fr-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
-#dr-app .fr-prog div{transition:width .8s var(--ap)}
+#sv-app .sv-top{background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:.5px solid transparent;transition:border-color .3s,background .3s}
+#sv-app.scrolled .sv-top{border-bottom-color:rgba(15,23,42,.14);background:rgba(255,255,255,.82)}
+#sv-app .sv-prog div{transition:width .8s var(--ap)}
 
 /* ---- 押したときの沈み込み・選んだときの反応 ---- */
-#dr-app .fr-opt,#dr-app .fr-card,#dr-app .fr-btn,#dr-app .fr-x,#dr-app .iv-entry,#dr-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
-#dr-app .fr-opt:active,#dr-app .fr-card:active,#dr-app .fr-btn:active,#dr-app .fr-x:active,#dr-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
-#dr-app .fr-opt.sel{animation:apSel .5s var(--ap)}
+#sv-app .sv-opt,#sv-app .sv-card,#sv-app .sv-btn,#sv-app .sv-x,#sv-app .iv-entry,#sv-app .ht-heart{transition:transform .5s var(--ap),background-color .25s,border-color .25s,box-shadow .35s var(--ap)}
+#sv-app .sv-opt:active,#sv-app .sv-card:active,#sv-app .sv-btn:active,#sv-app .sv-x:active,#sv-app .iv-entry:active{transform:scale(.97);transition-duration:.12s}
+#sv-app .sv-opt.sel{animation:apSel .5s var(--ap)}
 @keyframes apSel{0%{transform:scale(.97)}}
-#dr-app .fr-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
-#dr-app .fr-opt.sel .ck{transform:scale(1.08)}
-@media (hover:hover){#dr-app .fr-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
-@media (hover:none){#dr-app .fr-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
+#sv-app .sv-opt .ck{transition:transform .45s var(--aps),background .2s,border-color .2s}
+#sv-app .sv-opt.sel .ck{transform:scale(1.08)}
+@media (hover:hover){#sv-app .sv-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #2563eb1f}}
+@media (hover:none){#sv-app .sv-card:hover{transform:none;box-shadow:0 2px 8px #0f172a0d}}
 
 /* ---- ヒアリング（イラストなし） ---- */
-#dr-app .pc-qi{display:none!important}
-#dr-app .fr-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
-#dr-app .fr-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
-#dr-app .fr-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
-#dr-app .fr-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
-#dr-app .fr-opt{border-radius:14px;word-break:auto-phrase}
+#sv-app .pc-qi{display:none!important}
+#sv-app .sv-q{padding:20px 18px 18px;border:1px solid #e8edf5;box-shadow:0 10px 30px #0f172a12}
+#sv-app .sv-q .no{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);color:#4338ca;letter-spacing:.08em}
+#sv-app .sv-q h2{font-size:clamp(1.2rem,4.8vw,1.55rem);line-height:1.45;margin:12px 0 10px;word-break:auto-phrase;text-wrap:pretty;letter-spacing:.01em}
+#sv-app .sv-hint{word-break:auto-phrase;border-left:0;border-radius:12px;background:#f1f5ff;padding:10px 12px}
+#sv-app .sv-opt{border-radius:14px;word-break:auto-phrase}
 
 /* ---- 「いまの見立て」：タイプとメーカーの並びをそろえる ---- */
-#dr-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
-#dr-app .pc-xe>div,#dr-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
-#dr-app .pc-xe>div>div:last-child,#dr-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
-#dr-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
-#dr-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-#dr-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
-#dr-app .pc-mk{width:100%;max-width:56px;height:auto}
-@media (max-width:600px){#dr-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#sv-app .pc-xe{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+#sv-app .pc-xe>div,#sv-app .pc-xm>div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:7px 3px 6px!important;border-radius:12px!important;transition:background .3s,border-color .3s,opacity .3s}
+#sv-app .pc-xe>div>div:last-child,#sv-app .pc-xm>div>div:last-child{font-size:.62rem!important;line-height:1.35!important;margin-top:4px!important;max-width:100%;text-align:center;word-break:auto-phrase}
+#sv-app .pc-xe .pc-mini{height:30px;display:flex;align-items:center}
+#sv-app .pc-xm{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+#sv-app .pc-xm>div{flex:1 1 0;min-width:62px;max-width:112px}
+#sv-app .pc-mk{width:100%;max-width:56px;height:auto}
+@media (max-width:600px){#sv-app .pc-xe{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* ---- 結果画面「いま合うメーカー」：アイコンの列と文字の頭をそろえる ---- */
-#dr-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
-#dr-app .fr-box h3+.pc-mkrow,#dr-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
-#dr-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
-#dr-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
-#dr-app .pc-mkrow>div b:first-child{font-size:.95rem}
-#dr-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
-@media (min-width:700px){#dr-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
+#sv-app .pc-mkrow{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:14px;align-items:center;padding:12px 2px;border-top:1px solid #eef2f7;text-align:left}
+#sv-app .sv-box h3+.pc-mkrow,#sv-app .pc-mkrow:first-of-type{border-top:0;padding-top:4px}
+#sv-app .pc-mkrow .pc-mk{margin:0;width:64px;max-width:64px;justify-self:center}
+#sv-app .pc-mkrow>div{font-size:.86rem!important;line-height:1.6!important;min-width:0;word-break:auto-phrase}
+#sv-app .pc-mkrow>div b:first-child{font-size:.95rem}
+#sv-app .pc-mkrow>div span{display:block;margin-top:2px;font-size:.8rem}
+@media (min-width:700px){#sv-app .pc-mkrow{grid-template-columns:72px minmax(0,1fr);padding:14px 6px}}
 
 /* ---- 最初の画面：タイプのカード（7つ目が1枚だけ浮かないように） ---- */
-#dr-app .fr-types{align-items:stretch}
-#dr-app .fr-types>.fr-card{display:flex;flex-direction:column}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
-#dr-app .fr-types>.fr-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
+#sv-app .sv-types{align-items:stretch}
+#sv-app .sv-types>.sv-card{display:flex;flex-direction:column}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel){grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>.pc-svg{grid-row:1/span 2;margin:0}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>h3{align-self:end;margin:0 0 2px}
+#sv-app .sv-types>.sv-card:last-child:nth-child(odd):not(.sel)>small{align-self:start}
 
 /* ---- スマホ：上のバーを2段に（1段目：戻る・言語・該当数／2段目：タイトル・在庫管理） ---- */
 @media (max-width:600px){
-  #dr-app .fr-top{flex-wrap:wrap;row-gap:6px}
-  #dr-app .fr-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  #dr-app .fr-top .iv-entry{order:6}
-  #dr-app .fr-q{padding:18px 14px 14px;border-radius:18px}
-  #dr-app .fr-wrap{padding-left:12px;padding-right:12px}
+  #sv-app .sv-top{flex-wrap:wrap;row-gap:6px}
+  #sv-app .sv-top>b{order:5;flex:1 1 auto;min-width:0;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #sv-app .sv-top .iv-entry{order:6}
+  #sv-app .sv-q{padding:18px 14px 14px;border-radius:18px}
+  #sv-app .sv-wrap{padding-left:12px;padding-right:12px}
 }
 /* ---- iPad・PC：中央に寄せ、選択肢は2列 ---- */
 @media (min-width:700px){
-  #dr-app .fr-wrap{max-width:900px;margin:0 auto}
-  #dr-app .fr-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
-  #dr-app .fr-q>*{grid-column:1/-1}
-  #dr-app .fr-q>.fr-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
-  #dr-app .fr-q .no{justify-self:start}
-  #dr-app .fr-types{grid-template-columns:1fr 1fr}
+  #sv-app .sv-wrap{max-width:900px;margin:0 auto}
+  #sv-app .sv-q{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;align-items:stretch;padding:26px 26px 22px;border-radius:24px}
+  #sv-app .sv-q>*{grid-column:1/-1}
+  #sv-app .sv-q>.sv-opt{grid-column:auto;margin:0 0 12px;height:calc(100% - 12px)}
+  #sv-app .sv-q .no{justify-self:start}
+  #sv-app .sv-types{grid-template-columns:1fr 1fr}
 }
-@media (prefers-reduced-motion:reduce){#dr-app *,#dr-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){#sv-app *,#sv-app{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-#dr-app [class$="-qi"],#dr-app .tb-qi{display:none!important}
+#sv-app [class$="-qi"],#sv-app .tb-qi{display:none!important}
 </style>
 <script id="app-motion-js">
 /* PC相談：スクロールでナビゲーションバーに境界線（Apple風）／iOSで押した感触を出す */
 (function () {
-  var r = document.getElementById("dr-app");
+  var r = document.getElementById("sv-app");
   if (!r) return;
   var on = false;
   r.addEventListener("scroll", function () {
@@ -5820,6 +6882,6 @@ window.NJ_HEAR = (function () {
   document.addEventListener("touchstart", function () {}, { passive: true });   // iOSで :active を効かせる
 })();
 </script>
-<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("dr-app");</script>
+<script>window.NJ_INV && window.NJ_INV.injectLinks && window.NJ_INV.injectLinks("sv-app");</script>
 </body>
 </html>

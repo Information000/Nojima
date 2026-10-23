@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
-<title>情報エリア | イオンモール成田店</title>
+<title>季節・AVエリア | イオンモール成田店</title>
 <style id="area-shell-css">
-:root{--ac:#0891b2;--ac-soft:#ecfeff;--text:#0f172a;--sub:#475569;--line:#e2e8f0}
+:root{--ac:#059669;--ac-soft:#ecfdf5;--text:#0f172a;--sub:#475569;--line:#e2e8f0}
 *{box-sizing:border-box;margin:0;padding:0;font-family:Plus Jakarta Sans,Noto Sans JP,Noto Sans SC,sans-serif;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
 body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--text);min-height:100vh;padding:12px 16px 40px;display:flex;flex-direction:column;align-items:center}
@@ -58,7 +59,7 @@ body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--te
 
 </style>
 </head>
-<body data-lang="ja" data-dept="info">
+<body data-lang="ja" data-dept="av">
 <div class="ar-wrap">
   <div class="ar-top">
     <a class="ar-back" id="ar-back" href="index.html?skip=1">← ホームへ戻る</a>
@@ -71,8 +72,8 @@ body{background:radial-gradient(120% 120% at 50% 0%,#fff,#f1f5f9);color:var(--te
     </div>
   </div>
   <div class="ar-hero">
-    <div class="ar-ico" aria-hidden="true">💻</div>
-    <div><h1 class="ar-ttl" id="ar-ttl">情報エリア</h1><p class="ar-desc" id="ar-desc"></p></div>
+    <div class="ar-ico" aria-hidden="true">📺</div>
+    <div><h1 class="ar-ttl" id="ar-ttl">季節・AVエリア</h1><p class="ar-desc" id="ar-desc"></p></div>
   </div>
   <p class="ar-lead" id="ar-lead"></p>
   <div class="ar-grid" id="ar-grid"></div>
@@ -84,16 +85,16 @@ var currentLang = "ja";
 (function () {
   "use strict";
   var HOME_URL = "index.html";            // ホーム画面のファイル名
-  var DEPT = "info";
-  var AREA = {"ja": {"title": "【情報エリア】何をお探しですか？", "items": [{"label": "パソコン本体（ノートPC / デスクトップ）", "key": "pc-accessories"}, {"label": "iPad（タブレット本体）", "key": "ipad"}, {"label": "Apple Watch（スマートウォッチ）", "key": "smart-watch"}, {"label": "ケース・アクセサリー", "key": "ipad-accessories"}, {"label": "プリンター・印刷機", "key": "printer"}, {"label": "キーボード・マウス", "key": "keyboard-mouse"}, {"label": "モニター・PCディスプレイ", "key": "monitor-display"}, {"label": "PC付属品・各種ケーブル", "key": "pc-accessories"}]}, "en": {"title": "[Information & Digital] What are you looking for?", "items": [{"label": "Laptop / Desktop PC", "key": "pc-accessories"}, {"label": "iPad (Tablet)", "key": "ipad"}, {"label": "Apple Watch (Smartwatch)", "key": "smart-watch"}, {"label": "Cases, Acc. & Smartwatch", "key": "ipad-accessories"}, {"label": "Printer", "key": "printer"}, {"label": "Keyboard & Mouse", "key": "keyboard-mouse"}, {"label": "PC Monitor Display", "key": "monitor-display"}, {"label": "PC Accessories & Cables", "key": "pc-accessories"}]}, "zh": {"title": "【信息数码区域】您在寻找什么商品？", "items": [{"label": "电脑主机 (笔记本/台式机)", "key": "pc-accessories"}, {"label": "iPad (平板电脑)", "key": "ipad"}, {"label": "Apple Watch (智能手表)", "key": "smart-watch"}, {"label": "保护套·配件·智能手表", "key": "ipad-accessories"}, {"label": "打印机", "key": "printer"}, {"label": "键盘与鼠标", "key": "keyboard-mouse"}, {"label": "电脑显示器", "key": "monitor-display"}, {"label": "电脑配件及线缆", "key": "pc-accessories"}]}};                       // このエリアの一覧（3言語）
-  var ZONE = {"ipad": {"names": {"ja": "iPad", "en": "iPad", "zh": "iPad"}, "url": null, "related": ["pc-accessories", "smart-watch", "keyboard-mouse"]}, "ipad-accessories": {"names": {"ja": "ケース・アクセサリー", "en": "Cases, Acc. & Smartwatch", "zh": "保护套·配件·智能手表"}, "url": null, "related": ["ipad", "smart-watch", "pc-accessories"]}, "keyboard-mouse": {"names": {"ja": "キーボード・マウス", "en": "Keyboard / Mouse", "zh": "键盘与鼠标"}, "app": "pc", "url": "#pc", "related": ["pc-accessories", "monitor-display"]}, "monitor-display": {"names": {"ja": "モニター・ディスプレイ", "en": "Monitor", "zh": "显示器"}, "url": null, "related": ["pc-accessories", "keyboard-mouse"]}, "pc-accessories": {"names": {"ja": "PC / パソコン・PC付属品", "en": "PC & Laptop", "zh": "电脑与配件"}, "app": "pc", "url": "#pc", "related": ["ipad", "smart-watch", "printer", "keyboard-mouse"]}, "printer": {"names": {"ja": "プリンター", "en": "Printer", "zh": "打印机"}, "app": "printer", "url": "#printer", "related": ["pc-accessories", "printer-ink"]}, "smart-watch": {"names": {"ja": "Apple Watch / スマートウォッチ", "en": "Apple Watch", "zh": "Apple Watch"}, "url": null, "related": ["ipad", "pc-accessories"]}};                       // 売り場データ（名前・アプリ・関連）
-  var TXT = {"ja": {"name": "情報エリア", "desc": "パソコン・iPad・Apple Watch等", "preparing": "このコーナーの紹介ページは、ただいま準備中です。", "view": "売り場の紹介ページを見る ↗"}, "en": {"name": "Information", "desc": "PC, iPad, Apple Watch", "preparing": "This page is currently under preparation.", "view": "Visit Area Website ↗"}, "zh": {"name": "信息数码区域", "desc": "电脑·iPad·Apple Watch", "preparing": "该专区页面正在“准备中”。", "view": "查看专区官方网页 ↗"}};
+  var DEPT = "av";
+  var AREA = {"ja": {"title": "【季節・AVエリア】何をお探しですか？", "items": [{"label": "エアコン（冷暖房）", "key": "air-conditioner"}, {"label": "季節用品（扇風機・空気清浄機など）", "key": "fan"}, {"label": "大型テレビ（有機EL・液晶）", "key": "tv-wall"}, {"label": "ケーブル・カラオケ機器", "key": "tv-karaoke"}]}, "en": {"title": "[Seasonal & AV] What are you looking for?", "items": [{"label": "Air Conditioner", "key": "air-conditioner"}, {"label": "Seasonal Goods (fans, air purifiers, etc.)", "key": "fan"}, {"label": "TV (OLED / LCD)", "key": "tv-wall"}, {"label": "Karaoke & Cables", "key": "tv-karaoke"}]}, "zh": {"title": "【季节与影音区域】您在寻找什么商品？", "items": [{"label": "空调 (冷暖房)", "key": "air-conditioner"}, {"label": "季节用品（风扇·空气净化器等）", "key": "fan"}, {"label": "大型电视 (OLED/液晶)", "key": "tv-wall"}, {"label": "线缆·卡拉OK设备", "key": "tv-karaoke"}]}};                       // このエリアの一覧（3言語）
+  var ZONE = {"air-conditioner": {"names": {"ja": "エアコンコーナー", "en": "Air Conditioner", "zh": "空调专区"}, "app": "aircon", "url": "#aircon", "related": ["fan"]}, "fan": {"names": {"ja": "季節用品", "en": "Seasonal Goods", "zh": "季节用品"}, "url": null, "note": {"ja": "現在は夏用品のみ展開しています。これから冬用品にアップデートしていきます。", "en": "Only summer items are on display at the moment. We will be updating to winter items soon.", "zh": "目前仅展示夏季用品，今后将陆续更新为冬季用品。"}, "related": ["air-conditioner"]}, "tv-karaoke": {"names": {"ja": "TV・ケーブル・カラオケ", "en": "TV & Karaoke", "zh": "电视与卡拉OK"}, "app": "tv", "url": "#tv", "related": ["tv-wall", "hdmi-cord"]}, "tv-wall": {"names": {"ja": "TV (テレビ)", "en": "TV", "zh": "电视"}, "app": "tv", "url": "#tv", "related": ["tv-karaoke", "speaker-recorder", "dvd-bluray"]}};                       // 売り場データ（名前・アプリ・関連）
+  var TXT = {"ja": {"name": "季節・AVエリア", "desc": "エアコン・季節用品・TV等", "preparing": "このコーナーの紹介ページは、ただいま準備中です。", "view": "売り場の紹介ページを見る ↗"}, "en": {"name": "Seasonal & AV", "desc": "Air Conditioner, Seasonal Goods, TV", "preparing": "This page is currently under preparation.", "view": "Visit Area Website ↗"}, "zh": {"name": "季节与影音区域", "desc": "空调·季节用品·电视", "preparing": "该专区页面正在“准备中”。", "view": "查看专区官方网页 ↗"}};
   var I18N = {"back": ["← ホームへ戻る", "← Back to home", "← 返回首页"], "map": ["🗺 マップで場所を見る", "🗺 See it on the map", "🗺 在地图上查看"], "close": ["閉じる", "Close", "关闭"], "start": ["相談をはじめる", "Start consultation", "开始咨询"], "info": ["場所・情報を見る", "Location & info", "位置与信息"], "guide": ["店内ガイドあり", "In-store guide", "店内导购"], "lead": ["気になる商品をタップしてください", "Tap a product to begin", "请点击想了解的商品"], "related": ["こちらの売り場もよく見られています", "Frequently Viewed Together", "顾客常搭配查看的商品"], "fav": ["マイリスト", "My List", "我的收藏"], "favAdd": ["マイリストに追加", "Add to My List", "加入收藏"], "favDel": ["マイリストから外す", "Remove from My List", "取消收藏"], "store": ["イオンモール成田店", "AEON Mall Narita", "永旺梦乐城成田店"], "appBtn": ["{0}の相談をはじめる →", "Start the {0} consultation →", "开始{0}选购咨询 →"]};
   var APP_NAMES = {"fridge": ["冷蔵庫", "Refrigerator", "冰箱"], "washer": ["洗濯機", "Washing Machine", "洗衣机"], "rice": ["炊飯器", "Rice Cooker", "电饭煲"], "microwave": ["電子レンジ", "Microwave", "微波炉"], "oven": ["オーブン・グリル", "Oven / Grill", "烤箱·烧烤炉"], "aircon": ["エアコン", "Air Conditioner", "空调"], "tv": ["テレビ", "TV", "电视"], "printer": ["プリンター", "Printer", "打印机"], "dryer": ["ドライヤー", "Hair Dryer", "吹风机"], "iron": ["ヘアアイロン", "Hair Iron", "卷直发器"], "toothbrush": ["電動歯ブラシ", "Electric Toothbrush", "电动牙刷"], "shaver": ["シェーバー", "Shaver", "剃须刀"], "pc": ["パソコン", "PC", "电脑"]};
   // ▼ 商品ページへのリンク（相談アプリごとに独立したHTML）
   var PRODUCT_LINKS = {
-    pc:         "product-pc.html",
-    printer:    "product-printer.html"
+    aircon:     "aircon/",
+    tv:         "tv/"
   };
   var FAV_CAT = {};
   var $ = function (id) { return document.getElementById(id); };
